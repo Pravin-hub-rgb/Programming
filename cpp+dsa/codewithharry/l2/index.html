@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-2 = Basic Structure of a C++ program</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Basic Structure of a C++ program</h1>
+        <div class="wh">
+            <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                    <code>
+
+                        // simple program 
+
+                        #include&lt;iostream>
+
+                        int main(){
+                            std::cout<<"Hello World";
+                            return 0;
+                        }
+                    </code>
+                </pre>
+                </div>
+                <div class="wh">
+                    <p>Understanding above program</p>
+                    <div class="in">
+                        <p><b>#include&lt;iostream> </b></p>
+                        <ul>
+                            <li>This whole text is called a <b>header file</b></li>
+                            <li><b>include</b> is a keyword used to add libraries in our program.</li>
+                            <li><b>iostream</b> is the name of a library which helps us to get input data and show
+                                output data.
+                                <ul>
+                                    <li>The iostream library also has many more uses; it is not only limited to input
+                                        and output.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>int main() {</b></p>
+                        <ul>
+                            <li><b>int</b> is a return type which is called integer and <b>"main()"</b> is a function,
+                                the
+                                brackets <b>"()"</b> denotes that it is a function.</li>
+                            <li>The curly brace <b>"{"</b> indicates that is is an opening of a function, and the curly
+                                brace <b>"}"</b> indicates that it is the closing of a function.</li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>std::cout&lt;&lt;"hello word";</b></p>
+                        <ul>
+                            <li><b>std</b> is a namespace, "::" is the scope resolution operator and
+                                <b>"cout&lt;&lt;"</b> is a function which is used to output data, <b>"hello world"</b>
+                                is out output string
+                            </li>
+                            <li><b>";"</b> is used to end a statement</li>
+                            <li>The code <b>"std::cout"</b> tells the compiler that the "cout" identifier resides in the
+                                std namespace.</li>
+                        </ul>
+                    </div>
+                    <div class="wh">
+                        <ul>
+                            <li>Main point here are
+                                <ul>
+                                    <li>We can write as many statements as we want in a single line, but for a neat and
+                                        clean code, one statement at a line is good</li>
+                                    <li>Anything which is written between double quotation "" is a string literal</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>return 0</b></p>
+                        <ul>
+                            <li>the return keyword will return 0 as an integer to out main function <b>"int main()"</b>
+                            </li>
+                            <li>Returning 0 as a value to the main function means successful termination of the program.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

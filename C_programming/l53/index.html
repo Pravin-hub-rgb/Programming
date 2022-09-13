@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-53 = Null Pointer</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l54/index.html">Next Lec &rarr;</a>
+            <a href="../l52/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Null Pointer</h1>
+        <div class="inside-content">
+            <h2>What is a Null pointer?</h2>
+            <ul>
+                <li>Null poiner is a poiner which has a value reserved for indicating that the pointer or reference does not refer to a valid object</li>
+                <li>A null poiner is gauranteed to compare unequal to any pointer that points to a valid object.
+                    <ul>
+                        <li>when we declare any pointer (with no inital value) so this stores a garbage value</li>
+                        <li>If this garbage value is same as some address then after accidently dereferencing it might do some trouble</li>
+                    </ul>
+                </li>
+                <li>Dereferencing a null poiner is undefined behavior in C, and a conforming implementation is allowed to assume that any pointer that is dereferenced is not <i>null</i></li>
+                <li>NULL pointer is a specific pointer which is mentioned in C standard and it has specific purposes.</li>
+                <li>NULL pointer gives a functionality to C programmer to check whether a pointer is legitimate or not</li>
+            </ul>
+            <div class="in">
+                <h3>NULL Pointer: C Program</h3>
+                <ul>
+                    <li>A null pointer is a pointer that points to NULL (nothing)</li>
+                    <li>A null pointer should not be dereferenced.</li>
+                    <li>A check must be run by the C programmer to know whether a pointer is null before dereferencing it.</li>
+                    <li>
+                        <ul>
+                            <li>int x = 10;</li>
+                            <li> int *p = NULL; // null pointer</li>
+                            <li>p = &amp;x; // null pointer now holds address of int 'x'</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <h3>Use of NULL Pointers</h3>
+                    <ul>
+                        <li>To initialize a pointer variable in cases where pointer variable has not been assigned any valid address yet.</li>
+                        <li>To check for legitimate address location before accessing any pointer variable.</li>
+                        <li>By doing so, we can perform error handling while using pointers with C.</li>
+                        <li>Example of such error handling can be: dereference pointer variable only if it's not NULL.</li>
+                        <li>To pass a null pointer to function argument when we don't want to pass any valid memory address.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>More on NULL Pointers</h3>
+                    <ul>
+                        <li>NULL macro is defined as ((void*)0) in header files of most of the C compiler implementations.</li>
+                        <li>NULL pointer vs Uninitialized pointer - An unitialized pointer contains an undefined value.</li>
+                        <li>A null pointer stores a defined value, which is the one decided by the environment to not be a valid memory address for any object.</li>
+                        <li>NULL pointer vs Void Pointer &rarr; Null pointer is a value where as void pointer is a type</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            #include &lt;stdio.h&gt;
+                            <br> int main()
+                            <br> {
+                            <br> int a = 34;
+                            <br> int *ptr = NULL; // when we dereference this value the program crashes so to stay safe we do
+                            <br> if (ptr != NULL) //for error handling
+                            <br> {
+                            <br> printf("The value at ptr is %d", *ptr); // dereferencing to print the value
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> printf("The pointer is a null pointer and cannot be dereferenced.");
+                            <br> }
+                            <br> printf("The address of a is %d", ptr);
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-17 = Bubble Sort </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Bubble Sort</h1>
+        <div class="wh">
+            <ul>
+                <li>It is called bubble sort because it bubbles up lighter elements to the left and stores larger elements towards the right. </li>                
+            </ul>
+           <div class="code">
+            <div class="dotc"></div>
+            <button class="accordion">code</button>
+            <div class="panel">
+                <pre>
+                    <code>
+
+                        void bubbleSort(int arr[], int n)
+                        {
+                            int i, j;
+                            bool flag;
+                            // Outer pass
+                            for(i = 0; i &lt; n; i++)
+                            {
+                                flag = false;                                   // Set flag as false
+                                for(j = 0; j &lt; n-i-1; j++)
+                                {
+                                    // Compare values
+                                    if( arr[j] > arr[j+1])
+                                    {
+                                        swap(arr[j],arr[j+1]);
+                                        flag = true;
+                                    }
+                                }
+                                // If no to elements are swapped then
+                                // array is sorted. Hence Break the loop.
+                                if(!flag)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+           </div>
+           <ul>
+            <li>Time complexity
+                <ul>
+                    <li>Best case &rarr; When the array is already sorted  &rarr; O(n) (We get this when we optimize our code)</li>
+                    <li>Worst case &rarr; When the array is sorted in descending order &rarr; O(n<sup>2</sup>)</li>
+                </ul>
+            </li>
+           </ul>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

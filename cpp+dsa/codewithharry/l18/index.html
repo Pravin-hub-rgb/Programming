@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-18 = Recursions & Recursive Functions</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Recursions & Recursive Functions</h1>
+        <div class="wh">
+            <ul>
+                <li>When a function calls itself it is called recursive function</li>
+                <li>The recursive function consisits of a base case and recursive condition.</li>
+                <li>It is very important to add a base case in recursive function otherwise recursive function will
+                    never stop executing.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+
+                    int factorial(int n){
+                        if (n&lt;=1){
+                            return 1;
+                        }
+                        return n * factorial(n-1);
+                    }                    
+                </code>
+            </pre>
+            </div>
+            <ul>
+                <li>These are the step which will be performed by recursive condition:
+                    <ul>
+                        <li>4 * factorial( 4-1 )</li>
+                        <li>4 * 3 * factorial( 3-1 )</li>
+                        <li>4* 3 * 2 * factorial( 2-1 )</li>
+                        <li>4 * 3 * 2 * 1</li>
+
+                    </ul>
+                </li>
+                <li>Note that recursive functions are not always the best option. They perform well in some problems but not in every problem.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

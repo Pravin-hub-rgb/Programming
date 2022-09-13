@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-8 = Arrays and ArrayList</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Arrays and ArrayList</h1>
+        <div class="wh">
+            <h2>Why do we need Arrays?</h2>
+            <p>
+                It was simple when we had to store just five integer numbers and now lets assume we have to store 5000
+                integer numbers. Is it possible to use 500 variable? <b>NO</b>
+                <br>So, to handle this situations, in almost all programming language we have a concept called Array.
+            </p>
+            <div class="in">
+                <h3>Array</h3>
+                <p>Array is a data structure use to store a collection of data.</p>
+            </div>
+            <div class="wh">
+                <p>Syntax:</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            datatype[] variable_name = new datatype[size];
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <p>Examples</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            // we want to store roll numbers
+                            int[] rollnos = new int[5];
+                            // OR
+                            int[] rollnos = {1,2,3,4,5};
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Internal working of array:</h3>
+                <div class="wh">
+                    <p>
+                        int[] rollnos; &rarr; declaration of array.
+                        <br>&darr;
+                        <br>rollnos are getting defined in stack <br>
+                        <br>rollnos = new int[5]; &rarr; initialization
+                        <br>&darr;
+                        <br>actual memory allocation happens here. Here, object is being created in heap memory.
+                    </p>
+                </div>
+
+                <div class="wh">
+                    <img src="../images/arrays.svg" alt="">
+                </div>
+                <p>The above concept is known as <b>Dynamic memory allocation</b> which means at runtime or execution
+                    time memory is allocated</p>
+                <div class="wh">
+                    <img src="../images/arrays2.svg" alt="">
+                </div>
+            </div>
+            <div class="in">
+                <h3>Internal Representation of Array</h3>
+                <ul>
+                    <li>
+                        Internally in Java, memory allocation totally depends in on JVM whether it be continous or not!
+                    </li>
+                    <li><b>Reasons</b>
+                        <ol>
+                            <li>Objects are stored in heap memory</li>
+                            <li>In JLS (Java Language Specification) it is mentioned that heap objects are not continous
+                            </li>
+                            <li>Dynamic memory allocation. Hence, array objects in Java may not be continous (depends on
+                                JVM)</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Index of an array</h3>
+                <div class="wh">
+                    <img src="../images/arrays3.svg" alt="">
+                </div>
+            </div>
+            <div class="in">
+                <h3>new keyword:</h3>
+                <p>
+                    int[] arr = new int[5];
+                    <br> used to create an object
+                <ul>
+                    <li>It will create an object in heap memory of array size 5</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>Some Properties
+                        <ul>
+                            <li>
+                                If we don't provide values in the array, internally by default it store [0, 0, 0, 0, 0]
+                                for above
+                                size array.
+                            </li>
+                            <li>
+                                Arrays are stored in heap memory.
+                                <ul>
+                                    <li>
+                                        Primitive (int, char etc) are stored in stack.
+                                    </li>
+                                    <li>All other objects are stored in heap memory.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                In an array, since we can change the objects, hence they are mutable.
+                                <ul>
+                                    <li>Strings are immutable</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <p>Arrays.toString(array) &rarr; internally uses for loop and gives the output in proper format.</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays
+                            public class Arrays{
+                                psvm(){
+                                    int[] arr = {1,2,3,4,5};
+                                    sout(Arrays.toString(arr));
+                                } 
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+                <div class="wh">
+                    <p>output</p>
+                    [1, 2, 3, 4, 5]
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h1>2D Array</h1>
+            <div class="wh">
+                <img src="../images/arrays4.svg" alt="">
+                arr[0] = [22, 33, 44]
+                <br>arr[0][2] = 44
+            </div>
+            <div class="wh">
+                <p>Printing 2d Array</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;
+
+                            public class MultiDimensionArr {
+                                public static void main(String[] args) {
+
+                                    int[][] arr = {
+                                        {1,2,3},
+                                        {4,5,6},
+                                        {7,8,9}
+                                    };
+
+                                    // first way
+                                    for (int i = 0; i &lt; arr2.length; i++) {
+                                        for(int j = 0; j&lt;arr2[i].length;j++){
+                                            System.out.print(arr2[i][j]+" ");
+                                        }
+                                        System.out.println(" ");
+                                    } 
+                                    System.out.println(Arrays.toString(arr2));
+                                    
+                                    // second way
+                                    // for each method
+                                    for(int [] a : arr2){
+                                        System.out.println(Arrays.toString(a));
+                                    }
+                            
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h1>ArrayList</h1>
+            <p>
+                Arraylist is a part of collection framework and is present in java.util.package. It provide ws with
+                dynamic arrays in Java. It is slower then standart arrays.
+            </p>
+            <div class="wh">
+                <p>Syntax</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.ArrayList;
+
+                            ArrayList&lt;Integer> list = new ArrayList&lt;>();
+                            // Integer - class wrapper
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Internal working of ArrayList</h3>
+                <ul>
+                    <li>Size is fixed internally</li>
+                    <li>Suppose arraylist gets filled by some amount
+                        <ul>
+                            <li>It will make an arraylist of say double the size of arraylist initially</li>
+                            <li>Old elements are copied in the new array</li>
+                            <li>old ones are deleted</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>methods in ArrayList</h3>
+                    <ul>
+                        <li>
+                            someArrList.size() &rarr; to get the length of the arraylist
+                        </li>
+                        <li>
+                            someArrList.get(2) &rarr; to get the element sitting on 2 index.
+                        </li>
+                    </ul>
+            </div>
+            <div class="wh">
+                <h3>Why we need ArrayList</h3>
+                <div class="in">
+                    <p>Case </p>
+                    <p>Elements in 2D array</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                int[][] multiArr = {
+                                    {1,2,3},
+                                    {4,5},
+                                    {6,7,8,9,10}
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <p>&uarr; Reason why we have to specify number of rows when we initialize 2D array is that we need
+                        fix number to define rows and number of column doesn't matter as it can be different.</p>
+                    <ul>
+                        <li>Storing a 2D array with fix number of row and coloum is easy during runtime</li>
+                        <li>But to storing a 2D array whose number columns are not fixed for each row is difficult</li>
+                        <li>That's why we use ArrayList</li>
+                    </ul>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                // 1D array
+                                import java.util.ArrayList;
+
+                                public class ArrayListEx {
+                                    public static void main(String[] args) {
+                                        // we use arraylist when we don't know how much is size of row
+                                        // syntax
+                                        // ArrayList<wrapper_class> name = new ArrList<>();
+                                        ArrayList<Integer> list = new ArrayList<>();
+                                        list.add(99);
+                                        list.add(100);
+                                        list.add(122);
+                                        list.add(123);
+                                        System.out.println(list);
+                                        list.set(0,101);
+                                        System.out.println(list);
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                // 2D array 
+                                import java.util.ArrayList;
+                                import java.util.Scanner;
+                                
+                                public class MultiArrList {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        ArrayList&lt;ArrayList&lt;Integer>> list = new ArrayList&lt;>();
+                                
+                                        // Initialization
+                                        for(int i = 0; i&lt;3 ; i++){
+                                            list.add(new ArrayList<>());
+                                        }
+                                
+                                        // add elements
+                                        for (int i = 0; i &lt; 3; i++) {
+                                            for (int j = 0; j &lt; 3; j++) {
+                                                list.get(i).add(in.nextInt());
+                                            }
+                                        }
+                                
+                                        // Print
+                                        System.out.println(list);
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3><a href="../assignments/index.html#t4" target="_blank">Assignments</a></h3>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

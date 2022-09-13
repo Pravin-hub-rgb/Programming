@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-3 = If-else || while loop </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>If-else || while loop</h1>
+        <div class="wh">
+            <h2>If statements</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+
+                    if(condition){
+                        //code
+                    }
+                </code>
+            </pre>
+            </div>
+            <p>If the condition within () is true, then execute the entire code block within {}.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+                    
+                    if(a>b){
+                        cout&lt;&lt; a &lt;&lt; endl;
+                    }
+                    if(a&lt;b){
+                        cout&lt;&lt; b &lt;&lt; endl;
+                    }
+                </code>
+            </pre>
+            </div>
+            <p>
+                In the above example, instead of checking again for b>a in the second if block, we know that if if the
+                first if condition does not get fulfilled then the second block must be executed no matter what. This
+                can be achieved using on if-else block.
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+                    
+                    if(a>b){
+                        cout&lt;&lt; a &lt;&lt; endl;
+                    }
+                    else{
+                        cout&lt;&lt; b &lt;&lt; endl;
+                    }
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <p>New concept
+                    <br> cin >> n &rarr; Waits for user to give input and assign it to n at its address.
+                </p>
+                <ul>
+                    <li>Example
+                        <ol>
+                            <li>int a ; <br> cin >> a;</li>
+                            <li>variable a will get initialized with a random , 'garbage' value </li>
+                            <li>Program waits for user to give input (on integer) to a and stores a with that value</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <p>Back to if-else
+                    <br>else is the default case senerio
+                </p>
+                <div class="wh">
+                    <p>if-else ladder</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                                <code>
+
+                                    if(a==1){
+                                        cout&lt;&lt; true;
+                                    } else if(a==0){
+                                        cout&lt;&lt; false;
+                                    } else {
+                                        cout&lt;&lt; "wrong input";
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

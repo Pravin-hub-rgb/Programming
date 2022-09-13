@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-51 = Coding Rock, Paper, Scissors Exercise</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l52/index.html">Next Lec &rarr;</a>
+            <a href="../l49/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1></h1>
+        <div class="inside-content">
+
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Coding Rock, Paper, Scissors Exercise</h1>
+        <div class="inside-content">
+            <p>
+                here we will include &lt;time.h&gt; as we are going to use some of their function
+            </p>
+            <div class="in">
+                <h3>generating random numbers</h3>
+                <div class="wh">
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> #include &lt;stdlib.h&gt; //to use srand() is guess
+                        <br> #include &lt;time.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> srand(time(NULL)); //srand takes seed as an input and is defined inside stdlib.h
+                        <br>//if we pass no. it is going to generate only one value that's why we pass time(NULL) which returns
+                        <br>//seconds and as time keeps on changing we get different value each time.
+                        <br> printf("The random between 0 to 100 is %d\n",rand()%100);
+                        <br> printf("The random between 0 to 30 is %d\n",rand()%30);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <p>
+                we have to create Rock, Paper and Scissors game
+                <br>Player 1 &rarr; choose rock
+                <br>Player 2 (computer) &rarr; chose scissors &rarr; then player 1 gets 1 point
+                <br>rock vs scissors - rock wins
+                <br>paper vs scissors - scissors wins
+                <br>paper vs scissors - paper wins
+                <br><br>Write a C program to allow a user to play this game three times with computer. Log the scores of computer the player. Display the name of the winner at the end.
+                <br>notes: You have to display name of the player during the game. Take user name as an input from the user.
+            </p>
+        </div>
+        <div class="inside-content">
+            <button class="accordion">My code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h&gt;
+                    <br> #include &lt;stdlib.h&gt;
+                    <br> #include &lt;string.h&gt;
+                    <br> #include &lt;time.h&gt;
+                    <br> int score_user = 0;
+                    <br> int score_comp = 0;
+                    <br> int genR()
+                    <br> {
+                    <br> srand(time(NULL));
+                    <br> return rand() % 3;
+                    <br> }
+                    <br> int whoWon(int guess, int ran, char name[])
+                    <br> {
+                    <br> if (guess == 0)
+                    <br> {
+                    <br> if (ran == 0)
+                    <br> {
+                    <br> printf("Tie between both");
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 1)
+                    <br> {
+                    <br> printf("computer won this round");
+                    <br> score_comp++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 2)
+                    <br> {
+                    <br> printf("%s won this round", name);
+                    <br> score_user++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> }
+                    <br> else if (guess == 1)
+                    <br> {
+                    <br> if (ran == 0)
+                    <br> {
+                    <br> printf("%s won this round", name);
+                    <br> score_user++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 1)
+                    <br> {
+                    <br> printf("Tie between both");
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 2)
+                    <br> {
+                    <br> printf("computer won this round");
+                    <br> score_comp++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> }
+                    <br> else if (guess == 2)
+                    <br> {
+                    <br> if (ran == 0)
+                    <br> {
+                    <br> printf("Computer won this round");
+                    <br> score_comp++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 1)
+                    <br> {
+                    <br> printf("%s won this round", name);
+                    <br> score_user++;
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> else if (ran == 2)
+                    <br> {
+                    <br> printf("Tie between both");
+                    <br> printf("\n***Scoreboard***\n %s = %d and computer = %d", name, score_user, score_comp);
+                    <br> }
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> int main()
+                    <br> {
+                    <br> char options[3][10] = {
+                    <br> "rock",
+                    <br> "paper",
+                    <br> "scissors"};
+                    <br>
+                    <br> int guess;
+                    <br> int ran;
+                    <br> char name[20];
+                    <br> int i=0;
+                    <br>
+                    <br> printf("*********** ROCK PAPER SCISSORS GAME ********************\n");
+                    <br> printf("Enter player name :");
+                    <br> scanf("%s", &name);
+                    <br> printf("%s is playing against computer\n", name);
+                    <br>
+                    <br> while (i &lt; 3)
+                    <br> {
+                    <br> printf("\n********** ROUND %d *********\n", i + 1);
+                    <br> printf("%s \nPress 0 for selecting rock\nPress 1 for selecting paper\nPress 2 for selecting <br>scissors : ", name);
+                    <br> scanf("%d", &guess);
+                    <br> if (guess == 0)
+                    <br> {
+                    <br> ran = genR();
+                    <br> printf("%s : %s\n", name, options + guess);
+                    <br> printf("Computer : %s\n", options + ran);
+                    <br> whoWon(0, ran, name);
+                    <br> }
+                    <br> else if (guess == 1)
+                    <br> {
+                    <br> ran = genR();
+                    <br> printf("%s : %s\n", name, options + guess);
+                    <br> printf("Computer : %s\n", options + ran);
+                    <br> whoWon(1, ran, name);
+                    <br> }
+                    <br> else if (guess == 2)
+                    <br> {
+                    <br> ran = genR();
+                    <br> printf("%s : %s\n", name, options + guess);
+                    <br> printf("Computer : %s\n", options + ran);
+                    <br> whoWon(2, ran, name);
+                    <br> }
+                    <br> i++;
+                    <br> }
+                    <br> if(score_user>score_comp)
+                    <br> {
+                    <br> printf("\n%s is the winner!!\n",name);
+                    <br> } else if(score_comp>score_user)
+                    <br> {
+                    <br> printf("\nComputer is the winner\n");
+                    <br> }else{
+                    <br> printf("\nIts a Tie between both\n");
+                    <br> }
+                    <br> return 0;
+                    <br> }
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

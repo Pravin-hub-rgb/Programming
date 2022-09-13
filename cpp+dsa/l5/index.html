@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-5 = Bitwise Operations, For loops, Operator Precedence and variable scoping</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t10" class="link">Assignments</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="wh">
+            <h2>Bitwise operator</h2>
+            <p>These all works on bit</p>
+            <div class="in">
+                <h3>Bitwise AND (&)</h3>
+                <p>
+                    E.g: 2 and 3 = 010 & 011 = 010
+                    <br>Boths bits must be 1 to get 1
+                    <br>E.g.: 5 & 7 = 101 & 111 = 101
+                </p>
+            </div>
+            <div class="in">
+                <h3>Bitwise OR : (|)</h3>
+                <p>
+                    If at least one of the bits is 1 then the output will be 1.
+                    <br>2 | 5 = 010 | 101 = 111
+                    <br>3 | 6 = 011 | 110 = 111
+                </p>
+            </div>
+            <div class="in">
+                <h3>Bitwise NOT (~)
+                    <p>
+                        E.g: consider 4 byte representation
+                        <br>a = 2 = 000....0010
+                        <br>~a = ~2 = 111....1101 (signed bit)
+                    </p>
+                </h3>
+            </div>
+            <div class="in">
+                <h3>Bitwise XOR (^)</h3>
+                <p>
+                    If different bits &rarr; 1
+                    <br>If same bits &rarr; 0
+                    <br>E.g: 5 ^ 7 = 101 ^ 111 = 010
+                </p>
+            </div>
+            <div class="in">
+                <h3>Left Shift : (&lt;&lt;)</h3>
+                <p>
+                    E.g: 5 &lt;&lt; 1 &rarr; Left shit 5, 1 time
+                    <br> = 101 &lt;&lt; 1 &rarr; 00.....0101 &lt;&lt; 1
+                    <br> == 00....1010 = 10 = 5*2<sup>1</sup>
+                    <br><br>
+                    E.g: 3 &lt;&lt; 2 &rarr; 00...011 &lt;&lt; 2
+                    <br> = 00...1100 = 12 = 3<sup>2</sup>
+                    <br>In some cases we multiply with power of 2 but in some cases, this isn't ture.
+                </p>
+            </div>
+            <div class="in">
+                <h3>Right Shift : (>>)</h3>
+                <p>
+                    E.g: 15 >> 1 = 000...1111 >> 1
+                    <br>= 000...0111 = 7
+                    <br><br>
+                    E.g: 5 >> 2 = 000...0101 >> 2
+                    <br>000...0001 = 1
+                    <br>Padding in &lt;&lt; and >> for <b>positive</b> numbers is done with 0.
+                    <br>For <b>negative</b> numbers, padding is compiler dependent.
+                </p>
+            </div>
+            <div class="in">
+                <h3>Increment/Decrement</h3>
+                <ul>
+                    <li>We can write i = i + 1 as i++ or ++i
+                        <ul>
+                            <li>i++ is post-increment</li>
+                            <li>++i is pre-increment</li>
+                        </ul>
+                    </li>
+                    <li>We can write i = i - 1 as i-- or --i</li>
+                    <li>a = a + b is same as a += b</li>
+                </ul>
+                <div class="wh">
+                    <p>
+                        <b>post-increment</b> &rarr; the value gets used first and then increments.
+                    </p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                        <code>
+
+                            int i = 3, a = 2;
+                            int sum = a + (i++);
+                            //sum = 2 + 3;
+                            sum = 5;
+                            // now i is 4.
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>pre-increment</b> &rarr; the value gets incremented first and then gets used.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>For Loop</h2>
+            <p>
+                structure : for(initialization ; Condition ; updation){
+                <br> // code
+                <br> }
+            </p>
+            <div class="in">
+                <p>Print fibonacci numbers</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                            <code>
+
+                                #include &lt;iostream>
+                                    using namespace std;
+                                    int main()
+                                    {
+                                        int a = 0;
+                                        int b = 1;
+                                        cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; " ";
+                                        for (int i = 2; i <= 10; i++)
+                                        {
+                                            int nextNum = a + b;
+                                            cout &lt;&lt; nextNum &lt;&lt; " ";
+                                            a = b;
+                                            b = nextNum;
+                                        }
+                                    
+                                        return 0;
+                                    }                
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Scope</h2>
+            <ul>
+                <li>The life-time of a variable where does the variable exist and after what line of code will it get
+                    destroyed </li>
+                <li>In short, its accessibility</li>
+            </ul>
+            <div class="in">
+                <p>Example 1</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                <code>
+
+                    #include &lt;iostream>
+                    using namespace std;
+
+                    int main(){
+                        int a = 3;
+                        cout&lt;&lt; a &lt;&lt; endl;
+
+                        if(true){
+                            cout&lt;&lt; a &lt;&lt; endl;
+                        }
+                    }
+                </code>
+            </pre>
+                </div>
+                <p>a is accessible throughout the main() function, after it is declared.</p>
+            </div>
+            <div class="in">
+                <p>Example 1</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                <code>
+
+                    #include &lt;iostream>
+                    using namespace std;
+
+                    int main(){
+                        int a = 3;
+                        cout&lt;&lt; a &lt;&lt; endl;
+                        // this will print 3
+                        // as this is 'local' to int main()
+
+                        if(true){
+                            int a = 5;
+                            cout&lt;&lt; a &lt;&lt; endl;
+                            // it will print 5
+                            // this is 'local' to if block,
+                            // and is only accessible within the if block
+                        }
+                    }
+                </code>
+            </pre>
+                </div>
+                <p>a is accessible throughout the main() function, after it is declared.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Precedence Table</h2>
+            <p>Just like BODMAS prioritizes brackets, we can also prioritize calculations using brackets.</p>
+        </div>
+        <div id="t10" class="wh">
+            <h2><a href="../assingments/index.html#l5">Assingments</a></h2>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

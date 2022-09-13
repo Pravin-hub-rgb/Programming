@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-6 = Conditions and Loops </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Conditions and Loops</h1>
+        <div class="wh">
+            <h2>Condition</h2>
+            <p>It provide check for the statement.</p>
+            <div class="in">
+                <h3>if-else statement</h3>
+                <p>
+                    Used to check the condtion, it checks the boolean condition True or False.
+                </p>
+                <div class="wh">
+                    <p>Syntax</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                        <code>
+
+                            if(boolean expression True or False){
+                                // body
+                            } else {
+                                // do this
+                            }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <p>Example:</p>
+                <div class="code">
+                    <div class="dots">
+                        <div class="f"></div>
+                        <div class="s"></div>
+                        <div class="t"></div>
+                    </div>
+                    <pre>
+                        <code>
+
+                            public class IfElse {
+                                public static void main(String [] args){
+                                    int salary = 25400;
+                                    if(salary>10000){
+                                        salary = salary + 2000;
+                                    } else {
+                                        salary = salary + 1000;
+                                    }
+
+                                    System.out.printh(salary);
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Multiple if-else statement</h3>
+                <p>It executes one condition from multiple statements.</p>
+                <div class="wh">
+                    <p><b>Syntax:</b></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                if(condition 1){
+                                    // code to be executed if condition 1 is true 
+                                } else if (condition 2){
+                                    // code to be executed if condition 2 is true
+                                } else if (condtition 3){
+                                    // code to be executed if condition 2 is true
+                                } else {
+                                    // code to be executed if condition 2 is true
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <p>Example:-</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class MultipleIfElse {
+                                    public static void main(String [] args){
+                                        int salary = 25400;
+                                        if(salary&lt;=10000){
+                                            salary+=1000;
+                                        } else if(salary &lt;= 20000){
+                                            salary += 2000;
+                                        }else{
+                                            salary += 3000;
+                                        }
+                                        System.out.println(salary);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <p><b>Output :- 28400</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Loops</h2>
+            <p>Loops are used to iterate a part of program several times.</p>
+            <div class="in">
+                <h3>for loop</h3>
+                <p>Is it gernerally used when we know how many times loop will iterate.</p>
+                <div class="wh">
+                    <p><b>Syntax :-</b></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                for(initialization; condition; increment/decrement){
+                                    // body 
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p><b>Example: print numbers from 1 to 5</b></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class ForLoop {
+                                    public static void main(String [] args){
+                                        for(int num = 1; num &lt;=5; num++){
+                                            System.out.println(num);
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>Example 2 :- print numbers from 1 to n</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                            input java.util.Scanner;
+                            public class ForLoop {
+                                public static void main(String[] args){
+                                    Scanner in = new Scanner(System.in);
+                                    int n = in.nextInt();
+                                    for(int num=1; num &lt;= n; num++){
+                                        System.out.print(num + " ");
+                                    }
+                                }
+                            }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>While loop</h3>
+                <p>
+                    It is used when we don't know how many time the loop will iterate.
+                </p>
+                <div class="wh">
+                    <p>Syntax</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                while(condition){
+                                    // code to be executed
+                                    // increment/decrement 
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>Example</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class Whileloop{
+                                    public static void main(String[] args){
+                                        int num = 1;
+                                        while(num &lt;= 5){
+                                            System.out.println(num);
+                                            num++;
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>do while loop</h3>
+                <p>It is used when we want to execute our statement at least one time.</p>
+                <ul>
+                    <li>It is called exit control loop because it checks the condition after execution of statement.
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p>Syntax</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                do{
+                                    // code to be executed
+                                    // update statement - increment/decrement 
+                                } while(condition);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>Example :</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class doWhileloop{
+                                    public static void main(String[] args){
+                                        int n=1;
+                                        do{
+                                            System.out.println(n);
+                                            n++;
+                                        } while(n&lt;=5);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <div class="part2">
+                    <div>
+                        <div>
+                            <p><B>While loop</B></p>
+                        </div>
+                        <div>
+                            <p><B>Do while loop</B></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>&rarr; Used when number of iteration is fixed</p>
+                        </div>
+                        <div>
+                            <p>&rarr; Used when we want to execute the statement at least ones</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>&rarr; Entry controlled loop </p>
+                        </div>
+                        <div>
+                            <p>&rarr; Exit controlled loop</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>&rarr; no semicolen required at the end of while (condition)</p>
+                        </div>
+                        <div>
+                            <p>&rarr; semicolon is required at the end of while (condition)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Programs</h2>
+            <div class="in">
+                <h3>Program to find largest of three numbers</h3>
+                <p>
+                    "Take 3 interger input from keyboard. Find the largest number among them"
+                </p>
+                <div class="wh">
+                    <p>Approach 1</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+                                public class LargestOfThree {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int a = in.nextInt();
+                                        int b = in.nextInt();
+                                        int c = in.nextInt();
+
+                                        int max = a;
+                                        if(b > max){
+                                            max = b;
+                                        }
+                                        if(c > max){
+                                            max = c;
+                                        }
+                                        System.out.println(max);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>Approach 2</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+                                public class LargestOfThree {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int a = in.nextInt();
+                                        int b = in.nextInt();
+                                        int c = in.nextInt();
+
+                                        int max = 0;
+                                        if(a > b){
+                                            max = a;
+                                        } else {
+                                            max =b;
+                                        }          
+                                        if(c > max){
+                                            max = c;
+                                        }                       
+                                        System.out.println(max);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>Approach 3</p>
+                    <p>Using Math.max :- Math is a class present in java.lang package and max is a
+                        function present in it which takes two number as an argument and return maximum
+                        out of them. </p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+                                public class LargestOfThree {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int a = in.nextInt();
+                                        int b = in.nextInt();
+                                        int c = in.nextInt();
+
+                                        int max = Math.max(c,Math.max(a,b));                   
+                                        System.out.println(max);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Alphabet case check</h3>
+                <p>
+                    “ Take an input character from keyboard and check weather it
+                    is Upper case alphabet or lower case alphabet”
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Scanner;
+                            public class AlphabetCaseCheck {
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner (System.in);
+                                    char ch = in.next().trim().charAt(0);
+                                    if (ch > 'a' && ch &lt;= 'z'){
+                                        System.out.println("Lowercase");
+                                    }
+                                    else {
+                                        System.out.println("Uppercase");
+                                    }
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3> Find the nth Fibonacci number.</h3>
+                <p>
+                    <b>Fibonacci numbers </b>&rarr; a series of numbers in which each number
+                    ( Fibonacci number ) is the sum of the two preceding numbers.
+                    <br> Ex :- 0,1,1,2,3,5,8,13…
+                    <br><br>" Given three input a, b, n a is the starting number of Fibonacci series and
+                    b is the next number after a, n is an number to find the nth Fibonacci
+                    number"
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Scanner;
+                            public class FibonacciNumbers{
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner (System.in);
+                                    int n = in.nextInt();
+                                    int a = in.nextInt();
+                                    int b = in.nextInt();
+                                    int count = 2;
+                                    while(count &lt;= n){
+                                        int temp = b;
+                                        b = b+a;
+                                        a = temp;
+                                        count++;
+                                    }
+                                    System.out.println(b);
+                                }
+                            }                             
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Counting occurrence</h3>
+                <p>
+                    "Input two numbers, find that hoe many times second number
+                    digit is present in first number"
+                    <br>Ex :- first number = 14458
+                    <br>Second number = 4
+                    <br>Output = 2, because 4 is present 2 times in first number
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Scanner;
+                            public class CountingOccurence {
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner(System.in);
+                                    int count = 0;
+                                    int Fn = in.nextInt();
+                                    int Sn = in.nextInt();
+                                    while (Fn>0){
+                                        int rem = Fn % 10;
+                                        if (rem == Sn){
+                                        count++;
+                                    }
+                                    Fn = Fn/10;
+                                    }
+                                    System.out.println(count);
+                                }
+                            }                             
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Reverse a number</h3>
+                <p>
+                    "A number I input from the keyboard and Show the output as
+                    Reverse of that number "
+                    <br>Example :- Input :- 12345
+                    <br> Output :- 54321
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                            <code>
+                              
+                                import java.util.Scanner;
+                                public class ReverseANumber {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        int num = in.nextInt();
+                                        int ans = 0;
+                                        while(num > 0){
+                                            int rem = num % 10;
+                                            num /= 10;
+                                            ans = ans * 10 + rem;
+                                        }
+                                        System.out.println(ans);
+                                    }
+                                }                                 
+                            </code>
+                        </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Calculator Program</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+                                    public class Calculator {
+                                        public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        // Take input from user till user does not press X or x
+                                        int ans = 0;
+                                        while (true) {
+                                            // take the operator as input
+                                            System.out.print("Enter the operator: ");
+                                            char op = in.next().trim().charAt(0);
+                                            if (op == '+' || op == '-' || op == '*' || op == '/' || op == '%') {
+                                                // input two numbers
+                                                System.out.print("Enter two numbers: ");
+                                                int num1 = in.nextInt();
+                                                int num2 = in.nextInt();
+                                                if (op == '+') {
+                                                    ans = num1 + num2;
+                                                }
+                                                if (op == '-') {
+                                                    ans = num1 - num2;
+                                                }
+                                                if (op == '*') {
+                                                    ans = num1 * num2;
+                                                }
+                                                if (op == '/') {
+                                                    if (num2 != 0) {
+                                                    ans = num1 / num2;
+                                                    }
+                                                }
+                                                if (op == '%') {
+                                                    ans = num1 % num2;
+                                                }
+                                                } else if (op == 'x' || op == 'X') {
+                                                    break;
+                                                } else {
+                                                    System.out.println("Invalid operation!!");
+                                                }
+                                                System.out.println(ans);
+                                            }
+                                        }
+                                    }
+                                </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

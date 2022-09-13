@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-9 = Control Structures, If Else and Switch-Case Statement</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Control Structures, If Else and Switch-Case Statement</h1>
+        <div class="wh">
+            <h2>Control Structures</h2>
+            <p>
+                The work of control structures is to give flow and logiv to a program.
+                <br>There are three types of basic control structures in C++.
+            </p>
+            <div class="in">
+                <h3>Sequence Structure</h3>
+                <ul>
+                    <li>Sequence structure refers to the sequence in which program execute instructions one after
+                        another.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Selection Structure</h3>
+                <ul>
+                    <li>Selection structure refers to the execution of instruction according to the selected condition,
+                        which can be either true or false.</li>
+                    <li>There are two ways to implement selection structures, by "<b>if-else statements</b>" or by
+                        "<b>switch case statements</b>"</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Loop structure</h3>
+                <ul>
+                    <li>Loop structure refers to the execution of an instruction in a loop until the condition gets
+                        false.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>If Else statements</h2>
+            <ul>
+                <li>If else statements are used to implement a selection structure.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        int age;
+                        cout&lt;&lt; "Tell me your age"&lt;&lt;endl;
+                        cin>>age;
+                    
+                        // 1. Selection control structure: If else-if else ladder
+                         if((age<&lt;18) && (age>0)){
+                             cout&lt;&lt;"You can not come to my party"&lt;&lt;endl;
+                         }
+                         else if(age==18){
+                             cout&lt;&lt;"You are a kid and you will get a kid pass to the party"&lt;&lt;endl;
+                         }
+                         else if(age&lt;1){
+                             cout&lt;&lt;"You are not yet born"&lt;&lt;endl;
+                         }
+                         else{
+                             cout&lt;&lt;"You can come to the party"&lt;&lt;endl;
+                         }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Switch case statements</h2>
+            <ul>
+                <li>In switch case statements, the value of the variable is tested with all the cases.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        // 2. Selection control structure: Switch Case statements
+                        switch (age)
+                        {
+                        case 18: 
+                            cout&lt;&lt;"You are 18"&lt;&lt;endl;
+                            break;
+                        case 22: 
+                            cout&lt;&lt;"You are 22"&lt;&lt;endl;
+                            break;
+                        case 2: 
+                            cout&lt;&lt;"You are 2"&lt;&lt;endl;
+                            break;
+                    
+                        default:
+                        cout&lt;&lt;"No special cases"&lt;&lt;endl;
+                            break;
+                        }
+                    
+                        cout&lt;&lt;"Done with switch case";
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

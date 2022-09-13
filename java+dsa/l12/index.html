@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-12 = String and Stringbuilder </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>String and Stringbuilder</h1>
+        <div class="wh">
+            <ol>
+                <li>Stack memory &darr;
+                    <ul>
+                        <li>When we declare a variable </li>
+                        <li>E.g. &rarr; <span class="font">int a = 10;</span></li>
+                        <li>So, here the reference variable is stored in stack memeory</li>
+                    </ul>
+                </li>
+                <li>Heap memory &darr;
+                    <ul>
+                        <li>Reference variable stored in stack memory is pointing to the object of that variable which
+                            are store in heap memory.</li>
+                    </ul>
+                </li>
+                <li>Memory allocation &darr;
+                    <ul>
+                        <li>Memory allocations specifies the memory address to a program.</li>
+                        <li>There are two types of memory
+                            <ol>
+                                <li>Stack Memory</li>
+                                <li>Heap memory</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li>Static memory allocation &darr;
+                    <ul>
+                        <li>It performs type checking at compile time</li>
+                        <li>Here, errors will show at compiler time</li>
+                        <li>Declare datatype before you use it.</li>
+                        <li>More control & runtime erros are reduced.</li>
+                        <li>Here you've to write a little bit more code, but you've more control over the type of data.
+                        </li>
+                    </ul>
+                </li>
+                <li>Dynamic memory allocation &darr;
+                    <ul>
+                        <li>Perform type checking at runtimes</li>
+                        <li>Here, errors might not shown till the program runs</li>
+                        <li>No need to declare a datatype of variable</li>
+                        <li>It saves time in writing code but might give error at runtime.</li>
+                    </ul>
+                </li>
+                <li>Garbage collections : &darr;
+                    <ul>
+                        <li>More than one reference variable can points to the same object</li>
+                        <li>If any changes made in the object of an reference variable that will be reflected to all
+                            other pointing to the same object</li>
+                        <li>If there is an object without reference variable then the object will be destroyed by
+                            "garbage collection".</li>
+                        <li>So that's how garbage collection works</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="in">
+                <h2>What are strings ? </h2>
+                <ul>
+                    <li>Strings are pile or a sequence of characters for E.g "Giovanni"</li>
+                    <li>It a datatype & it a non-primitive </li>
+                    <li>Syntax : <b>String name = "Giovanni Georgio";</b></li>
+                    <li>It is the most commonly used class in the JAVA class library</li>
+                    <li>Every string that you create it's actually an object of type string</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Concepts</h2>
+                <div class="wh">
+                    <h3>1 &rarr; String pool</h3>
+                    <ul>
+                        <li>It is a seperate memory structure inside the heap</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>Why seperate pool? why not just putting it out in the heap normally like every other object?
+                    </h3>
+                    <ul>
+                        <li>All the similar values of strings are not like recreated in the pool.</li>
+                        <li>Eg: <ul>
+                                <li>String a = "Giovanni"
+                                    <br>String b = "Giovanni" <br><img src="../images/string.svg" alt="">
+                                    <ul>
+                                        <li>So it's gonna be like it already exists in the pool so no need to create it
+                                            again </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Use case : It maakes our program more optimized</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>Note &rarr; If you try to change this object via this reference variable it will not change for
+                        b.</h3>
+                    <ul>
+                        <li><b>Why?</b>
+                            <ul>
+                                <li>Immutability
+                                    <ul>
+                                        <li>Strings are immutable in java, we can't change the object or modify object.
+                                        </li>
+                                        <li>If you wanna rename to "kunal" you've to create a new object for that</li>
+                                        <li>Strings are immutable for security purpose.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="in">
+                        <h3>Why strings are immutable?</h3>
+                        <div class="wh">
+                            <img src="../images/string2.svg" alt="">
+                            <ul>
+                                <li>All person's named as kunal &rarr; All of them will be having just one object
+                                    "kunal"</li>
+                                <li>Suppose one person decides to change their name
+                                    <ul>
+                                        <li>If it was not immutable, if a person 1 decided to change their name to
+                                            karan.</li>
+                                        <li>So, that will change his name to karan</li>
+                                    </ul>
+                                </li>
+                                <li>If it was allowed to modify this than all person 1, 2, 3 & 4 will name will be karan
+                                    in the database</li>
+                                <li>Therefore for the security reasons strings are immutable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Comparisons of strings</h3>
+                    <p>
+                        <b>== method &rarr; comparitor</b>
+                    <ol>
+                        <li>a &rarr; "kunal"
+                            <br>b &rarr; "kunal"
+                            <br>a == b &rarr; in this case it gives false
+                        </li>
+                        <li>a &rarr; "kunal"
+                            <br>b &rarr; a
+                            <br>a == b &rarr; in this case it gives true
+                        </li>
+                    </ol>
+                    comparitor actually checks for value and reference variable
+                    <br>If the reference variable is pointing to the same object
+                    </p>
+                    <div class="in">
+                        <h3>How to create different objects of same values</h3>
+                        <ul>
+                            <li>By using new keyword
+                                <ul>
+                                    <li><b>String a =("kunal");
+                                            <br>String b = new String("kunal");
+                                        </b></li>
+                                </ul>
+                            </li>
+                            <li>So these values are getting created in heap outside the pool
+                                <ul>
+                                    <li>because it is object so it will be in heap only.</li>
+                                    <li>
+                                        <div class="wh"><img src="../images/string3.svg" alt=""></div>
+                                        Even though the values are same but these two a & b are not pointing to the same
+                                        object in that case it will give false
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>When you only need to check value, use .equals method</b>
+                        </p>
+                        <div class="code">
+                            <pre>
+                                <code>
+
+                                    String name1 = new String("kunal");
+                                    String name2 = new String("kunal");
+
+                                    system.out.println(name1.equals(name2)); // true
+                                </code>
+                            </pre>
+                        </div>
+                        <p>
+                            here it does not care whether the reference variable are pointing to same object or not it
+                            just care about the value.
+                        </p>
+                    </div>
+                </div>
+                <div class="wh">
+                    <ul>
+                        <li>Class is a name group of properties and funtcions.</li>
+                        <li>We can't do &darr;
+                            <ul>
+                                <li>System.out.println(name1[0]);</li>
+                            </ul>
+                        </li>
+                        <li>But in arrays we can do this</li>
+                        <li>Though it's sort of collection of characters but we cannot do &uarr; this</li>
+                    </ul>
+                    <p>So, we have to use a method called <b>charAt()</b></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                System.outprintln(name.charAt(0));
+                                // here <b>out</b> is a variable of type printstream
+                                // printstream is a class, it has method in it called println
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>function overloading or method overloading</h3>
+                    <ul>
+                        <li>Function overloading happens when two functions have same name.</li>
+                    </ul>
+                    <div class="code">
+                        <pre>
+                            <code>
+
+                                // Eg
+                                fun () {
+                                    // code 
+                                }           // &cross; function overloading
+                                fun () {
+                                    // code 
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="code">
+                        <pre>
+                            <code>
+
+                                // Eg 2
+                                fun (int a) {
+                                    // code 
+                                } 
+
+                                 // &check; It is allowed having different arguments with same function / method name
+                                
+                                 fun (int a, int b) {
+                                    // code 
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <p>At compile time it decides which function to run.</p>
+                </div>
+                <div class="wh">
+                    <h3>Pretty printing :-</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                float a = 453.1234f;
+                                System.out.printf(" formatted number is %.2f " + a);
+                                // printf &rarr; formatted string
+                                // %.2f &rarr; place holder 
+                            </code>
+                        </pre>
+                    </div>
+                    <ul>
+                        <li>
+                            Well % means a place holder & till how many decimal value do we want.
+                            <ul>
+                                <li>For eg &rarr; 2 &rarr; %.2f (f because it's float)</li>
+                            </ul>
+                        </li>
+                        <li>It rounds off all as well.</li>
+                    </ul>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                // For &pi;
+                                System.out.printf(Math.PI);
+
+                                // For string
+                                System.out.printf("Hello my is %s but everybody calls me %s", "Giovanni Georgio", "Georgio");
+                                // o/p &rarr; Hello my name is Giovanni Georgio but everybody calls me Georgio
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="in">
+                        <h3>Some common format specifiers :-</h3>
+                        <ol>
+                            <li><b>%c &rarr; </b> Character</li>
+                            <li><b>%d &rarr; </b> Decimal number (base 10)</li>
+                            <li><b>%e &rarr; </b> Exponential floating - point number</li>
+                            <li><b>%f &rarr; </b> Floating - point number</li>
+                            <li><b>%i &rarr; </b> Interger (base 10)</li>
+                            <li><b>%o &rarr; </b> Octal number (base 8)</li>
+                            <li><b>%s &rarr; </b> String</li>
+                            <li><b>%u &rarr; </b> Unsigned decimal (integer) number</li>
+                            <li><b>%x &rarr; </b> Hexadecimal number (base 16)</li>
+                            <li><b>%f &rarr; </b> date/time</li>
+                            <li><b>%n &rarr; </b> Newline</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Operator Overloading</h3>
+                    <p><b>Operator + ('Overloaded for string type')</b></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                System.out.println('a' + 'b'); // 195 - both char get converted to int
+
+                                System.out.println("a" + "b"); // ab - these are in string type
+
+                                System.out.println('a' + 3); // 100
+
+                                System.out.println((char) ('a' + 3)); // d
+
+                                // Note &rarr; when you're doing the addition with characters
+                                // it converts into its value into a number 
+                                // then it use that number to solve the problem
+
+
+                                System.out.println("a" + 1);
+                                // interger will be converted to Integer that will call toString()
+                                // Note &rarr; when an integer is concatenated (added)
+                                // with a string it gets converted to its wrapper callse interger
+
+                                // this is same as after a few steps: "a" + "1"
+                        
+                                System.out.println("kunal" + new ArrayList&lt;>()); // kunal[]
+                                // System.out.println("kunal" + new Integer(46));
+                                // &uarr; gives error
+                                // operator '+' cannot be applied to integer and arraylist.
+                            </code>
+                        </pre>
+                    </div>
+                    <ul>
+                        <li>
+                            Operator '+' in Java is only defined for primitives and when any one of these values is a
+                            string.
+                        <li>Operator '+</li> you can only use with primitive and you can only use this with all complex
+                        objects as well
+                        <ul>
+                            <li>But, the only condition is at least one of those objectc should be of type string.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre>
+                            <code>
+
+                                // Eg
+                                sout(new Integer(56) + " " + new Arraylist&lt;>(););
+                                       &darr;                &darr;           &darr; 
+                                 complex obj     string type      complex object
+                                 
+                                 // here the entire result will be of string type 
+                                 // o/p 56[]
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        So, on string objects the plus operator is being overloaded, because it concatenate more than
+                        one string
+                    </p>
+                    <ul>
+                        <li>
+                            It java operator overloading is not supported for some software engineering consideration
+                            but, in C++ it is supported.
+                        </li>
+                        <li>In C++ & python you can modify '+' operator
+                            <ul>
+                                <li>Basically modify its purpose / functionality</li>
+                            </ul>
+                        </li>
+                        <li>You can also make it act like as a multiplication or subtraction, you can add complex data
+                            type as well.</li>
+                        <li>but this results in poor code, that is why in Java it is not supported.</li>
+                        <li>Java has only given us operator overloading exception for strings, but you cannot do it on
+                            your own type like array, hash map. It will not allow ever for the modification</li>
+                        <li>It's the only operator that is intentionally overloads in java to support string
+                            concatination or string joining.</li>
+                        <li><b>new Integer( )</b> &rarr; Its now deprecated.</li>
+                    </ul>
+                    <div class="code">
+                        <pre>
+                            <code>
+
+                                sout("a" + 'a'); 
+                                // o/p aa 
+                                // If one of the data type is string ans will be string
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>String Performance</h3>
+                    <p>This is important for invterview</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class Performance {
+                                    public static void main(String[] args) {
+                                        String series = "";
+                                        for (int i = 0; i < 26; i++) {
+                                            char ch = (char) ('a'+i);
+                                            series+=ch;
+                                            // this is actually creating new string object in every iterations
+                                        }
+                                        // so as this have time complexity of O(N^2) this is not efficient
+                                        // what's the better way ??
+                                        // where we can easily modify the string -- is there any such data type  ??
+                                        // this is where string builder comes in equations and it is different class
+                                        System.out.println(series);
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                    <ul>
+                        <li>Here the new object is being created in every iteration, it is not changing the original
+                            object because the string are immutable therefore this one are copying the old one and its
+                            appending it with the new one.</li>
+                        <li>So much waste of memory because of this and it won't be having any reference variable. So
+                            time complexity = O(n<sup>2</sup>) worst.</li>
+                        <li><b>Solution &darr; </b>
+                            <ul>
+                                <li>Wouldn't it be great if there was a sort of datatype that will allow us to modify
+                                    its value because strings fails to allow this.</li>
+                                <li>So, the answer is "<b>stringbuilder</b>"</li>
+                            </ul>
+                        </li>
+                        <li>Stringbuilder is a seperate class</li>
+                    </ul>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class SBuilder {
+                                    public static void main(String[] args) {
+                                        StringBuilder builder = new StringBuilder();
+                                        // this one is mutable
+                                        for (int i = 0; i &lt; 26; i++) {
+                                            char ch = (char) ('a'+i);
+                                            builder.append(ch);
+                                        }
+                                        // so this comes with many methods which are self explainatory 
+                                        // like builder.reverse() etc
+                                        System.out.println(builder.toString());
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="in">
+                        <h3>Methods that string provide (some)</h3>
+                        <div class="wh">
+                            <p><b>1 &rarr; .toCharArray()</b> &rarr; It converts strings into array character</p>
+                            <div class="code">
+                                <div class="dotc"></div>
+                                <pre>
+                                    <code>
+                                        
+                                        String name = "Giovanni Georgio";
+                                        System.out.println(Arrays.toString(name.toCharArray()));
+                                        // o/p ['G', 'i', 'o', 'v', 'a', 'n', 'n', 'i', ' ', 'G', 'e', 'o', 'r', 'g', 'i', 'o' ]
+
+                                        // Even that space will be counted
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="wh">
+                            <div class="code">
+                                <div class="dotc"></div>
+                                <pre>
+                                    <code>
+
+                                        // .length() &rarr; It will provide you the length 
+
+                                        // .toLowerCAse() &rarr; It will convert into lowercase 
+                                        // It's not actually going to convert the original object because of Immutability
+
+
+                                        // .indexof &rarr; It will give the index value 
+
+                                        // .lastIndexOf &rarr; It will give the last index value 
+
+                                        // .strip() &rarr; While spaces are removed. 
+
+                                        // .split() &rarr; add a regex first - after adding regex it will split it over those
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Code for palindrome string</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <pre>
+                                    <code>
+
+                                        public class Palindrome {
+                                            public static void main(String[] args) {
+                                                String str = "abcba";
+                                                System.out.println(isPalin(str));
+                                            }
+                                        
+                                             static boolean isPalin(String str) {
+                                                if( str == null || str.length() == 0) {
+                                                    return true;
+                                                }
+                                                str = str.toLowerCase();
+                                                // converts the string into lowercase
+                                        
+                                                for (int i = 0; i &lt; str.length()/2; i++) {
+                                                    char start = str.charAt(i);
+                                                    char end = str.charAt(str.length()-1-i);
+                                        
+                                                    if(start != end)
+                                                    return false;
+                                                }
+                                                return true;
+                                            }
+                                        }
+                                        
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

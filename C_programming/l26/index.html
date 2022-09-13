@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-26 = Pointers</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l27/index.html">Next Lec &rarr;</a>
+            <a href="../l25/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Pointers</h1>
+
+        <div class="inside-content">
+            <h2>What are pointers?</h2>
+            <ul>
+                <li>Variable which stores the address of another variable</li>
+                <li>Can be of type int, char, array, function or any other pointer.</li>
+                <li>Size depends on the architecture. Ex&rarr; 2 bytes for 32 bit</li>
+                <li>Pointer in C programming language can be declared using * (asterisk symbol)</li>
+            </ul>
+            <div class="in">
+                <h3>Explanation</h3>
+                <img src="../images/pointer.png" alt="">
+                <ul>
+                    <li>a is in integer variable</li>
+                    <li>p is a pointer to integer</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>'&' , '*' and '->' operators</h3>
+                <ul>
+                    <li>The addresss of operator '&' returns the address of a variable</li>
+                    <li>'*' is the dereference operator (also called indirection operator) used to get the value of a given address.</li>
+                    <li>'->' is the arrow operator which is used to get value from structure which is declared as a pointer.</li>
+                </ul>
+                <img src="../images/house.png" alt="">
+                <div class="in">
+                    <h3>Code</h3>
+                    <p>
+                        int a = 76;
+                        <br> int *ptra = &amp;a;
+                        <br>printf("The address of a is %p", ptra);
+                        <br>//%p &rarr; no. in hexadecimal, so as address are in hexadecimal value.
+                        <br>printf("The value of a is %d",*ptra);
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>NULL pointer</h3>
+                <ul>
+                    <li>A pointer that is not assigned any value but NULL is known as the NULL pointer</li>
+                    <li>In computer programming a null pointer is a pointer that does not point to any abject or function</li>
+                    <li>We can use it to initialize a pointer variable when that pointer variable isn't assigned any valid memeory address yet.</li>
+                    <li>int *ptr = NULL;</li>
+                </ul>
+                <div class="in">
+                    <p>
+                        int ptr2;
+                        <br>printf("%p",ptr2); //62374678 garbage value
+                        <br> int *ptr2 = NULL:
+                        <br>printf("%p",ptr2); //0000000
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Use of pointer</h3>
+                <img src="../images/use.png" alt="">
+                <p>
+                    Want to use these three but we can't use array instead we can make link list and using node we can point address of each other then we can do traversing and searching.
+                </p>
+                <div class="in">
+                    <ul>
+                        <li>Dynamic memory allocation &rarr; Freeing or relocating memory in run time.</li>
+                        <li>Arrays, functions and structures</li>
+                        <li>Return multiple values from a function</li>
+                        <li>Pointer reduces the code and improves the performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

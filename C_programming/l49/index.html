@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-49 = Storage classes in C. Auto, Extern, Static & Register Storage classes</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l51/index.html">Next Lec &rarr;</a>
+            <a href="../l48/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1></h1>
+        <div class="inside-content">
+
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Storage classes in C. Auto, Extern, Static & Register Storage classes</h1>
+        <div class="in">
+            <h2>Basic</h2>
+            <p>
+                Declaration&rarr; Telling the compiler about the variable (No space reserved)
+                <br>Definition&rarr; Declaration + space reservation
+            </p>
+        </div>
+        <div class="inside-content">
+            <h2>What is a storage class?</h2>
+            <ul>
+                <li>Previously
+                    <ul>
+                        <li>In previous lectures, we saw that Dynamic memory allocation is a way in which the size of a data structure can be changed during the runtime.</li>
+                        <li>Memory assigned to a program in a typical architecture can be broken down into four segments:
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Code</li>
+                        <li>Static/global variables</li>
+                        <li>Stack</li>
+                        <li>Heap</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <ul>
+                    <li>A storage class defines scope, default intital value & lifetime of a variable.</li>
+                    <ul>
+                        <li>A storage class defines following attributes about a variable in C.
+                            <ul>
+                                <li>Scope &rarr;where will this variable be available</li>
+                                <li>Default initial value &rarr; If we don't initialize the variable explicitly then what will be the default value.</li>
+                                <li>Lifetime &rarr; life of that variable available</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="inside-content">
+            <div class="in">
+                <h3>Storage classes in C</h3>
+                <ul>
+                    <li>In C language, following storage classes are most oftenly used:
+                        <ul>
+                            <li>Automatic variables</li>
+                            <li>External Variables</li>
+                            <li>Static variables</li>
+                            <li>Register variables</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <h3>Automatic variables: auto storage class</h3>
+                    <ul>
+                        <li><b>LOCAL VARIABLES</b></li>
+                        <li>Scope&rarr; Local to the function body they are defined in</li>
+                        <li>Default Value &rarr; Garbage value (a random value)</li>
+                        <li>Lifetime&rarr; Till the end of the function block they are defined in</li>
+                        <li>A variable defined without any storage class specification is by default an automatic variable</li>
+                        <li><i>int harry</i> and <i>auto int harry</i> are same</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>External variables: External storage class</h3>
+                    <ul>
+                        <li>They are same as global variables</li>
+                        <li>Scope&rarr; Global to the program they are defined in</li>
+                        <li>Default initial value&rarr; 0</li>
+                        <li>Lifetime&rarr; These variables are declared outside any function. They are available throughout the lifetime of the program.</li>
+                        <li>A global variable can be changed by any function in the program</li>
+                        <li><i>int harry</i> written outside any function will tell compiler that harry is a global variable</li>
+                        <li>It is recommended to minimize the use of unnecessary global bariables in a program.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>External variables: Extern keyword</h3>
+                    <ul>
+                        <li>extern keyword is used to inform our C compiler that a given variable is declared somewhere else.</li>
+                        <li>Using extern will not allocate space for the variable</li>
+                    </ul>
+                    <div class="in">
+                        <h4>Example</h4>
+                        <div class="part">
+                            <div>
+                                <p>
+                                    //saved as harry.c
+                                    <br> int main()
+                                    <br>{
+                                    <br>int harry = 90;
+                                    <br>printf("%d",harry);
+                                    <br> }
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    //saved as main.c
+                                    <br> #include "harry.c"
+                                    <br>extern int harry;
+                                    <br>int main()
+                                    <br>{
+                                    <br>harry=56;
+                                    <br>printf("%d",harry);
+                                    <br> }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <h4>We can also use extern as</h4>
+                        <button class="accordion">Code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h&gt;
+                                <br>
+                                <br> int myfunc(int a, int b)
+                                <br> {
+                                <br> // int sum=10; //this makes a local variable and it is used
+                                <br> extern int sum; // if we do this the compiler will know that
+                                <br>//this is a global variable either define
+                                <br> //globally or imported from other c file
+                                <br> return sum;
+                                <br> }
+                                <br> int sum = 343;
+                                <br> int main()
+                                <br> {
+                                <br> int sum=myfunc(3,5);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Static variables: Static storage class</h3>
+                    <ul>
+                        <li>Scope&rarr; local to the block they are defined in</li>
+                        <li>Defined initial value&rarr; 0</li>
+                        <li>lifetime&rarr; They are available throughout the lifetime of the program</li>
+                        <li>A static variable remains under existence for use within the function for entire program run.</li>
+                        <li><i>static int harry</i> written inside any function will tell compiler that harry is a static variable.</li>
+                        <li>It is recommended to minimize the use of unnecessary static variables in a program</li>
+                    </ul>
+                    <div class="in">
+                        <div class="wh">
+                            <p>
+                                #include &lt;stdio.h&gt;
+                                <br>
+                                <br> int myfunc()
+                                <br> {
+                                <br> static int myVar;
+                                <br> myVar++; //incrementing each time the function is called
+                                <br> printf("myVar is %d\n",myVar);
+                                <br>
+                                <br> }
+                                <br> int sum = 343;
+                                <br> int main()
+                                <br> {
+                                <br> myfunc(); //calling 1st time
+                                <br> myfunc(); //calling 2nd time
+                                <br> myfunc(); //calling 3rd time
+                                <br> myfunc(); //calling 4th time
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                        <div class="wh">
+                            <p>
+                                Output:
+                                <br>
+                                <br>myVar is 1
+                                <br>myVar is 2
+                                <br>myVar is 3
+                                <br>myVar is 4
+                                <br>&rarr; as the variable is declared as static which freeze the variable and previous value is stored in it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Register variables: Register storage class</h3>
+                    <ul>
+                        <li>Scope&rarr; Local to the function they are declared in</li>
+                        <li>Default initial value&rarr; Garbage value</li>
+                        <li>Lifetime&rarr; They are availbale till the end of the function block, in which the variable is defined.</li>
+                        <li>Register variables requests the compiler to store the variable in the CPU register instead of storing in the memory to have faster access.</li>
+                        <li>Generally this is done for the variables which are being used frequently.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

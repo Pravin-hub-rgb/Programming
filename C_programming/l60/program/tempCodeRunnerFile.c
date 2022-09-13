@@ -1,0 +1,1 @@
+printf("Time now is %s\n",__TIME__);  

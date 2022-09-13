@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-7 = Operators in C</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a class="link" href="#op">Operators in C</a>
+        <a class="link" href="#arith">Arithmetic</a>
+        <a class="link" href="#relation">Relational</a>
+        <a class="link" href="#logical">Logical</a>
+        <a class="link" href="#bitwise">Bitwise</a>
+        <a class="link" href="#assign">Assignment</a>
+        <a class="link" href="#mis">Miscellaneous</a>
+        <a class="link" href="#opPre">Precedence</a>
+        <div class="botbut">
+            <a href="../l8/index.html">Next Lec &rarr;</a>
+            <a href="../l6/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box" id="op">
+        <h1>Operators in C</h1>
+        <div class="wh">
+            <h2>Basic Operators and Functions</h2>
+            <div class="in">
+                <p>Before that we should know </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            int a;
+                            scanf("%d",&a);
+                            // This is a function which enables program to take input from user.
+                        </code>
+                    </pre>
+                </div>
+                <p>
+                    If we want to store number which have decimal in it so we should use float or double.
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <p>Installing Code Runner Extension For VS Code</p>
+            <p>Search Code Runner</p>
+            <p>This extension will help us run our program directly</p>
+        </div>
+    </div>
+    <div class="content-box" id="operator">
+        <h2>So What is an Operator?</h2>
+        <ul>
+            <li>An operator is a symbol used to perform operations in given programming language</li>
+        </ul>
+        <div class="wh">
+            <h2>Types of Operators in C Language</h2>
+            <ul>
+                <li>Arithmetic Operators</li>
+                <li>Relational Operators</li>
+                <li>Logical Operators</li>
+                <li>Bitwise Operators</li>
+                <li>Assignment Operators</li>
+            </ul>
+            <div class="in" id="arith">
+                <h3>Arithmetic Operators</h3>
+                <p>
+                    + &rarr; Addition
+                    <br> - &rarr; Substraction
+                    <br> * &rarr; Multiplication
+                    <br> / &rarr; Division
+                    <br> %&rarr; Modulus (gives remainder)
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+
+                                int main() {
+                                   int a, b;
+                                   a = 34;
+                                   b = 6;
+                                
+                                   printf("a + b=% d\n ", a+b);
+                                   printf("a - b=% d\n ", a-b);
+                                   printf("a * b=% d\n ", a*b);
+                                   printf("a / b=% d\n ", a/b);
+                                   return 0;
+                                } 
+                        </code>
+                    </pre>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>output</b>
+                       <br> a + b = 40
+                        <br>a - b = 28
+                        <br>a * b = 204
+                        <br>a / b = 5
+                    </p>
+                </div>
+            </div>
+            <div class="in" id="relation">
+                <h3>Relational Operators</h3>
+                <p>
+                    == &rarr; Is equal to
+                    <br> != &rarr; Is not equal to
+                    <br> &gt; &rarr; Greater than
+                    <br> &lt; &rarr; Less than
+                    <br> &gt;= &rarr; Greater than or equal to
+                    <br> &lt;= &rarr; Less than or equal to
+                </p>
+                <div class="wh">
+                    <p>These returns true(1) or false(0) value</p>
+                    <p>used in conditional statements</p>
+                </div>
+            </div>
+            <div class="in" id="logical">
+                <h3>Logical Operator</h3>
+                <p>
+                    && &rarr; Logical AND operator: If both the operands are non-zero, then the condition is true.
+                    <br>|| &rarr; Logical OR operator: If any of these two operands is non-zero, then condition becomes true.
+                    <br>! &rarr; Logical NOT operator: It is used to reverse the logical state of its operand. If condition is true, then logical NOT operator will make it false.
+                </p>
+            </div>
+            <div class="in" id="bitwise">
+                <h3>Bitwise Operators</h3>
+                <p>To perform bit level operations, bitwise operators are used. They convert the values we provide to them in binary format and then compare them to provide us the results.</p>
+                <p>
+                    & &rarr; Bitwise AND
+                    <br> | &rarr; Bitwise OR
+                    <br>^ &rarr; Bitwise XOR
+                    <br> ~ &rarr; Bitwise complement
+                    <br> &lt;&lt; &rarr; Shift left
+                    <br> &gt;&gt; &rarr;Shift right
+                </p>
+            </div>
+            <div class="in" id="assign">
+                <h3>Assignment Operator</h3>
+                <p>
+                    &star; = &rarr; Simple assignment operator. Assigns values from right side operands to left side operand.
+                    <br>&star; += &rarr; Add AND assignment operator. It adds the right operand to the left operand and assign the result to the left operand.
+                    <br> &star; -= &rarr; Subtract AND assignment operator. It substracts the right operand from the left operand and the result is addigned to the left operand.
+                    <br>&star; *= &rarr; Multiply AND assignment operator. It multiplies the right operand with the left operand and the result is assigned to the left operand.
+                    <br>&star; /= &rarr; Divide AND assignment operator. It divides the left operand with the operand and the result is assigned to the left operand.
+                </p>
+            </div>
+            <div class="in" id="mis">
+                <h3>Miscellaneous Operators</h3>
+                <p>
+                    &star; sizeof() &rarr; Returns the size of a variable. &rarr; sizeof(a), where a is integer, will return int's size on that architecture.
+                    <br>&star; & &rarr; Returns the address of a variable. &rarr; &a&semi; returns the actual address of the variable.
+                    <br>&star; * &rarr; Pointer to a variable &rarr; *a;
+                    <br>&star; ? : &rarr; Conditional Expression &rarr; If condition is true ? then value X : otherwise value Y
+                </p>
+            </div>
+            <div class="in" id="opPre">
+                <h3>Operator Precedence in C</h3>
+                <p>
+                    In programming languages, the associativity of an operator is a property that determines how operators of the same precedence are grouped in the absence or parenthesis.
+                </p>
+                <div class="part3 wh">
+                    <div>
+                        <div>
+                            <p><b>Category</b></p>
+                        </div>
+                        <div>
+                            <p><b>Operator</b></p>
+                        </div>
+                        <div>
+                            <p><b>Associativity</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Postfix</p>
+                        </div>
+                        <div>
+                            <p>() [] -&gt; . ++ --</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Unary</p>
+                        </div>
+                        <div>
+                            <p>+ - ! ~ ++ -- (type)* & sizeof</p>
+                        </div>
+                        <div>
+                            <p>Right to left</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Multiplicative</p>
+                        </div>
+                        <div>
+                            <p>* / %</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Additive</p>
+                        </div>
+                        <div>
+                            <p>+ -</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Shift</p>
+                        </div>
+                        <div>
+                            <p>&lt;&lt; &gt;&gt;</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Relational</p>
+                        </div>
+                        <div>
+                            <p>&lt; &lt;= &gt; &gt;=</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Equality</p>
+                        </div>
+                        <div>
+                            <p>== !=</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Bitwise AND</p>
+                        </div>
+                        <div>
+                            <p>&</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Bitwise XOR</p>
+                        </div>
+                        <div>
+                            <p>^</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Bitwise OR</p>
+                        </div>
+                        <div>
+                            <p>|</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Conditional</p>
+                        </div>
+                        <div>
+                            <p>? :</p>
+                        </div>
+                        <div>
+                            <p>Right to left</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Assignment</p>
+                        </div>
+                        <div>
+                            <p>= += -= *= /= %= &gt;&gt;= &lt;&lt;= &= ^= !=</p>
+                        </div>
+                        <div>
+                            <p>Right to left</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Comma</p>
+                        </div>
+                        <div>
+                            <p>,</p>
+                        </div>
+                        <div>
+                            <p>Left to right</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>

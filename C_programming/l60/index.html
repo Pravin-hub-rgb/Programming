@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-60 = Predefined Macros & other pre-processor directives</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l62/index.html">Next Lec &rarr;</a>
+            <a href="../l58/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>Predefined Macros & other pre-processor directives</h1>
+        <div class="inside-content">
+            <div class="in">
+                <h2>Recap - Preprocessor directive</h2>
+                <ul>
+                    <li><i>Preprocessor</i> is a king of automated editor that modifies a copy of the original source code</li>
+                    <li>The #include directive causes the preprocessor to fetch the contents of some other file to be included in the present file</li>
+                    <li>In C programming there are two common formats for #include:</li>
+                    <li>This file may in turn #include some other file(s) which may in turn do the same</li>
+                    <li>Most commonly #included files have a ".h" extension, indicating that they are header files.</li>
+                    <li>The #define directive is used to "define" preprocessor "variables"</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Other C Preprocessor</h2>
+                <div class="wh">
+                    <h3>#undef</h3>
+                    <p>Undefines a macro or preprocessor variable</p>
+                </div>
+                <div class="wh">
+                    <h3>#ifdef</h3>
+                    <p>Returns true if some preprocessor variable or macro is defined</p>
+                </div>
+                <div class="wh">
+                    <h3>#ifndef</h3>
+                    <p>Returns true if some preprocessor variable or macro is not defined</p>
+                </div>
+                <div class="wh">
+                    <h3>#if</h3>
+                </div>
+                <div class="wh">
+                    <h3>#else</h3>
+                </div>
+                <div class="wh">
+                    <h3>elif</h3>
+                </div>
+                <div class="wh">
+                    <h3>pragma</h3>
+                    <p>it is used to issue some special commands to the compiler</p>
+                </div>
+            </div>
+            <div class="in">
+                <h2>Predefined Macros in C</h2>
+                <ul>
+                    <li><b>__DATE__</b>&rarr; The current date as character literal in "MMM DD YYY" format.</li>
+                    <li><b>__TIME__</b>&rarr; This contains the current time as a character literal in "HH:MM:SS" format.</li>
+                    <li><b>__FILE__</b>&rarr; The current filename as a string literal.</li>
+                    <li><b>__LINE__</b>&rarr; The current line number as a decimal constant.</li>
+                    <li><b>__STDC__</b>&rarr; Defined as 1(one) when the compiler complies with the ANSI standard.</li>
+                </ul>
+                <div class="wh">
+                    <h3>__FILE__</h3>
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> printf("File name is %s\n",__FILE__);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p>
+                            The file name is code.c
+                        </p>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>__DATE__</h3>
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> printf("Today's date is %s\n",__DATE__);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p> Today's date is Jul 10 2022</p>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>__TIME__</h3>
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> printf("Time now is %s\n",__TIME__);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p>Time now is 10:49:55</p>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>__LINE__</h3>
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> printf("Line no is %d\n",__LINE__);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p>Line no is 4</p>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>__STDC__</h3>
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> int main()
+                        <br> {
+                        <br> printf("ANSI: %d\n",__STDC__);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p>ANSI: 1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

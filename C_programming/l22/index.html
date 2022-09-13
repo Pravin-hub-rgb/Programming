@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-22 = Unit and conversions</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l23/index.html">Next Lec &rarr;</a>
+            <a href="../l21/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>Units and conversions</h1>
+        <div class="in">
+            <p>
+                /* Exercise of Units and Conversions
+                <br> kms to miles
+                <br>inches to foot
+                <br>cms to inches
+                <br>pound to kgs
+                <br>inches to meters
+                <br> */
+            </p>
+        </div>
+        <div class="code">
+            <div class="dotc"></div>
+            <button class="accordion">closest I can get : code</button>
+            <div class="panel">
+                <pre>
+                    <code>
+
+                        #include &lt;stdio.h>
+                        void convert(int com)
+                        {
+                            while (com != 0)
+                            {
+                                int num;
+                                // float fvalue;
+                                if (com == 1)
+                                {
+                                    printf("Enter Kilometers : ");
+                                    scanf("%d\n", &num);
+                                    // fvalue = num * 0.62137119;
+                                    printf("%d kms is %f miles", num, num * 0.62137119);
+                                    break;
+                                }
+                                else if (com == 2)
+                                {
+                                    printf("Enter inches : ");
+                                    scanf("%d\n", &num);
+                                    printf("%d inches is %f foot", num, num / 12);
+                                    break;
+                                }
+                                else if (com == 3)
+                                {
+                                    printf("Enter cms : ");
+                                    scanf("%d\n", &num);
+                                    printf("%d cms is %f inches", num, num * 0.39);
+                                    break;
+                                }
+                                else if (com == 4)
+                                {
+                                    printf("Enter pound : ");
+                                    scanf("%d\n", &num);
+                                    printf("%d pound is %f kgs", num, num * 0.45359237);
+                                    break;
+                                }
+                                else if (com == 5)
+                                {
+                                    printf("Enter inches : ");
+                                    scanf("%d\n", &num);
+                                    printf("%d inches is %f meters", num, num * 0.0254);
+                                    break;
+                                }
+                                else
+                                {
+                                    printf("The value you have entered doesn't comply with any conversion program.");
+                                    break;
+                                }
+                            }
+                        }
+                        
+                        int main()
+                        {
+                            int com;
+                            printf("kms to miles - type 1 : \n inches to foot - type 2 : \n cms to inches - type 3 : \n pound to kgs = - type 4 : \n inches to meters - type 5 \n To quit - type 0 : ");
+                            scanf("%d", &com);
+                            convert(com);
+                            return 0;
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="code">
+            <div class="dotc"></div>
+            <button class="accordion">Harry Code</button>
+            <div class="panel">
+                <pre>
+                    <code>
+
+                        #include &lt;stdio.h>
+
+                            int main()
+                            {
+                            
+                                char input;
+                                float kmsToMiles = 0.621371;
+                                float inchesToFoot = 0.0833333;
+                                float cmsToInches = 0.393701;
+                                float poundToKgs = 0.453592;
+                                float inchesToMeters = 0.0254;
+                                float first, second;
+                            
+                                while (1)
+                                {
+                                    printf("Enter the input character. q to quit\n 1. kms to miles\n 2. inches to foot\n 3. cms to inches\n 4. pound to kgs\n 5. inches to meters\n");
+                            
+                                    scanf(" %c", &input);
+                                    // printf("The character is '%c'", input);
+                                    switch (input)
+                                    {
+                                    case 'q':
+                                        printf("Quitting the program...");
+                                        goto end;
+                                        break;
+                            
+                                    case '1':
+                                        printf("Enter quantity in terms of first unit\n");
+                                        scanf("%f", &first);
+                                        second = first * kmsToMiles;
+                                        printf("%.2f Kms is equal to %.2f Miles\n\n\n", first, second);
+                                        break;
+                            
+                                    case '2':
+                                        printf("Enter quantity in terms of first unit\n");
+                                        scanf("%f", &first);
+                                        second = first * inchesToFoot;
+                                        printf("%f Inches is equal to %f Foot\n", first, second);
+                                        break;
+                            
+                                    case '3':
+                                        printf("Enter quantity in terms of first unit\n");
+                                        scanf("%f", &first);
+                                        second = first * cmsToInches;
+                                        printf("%f Cms is equal to %f Inches\n", first, second);
+                                        break;
+                            
+                                    case '4':
+                                        printf("Enter quantity in terms of first unit\n");
+                                        scanf("%f", &first);
+                                        second = first * poundToKgs;
+                                        printf("%f Pounds is equal to Kgs %f \n", first, second);
+                                        break;
+                            
+                                    case '5':
+                                        printf("Enter quantity in terms of first unit\n");
+                                        scanf("%f", &first);
+                                        second = first * inchesToMeters;
+                                        printf("%f inches is equal to %f meters \n", first, second);
+                                        break;
+                            
+                                    default:
+                                        printf("In default now");
+                                        break;
+                                    }
+                                }
+                                end:
+                            
+                                return 0;
+                            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

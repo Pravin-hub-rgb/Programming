@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-58= C Pre-processor introduction & working</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l60/index.html">Next Lec &rarr;</a>
+            <a href="../l57/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>C Pre-processor introduction & working</h1>
+        <div class="inside-content">
+            <div class="in">
+                <h3>Quick Recap</h3>
+                <ul>
+                    <li>Compiler converts textual form of a C program into an executable.</li>
+                    <li>There are four phases for a C program to become an executable:
+                        <ul>
+                            <li>Preprocessing &rarr; Compilation &rarr; Assembly &rarr; Linking</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <h3>What happens in Preprocessing</h3>
+                    <ul>
+                        <li>Removal of comments</li>
+                        <li>Expansion of macros</li>
+                        <li>Expansion of include files</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>What happens in compilation</h3>
+                    <ul>
+                        <li>Generation of assembly level instructions</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>What happens in assembly</h3>
+                    <ul>
+                        <li>'.o' and '.exe' is created</li>
+                        <li>but function calls are not resolved here (printf)</li>
+                        <li>Assembly level instruction are converted in to machine code.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>What happens in linking</h3>
+                    <ul>
+                        <li>Lins the function implementations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <h2>What is a C preprocessor</h2>
+                <ul>
+                    <li>C preprocessor comes under action before the actual compilation process.</li>
+                    <li>C preprocessor is not a part of the c compiler</li>
+                    <li>It is a text substitution tool</li>
+                    <li>All preprocessor commands begin with a hash symbol(#)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Preprocessor commands example</h3>
+                <ul>
+                    <li>#define</li>
+                    <li>#include &rarr; inserts other header files</li>
+                    <li>#undef </li>
+                    <li>#ifdef</li>
+                    <li>#ifndef</li>
+                    <li>#if</li>
+                    <li>#else</li>
+                    <li>#elif</li>
+                </ul>
+                <div class="wh">
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br>// This is requesting all the content which resides in stdio header file
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>The # INCLUDE DIRECTIVE</h2>
+            <ul>
+                <li>The #include directive causes the preprocessor to fetch the contents of some other file to be included in the present file</li>
+                <li>This file may in turn #include some other file(s) which may in turn do the same.</li>
+                <li>Most commonly the #included files have a ".h" extension, indicating that they are header files.</li>
+            </ul>
+            <div class="in">
+                <h3>Two common #include formats</h3>
+                <ul>
+                    <li>In C programming there are two common formats for #includes:
+                        <ul>
+                            <li>#include &lt; headerfile.h &gt; // The angles brackets say to look in the standard system directories</li>
+                            <li>#include "myfile.h" // The quotation marks say to look in the current directory.</li>
+                        </ul>
+                    </li>
+                    <li>Disk drive full path is allowed, but discouraged since it is not portable:
+                        <ul>
+                            <li>#include &lt;C:\Program files\Harry\bhau\somefile.h &gt; // Too specific</li>
+                            <li>#include &lt;sys/file.h&gt; // Relative and porable path to the standard locations.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="inside-content">
+            <h2>The #define directive </h2>
+            <ul>
+                <li>The #define directive is used to "define" preprocessor "variables"</li>
+                <li>The #define preprocessor directive can be used to globally replace a word with a number</li>
+                <li>It acts as if an editor did a global search-and-replace edit of the file.</li>
+                <li>
+                    <ul>
+                        <li>#define PI 3.14</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Using #define for debugging</h3>
+                <ul>
+                    <li>#define directive can be used for debugging</li>
+                    <li>We can have printing statements that we only only active when debugging</li>
+                    <li>We can "protect" them in a "ifdef" block as follows:
+                        <ul>
+                            <li>#define DEBUG
+                                <br>#ifdef DEBUG // if DEBUG is defined then execute below statements
+                                <br> // executable code
+                                <br>#undef DEBUG
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Macros using #define</h3>
+                <ul>
+                    <li>We can also create macros using #define</li>
+                    <li>Macors operate much like functions, but because they are expanded in place and are generally faster</li>
+                </ul>
+                <div class="wh">
+                    <p>
+                        #define PI 3.14
+                        <br>#define SQUARE (x) x*x // made like a function
+                        <br>int radius = 5;
+                        <br>int area = PI * SQUARE(radius); // area = 3.14 * radius * radius and this will resolve during preprocessing time
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>

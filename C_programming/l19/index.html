@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-19 = Functions</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l21/index.html">Next Lec &rarr;</a>
+            <a href="../l18/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>What is a Function?</h1>
+        <ul>
+            <li>Functions are used to divide a large c program into smaller pieces</li>
+            <li>A function can be called multiple times to provide reusability and modularity to the C program</li>
+            <li>Also called procedure or subroutine</li>
+        </ul>
+        <p>
+            Now let’s understand in simple terms what function is? Function is nothing but a group of code put together
+            and given a name and it can be called anytime without writing the whole code again and again in a program. I
+            know its syntax is bit difficult to
+            understand but don’t worry after reading this whole information about Functions you will know each and every
+            term or thing related to Functions.
+        </p>
+        <div class="in">
+            <h3>Syntax</h3>
+            <p>
+                return_type funciton_name(data_type parameter 1, data_type parameter2,...){
+                <br>//code to be executed
+                <br> return value;
+                <br>// instead of return_type we can also write 'void' means the function doesn't return anything.
+                <br> }
+            </p>
+        </div>
+        <div class="in">
+            <h3>Advantages of Functions :</h3>
+            <ul>
+                <li>We can avoid rewriting same logic or code through functions.</li>
+                <li>We can divide the work among programmers using functions.</li>
+                <li>We can easily debug or can find bugs in any program using functions.</li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>Function Aspects :</h3>
+            <ul>
+                <li>There are 3 aspects of function :-
+                    <ul>
+                        <li>Declaration &rarr; A function is declared to tell a compiler about its existence</li>
+                        <li>Definition &rarr; A function is defined to get some task done</li>
+                        <li>Call &rarr; A function is called in order to be used</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>Types of Functions</h3>
+            <ul>
+                <li><b>Library Functions &rarr;</b> These are pre-defined functions in C Language. These are the
+                    functions which are included in C header files. <br>E.g. printf(), scanf() etc.</li>
+                <li><b>User defined functions &rarr; </b>Functions created by programmer to reduce complexity of a
+                    program i.e. these are the functions which are created by user or programmer.
+                    <br> E.g. Any function created by programmer.
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Function code examples</h2>
+            <p>Arguments are the value which is passed to function</p>
+            <ul>
+                <li>Without aruguments and without return value</li>
+                <li>Without arguments and with return value</li>
+                <li>With arguments and without return value</li>
+                <li>With arguments and with return value</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+
+                <button class="accordion">function syntax</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+
+                            #include &lt;stdio.h>
+                            int sum(int a, int b); // this is called function prototype declaring before defining it.
+                            int main()
+                            {
+                                int a, b, c;
+                                a = 9;
+                                b = 87;
+                                c = sum(a, b); // function call
+                                printf("%d", c);
+                                return 0;
+                            }
+                            int sum(int a, int b) // function declaration
+                            {
+                                return a + b;
+                            }
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Without arguments and without return value :</h3>
+                <p>
+                    In this function we don't have to give any value to the function (argument/parameters) and even
+                    don't have to take any value from it in return.
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <p>
+                            <code>
+
+                            // No Argument and No Return Value
+                            void Star_pattern() // when function is not returning anything we use 'void'
+                            {
+                                int a;
+                                printf("Enter how many stars(*) you want : \n"); /* In this both declaration and definition of function are done together.*/
+                                scanf("%d", &a);
+                                for (int i = 0; i &lt; a; i++)
+                                {
+                                    printf('*');
+                                }
+                            }
+                        </code>
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    As you can see in above example the function with name 'Star_pattern' is not taking any argument
+                    (Since it's parentheses are empty) and even it is not returning any value as we haven't even used
+                    return keyword for returning something and in return_type
+                    we have written 'void' which means nothing. So, with this example you can understand about functions
+                    which do not take any argument or value and even don't return anything.
+                </p>
+            </div>
+            <div class="in">
+                <h3>Without arguments and with return value</h3>
+                <p>
+                    In these type of functions we don't have to give any value or argument to function but in return we
+                    get something from it i.e. some value.
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+
+                            // Without arguments and with return value :
+                            int Sum(); /* Declaration of Function */
+                            
+                            /*Other Code*/
+                            int Sum()
+                            {
+                            
+                                int x, y, z;
+                                printf("Enter no. 1 : \t");
+                                scanf("%d", &x);
+                                printf("\nEnter no. 2 : \t");
+                                scanf("%d", &y);
+                                z = x + y;
+                                return z;
+                            }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <p>
+                    In above example you can see that our function with name 'Sum' is not taking any value or argument
+                    (Since parentheses are empty) but it is returning an integer value. So, that's how we can use
+                    functions which don't take any argument but returns something.
+                </p>
+            </div>
+            <div class="in">
+                <h3>With arguments and without return value</h3>
+                <p>
+                    In these type of function we give arguments or parameters to function but we don’t get any value
+                    from it in return.
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+
+                            // With arguments and without return value :
+                            void Product(int x ,int y ); /* Declaration of Function */
+                            
+                            // Other Code
+                            Product(5,4); /* Calling Product Function in main() */
+                            
+                            
+                            void Product(int a,int b)
+                            {
+                                int Multiplication;
+                                Multiplication = a*b ; /* Definition of Function */
+                                printf("The Product is %d\n\n",Multiplication);
+                            }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <p>
+                    In this example as you can see we have declared function globally i.e. this function can be used
+                    anywhere in our program not just only in main() function. After that we have defined it to tell what
+                    this function will do and in this function as it will
+                    take some value or argument, it will process that data and will give some output but it will not
+                    return anything. When we pass arguments in function at the time of calling it at that time only the
+                    value of variables get copied to variable
+                    of that function means only values are passed. It means any modification which is done on passed
+                    values do not affect the actual values of the variables in main() function. And this call is known
+                    as <b> Call by Value.</b>
+                </p>
+            </div>
+            <div class="in">
+                <h3>With arguments and with return value</h3>
+                <p>
+                    In these functions we give arguments to function and in return we also get some value from it.
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <p>
+                            <code>
+
+                            // With arguments and with return value :
+                            float Percentage(int x,int y); // Declaration of Function
+                            /*Code*/ int x;
+                            x = Percentage(80,95); // Calling Function
+                            /*Code*/
+                            float Percentage(int x,int y)
+                            {
+                            float perct;
+                            perct = ((x+y)/200.0)*100.0; // Definition of Function
+                            return perct;
+                            } 
+                        </code>
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    So, this is the widely used method to define function in this way we give arguments to function and
+                    also get some value in return from it. So, that's all about Functions in C Language.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="code">
+            <div class="dotc"></div>
+
+            <button class="accordion">Multiplication table using loops and function</button>
+            <div class="panel">
+                <pre>
+                <code>
+
+
+                        #include &lt;stdio.h>
+                        void multi(int a);
+                        int main()
+                        {
+                            int num = 0;
+                            printf("Enter the number whose multiplication table you want : ");
+                            scanf("%d", &num);
+                            multi(num);
+                            return 0;
+                        }
+                        
+                        void multi(int a)
+                        {
+                            printf("The multiplication table of :%d\n", a);
+                            for (int i = 1; i < 11; i++)
+                            {
+                                printf("%d X %d = %d \n", a, i, a * i);
+                            }
+                        }
+                </code>
+            </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

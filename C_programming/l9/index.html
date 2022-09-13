@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-9 = C Format Specifiers and Escape Sequences With Examples</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l10/index.html">Next Lec &rarr;</a>
+            <a href="../l8/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>C Format Specifiers and Escape Sequences With Examples</h1>
+
+        <div class="wh">
+            <h2>What is a Format Specifier</h2>
+            <ul>
+                <li>Format specifier is a way to tell the compiler what type of data is in a variable during taking input or displaying output to the user.</li>
+                <li>printf("This is a good boy %a.bf",var); will print var with b decimal points in a 'a' character space.
+                    <p class="in">
+                        float b = 7.333;
+                        <br> printf("%8.4f\n",b);
+                        <br>//This is print 7.3330 with 8 character space and 4 decimal places.
+                    </p>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Some important Format Specifiers</h3>
+                <p>
+                    &star; %c &rarr; prints character
+                    <br>&star; %d &rarr; prints interger
+                    <br>&star; %s &rarr; prints string
+                    <br>&star; %f &rarr; prints decimal numbers
+                    <br>&star; %l &rarr; prints long
+                    <br>&star; %lf &rarr; prints double
+                    <br>&star; %Lf &rarr; prints long double
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Constants in C</h2>
+            <ul>
+                <li>A constant is a value or variable that con't be changed in the program, for example: 15,23,'a',3.4,"code with harry" etc.</li>
+                <li>There are two ways to define constant in C programming
+                    <ul>
+                        <li>const keyword</li>
+                        <li>#define preprocessor</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <p>
+                    //const keyword
+                    <br> #include &lt;stdio.h&gt;
+                    <br> int main()
+                    <br>{
+                    <br> const float b = 7.333;
+                    <br>b= 5.5;
+                    <br>return 0;
+                    <br>}
+                    <br>//error: assignment of read-only variable 'b'.
+                    <br>//This means that we cannot reassign value to a const variable.
+                </p>
+            </div>
+            <div class="in">
+                <p>
+                    //#define preprocessor
+                    <br> #include &lt;stdio.h&gt;
+                    <br> #deine PI 3.14
+                    <br> int main()
+                    <br>{
+                    <br>printf("%f",PI);
+                    <br>// prints 3.14000
+                    <br>return 0;
+                    <br>}
+                    <br>//There is no need to use ';' here.
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Escape Sequences in C</h2>
+            <ul>
+                <li>An escape sequence in C programming language is a sequence of characters.</li>
+                <li>It doesn't represent itself when used inside string literal or character.</li>
+                <li>It is composed o two or more characters starting with backslash \. For example : \n represents new line.</li>
+            </ul>
+            <div class="in">
+                <p>
+                    &star; \t &rarr; Horizontal tab (space)
+                    <br>&star; \r &rarr; Vertical Tab
+                    <br>&star; \a &rarr; Alarm or Beep (Produces windows sound effect)
+                    <br>&star; \b &rarr; Backspace
+                    <br>&star; \f &rarr; Form Feed
+                    <br>&star; \n &rarr; New Line
+                    <br>&star; \r &rarr; Carriage Return
+                    <br>&star; \\ &rarr; Backslash
+                    <br>&star; \' &rarr; Single Quote
+                    <br>&star; \" &rarr; Double Quote
+                    <br>&star; \? &rarr; Question Mark
+                    <br>&star; \nnn &rarr; Octal Number
+                    <br>&star; \xhh &rarr; Hexadecimal Number
+                    <br>&star; \0 &rarr; Null
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Comments</h2>
+            <p>
+                If we want some description of function that we are using in our programs then we can use comments to specify the function work.
+                <br>The preprocessor removes all the comments and compresses the program code.
+            </p>
+            <div class="in">
+                <p>
+                    &star; single line comment &rarr; // this is single line comment.
+                    <br> &star; multi line comment &rarr; /* this is multi line comment
+                    <br>this is multi line comment */
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+
+</body>
+
+</html>

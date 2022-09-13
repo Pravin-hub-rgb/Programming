@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-34 = Strings</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l35/index.html">Next Lec &rarr;</a>
+            <a href="../l32/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+
+    <div class="content-box">
+        <h1>Strings</h1>
+        <div class="inside-content">
+            <h2>Is string a data type in C?</h2>
+            <ul>
+                <li>No</li>
+                <li>We have char, int, float and other data types but not 'string' data type in C</li>
+                <li>String is a supported data type in C but it is a very useful concept used to model real world entities like name, city etc.</li>
+                <li>We express strings using an array of characters terminated by a null character ('\0')
+                    <ul>
+                        <li>Null character tells us that the string is terminated or ended</li>
+                        <li><img src="../images/nullc.png" alt=""></li>
+                        <li>To store a string the length of character should be the length of string + 1 to store the null character ("harryare" length should be 9)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="inside-content">
+            <h2>What are strings </h2>
+            <ul>
+                <li>String: array of characters terminated by NULL character</li>
+                <li>Strings in c is created by creating an array of characters</li>
+                <li>We need an extra character ('\0' or null character) to tell the compiler that the string ends here.</li>
+            </ul>
+            <div class="in">
+                <h3>Creating string</h3>
+                <ul>
+                    <li>We can create a character array in the following ways:
+                        <ul>
+                            <li>char name[] = "harry"; //the compiler automatically puts null character</li>
+                            <li>char name[]= {'h','a','r','r','y','\0'}; //we have to manually put null character here</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Taking string input from the user</h3>
+                <div class="in">
+                    <p>
+                        char str[52];
+                        <br> gets(str); //There is a function in stdio.h library called 'gets' which help us to take input from user.
+                        <br>printf("%s", str); //Either we can use printf or the code below to print the string
+                        <br>puts(str); //aliter
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">big code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> void printStr(char str[])
+                        <br> {
+                        <br> int i=0;
+                        <br> while(str[i]!='\0')
+                        <br> {
+                        <br> printf("%c",str[i]);
+                        <br> i++;
+                        <br> }
+                        <br> printf("\n%s\n",str);//to print whole string we use %s format specifier
+                        <br> }
+                        <br> int main()
+                        <br> {
+                        <br> // char str[] = {'h','a','r','r','y'}; //although the program doesn't show any error but this is not valid
+                        <br> char str[] = {'h','a','r','r','y','\0'}; // this is valid
+                        <br> printStr(str);
+                        <br> //taking input form user
+                        <br> char str2[20]; //gives error when we don't specify the length
+                        <br> gets(str2);
+                        <br> //printing using puts
+                        <br> puts(str2);
+                        <br>
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

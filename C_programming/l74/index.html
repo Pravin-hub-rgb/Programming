@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-74 =Area of the circle using function pointer exercise</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l75/index.html">Next Lec &rarr;</a>
+            <a href="../l72/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Area of the circle using function pointer exercise</h1>
+        <div class="inside-content">
+            <p>
+                Take coordinates of two points from user and by using the Euclid's formula find the distance between two points and find the area of circle with radius as the distance between two coordinates.
+                <br>Try using function pointer
+            </p>
+        </div>
+        <div class="inside-content">
+            <div class="in">
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <p>
+                        <br> #include &lt;stdio.h>
+                        <br> #include &lt;math.h>
+                        <br>
+                        <br> #define PI 3.14159265
+                        <br>
+                        <br> float euclidDis(int x1, int y1, int x2, int y2, float (*ptr)(float))
+                        <br> {
+                        <br> float result;
+                        <br> result = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+                        <br> printf("The distance between two given points are : %f\n", result);
+                        <br> printf("The area of the circle with radius %f is %f",result, ptr(result));
+                        <br> }
+                        <br> float circleArea(float radius)
+                        <br> {
+                        <br> return (PI * pow(radius, 2));
+                        <br> }
+                        <br> int main()
+                        <br> {
+                        <br> float (*rad)(float);
+                        <br> rad = circleArea;
+                        <br> int x1, y1, x2, y2;
+                        <br> printf("Enter the coordinates of first point : \n");
+                        <br> scanf("%d", &x1);
+                        <br> scanf("%d", &y1);
+                        <br> printf("\nEnter the coordinates of second point : ");
+                        <br> scanf("%d", &x2);
+                        <br> scanf("%d", &y2);
+                        <br> euclidDis(x1, y1, x2, y2, rad);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">harry code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h>
+                        <br> #include &lt;stdlib.h>
+                        <br> #include &lt;math.h>
+                        <br>
+                        <br> float Edistance(int x1, int y1, int x2, int y2)
+                        <br> {
+                        <br> int a = (y2-y1)*(y2-y1)+(x2-x1)*(x2-x1);
+                        <br> return sqrt(a);
+                        <br> }
+                        <br>
+                        <br> float areaOfCircle(int x1, int y1, int x2, int y2, float (*distance)(int x1, int y1, int x2, int y2))
+                        <br> {
+                        <br> return distance(x1, y1, x2, y2);
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> int x1, y1, x2, y2;
+                        <br> float dst;
+                        <br> // Take x1, y1 and x2, y2 from the user using scanf
+                        <br> printf("Enter the value of x1\n");
+                        <br> scanf("%d", &x1);
+                        <br>
+                        <br> printf("Enter the value of x1\n");
+                        <br> scanf("%d", &y1);
+                        <br>
+                        <br> printf("Enter the value of x1\n");
+                        <br> scanf("%d", &x2);
+                        <br>
+                        <br> printf("Enter the value of x1\n");
+                        <br> scanf("%d", &y2);
+                        <br> dst = areaOfCircle(x1, y1, x2, y2, Edistance);
+                        <br> printf("The distance between these points is %.2f\n", dst);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

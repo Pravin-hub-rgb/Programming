@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-17 = Inline Functions, Default Arguments & Constant Arguments</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Inline Functions, Default Arguments & Constant Arguments</h1>
+        <div class="wh">
+           <h2>Inline Functions</h2>
+           <ul>
+            <li>Inline functions are used to reduce the function call.</li>
+            <li>When one function is being called multiple times in the program it increases the execution time, so inline function is used to reduce time and increase program efficiency.</li>
+            <li>If the inline function is used when the function is called, the inline function expands the whole function code at the point of a function call, instead of running the function.</li>
+            <li>Inline functions are considered to be used  when the function is small otherwise it will not perform well.</li>
+            <li>Inline is not recommended when <a href="#static">static variables</a> are being used in the function.</li>
+           </ul>
+           <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    inline int product(int a, int b){
+                        return a*b;
+                    }
+                    
+
+                    int main(){
+                        int a, b;
+                        cout&lt;&lt;"Enter the value of a and b"&lt;&lt;endl;
+                        cin>>a>>b;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        cout&lt;&lt;"The product of a and b is "&lt;&lt;product(a,b)&lt;&lt;endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+           </div>
+           <ul>
+            <li>We call the product function multiple times.</li>
+            <li>The main thing to note here is that the function will not run instead of it the function code will be copied at the place where the function is being called.</li>
+            <li>This will decrease the execution time of the program because the compiler doesn't have to copy the values and get the return value again and again from the compiler.</li>
+           </ul>
+        </div>
+        <div class="wh">
+            <h2>Default Arguments</h2>
+            <ul>
+                <li>Default arguments are those values which are used by the function if we don't input our value.</li>
+                <li>It is recommended to write default arguments after the other arguments.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        float moneyReceived(int currentMoney, float factor=1.04){
+                            return currentMoney * factor;
+                        }
+                        
+                        int main(){
+                            int money = 100000;
+                            cout&lt;&lt;"If you have "&lt;&lt;money&lt;&lt;" Rs in your bank account, you will recive "&lt;&lt;moneyReceived(money)&lt;&lt; "Rs after 1 year"&lt;&lt;endl;
+                            cout&lt;&lt;"For VIP: If you have "&lt;&lt;money&lt;&lt;" Rs in your bank account, you will recive "&lt;&lt;moneyReceived(money, 1.1)&lt;&lt; " Rs after 1 year";
+                            return 0;
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Constant Arguments</h2>
+            <ul>
+                <li>Constant arguments are used when you don't want your values to be changed or modified by the function</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        int strlen(const char *p){ // as the arguments is contant so its value won't be modified.
+
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="content-box" id="static">
+        <h2>static variables</h2>
+        <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    int product(int a, int b){
+                        static int c = 0; // this executes only once
+                        c = c + 1; // next time this function will run, the value of c will be retained
+                        return c;
+                    }
+                </code>
+            </pre>
+        </div>
+        <ul>
+            <li>Let's say this function is called 3 times</li>
+            <li>First time 'c' will be 0</li>
+            <li>but second time it won't reinitialize back to 0</li>
+            <li>It will take its last updated value</li>
+        </ul>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

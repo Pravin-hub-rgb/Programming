@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-27 = Friend Classes & Member Friend Functions</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Friend Classes & Member Friend Functions</h1>
+        <div class="wh">
+            <h2>Member Friend Functions</h2>
+            <ul>
+                <li>Friend functions are those functions that have the access to private members of the class in which
+                    they are declared.</li>
+                <li>The main thing to note here is thatmonly that function can access the member function which is made
+                    a friend of the other class.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+
+                    class Complex
+                    {
+                        int a, b;
+                        // Individually declaring functions as friends
+                         friend int Calculator ::sumRealComplex(Complex, Complex);
+                         friend int Calculator ::sumCompComplex(Complex, Complex);
+                    
+                    public:
+                        void setNumber(int n1, int n2)
+                        {
+                            a = n1;
+                            b = n2;a
+                        }
+                    
+                        void printNumber()
+                        {
+                            cout &lt;&lt; "Your number is " &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt; "i" &lt;&lt; endl;
+                        }
+                    };
+                    
+                    int Calculator ::sumRealComplex(Complex o1, Complex o2)
+                    {
+                        return (o1.a + o2.a);
+                    }
+                    
+                    int Calculator ::sumCompComplex(Complex o1, Complex o2)
+                    {
+                        return (o1.b + o2.b);
+                    }
+                    
+                </code>
+            </pre>
+            </div>
+            <ul>
+                <li>In above code snippet
+                    <ul>
+                        <li>A Complex class is created which consists of two friend functions "sumRealComplex" and
+                            "sumCompComplex" of the calculator class.</li>
+                        <li>The main thing to note here is that "sumRealComplex" and "sumCompComplex" are the friend
+                            functions of Complex class so the can access all the private members of the Complex class.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                        <code>
+
+                            // Forward Declaration
+                            class Complex; // telling complier that later we have defined class 'Complex'
+                            
+                            class Calculator
+                            {
+                            public:
+                                int add(int a, int b)
+                                {
+                                    return a + b;
+                                }
+                                int sumRealComplex(Complex, Complex);
+                                int sumCompComplex(Complex, Complex);
+                            };                            
+                        </code>
+                    </pre>
+            </div>
+            <ul>
+                <li>In above code snippet
+                    <ul>
+                        <li>A Complex class is declared at the top which is known as "forward declaration".</li>
+                        <li>Forward declaration hints the compiler that this class is declared somewhere forward in the
+                            code.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <ul>
+                    <li> If we have many function of a class that we want to use then this method will be bulky</li>
+                    <li> So, instead we can declare a particular class as a friend and they can access private member of
+                        Complex class</li>
+                    <li> Aliter : Declaring the entire calculator class as friend.</li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+
+                    <pre>
+                        <code>
+                            
+                                #include &lt;iostream>
+                                using namespace std;
+                                
+                                // Forward Declaration
+                                class Complex; // telling complier that later we have defined class 'Complex'.
+                                
+                                class Calculator
+                                {
+                                public:
+                                    int add(int a, int b)
+                                    {
+                                        return a + b;
+                                    }
+                                    int sumRealComplex(Complex, Complex);
+                                    int sumCompComplex(Complex, Complex);
+                                };
+                                
+                                class Complex
+                                {
+                                    int a, b;
+                                
+                                    // Here we are individually declaring functions as friends
+                                    // friend int Calculator ::sumRealComplex(Complex o1, Complex o2);
+                                    // friend int Calculator ::sumCompComplex(Complex o1, Complex o2);
+                                
+                                    // If we have many function of a class that we want to use then this method will be bulky
+                                    // So, instead we can declare a particular class as a friend and they can access private member of Complex class
+                                
+                                    // Aliter : Declaring the entire calculator class as friend.
+                                    friend class Calculator;
+                                
+                                public:
+                                    void setNumber(int n1, int n2)
+                                    {
+                                        a = n1;
+                                        b = n2;
+                                    }
+                                    void printNumber(void)
+                                    {
+                                        cout &lt;&lt; "Your number is " &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt; "i" &lt;&lt; endl;
+                                    }
+                                };
+                                
+                                int Calculator ::sumRealComplex(Complex o1, Complex o2)
+                                {
+                                    return o1.a + o2.a;
+                                }
+                                int Calculator ::sumCompComplex(Complex o1, Complex o2)
+                                {
+                                    return o1.b + o2.b;
+                                }
+                                
+                                int main()
+                                {
+                                    Complex o1, o2;
+                                    o1.setNumber(1, 3);
+                                    o2.setNumber(4, 3);
+                                
+                                    Calculator calc;
+                                    int res = calc.sumRealComplex(o1, o2);
+                                    cout &lt;&lt; "The sum of real part of o1 and o2 is " &lt;&lt; res &lt;&lt; endl;
+                                    int resc = calc.sumCompComplex(o1, o2);
+                                    cout &lt;&lt; "The sum of complex part of o1 and o2 is " &lt;&lt; resc &lt;&lt;"i"&lt;&lt; endl;
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

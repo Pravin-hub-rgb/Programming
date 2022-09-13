@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-10 = Binary Search </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t1" class="link">Binary Search</a>
+        <a href="#t2" class="link">Questions</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div id="t1" class="content-box">
+        <h1>Binary Search</h1>
+        <div class="wh">
+            <h2>Algorithm:</h2>
+            <p class="font">
+                arr = [2, 4, 6, 9, 11, 12, 14, 20, 36, 48];
+                <br>This is sorted array and in ascending order
+                <br>target to search &rarr; 36
+            </p>
+            <ol>
+                <li>Find the <b>middle element</b></li>
+                <li>Check :
+                    <ul>
+                        <li>If target > middle &rarr; search in right</li>
+                        <li>else &rarr; search in left</li>
+                    </ul>
+                </li>
+                <li>If target == middle &rarr; we found element.</li>
+            </ol>
+            <p>Here, the space in which we are searching is getting divided into two spaces.</p>
+            <div class="in">
+                <h3>Time complexity:</h3>
+                <ul>
+                    <li><b>Best Case : O(1)</b></li>
+                    <li><b>Worst Case : O(logn)</b></li>
+                    <li>Explanation : find the maximum number of comparisons</li>
+                    <li>
+                        N/2<sup>k</sup> = 1
+                        <br>N = 2<sup>k</sup>
+                        <br>log(N) = log(2<sup>k</sup>)
+                        <br>log(N) = klog2
+                        <br>k = logN/log2
+                        <br>k = log<sub>2</sub>N
+                    </li>
+                </ul>
+		<div class="wh">
+			<img src="../images/binaryCom.svg" alt="">
+		</div>	
+		
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+
+                                public class Binary {
+                                    public static void main(String[] args) {
+                                        int[] arr = { -18, -16, 0, 5, 8, 9, 12, 50, 60, 88, 99 };
+                                        int target = 600;
+                                        int ans = binarySearch(arr, target);
+                                        System.out.println(ans);
+                                
+                                    }
+                                
+                                    // return the index
+                                    // return -1 if it does not exist
+                                    static int binarySearch(int[] arr, int target) {
+                                        int start = 0;
+                                        int end = arr.length - 1;
+                                
+                                        while (start &lt;= end) {
+                                            // find the middle element
+                                            // int mid = (start + end)/2; meight be poosible that (start + end) exceeds
+                                            // range of integer in java
+                                            int mid = start + (end - start) / 2;
+                                            if (target &lt; arr[mid]) {
+                                                end = mid - 1;
+                                            } else if (target > arr[mid]) {
+                                                start = mid + 1;
+                                            } else {
+                                                return mid;
+                                            }
+                                        }
+                                        return -1;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Order agnostic Binary Search</h3>
+            <p>
+                Let's say if we don't know that the array is sorted in ascending or descending order
+                <br><span class="font">arr = [90, 75, 18, 12, 6, 4, 3, 1]</span>
+                <br>target = 75
+                <br>Here, target > middle &rarr; search in left
+            <ul>
+                <li>Here, <b>start > end &rarr; descending order</b></li>
+                <li>when <b>start > end &rarr; ascending order</b></li>
+            </ul>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            public class Binary {
+                                public static void main(String[] args) {
+                                    // int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
+                                    int[] arr = { 99, 80, 75, 22, 11, 10, 5, 2, -3 };
+                                    int target = 22;
+                                    int ans = orderAgnosticBS(arr, target);
+                                    System.out.println(ans);
+                                }
+                            
+                                static int orderAgnosticBS(int[] arr, int target) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                            
+                                    // find whether the array is sorted in ascending or descending
+                                    boolean isAsc = arr[start] &lt; arr[end];
+                            
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (arr[mid] == target)
+                                            return mid;
+                            
+                                        if (isAsc) {
+                                            if (target &lt; arr[mid])
+                                                end = mid - 1;
+                                            else
+                                                start = mid + 1;
+                                        } else {
+                                            if (target > arr[mid])
+                                                end = mid - 1;
+                                            else
+                                                start = mid + 1;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t2" class="content-box">
+        <h1>Questions</h1>
+        <div class="wh">
+            <h3>Q&rarr; When do we apply binary search?</h3>
+            <ul>
+                <li>If if you have to do something with sorted array
+                    <ul>
+                        <li>First try binary search on it</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in">
+            <p>Q&rarr; Find Ceiling of a number
+                <br>In a given sorted array
+                <br>ceiling = smallest element which is greater or equal to target element.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+
+                        arr = [2, 3, 5, 7, 9, 14, 16, 18];
+                        ceiling(arr, 14); // gives 14
+                        ceiling(arr, 15); //gives 16
+                    </code>
+                </pre>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                            public class Binary {
+                                public static void main(String[] args) {
+                                    int[] arr = { -18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89 };
+                                    // int[] arr = { 99, 80, 75, 22, 11, 10, 5, 2, -3 };
+                                    int target = 17;
+                                    int ans = ceiling(arr, target);
+                                    System.out.println(ans);
+                                }
+                                // return the index of smallest no >= target
+                                static int ceiling(int[] arr, int target) {
+
+                                    // but what if the target is greater then 
+                                    // the greatest number is the array
+                                    if(target > arr[arr.length-1])
+                                    return -1;
+
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (target &lt; arr[mid])
+                                            end = mid - 1;
+                                        else if (target > arr[mid])
+                                            start = mid + 1;
+                                        else
+                                            return mid;
+                            
+                                    }
+                                    return start;
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; Find floor of a number
+                <br>In a given sorted array
+                <br>floor = greatest element which is smaller or equal to target element.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+
+                        arr = [2, 3, 5, 7, 9, 14, 16, 18];
+                        ceiling(arr, 14); // gives 14
+                        ceiling(arr, 15); //gives 14
+                    </code>
+                </pre>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            public class Binary {
+                                public static void main(String[] args) {
+                                    int[] arr = { -18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89 };
+                                    // int[] arr = { 99, 80, 75, 22, 11, 10, 5, 2, -3 };
+                                    int target = 17;
+                                    int ans = floor(arr, target);
+                                    System.out.println(ans);
+                                }
+                            
+                                static int floor(int[] arr, int target) {
+                                    int start = 0;
+                                    int end = arr.length - 1;                                    
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (target &lt; arr[mid])
+                                            end = mid - 1;
+                                        else if (target > arr[mid])
+                                            start = mid + 1;
+                                        else
+                                            return mid;
+                            
+                                    }
+                                    return end;
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/find-smallest-letter-greater-than-target/">Find smallest
+                    letter greater than target</a>
+            <ol>
+                <li>Exact same approach as ceiling of a number</li>
+                <li>Ignore the target = what we are looking for</li>
+                <li>Wrap around
+                    <ul>
+                        <li>arr = ['c', 'd', 'f', 'j']</li>
+                        <li>target = 'j'</li>
+                        <li>return 'c', the first element.</li>
+                    </ul>
+                </li>
+            </ol>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            class Solution {
+                                public char nextGreatestLetter(char[] arr, char target) {
+                                    
+                                    int start = 0;
+                                    int end = arr.length - 1;        
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (target &lt; arr[mid])
+                                            end = mid - 1;
+                                        else
+                                            start = mid + 1;                 
+                            
+                                    }
+                                    return arr[start % arr.length];
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank">Find first and last position of element in sorted array</a>
+                <br>Facebook quesiton
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            class Solution {
+                                public int[] searchRange(int[] nums, int target) {
+                                    int[] ans = {-1, -1};
+                                    
+                                   // check for first occurrence if target first
+                                    int start = search(nums, target, true);
+                                    int end = search(nums, target, false);
+                                    ans[0]=start;
+                                    ans[1]=end;
+                                    return ans;
+                                }
+                                
+                                // this function just returns the index value of target
+                                int search(int [] nums, int target, boolean findStartIndex){
+                                    int ans = -1;
+                                    int start = 0;
+                                    int end = nums.length - 1;
+                            
+                                    while (start &lt;= end) {
+                                        // find the middle element
+                                        // int mid = (start + end)/2; meight be poosible that (start + end) exceeds
+                                        // range of integer in java
+                                        int mid = start + (end - start) / 2;
+                                        if (target &lt; nums[mid]) {
+                                            end = mid - 1;
+                                        } else if (target > nums[mid]) {
+                                            start = mid + 1;
+                                        } else {
+                                            // petential ans found
+                                           ans = mid;
+                                            if(findStartIndex){
+                                                end = mid -1;
+                                                
+                                            } else {
+                                                start = mid +1;
+                                            }
+                                        }
+                                    }
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="// https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/" target="_blank">Find position of element in sorted array of infinite numbers</a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+
+                            public class Binary {
+                                public static void main(String[] args) {
+                                    int[] arr = { 3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170 };
+                                    int target = 10;
+                                    System.out.println(ans(arr, target));
+                                }
+                            
+                                static int ans(int[] arr, int target) {
+                                    // first find the range
+                                    // start with the sox of size 2
+                                    int start = 0;
+                                    int end = 1;
+                            
+                                    // condition for the target to lie in the range
+                                    // while the target element is greater then 'end' keep doubling
+                                    while (target > arr[end]) {
+                                        int newStart = end + 1;
+                                        // double the box value
+                                        // end = previous end + sizeofbox *2;
+                                        end = end + (end - start + 1) * 2;
+                                        start = newStart;
+                            
+                                    }
+                                    return binarySearch(arr, target, start, end);
+                                }
+                            
+                                static int binarySearch(int[] arr, int target, int start, int end) {
+                            
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (target &lt; arr[mid])
+                                            end = mid - 1;
+                                        else if (target > arr[mid])
+                                            start = mid + 1;
+                                        else
+                                            return mid;
+                            
+                                    }
+                                    return -1;
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/" target="_blank">852. Peak Index in a Mountain Array</a>   
+                <br><a href="https://leetcode.com/problems/find-peak-element/">162.Find peak element</a>             
+                <br>Thise &uarr; also have same solution
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            class Solution {
+                                public int peakIndexInMountainArray(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length-1;
+                                    while(start&lt;=end){
+                                        int mid = start + (end - start)/2;
+                                        if(arr[mid+1] > arr[mid]){
+                                            start = mid + 1;
+                                        } else if(arr[mid+1] &lt; arr[mid]){
+                                            return mid;
+                                        }else {
+                                            end = mid;
+                                        }
+                                    }
+                                    return -1;                                    
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            // input
+                            //[0,1,0]
+                            //[0,2,1,0]
+                            //[0,10,5,2]
+                            
+                            class Solution {
+                                public int peakIndexInMountainArray(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt; end) {
+                                        int mid = start + (end - start) / 2;
+                                        if (arr[mid] > arr[mid + 1]) {
+                                            // you are in dexreasing part of array
+                                            // so this may be the ans, but look at left
+                                            end = mid;
+                                        } else {
+                                            // you are in ascending part of array
+                                            start = mid + 1; // because we know that mid+1 element > mid element
+                                        }
+                                    }
+                                    // in the end, start == end and pointing to the largest number because of the 2
+                                    // checks above
+                                    // start and end are always trying to find max element in the above 2 checks
+                                    // hence, when they are pointing to just one element, that is the max one
+                                    // because that is what the checks say
+                                    // more elaboration: at every point of time for start and end, they have the
+                                    // best possible answer till that time
+                                    // and if we are saying that only one item is remaining, hence cuz of above line
+                                    // that is the best possible ans
+                                    return start; // or return end as both are =
+                            
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/find-in-mountain-array/" target="_blank">Find in mountain array</a>
+                <br>This code is not submitted to leetcode as it need some modifications.
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                            
+                            
+                            class Solution {
+    
+                                public int search(int[] arr, int target){
+                                    int peak = peakIndexInMountainArray(arr);
+                                    int firstTry = orderAgnosticBS(arr, target, 0, peak);
+                                    if(firstTry != -1){
+                                        return firstTry;
+                                    } 
+                                    // try to search in second half
+                                    return orderAgnosticBS(arr, target, peak+1, arr.length-1);
+                                }
+                                
+                                 public int peakIndexInMountainArray(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt; end) {
+                                        int mid = start + (end - start) / 2;
+                                        if (arr[mid] > arr[mid + 1]) {                
+                                            end = mid;
+                                        } else {                
+                                            start = mid + 1; 
+                                        }
+                                    }        
+                                    return start;                             
+                                }
+                                
+                                  static int orderAgnosticBS(int[] arr, int target, int start, int end) {        
+                            
+                                    // find whether the array is sorted in ascending or descending
+                                    boolean isAsc = arr[start] &lt; arr[end];
+                            
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (arr[mid] == target)
+                                            return mid;
+                            
+                                        if (isAsc) {
+                                            if (target &lt; arr[mid])
+                                                end = mid - 1;
+                                            else
+                                                start = mid + 1;
+                                        } else {
+                                            if (target > arr[mid])
+                                                end = mid - 1;
+                                            else
+                                                start = mid + 1;
+                                        }
+                                    }
+                                    return -1;
+                                }   
+                                   
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank">33. Search in rotated sorted array</a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            public class RBS {
+                                public static void main(String[] args) {
+                                    int[] arr = { 1, 2, 3, 4, 5, 5, 6 };
+                                    System.out.println(findPivotWithDuplicates(arr));
+                                }
+                            
+                                static int search(int[] nums, int target) {
+                                    int pivot = findPivot(nums);
+                            
+                                    // if you did not find a pivot, it means the array is not rotated
+                                    if (pivot == -1) {
+                                        // just do normal binary search
+                                        return binarySearch(nums, target, 0, nums.length - 1);
+                                    }
+                            
+                                    // if pivot is found, you have found 2 asc sorted arrays
+                                    if (nums[pivot] == target) {
+                                        return pivot;
+                                    }
+                            
+                                    if (target >= nums[0]) {
+                                        return binarySearch(nums, target, 0, pivot - 1);
+                                    }
+                            
+                                    return binarySearch(nums, target, pivot + 1, nums.length - 1);
+                                }
+                            
+                                static int binarySearch(int[] arr, int target, int start, int end) {
+                                    while (start &lt;= end) {
+                                        // find the middle element
+                                        // int mid = (start + end) / 2; // might be possible that (start + end) exceeds
+                                        // the range of int in java
+                                        int mid = start + (end - start) / 2;
+                            
+                                        if (target &lt; arr[mid]) {
+                                            end = mid - 1;
+                                        } else if (target > arr[mid]) {
+                                            start = mid + 1;
+                                        } else {
+                                            // ans found
+                                            return mid;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            
+                                // this will not work in duplicate values
+                                static int findPivot(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                                        // 4 cases over here
+                                        if (mid &lt; end && arr[mid] > arr[mid + 1]) {
+                                            return mid;
+                                        }
+                                        if (mid > start && arr[mid] &lt; arr[mid - 1]) {
+                                            return mid - 1;
+                                        }
+                                        if (arr[mid] &lt;= arr[start]) {
+                                            end = mid - 1;
+                                        } else {
+                                            start = mid + 1;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            
+                                static int findPivotWithDuplicates(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                                        // 4 cases over here
+                                        if (mid &lt; end && arr[mid] > arr[mid + 1]) {
+                                            return mid;
+                                        }
+                                        if (mid > start && arr[mid] &lt; arr[mid - 1]) {
+                                            return mid - 1;
+                                        }
+                            
+                                        // if elements at middle, start, end are equal then just skip the duplicates
+                                        if (arr[mid] == arr[start] && arr[mid] == arr[end]) {
+                                            // skip the duplicates
+                                            // NOTE: what if these elements at start and end were the pivot??
+                                            // check if start is pivot
+                                            if (start &lt; end && arr[start] > arr[start + 1]) {
+                                                return start;
+                                            }
+                                            start++;
+                            
+                                            // check whether end is pivot
+                                            if (end > start && arr[end] &lt; arr[end - 1]) {
+                                                return end - 1;
+                                            }
+                                            end--;
+                                        }
+                                        // left side is sorted, so pivot should be in right
+                                        else if (arr[start] &lt; arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
+                                            start = mid + 1;
+                                        } else {
+                                            end = mid - 1;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; Find how many times a given array is rotated
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            public class Binary {
+                                public static void main(String[] args) {
+                                    int[] arr = { 4, 5, 6, 7, 0, 1, 2 };
+                                    System.out.println(countRotations(arr));
+                                }                            
+                                private static int countRotations(int[] arr) {
+                                    int pivot = findPivot(arr);
+                                    return pivot + 1;
+                                }
+                            
+                                // this will not work in duplicate values
+                                // use this for non duplicates
+                                static int findPivot(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                                        // 4 cases over here
+                                        if (mid &lt; end && arr[mid] > arr[mid + 1]) {
+                                            return mid;
+                                        }
+                                        if (mid > start && arr[mid] < arr[mid - 1]) {
+                                            return mid - 1;
+                                        }
+                                        if (arr[mid] &lt;= arr[start]) {
+                                            end = mid - 1;
+                                        } else {
+                                            start = mid + 1;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            
+                                // use this when there are duplicates
+                                static int findPivotWithDuplicates(int[] arr) {
+                                    int start = 0;
+                                    int end = arr.length - 1;
+                                    while (start &lt;= end) {
+                                        int mid = start + (end - start) / 2;
+                                        // 4 cases over here
+                                        if (mid &lt; end && arr[mid] > arr[mid + 1]) {
+                                            return mid;
+                                        }
+                                        if (mid > start && arr[mid] &lt; arr[mid - 1]) {
+                                            return mid - 1;
+                                        }
+                            
+                                        // if elements at middle, start, end are equal then just skip the duplicates
+                                        if (arr[mid] == arr[start] && arr[mid] == arr[end]) {
+                                            // skip the duplicates
+                                            // NOTE: what if these elements at start and end were the pivot??
+                                            // check if start is pivot
+                                            if (start &lt; end && arr[start] > arr[start + 1]) {
+                                                return start;
+                                            }
+                                            start++;
+                            
+                                            // check whether end is pivot
+                                            if (end > start && arr[end] < arr[end - 1]) {
+                                                return end - 1;
+                                            }
+                                            end--;
+                                        }
+                                        // left side is sorted, so pivot should be in right
+                                        else if (arr[start] &lt; arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
+                                            start = mid + 1;
+                                        } else {
+                                            end = mid - 1;
+                                        }
+                                    }
+                                    return -1;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="https://leetcode.com/problems/split-array-largest-sum/" target="_blank">Hard 410. Split Array Largest Sum</a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                            public class SplitArray {
+                                public static void main(String[] args) {
+                            
+                                }
+                            
+                                public int splitArray(int[] nums, int m) {
+                                    int start = 0;
+                                    int end = 0;
+                            
+                                    for (int i = 0; i &lt; nums.length; i++) {
+                                        start = Math.max(start, nums[i]); // in the end of the loop this will contain the max item of the array
+                                        end += nums[i];
+                                    }
+                            
+                                    // binary search
+                                    while (start &lt; end) {
+                                        // try for the middle as potential ans
+                                        int mid = start + (end - start) / 2;
+                            
+                                        // calculate how many pieces you can divide this in with this max sum
+                                        int sum = 0;
+                                        int pieces = 1;
+                                        for(int num : nums) {
+                                            if (sum + num > mid) {
+                                                // you cannot add this in this subarray, make new one
+                                                // say you add this num in new subarray, then sum = num
+                                                sum = num;
+                                                pieces++;
+                                            } else {
+                                                sum += num;
+                                            }
+                                        }
+                            
+                                        if (pieces > m) {
+                                            start = mid + 1;
+                                        } else {
+                                            end = mid;
+                                        }
+                            
+                                    }
+                                    return end; // here start == end
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <p>Q&rarr; <a href="" target="_blank"></a>
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

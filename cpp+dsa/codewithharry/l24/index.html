@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-24 = Static Data Members & Methods</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Static Data Members & Methods</h1>
+        <div class="wh">
+            <h2>Static data members</h2>
+            <ul>
+                <li>When a static data member is created, there is only a single copy of the data member which is shared between all the objects of the class.</li>
+                <li>If the data member are not static then every object has an individual copy of the data member and it is not shared.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        class Employee{
+                            int id;
+                            static int count;
+                            public : 
+                                void setData(void){
+                                    cin >> id;
+                                    count++;
+                                }
+                        }
+
+                        int Employee :: count; // by default it is initialized by zero
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Static Methods</h2>
+            <ul>
+                <li>When a static method is created, they become independent of any object and class.</li>
+                <li>Static methods can only access static data members and static methods.</li>
+                <li>Static methods can only be acessed using the scope resolution operator.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc">
+                    <pre>
+                        <code>
+
+                            class Employee
+                            {
+                                int id;
+                                static int count;
+                            
+                            public:
+                                void setData(void)
+                                {
+                                    cout &lt;&lt; "Enter the id" &lt;&lt; endl;
+                                    cin >> id;
+                                    count++;
+                                }
+                                void getData(void)
+                                {
+                                    cout &lt;&lt; "The id of this employee is " &lt;&lt; id &lt;&lt; " and this is employee number " &lt;&lt; count &lt;&lt; endl;
+                                }
+                            
+                                static void getCount(void){
+                                    // cout&lt;&lt;id; // throws an error
+                                    cout&lt;&lt;"The value of count is "&lt;&lt;count&lt;&lt;endl;
+                                }
+                            };
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

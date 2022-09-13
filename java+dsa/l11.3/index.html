@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-11.3 = Insertion Sort </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Insertion Sort</h1>
+        <div class="wh">
+            <p>
+                <b>Array &rarr; 5 ,  3 ,  4 ,  1 ,  2</b> [Partially sorting the array]
+                <br>For every index, put that index element at the correct index of LHS.
+                <br><br><img src="../images/insertion.svg" alt="">
+                <br><br>&nbsp;&nbsp;<img src="../images/insertion2.svg" alt="">
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;
+
+                            public class Insertion {
+                                public static void main(String[] args) {
+                                    int[] arr = { 3, 4, 5, 2, 1 };
+                                    insertion(arr);
+                                    System.out.println(Arrays.toString(arr));
+                                }
+                            
+                                static void insertion(int[] arr) {
+                                    for (int i = 0; i &lt; arr.length - 1; i++) {
+                                        for (int j = i + 1; j > 0; j--) {
+                                            if (arr[j] &lt; arr[j - 1])
+                                                swap(arr, j, j - 1);
+                                            else
+                                                break;
+                                        }
+                                    }
+                                }
+                            
+                                static void swap(int[] arr, int first, int second) {
+                                    int temp = arr[first];
+                                    arr[first] = arr[second];
+                                    arr[second] = temp;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Time complexity:</h3>
+                <ol>
+                    <li>Worst case &rarr; O(n<sup>2</sup>)
+                    <ul>
+                        <li>[ descending sorted ]</li>
+                    </ul></li>
+                    <li>Best case &rarr; O(n)
+                        <ul>
+                            <li>[ already sorted ]</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Why to use insertion sort ?</h3>
+                <ul>
+                    <li><b>Adaptive</b> &rarr; steps get reduced if array is sorted 
+                    <ul>
+                        <li>[ i.e, no of swaps are reduced as compared to bubble sort ]</li>
+                    </ul></li>
+                    <li><b>Stable Sorting algorithm</b></li>
+                    <li>Used for smaller values of n 
+                        <ul>
+                            <li>works good when array is partially sorted
+                                <ul>
+                                    <li>it takes part in hybrid sorting algorithm</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

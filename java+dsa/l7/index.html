@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-7 = Functions/Methods </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Functions/Methods</h1>
+        <div class="wh">
+            <h2>Functions and Methods are same in Java</h2>
+            <ul>
+                <li>A method is a block of code which only runs when it is called.</li>
+                <li>To reuse code : define the code once & use it many times</li>
+            </ul>
+            <div class="in">
+                <p><b>Syntax</b></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            public class Main {
+                                access_modifier return_type name_of_method(){
+                                    // code
+                                    return statement;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+            <div class="in">
+                <p><b>Example</b></p>
+                <div class="code">
+                    <div class="dotc">
+                        <pre>
+                            <code>
+
+                                public class Main(){
+                                    static void myMethod(){
+                                        System.out.print("hi");
+                                    }
+                                }
+
+                                public static void main(){
+                                    myMethod(); // calling the function
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    This method <b>myMethod()</b> does not have a return value
+                </p>
+
+            </div>
+            <ul>
+                <li><b>return_type :-</b>
+                    <ul>
+                        <li> A return statement causes the program control to transfer back to the called of a method.
+                        </li>
+                        <li>A return type may be primitive type like int, char or void type (return nothing)</li>
+                    </ul>
+                </li>
+                <li><b>Few important things to understand &darr;</b>
+                    <ul>
+                        <li>The type of data returned by a method must be compatible with the return type specified by
+                            the method</li>
+                        <li>E.g. &rarr; if return type of some method is boolean, we cannot return an interger </li>
+                        <li>The variable recieving the value returned by a method must also be compatible with the
+                            return type specified for the method.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="wh">
+                <h3>Pass by value</h3>
+                <div class="in">
+                    <p>Example</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public static void main(){
+                                    String name = "java";
+                                }
+
+                                static void greet(int naam){
+                                    System.out.print(naam);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <p>Here copy of 'name' is created and passed to 'greet' function
+                        <br>i.e. passing value of the reference
+                    </p>
+                </div>
+                <div class="in">
+                    <p>Example 2</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public static void main(){
+                                    String name = "a";
+                                    change(name);
+                                    System.out.print(name);
+                                }
+
+                                static void change(String naam){
+                                    naam = "b"; // not changing original object, just creating new object.
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="wh">
+                        name = a
+                        <br>naam = a
+                        <br> // after function call
+                        <br>name = a
+                        <br>naam = b
+                    </div>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Points to be noted</b>
+                    <ol>
+                        <li><b>Primitive data type</b> like int, short, char, byte etc &rarr; just pass value</li>
+                        <li><b>Object</b &arr; passes value of reference variable></li>
+                    </ol>
+                    </p>
+                    <div class="in">
+                        <p>Example 1</p>
+                        <div class="code">
+                            <div class="dotc">
+                                <pre>
+                                    <code>
+
+                                        public static void main(){
+                                            int a = 10;
+                                            int b = 20;
+                                            swap(a,b);
+                                            // after function call the original value of 'a' and 'b' is not changed
+                                        }
+
+                                        static void swap(int num1,int num2){
+                                            int temp = num1;
+                                            num1 = num2;
+                                            num2 = temp; // at function scope level they are swapped
+                                        }
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p>Example 2</p>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
+
+                                    int arr[]=[1,2,3,4,5];
+                                    nums = arr;
+                                    nums[0]=99;
+                                </code>
+                            </pre>
+                        </div>
+                        arr[] becomes &rarr; [99,2,3,4,5]
+                    </div>
+                </div>
+                <div class="wh">
+                    <h2>Scope</h2>
+                    <div class="in">
+                        <h3>Function Scope</h3>
+                        <p>
+                            Variables declared inside a method/function scope (means inside method) can't be accessed
+                            outside the method.
+                        </p>
+                        <div class="wh">
+                            <p>Example</p>
+                            <div class="code">
+                                <div class="dotc"></div>
+                                <pre>
+                                <code>
+
+                                    public static void main(){
+                                        int x = 4;
+                                    }
+
+                                    static void fun(){
+                                        System.out.print(x); // can't be accessed outside main function
+                                    }
+                                </code>
+                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <h3>Block Scope</h3>
+                        <ul>
+                            <li>Variable declared inside the block can't be accessed outside the block</li>
+                            <li>Variable declared outside the block can be accessed inside the block.</li>
+                            <li>Variable declared outside the block can't be redeclared inside the block</li>
+                        </ul>
+                        <div class="wh">
+                            <p>Example</p>
+                            <div class="code">
+                                <div class="dotc"></div>
+                                <pre>
+                                        <code>
+
+                                        
+                                    public static void main(){
+                                        int a = 10;
+                                        int b = 20;
+                                        {
+                                            int a = 5; // Error - Can't redeclare
+                                            a = 100; // can update
+                                            int c = 20;
+                                        }
+                                        c = 5; // can't access block variable
+                                        int c = 15; // can declare another once
+                                        a = 50;
+                                    }
+                                </code>
+                            </pre>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <h3>Loop Scope</h3>
+                        <p>Variables declared inside loop are having loop scope.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Shadowing</h2>
+                <p>
+                    In is the practive of using variables in overlapping scopes with the same name where the variable in
+                    low-level scope overrides the variable of high-level scope. Here the variable at high-level scope is
+                    shadowed by low-level scope variable.
+                </p>
+                <div class="in">
+                    <p>Example</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public class Shadowing(){
+                                    static int x = 90;
+                                    public static void main(){
+                                        System.out.println(x); // x = 90
+                                        int x = 50; // here high-level scope is shadowed by low-level scope
+                                        System.out.println(x); // x = 50
+
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Variable Arguments</h3>
+                <p>
+                    Variable arguments is used to take a variable number of arguments.
+                    <br>A method that takes a variable number of arguments is a var-args method
+                </p>
+                <div class="in">
+                    <p>Syntax</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                public static void main(){
+                                    fun(1,2,4,5,6,7,4,5,3); // can passed any number of variables
+
+                                    multiArg(3, "navy" ,234,5,4,3,5,34,4)
+                                }
+                                static void fun(int ...a){
+                                    // method body
+                                }
+                                static void multiArg(int a, String b, int ...v){
+                                    System.out.println(a + " " + b + " " + Arrays.toString(v));
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Function Overloading</h3>
+                <p>
+                    Function Overloading happens when two functions have same name.
+                </p>
+                <div class="in">
+                    <p>Example 1</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                static void fun(){
+                                    // code
+                                }
+                                static void fun(){
+                                    // code
+                                }
+                                // This will gives ERROR
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <p>Example 2</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                static void fun(int a){
+                                    // code
+                                }
+                                static void fun(int a, int b){
+                                    // code
+                                }
+                                // The ERROR is resolved - as both are having different arguments with same method name.
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    At complie time, it decides which function to run.
+                </p>
+            </div>
+            <div class="in">
+                <h3>Programs</h3>
+                <div class="wh">
+                    <h3>Armstrong number</h3>
+
+                    <p> An Armstrong number is a positive m-digit number that is equal to the sum of the mth powers of
+                        their digits. It is also known as pluperfect, or Plus Perfect, or Narcissistic number. It is an
+                        OEIS sequence A005188. Let’s understand it through an example.
+
+                        <br>Armstrong Number Example
+                        <br>1: 1<sup>1</sup> = 1
+                        <br>
+                        <br>2: 2<sup>1</sup> = 2
+                        <br>
+                        <br>3: 3<sup>1</sup> = 3
+                        <br>
+                        <br>153: 1<sup>3</sup> + 5<sup>3</sup> + 3<sup>3</sup> = 1 + 125+ 27 = 153
+                        <br>
+                        <br>125: 1<sup>3</sup> + 2<sup>3</sup> + 5<sup>3</sup> = 1 + 8 + 125 = 134 (Not an Armstrong Number)
+                        <br>
+                        <br>1634: <sup> </sup>+ 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup> = 1 + 1296 + 81 + 256 = 1643
+                    </p>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                                public class Questions {
+                                public static void main(String[] args) {                                    
+                                    printArm();
+                                }
+                            
+                                // print every three digit armstrong numbers                             
+
+                                    static void printArm(){
+        
+                                        for (int i = 100; i &lt; 1000; i++) {
+                                            int isArm=i;
+                                            int sum=0;
+                                
+                                            while(isArm>0){
+                                                int last =isArm%10;
+                                                sum =sum+ last*last*last;
+                                                isArm/=10;
+                                            }
+                                            if(sum==i){
+                                                System.out.println(i+ " is a Armstrong number");
+                                            }            
+                                        }
+                                    }
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

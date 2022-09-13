@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#l5" class="link">lecture 5</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Leet Code</h1>
+        <div id="l5" class="wh">
+            <h2>Problems related to <a href="../l5/index.html">Bitwise Operators, For loops, Operator Precedence &
+                    variable scoping</a></h2>
+            <div class="in">
+                <p> <a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/"
+                        target="_blank">1281. Subtract the product and sum of digits of an integer</a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                class Solution {
+                                    public:
+                                        int subtractProductAndSum(int n) {
+                                            int sum = 0;
+                                            int product = 1;
+                                            int temp = n;
+                                            while(temp>0){            
+                                                sum+=temp%10;
+                                                product*=temp%10;
+                                                temp/=10;
+                                            }
+                                            return product - sum;
+                                        }
+                                    };
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank">191. Number of 1 Bits</a>
+                    <br><a href="https://youtu.be/yjdQHb2elqI?t=4116" target="_blank">Explaination</a>
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                class Solution
+                                {
+                                public:
+                                    int hammingWeight(uint32_t n)
+                                    {
+                                        int count = 0;
+                                        while (n != 0)
+                                        {
+                                            // checking last bit
+                                            if (n & 1)
+                                            {
+                                                count++;
+                                            }
+                                            n >>= 1;
+                                        }
+                                        return count;
+                                    }
+                                };
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="https://leetcode.com/problems/reverse-integer/" target="_blank">7. Reverse integer</a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                #include &lt;iostream>
+                                    #include &lt;limits.h>
+                                    using namespace std;
+                                    int reverse(int x)
+                                    {
+                                        int answer = 0;
+                                        while (x != 0)
+                                        {
+                                            int digit = x % 10;
+                                            if ((answer > INT_MAX / 10) || (answer &lt; INT_MIN / 10))
+                                            {
+                                                return 0;
+                                            }
+                                            answer = (answer * 10) + digit;
+                                            x /= 10;
+                                        }
+                                        return answer;
+                                    }
+                                    int main()
+                                    {
+                                        int num;
+                                        cout &lt;&lt; "Enter a number";
+                                        cin >> num;
+                                        cout &lt;&lt; reverse(num);
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="https://leetcode.com/problems/complement-of-base-10-integer/" target="_blank">1009. Complement of Base 10 Integer</a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                    #include &lt;iostream>
+                                    using namespace std;
+                                    int bitwiseComplement(int n)
+                                    {
+                                        int m = n;
+                                        int mask = 0;
+                                        
+                                        //edge case
+                                        if (n == 0)
+                                        {
+                                            return 1;
+                                        }
+                                        while (m!=0)
+                                        {
+                                            mask = (mask &lt;&lt; 1) | 1;
+                                            m = m >> 1;
+                                        }
+                                        int ans = (~n) & mask;
+                                        return ans;
+                                    }
+                                    int main()
+                                    {
+                                        int num;
+                                        cout &lt;&lt; "Enter a number";
+                                        cin >> num;
+                                        cout &lt;&lt; bitwiseComplement(num);
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="https://leetcode.com/problems/power-of-two/" target="_blank">231. Power of Two</a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">My code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                #include &lt;iostream>
+                                    #include &lt;cmath>
+                                    using namespace std;
+                                    bool isPowerOfTwo(int n)
+                                    {
+                                        int i = 1;
+                                        while (pow(2, i) &lt;= n)
+                                        {
+                                            if (pow(2, i) == n)
+                                            {
+                                                return true;
+                                            }
+                                            i++;
+                                        }
+                                        return false;
+                                    }
+                                    int main()
+                                    {
+                                        int num;
+                                        cout &lt;&lt; "Enter a number : ";
+                                        cin >> num;
+                                        if (isPowerOfTwo(num))
+                                        {
+                                            cout &lt;&lt; "True";
+                                        }
+                                        else
+                                        {
+                                            cout &lt;&lt; "false";
+                                        }
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">Babbar code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                class Solution {
+                                    public:
+                                        bool isPowerOfTwo(int n) {       
+                                         
+                                            for(int i = 0; i<= 30; i++){
+                                                int ans = pow(2, i);
+                                                if(ans==n){
+                                                    return true;
+                                                }
+                                            }
+                                            return false;
+                                        }
+                                    };
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="" target="_blank"></a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="" target="_blank"></a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p> <a href="" target="_blank"></a></p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

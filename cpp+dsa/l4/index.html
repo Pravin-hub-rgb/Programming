@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-4 = Pattern Question</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Pattern Questions</h1>
+        <div class="wh">
+            <h2>Q1 &rarr; Print star pattern with 4 rows and 4 columns.</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+
+                        #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {           
+                                int row = 4;                   
+                                int i = 1;
+                                while (i &lt;= row)
+                                {
+                                    int j = 1;
+                                    while (j &lt;= row)
+                                    {
+                                        cout &lt;&lt; "*";
+                                        j++;
+                                    }
+                                    cout &lt;&lt; endl;
+                                    i++;
+                                }
+                            }
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q2 &rarr; Print
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 4
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 4
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 4
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 4
+                <br> for n =4
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt;&lt; j &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }                                
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q2.2 &rarr; Print
+                <br>4 3 2 1
+                <br>4 3 2 1
+                <br>4 3 2 1
+                <br>4 3 2 1
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= 4)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt;&lt; row - j + 1 &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q3 &rarr; Print
+                <br>1 2 3
+                <br>4 5 6
+                <br>7 8 9
+                <br>for n = 3;
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 3;
+                                    int i = 1;
+                                    int count = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= 3)
+                                        {
+                                            cout &lt;&lt; count &lt;&lt; " ";
+                                            count++;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q4 &rarr; Print
+                <br>*
+                <br>* *
+                <br>* * *
+                <br>* * * *
+                <br>for n = 4
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int n;
+                                    cout &lt;&lt; "Enter number of rows : ";
+                                    cin >> n;
+                                    int i = 1;
+                                    while (i &lt;= n)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; "* ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q5 &rarr; Print
+                <br>1
+                <br>2 2
+                <br>3 3 3
+                <br>4 4 4 4
+                <br> for n = 4;
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; j &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q6 &rarr; Print
+                <br>1
+                <br> 2 3
+                <br> 4 5 6
+                <br> 7 8 9 10
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    int count = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt; count &lt; " ";
+                                            j++;
+                                            count++;
+                                        }
+                                        cout &lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }                                
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q7 &rarr; Print
+                <br>1
+                <br>2 3
+                <br>3 4 5
+                <br>4 5 6 7
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        int count = i;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; count &lt;&lt; " ";
+                                            j++;
+                                            count++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q8 &rarr; Print
+                <br>1
+                <br>2 1
+                <br>3 2 1
+                <br>4 3 2 1
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        int count = i;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; count &lt;&lt; " ";
+                                            j++;
+                                            count--;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q8 &rarr; Print
+                <br>A A A
+                <br>B B B
+                <br>C C C
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 3;
+                                    int i = 1;
+                                    char a = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q9 &rarr; Print
+                <br>A B C
+                <br>A B C
+                <br>A B C
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row =  3;
+                                    int i = 1;
+                                    char a = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;    
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt; (char) (a + j - 1) &lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>A B C
+                <br>D E F
+                <br>G H I
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 3;
+                                    int i = 1;
+                                    char a = 'A';
+                                    int alpha = 0;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
+                                            j++;
+                                            alpha++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>A B C
+                <br>B C D
+                <br>C D E
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 3;
+                                    int i = 1;
+                                    char a = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int alpha = i;
+                                        int j = 1;
+                                        while (j &lt;= row)
+                                        {
+                                            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
+                                            alpha++;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>A
+                <br>B B
+                <br>C C C
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 3;
+                                    int i = 1;
+                                    char a = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>A
+                <br>B C
+                <br>D E F
+                <br>G H I J
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char a = 'A';
+                                    int alpha = 0;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
+                                            alpha++;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>A
+                <br>B C
+                <br>C D E
+                <br>D E F G
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char a = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                    int  alpha = i;
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
+                                            alpha++;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }                                    
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>D
+                <br>C D
+                <br>B C D
+                <br>A B C D
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char ch = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int k = i;
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; (char) (ch + row - k) &lt;&lt; " ";
+                                            k--;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print</h2>
+            <img width="80px" height="80px" src="../images/pattern1.svg" alt="">
+
+
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char ch = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row - i)
+                                        {
+                                            cout &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        j = 1;
+                                        while (j <= i)
+                                        {
+                                            cout &lt;&lt; "*";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br>&nbsp;&nbsp;* * * *
+                <br>&nbsp;&nbsp;* * *
+                <br>&nbsp;&nbsp;* *
+                <br>&nbsp;&nbsp;*
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char ch = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row - i + 1)
+                                        {
+                                            cout &lt;&lt; "*";
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br><img width="80px" height="80px" src="../images/pattern2.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char ch = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        j = 1;
+                                        while (j <= row - i + 1)
+                                        {
+                                            cout &lt;&lt; "*";
+                                            j++;
+                                        }
+                                        
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br><img width="80px" height="80px" src="../images/pattern3.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    char ch = 'A';
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= i)
+                                        {
+                                            cout &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        j = 1;
+                                        while (j <= row - i + 1)
+                                        {
+                                            cout &lt;&lt; i;
+                                            j++;
+                                        }
+                                        
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+<br><img width="80px" height="80px" src="../images/pattern4.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row - i + 1)
+                                        {
+                                            cout &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        j = 1;
+                                        while (j <= i)
+                                        {
+                                            cout &lt;&lt; i;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+<br><img width="80px" height="80px" src="../images/pattern5.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">my code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                    int count = 1;
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row - i + 1)
+                                        {
+                                            cout &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        j = 1;
+                                        while (j <= i)
+                                        {
+                                            cout &lt;&lt; count;
+                                            count++;
+                                            j++;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br><img width="150px" height="150px" src="../images/pattern6.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+
+                                int main(){
+                                     // Number Pyramid Pattern
+                                    cout &lt;&lt; endl;
+                                    cout &lt;&lt; "You are going to see a number pyramid pattern:- " &lt;&lt; endl;
+                                
+                                    int height, i, j, k, l;
+                                    cout &lt;&lt; endl;
+                                    cout &lt;&lt; "Enter height of the pyramid:- ";
+                                    cout &lt;&lt; endl;
+                                    cin >> height;
+                                    cout &lt;&lt; endl;
+                                
+                                    for (i = 1; i &lt;= height; i++)
+                                    {
+                                        for (k = 1; k &lt;= (height - i); k++)
+                                        {
+                                            cout &lt;&lt; "  ";
+                                        }
+                                        for (j = 1; j <= i; j++)
+                                        {
+                                            cout &lt;&lt; j &lt;&lt; " ";
+                                        }
+                                        for (l = i - 1; l >= 1; l--)
+                                        {
+                                            cout &lt;&lt; l &lt;&lt; " ";
+                                        }
+                                        cout &lt;&lt; endl;
+                                    }
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Q &rarr; Print
+                <br><img width="200px" height="200px" src="../images/pattern7.svg" alt="">
+            </h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream>
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    int row = 4;
+                                    int i = 1;
+                                
+                                    while (i &lt;= row)
+                                    {
+                                        int j = 1;
+                                        while (j &lt;= row - i + 1)
+                                        {
+                                            cout &lt;&lt; j &lt;&lt; " ";
+                                            j++;
+                                        }
+                                        // part 2 : Stars
+                                        j = 1;
+                                        while (j &lt;= (i - 1) * 2)
+                                        {
+                                            cout &lt;&lt; "* ";
+                                            j++;
+                                        }
+                                        // part 3: numbers
+                                        j = row - i + 1;
+                                        while (j >= 1)
+                                        {
+                                            cout &lt;&lt; j &lt;&lt; " ";
+                                            j--;
+                                        }
+                                        cout &lt;&lt; endl;
+                                        i++;
+                                    }
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

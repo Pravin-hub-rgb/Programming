@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-4 = Introduction to Java - Architecture & installation </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to Java - Architecture & installation</h1>
+        <div class="wh">
+            <p>
+                <b>Q &rarr; </b>Why do we use programming language?
+                <br> <b>A &rarr; </b> Machine only understand 0's and 1's, for humans it is very difficult to instruct
+                computer in 0's and 1's so to avoid this issude we write our code in human readable language
+                (programming language). <br>"Java is one of the programming language".
+                <br><img class="bimg" src="../images/javaArch.jpg" alt="">
+            </p>
+            <p>
+            <ul>
+                <li>The code written in java is human readable and it is saved using extension .java</li>
+                <li>This ode is known as source code</li>
+                <li><b>Java Compiler</b>
+                    <ul>
+                        <li>Java compiler converts the source code into byto code which have the extension .class</li>
+                        <li>This byte code not directly run on system</li>
+                        <li>We need JVM (Java Virtual Machine) to run this</li>
+                        <li>Reason why java is platform independent</li>
+                    </ul>
+                </li>
+                <li><b>Java Interpreter</b>
+                    <ul>
+                        <li>Converts byte code to machine code i.e. 0's and 1's</li>
+                        <li>It translate the byte code line by line to machine code</li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+            <div class="wh">
+                <ul>
+                    <li><b>More about platform independent</b>
+                    <ul>
+                        <li>It means that byte code can run on all operating system</li>
+                        <li>We need to convert source code to machine code so computer can understand it.</li>
+                        <li>Compiler helps in doing this by turning it into executable code.</li>
+                        <li>This executable code is a set of instruction's for the computer</li>
+                        <li>After compiling C/C++ code we get .ese file which is platform dependent.</li>
+                        <li>In java we get byte code. JVM converts this to machine code.</li>
+                        <li>Java is platform independent but JVM is platform dependent.</li>
+                    </ul></li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Architecture of java</h3>
+                <img class="bimgs" src="../images/javaArch1.jpg" alt="">
+            </div>
+            <div class="wh">
+                <ul>
+                    <li><b>JDK</b>
+                    <ul>
+                        <li>Provide environment to develop and run the java program.</li>
+                        <li>It is a package that includes :- 
+                            <ol>
+                                <li>Development tools to provide an environment to run your program.</li>
+                                <li>IRE :- to execute your program</li>
+                                <li>A compiler <b>javac</b></li>
+                                <li>Docs generator javadoc</li>
+                                <li>Interpreter/loader</li>
+                            </ol>
+                        </li>
+                    </ul></li>
+                    <li><b>JRE</b>
+                        <ul>
+                            <li>It is an installation package that provide environment to only run the program.</li>
+                            <li>It consist of :- 
+                                <ol>
+                                    <li>Deployment technology</li>
+                                    <li>User interface toolkit</li>
+                                    <li>Intergration libraries</li>
+                                    <li>Base libraries</li>
+                                    <li>JVM :- java virtal machine</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Compiler Time</b>
+                    <br><img class="bimg" src="../images/javaArch2.jpg" alt="">
+                    <ul>
+                        <li>After we get the .class file the next thing happen at runtime : 
+                            <ul>
+                                <li>Class loader loads all classes needed to execute the program</li>
+                                <li>JVM sends code to bytecode berifies to check the format of code.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </li>
+                    <li><b>Runtime :-</b>
+                    <br><img src="../images/javaArch3.jpg" alt="">
+                    <ul>
+                        <li>(How JVM works) class loader
+                            <ul>
+                                <li>Loading
+                                    <ul>
+                                        <li>Read .class file and generate binary data.</li>
+                                        <li>an object of this class is created in heap.</li>
+                                    </ul>
+                                </li>
+                                <li>Linking
+                                    <ul>
+                                        <li>JVM verifies the .class file</li>
+                                        <li>allocates memory for the class variables and default value</li>
+                                        <li>replace symbolic references from the type with direct reference.</li>
+                                    </ul>
+                                </li>
+                                <li>Initialization
+                                    <ul>
+                                        <li>All static variables are assigned with their values defined in the code and static back.</li>
+                                        <li>JVM contains the stack and heap memory locations.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </li>
+                    <li><b>JVM Execution</b>
+                    <ul>
+                        <li>Interpreter 
+                            <ul>
+                                <li>Line by execution</li>
+                                <li>When one method is called many times it will interpret again and again</li>
+                            </ul>
+                        </li>
+                        <li>JIT
+                            <ul>
+                                <li>Those methods that are repeated. JIT provides direct machine code so that interpretation is not required.</li>
+                                <li>Makes ececution faster</li>
+                                <li>Garbage collector</li>
+                            </ul>
+                        </li>
+                    </ul></li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Working of Java Architecture</h3>
+                <img class="bimg" src="../images/javaArch4.jpg" alt="">
+            </div>
+            <div class="wh">
+                <h3>Tools required to run java</h3>
+                <ul>
+                    <li>JDK</li>
+                    <li>intellij</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

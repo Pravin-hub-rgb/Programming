@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-27 = Arrays and Pointers Arithmetic</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l30/index.html">Next Lec &rarr;</a>
+            <a href="../l26/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+
+    <div class="content-box">
+        <h1>Arrays and Pointers Arithmetic</h1>
+        <div class="inside-content">
+            <h2>Pointer Arithmetic</h2>
+            <p>
+                There are four arithmetic operators that can be used on pointers:
+                <ul>
+                    <li>++</li>
+                    <li>--</li>
+                    <li>+</li>
+                    <li>-</li>
+                </ul>
+            </p>
+            <div class="in">
+                <p>
+                    Pointers arithmetic is not same as normal arithmetic i.e. if you want to add 1 to any no. then you will get that no. after adding 1 in it. But in Pointers it is a bit different as:
+                    <b>Base Address :</b> The first byte address of any variable is known as base address. It means suppose you have int type variable then it's size in my architecture is 4 byte (It may vary in yours) then 4 consecutive blocks will be
+                    created in RAM. So when we will point it with any pointer variable at that time the address of 1 block of 4 will come in that pointer variable. It means base address is the first block address of any data type variable.
+                </p>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        We can't add, multiply or divide two addresses. (Subtraction is possible)
+                        <br>
+                        <p class="in">
+                            E.g:
+
+                            <br> int a, b, *p, *q;
+                            <br>
+                            <br> &a*&amp;b; // Not Possible
+                            <br>
+                            <br> &a+&amp;b; // Not Possible
+                            <br>
+                            <br> p*q; // Not Possible
+                        </p>
+                    </li>
+                    <li>We can’t multiply & divide an address with integer value.
+                        <p class="in">
+                            E.g :
+
+                            <br> &a*5; // Not Possible
+                            <br>
+                            <br> p/5; // Not Possible
+                        </p>
+                    </li>
+                    <li>
+                        We can add or subtract integer to/from an address.
+                        <p class="in">
+                            E.g :
+                            <br>
+                            <br> int a,b; // Let's Suppose &a is 1000
+                            <br>
+                            <br> int *p, *q;
+                            <br>
+                            <br> p=&amp;a;
+                            <br>
+                            <br> q=&amp;b;
+                            <br>
+                            <br> p+1; // It is possible [1000+1 = 1004]
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <p>
+                    Basically when we do
+                    <br>int a = 2;
+                    <br>a++; &rarr; 3
+                    <br><br>But in pointer
+                    <br>int *ptra = &amp;a;
+                    <br>ptra = ptra + 1;
+                    <br>Now here it will add size of ptra (size of int)
+                </p>
+            </div>
+            <div class="in">
+                <h3>Doing Arithmetic</h3>
+                <p>
+                    #include &lt;stdio.h&gt;
+                    <br> int main()
+                    <br> {
+                    <br> int a = 34;
+                    <br> int *ptra = &amp;a;
+                    <br> printf("%d", ptra); // lets say this is x
+                    <br> printf("\n%d", ptra+1); // so this prints x+4, cuse that's the size of int
+                    <br> return 0;
+                    <br> } //we can use other operator too.
+                </p>
+                <div class="in">
+                    <p>Output</p>
+                    <p>
+                        3456780
+                        <br>3456784
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Arrays and Pointers</h2>
+            <ul>
+                <li>Consider the following declaration: int arr[0];</li>
+                <li>What is the type of arr? &rarr; integer array &check;</li>
+                <li>However, <b>arr</b> by itself, without any index subscripting, can be assigned to an interger pointer.
+                    <ul>
+                        <li>int *ptr = arr; &check;</li>
+                        <li>ptr store the address of the first element of the array</li>
+                        <li>that means &arr[0] = ptr (address of first array element = ptr)</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>arr[i] using pointer arithmetic</h3>
+                <ul>
+                    <li>arr[i] == *(arr+i)</li>
+                    <li>If <b>arr</b> is a pointer to <b>arr[0]</b> then <b>arr + i</b> is a pointer to <b>arr[i]</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

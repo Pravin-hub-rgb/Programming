@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-2 = Intro to programming </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to programming</h1>
+        <div class="wh">
+            <div class="in">
+                <p><b>Programming</b> is a way to instruct the computer to perform various task.
+                    <br>Computers only understands Binary i.e., 0's and 1's. <br>Instructing computer in Binary is very difficult for humans so, to solve this issue we have programming languages.</p>
+            </div>
+            <div class="in">
+                <p><b>Programming language:-</b> It is a computer language used by programmers to communicate with computer.</p>
+            </div>
+            <div class="in">
+                <h2>Types of Programming languages</h2>
+                <div class="wh">
+                    <p>
+                        <b>Proceduaral</b>
+                        <ul>
+                            <li>Specifies a series of well-structured steps and procedures to compose a program.</li>
+                            <li>Contains a systematic order of statements functions and commands to complete a task.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Functional</b>
+                        <ul>
+                            <li>
+                                Writing a program only in pure functions i.e., never modify variables but only create new ones as an output.
+                            </li>
+                            <li>Used in a situation where we have to perform lots of different operations on the same set data like ML.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Object oriented</b>
+                        <ul>
+                            <li>Revolves around objects</li>
+                            <li>Code + data = objects</li>
+                            <li>Developed to make it easier to develop, debug, reuse and maintain software.</li>
+                        </ul>
+                    </p>
+                    <div class="in">
+                        Note : - "One programming language can be of all 3 types like - Python".
+                        <br><b>Java follows procedural and object oriented both types.</b>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Static VS Dynamic Languages</h3>
+                    <div class="part2 wh">
+                        <div>
+                            <div>
+                                <p><b>Static</b></p>
+                            </div>
+                            <div>
+                                <p>Dynamic</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Perform type checking at compile time</p>
+                            </div>
+                            <div>
+                                <p>Perform type checking at runtime</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Errors will show at compile time</p>
+                            </div>
+                            <div>
+                                <p>Errors might not show till programs run</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Declare datatypes before use</p>
+                            </div>
+                            <div>
+                                <p>No need to declare datatype of variables</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>More control</p>
+                            </div>
+                            <div>
+                                <p>Saves time in writing code but might give error at runtime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Memory Management</h2>
+            <p>
+                There are 2 types of memory Stack and Heap.
+                <br>When we declare a variable then the reference variable stored in stack memroy points to the object of that variable stored in heap memory.
+                <br>For ex:- a = 10
+                <br>Here "a" is called reference variable, and "10" is the object of that reference variable
+                <ul>
+                    <li>Reference variable are stored in stack memory</li>
+                    <li>Heap memory stored the objects of reference variable.</li>
+                </ul>
+            </p>
+            <div class="in">
+                <p>
+                    <b>Points to remember</b>
+                    <br>Now supporse,
+                    <br>a=10
+                    <br>b=a
+                    <br>
+                    <br>&rarr; More than one reference variable can point towards one object.
+                    <br>&rarr;If any of the reference variable changes the object then it is changed for all reference variable that points towards same object.
+                    <br>&rarr;If there is an object without reference variable then object will be destroyed by "Garbage Collection".
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

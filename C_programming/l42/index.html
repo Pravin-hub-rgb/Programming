@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-42 = Static variables</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <div class="botbut">
+            <a href="../l44/index.html">Next Lec &rarr;</a>
+            <a href="../l41/index.html">&larr; Previous Lec</a>
+        </div>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>Static variables</h1>
+        <div class="inside-content">
+            <p>But before that let's do a recap</p>
+            <div class="in">
+                <h2>Local variables</h2>
+                <ul>
+                    <li>Scope is a region of the program where a defined variable can exist and beyond which it cannot be accessed</li>
+                    <li>Variables which are accessed inside a function or a block are called local variables.</li>
+                    <li>They can only be accessed by the function they are declared in!</li>
+                    <li>They are inaccessible to the functions outside the function they are declared in!</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Global variables</h2>
+                <ul>
+                    <li>These are the variables defined outside the main method.</li>
+                    <li>Global variables are accessible throughout the entire program from any function.</li>
+                    <li>If a local and global variable has the same name, the local variable will take preference.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Formal Arguments</h2>
+                <ul>
+                    <li>These variables are treated as local variables with in a function.</li>
+                    <li>These variables take precedence over global variables.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Now see Static variables in C</h2>
+            <ul>
+                <li>Static variables are variables which have a property of preversing their values even when they go out of scope.</li>
+                <li>They preserve their value from the previous scope and are not initialized again.</li>
+                <li>Static variable remains in memory throughout the span of the program</li>
+                <li>Static variables are initialized to 0 if not initialized explicitly.
+                    <ul>
+                        <li>static int a; //just declared and not initialzed it with any value</li>
+                        <li>printf("%d",a); //the output will be 0.</li>
+                    </ul>
+                </li>
+                <li>In C, static variables can only be initialized using constant literals.
+                    <ul>
+                        <li>we cannot do &rarr; static int b = func();</li>
+                        <li>This is because static variable allocates memory before running the main() function as the value of func() will not be generated that time.</li>
+                        <li>We can do &rarr; static char a = 'c'; static int b = 5;</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Syntax</h3>
+                <p>
+                    static data_type name = value;
+                    <br>
+                    <br>static int harry = 7;
+                    <br>Even after using this variable it will still take some memory that's why global and static variables are not recommended.
+                </p>
+            </div>
+        </div>
+        <div class="in">
+            <button class="accordion">code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h&gt;
+                    <br>
+                    <br> int func1(int b)
+                    <br> {
+                    <br> static int myvar = 0;
+                    <br> printf("The value of myvar is %d\n", myvar);
+                    <br> myvar++;
+                    <br> return b + myvar;
+                    <br> }
+                    <br>
+                    <br> int main()
+                    <br> {
+                    <br> int b = 100;
+                    <br> int val = func1(b); //here myvar is 0 as this runs first time
+                    <br> func1(b); //when function is called 2nd time the value of myvar become 1 even <br>though insisde the function
+                    <br> // it is initialized as 0 which mean that it forget the initalization
+                    <br> // printf("The value of func1 if %d",func1(b));
+                    <br>
+                    <br> return 0; }
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>

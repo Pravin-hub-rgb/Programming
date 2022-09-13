@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-39 = Unions</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l41/index.html">Next Lec &rarr;</a>
+            <a href="../l38/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Unions</h1>
+        <div class="inside-box">
+            <h2>What is a union?</h2>
+            <ul>
+                <li>Union is a user defined data type (very similar to structures)</li>
+                <li>The difference between structures and unions lies in the fact that in <b>structure</b>, each member has its own strorage location, wereas members of a <b>union</b> uses a single shared memory location.</li>
+                <li>The single shared memory location is equal t the size of its largest data member.</li>
+            </ul>
+            <div class="in">
+                <h3>Declaring Union</h3>
+                <div class="in">
+                    <p>
+                        union union_name
+                        <br> {
+                        <br> datatype member1;
+                        <br> datatype member2;
+                        <br> };
+                    </p>
+                </div>
+                <div class="in">
+                    <p>
+                        //Example Code
+                        <br> union books
+                        <br> {
+                        <br> int pages;
+                        <br> float price;
+                        <br> char title[20];
+                        <br> }b1;
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Accessing Union members</h3>
+                <p>We use ". "operator to access the members of a union.</p>
+                <button class="accordion">Code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> #include &lt;string.h&gt;
+                        <br>
+                        <br> union Book {
+                        <br> int pages;
+                        <br> float price;
+                        <br> char title[20];
+                        <br> };
+                        <br>
+                        <br> int main( ) {
+                        <br> union Book b1;
+                        <br> b1.pages = 100;
+                        <br> printf( "Pages: %d\n", b1.pages);
+                        <br> b1.price = 250.5;
+                        <br> printf( "Price : %.1f\n", b1.price);
+                        <br> strcpy( b1.title, "C Programming");
+                        <br> printf( "Title : %s\n", b1.title);
+                        <br>
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>What are similarity between union and structures</h3>
+                <p>
+                    Structure and union are user-defined data types used to store data of different types. <br> The members of structure and union can be objects of any type, including other structures and unions or arrays. <br> A union or a structure
+                    can be passed by value to functions and returned by value by functions. <br> '.' operator is used for accessing union and structure members.
+                </p>
+            </div>
+            <div class="in">
+                <h3>What are difference between union and structures</h3>
+                <p>
+                    The keyword union is used to define a union and a keyword struct is used to define the structure. <br> Each member within a structure is assigned a unique storage area of location whereas memory allocated is shared by individual members
+                    of the union. <br> Individual members can be accessed at a time in structure whereas only one member can be accessed at a time in union. <br> Altering the value of the member will not affect other members of the structure, whereas
+                    altering the value of any member will affect other member's values. <br> Several members of a structure can be initialized at once, whereas only one member can be initialized in union
+                </p>
+            </div>
+            <div class="in">
+                <h3>Union cannot handle all members at once</h3>
+                <img src="../images/union.png" alt="">
+                <div class="in">
+                    <h3>why union?</h3>
+                    <p>We want our program to take very less memory (no wastage of memory) so it makes our program efficient.</p>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h&gt;
+                        <br> #include &lt;string.h&gt;
+                        <br> union Student
+                        <br> {
+                        <br> int id;
+                        <br> int marks;
+                        <br> char fav_char;
+                        <br> char name[34];
+                        <br> };
+                        <br> int main()
+                        <br> {
+                        <br> union Student s1;
+                        <br> strcpy(s1.name, "Harry");
+                        <br> s1.fav_char = 'u';
+                        <br> s1.marks = 45;
+                        <br> s1.id = 1;
+                        <br>
+                        <br>//the one which is lastly given value only that variable hold the right value
+                        <br>
+                        <br> printf("The id is %d \n", s1.id);
+                        <br> printf("The marks is %d \n", s1.marks);
+                        <br> printf("The fav_char is %c \n", s1.fav_char);
+                        <br> printf("The name is %s \n", s1.name);
+                        <br>
+                        <br> return 0;
+                        <br> }
+                    </p>
+                    <div class="in">
+                        <p>
+                            The id is 1
+                            <br> The marks is 1
+                            <br> The fav_char is ☺
+                            <br> The name is ☺
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

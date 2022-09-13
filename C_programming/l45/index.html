@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L45- = Memory layout of C programs - Dynamic memory allocation </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l47/index.html">Next Lec &rarr;</a>
+            <a href="../l44/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+    <div class="content-box">
+        <h1>Memory layout of C programs - Dynamic memory allocation</h1>
+
+        <div class="inside-content">
+            <h2>What and why Dynamic memory allocation?</h2>
+            <ul>
+                <li>An statically allocated variable or array has a fixed size in memory.</li>
+                <li>We have learnt to create big enough arrays to fit in our inputs but this doesn't seem like an optimal way to allocate memory.</li>
+                <li>Memory is a very useful resource.</li>
+                <li>Clearly we need a way to request memory on runtime.</li>
+                <li><b>Dynamic memory allocation</b> is a way in which the size of a data structure can be changed during the runtime.
+                    <ul>
+                        <li>We can allocate as well as free the memory</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="inside-content">
+            <h2>Static VS Dynamic memory allocation</h2>
+            <div class="part">
+                <div>
+                    <ul>
+                        <li>Static memory allocation
+                            <ul>
+                                <li>Allocation is done beofre the program's execution</li>
+                                <li>There is no memory reusability and the memory allocated cannot be freed.</li>
+                                <li>Less efficient</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>Dynamic memory allocation
+                            <ul>
+                                <li>Allocation is done during the program's execution</li>
+                                <li>There is memory resuability and the allocated memroy can be freed when not required.</li>
+                                <li>More efficient</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                When we have to make complex program we use dynamic memory allocation and while makeing simple program we use static memory allocation.
+            </p>
+        </div>
+        <div class="inside-content">
+            <h2>How memory is allocated in C programs</h2>
+            <div class="in">
+                <h3>Memory assigned to a program in a typical architecture can be broken down into four segments:</h3>
+                <ul>
+                    <li>Code
+                        <ul>
+                            <li>Also known as text segment</li>
+                        </ul>
+                    </li>
+                    <li>Static/global variables
+                        <ul>
+                            <li>data segment &rarr; initialized storage - initializing a global variable and giving value to it. Ex- int a= 2;</li>
+                            <li>bss(block started by symbol) segment &rarr; uninitialized segment- only declared. Ex- int a;</li>
+                        </ul>
+                    </li>
+                    <li>stack
+                        <ul>
+                            <li>It grows as the program goes ahead</li>
+                        </ul>
+                    </li>
+                    <li>Heap
+                        <ul>
+                            <li>It grows as dynamically memory is allocated</li>
+                            <li>And using of heap is called dynamic memory allocation</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>C program: Memory layout</h2>
+                <p>
+                    <b>Static/global variables</b>
+                </p>
+                <p>
+                    <b>Code</b>
+                </p>
+                <p>
+                    <b>STACK</b>
+                    <br> The function goes in stack as LIFO &rarr; last in first out
+                    <br>until a funtion will return value or do something(print value) it remains in stack and pops out after completing its task.
+                </p>
+                <p>
+                    <b>HEAP</b>
+                    <br>If stack and heap meet each other that means we have exhausted the memory and it will do stack overflow. ??
+                </p>
+            </div>
+            <div class="in">
+                <h2>C Program: Stack Overflow</h2>
+                <ul>
+                    <li>Complier allocates some space for the stack part of the memory</li>
+                    <li>When this space gets exhausted for some bad reason, the situation is called as stack overflow</li>
+                    <li>Typical example includes recursion with wrong/no base condition.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>C Program: Heap</h2>
+                <ul>
+                    <li>There are a lot of limitations of stack (static memroy allocation)</li>
+                    <li>Some of the examples include variable sized array, freeing memory no longer required etc.</li>
+                    <li>Heap can be used flexibly by the programmer as per his needs.</li>
+                </ul>
+                <div class="in">
+                    <h2>Use of Heap</h2>
+                    <ul>
+                        <li>We can create a pointer in our main function and point to a memory block in the heap</li>
+                        <li>The address is stored by the local variable in the main function.</li>
+                        <li>The memory consumed will not get freed automatically in case we overwrite the pointer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Code</h2>
+            <div class="in">
+                <p>If we write [ gcc filename.c ; size .\a.exe ] &rarr; this gives size in bytes of different thing inside the program</p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

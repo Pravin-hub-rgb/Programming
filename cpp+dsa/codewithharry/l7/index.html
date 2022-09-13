@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-7 = Reference Variables & Typecasting</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Reference Variables & Typecasting</h1>
+        <div class="wh">
+            <h2>Built-in Data Types</h2>
+            <p>
+                Built-in data types are pre-defined by the language and can be used directly.
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+
+                    int c = 45; // global variable 
+
+                    int main(){
+                        int a, b, c;
+                        cout&lt;&lt;"Enter the value of a: "&lt;&lt;endl;
+                        cin>>a;
+                        cout&lt;&lt;"Enter the value of a: "&lt;&lt;endl;
+                        cin>>b
+                        c = a + b;
+                        cout&lt;&lt;"The sum is "&lt;&lt; c &lt;&lt; endl;
+                        cout&lt;&lt;"The global c is "&lt;&lt; ::c &lt;&lt; endl;
+                    }
+                </code>
+            </pre>
+            </div>
+            <ul>
+                <li>To access the value of the global variable "c", we use <b>scope resolution operator "::"</b> with
+                    the "c" variable.</li>
+            </ul>
+            <div class="in">
+                <h3>Float, Double and Long Double Literals</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                    <code>
+
+                        #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                float d = 34.4F;
+                                long double e = 34.3L;
+                                cout &lt;&lt; " The size of 34.4 is " &lt;&lt; sizeof(34.4) &lt;&lt; endl;
+                                cout &lt;&lt; " The size of 34.4f is " &lt;&lt; sizeof(34.4f) &lt;&lt; endl;
+                                cout &lt;&lt; " The size of 34.4F is " &lt;&lt; sizeof(34.4F) &lt;&lt; endl;
+                                cout &lt;&lt; " The size of 34.4l is " &lt;&lt; sizeof(34.4l) &lt;&lt; endl;
+                                cout &lt;&lt; " The size of 34.4L is " &lt;&lt; sizeof(34.4L) &lt;&lt; endl;
+                                return 0;
+                            }
+                    </code>
+                </pre>
+                </div>
+                <ul>
+                    <li>Crucial concept
+                        <ul>
+                            <li>double is the default type given to a decimal literal (34.4 is double by default and not
+                                float), </li>
+                            <li>so to use it as float, you have to specify it like "34.4F"</li>
+                            <li>To display the size of float, double and long double literals, we have used a "sizeof"
+                                operator.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Reference Variable</h2>
+            <ul>
+                <li>Reference variable can be defined as another name for an already existing variable.</li>
+                <li>These are also called an alias.</li>
+                <li>For example, we have a variable with the name of "<b>sum</b>", but we also want to use the same
+                    variable with the name of "<b>add</b>", to do that we will make a reference variable with the name
+                    of "<b>add</b>:</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        float x = 455;
+                        float & y = x; // '&' is used to make it reference variable
+                        // the 'y' variable will start referring to the value of the variable 'x'
+                        cout&lt;&lt; x &lt;&lt; endl; // 455
+                        cout&lt;&lt; y &lt;&lt; endl; // 455
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Typecasting</h2>
+            <p>Defined as converting one data type into another.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                int a = 45;
+                                float b = 45.46;
+                                cout &lt;&lt; "the value of a is " &lt;&lt; (float)a &lt;&lt; endl; // one way of typecast
+                                cout &lt;&lt; "the value of a is " &lt;&lt; float(a) &lt;&lt; endl; // another way of typecast
+                            
+                                cout &lt;&lt; "the value of b is " &lt;&lt; (int)b &lt;&lt; endl;
+                                cout &lt;&lt; "the value of b is " &lt;&lt; int(b) &lt;&lt; endl;
+                                int c = int(b);
+                            
+                                cout &lt;&lt; "the expression is " &lt;&lt; a + b &lt;&lt; endl;
+                                cout &lt;&lt; "the expression is " &lt;&lt; a + int(b) &lt;&lt; endl;
+                                cout &lt;&lt; "the expression is " &lt;&lt; a + (int)b &lt;&lt; endl;
+                                return 0;
+                            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

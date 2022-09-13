@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-11 = Bubble Sort </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Bubble Sort</h1>
+        <div class="wh">
+            <p>
+                <b>Sorting &rarr; </b> If is a process of arranging items systematically.
+                <br><b>Bubble sort &rarr; </b> It is the simplest algorithm that works by repeatedly swapping the
+                adjacent elements if they are in wrong order.
+                <br><br><img src="../images/bubble.svg" alt="">
+                <br><br>Bubble sort is also known as sinking sort or exchange sort
+            </p>
+            <div class="in">
+                <ul>
+                    <li>There will two loops
+                        <ol>
+                            <li>outer loop for number of passes</li>
+                            <li>inner loop for checking and swapping
+                                <ul>
+                                    <li>as in each pass, the last element goes to end. So, no need to again sort them
+                                    </li>
+                                    <li>So, the loop runs <b>length - i</b> times</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Complexity : </h2>
+                <div class="wh">
+                    <h3>Space complexity : O(1) // constant &darr;</h3>
+                    <p>
+                        Since here no extra space is required i.e., like copying the array etc. is not required.
+                        <br> This also known as <b>inplace sorting algorithm</b>
+                    </p>
+                </div>
+                <div class="wh">
+                    <h3>Time complexity</h3>
+                    <div class="in">
+                        <div class="wh">
+                            <p>
+                                <b>1. Best Case &rarr;</b> array is sorted
+                                <br><br><img src="../images/bubble2.svg" alt="">
+                                <br><b>&star; Best case comparisons = N-1 = N</b>
+                                <br>Since in time complexity constants are ignored, we don't wnat exact time, we just
+                                want
+                                relationship i.e., mathematical function.
+                            </p>
+                        </div>
+                        <div class="wh">
+                            <p>
+                                <b>2. Worst case &rarr; </b> sorting descending order array to ascending order
+                                <br><br><img src="../images/bubble3.svg" alt="">
+                                <br><br><img src="../images/bubble4.svg" alt="">
+                                <br><br><img src="../images/bubble5.svg" alt="">
+                                <br><br><img src="../images/bubble6.svg" alt="">
+                                <br><br>total comparisons = N - 1 + N - 2 + N - 3 + N - 4
+                                <br>= 4N - (1 + 2 + 3 + 4)
+                                <br>= 4N -[(N*(N+1))/2]
+                                <br>= 4N - (N<sup>2</sup> + N) / 2
+                                <br>= O((7N - N<sup>2</sup>)/2)
+                                <br><b>total comparisons = O(N<sup>2</sup></b>
+                                <br>In time complexity, constant and less dominating terms are ignored
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Arrays;
+
+                                public class Bubble {
+                                    public static void main(String[] args) {
+                                        int[] arr = { 5, 4, 3, 1, 2 };
+                                        bubble(arr);
+                                        System.out.println(Arrays.toString(arr));
+                                    }
+                                
+                                    static void bubble(int[] arr) {
+                                        // if the array is already sorted then the loop is still running so to prevent
+                                        // this we do this
+                                        boolean swapped;
+                                        // run the steps n-1 times
+                                        for (int i = 0; i &lt; arr.length; i++) {
+                                            swapped = false;
+                                            // for each step, max item will come at the last respective index
+                                            for (int j = 1; j &lt; arr.length - i; j++) {
+                                                // swap if the item is smaller the previous item
+                                                if (arr[j] &lt; arr[j - 1]) {
+                                                    // swap
+                                                    int temp = arr[j];
+                                                    arr[j] = arr[j - 1];
+                                                    arr[j - 1] = temp;
+                                                    swapped = true;
+                                                }
+                                            }
+                                
+                                            // if you did not swap for a particular value of i, it means the array is sorted
+                                            // hence stop the program
+                                            if (!swapped)
+                                                break;
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <img src="../images/bubble7.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

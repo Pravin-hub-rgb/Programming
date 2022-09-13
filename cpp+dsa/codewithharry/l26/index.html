@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-26 = Friend Functions</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Friend Functions</h1>
+        <div class="wh">
+           <h2>Friend Function</h2>
+           <ul>
+            <li>Functions that have the right to access the private data members of class even though they are not defined inside the class.</li>
+            <li>It is necessary to write the prototype of the friend function.</li>
+            <li>One main thing to note here is that if we have written the prototype of the friend function in the class it will make that function a member of the class.</li>
+           </ul>
+           <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    #include &lt;iostream>
+                        using namespace std;
+                        class Complex
+                        {
+                            int a, b;
+                        
+                        public:
+                            void setNumber(int n1, int n2)
+                            {
+                                a = n1;
+                                b = n2;
+                            }
+                            void printNumber(void)
+                            {
+                                cout &lt;&lt; "Your number is " &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt; "i" &lt;&lt; endl;
+                            }
+                            // Below line means that non member - sumComplex function is allowed to do anything with Complex's private members
+                            friend Complex sumComplex(Complex o1, Complex o2);
+                        };
+                        
+                        Complex sumComplex(Complex o1, Complex o2)
+                        {
+                            Complex o3;
+                            o3.setNumber((o1.a + o2.a), (o1.b + o2.b));
+                            return o3;
+                        }
+                        
+                        int main()
+                        {
+                            Complex a, b, sum;
+                            a.setNumber(2, 4);
+                        
+                            b.setNumber(4, 6);
+                        
+                            sum = sumComplex(a, b);
+                            sum.printNumber();
+                        
+                            return 0;
+                        }
+                </code>
+            </pre>
+           </div>
+           <h3>Properties of friend function</h3>
+           <ul>
+            <li>Not in the scope of the class.</li>
+            <li>Since it is not in the scope of the class, it cannot be called from the object of that class, for example, <b>sumComplex()</b> is invalid.</li>
+            <li>A friend function can be invoked without the help of any object.</li>
+            <li>Usually contain objects as arguments.</li>
+            <li>Can be declared under the public or pribate access modifier, it will not make any difference.</li>
+            <li>It cannot access the members directly by their names, it need (object_name.member_name) to access any member.</li>
+           </ul>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

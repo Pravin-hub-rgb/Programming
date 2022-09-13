@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-12 = Binary Search</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Binary Search</h1>
+        <p>This topic is very important, according to online test and interviews.</p>
+        <div class="wh">
+            <ul>
+                <li>Condtion to apply binary search
+                    <ul>
+                        <li>Element should be in monotonic function
+                            <ul>
+                                <li>Increasing or decreasing order</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Steps to follow
+                    <ol>
+                        <li>Find mid element of the array and check whether it is equals to the key element, if it is
+                            return the index.
+                            <ul>
+                                <li>(upper bound + lower bound ) / 2
+                                    <ul>
+                                        <li>Optimized &rarr; lower bound + (upper bound - lower bound) / 2</li>
+                                        <li>So that we don't exceed the range on integer</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>check if it is lesser than the mid
+                            <ul>
+                                <li>If yes update the searching space</li>
+                                <li>put upper bound to mid - 1</li>
+                            </ul>
+                        </li>
+                        <li>check if it is greater than the mid
+                            <ul>
+                                <li>If yes update the searching space</li>
+                                <li>put lower bound to mid + 1;</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                <code>
+
+                    #include &lt;iostream>
+                        using namespace std;
+                        
+                        int binarySearch(int arr[], int size, int key)
+                        {
+                            int start = 0;
+                            int end = size - 1;
+                        
+                            while (start <= end)
+                            {
+                                // int mid = (start + end) / 2; locially its correct but
+                                // we know that max int can be 2^31 - 1
+                                // if start and end are 2^31 - 1 then this will not be in int range
+                                // so we do this
+                                int mid = start + (end - start) / 2;
+                                if (arr[mid] == key)
+                                {
+                                    return mid;
+                                }
+                                if (key > arr[mid])
+                                {
+                                    start = mid + 1;
+                                }
+                                else
+                                {
+                                    end = mid - 1;
+                                }
+                                return mid;
+                            }
+                        }
+                        
+                        int main()
+                        {
+                            int even[] = {2, 4, 6, 8, 10, 12, 18};
+                            int odd[] = {3, 5, 7, 9, 11, 15, 17};
+                            cout &lt;&lt; "Index of 6 is " &lt;&lt; binarySearch(even, sizeof(even) / sizeof(int), 6);
+                            return 0;
+                        }
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>Comparing it with linear search</h3>
+                <ul>
+                    <li>Linear search for array of 1000 size
+                        <ul>
+                            <li>In worst case the number of comparisions will be 1000</li>
+                            <li>Time complexity &rarr; O(n)</li>
+                        </ul>
+                    </li>
+                    <li>Binary search in an array of 1000 size
+                        <ul>
+                            <li>Size &darr;
+                                <ul>
+                                    <li>1000 &rarr; 500 &rarr; 250 &rarr; 125 &rarr; 64 &rarr; 32 &rarr; 16 &rarr; 8
+                                        &rarr; 4 &rarr; 2 &rarr; 1</li>
+                                    <li>10 comparisons only </li>
+                                </ul>
+                            </li>
+                            <li>Time complexity &rarr; O(log n)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <h3>How O(log n) ??</h3>
+                    <img src="../images/binaryCom.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

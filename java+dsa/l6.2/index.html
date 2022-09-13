@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-6.2 = Switch Statements + Nested Case </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Switch Statements + Nested Case</h1>
+        <div class="wh">
+            <h2>Switch Statements</h2>
+            <div class="in">
+                <p>Syntax</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            switch (expression){
+                                case one:
+                                    // code block
+                                    break; // terminate the sequence
+                                case two:
+                                    // code block
+                                    break;
+                                default: // default will execute when none of above case does.
+                                    // code block 
+                                // default is not at end put break after it
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <p>
+                &rarr; If break is not used then it will continue with other cases.
+                <br>&rarr; duplicate cases are not allowed.
+            </p>
+            <div class="in">
+                <p>Enhanced Syntax</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            switch(expression){
+                                case one -> // do this;
+                                case two -> // do this;
+                                case three -> // do this;
+                                default -> // do this;
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <p><b>x.equals("word")</b> &rarr; Here equals only checks value not reference.</p>
+                <p><b>x == "word"</b> &rarr; here it checks reference</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+                            
+                            import java.util.Scanner;
+
+                            public class Switch {
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner(System.in);
+                                    String fruit = in.next();
+                                    if(fruit.equals("mango")){
+                                        System.out.println("king of the fruit");
+                                    }
+                                    if(fruit.equals("apple")){
+                                        System.out.println("red color fruit");
+                                    }
+                                    if(fruit.equals("grape")){
+                                        System.out.println("green color fruit");
+                                    }
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <p>This is how we had to do it without switch</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            import java.util.Scanner;
+
+                            public class Switch {
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner(System.in);
+                                    String fruit = in.next();
+
+                                    switch (fruit) {
+                                        case "mango" -> System.out.println(("King of fruits"));
+                                        case "apple" -> System.out.println("red color fruit");
+                                        case "grape" -> System.out.println("green color fruit");
+                                        default -> System.out.println("what kinda fruit you like");
+                                    }
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

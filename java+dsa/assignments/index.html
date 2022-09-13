@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t1" class="link">Related to First Java Program</a>
+        <a href="#t2" class="link">Conditionals and loops</a>
+        <a href="#t3" class="link">Functions</a>
+        <a href="#t4" class="link">Arrays</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Assignments</h1>
+        <div id="t1" class="wh">
+            <h2>Programs related to <a href="../first_java_program/index.html" target="_blank">First java program</a>
+            </h2>
+            <div class="in">
+                <h3>1&rarr; Write a program to print whether a number is even or odd, also take input from the user.
+                </h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class IsEvenOdd {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int num = in.nextInt();
+                                        in.close();
+                                        if(num%2 == 0){
+                                            System.out.println(num+" is even number");
+                                        } else {
+                                            System.out.println(num+" is odd number");
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>2&rarr; Take name as input and print a greeting message for that particular name.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        String name = in.next();
+                                        in.close();
+                                        System.out.println("Hi "+name+" Good morining!");
+                                        
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>3&rarr; Write a program to input principal, time, and rate (P, T, R) from the user and find Simple
+                    Interest.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int P = in.nextInt();
+                                        int T = in.nextInt();
+                                        int R = in.nextInt();
+                                        int simpleInterest = P * T * R ;
+                                        in.close();
+                                        System.out.println("Simple Interest is = "+simpleInterest);		
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>4&rarr; Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if
+                    conditions)</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args){
+                                        Scanner in = new Scanner(System.in);
+                                        int num1 = in.nextInt();
+                                        int num2 = in.nextInt();
+                                        char op = in.next().trim().charAt(0);
+                                        in.close();
+                                        if(op=='+'){
+                                            System.out.println(num1+num2);
+                                        }
+                                        if(op=='-'){
+                                            System.out.println(num1-num2);
+                                        }
+                                        if(op=='/'){
+                                            if(num2!=0){
+                                                System.out.println(num1/num2);
+                                            } else {
+                                                System.out.println("Not defined");
+                                            }
+                                        }
+                                        if(op=='*'){
+                                            System.out.println(num1*num2);
+                                        }			
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>5&rarr; Take 2 numbers as input and print the largest number.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        int num1 = in.nextInt();
+                                        int num2 = in.nextInt();
+                                        in.close();
+                                        if (num1 > num2) {
+                                            System.out.println(num1 + " is greater");
+                                        } else {
+                                            System.out.println(num2 + " is greater");
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>6&rarr; Input currency in rupees and output in USD.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        float rupees = in.nextFloat();
+                                        in.close();
+                                        double dollars = rupees/79.38;
+                                        System.out.println(rupees+" is "+dollars);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>7&rarr; Input currency in rupees and output in USD.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args) {
+                                
+                                        Scanner in = new Scanner(System.in);
+                                        int a = 0;
+                                        int b = 1;
+                                        int sum = 0;
+                                        int n = in.nextInt();
+                                        in.close();
+                                        if (n == 1) {
+                                            System.out.println("At 1 fib = 0");
+                                        } else if (n == 2) {
+                                            System.out.println("At 1 fib = 1");
+                                        } else {
+                                            for (int i = 3; i <= n; i++) {
+                                                sum = a + b;
+                                                a = b;
+                                                b = sum;
+                                            }
+                                            System.out.println("At " + n + " fib no is =" + b);
+                                        }
+                                
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>8&rarr; To find out whether the given String is Palindrome or not.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class Test {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        String check = in.next();
+                                        in.close();
+                                        int j = check.length()-1;
+                                        boolean isPalindrome=false;
+                                        for (int i = 0; i &lt; check.length() / 2; i++) {
+                                            if (check.charAt(i) == check.charAt(j)) {
+                                                isPalindrome = true;
+                                            } else {
+                                                isPalindrome = false;
+                                            }
+                                            j--;
+                                        }
+                                        if(isPalindrome){
+                                            System.out.println(check+" is Palindrome");
+                                        } else{
+                                            System.out.println(check+" is not a Palindrome");
+                                        }		
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>9&rarr; To find Armstrong Number between two given number.</h3>
+                <div class="wh">
+                    <button class="accordion">Concept</button>
+                    <div class="panel">
+                        <p> An Armstrong number is a positive m-digit number that is equal to the sum of the mth powers
+                            of
+                            their digits. It is also known as pluperfect, or Plus Perfect, or Narcissistic number. It is
+                            an
+                            OEIS sequence A005188. Let’s understand it through an example.
+
+                            <br>Armstrong Number Example
+                            <br>1: 1<sup>1</sup> = 1
+                            <br>
+                            <br>2: 2<sup>1</sup> = 2
+                            <br>
+                            <br>3: 3<sup>1</sup> = 3
+                            <br>
+                            <br>153: 1<sup>3</sup> + 5<sup>3</sup> + 3<sup>3</sup> = 1 + 125+ 27 = 153
+                            <br>
+                            <br>125: 1<sup>3</sup> + 2<sup>3</sup> + 5<sup>3</sup> = 1 + 8 + 125 = 134 (Not an Armstrong
+                            Number)
+                            <br>
+                            <br>1634: <sup> </sup>+ 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup> = 1 + 1296 + 81 + 256
+                            = 1643
+                        </p>
+                    </div>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                import java.util.Scanner;
+
+                                public class test2 {
+                                    public static void main(String[] args) {
+                                        Scanner in = new Scanner(System.in);
+                                        int num1 = in.nextInt();
+                                        int num2 = in.nextInt();
+                                        in.close();
+                                        printArm(num1, num2);
+                                    }
+                                
+                                    // print every three digit armstrong numbers
+                                
+                                    static void printArm(int num1, int num2) {
+                                
+                                        for (int i = num1; i &lt; num2; i++) {
+                                            int digits = 0;
+                                            int temp = i;
+                                            int sum = 0;
+                                            while (temp > 0) {
+                                                temp = temp / 10;
+                                                digits++;
+                                            }
+                                
+                                            temp = i;
+                                            while (temp > 0) {
+                                                int d = temp % 10;
+                                                sum = sum + (int) (Math.pow(d, digits));
+                                                temp/=10;
+                                            }
+                                            if (sum == i) {
+                                                System.out.println(i + " is Armstrong number");
+                                            }
+                                        }
+                                    }
+                                
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t2" class="content-box">
+        <h1>Conditionals and loops</h1>
+        <div class="in">
+            <h2>Basic Java Programs</h2>
+            <div class="wh">
+                <h3>1&rarr; Area of Circle</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            System.out.print("Enter radius : ");
+                                            int radius = in.nextInt();
+                                            in.close();
+                                            float area = (float) (Math.PI)*radius*radius;
+                                            System.out.println(area+" is area of circle whose radius is = "+radius);
+                                        }
+                                    }
+                                </code>
+                        </pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>This covers all these questions
+                        <ul>
+                            <li>Area Of Rectangle Program</li>
+                            <li>Area Of Isosceles Triangle</li>
+                            <li>Area Of Parallelogram</li>
+                            <li>Area Of Rhombus</li>
+                            <li>Area Of Equilateral Triangle</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>2&rarr; Perimeter Of Parallelogram</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            // area of circle
+                                            Scanner in = new Scanner(System.in);
+                                            System.out.print("Enter sides of parallelogram : ");
+                                            int side1 = in.nextInt();
+                                            int side2 = in.nextInt();
+                                            in.close();
+                                            int para = 2*(side1 + side2);
+                                            System.out.println(para+" is parameter of a paralellogram");
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>This covers all these questions
+                        <ul>
+                            <li>Perimeter Of Circle</li>
+                            <li>Perimeter Of Equilateral Triangle</li>
+                            <li>Perimeter Of Rectangle</li>
+                            <li>Perimeter Of Square</li>
+                            <li>Perimeter Of Rhombus</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>3&rarr; Volume Of Cone</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            // area of circle
+                                            Scanner in = new Scanner(System.in);
+                                            System.out.print("Enter h of a cone : ");
+                                            double h = in.nextDouble();
+                                            System.out.print("Enter r of a cone : ");
+                                            double r = in.nextDouble();
+                                            in.close();
+                                            double vol = (22*r*r*h)/(3*7);
+                                            System.out.println(vol+" is the volume of a cone");
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>This covers all these questions
+                        <ul>
+                            <li> Volume Of Prism</li>
+                            <li> Volume Of Cylinder</li>
+                            <li> Volume Of Sphere</li>
+                            <li> Volume Of Pyramid</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>4&rarr; Subtract the Product and Sum of Digits of an Integer</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            int num = 999;
+                                            int sum =0;
+                                            int product = 1;
+                                            int temp = num;
+                                            while(temp>0){
+                                                int last = temp%10;
+                                                sum+=last;
+                                                temp/=10;
+                                            }
+                                            temp = num;
+                                            while(temp>0){
+                                                int last = temp%10;
+                                                product*=last;
+                                                temp/=10;
+                                            }
+                                            int sub = product-sum;
+                                            System.out.println(product+" - "+sum +" = "+ sub);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>5&rarr; Input a number and print all the factors of that number (use loops)</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            for (int i = 1; i &lt;= num/2; i++) {
+                                                if(num%i==0){
+                                                    System.out.print(i+" ");
+                                                }
+                                            }
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>6&rarr; Take integer inputs till the user enters 0 and print the sum of all numbers (HINT: while
+                    loop)</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            // Input a number and print all the factors of that number (use loops)
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            int large = 0;
+                                            while (num != 0) {
+                                                if(num>large){
+                                                    large = num;
+                                                }
+                                                num = in.nextInt();
+                                            }
+                                            in.close();
+                                            System.out.println("largest number is = "+large);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>7&rarr; Take integer inputs till the user enters 0 and print the largest number from all</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            // Input a number and print all the factors of that number (use loops)
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            int sum = 0;
+                                            while (num != 0) {
+                                                sum += num;
+                                                num = in.nextInt();
+                                            }
+                                            in.close();
+                                            System.out.println("total sum is = "+sum);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <h2>Intermediate Java Programs</h2>
+            <div class="wh">
+                <h3>1&rarr; Factorial Program</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            in.close();
+                                            System.out.println(factorial(num));
+                                        }
+                                    
+                                        public static long factorial(int n) {		
+                                            long product = 1;
+                                            while(n!=1)
+                                            {
+                                                product = product * n;
+                                                n--;
+                                            }
+                                            return product;
+                                        }
+                                    }
+                                </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>2&rarr; Calculate Electricity Bill</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int units = in.nextInt();
+                                            in.close();
+                                            billGen(units);		
+                                        }
+                                    
+                                        public static void billGen(int units){
+                                            System.out.println("Fixed charges : 120");
+                                            System.out.println("Charges per unit = 5.5 Rupee");
+                                            System.out.println("Your amount for "+units+" is : "+units*5.5);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>3&rarr; Calculate Average Of N Numbers</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            int sum = 0;
+                                            int totalNum = 0;
+                                            while (num != 0) {
+                                                sum += num;
+                                                totalNum++;
+                                                num = in.nextInt();
+                                            }
+                                            in.close();
+                                            System.out.println(sum);
+                                            System.out.println(totalNum);
+                                            float avg =(float) (sum) / (float) (totalNum);
+                                            System.out.println("The average of numbers that you entered is : " + avg);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>4&rarr; Calculate Distance Between Two Points</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            System.out.println("Enter the coordinate of first point ");
+                                            System.out.print("x: ");
+                                            int x1 = in.nextInt();
+                                            System.out.print("y: ");
+                                            int y1 = in.nextInt();
+                                            System.out.println("Enter the coordinate of second point ");
+                                            System.out.print("x: ");
+                                            int x2 = in.nextInt();
+                                            System.out.print("y: ");
+                                            int y2 = in.nextInt();
+                                            in.close();
+                                            double distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+                                            // double distance = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+                                            System.out.println("Distance = " + distance);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>5&rarr; Calculate commission</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            System.out.print("Enter commission base : ");
+                                            int cb = in.nextInt();
+                                            System.out.print("Enter commission period (in months) : ");
+                                            int cp = in.nextInt();
+                                            System.out.println("Commission Rate according to the agreement : 6 %");
+                                            int com = (cb * 6) / 100;
+                                            System.out.println("Commission for " + cp + " month period is : " + com);
+                                            System.out.print("Number of Employee you want to split this with :");
+                                            int split = in.nextInt();
+                                            if(split==0){
+                                                split=1;
+                                            }
+                                            System.out.println("Commission for each employee : "+ com/split);
+                                    
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>6&rarr; Write a program to print the sum of negative numbers, sum of positive even numbers and the
+                    sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when
+                    the user enters a zero.</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            int negSum = 0;
+                                            int posSum = 0;
+                                            int oddSum = 0;
+                                            while (num != 0) {
+                                                num = in.nextInt();
+                                                if (num > 0) {
+                                                    posSum += num;
+                                                }
+                                                if (num < 0) {
+                                                    negSum += num;
+                                                }
+                                                if (num % 2 == 1) {
+                                                    oddSum += num;
+                                                }
+                                            }
+                                            System.out.println("Sum of all positive numbers : " + posSum);
+                                            System.out.println("Sum of all negative numbers : " + negSum);
+                                            System.out.println("Sum of all odd numbers : " + oddSum);
+                                    
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>7&rarr; Sum Of A Digits Of Number</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    import java.util.Scanner;
+
+                                    public class Test {
+                                        public static void main(String[] args) {
+                                            Scanner in = new Scanner(System.in);
+                                            int num = in.nextInt();
+                                            int sum = 0;
+                                            while(num>0){
+                                                int temp = num%10;
+                                                sum+=temp;
+                                                num/=10;
+                                            }
+                                            System.out.println("The sum of digits is : "+ sum);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t3" class="content-box">
+        <h1>Functions <a href="../l7/index.html" target="_blank">Notes</a></h1>
+        <div class="wh">
+            <h3>1&rarr; Define two methods to print the maximum and the minimum number respectively among three numbers
+                entered by the user.</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Scanner;
+
+                            public class Test {
+                                public static void main(String[] args) {
+                                    Scanner in = new Scanner(System.in);
+                                    int num1 = in.nextInt();
+                                    int num2 = in.nextInt();
+                                    int num3 = in.nextInt();
+                                    findMax(num1, num2, num3);
+                                    findMin(num1, num2, num3);
+                                }
+                            
+                                static void findMin(int num1, int num2, int num3) {
+                                    int max = num1;
+                                    if (num2 > max) {
+                                        max = num2;
+                                    }
+                                    if (num3 > max) {
+                                        max = num3;
+                                    }
+                                    System.out.println("max = " + max);
+                                }
+                            
+                                static void findMax(int num1, int num2, int num3) {
+                                    int min = num1;
+                                    if (num2 < min) {
+                                        min = num2;
+                                    }
+                                    if (num3 < min) {
+                                        min = num3;
+                                    }
+                                    System.out.println("min = " + min);
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; Define a method to find out if a number is prime or not.</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+
+                        import java.util.Scanner;
+
+                        public class Test {
+                            public static void main(String[] args) {
+                                Scanner in = new Scanner(System.in);
+                                int num = in.nextInt();
+                                isPrime(num);
+                            }
+                        
+                            static void isPrime(int num) {
+                                if (num &lt; 2) {
+                                    System.out.println("Enter number greater then 2");
+                                } else {
+                                    boolean isPrime = true;
+                                    for (int i = 2; i < num / 2; i++) {
+                                        if (num % i == 0) {
+                                            isPrime = false;
+                                        }
+                                    }
+                                    if (isPrime) {
+                                        System.out.println("Prime");
+                                    } else {
+                                        System.out.println("Not Prime");
+                                    }
+                                }
+                            }
+                        }
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t4" class="content-box">
+        <h1>Arrays</h1>
+        <div class="wh">
+            <h3>1&rarr; <a href="https://leetcode.com/problems/build-array-from-permutation/">Build array from permutation</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;
+                            // import java.util.Scanner;
+                            
+                            public class Test {
+                                public static void main(String[] args) {
+                                    // Scanner in = new Scanner(System.in);
+                                    int[] nums = {1,4,3,2,0};
+                                    buildArray(nums);
+                                }
+                                public static int[] buildArray(int[] nums) {
+                                    int[] ans = new int[nums.length];
+                                    for (int i = 0; i &lt; nums.length; i++) {
+                                        ans[i]=nums[nums[i]];
+                                    }
+                                    return ans;
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; <a href="https://leetcode.com/problems/concatenation-of-array/">Concatenation of array</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;                            
+                            
+                            public class Test {
+                                public static void main(String[] args) {
+                                    int[] nums = { 1, 2, 3, 4 };
+                                    System.out.println(Arrays.toString(getConcatenation(nums)));
+                                }
+                            
+                                static int[] getConcatenation(int[] nums) {
+                                    int n = nums.length;
+                                    int[] ans = new int[2 * n];
+                                    for (int i = 0; i &lt; nums.length; i++) {
+                                        ans[i] = nums[i];
+                                        ans[i + n] = nums[i];
+                                    }
+                                    return ans;
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>3&rarr; <a href="https://leetcode.com/problems/running-sum-of-1d-array/">Running sum of 1d array</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] runningSum(int[] nums) {
+                                    int[] sum = new int[nums.length];
+                                    int prevSum = 0;
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        prevSum += nums[i];
+                                        sum[i]= prevSum;
+                                    }
+                                    return sum;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>4&rarr; <a href="https://leetcode.com/problems/richest-customer-wealth">Richest customer wealth</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int maximumWealth(int[][] accounts) {
+                                    int maxWealth = 0;
+                                    for(int[] cus : accounts){
+                                        int sum = 0;
+                                        for(int i = 0; i < cus.length ; i++){
+                                            sum = sum + cus[i];                 
+                                        }
+                                        if(sum>maxWealth){
+                                            maxWealth = sum;
+                                        }
+                                    }
+                                    return maxWealth;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>5&rarr; <a href="https://leetcode.com/problems/shuffle-the-array/">Suffle the array</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] shuffle(int[] nums, int n) {
+                                    int[] ans = new int[n*2];
+                                    for(int i = 0; i &lt; n; i++){           
+                                        ans[i*2] = nums[i];
+                                        ans[i*2+1] = nums[i+n];
+                                    }
+                                    return ans;    
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>6&rarr; <a href="https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/">Kids with the greatest number of candies</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public List&lt;Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+                                    ArrayList&lt;Boolean> result = new ArrayList&lt;>();
+                                    int max = 0;
+                                    for (int i = 0; i &lt; candies.length; i++) {
+                                        if (candies[i] > max) {
+                                            max = candies[i];
+                                        }
+                                    }
+                                    for (int i = 0; i &lt; candies.length; i++) {
+                                        if (candies[i] + extraCandies >= max) {
+                                            result.add(true);
+                                        } else
+                                            result.add(false);
+                                    }
+                                    return result;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>7&rarr; <a href="https://leetcode.com/problems/number-of-good-pairs/">Number of good pairs</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int numIdenticalPairs(int[] nums) {
+                                    int ans = 0;
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        for(int j = i+1; j &lt; nums.length; j++){
+                                            if(nums[i]==nums[j])
+                                                ans++;
+                                        }
+                                    }
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>7&rarr; <a href="https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/">How many numbers are smaller than the current number</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] smallerNumbersThanCurrent(int[] nums) {
+                                    int[] ans = new int[nums.length];
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        int count=0;
+                                        for(int j = 0; j &lt; nums.length; j++){
+                                            if(nums[j]&lt;nums[i])
+                                                count++;
+                                        }
+                                        ans[i] = count;
+                                    }
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>9&rarr; <a href="https://leetcode.com/problems/create-target-array-in-the-given-order/">Create target array in the given order</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">using arraylist code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] createTargetArray(int[] nums, int[] index) {
+                                    ArrayList &lt;Integer> list = new ArrayList &lt;>();
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        list.add(index[i],nums[i]);
+                                        // in arraylist shifting is easier
+                                    }
+                                    int[] ans = new int[nums.length];
+                                    for(int i = 0; i &lt; ans.length; i++){
+                                        ans[i] = list.get(i);
+                                    }
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>            
+        </div>        
+        <div class="wh">
+            <h3>10&rarr; <a href="https://leetcode.com/problems/check-if-the-sentence-is-pangram/">Check if the sentence is a pangram</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public boolean checkIfPangram(String sentence) {
+                                    if(sentence.length()&lt;26 || sentence.length()==0){
+                                        return false;
+                                    }
+                                    
+                                    // if some element is not availabe in an string its index is -1
+                                    for(char a = 'a'; a &lt;= 'z'; a++){
+                                        if(sentence.indexOf(a)== -1)
+                                            return false;
+                                    }
+                                    return true;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>11&rarr; <a href="https://leetcode.com/problems/count-items-matching-a-rule/">Count items matching a rule</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int countMatches(List&lt;List&lt;String>> items, String ruleKey, String ruleValue) {
+                                    int count = 0;
+                                    if (ruleKey.equals("type")) {
+                                        for (int i = 0; i &lt; items.size(); i++) {
+                                            if (ruleValue.equals(items.get(i).get(0)))
+                                                count++;
+                                        }
+                                    } else if (ruleKey.equals("color")) {
+                                        for (int i = 0; i &lt; items.size(); i++) {
+                                            if (ruleValue.equals(items.get(i).get(1)))
+                                                count++;
+                                        }
+                                    } else if (ruleKey.equals("name")) {
+                                        for (int i = 0; i &lt; items.size(); i++) {
+                                            if (ruleValue.equals(items.get(i).get(2)))
+                                                count++;
+                                        }
+                                    }
+                                    return count;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>12&rarr; <a href="https://leetcode.com/problems/find-the-highest-altitude/">Find the highest altitude</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int largestAltitude(int[] gain) {
+                                    int highestAl = 0;
+                                    int sum = 0;
+                                    for(int i = 0; i &lt; gain.length; i++){            
+                                        sum+=gain[i];
+                                        if(sum>highestAl)
+                                            highestAl = sum;
+                                    }
+                                    return highestAl;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>13&rarr; <a href="https://leetcode.com/problems/flipping-an-image/">Flipping an image</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[][] flipAndInvertImage(int[][] image) {       
+                                    
+                                    for(int i = 0; i &lt; image.length; i++){        
+                                        int start = 0;
+                                        int end = image[i].length-1;
+                                        while(start&lt;end){
+                                            int temp = image[i][start];
+                                            image[i][start] = image[i][end];
+                                            image[i][end] = temp;
+                                            start++;
+                                            end--;
+                                        }
+                                    }
+                                    for(int i = 0; i &lt; image.length; i++){
+                                        for(int j = 0; j &lt; image.length; j++){
+                                            if(image[i][j]==0)
+                                                image[i][j] = 1;
+                                            else
+                                                image[i][j]= 0;
+                                        }
+                                    }
+                                    return image;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>14&rarr; <a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/">Cells with odd values in a matrix</a>
+            <br>Tricky question with many dislikes</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>15&rarr; <a href="https://leetcode.com/problems/matrix-diagonal-sum/">Matrix diagonal sum</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int diagonalSum(int[][] mat) {
+                                    int sum = 0;
+                                    for(int i = 0; i &lt; mat.length; i++){
+                                        for(int j = 0; j &lt; mat[i].length; j++){
+                                            if(i==j)
+                                                sum+=mat[i][j];
+                                            if(i+j==mat.length-1 && i!=j)
+                                                sum+=mat[i][j];
+                                        }
+                                    }
+                                    return sum;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>16&rarr; <a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/">Find numbers with even number of digits</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int findNumbers(int[] nums) {
+                                    int times = 0;        
+                                    for (int num : nums) {
+                                        if(even(num)){
+                                            times++;
+                                        }
+                                    }        
+                                    return times;
+                                }
+                                    public boolean even(int num){
+                                        return noOfDigits(num)%2==0;
+                                    }
+                                     public int noOfDigits(int num){
+                                        int count = 0;
+                                        while(num>0){
+                                            count++;
+                                            num/=10;            
+                                        }
+                                 return count;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>17&rarr; <a href="https://leetcode.com/problems/transpose-matrix/">Transpose of  matrix</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            public class Test {
+                                public int[][] transpose(int[][] matrix) {
+                                    int r = matrix.length;
+                                    int c = matrix[0].length;
+                                    int[][] transposeM = new int[r][c];
+                                    for (int i = 0; i < c; i++) {
+                                        for (int j = 0; j < r; j++) {
+                                            transposeM[j][i] = matrix[i][j];
+                                        }
+                                    }
+                                    return transposeM;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>18&rarr; <a href="https://leetcode.com/problems/add-to-array-form-of-integer/">Add to array-form of integer</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public List&lt;Integer> addToArrayForm(int[] num, int k) {
+                                    List &lt;Integer> list = new ArrayList&lt;>();
+                                    int fullNo = 0;
+                                    for(int i = 0; i &lt; num.length; i++){
+                                        fullNo*=10;
+                                        fullNo+=num[i];            
+                                    }
+                                    fullNo+=k;
+                                    
+                                    while(fullNo>0){
+                                        int temp = fullNo%10;
+                                        list.add(temp);
+                                        fullNo/=10;
+                                    }
+                                    Collections.reverse(list);
+                                    return list;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>19&rarr; <a href="https://leetcode.com/problems/maximum-population-year/">Maximum population year</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>20&rarr; <a href="https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/">Determine whether matrix can be obtained by rotation</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public boolean findRotation(int[][] mat, int[][] target) {        
+                                    for(int i = 0; i &lt; 4 ; i++){
+                                        if(check(mat,target))
+                                            return true;
+                                        rotate(mat);            
+                                    }
+                                    
+                                    return false;
+                                }
+                                
+                                // rotate the matrix (transpose + flip)
+                                private void rotate(int[][] mat){        
+                                    // transpose        
+                                    for(int i = 0; i &lt; mat.length; i++){
+                                        for(int j = 0; j &lt; i; j++){                
+                                            int temp = mat[i][j];
+                                            mat[i][j] = mat[j][i];
+                                            mat[j][i] = temp;
+                                        }
+                                    }       
+                                    // flip        
+                                    for(int i = 0; i &lt; mat.length; i++){
+                                        int start = 0;
+                                        int end = mat[0].length-1;
+                                        while(start&lt;=end)        {
+                                            int temp = mat[i][start];
+                                            mat[i][start] = mat[i][end];
+                                            mat[i][end] = temp;
+                                            start++;
+                                            end--;
+                                        }
+                                    }
+                                }  
+                                
+                                // check if mat after rotating is equal to target
+                                private boolean check(int[][] mat,int[][] target){        
+                                    for(int i = 0; i &lt; mat.length; i++){
+                                        for(int j = 0; j &lt; mat[i].length; j++){
+                                            if(target[i][j] != mat[i][j])
+                                                return false;                
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>21&rarr; <a href="https://leetcode.com/problems/two-sum/">Two sum</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] twoSum(int[] nums, int target) {
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        for(int j = i+1; j &lt; nums.length; j++){
+                                            if(nums[i]+nums[j]==target)
+                                                return new int[]{i,j};
+                                        }
+                                    }
+                                    return new int[]{-1,-1};
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>22&rarr; <a href="https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/">Find n unique integers sum up to zero</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] sumZero(int n) {
+                                    int num = n;        
+                                    int[] ans = new int[n];
+                                    
+                                    int start = 0;
+                                    int end = ans.length-1;
+                                    while(start <= end){
+                                        ans[start] = num;
+                                        ans[end] = 0-num;
+                                        num--;
+                                        start++;
+                                        end--;
+                                    }
+                                    ans[ans.length/2] = 0;
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>23&rarr; <a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/">lucky numbers in a matrix</a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public List&lt;Integer> luckyNumbers (int[][] matrix) {
+                                    List &lt;Integer> list = new ArrayList&lt;>();
+                                    for(int i = 0; i &lt; matrix.length; i++){
+                                        int least = matrix[i][0];
+                                        int minCol = 0;
+                                        for(int j = 1; j &lt; matrix[i].length; j++){
+                                            if(matrix[i][j] &lt; least){
+                                                minCol = j;
+                                                least = matrix[i][j];
+                                            }
+                                        }
+                                        boolean isTrue = true;
+                                        for(int j = 0; j &lt; matrix.length; j++){
+                                            if(matrix[i][minCol] &lt; matrix[j][minCol]){
+                                                isTrue = false;
+                                                break;
+                                            }
+                                        }
+                                        if(isTrue)
+                                            list.add(least);
+                                    }
+                                    return list;
+                                }                                
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>24&rarr; <a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></h3>
+            <p>This uses Kadane's algorithm for a omtimised solution <a href="https://www.youtube.com/watch?v=HCL4_bOd3-4">Explaination</a></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">Brute force approach</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int maxSubArray(int[] nums) {
+                                    int maxSum = -99999;
+                                    for(int i = 0; i < nums.length; i++){
+                                        int curSum = 0;
+                                        for(int j = i; j &lt; nums.length; j++){
+                                            curSum += nums[j];
+                                            if(curSum>maxSum)
+                                                maxSum = curSum;
+                                        }
+                                        
+                                    }
+                                    return maxSum;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">optimized using Kadane's algorithm</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int maxSubArray(int[] nums) {
+                                    int maxSum = nums[0];
+                                    int curSum = 0;
+                                    for(int i = 0; i &lt; nums.length; i++){
+                                        curSum += nums[i];
+                                        if(curSum > maxSum)
+                                            maxSum = curSum;
+                                        if(curSum &lt; 0)
+                                            curSum = 0;
+                                    }
+                                    return maxSum;
+                                }
+                            }         
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>25&rarr; <a href="https://leetcode.com/problems/reshape-the-matrix/">Reshape the matrix</a></h3>
+            <p><a href="https://www.youtube.com/watch?v=wCdNh9oThqk">Explaination</a></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[][] matrixReshape(int[][] mat, int r, int c) {
+                                    if((r*c) != (mat.length)*(mat[0].length)) return mat;
+                                    int[][] reshaped = new int [r][c];
+                                    int row_num = 0;
+                                    int column_num = 0;
+                                    for(int i = 0; i &lt; mat.length; i++){
+                                        for(int j = 0; j &lt; mat[i].length; j++){
+                                            reshaped[row_num][column_num] = mat[i][j];
+                                            column_num++;
+                                            if(column_num == c){
+                                                column_num = 0;
+                                                row_num++;
+                                            }
+                                        }            
+                                    }
+                                    return reshaped;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>26&rarr; <a href="https://leetcode.com/problems/plus-one/">Plus one</a></h3>
+            <p><a href="https://www.youtube.com/watch?v=G737jzcxG9A">Explaination</a></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            class Solution {
+                                public int[] plusOne(int[] digits) {
+                                    for(int i = digits.length-1; i >= 0; i--){
+                                        if(digits[i] &lt; 9){
+                                            digits[i]++;
+                                            return digits;
+                                        }
+                                        digits[i] = 0;
+                                    }
+                                    int[] ans = new int[digits.length+1];
+                                    ans[0] = 1;
+                                    return ans;
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; <a href=""></a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; <a href=""></a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; <a href=""></a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>2&rarr; <a href=""></a></h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

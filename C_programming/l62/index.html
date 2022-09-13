@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-62 =File I/O in C</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l63/index.html">Next Lec &rarr;</a>
+            <a href="../l60/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>File I/O in C</h1>
+        <div class="inside-content">
+            <h1>Why do we need a file?</h1>
+            <ul>
+                <li>Files are used to store data and information
+                    <ul>
+                        <li>Data &rarr; bits of storage</li>
+                        <li>information&rarr; it is made when data is processed and something meaningfull is created</li>
+                    </ul>
+                </li>
+                <li>Files are used to read & access data anytime from the hard disk.</li>
+                <li>Files make it easy for a programmer to access and store content without losing it on program termination</li>
+            </ul>
+            <div class="in">
+                <h2>Volatile VS Non-volatile memory</h2>
+                <div class="part2">
+                    <div>
+                        <h3>Volatile Memory</h3>
+                        <ul>
+                            <li>Volatile memory is computer storage that only maintains its data while the device is powered.</li>
+                            <li>The RAM will hold data, programs, and information as long as it has a constant power supply but immediately the power is interrupted all that content is cleared.</li>
+                            <li>The Volatile memory will only hold data temporarily.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Non Volatile Memory</h3>
+                        <ul>
+                            <li>Non-volatile memory is computer memory that can retain the stored information even when not powered.</li>
+                            <li>This type of memory is also referred to as permanent memory since data stored within it can be retrieved even when there is no constant power supply.</li>
+                            <li>It is used for the long-term storage of data.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Why do we need files?</h3>
+                <ul>
+                    <li>When a C program is terminated, the data stored in ram is lost.</li>
+                    <li>Storing in a file will preserve our data even after the program terminates.</li>
+                    <li>RAM is not able to handle quite large amount of data due to its small size relative to the hard disk.</li>
+                    <li>It is easy to transfer data as files.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of files</h3>
+                <ul>
+                    <li>Text files&rarr; stores data in plain text and these files can be opened by text editors. These are human readable</li>
+                    <li>Binary files&rarr; Here the data is stored as 0,1 stream that's why these files are secure and only computer can read these files.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>File Operators in C</h2>
+                <ul>
+                    <li>In C we can perform these high level operations on files:
+                        <ul>
+                            <li>1&rarr; Creating a new file</li>
+                            <li>2&rarr; Opening a file</li>
+                            <li>3&rarr; Closing a file</li>
+                            <li>4&rarr; Reading from and writing to a file.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>File I/O Functions in C</h2>
+            <div class="in">
+                <h3>Working with files in C</h3>
+                <ul>
+                    <li>When working with files, we have to declare a pointer of type fILE
+                        <ul>
+                            <li>FILE *ptr = NULL;</li>
+                        </ul>
+                    </li>
+                    <li>This declaration helps us to work with files through C program.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Opening a file - Creating or editing a file</h3>
+                <ul>
+                    <li>stdio.h contains a function called fopen() for opening files in C.</li>
+                    <li>The syntax for opening a file in standard I/O is:
+                        <ul>
+                            <li>ptr = fopen("fileopen","mode")</li>
+                        </ul>
+                    </li>
+                    <li>For Example:
+                        <ul>
+                            <li>fopen("E:\\Code\\harry.txt","w");</li>
+                            <li>fopen("E:\\Programming\\bhai.bin","rb");</li>
+                        </ul>
+                    </li>
+                    <li>"r" &rarr; for reading</li>
+                    <li>"w" &rarr; for writing over previously written text</li>
+                    <li>"a" &rarr; for writing without removing previously written text in file</li>
+                    <li>"r+" &rarr; for reading and writing</li>
+                    <li>"rb" &rarr; read binary</li>
+                </ul>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            #include &lt;stdio.h&gt;
+                            <br> int main()
+                            <br> {
+                            <br> FILE *ptr=NULL; //this is a good practise
+                            <br> char string[34];
+                            <br> ptr = fopen("myfile.txt","r");
+                            <br> fscanf(ptr,"%s",string); //what this do is takes content till space or new line from file and store it to string variable
+                            <br> printf("Content of this file has :%s\n",string);
+                            <br>
+                            <br> return 0;
+                            <br> }
+                        </p>
+                        <div class="in">
+                            <p>
+                                Content of this file has :this
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="in">
+                <h3>Closing a file</h3>
+                <ul>
+                    <li>If any file is opened in C program (using fopen()) it needs to be closed</li>
+                    <li>Closing a file is accomplished by the library function fclose()</li>
+                    <li>fclose(fptr); //fptr is the file pointer associated with the file to be closed</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Reading a file</h3>
+                <ul>
+                    <li>In order to read a file, we can use fscanf function.</li>
+                    <li>This function is file version of scanf function.</li>
+                    <li>fscanf expects a file pointer in addition to the other arguments with scanf expects.</li>
+                    <li>We will have to open the file in read mode in order to use this function.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Writing to a file</h3>
+                <ul>
+                    <li>In order to write to a file, we can use fprintf function.</li>
+                    <li>This function is fiie version of printf function</li>
+                    <li>fprintf expects a file pointer in addition to the other arguments which printf expects</li>
+                    <li>We will have to open the file in write mode in order to use this function.</li>
+                </ul>
+                </ul>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            #include &lt;stdio.h&gt;
+                            <br> int main()
+                            <br> {
+                            <br> FILE *ptr=NULL;
+                            <br> char string2 [100]="This content was produced by Tutorial64.c";
+                            <br> ptr = fopen("myfile.txt","w");
+                            <br> fprintf(ptr,"%s",string2); //inside the file this string will we inserted
+                            <br> //all the older text got removed and the text stored in string2 was inserted
+                            <br> // ptr = fopen("myfile.txt","a"); // in this mode the text inside string2 will be added in the end to the file
+                            <br>
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>More on file I/O</h2>
+            <div class="in">
+                <h2>Working with files in C</h2>
+                <ul>
+                    <li>stdio.h contains a function called fopen() for opening files in C</li>
+                    <li>When working with files, we have to declare a pointer of type FILE
+                        <ul>
+                            <li>FILE * ptr;</li>
+                        </ul>
+                    </li>
+                    <li>This declaration helps us to work with files through C program</li>
+                    <li>The syntax for opening a file in standard I/O is :
+                        <ul>
+                            <li>ptr = fopen("fileopen","mode")</li>
+                        </ul>
+                    </li>
+                    <li>In order to read/write to a file, we can use fscanf/fprintf function.
+                        <ul>
+                            <li>fscanf(fptr, "%s", buff); &nbsp; fprintf(fptr, "Marks = %d", salary);</li>
+                        </ul>
+                    </li>
+                    <li>fclose(fptr); //fptr is the file pointer associated with file to be closed.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Mode & Description</h2>
+                <div class="part2 wh">
+                    <div>
+                        <div>
+                            <p><b>Mode</b></p>
+                        </div>
+                        <div>
+                            <p><b>Description</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>r</p>
+                        </div>
+                        <div>
+                            <p>Opens an existing text file for reading</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>w</p>
+                        </div>
+                        <div>
+                            <p>Opens a file for writing. If it doesn't exist, then a new file is created. Writing starts from the beginning of the file.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>a</p>
+                        </div>
+                        <div>
+                            <p>Opens a text file for writing in appending mode. If it does not exist, then a new file is created. The program will start appending content to the existing file content.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>r+</p>
+                        </div>
+                        <div>
+                            <p>This mode will open a text file for both reading and writting</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>w+</p>
+                        </div>
+                        <div>
+                            <p>Opens a text file for both reading and writing. It first truncates the file to zero length if it exists, otherwise creates a file if it does not exist</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>a+</p>
+                        </div>
+                        <div>
+                            <p>Opens a text file for both reading and writing. It creates the file if it does not exist. The reading will start from the beginning but writing can only append to file.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h2>Other FILE I/O functions</h2>
+                <ul>
+                    <li>As printf and scanf are used for printing and taking input from terminal
+                        <ul>
+                            <li>Same way fprintf and fscanf is used for taking input and output in files</li>
+                        </ul>
+                    </li>
+                    <li>
+                        There are various functions provided by C standard library to read and write a file, character by character, or in the form of a fixed length string
+                    </li>
+                    <li>Some of them are:
+                        <ul>
+                            <li>fputc</li>
+                            <li>fputs</li>
+                            <li>fgetc</li>
+                            <li>fgets</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <h3>fputc function in C</h3>
+                    <ul>
+                        <li>Simplest function to write characters to a file in fputc</li>
+                        <li>Syntax of fputc goes as follows:
+                            <ul>
+                                <li>in fputc (character, FILE pointer);</li>
+                                <li>It returns the written character written on success.</li>
+                                <li>On failure it returns EOF
+                                    <ul>
+                                        <li>End of File character</li>
+                                    </ul>
+                                </li>
+                                <li>The EOF is a constant defined in the header file stdio.h</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="in">
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> int main()
+                                <br> {
+                                <br> FILE *ptr = NULL;
+                                <br> ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
+                                <br> fputc('o',ptr);
+                                <br><br>fclose(ptr);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>fputs function</h3>
+                    <ul>
+                        <li>fputs function is used to write a null terminated string to a file in C
+                            <ul>
+                                <li>int fputs(const char *s, file *fp);</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="in">
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> int main()
+                                <br> {
+                                <br> FILE *ptr = NULL;
+                                <br> ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
+                                <br> fputs("Harry is great",ptr);
+                                <br><br>fclose(ptr);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>fgetc function</h3>
+                    <ul>
+                        <li>Simplest function to read characters from a file is fgetc</li>
+                        <li>Syntax of fgetc goes as follows:
+                            <ul>
+                                <li>int fgetc(FILE * fp)</li>
+                                <li>it returns the read character on success.</li>
+                                <li>On failure it returns EOF</li>
+                                <li>The EOF is a constant defined in the header file stdio.h.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="in">
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> int main()
+                                <br> {
+                                <br> FILE *ptr = NULL;
+                                <br> ptr = fopen("myfile2.txt","r");
+                                <br> char c = fgetc(ptr);
+                                <br> printf("The character I got was : %c\n",c);
+                                <br><br>fclose(ptr);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>fgets function</h3>
+                    <ul>
+                        <li>fgets function is used to write a null terminated string to a file in C
+                            <ul>
+                                <li>int fgets(const char *s, int n, FILE *fp)
+                                    <ul>
+                                        <li>int n &rarr; the number of character we wanted to get from the file</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="in">
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> int main()
+                                <br> {
+                                <br> FILE *ptr = NULL;
+                                <br> ptr = fopen("myfile2.txt","r");
+                                <br> char str[34];
+                                <br> fgets(str, 5, ptr);
+                                <br> printf("The string is : %s\n", str);
+                                <br><br>fclose(ptr);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>

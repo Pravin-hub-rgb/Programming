@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-10 = If Else Control Statements in C</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l11/index.html">Next Lec &rarr;</a>
+            <a href="../l9/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>If Else Control Statements in C</h1>
+        <p>It is used to perform operations according to a trueness or falseness of some condition.</p>
+        <p>
+            Sometimes we want a set of instructions to be executed if certain condition is satisfied and an entirely
+            different set of instructions to be executed if the condition does not fulfil. This kind of situation is
+            dealt in C language using a decision control
+            instruction.
+        </p>
+        <div class="wh">
+            <h2>Types of If statements</h2>
+            <ul>
+                <li>if statement</li>
+                <li>if else statement</li>
+                <li>if else if ladder</li>
+                <li>nested if</li>
+            </ul>
+            <div class="in">
+                <h3>Syntax for if</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            if(condition){
+                                //if true
+                            } 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Syntax for if else</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            if(condition){
+                                    //if true
+                                }
+                                else {
+                                    //if not true
+                            } 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Syntax for if else if ladder</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            if(condition 1){
+                                    //if true
+                                }
+                                else if(condition 2{
+                                    //if true
+                                }
+                                .
+                                .
+                                .
+                                else {
+                                    // no condition is true
+                            } 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Example code</h3>
+                <div class="wh">
+                    <h3>if else</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                    #include &lt;stdio.h>
+                                    int main()
+                                    {
+                                        int age=0;
+                                        printf("Enter your age\n");
+                                            scanf("%d",&age);
+                                        if(age>=18){
+                                            printf("You are able to vote");
+                                        }
+                                        else {
+                                            printf("You are not able to vote \n try next year");
+                                        }
+                                        return 0;
+                                    } 
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>if else if</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                    #include &lt;stdio.h>
+                                    int main()
+                                    {
+                                        int age=0;
+                                        printf("Enter your age\n");
+                                        scanf("%d",&age);
+                                        if(age>=18){
+                                            printf("You are able to vote");
+                                        }
+                                        if else(age>=10){
+                                            printf("you can apply for voter id but can't vote yet");
+                                        }
+                                        else {
+                                            printf("You are not able to vote \n try next year");
+                                        }
+                                      r eturn 0;
+                                    } 
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wh">
+                <h2>Practice</h2>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">Gift according to condition code</button>
+                    <div class="panel">
+
+                        <pre>
+                            <code>
+
+                                    #include &lt;stdio.h>
+                                    int main(){
+                                        int val;
+                                        printf("Put 1 if you have passed both exam \n put 2 if you have passed only maths \n put 3 is you have only passed science: ");
+                                        scanf("%d",&val);
+                                        if(val == 1){
+                                            printf("Congratulations you have passed both the exams your gift is Rs. 45");
+                                        }
+                                        else if(val == 2){
+                                            printf("Congratulations you have passed only in maths exam your gift is Rs. 15");
+                                        }
+                                        else if(val == 3){
+                                            printf("Congratulations you have passed only in science exam your gift if Rs. 15");
+                                        }
+                                        else{
+                                            printf("Your input is incorrect \n Put 1 if you have passed both exam \n put 2 if you have passed only maths \n put 3 is you have only passed science: ");
+                                            scanf("%d",&val);
+                                        }
+                                        return 0;
+                                    }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

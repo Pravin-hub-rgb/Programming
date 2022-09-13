@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int findPeak(int arr[], int size)
+{
+    int start = 0;
+    int end = size - 1;
+    while (start < end)
+    {
+        int mid = start + (end - start) / 2;
+        if (arr[mid] < arr[mid + 1])
+            start = mid + 1;
+        else
+            end = mid;
+    }
+    return start;
+}
+
+int main()
+{
+    int arr[] = {0, 9, 10, 5, 2};
+    int size = sizeof(arr) / sizeof(int);
+    cout << findPeak(arr, size);
+    return 0;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-3 = Flow of Program - Flowcharts and Pseudocode </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Flow of Program - Flowcharts and Pseudocode</h1>
+        <div class="wh">
+            <p><b>Flow Chart &rarr;</b> Visualization of out thought process of Algorithm and represent them diagrammatically is called flow chart.</p>
+            <img class="wh" src="../images/flow1.svg" alt="">
+            <div class="in">
+                <ul>
+                    <li><b>Start / Stop</b> - An ovel shape indicate the starting and ending points of the flow chart.</li>
+                    <li><b>Input / Output</b> - A parallelogram is used to represent input and output in flow chart.</li>
+                    <li><b>Processing</b> - A rectangle is used to represent process such as mathematical computation or variable assignment.</li>
+                    <li><b>Condition</b> - A diamond shape is used to represent conditional statement which results in true or false (Yes or No)</li>
+                    <li><b>Flow direction of program</b> - An arrow shape is ued to represent flow of the program.</li>
+                </ul>
+                <div class="wh">
+                    <p>
+                        <b>Example 1 &rarr;</b> Take a name and output Hellow name. <br>
+                        <img class="wh" src="../images/flow2.svg" alt="">
+                    </p>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Example 2 &rarr;</b> Take input of a salary. If the salary is greater than 10,000 add bonus 2000, otherwise add bonus as 1000. <br>
+                        <img src="../images/flow3.png" alt="">
+                    </p>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Example 3 &rarr;</b> Input a number and print whether it is prime or not. <br>
+                        <img src="../images/flow4.png" alt="">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Pseudocode</h3>
+            <p>It is like a rough code which represents how the algorithm of a program work.
+                <ul>
+                    <li>Pseudocode does not require syntax</li>
+                </ul>
+                <div class="in">
+                    <p>
+                        <b>Pseudocode of Example 2</b>
+                        <br>start
+                        <br>Input salary
+                        <br>if salary > 10000 :
+                        <br>&nbsp; &nbsp; &nbsp;salary = salary + 2000
+                        <br>else :
+                        <br>&nbsp; &nbsp; &nbsp;salary = salary+1000
+                        <br>output salary
+                        <br>exit
+                    </p>
+                </div>
+                <div class="in">
+                    <p>
+                        <b>Pseudocode of Example 3</b>
+                        <br>start
+                        <br> input num
+                        <br> if num &le; 1
+                        <br> &nbsp; &nbsp; print "neither prime nor composite"
+                        <br> c = 2
+                        <br> while c &lt; num
+                        <br> &nbsp; &nbsp; if num % c = 0
+                        <br> &nbsp; &nbsp; &nbsp; &nbsp; output "not prime"
+                        <br> &nbsp; &nbsp; &nbsp; &nbsp; exit
+                        <br> &nbsp; &nbsp; c = c + 1
+                        <br> end while
+                        <br> output "prime"
+                        <br>exit
+                    </p>
+                </div>
+            </p>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-23 = C++ Objects Memory Allocation & using Arrays in Classes</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>C++ Objects Memory Allocation & using Arrays in Classes</h1>
+        <div class="wh">
+           <h2>Objects Memory Allocation</h2>
+           <ul>
+            <li>The way memory is allocated to variables and functions of the class is different even though they both are from the same class.</li>
+            <li>The memory is only allocated to the variables of the class when the object is created.</li>
+            <li>The memory is not allocated to the variables when the class is declared.</li>
+            <li>At the same time, single variables can have different values for different objects, so every object has an individual copy of all the variables of the class.</li>
+            <li>But the memory is allocated to the function only once when the class is declared.</li>
+            <li>So the objects don't have individual copies of functions only one copy is shared among each object.</li>
+           </ul>
+        </div>
+        <div class="wh">
+            <h2>Arrays in classes</h2>
+            <ul>
+                <li>Arrays are used to store multiple values of the same type.</li>
+                <li>An array is very helpful when multiple variables are required, instead of making multiple variables one array can be used which can store multiple values.</li>
+                <li>Arrays stores data in seqential order.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        // example program to demonstrate the use of arrays in classes
+                        #include &lt;iostream>
+                            using namespace std;
+                            
+                            class Shop{
+                                int itemId[100];
+                                string names[100];
+                                int itemPrice[100];
+                                int counter = 0;
+                                public:
+                                    void setPrice();
+                                    void display();
+                            };
+                            
+                            void Shop :: setPrice(){
+                                cout&lt;&lt;"Item Id : ";
+                                cin>>itemId[counter];
+                                cout&lt;&lt;"Name : ";
+                                cin>>names[counter];
+                                cout&lt;&lt;"Enter price : ";
+                                cin>>itemPrice[counter];
+                                counter++;
+                            }
+                            
+                            void Shop :: display(){
+                                cout&lt;&lt; counter&lt;&lt;endl;
+                                for (int i = 0; i &lt; counter; i++)
+                                {
+                                    cout&lt;&lt;itemId[i]&lt;&lt;" "&lt;&lt;names[i]&lt;&lt;" "&lt;&lt;itemPrice[i]&lt;&lt;endl;
+                                }
+                                
+                            }
+                            
+                            int main()
+                            {
+                                Shop firstOne;
+                                firstOne.setPrice();
+                                firstOne.setPrice();
+                                firstOne.setPrice();
+                                firstOne.display();
+                                
+                                return 0;
+                            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>

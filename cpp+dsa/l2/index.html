@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-2 = First Program</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++ & DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>First Program</h1>
+        <div class="wh">
+            <ul>
+                <li><b>Compiler</b>
+                    <ul>
+                        <li>Translation or conversion</li>
+                        <li>Catching Errors</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>IDE &rarr; Integrated Development Environment</h3>
+            <ul>
+                <li>An environment that helps you wirte, run and even debug(in some cases) code in programming language
+                </li>
+                <li>Eg: VS Code, Code Studio, Eclipse, NetBeans, etc.</li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>First Program in C++</h3>
+            <div class="wh">
+                <p><b>#include</b></p>
+                <ul>
+                    <li>Is a preprocessor directives that tells the compiler to insert another file (iostream) into your
+                        source file.</li>
+                    <li>It includes header files</li>
+                    <li>#include is replaced by the content of the files.</li>
+                    <li>Directive is an instructions to the compiler.</li>
+                </ul>
+            </div>
+            <div class="wh">
+                <p><b>Header file</b></p>
+                <p><a href="https://stackoverflow.com/questions/2976477/difference-between-iostream-and-iostream-h">iostream or iostream.h</a></p>
+                <ul>
+                    <li>They usually have the extension .h but new c++ standard header file donot have a file extension.
+                    </li>
+                    <li>Iostream contains declaration that are needed by cout identifier and &lt;&lt; (insertion
+                        operation)</li>
+                    <li>It is concerned with input output operations</li>
+                </ul>
+            </div>
+            <div class="wh">
+                <p><b>using namespace std;</b></p>
+                <ul>
+                    <li>Namespaces &rarr; <a href="https://www.youtube.com/watch?v=ZZWTh142s4w">Explaination</a>
+                        <ul>
+                            <li>Using namespaces std;
+                                <ul>
+                                    <li>
+                                        You are going to use std Namespace where feature of c++ strandard library such as
+                                        string or vector are declared
+                                    </li>
+                                    <li>Namespace is a part of program which contains in which certain names are recognised
+                                        and outside Namespace theya re unknown</li>
+                                    <li>It says sall the program statement that follow are within std Namespace. It defines
+                                        the scope</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ol>
+                <li>Our program will find <b>int main(){}</b> and start executing from there</li>
+                <li>int main(){ //code }
+                    <ul>
+                        <li>These brackets show the 'scope' of the main function </li>
+                        <li>i.e. the code which is defined within int main() function </li>
+                    </ul>
+                </li>
+                <li>In C++, we use 'cout' to print something
+                    <ul>
+                        <li>Eg&rarr; cout << "Hello World" ;</li>
+                    </ul>
+                </li>
+                <li>This cout is already defined in a file (header file) which must be included before using cout.
+                    <ul>
+                        <li><b>#include &lt;file name></b> is a <u>preprocessor directive</u> which runs before the
+                            program is compiled and includes the files to be used later in the source code.</li>
+                        <li>A file called iostream has cout defined in it so: <br> #include &lt;iostream>
+                            <br>Hint: i/o means input/output.
+                        </li>
+                    </ul>
+                </li>
+                <li>Namespaces &rarr; <a href="https://www.youtube.com/watch?v=ZZWTh142s4w">Explaination</a>
+                    <ul>
+                        <li>Using namespaces std;
+                            <ul>
+                                <li>
+                                    You are going to use std Namespace where feature of c++ strandard library such as
+                                    string or vector are declared
+                                </li>
+                                <li>Namespace is a part of program which contains in which certain names are recognised
+                                    and outside Namespace theya re unknown</li>
+                                <li>It says sall the program statement that follow are within std Namespace. It defines
+                                    the scope</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Using cout&rarr;
+                    <ul>
+                        <li>we use '&lt;&lt;' after 'cout' to display something to stand output (your screen) within std
+                            namespace.</li>
+                    </ul>
+                </li>
+                <li>endl &rarr;
+                    <ul>
+                        <li>Used to enter new line, Just like ENTER key</li>
+                        <li>endl is like "\n" which is new line escape sequence character used in various langauges
+                            including C++,</li>
+                        <li>cout &lt;&lt; "Hello World" &lt;&lt; endl;</li>
+                    </ul>
+                </li>
+                <li>; &rarr; It is used to terminate statements</li>
+            </ol>
+        </div>
+        <div class="in">
+            <h2>Data Types &darr;</h2>
+            <p>Different types of data to be stored in memory. <br>Eg - integer, float, character, double, etc</p>
+            <div class="wh">
+                <ul>
+                    <li>Examples
+                        <ul>
+                            <li>int &rarr; stores integers like -5, 0 , 8, etc</li>
+                            <li>char &rarr; single character like 'a', '+', '$', '7', etc</li>
+                            <li>float &rarr; floating point values like -2.014, 1.0000, 6.7800</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <ul>
+                    <li>Different data types use different amounts of memory.</li>
+                    <li>Amount of memory used also depends on the architecture of your CPU.</li>
+                </ul>
+                <div class="part3">
+                    <div>
+                        <div>
+                            <p><b>Data Type</b></p>
+                        </div>
+                        <div>
+                            <p><b>Meaning</b></p>
+                        </div>
+                        <div>
+                            <p><b>Size (in Bytes)</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>int</p>
+                        </div>
+                        <div>
+                            <p>Integer </p>
+                        </div>
+                        <div>
+                            <p>2 or 4</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>float </p>
+                        </div>
+                        <div>
+                            <p>Floating-point </p>
+                        </div>
+                        <div>
+                            <p>4</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>double</p>
+                        </div>
+                        <div>
+                            <p>Double FLoating-point</p>
+                        </div>
+                        <div>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>char </p>
+                        </div>
+                        <div>
+                            <p>Character</p>
+                        </div>
+                        <div>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>wchat_t</p>
+                        </div>
+                        <div>
+                            <p>Wide Character </p>
+                        </div>
+                        <div>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>bool</p>
+                        </div>
+                        <div>
+                            <p>Boolean</p>
+                        </div>
+                        <div>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>void</p>
+                        </div>
+                        <div>
+                            <p>Empty</p>
+                        </div>
+                        <div>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <ul>
+                    <li><b>Character &darr;</b>
+                        <ul>
+                            <li>A 1-byte (=8 bits) data type that takes 1 character.</li>
+                            <li>char ch = 'a';</li>
+                        </ul>
+                    </li>
+                    <li><b>Boolean &darr;</b>
+                        <ul>
+                            <li>True/False</li>
+                            <li>Take 1 bit
+                                <ul>
+                                    <li>1 &rarr; True</li>
+                                    <li>0 &rarr; False</li>
+                                </ul>
+                            </li>
+                            <li>bool isGood = 1; <br> bool isBad = 0;</li>
+                        </ul>
+                    </li>
+                    <li><b>Float/Double &darr;</b>
+                        <ul>
+                            <li>Float takes 4/8 bytes</li>
+                            <li>Double takes 8 bytes.</li>
+                            <li>float num1 = 1.2; <br> double num2 = 2.4;</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="in">
+                    <p>
+                        Check the size of different data types for your system using <b>sizeof(variable_name);</b>
+                    </p>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Variable Naming / Nomenclature</h3>
+                <ol>
+                    <li>Can contain alphabets, numbers and underscores.</li>
+                    <li>Cannot start with a number.</li>
+                    <li>Cannot be keywords like int, cout, double, bool etc.</li>
+                    <li>Case sensitive.</li>
+                    <li>Cannot contain special symbols like %, $, !, @, etc</li>
+                </ol>
+                <ul>
+                    <li>Warning &darr;
+                        <ul>
+                            <li>Don't use same variable name multiple times.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>How is data stored in memory?</h3>
+                <p>
+                    Eg &rarr; int a = 8; // int takes 4 bytes = 32 bits
+                    <br>In binary, 8 = 1000 (4bits needed)
+                    <br>&therefore; int a &rarr; 00000000 00000000 00000000 00001000 &rarr; 32 bits
+                </p>
+            </div>
+            <div class="wh">
+                <h3>Conversion of one data type to another (if it is valid is called <b>Type Casting</b></h3>
+                <p>
+                    Example &darr;
+                    <br> int a = 'a';
+                    <br>variable a will store the ASCII value of 'a' = 97.
+                    <br><br>
+                    Example &darr;
+                    <br>char ch = 98;
+                    <br>98 will automatically get typecasted to it corresponding character.
+                    <br>This aoutomatic typecasting is called <b>implicit typecasting</b>
+                </p>
+                <div class="in">
+                    <p>What if we type cast from <b>int</b> to <b>char</b> but the value is too large to be stored in
+                        <i>char?</i>
+                        <br><b>Soln &rarr; </b> A warning is thrown and the last bte from the original value is given to
+                        the character.
+                    </p>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>How are negative numbers stored?</h3>
+                <ul>
+                    <li>The first bit tells us wheter the number is positive or negative.
+                        <ul>
+                            <li>First Bit &rarr; 0 means Positive</li>
+                            <li>1 means Negative.</li>
+                        </ul>
+                    </li>
+                    <li>Steps to store -5 in binary format &darr;
+                        <ol>
+                            <li>Ignore the -ve sign (5) </li>
+                            <li>Write the binary representation of 5</li>
+                            <li>Take its 2's complement and store it.</li>
+                        </ol>
+                    </li>
+                    <li>Example &darr; a = -5
+                        <ol>
+                            <li> -5 &rarr; 5 (Ignore the -ve sign) </li>
+                            <li> 5 &rarr; 0101 &rarr; 00....0101 (Binary) </li>
+                            <li>2's complement = 1's complement + 1.
+                                <ul>
+                                    <li>5 &rarr; 00....0101</li>
+                                    <li>1's complement &rarr; 11....1010 (Flip the bits)</li>
+                                    <li>2's complement &rarr; 11....1011</li>
+                                </ul>
+                            </li>
+                            <li></li>
+                        </ol>
+                    </li>
+                    <li>Displaying Negaitve Number &darr;
+                        <ol>
+                            <li>Take 2's complement of the stored number
+                                <ul>
+                                    <li>stored &rarr; 11.....1011
+                                        <ul>
+                                            <li>First bit shows negative</li>
+                                        </ul>
+                                    </li>
+                                    <li>1's complement 00...0100</li>
+                                    <li>2's complement 00....0101 = 5</li>
+                                    <li>Why 2's complement ?
+                                        <ul>
+                                            <li>If we stored numbers as it is without using 2's complement, then
+                                                representing 0 &rarr; 00.....0000 and -0 &rarr; 10....000 will be equal
+                                                and thus waster of space.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>Store only Positive Integers</h3>
+                <p>
+                    The default signed representation allows us to store both positive and negative values.
+                    <br>To store only positive integers, we use <b>unsigned</b>.
+                    <br>Eg &rarr; unsigned int a = 10;
+                </p>
+                <div class="in">
+                    <p><b>What if we store a negative value in an unsigned number?</b>
+                        <br>Example &rarr; unsigned int a = -112;
+                        <br>cout &lt;&lt; a &lt;&lt; endl;
+                        <br>output &rarr; 4294967184?
+                    </p>
+                    <ul>
+                        <li>Explaination
+                            <ul>
+                                <li>Unsigned int uses all 32 bits to store the value and the MSB (=1) will make the
+                                    value.</li>
+                                <li>An unsigned int does not use the 2's complement again to display the number.</li>
+                                <li>Thus, 11...10010000. gets printed as it is in decimal.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Baisc Arithmetic Operators</h2>
+            <p><b>+, -, *, /, %</b></p>
+            <div class="in">
+                <ol>
+                    <li>int / int = int (floor value of answer)
+                        <ul>
+                            <li>Examples &darr; </li>
+                            <li>5/2 = 1</li>
+                            <li>3/5 = 0</li>
+                            <li>9/2 = 4</li>
+                        </ul>
+                    </li>
+                    <li>int / float = float
+                        <ul>
+                            <li>float / int = float</li>
+                            <li>double / int = double</li>
+                            <li>int / double = double</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Relational Operators</h3>
+                <p><b>== , >=, &lt;=, >, &lt; !=</b></p>
+                <ol>
+                    <li>Is a = b ?
+                        <ul>
+                            <li>if yes &rarr; 1</li>
+                            <li>if no &rarr; 0</li>
+                        </ul>
+                    </li>
+                    <li>Is a greater then or equal to b?
+                        <ul>
+                            <li>a >= b if yes &rarr; 1</li>
+                            <li>a >= b if no &rarr; 0</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Logical Operators </h3>
+                <p><b>&&, ||, !</b></p>
+                <ol>
+                    <li>Logical AND &darr;
+                        <ul>
+                            <li>All conditions must be true for the output to be true</li>
+                            <li>Example &rarr; int a = 5, b = 10, c = 15;
+                                <br>cout &lt;&lt; ((a > 0) && (b != 0) && (c &lt;= 15));
+                                <br>output &rarr; 1
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Logical OR &darr;
+                        <ul>
+                            <li>At least 1 condition must be true for the output to be true.</li>
+                            <li>Example &rarr; int a = 5, b = 10, c = 15;
+                                <br>cout &lt;&lt; ((a>5) || (b&lt;10) || (c >= 15));
+                                <br>output &rarr; 1
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Logical NOT &darr;
+                        <ul>
+                            <li>Inverts the logic. true &DoubleLongLeftRightArrow; False, non-zero
+                                &DoubleLongLeftRightArrow; zero</li>
+                            <li>Example &rarr; int a = 5, b = 10, c = 15;
+                                <br>cout &lt;&lt;(!a)&lt;&lt;endl;
+                                <br>cout &lt;&lt;(!b)&lt;&lt;endl;
+                                <br>output &rarr; 0
+                                <br>1
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

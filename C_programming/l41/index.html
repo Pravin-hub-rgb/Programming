@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-41 = HTML parser exercise</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l42/index.html">Next Lec &rarr;</a>
+            <a href="../l39/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>HTML parser exercise</h1>
+        <p>
+            we have to extract the data inside a html tag.
+            <br> &lt;h1&gt; this is a heading &lt;/h1&gt;
+            <br>and remove the space form staring and from end
+            <br>finally print it
+        </p>
+        <button class="accordion">code</button>
+        <div class="panel">
+            <p>
+                #include &lt;stdio.h&gt;
+                <br> #include &lt;string.h&gt;
+                <br>
+                <br> void parser(char *string)
+                <br> {
+                <br> int in = 0; // variable to track whether we are inside the tag
+                <br> int index = 0;
+                <br> for (int i = 0; i &lt; strlen(string); i++)
+                <br> {
+                <br> if (string[i] == '&lt;')
+                <br> {
+                <br> in = 1; // won't collect
+                <br> continue;
+                <br> }
+                <br> else if (string[i] == '&gt;')
+                <br> {
+                <br> in = 0;
+                <br> continue;
+                <br> }
+                <br> if(in==0)
+                <br> {
+                <br> //we are inside the string between tags
+                <br> string[index]=string[i]; //modifying the same string.
+                <br> index ++;
+                <br> }
+                <br> }
+                <br> string[index]='\0';
+                <br> //now we have to remove the trailing spaces from the begining
+                <br> while(string[0]==' ')
+                <br> {
+                <br> //shift the string to the left
+                <br> for(int j=0;j&lt;strlen(string);j++)
+                <br> {
+                <br> string[j]=string[j+1];
+                <br> }
+                <br> }
+                <br> //now we have to remove the trailing spaces from the end
+                <br> while(string[strlen(string)-1]==' ')
+                <br> {
+                <br> string[strlen(string)-1] ='\0';
+                <br> }
+                <br> }
+                <br>
+                <br> int main()
+                <br> {
+                <br> char string[] = "&lt;h1&gt; this is a heading &lt;/h1&gt;";
+                <br> parser(string);
+                <br> printf("The parsed string is ~~%s~~", string);
+                <br> return 0;
+                <br> }
+            </p>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

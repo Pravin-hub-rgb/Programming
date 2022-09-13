@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Map</title>
+    <style>
+        /* ************ road map ************ */
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000428;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #004e92, #000428);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #004e92, #000428);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: "Montserrat";
+            font-family: 'Courgette', cursive;
+        }
+
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            /* background-color: #111; */
+        }
+
+        .roadmap {
+            width: 90%;
+            height: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .roadmap>ul {
+            list-style: none;
+        }
+
+        .roadmap>ul>li {
+            padding: 20px;
+            background-color: #1e1f22;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .roadmap>ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .road-content h1 {
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .road-content p {
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: 300;
+        }
+
+        .road-content a {
+            color: white;
+        }
+
+        .road-content a:hover {
+            color: rgb(209, 209, 209);
+        }
+
+        .lis>ul {
+            margin-left: 30px;
+        }
+
+        .lis>ul li {
+            margin-left: 20px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .roadmap:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 100%;
+                background-color: gray;
+            }
+
+            .roadmap>ul>li {
+                width: 50%;
+                position: relative;
+                margin-bottom: 50px;
+            }
+
+            .roadmap>ul>li:nth-child(odd) {
+                float: left;
+                clear: right;
+                transform: translateX(-30px);
+                border-radius: 20px 0px 20px 20px;
+            }
+
+            .roadmap>ul>li:nth-child(even) {
+                float: right;
+                clear: left;
+                transform: translateX(30px);
+                border-radius: 0px 20px 20px 20px;
+            }
+
+            .roadmap>ul>li::before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: gray;
+                top: 0px;
+            }
+
+            .roadmap>ul>li:nth-child(odd)::before {
+                transform: translate(50%, -50%);
+                right: -30px;
+            }
+
+            .roadmap>ul>li:nth-child(even)::before {
+                transform: translate(-50%, -50%);
+                left: -30px;
+            }
+
+            /* .road-content .date {
+    position: absolute;
+    top: -30px;
+  } */
+            .roadmap>ul>li:hover::before {
+                background-color: aqua;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="roadmap">
+        <div class="container">
+            <div class="roadmap">
+                <ul>
+                    <li>
+                        <div class="road-content">
+                            <h1><a href="./practiseProgram/index.html">Practise Programs</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>Basics</h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>0 &rarr; <a href="./0commands/index.html">Command Line</a></li>
+                                    <li>1 &rarr; <a href="./l1/index.html">Why Learn C Programming Language?</a></li>
+                                    <li>2 &rarr; <a href="./l2/index.html">What is Coding & C Programming Language?</a>
+                                    </li>
+                                    <li>3 &rarr; <a href="./l3/index.html">Install & Configure VS Code With C
+                                            Compiler</a>
+                                    </li>
+                                    <li>4 &rarr; <a href="./l4/index.html">Basic Structure of C Program</a></li>
+                                    <li>5 &rarr; <a href="./l5/index.html">Basic Syntax of C program</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>6 &rarr; <a href="./l6/index.html">Variables & Datatypes</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>7 &rarr; <a href="./l7/index.html">Operators in C</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>8 &rarr; <a href="./l8/index.html">Exercise 1</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>9 &rarr; <a href="./l9/index.html">C Format Specifiers and Escape Sequences</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>Control Statements</h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>10 &rarr; <a href="./l10/index.html">IfElse</a></li>
+                                    <li>11 &rarr; <a href="./l11/index.html">Switch case</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>12 &rarr; <a href="./l12/index.html">Loops</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>17&rarr; <a href="./l17/index.html">Goto statement</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>18 &rarr; <a href="./l18/index.html">Typecasting</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>19 &rarr; <a href="./l19/index.html">Functions</a></h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>21 &rarr; <a href="./l21/index.html">Recursion</a>
+                                        <ul>
+                                            <li>25 &rarr; <a href="./l25/index.html">Recursion Exercise</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>31 &rarr; <a href="./l31/index.html">Call by value & Call by Reference</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>22 &rarr; <a href="./l22/index.html">Exercise - Units and conversions</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>23 &rarr; <a href="./l23/index.html">Arrays</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>26 &rarr; <a href="./l26/index.html">Pointers</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>27 &rarr; <a href="./l27/index.html">Arrays and Pointer Arithmetic</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>30 &rarr; <a href="./l30/index.html">Printing Star patterns exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>32 &rarr; <a href="./l32/index.html">Passing arrays as function arguments</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>34 &rarr; <a href="./l34/index.html">Strings</a></h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>35 &rarr; <a href="./l35/index.html">Strings functions and <string.h>
+                                                library</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>36 &rarr; <a href="./l36/index.html">Array reversal</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>37 &rarr; <a href="./l37/index.html">Structures</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>38 &rarr; <a href="./l38/index.html">Typedef</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>39 &rarr; <a href="./l39/index.html">Unions</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>41 &rarr; <a href="./l41/index.html">Html parser exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>42 &rarr; <a href="./l42/index.html">Static Variables</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>44 &rarr; <a href="./l44/index.html">Traverl Agency Exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>Memory Layout of C programs</h1>
+                            <ul>
+                                <li>45 &rarr; <a href="./l45/index.html">Dynamic memory allocation</a></li>
+                                <li>47 &rarr; <a href="./l47/index.html">Malloc Calloc Realloc & Free()</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>48 &rarr; <a href="./l48/index.html">Employee Manager Exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>Storage classes in C</h1>
+                            <ul>
+                                <li>49 &rarr; <a href="./l49/index.html">Auto, Extern, Static & Register Storage
+                                        classes</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>51 &rarr; <a href="./l51/index.html">Coding Rock, Paper, Scissors Exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <div class="lis">
+                                <ul>
+
+                                    <li>52 &rarr; <a href="./l52/index.html">Void Pointer</a></li>
+                                    <li>53 &rarr; <a href="./l53/index.html">Null Pointer</a></li>
+                                    <li>54 &rarr; <a href="./l54/index.html">Dangling Pointer</a></li>
+                                    <li>55 &rarr; <a href="./l55/index.html">Wild Pointer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>57 &rarr; <a href="./l57/index.html">Matrix Multiplication Exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <div class="lis">
+                                <ul>
+                                    <li>58 &rarr; <a href="./l58/index.html">C Pre-processor introduction & working</a>
+                                    </li>
+                                    <li>60 &rarr; <a href="./l60/index.html">Predefined Macros & other pre-processor
+                                            directives</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>62 &rarr; <a href="./l62/index.html">File IO in C</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>63 &rarr; <a href="./l63/index.html">Check Palindrome Exercise</a></h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>66 &rarr; <a href="./l66/index.html">Automated Receipt Generator</a></h1>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>68 &rarr; <a href="./l68/index.html">Command Line Arguments</a></h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>70 &rarr; <a href="./l70/index.html">Command line calculator exercise</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>72 &rarr; <a href="./l72/index.html">Function Pointers</a></h1>
+                            <div class="lis">
+                                <ul>
+                                    <li>74 &rarr; <a href="./l74/index.html">Area of circle exercise</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="road-content">
+                            <h1>75 &rarr; <a href="./l75/index.html">Memory Leak</a></h1>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

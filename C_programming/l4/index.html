@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-4 = Basic Structure of C Program</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t1" class="link">stdio.h</a>
+        <a href="#t2" class="link">int main()</a>
+        <a href="#t3" class="link">printf()</a>
+        <a href="#t4" class="link">scanf()</a>
+        <a href="#t5" class="link">return 0</a>
+        <a href="#t6" class="link">//coment</a>
+        <a href="#t7" class="link">steps taken by compiler</a>
+        <div class="botbut">
+            <a href="../l5/index.html">Next Lec &rarr;</a>
+            <a href="../l3/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Basic Structure of C Program</h1>
+        <p>
+            Some structural part of the code
+            <ul>
+                <li>Pre-processor commands</li>
+                <li>Functions</li>
+                <li>Variables</li>
+                <li>Statement</li>
+                <li>Expressions</li>
+                <li>Comments</li>
+            </ul>
+        </p>
+        <div class="wh">
+            <h2>Code</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        #include &lt;stdio.h>
+                            int main()
+                            {
+                              int a, b;
+                              printf("Enter no. a\n");
+                              scanf("%d", &a);
+                            
+                              printf("Enter no. b\n");
+                              scanf("%d, &b");
+                            
+                              printf("The sum is %d\n"; a+b);
+                            return 0;
+                            } 
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh" id="t1">
+            <h2>&lt;stdio.h&gt;</h2>
+            <ul>
+                <li>#include &lt;stdio.h&gt;&rarr; Preprosessor command </li>
+                    <li> Tells the compiler to include a file named 'stdio.h'</li>
+                <li> Any line starting with # represents a preprocessing command.</li>
+                <li> It tells our program that before its execution, it must include the stdio.h named file in it because we are using some of the commands or codes from this file.</li>
+                <li> For example, if our program needs mathematical operations of high level then we must include: #include &lt;math.h&gt;
+                    <ul>
+                        <li>It helps us to use the code from math.h file for the calculations in our programs.</li>
+                    </ul> </li>                  
+            </ul>
+        </div>
+        <div class="wh" id="t2">
+            <h2>int main()</h2>
+            <ul>
+                <li>This is a function</li>
+                <li>We use function to distribute a program in parts.</li>
+                <li>Its a special type of func. from where the execution of program starts</li>
+                <li>Every function has a return value &rarr; Its a (int) integer which main function will return</li>
+                <li>&rarr; Whenever we call any function so we get a returning value</li>
+                <li>&rarr; Now the 'main' function calls another functions and those functions returns a value which is used by main function</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>int a, b;</h2>
+            <ul>
+               <li> Here we are <b>initializing</b> two variable as integers.</li>
+                <li>Initializing with integer means that we can store integer values in it. If we would have initialized them with char then we could have stored character values in it such as
+                a, b, c, d, etc.</li>
+            </ul>
+        </div>
+        <div class="wh" id="t3">
+            <h2>printf("Enter no. a\n")</h2>
+            <ul>
+                <li>This is simply a <b>print statement</b></li>
+            <li>Its another function which we are using from stdio.h header file, we included 'stdio.h' just to use printf function.</li>
+            <li> By using this function we can print desired output in console.</li>
+             <li>'\n' is <b>new line character here</b></li>
+            </ul>
+        </div>
+        <div class="wh" id="t4">
+            <h2>scanf("%d", &a);</h2>
+            <ul>
+                <li>scanf is used to take inputs from the user.</li>
+                <li>Here &a gives the address of variable “a” to store the user's given value.</li>
+                <li> %d notifies that the value should be of integer type.</li>
+            </ul>
+        </div>
+        <div class="wh" id="t5">
+            <h2>return 0;</h2>
+            <ul>
+               <li> we need a return value for a function.</li>
+               <li> The function we created was of int type so it is returning 0.</li>
+               <li>  Return 0 means that the function is working perfectly.</li>
+               <li>    Note: Return statement and function type should be same.</li>
+            </ul>
+        </div>
+        <div class="wh" id="t6">
+            <h2>//This is a comment</h2>
+            <ul>
+        <li>We write comments by using the double slash sign (//). </li>
+        <li>Comments are to notify other programmers the working of the code at specific intervals or we write them for our-self.</li>
+        <li> They do not have any effect on the written program.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-box" id="t7">
+        <h2>The steps which are taken by compiler to compile a program</h2>
+        <div class="wh">
+            <p>
+                <b>Preprocessing &rarr; compilation &rarr; assembly &rarr; linking</b>
+                <br>
+                <br>1- Preprocessing &rarr; Here the comments are removed from the program.
+                <br>all the #include files which are written in a program there content are placed in separate file
+                <br>&rarr; macros expand
+                <br>&rarr; the preprocessed output is stored in '.i' file
+                <br><br><br> 2- Compilation &rarr; '.i' file is converted into assembly instruction and saved as '.s' extension
+                <br><br><br> 3- Assembly &rarr; '.i' file where assembly language is written should be converted into machine level instruction so that CPU can understand, '.o' extension file can't be opened.
+                <br><br><br> 4- Linking &rarr; All the assembly files are sumed up and made into a executable file.
+            </p>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-12 = Loops in C</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l17/index.html">Next Lec &rarr;</a>
+            <a href="../l11/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>Loops in C</h1>
+        <p>For performing a set of rules repeatedly we use loop</p>
+        <p>To make our code efficient and mantainable we use loop for doing some repeating work.</p>
+        <p>If we want that while a condition is true the function should keep running</p>
+        <div class="wh">
+            <h2>Advantages of using loops</h2>
+            <ul>
+                <li>Code reusability</li>
+                <li>Saves times</li>
+                <li>Less size</li>
+                <li>Traversing?</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Basic Syntax</h2>
+            <p>Loop starts &rarr; checks the condition &rarr; true - Execute loop , iteration increases/decrease. &rarr;
+                false - exit the loop</p>
+        </div>
+        <div class="wh">
+            <h2>Types of loops</h2>
+            <ul>
+                <li>Do while loop</li>
+                <li>While loop</li>
+                <li>for loop</li>
+            </ul>
+            <div class="in">
+                <h3>Kinds of loop</h3>
+                <ul>
+                    <li>Entry controlled loop &rarr;In entry controlled loops, the test condition is evaluated before
+                        entering the loop body. The For Loop and While Loop are an example of entry controlled loops.
+                    </li>
+                    <li>Exit controlled loop &rarr; In exit controlled loops, the test condition is tested at the end of
+                        the loop. The loop body will execute at least once, whether the test condition is true or false.
+                        The do-while loop is an example of an
+                        exit controlled loop.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Do While Loop</h2>
+        <p>
+            In do-while loops, the execution is terminated on the basis of the test condition. The main difference
+            between the do-while loop and while loop is that, in the do-while loop, the condition is tested at the end
+            of the loop body, whereas the other two loops
+            are entry controlled loops. <br><br> Note: In do-while loop, the loop body will execute at least once
+            irrespective of the test condition.
+        </p>
+        <p>
+            A do-while loop is similar to a while loop, except the fact that it is guaranteed to execute at least one
+            time. Unlike for and while loops, which test the loop condition first, then execute the code written inside
+            the body of the loop, the do-while loop
+            checks its condition at the end of the loop.
+        </p>
+        <div class="wh">
+            <h3>How does the do while loop work?</h3>
+            <ul>
+                <li>
+                    First, the body of the do-while loop is executed once. Only then, the test condition is evaluated
+                </li>
+                <li>
+                    If the test condition returns true, the set of instructions inside the body of the loop is executed
+                    again, and the test condition is evaluated.
+                </li>
+                <li>This looping process goes on until the test condition becomes false.
+                </li>
+                <li>
+                    If the test condition returns false, then the loop terminates.
+                </li>
+            </ul>
+        </div>
+        <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    //basic structure
+                    do {
+                        //code to be executed
+                    } while (condition);
+                    
+                    // sample code
+                    int i = 0;
+                    do {
+                        i = i+1;
+                        printf("%d",i);
+                    } while (i&lt;10);
+                    
+                </code>
+            </pre>
+        </div>
+        <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
+
+                <button class="accordion">More example code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+
+                            #include &lt;stdio.h>
+                            int main()
+                            {
+                                int num, index = 0;
+                                printf("Enter a number : ");
+                                scanf("%d", &num);
+                            
+                                do
+                                {
+                                    printf("%d\n", index + 1);
+                                    index = index + 1;
+                                } while (index &lt; num);
+                                return 0;
+                            }
+                    </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>While loops</h2>
+        <p>
+            While loop is called a pre-tested loop. The while loop allows code to be executed multiple times, depending
+            upon a boolean condition that is given as a test expression. While studying for loop, we have seen that the
+            number of iterations is known, whereas
+            while loops are used in situations where we do not know the exact number of iterations of the loop. The
+            while loop execution is terminated on the basis of the Boolean (true or false) test condition.
+        </p>
+        <div class="wh">
+            <h3>Properties of while loop</h3>
+            <ul>
+                <li>
+                    A conditional expression written in the brackets of while is used to check the condition. The Set of
+                    statements defined inside the while loop will execute until the given condition returns false.
+                </li>
+                <li>
+                    The condition will return 0 if it is true. The condition will be false if it returns any nonzero
+                    number.
+                </li>
+                <li>
+                    In the while loop, we cannot execute the loop until we do not specify the condition expression.
+                </li>
+                <li>
+                    It is possible to execute a while loop without any statements. This will give no error.
+                </li>
+                <li>
+                    We can have multiple conditional expressions in a while loop.
+                </li>
+                <li>
+                    Braces are optional if the loop body contains only one statement.
+                </li>
+            </ul>
+        </div>
+        <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    // structure
+                    while (condition)
+                    {
+                        // code to be executed
+                    }
+                    
+                    // code
+                    int i = 0;
+                    while (i &lt; 30)
+                    {
+                        printf("%d\n", i);
+                        i = i + 1;
+                    }
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>For loop</h2>
+        <ul>
+            <li>The for loop is used to iterate the statements or a part of the program several times.</li>
+            <li>It is used to traverse(to go or travel across or over) the data structure like the arrays and linked
+                lists.</li>
+            <li>It has a little different syntax than while and do while loops</li>
+        </ul>
+        <p>
+            The "For" Loop is used to repeat a specific code until a specific condition is satisfied. The for-loop
+            statement is very specialized. We use for a loop when we know the number of iterations we want, whereas when
+            we do not know about the number of iterations,
+            we use while loop.
+        </p>
+        <div class="code">
+            <div class="dotc"></div>
+            <pre>
+                <code>
+
+                    //stucture
+                    for ( initialize counter ; test counter ; increment/decrement counter)
+                    {
+                        //set of statements
+                    }
+                    
+                    //code
+                    for(i=0;i&lt;5;i++){
+                        printf("%d");
+                    } 
+                </code>
+            </pre>
+        </div>
+        <div class="in">
+            <ul>
+                <li>initialize counter: It will initialize the loop counter value, i.e., i=0.
+                    <ul>
+                        <li>The expression represents the initialization of the loop variable.</li>
+                        <li>We can initialize more than one variable in Expression 1. &rarr; for(i=0,j=0;i&lt;5;i++)
+                        </li>
+                        <li>Expression 1 is optional &rarr; for(;i&lt;5;i++)</li>
+                    </ul>
+                </li>
+                <li>test counter: It verifies whether the condition is true.
+                    <ul>
+                        <li>
+                            It is a <b>conditional expression</b>. It checks for a specific condition to be satisfied.
+                            If it is not, the loop is terminated.
+                        </li>
+                        <li>
+                            It can have more than one condition. However, the loop will iterate until the last condition
+                            becomes false. Other conditions will be treated as statements. &rarr;
+                            for(;i&lt;5,j&lt;3;i++)
+                        </li>
+                        <li>
+                            It is optional but then it will become infinite loop so we use break statement
+                        </li>
+                        <li>
+                            Expression 2 can perform the task of expression 1 and expression 3. This is, we can
+                            initialize the variable as well as update the loop variable in expresssion 2 itself.
+                        </li>
+                        <li>
+                            We can pass zero or non-zero value in expression 2. However, in C, any non-zero value is
+                            true, and zero is false by default.
+                        </li>
+                    </ul>
+                </li>
+                <li>Increment/decrement counter: Incrementing or decrementing the counter.
+                    <ul>
+                        <li>Expression 3 is used to update the loop variable</li>
+                        <li>We can update more than one variable at the same time. &rarr; for(;i&lt;5;i++,j++)</li>
+                        <li>Expression 3 is optional.</li>
+                    </ul>
+                </li>
+                <li>Set of statements: Execute the set of statements.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Break Statement and Continue Statements</h2>
+        <div class="in">
+            <h3>What is an infiinite loop?</h3>
+            <p>An infinite loop also known as an endless loop occurs when a condition always evaluates to true. Usually,
+                this is considered an error. <br><br> Sometimes, while executing a loop, it becomes necessary to jump
+                out of the loop. For this, we will
+                use the break statement or continue statement.
+            </p>
+        </div>
+        <div class="wh">
+            <h3>Break Statement</h3>
+            <ul>
+                <li>Used to bring the program control out of the loop</li>
+                <li>The break statement is used inside loops or switch statement.</li>
+                <li>Break statement can be used with
+                    <ul>
+                        <li>Loops</li>
+                        <li>Switch</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">break in for loop</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                int main()
+                                {
+                                    int i, age;
+                                    for (i = 0; i &lt; 10; i++)
+                                    {
+                                        printf("%d\nEnter your age : ", i);
+                                        scanf("%d", &age);
+                                        if (age > 10)
+                                        {
+                                            break;
+                                            // but in case of nested loop, only one  is terminated, the outer loop keeps on looping
+                                        }
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Continue Statement</h3>
+            <ul>
+                <li>
+                    Used to bring the program control to the next interation of the loop
+                </li>
+                <li>The continue statement skips some code inside the loop and continues with the next interation.</li>
+                <li>It is mainly used for a condition so that we can skip some lines of code for a particular condition.
+                </li>
+                <li>It forces next iteration in loop i.e. as break terminates the loop but continue forces the next
+                    iteration of the loop.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">continue in for loop</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                int main()
+                                {
+                                    int i, age;
+                                    for (i = 0; i &lt; 10; i++)
+                                    {
+                                        printf("%d\nEnter your age : ", i);
+                                        scanf("%d", &age);
+                                        if (age > 10)
+                                        {
+                                            break;
+                                        }
+                                        else if (age &lt; 0)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-11 = What is Coding & C Programming Language</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l12/index.html">Next Lec &rarr;</a>
+            <a href="../l10/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h1>Switch Case Statements</h1>
+        <p>Switch case are alternative of if else if ladder</p>
+        <div class="wh">
+            <h2>Why do we need a Switch case?</h2>
+            <p>
+                There is one problem with the if statement: the program's complexity increases whenever the number of if
+                statements increases. If we use multiple if-else statements in the program, the code might become
+                difficult to read and comprehend. Sometimes it also
+                even confuses the developer whom himself wrote the program. Using the switch statement is the solution
+                of this problem.
+            </p>
+        </div>
+        <div class="wh">
+            <h2>syntax</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        int a = 2;
+                        switch (a)
+                        {
+                        case 2:
+                            break;
+                            // after checking case 2 it won't go to case 3 instead it will exit and it will not print the default case.
+                            printf("value is 2");
+                        case 3:
+                            printf("value is 3");
+                        default:
+                            printf("nothing matched");
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Rules for Switch Statement</h2>
+            <ul>
+                <li>The test expression of Switch must be an int or char.</li>
+                <li>The value of the case should be an integer or character</li>
+                <li>Case must come inside swtich</li>
+                <li>Break is not necessary</li>
+                <li>The case label values inside the switch should be unique.</li>
+                <li>int x; &check; float x; &cross;</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2> Difference between a switch and if:</h2>
+            <ul>
+                <li>
+                    Switch statements cannot evaluate float conditions, and the test expression can be an integer or a
+                    character, whereas if statements can evaluate float conditions.
+                </li>
+                <li>
+                    The switch statement cannot evaluate relational operators i.e., they are not allowed in switch
+                    statements, whereas if statements can evaluate relational operators.
+                </li>
+                <li>
+                    Cases in the switch can never have variable expressions; for example, we cannot write case a +3 :
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Example Code</h2>
+            <div class="in">
+                <h3>Simple Switch</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+                                
+                                #include &lt;stdio.h>
+                                
+                                int main()
+                                {
+                                    int i = 9;
+                                    
+                                    switch (i)
+                                    {
+                                    case 5:
+                                    printf("Value is 7");
+                                    break;
+                                    
+                                    case 0:
+                                    printf("Value is 8");
+                                    break;
+                                    
+                                    case 9:
+                                    printf("Value is 9");
+                                    break;
+                                    
+                                    default:
+                                    printf("Value is not present");
+                                    break;
+                                }
+                                return 0;
+                            }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Nested Switch</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+
+                    <button class="accordion">Code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+
+                            switch (expression 1)
+                            {
+                                Case 1 : printf(“Switch Statement 1”);
+                            
+                                switch (expression 2)
+                                {
+                                    Case 1 : printf(“Switch Statement 2”);
+                                    Break;
+                            
+                                    Case 2 : Do this;
+                                }
+                                break;
+                                Case 2 : Do this;
+                            }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

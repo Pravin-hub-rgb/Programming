@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-9 = Linear Search Algorithm</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Linear Search Algorithm</h1>
+        <div class="wh">
+            <h2>Searching :</h2>
+            <p>It is a process of finding given value position in a list of values.</p>
+            <div class="in">
+                <ul>
+                    <li><b>Linear/Sequential Search:</b>
+                        <ul>
+                            <li>It is basic of simple search algorithm</li>
+                            <li>In sequential search, we compare the target value with all the other elements given in
+                                the list.</li>
+                        </ul>
+                    </li>
+                    <p>E.g.:- arr[14, 234, 34, 53, 54] (unsorted array)
+                        <br>target = 53
+                        <br>In above example, the target value is compared with all the elements in array in
+                        sequential/linear way.
+                    </p>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Time complexity</h3>
+                <div class="wh">
+                    <p>
+                        <b>Best case : </b> O(1) &rarr; constant.
+                    <ul>
+                        <li>
+                            How many checks will the loop make in best case i.e the element will be found at
+                            0<sup>th</sup> index. <br>i.e, only one comparision will be made for best case.
+                        </li>
+                    </ul>
+                    <img src="../images/bestCLin.svg" alt="">
+                    </p>
+                </div>
+                <div class="wh">
+                    <p>
+                        <b>Worst case : </b> O(n)
+                    <ul>
+                        <li>Worst case, when it will go though every element and then it says element not found.</li>
+                    </ul>
+                    </p>
+                    <div class="part3">
+                        <div>
+                            <div>
+                                <p><b>Size of array</b></p>
+                            </div>
+                            <div>
+                                <p><b>No. of comparisons</b></p>
+                            </div>
+                            <div>
+                                <p><b>time (ms)</b></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>100</p>
+                            </div>
+                            <div>
+                                <p>100</p>
+                            </div>
+                            <div>
+                                <p>100 ms</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>200</p>
+                            </div>
+                            <div>
+                                <p>200</p>
+                            </div>
+                            <div>
+                                <p>200 ms</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>n</p>
+                            </div>
+                            <div>
+                                <p>n</p>
+                            </div>
+                            <div>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../images/worstCLin.svg" alt="">
+                </div>
+            </div>
+            <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class Binary {
+                                    public static void main(String[] args) {
+                                        int[] nums = { 23, 45, 1, 2, 8, 19, -3, -11, 28 };
+                                        int target = 19;
+                                        System.out.println(linearSearch(nums, target));
+                                    }
+                                
+                                    // serach in the array: return the index if item found
+                                    // otherwise if item not found return -1
+                                    static int linearSearch(int[] arr, int target) {
+                                        if (arr.length == 0) {
+                                            return -1;
+                                        }
+                                
+                                        // run a for loop
+                                        for (int i = 0; i &lt; arr.length; i++) {
+                                            // check of element at every index if it is = target
+                                            if (arr[i] == target) {
+                                                return i;
+                                            }
+                                        }
+                                
+                                        // this line will execute if none of the reutn statements 
+                                        // above have executed 
+                                        //hence the target not found
+                                        return -1;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <p>
+                    This also works for searching inside strings
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class SearchInStrings {
+                                    public static void main(String[] args) {
+                                        String name = "heyhey";
+                                        char target = 'e';
+                                        System.out.println(search(name,target));
+                                    }
+                                
+                                    static boolean search(String name, char target) {
+                                        if(name.length() == 0){
+                                            return false;
+                                        }
+                                        for (int i = 0; i &lt; name.length(); i++) {
+                                            if(target == name.charAt(i)){
+                                                return true;
+                                            }
+                                        }
+                                        return false;
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>Now using for each</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class SearchInStrings {
+                                    public static void main(String[] args) {
+                                        String name = "heyhey";
+                                        char target = 'e';
+                                        System.out.println(search2(name,target));
+                                    }
+                                
+                                    static boolean search(String name, char target) {
+                                        if(name.length() == 0){
+                                            return false;
+                                        }
+                                        for (char ch : name.toCharArray()) {
+                                            if(ch == target){
+                                                return true;
+                                            }
+                                        }
+                                        return false;
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Search in range of index</h3>
+                <p>
+                    Every thing is same but only we have to search between some given starting and last index.
+                    <br><br>E.g.:-
+                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class SearchRange {
+                                    public static void main(String[] args) {
+                                        String name = "heyhey";
+                                        char target = 'e';
+                                        System.out.println(search(name, target, 2, 4));
+                                    }
+                                
+                                    static boolean search(String name, char target, int start, int end) {
+                                        if (name.length() == 0) {
+                                            return false;
+                                        }
+                                        for (int i = start; i &lt;= end; i++) {
+                                            if (target == name.charAt(i)) {
+                                                return true;
+                                            }
+                                        }
+                                        return false;
+                                    }
+                                }
+                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Search in 2D array</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class Search2d {
+                                    public static void main(String[] args) {
+                                        int[][] arr = {
+                                                { 1, 2, 3, 4 },
+                                                { 5, 6, 7, 8 },
+                                                { 9, 10, 11, 12 }
+                                        };
+                                        int target = 99;
+                                        System.out.println(search(arr, target));
+                                    }
+                                
+                                    static int search(int[][] arr, int target) {
+                                        for (int[] row : arr ) {
+                                            for (int i = 0; i &lt; row.length; i++) {
+                                                if(target==row[i]){
+                                                    return 1;
+                                                }
+                                            }            
+                                        }
+                                        return -1;
+                                    }
+                                }                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Given an array nums of integers, return how many of them contain an even number of digits. <a
+                        href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/" target="_blank">leetcode</a> </h3>
+
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">my code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                public class EvenNumLeet {
+                                    public static void main(String[] args) {
+                                        int[] arr = { 2, 34, 55, 66666, 666 };
+                                        System.out.println(findNumbers(arr));
+                                    }
+                                
+                                    static int findNumbers(int[] arr) {
+                                        // If number is negative then 
+                                        // we are making it positive
+                                        if(num&lt;0){
+                                            num*=-1;
+                                        }
+                                        // if num is 0 the while loop will not run
+                                        // so just return 1
+                                        if(num==0){
+                                            return 1;
+                                        }
+
+                                        int times = 0;
+                                        int count = 0;
+                                        for (int num : arr) {
+                                            int temp = num;
+                                            while (temp > 0) {
+                                                times++;
+                                                temp /= 10;
+                                            }
+                                            if (times % 2 == 0) {
+                                                count++;
+                                            }
+                                            times = 0;
+                                        }
+                                        return count;
+                                    }  
+
+                                    // most optimized way to find number of digits
+                                    // using this formula 
+                                    static int digits2(int num) {
+                                        if (num &lt; 0) {
+                                            num = num * -1;
+                                        }
+                                        return (int)(Math.log10(num)) + 1;
+                                    }
+                                }                     
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Max wealth <a href="https://leetcode.com/problems/richest-customer-wealth/" target="_blank">leetcode</a> </h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">my code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+
+                                class Solution {
+                                    public int maximumWealth(int[][] accounts) {
+                                        int maxWealth = 0;
+                                        for(int[] cus : accounts){
+                                            int sum = 0;
+                                            for(int i = 0; i &lt; cus.length ; i++){
+                                                sum = sum + cus[i];                 
+                                            }
+                                            if(sum>maxWealth){
+                                                maxWealth = sum;
+                                            }
+                                        }
+                                        return maxWealth;
+                                    }
+                                }              
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

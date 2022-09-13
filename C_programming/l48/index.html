@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-48 = Employee manager exercise</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../l49/index.html">Next Lec &rarr;</a>
+            <a href="../l47/index.html">&larr; Previous Lec</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming</h2>
+        </div>
+    </div>
+
+
+
+    <div class="content-box">
+        <h1>Employee manager exercise</h1>
+
+        <div class="inside-content">
+            This exercise is based upon dynamic memory allocation
+            <br>ABC Pvt Ltd. manages employee records of other companies.
+            <br> Employee Id can be of any length and it can contain any character
+            <br>for 3 employees, you have to take 'length of employee if' as input as input in a length integer variable.
+            <br>Then, you have to take employee id as an input and display it one screen.
+            <br>store the employee id in a character array which is allocated dynamically.
+            <br>You have to create only one character array dynamically.
+            <br><br><br> Example:
+            <br> employee 1:
+            <br>Enter no of characters in you eId
+            <br>45
+            <br>dynamically allocate the character array.
+            <br>thake input from user
+            <br>do same for other 2 employee
+        </div>
+        <div class="in">
+            <button class="accordion">code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h&gt;
+                    <br> #include &lt;stdlib.h&gt;
+                    <br> int main()
+                    <br> {
+                    <br> int chars, i = 0;
+                    <br> char *ptr;
+                    <br> while (i &lt; 3)
+                    <br> {
+                    <br> printf("Employee %d: Enter the no. of characters in your Employee ID:",i+1);
+                    <br> scanf("%d",&chars);
+                    <br> getchar(); //often the scanf skips to take the value from user so we use getchar() so that we <br>can consume value.
+                    <br> ptr = (char*) malloc((chars+1)*sizeof(char)); // so as string have null character at end so we <br>need to add extra space for that
+                    <br> printf("Enter you employee ID :");
+                    <br> scanf("%s",ptr); // no & as this is a pointer which is used to store address.
+                    <br> printf("Your Employee ID is %s",ptr);
+                    <br> free(ptr);
+                    <br> i++;
+                    <br> }
+                    <br> return 0;
+                    <br> }
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

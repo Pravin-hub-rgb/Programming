@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-10.2 = Search in 2D Array </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Java + DSA</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Binary Search In 2D Arrays</h1>
+        <div class="wh">
+            <p>
+                <img src="../images/2d.svg" alt="">
+                <br><br>
+                Here, we have to think about how we can eleminate rows and columns
+                <br> we have to set upper and lower bound just like 1D array binary search
+                <br>So lower bound = [0, 0]
+                <br> and upper bound = [first_row, last_column]
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;
+
+                            public class RowColMatrix {
+                                public static void main(String[] args) {
+                                    int[][] arr = {
+                                            { 10, 20, 30, 40 },
+                                            { 15, 25, 35, 45 },
+                                            { 28, 29, 37, 49 },
+                                            { 23, 34, 38, 50 }
+                                    };
+                                    System.out.println(Arrays.toString(search(arr, 37)));
+                                }
+                            
+                                static int[] search(int[][] matrix, int target) {
+                                    int r = 0;
+                                    int c = matrix.length - 1;
+                            
+                                    while (r &lt; matrix.length && c >= 0) {
+                                        if (matrix[r][c] == target) {
+                                            return new int[] { r, c };
+                                        }
+                                        if (matrix[r][c] &lt; target) {
+                                            r++;
+                                        } else {
+                                            c--;
+                                        }
+                                    }
+                                    return new int[] { -1, -1 };
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p>
+                <img src="../images/2d2.svg" alt="">
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            import java.util.Arrays;
+
+                            public class RowColMatrix {
+                                public static void main(String[] args) {
+                                    int[][] arr = {
+                                            {1, 2, 3},
+                                            {4, 5, 6},
+                                            {7, 8, 9}
+                                    };
+                                    System.out.println(Arrays.toString(search(arr, 9)));
+                                }
+                            
+                                // search in the row provided between the cols provided
+                                static int[] binarySearch(int[][] matrix, int row, int cStart, int cEnd, int target) {
+                                    while (cStart &lt;= cEnd) {
+                                        int mid = cStart + (cEnd - cStart) / 2;
+                                        if (matrix[row][mid] == target) {
+                                            return new int[]{row, mid};
+                                        }
+                                        if (matrix[row][mid] < target) {
+                                            cStart = mid + 1;
+                                        } else {
+                                            cEnd = mid - 1;
+                                        }
+                                    }
+                                    return new int[]{-1, -1};
+                                }
+                            
+                                static int[] search(int[][] matrix, int target) {
+                                    int rows = matrix.length;
+                                    int cols = matrix[0].length; // be cautious, matrix may be empty
+                                    if (cols == 0){
+                                        return new int[] {-1,-1};
+                                    }
+                                    if (rows == 1) {
+                                        return binarySearch(matrix,0, 0, cols-1, target);
+                                    }
+                            
+                                    int rStart = 0;
+                                    int rEnd = rows - 1;
+                                    int cMid = cols / 2;
+                            
+                                    // run the loop till 2 rows are remaining
+                                    while (rStart &lt; (rEnd - 1)) { // while this is true it will have more than 2 rows
+                                        int mid = rStart + (rEnd - rStart) / 2;
+                                        if (matrix[mid][cMid] == target) {
+                                            return new int[]{mid, cMid};
+                                        }
+                                        if (matrix[mid][cMid] &lt; target) {
+                                            rStart = mid;
+                                        } else {
+                                            rEnd = mid;
+                                        }
+                                    }
+                            
+                                    // now we have two rows
+                                    // check whether the target is in the col of 2 rows
+                                    if (matrix[rStart][cMid] == target) {
+                                        return new int[]{rStart, cMid};
+                                    }
+                                    if (matrix[rStart + 1][cMid] == target) {
+                                        return new int[]{rStart + 1, cMid};
+                                    }
+                            
+                                    // search in 1st half
+                                    if (target &lt;= matrix[rStart][cMid - 1]) {
+                                        return binarySearch(matrix, rStart, 0, cMid-1, target);
+                                    }
+                                    // search in 2nd half
+                                    if (target >= matrix[rStart][cMid + 1] && target <= matrix[rStart][cols - 1]) {
+                                        return binarySearch(matrix, rStart, cMid + 1, cols - 1, target);
+                                    }
+                                    // search in 3rd half
+                                    if (target &lt;= matrix[rStart + 1][cMid - 1]) {
+                                        return binarySearch(matrix, rStart + 1, 0, cMid-1, target);
+                                    } else {
+                                        return binarySearch(matrix, rStart + 1, cMid + 1, cols - 1, target);
+                                    }
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>
