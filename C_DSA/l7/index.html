@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-7 = Array as an abstract data type in Data structures </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Array as an abstract data type in Data structures</h1>
+        <div class="inside-content">
+            <h2>ADTs</h2>
+            <div class="in">
+                <p>ADTS &rarr; Set of values + Set of operations</p>
+            </div>
+            <p>
+                An abstract data type is just another data type as an int or float, with some user-defined methods and operations in a heap.
+            </p>
+            <div class="wh">
+                <p>
+                    Supporse we want to build an array as an abstract data type with our customized set of values and customized seet of operations in a heap.
+                    <br>Let's name this customized array myArray.
+                    <br>Let our set of values which will represent our customized array include these parameters:
+                    <ul>
+                        <li>total_size</li>
+                        <li>used_size</li>
+                        <li>base_address</li>
+                    </ul>
+                    <p>And the operations include operators namely.</p>
+                    <ul>
+                        <li>max()</li>
+                        <li>get(i)</li>
+                        <li>set(i,num)</li>
+                        <li>add(another_array)</li>
+                    </ul>
+                    So, now when we are done creating a blueprint of the customized array. We can very easily code their implementation, but before that, let's first learn what these values and operations, we have defined, do:
+                    <br><br><b>Understanding the ADT above:</b>
+                    <ul>
+                        <li>total_size: This stores the total reserved sized of the array in the memory location.</li>
+                        <li>used_size: This stores the size of the memory location used.</li>
+                        <li>base_address: This is a pointer that stores the address of the first element of the array.</li>
+                        <li>let the below inllustrated array be an example of what we are talking about. <br><img src="../images/array2.jpg" alt=""></li>
+                    </ul>
+                    Here, the total_size returns 6, and the used_size returns 3.
+                </p>
+            </div>
+            <div class="wh">
+                <button class="accordion">Code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h>
+                        <br> #include &lt;stdlib.h>
+                        <br>
+                        <br> struct myArray
+                        <br> {
+                        <br> int total_size;
+                        <br> int used_size;
+                        <br> int *ptr; // point the first element of an array
+                        <br> };
+                        <br>
+                        <br> void createArray(struct myArray *a, int tSize, int uSize)
+                        <br> {
+                        <br> // (*a).total_size = tSize;
+                        <br> // (*a).used_size = uSize;
+                        <br> // (*a).ptr = (int *)malloc(tSize * sizeof(int));
+                        <br>
+                        <br> // shortcut
+                        <br> a->total_size = tSize;
+                        <br> a->used_size = uSize;
+                        <br> a->ptr = (int *)malloc(tSize * sizeof(int)); // heap memory request
+                        <br> }
+                        <br>
+                        <br> void show(struct myArray *a)
+                        <br> {
+                        <br> for (int i = 0; i &lt; a->used_size; i++)
+                        <br> {
+                        <br> printf("%d\n", (a->ptr)[i]);
+                        <br> }
+                        <br> }
+                        <br> void setVal(struct myArray *a)
+                        <br> {
+                        <br> int n;
+                        <br> for (int i = 0; i &lt; a->used_size; i++)
+                        <br> {
+                        <br> printf("Enter Value at marks[%d] :", i);
+                        <br> scanf("%d", &n);
+                        <br> (a->ptr)[i] = n;
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> struct myArray marks;
+                        <br> createArray(&marks, 10, 2);
+                        <br> setVal(&marks);
+                        <br> show(&marks);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

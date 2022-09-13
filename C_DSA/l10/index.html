@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-10 = Coding Insertion Operation in Array in Data Structure </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Coding Insertion Operation in Array in Data Structure</h1>
+        <div class="inside-content">
+            <button class="accordion">Insertion Code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h>
+                    <br>
+                    <br> void display(int arr[], int n)
+                    <br> {
+                    <br> // code for traversal
+                    <br> for (int i = 0; i &lt; n; i++)
+                    <br> {
+                    <br> printf("%d ", arr[i]);
+                    <br> }
+                    <br> printf("\n");
+                    <br> }
+                    <br>
+                    <br> int indInsertion(int arr[], int size, int element, int capacity, int index)
+                    <br> {
+                    <br> //code for Insertion
+                    <br> if (size >= capacity)
+                    <br> {
+                    <br> return -1;
+                    <br> }
+                    <br> for (int i = size - 1; i >= index; i--)
+                    <br> {
+                    <br> arr[i + 1] = arr[i];
+                    <br> }
+                    <br> arr[index] = element;
+                    <br> return 1;
+                    <br> }
+                    <br>
+                    <br> int main()
+                    <br> {
+                    <br> int arr[100] = {7, 8, 12, 27, 88};
+                    <br> int size = 5, element = 45, index = 3;
+                    <br> display(arr, size);
+                    <br> indInsertion(arr, size, element, 100, index);
+                    <br> size++;
+                    <br> display(arr, size);
+                    <br> return 0;
+                    <br> }
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <button class="accordion">Deletion code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h>
+                    <br>
+                    <br> void display(int arr[], int n)
+                    <br> {
+                    <br> for (int i = 0; i &lt; n; i++)
+                    <br> {
+                    <br> printf("%d ", arr[i]);
+                    <br> }
+                    <br> printf("\n");
+                    <br> }
+                    <br>
+                    <br> void indDeletion(int arr[], int size, int index)
+                    <br> {
+                    <br> for (int i = index; i &lt; size-1; i++)
+                    <br> {
+                    <br> arr[i] = arr[i + 1];
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> int main()
+                    <br> {
+                    <br> int arr[100] = {7, 8, 12, 27, 88};
+                    <br> int size = 5, index = 2;
+                    <br> display(arr, size);
+                    <br> indDeletion(arr, size, index);
+                    <br> size--;
+                    <br> display(arr, size);
+                    <br> return 0;
+                    <br> }
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <div class="in">
+                <h3>Linear Search</h3>
+                <p>
+                    This search method searches for an element by visiting all the elements sequentially until the element is found or the array finishes. It follows the array traversal method.
+                </p>
+                <img src="../images/bs.jpg" alt="">
+                <p>
+                    Linear search works for sorted as well as unsorted arrays.
+                </p>
+            </div>
+            <div class="in">
+                <h3>Binary Search</h3>
+                <p>
+                    This search method searches for an element by breaking the search space into half each time it finds the wrong element. This method is limited to a sorted array. The search continues towards either side of the mid, based on whether the element to be searched
+                    is lesser or greater than the mid element of the current search space.
+                </p>
+                <img src="../images/bs2.jpg" alt="">
+                <p>Binary search works only on sorted arrays.</p>
+            </div>
+            <div class="wh">
+                <h3> Comparision between linear search and binary search</h3>
+                <div class="part2">
+                    <div>
+                        <div>
+                            <p>
+                                <b>Linear Search</b>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <b>Binary Search</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Works on both sorted and unsorted arrays</p>
+                        </div>
+                        <div>
+                            <p>Works only one sorted arrays</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>
+                                Equality operations
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                Inequality operations
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>
+                                O(n) WC complexity
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                O(log n) WC complexity
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">Linear Search Code</button>
+                <div class="panel">
+                    <p>
+                        <br> #include &lt;stdio.h>
+                        <br>
+                        <br> int linearSearch(int arr[], int size, int element)
+                        <br> {
+                        <br> for (int i = 0; i &lt; size; i++)
+                        <br> {
+                        <br> if(arr[i]==element)
+                        <br> {
+                        <br> return i;
+                        <br> }
+                        <br> }
+                        <br> return -1;
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> int arr[]={1,3,5,56,4,3,23,5,4,54643,56,34};
+                        <br> int size = sizeof(arr)/sizeof(int); // gives size of array without hard coding
+                        <br> printf("The index where 5 is located is : %d",linearSearch(arr,size,5));
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">Binary Search Code</button>
+                <div class="panel">
+                    <p>
+                        <br> #include &lt;stdio.h>
+                        <br>
+                        <br> int binarySearch(int arr[], int size, int element)
+                        <br> {
+                        <br>
+                        <br> int mid, high, low;
+                        <br> low = 0;
+                        <br> high = size - 1;
+                        <br> // start seraching
+                        <br> while (low &lt;= high) //keep search until low &lt;= high
+                        <br> {
+                        <br> mid = (low + high) / 2;
+                        <br> if (arr[mid] == element)
+                        <br> {
+                        <br> return mid;
+                        <br> }
+                        <br> if (arr[mid] &lt; element)
+                        <br> {
+                        <br> low = mid + 1;
+                        <br> }
+                        <br> else
+                        <br> {
+                        <br> high = mid - 1;
+                        <br> }
+                        <br> }
+                        <br> // search end
+                        <br> return -1;
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> int arr[] = {1, 3, 5, 56, 64, 73, 123, 225, 444}; // already sorted
+                        <br> int size = sizeof(arr) / sizeof(int);
+                        <br> printf("The index where 73 is located is : %d", binarySearch(arr, size, 73));
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

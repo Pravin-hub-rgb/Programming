@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-22 = Introduction to Stack </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to Stack</h1>
+        <div class="inside-content">
+            <h2>Introduction:</h2>
+            <p>
+                <b>Stack is a linear data structure.Operations on stack are performed in LIFO (Last in First Out) order</b>
+                <br><br> This means the element to enter the container last would be the first one to leave the container. It is imperative that elements above an element in a stack must be removed first before fetching any element.
+                <br><img src="../images/lifo.jpg" alt="">
+            </p>
+        </div>
+        <div class="inside-content">
+            <div class="in">
+                <h2>Applications of Stack:</h2>
+                <ul>
+                    <li>Used in function calls</li>
+                    <li>Infix to postfix conversions (and other similar conversions)</li>
+                    <li>Parenthesis matching & more...</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Stack ADT</h2>
+                <p>
+                    In order to create a stack we need a pointer to the top element along with other elements whicha re stored in the stack.
+                    <br>Some of the operations of stack ADT are:
+                    <ul>
+                        <li>Push() &rarr; push an element into the stack</li>
+                        <li>pop() &rarr; remove the topmost element from the stack</li>
+                        <li>peak() &rarr; value at a given position is ventured</li>
+                        <li>isEmpty()/isFull() &rarr; determines whether the stack is empty or full.</li>
+                    </ul>
+                    <img src="../images/lifo2.jpg" alt="">
+                </p>
+            </div>
+            <div class="in">
+                <h3>Implementation</h3>
+                <p>
+                    A stack is a collection of elements with certain operation following LIFO (Last in First Out) discipline.
+                    <br>A stack can be implemented using an array or a linked list.
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Stack using an Array</h2>
+            <p>
+                If we racall, arrays are linear data structures whose elemwnts are indexed, and the elements can be accessed in constant time with their index. To implement a stack using an array, we'll aintain a variaable that will store the index of the top element.
+            </p>
+            <img src="../images/arrstack.jpg" alt="">
+            <div class="in">
+                <h3>We have few things to keep in check when we implement stacks using arrays.</h3>
+                <p>
+                    1. <b>A fixed-size array &rarr; </b> This size can even be bigger than the size of the stack we are trying to implement, to stay on the safe side.
+                    <br>2. <b>An interger variable to store the index of the top element. &rarr;</b> or the last element we entered in the array. This value is -1 when there is no element in the array.
+                </p>
+                <p>
+                    We will try constructing a structure to embed all these functionalities. Let's see how.
+                </p>
+                <div class="wh">
+                    <p>
+                        struct stack{
+                        <br>int size;
+                        <br>int top;
+                        <br>int *arr;
+                        <br>}
+                    </p>
+                </div>
+                <p>
+                    So, the struct above includes as its members, the size of the array, the index of the top element, and the pointer to the array we will make.
+                    <br>To use this struct.
+                    <br>You will just have to declare a struct stack, set its top element to -1.
+                    <br>Furthermore, you will have to reserve memroy in the heap using malloc.
+                </p>
+                <div class="wh">
+                    <p>
+                        Follow the example below for defining a stack:
+                    </p>
+                    <p>
+                        <b>
+                            struct stack S;
+                            <br>S.size = 80;
+                            <br>S.top = -1;
+                            <br>S.arr = (int *)malloc(S.size*sizeof(int));
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Code for Implementing stack using array</h2>
+            <div class="wh">
+                <h3>Before using operations we will create and implement some functions so that operation get easy.</h3>
+                <div class="in">
+                    <p>
+                        <b>1.</b> so, the first thing would be to create the struct <i>stack</i> which include three members, an interger variable to store the size of the stack, an interger variable to store the index of the topmost element, and an interger
+                        pointer to hold the address of the array.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            struct stack
+                            <br>{
+                            <br>int size;
+                            <br>int top;
+                            <br>int *arr;
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p>
+                        <b>2.</b> In <i>main</i>, create a stuck stack s, assign value.
+                    </p>
+                    <div class="wh">
+                        <div class="in">
+                            <p>
+                                Here We are defining a struct stack pointer s, and use the arrow operators to deal with their members. The advantage of this method is that we can pass these pointers as references into functions very conveniently.
+                            </p>
+                        </div>
+
+                        <p><b>
+                            struct stack *s; // we are making this so <br>that we can pass this into a fuction
+                            <br>s->size = 80;
+                            <br>s->top=-1;
+                            <br>s->arr=(int *)malloc(s->size*sizeof(int));</b>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="in">
+                    <p>
+                        <b>3.</b> Before we advance to pushing elements in this stack, there are a few conditons to deal with. We can only push an element in this stack if there is some space left or the top is not equal to the last index. <br>Similarly,
+                        we can only pop an element from this stack if some element is stored or the top is not equal to -1.
+                    </p>
+                    <img src="../images/arrstack2.jpg" alt="">
+                </div>
+                <div class="in">
+                    <p>
+                        <b>4.</b> Crate a function which checks if the top is equal to -1. If yes, then it’s empty and returns 1; otherwise, return 0.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int isEmpty(struct stack *ptr)
+                            <br>{
+                            <br> if (ptr->top == -1){
+                            <br> return 1;
+                            <br> }
+                            <br> else{
+                            <br> return 0;
+                            <br> }
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p>
+                        <b>5.</b> Create an integer function isFull, and pass the pointer to the stack as a parameter. In the function, check if the top is equal to (size-1). If yes, then it’s full and returns 1; otherwise, return 0.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int isFull(struct stack *ptr)
+                            <br>{
+                            <br> if (ptr->top == ptr->size - 1)
+                            <br> {
+                            <br> return 1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return 0;
+                            <br> }
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p>
+                        <b>6.</b> conditions to check if the stack is empty or not.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            if(isEmpty(s)){
+                            <br> printf("The stack is empty");
+                            <br> }
+                            <br> else{
+                            <br> printf("The stack is not empty");
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Stack Operations</h2>
+            <div class="in">
+                <h3>push()</h3>
+                <p>
+                    By pushing, we mean inserting an element at the top of the stack. While using the arrays, we have the index to the top element of the array. So, we'll just insert the new element at the index (top+1) and increase the top by 1. This operation takes a constant
+                    time, O(1). It's intutive to note that this operation is valid until (top+1) is valid index and the array has an empty space.
+                </p>
+                <img src="../images/push.jpg" alt="">
+                <p>
+                    Suppose we have an element x to insert in a stack array of size 4. We first checked if it was full, and found it was not full. We retrieved its top which was 3 here. We made it 4 by increasing it once. Now, just insert the element x at index 4, and we
+                    are done.
+                </p>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            void push(struct stack* ptr, int val){
+                            <br> if(isFull(ptr)){
+                            <br> printf("Stack Overflow! Cannot push %d to the stack\n", val);
+                            <br> }
+                            <br> else{
+                            <br> ptr->top++;
+                            <br> ptr->arr[ptr->top] = val;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>pop()</h3>
+                <p>
+                    Pop means to remove the last element entered in the stack, and that element has the index top. So, this becomes an easy job. We'll just have to decrease the value of the top by 1, and we are done. Thi popped element can even be used in any way we like.
+                </p>
+                <img src="../images/pop.jpg" alt="">
+                <p>
+                    Suppose we make a pop call in a stack array of size 4. We first checked if it was empty, and found it was not empty. We retrieved its top which was 4 here. Stored the element at 4. We made it 3 by decreasing it once. Now, just return the element x, and
+                    popping is done.
+                </p>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            int pop(struct stack* ptr){
+                            <br> if(isEmpty(ptr)){
+                            <br> printf("Stack Underflow! Cannot pop from the stack\n");
+                            <br> return -1;
+                            <br> }
+                            <br> else{
+                            <br> int val = ptr->arr[ptr->top];
+                            <br> ptr->top--;
+                            <br> return val;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>peek()</h3>
+                <p>
+                    Peeking into something literally means to quickly see what’s there at someplace. In a similar way, it refers to looking for the element at a specific index in a stack.
+                    <br>
+                    <br> Peek operation requires the user to give a position to peek at. Here, position refers to the distance of the current index from the top element +1.
+                </p>
+                <img src="../images/peek.jpg" alt="">
+                <p>
+                    The index, mathematically, is (top -position+1).
+                    <br><br> So, before we return the element at the asked position, we’ll check if the position asked is valid for the current stack. Index 0, 1 and 2 are valid for the stack illustrated above, but index 4 or 5 or any other negative index
+                    is invalid. <br><br> Note: peek(1) returns 12 here. Now, since we are done with all the basics of the peek operation, we can try writing its code as well. Here, we’ll focus mainly on the peek operation, so you can just copy the codes
+                    from the last tutorial, where we learned writing push and pop, isFull and isEmpty.
+                </p>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            <br> int peek(struct stack* sp, int i){
+                            <br> int arrayInd = sp->top -i + 1;
+                            <br> if(arrayInd &lt; 0){
+                            <br> printf("Not a valid position for the stack\n");
+                            <br> return -1;
+                            <br> }
+                            <br> else{
+                            <br> return sp->arr[arrayInd];
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>More on stack</h3>
+                <img src="../images/stacktop.jpg" alt="">
+                <div class="in">
+                    <h3>stackTop:</h3>
+                    <p>
+                        This operation is responsible for returning the topmost element in a stack. We can just use the stack member <i>top</i> to fetch the topmost index and its corresponding element.
+                        <br><br>Here, in the illustration above, we have the <i>top</i> member at index 2. So, the stackTop operation shall retrun the value 22.
+                    </p>
+                </div>
+                <div class="in">
+                    <h3>stackBottom:</h3>
+                    <p>
+                        This operation is respoinsible for returning the bottommost element in a stack, which intuitively, is the element at index 0.
+                    </p>
+                </div>
+                <div class="wh">
+                    <h3>Implementation of stackTop and stackBottom</h3>
+                    <div class="in">
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <p>
+                                int stackTop(struct stack *ptr)
+                                <br>{
+                                <br> return ptr->arr[ptr->top];
+                                <br>}
+                                <br>
+                                <br>int stackBottom(struct stack *ptr)
+                                <br>{
+                                <br> return ptr->arr[0];
+                                <br>}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>The time complexitites of these operations.</h3>
+                    <div class="in">
+                        <p>
+                            <b>stackTop & stackBottom:</b> these operations happen to work in a constant runtime, that is O(1). Because we are just accessing an element at an index, and that works in a constant time in an array.
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>isEmpty():</b> This operation just checks if the top member equals -1. This works in a constant time, hence, O(1).
+                        </p>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>isEmpty():</b> This operation just checks if the top member equals -1. This works in a constant time, hence, O(1).
+                        </p>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>ifFUll():</b> This operation just checks if the top member equals is size -1. Even this works in a constant time, hence, O(1).
+                        </p>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>push():</b> Pushing an element in a stack needs you to just incres the value of top by 1 and insert the element at the index. This is again a case of O(1).
+                        </p>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>pop():</b> Popping an element in a stack neds you to just decrease the value of top by 1 and return the element we ignored. This is again a case of O(1).
+                        </p>
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>Peek():</b> Peeking at a poisition just returns the element at the index, (top - poisition + 1), which happens to work in a constant time, So, even this is an example of O(1).
+                        </p>
+                    </div>
+                    <p>
+                        So, basically all the operations we discussed follow a constant time complexity.
+                    </p>
+                </div>
+                <div class="in">
+                    <button class="accordion">full source code</button>
+                    <div class="panel">
+                        <p>
+                            #include &lt;stdio.h>
+                            <br> #include &lt;stdlib.h>
+                            <br>
+                            <br> struct stack
+                            <br> {
+                            <br> int size;
+                            <br> int top;
+                            <br> int *arr;
+                            <br> };
+                            <br>
+                            <br> int isEmpty(struct stack *ptr)
+                            <br> {
+                            <br> if (ptr->top == -1)
+                            <br> {
+                            <br> return 1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> int isFull(struct stack *ptr)
+                            <br> {
+                            <br> if (ptr->top == ptr->size - 1)
+                            <br> {
+                            <br> return 1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> void push(struct stack *ptr, int val)
+                            <br> {
+                            <br> if (isFull(ptr))
+                            <br> {
+                            <br> printf("Stack overflow! Cannot push %d to the stack\n", val);
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> ptr->top++;
+                            <br> ptr->arr[ptr->top] = val;
+                            <br> }
+                            <br> }
+                            <br> int pop(struct stack *ptr)
+                            <br> {
+                            <br> int hold;
+                            <br> if (isEmpty(ptr))
+                            <br> {
+                            <br> printf("Stack underflow");
+                            <br> return -1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> hold = ptr->arr[ptr->top];
+                            <br> ptr->top--;
+                            <br> return hold;
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> int peek(struct stack *ptr, int i)
+                            <br> {
+                            <br> int arrInd = ptr->top - i + 1;
+                            <br> if (arrInd &lt; 0)
+                            <br> {
+                            <br> printf("Not a valid position for the stack\n");
+                            <br> return -1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return ptr->arr[arrInd];
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> int stackTop(struct stack *ptr)
+                            <br> {
+                            <br> return ptr->arr[ptr->top];
+                            <br> }
+                            <br>
+                            <br> int stackBottom(struct stack *ptr)
+                            <br> {
+                            <br> return ptr->arr[0];
+                            <br> }
+                            <br>
+                            <br> int main()
+                            <br> {
+                            <br> struct stack *s = (struct stack *)malloc(sizeof(struct stack)); // we are making this so that we can pass this into a fuction
+                            <br> s->size = 10;
+                            <br> s->top = -1;
+                            <br> s->arr = (int *)malloc(s->size * sizeof(int));
+                            <br>
+                            <br> push(s, 55);
+                            <br> push(s, 56);
+                            <br> push(s, 57);
+                            <br> push(s, 58);
+                            <br> push(s, 59);
+                            <br> push(s, 60);
+                            <br> // printf("just poped %d\n", pop(s));
+                            <br>
+                            <br> // printing value from the stack
+                            <br> for (int i = 0; i &lt;= s->top + 1; i++)
+                            <br> {
+                            <br> printf("The value at position %d is %d\n", i, peek(s, i));
+                            <br> }
+                            <br> printf(" Stacktop : %d\n", stackTop(s));
+                            <br> printf(" Stacktbottom : %d", stackBottom(s));
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

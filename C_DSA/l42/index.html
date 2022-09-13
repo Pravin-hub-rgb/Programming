@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-42 = Introduction to Circular Queue </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to Circular Queue</h1>
+        <div class="inside-content">
+            <p>
+                <b>Why we need circular queue?</b>
+                <br> When we discussed queues, we decided to have two index variables f and r, which would maintain the two ends of the queue. If we follow the illustration below, we would see that our queue gets full when element 8 is pushed in the queue.
+                In other words, we can only enqueue in a queue until the queue isn't full.
+                <br><img src="../images/q8.jpg" alt="">
+                <br><b>Figure 1: Using two integer variables to maintain the ends of a queue</b>
+                <br> Now, by dequeuing first three elements we will observe that our queue is still full as the rear end i at the array's threshold. But it has space of three elements that we just removed.
+                <ul>
+                    <li><b>Drawback:</b> space is not efficiently utilized by the array in the heap.</li>
+                    <li>Space from dequeuing elements is unused.</li>
+                </ul>
+                <br><img src="../images/q9.jpg" alt="">
+                <br>When we talk about utilizing these spaces rather than letting them go unused, we introduce circular queues.
+                <br>How we will modify to eliminate these drawbacks.
+                <ul>
+                    <li><b>1.</b> By reseting <i>f</i> and <i>r</i> to -1 whenever the queue becomes empty. This makes all the space in the array reusable. Here, the queue was full since <i>r</i> equals the size-1 of the array. But resetting both the index
+                        variable to -1 empties the queue.
+                        <br><img src="../images/q10.jpg" alt="">
+                        <br><b>Resetting the index variable to -1 &uarr;</b>
+                        <br>again a drawback. So, can't implement this.
+                    </li>
+                    <li>
+                        <b>2.</b> Therefore we need a more optimized solution. This is when <b>circluar queues</b> come to the rescue.
+                    </li>
+                </ul>
+            </p>
+            <div class="wh">
+                <h2>Circular Queues:</h2>
+                <p>
+                    In circular queues, we mainly focus on the point that we don't increment our indices linearly. Linearly increasing indicies cause the case of overflow when our index reaches the limit, which is <i>size-1</i>.
+                    <br>In linear increment, i becomes i+1.
+                    <br>But in circular increment : <i>i</i> becomes <i>(i+1)%size</i>. This gives an upper cap to the maximum value making the index repeat itself.
+                    <br><img src="../images/cq.jpg" alt="">
+                    <br><br>And this makes us start from the beginning once we reach the threshold of the array. Refer to the illustration below to visualize the movement of the cursor.
+                    <br><img src="../images/cq2.jpg" alt="">
+                    <br><b>Conversion of a linear queue to a circular queue &uarr;</b>
+                    <br>And this is the circular implementation of the same array we used to implement linearly. This allows the leftover spaces to be used again. <br>This wheel type array is called the <b>circular queue.</b>
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h1>Operations on Circular Queue</h1>
+            <div class="wh">
+                <p>
+                    struct circularQueue
+                    <br>{
+                    <br> int size;
+                    <br> int f;
+                    <br> int r;
+                    <br> int* arr;
+                    <br>};
+                </p>
+            </div>
+            <p>
+                In main, we had declared a struct circularQueue q, and initialized its instances. Here is a subtle change, we don’t initialize circular queues’ f and r with -1, rather 0. Since -1 is unreachable in circular incrementation. Leave everything as it is.
+            </p>
+            <div class="wh">
+                <p>
+                    //In main
+                    <br> struct circularQueue q;
+                    <br> q.size = 4;
+                    <br> q.f = q.r = 0;
+                    <br> q.arr = (int*) malloc(q.size*sizeof(int));
+                </p>
+            </div>
+            <div class="in">
+                <h3>isEmpty</h3>
+                <p>
+                    if our <i>f</i> equals <i>r</i>, then there is no element in our queue, and this is the case of an empty queue.
+                </p>
+                <div class="wh">
+                    <p>
+                        int isEmpty(struct circularQueue *q){
+                        <br> if(q->r==q->f){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>isFull</h3>
+                <p>
+                    If our <i>(r+1)%size</i> equals <i>f</i>, then there is not space left in out queue, and this is the case of a full queue.
+                </p>
+                <div class="wh">
+                    <p>
+                        int isFull(struct circularQueue *q){
+                        <br> if((q->r+1)%q->size == q->f){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Enqueue:</h3>
+                <p>
+                    <ul>
+                        <li>Check if the queue is already not full. ( check if the next index to the rear is whether the front or not.)</li>
+                        <li>If not full then just circular increment the rear <i>r</i> and insert the new given value.</li>
+                        <br> <img src="../images/cirqueue.jpg" alt="">
+                    </ul>
+                    Now, since the f is just next to the r, the queue is full, and no more elements can get pushed.
+                </p>
+                <div class="wh">
+                    <p>
+                        void enqueue(struct circularQueue *q, int val){
+                        <br> if(isFull(q)){
+                        <br> printf("This Queue is full");
+                        <br> }
+                        <br> else{
+                        <br> q->r = (q->r +1)%q->size;
+                        <br> q->arr[q->r] = val;
+                        <br> printf("Enqued element: %d\n", val);
+                        <br> }
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Dequeue:</h3>
+                <ul>
+                    <li>Dequeue &rarr; removing first element.</li>
+                    <li>Check if queue is already empty. ( If front <i>f</i> equals the rear <i>r</i>, it is the case of queue underflow, else just increment <i>f</i> by 1 )</li>
+                    <li>As the front <i>f</i> holds the index of first element, we can just circular increment it and will be removed.</li>
+                    <li>we store the element being removed and return it at the end. </li>
+                    <img src="../images/circqueue2.jpg" alt="">
+                </ul>
+                <div class="wh">
+                    <p>
+                        int dequeue(struct circularQueue *q){
+                        <br> int a = -1;
+                        <br> if(isEmpty(q)){
+                        <br> printf("This Queue is empty");
+                        <br> }
+                        <br> else{
+                        <br> q->f = (q->f +1)%q->size;
+                        <br> a = q->arr[q->f];
+                        <br> }
+                        <br> return a;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <button class="accordion">full code</button>
+                <div class="panel">
+                    <p>
+                        #include&lt;stdio.h>
+                        <br> #include&lt;stdlib.h>
+                        <br>
+                        <br> struct circularQueue
+                        <br> {
+                        <br> int size;
+                        <br> int f;
+                        <br> int r;
+                        <br> int* arr;
+                        <br> };
+                        <br>
+                        <br>
+                        <br> int isEmpty(struct circularQueue *q){
+                        <br> if(q->r==q->f){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                        <br>
+                        <br> int isFull(struct circularQueue *q){
+                        <br> if((q->r+1)%q->size == q->f){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                        <br>
+                        <br> void enqueue(struct circularQueue *q, int val){
+                        <br> if(isFull(q)){
+                        <br> printf("This Queue is full");
+                        <br> }
+                        <br> else{
+                        <br> q->r = (q->r +1)%q->size;
+                        <br> q->arr[q->r] = val;
+                        <br> printf("Enqued element: %d\n", val);
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> int dequeue(struct circularQueue *q){
+                        <br> int a = -1;
+                        <br> if(isEmpty(q)){
+                        <br> printf("This Queue is empty");
+                        <br> }
+                        <br> else{
+                        <br> q->f = (q->f +1)%q->size;
+                        <br> a = q->arr[q->f];
+                        <br> }
+                        <br> return a;
+                        <br> }
+                        <br>
+                        <br>
+                        <br> int main(){
+                        <br> struct circularQueue q;
+                        <br> q.size = 4;
+                        <br> q.f = q.r = 0;
+                        <br> q.arr = (int*) malloc(q.size*sizeof(int));
+                        <br>
+                        <br> // Enqueue few elements
+                        <br> enqueue(&q, 12);
+                        <br> enqueue(&q, 15);
+                        <br> enqueue(&q, 1);
+                        <br> printf("Dequeuing element %d\n", dequeue(&q));
+                        <br> printf("Dequeuing element %d\n", dequeue(&q));
+                        <br> printf("Dequeuing element %d\n", dequeue(&q));
+                        <br> enqueue(&q, 45);
+                        <br> enqueue(&q, 45);
+                        <br> enqueue(&q, 45);
+                        <br>
+                        <br> if(isEmpty(&q)){
+                        <br> printf("Queue is empty\n");
+                        <br> }
+                        <br> if(isFull(&q)){
+                        <br> printf("Queue is full\n");
+                        <br> }
+                        <br>
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

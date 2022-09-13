@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-88 = Depth First Search</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t2" class="link">Code Implementation</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Depth First Search</h1>
+        <div class="wh">
+            <h2>What is Depth First Search</h2>
+            <ul>
+                <li>In Depth First Search, we start with a node and start exploring its connected nodes, keeping on
+                    suspending the exploration of previous wertices.</li>
+                <li>And those suspended nodes are explored once we finish exploring the node below. And this way we
+                    explore all the nodes of the graph</li>
+                <li>What we are doing differently from BFS
+                    <ul>
+                        <li>In BFS, we explore all the nodes connected to a node, then explore the nodes we visited in a
+                            horizontal manner.</li>
+                        <li>While in DFS, we start with the first connected node, and similarly go deep, so this loos
+                            like visiting the nodes vertically.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>DFS Procedure</h3>
+                <ul>
+                    <li>The procedure we follow to accomplish the depth-first search traversal of a graph is :
+                        <ol>
+                            <li>Define a stack which would hold the nodes we'll be suspending to explore one by one
+                                <ul>
+                                    <li>Choose any node as the source node and push it into the top of the stack we
+                                        created.</li>
+                                    <li>We would maintain another array holding the status of whether a node is already
+                                        <b>visited</b> or not</li>
+                                </ul>
+                            </li>
+                            <li>TAke the top item of stack and add it to the visited list.</li>
+                            <li>Create a list of nodes directly connected to the vertex we visited. Push the ones which
+                                are still not visited into the stack.</li>
+                            <li>Repeat steps 2 and 3 until the stack is not empty.</li>
+                        </ol>
+                    </li>
+                    <li>To understand the procedure of the depth first search, consider the graph illustrated below.
+                        <br><img src="../images/dfs2.png" alt="">
+                    </li>
+                    <li>Considering the fact that we could begin traversing with any source node, we'll start with 0
+                        only. So, following step 1, we would push this node into the stack and begin our Depth First
+                        search traversal.</li>
+                    <li>
+                        The next step says, pop the top element from the stack which is node 0 here, and mark it
+                        visited. Then, we’ll start visiting all the nodes connected to node 0 which are not visited
+                        already, but before that, we are asked to push them all into the stack, and the order in which
+                        you push doesn't matter at all. Therefore, we will push nodes 3, 2, and 1 into the stack.
+                        <br><img src="../images/dfs4.png" alt="">
+                    </li>
+                    <li>Repeating the steps above, we’ll now pop the top element from the stack which is node 1, and
+                        mark it visited. Only nodes connected to node 1 were nodes 0 and 2, and since the only unvisited
+                        one is node 2. It’s important to observe here, that although node 2 is in the stack, it is not
+                        visited. So, we’ll push it into the stack again.
+                        <br><img src="../images/dfs5.png" alt="">
+                    </li>
+                    <li>Next, we have node 2 at the top of the stack. We’ll mark node 2 visited and unvisited nodes
+                        connected to node 2 are nodes 3 and 4, regardless of the fact that 3 is already there in the
+                        stack. So, we’ll just push nodes 3 and 4 into the stack.
+                        <br><img src="../images/dfs6.png" alt="">
+                    </li>
+                    <li>
+                        Node 4 is the next we have on the top. So, just mark it as visited. Since, all nodes 3, 5, and
+                        6, except node 2, which are directly connected to it are not visited, we’ll push them into the
+                        stack.
+                        <br><img src="../images/dfs7.png" alt="">
+                    </li>
+                    <li>Next, we have node 6 on the top of the stack. Pop it and mark it visited. Since there are no
+                        nodes that are directed connected to node 6 and unvisited, we’ll continue further without doing
+                        anything.
+                        <br><img src="../images/dfs8.png" alt="">
+                    </li>
+                    <li>Next, we pop node 5 out of the stack and mark it visited. And since there is no unvisited node
+                        connected to it, we continue.
+                        <br><img src="../images/dfs9.png" alt="">
+                    </li>
+                    <li>Node 3 comes next to be visited, being on the top in the stack. Mark node 3 visited and again
+                        there are no nodes left unvisited and connected to node 3. So, we just continue popping out
+                        elements from the stack. <br><img src="../images/dfs10.png" alt=""></li>
+                    <li>Now, if you could observe, there are no nodes left to be visited. Although there are elements in
+                        the stack to be explored. So, we just pop them one by one and ignore finding them already
+                        visited. And this gets our stack emptied and every node traversed in Depth First Search manner,
+                        ultimately.
+                        <br><img src="../images/dfs11.png" alt="">
+                    </li>
+                    <li>And the order in which we marked our nodes visited is the Depth First Search traversal order.
+                        Here, it is 0, 1, 2, 4, 6, 5, 3. So basically, the visited array maintains whether the node
+                        itself is visited or not, and the stack maintains nodes whose exploration got suspended earlier.
+                        This was the difference. </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Pseudocode</h3>
+                <img src="../images/pse2.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="t2" class="content-box">
+        <h1>Code Implementation</h1>
+        <div class="code">
+            <div class="dotc"></div>
+            <button class="accordion">full code</button>
+            <div class="panel">
+                <pre>
+                    <code>
+
+                            #include &lt;stdio.h>
+                            #include &lt;stdlib.h>
+                            
+                            int visited[7] = {0, 0, 0, 0, 0, 0, 0};
+                            int A[7][7] = {
+                                {0, 1, 1, 1, 0, 0, 0},
+                                {1, 0, 1, 0, 0, 0, 0},
+                                {1, 1, 0, 1, 1, 0, 0},
+                                {1, 0, 1, 0, 1, 0, 0},
+                                {0, 0, 1, 1, 0, 1, 1},
+                                {0, 0, 0, 0, 1, 0, 0},
+                                {0, 0, 0, 0, 1, 0, 0}};
+                            
+                            void DFS(int i)
+                            {
+                                int j;
+                                printf("%d", i);
+                                visited[i] = 1;
+                                for (int j = 0; j &lt; 7; j++)
+                                {
+                                    if (A[i][j] == 1 && !visited[j])
+                                    {
+                                        DFS(j);
+                                    }
+                                }
+                            }
+                            
+                            int main()
+                            {
+                                // DFS implementation
+                                DFS(0);
+                                return 0;
+                            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-14 = Linked list creation and traversal </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Linked list creation and traversal</h1>
+        <div class="inside-content">
+            <h3>Understanding linked list</h3>
+            <p>
+                1&rarr; An element in a linked list is a <i>struct Node</i>, it is made to hold interger data and a pointer of data type struct Node*, as it has to point to another struct Node.
+                <br><br>2&rarr; We'll create the below illustrated linked list.
+                <br><img src="../images/link2.jpg" alt="">
+                <br>3&rarr; We will always create individual nodes and link them to the next node via the arrow operator '&rarr;'.
+                <br><br>4&rarr; First, we'll define a structure Node and create two of its members, an int variable data, to store the current node's value and a struct node* pointer variable <i>next</i>.
+                <br><br>5&rarr; Now, we can move on to out main() and start creating these nodes. We'll name the first node, <i>head</i>. Defin e apointer to head node by <i>struct node* head</i>. And similarly for the other nodes. Request the memory
+                location for each of these nodes from heap via malloc using the below code.
+                <br><b>head = (struct Node *)malloc(sizeof(struct Node));</b>
+                <br><br>6&rarr; Link these nodes using the arrow operator and call the traversal function.
+                <br><br>7&rarr; Create a void function <i>linkedListTraversal</i> and pass into it the pointer to the head node.
+                <br><br>8&rarr; Run a while loop while the pointer doesn't point to a NULL. And keep changing the pointer <i>next</i> each time you are done printing the data of the current node.
+            </p>
+            <button class="accordion">code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h>
+                    <br> #include &lt;stdlib.h>
+                    <br>
+                    <br> struct Node
+                    <br> {
+                    <br> int data;
+                    <br> struct Node *next;
+                    <br> };
+                    <br>
+                    <br> void linkedListTraversal(struct Node *ptr)
+                    <br> {
+                    <br> while (ptr != NULL)
+                    <br> {
+                    <br> printf("Element : %d\n", ptr->data);
+                    <br> ptr = ptr->next;
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> int main()
+                    <br> {
+                    <br> struct Node *head;
+                    <br> struct Node *second;
+                    <br> struct Node *third;
+                    <br> struct Node *fourth;
+                    <br>
+                    <br> // Allocate memory fornodes in linked list in heap (dynamic memory allocate)
+                    <br> head = (struct Node *)malloc(sizeof(struct Node));
+                    <br> second = (struct Node *)malloc(sizeof(struct Node));
+                    <br> third = (struct Node *)malloc(sizeof(struct Node));
+                    <br> fourth = (struct Node *)malloc(sizeof(struct Node));
+                    <br>
+                    <br> // link first and second nodes
+                    <br> head->data = 7;
+                    <br> head->next = second;
+                    <br>
+                    <br> // link second and third nodes
+                    <br> second->data = 11;
+                    <br> second->next = third;
+                    <br>
+                    <br> // link third and fourth nodes
+                    <br> third->data = 211;
+                    <br> third->next = fourth;
+                    <br>
+                    <br> // terminate the list a the third node
+                    <br> fourth->data = 66;
+                    <br> fourth->next = NULL;
+                    <br>
+                    <br> linkedListTraversal(head);
+                    <br>
+                    <br> return 0;
+                    <br> }
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

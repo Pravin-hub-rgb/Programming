@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-81 = LL, RR, RL, LR rotations in AVL Tree</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>LL, RR, RL, LR rotations in AVL Tree</h1>
+        <div class="wh">
+            <p>
+                Before we procedd witht exmaples of the rotations we learned, we should know how a binary search tree
+                that is unbalanced can be balanced with a few Rotate Operations.
+            </p>
+            <div class="in">
+                <h3>Rotate Operations</h3>
+                <p>
+                    We can perform Rotate operations to balance a binary search tree such that the newly formed tree
+                    satisfies all the properties of a binary search tree.
+                    <br>Following are the two basic Rotate operations.
+                <ol>
+                    <li>Left Rotate Operations</li>
+                    <li>Right Rotate Operations</li>
+                </ol>
+                </p>
+                <div class="wh">
+                    <h3>Left Rotate Operations</h3>
+                    <ul>
+                        <li>In this operation, we move our unbalanced node to the left.</li>
+                        <li>Consider a binary search tree given below, and the newly formed tree after its left rotation
+                            with respect to the root.
+                            <br><img src="../images/rot.jpg" alt="">
+                        </li>
+                        <li>One thing to observe here is that node 11 had to change its parent after the rotation to be
+                            able to maintain the balance of the tree.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>Right Rotate Operations</h3>
+                    <ul>
+                        <li>In this operations, we move our unbalanved node to the right.</li>
+                        <li>Consider a binary search tree given below, and the newly formed tree after its right
+                            rotation with respec to the root.
+                            <br><img src="../images/rot2.jpg" alt="">
+                        </li>
+                        <li>You can see that node 11 had to change its parent after the rotation to be able to maintain
+                            the balance of the tree.</li>
+                        <li>And rotating a tree to its left, and tahen again to the right, yields the same original tree
+                            as you can see from the above two examples.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>
+                        We learned the rotation so let's apply it on AVL tree to balance it.
+                        <br>We can follow the below-mentioned rules.
+                    <ol>
+                        <li>For Left-Left insertion &darr;
+                            <ul>
+                                <li>Right rotate once with repect to the first imbalance node.</li>
+                            </ul>
+                        </li>
+                        <li>For Right-Right insertion &darr;
+                            <ul>
+                                <li>Left rotate once with respect to the first imbalance node.</li>
+                            </ul>
+                        </li>
+                        <li>For Left-Right insertion &darr;
+                            <ul>
+                                <li>Left rotate once and then Right rotate once.</li>
+                            </ul>
+                        </li>
+                        <li>For Right-Left insertion &darr;
+                            <ul>
+                                <li>Right rotate once and then left rotate once</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    </p>
+                    <p>
+                        We'll now see how a complex tree gets balanced again after an insertion. <br>Consider the binary
+                        search AVL tree below:
+                        <br><img src="../images/rot3.jpg" alt="">
+                    <ul>
+                        <li>The absolute balance factor of each node is written beside, and you can see how balanced the
+                            values are.</li>
+                        <li>Now suppose we need to insert an element that gets its position to the right of node D.</li>
+                        <li>Now the updated tree tooks something like this.</li>
+                    </ul>
+                    <img src="../images/rot4.jpg" alt="">
+                    And the tree got imbalanced. Now, you follow these steps.
+                    <ol>
+                        <li>First search for the node which got imbalanced first.
+                            <ul>
+                                <li>start iterating from the node we inserted at and move upwards looking for that first
+                                    imbalanced node.</li>
+                                <li>Here node A is the one we were searching for.</li>
+                            </ul>
+                        </li>
+                        <li>What type of insertion occured?
+                            <ul>
+                                <li>Here, the insertion happened to the left to the left of node A.</li>
+                                <li>So, this belongs to the first rule we saw above.</li>
+                            </ul>
+                        </li>
+                        <li>Follow the rule
+                            <ul>
+                                <li>Right rotate once with respect to the first imbalance node. So, the tree after
+                                    rotating to the right becomes
+                                    <br><img src="../images/rot5.jpg" alt="">
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="wh">
+                    <h3>LL Rotation &darr;</h3>
+                    <ul>
+                        <li>use to balance a relatively complex AVL tree.</li>
+                        <li>Consider the one given below
+                            <br><img src="../images/rot6.jpg" alt="">
+                        </li>
+                        <li>Absolute balance factors of each of the nodes are written beside.</li>
+                        <li>Inserting a node with data 4</li>
+                        <li>it would get inserted to the left of node 5.</li>
+                        <li>The updated tree and balanced factors are:
+                            <br><img src="../images/rot7.jpg" alt="">
+                        </li>
+                        <li>This is a case of left-left insertion
+                            <ul>
+                                <li>So, we would rotate right once with respect to the root node, since that's the first
+                                    one to get imbalanced.</li>
+                                <li>And in that process, we might lose the position of node 10.</li>
+                                <li>So, we give it a new position to the left of node 11 to accomodate it again into the
+                                    tree.</li>
+                            </ul>
+                        </li>
+                        <li>And our tree gets balanced again
+                            <br><img src="../images/rot8.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>RL Rotation &darr;</h3>
+                    <ul>
+                        <li>used to balance a relavtively complex AVL tree.</li>
+                        <li>Consider the one given below
+                            <br><img src="../images/rot9.jpg" alt="">
+                        </li>
+                        <li>The absolute balance factors of each of the nodes are written beside.</li>
+                        <li>want to insert a node with data 16.</li>
+                        <li>So, that would get inserted to the left of node 17.</li>
+                        <li>The updated tree and their balance factors are:
+                            <br><img src="../images/rot10.jpg" alt="">
+                        </li>
+                        <li>This is a case of right-left insertion with respect to the first imbalanced node which is
+                            node 10.</li>
+                        <li>We would first rotate right once with respect to the child of the first imbalanced node
+                            which comes into the path of the insertion node.</li>
+                        <li>Follow the figure
+                            <br><img src="../images/rot11.jpg" alt="">
+                        </li>
+                        <li>Now rotate left with respect to the node we found first imbalanced, here 10. And this would
+                            do our job. Our tree get balanced again.
+                            <br><img src="../images/rot12.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

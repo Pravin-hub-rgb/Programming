@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-73 = Search operation in Binary Tree</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t2" class="link">Iterative Search</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Search operation in Binary Tree</h1>
+        <div class="wh">
+            <h2>Search Operation</h2>
+            <p>
+                How to detect if a given key lies in the binary search tree or not.
+            <ul>
+                <li><b>What is significance of learning about binary search trees since binary tree were equally
+                        good.</b>
+                    <ul>
+                        <li>The major applications of using a binary search tree is to be able to search some key in the
+                            tree in <b>logn</b> time complexity in the best case where n is the number on nodes.</li>
+                        <li>Each time you compare a node with your key, you divide the search space to its half.</li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+            <div class="in">
+                <p>Searching in bellow illustrated example
+                    <br><img src="../images/searchBST.jpg" alt="">
+                <ul>
+                    <li>Key to search = 55.</li>
+                    <li>First compare our key with the root node itself, which is 50</li>
+                </ul>
+                <img src="../images/searchBST2.jpg" alt="">
+                <ul>
+                    <li>As the key(55) is more then root(50).</li>
+                    <li>And we know that right children have greater data value.</li>
+                    <li>So search in right subtree</li>
+                    <li>The first element we check our key with is 60.</li>
+                </ul>
+                <img src="../images/searchBST3.jpg" alt="">
+                <ul>
+                    <li>As key(55) is smaller then 60</li>
+                    <li>Search to the left of the current node.</li>
+                    <li>The left subtree of 60 contains only one element and since that is equal to our key</li>
+                    <li>Revert the positive result and the was found.</li>
+                    <li>And if the leaf node is not equal to the key, and since there are no subtrees further, the
+                        search will stop here with negative results, saying the key was not found.</li>
+                </ul>
+                <img src="../images/searchBST4.jpg" alt="">
+                </p>
+            </div>
+            <div class="in">
+                <h3>Time complexity of the search operation in a binary search tree</h3>
+                <ul>
+                    <li>
+                        The algorithm called binary search used for searching element in sorted array had the time
+                        complexity of O(logn) where n was the length of the array.
+                        <ul>
+                            <li>Beacuse we were always dividing our search space into half on the basis of whether our
+                                key was smaller or greater than the mid.</li>
+                        </ul>
+                    </li>
+                    <li>Searching in a binary search tree is very much similar to binary search(for sorted array)
+                        algorithm.</li>
+                    <li>Searching in a binary search tree holds <b>O(logn)</b> time complexity in the best case where n
+                        is the number of nodes making it incredibly easier to search an element in a binary search tree.
+                        <ul>
+                            <li>and even operations like inserting get relatively easier.</li>
+                        </ul>
+                    </li>
+                    <li>Let’s calculate exactly what happens. If you could see the above examples, the algorithm took
+                        the number of comparisons equal to the height of the binary search tree, because at each
+                        comparison we stepped down the depth by 1. So, the time complexity T ∝ h, that is, our time
+                        complexity is proportional to the height of the tree. Therefore, the time complexity becomes
+                        O(h).
+                        <br>
+                        Now, if you remember, the height of a tree ranges from logn to n, that is
+                        <br>
+                        (logn) ≤ h ≤ n
+                        <br>
+                        So, the best-case time complexity is O(logn) and the worst-case time complexity is O(n).
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h3>Psuedo code</h3>
+                <ul>
+                    <li>There will be a struct node pointer function <i>search</i> which will take the pointer to the
+                        root node and the key you want to serach in the tree.</li>
+                    <li>But first check if the root node is not NULL.
+                        <ul>
+                            <li>If it is
+                                <ul>
+                                    <li>return NULL here itself</li>
+                                    <li>Otherwise proceed further</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Now check if the node you are at is the one you were looking for.. if it is, return that node.
+                        And that's it</li>
+                    <li>But if that is not the one, just see if that key is greater than or less than that node.
+                        <ul>
+                            <li>If it is less</li>
+                            <li>Return recursively to the left subtree,</li>
+                            <li>otherwise return to the right subtree.</li>
+                            <li>And that's all.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../images/searchBST5.jpg" alt="">
+            </div>
+            <div class="in">
+                <h3>Code</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            struct node * search(struct node* root, int key){
+                                if(root==NULL){
+                                    return NULL;
+                                }
+                                if(key==root->data){
+                                    return root;
+                                }
+                                else if(key&lt;root->data){
+                                    return search(root->left, key);
+                                }
+                                else{
+                                    return search(root->right, key);
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="accordion">full code</button>
+                    <div class="panel">
+                        <pre>
+                                <code>
+
+                                    #include&lt;stdio.h>
+                                        #include&lt;malloc.h>
+                                        
+                                        struct node{
+                                            int data;
+                                            struct node* left;
+                                            struct node* right;
+                                        };
+                                        
+                                        struct node* createNode(int data){
+                                            struct node *n; // creating a node pointer
+                                            n = (struct node *) malloc(sizeof(struct node)); // Allocating memory in the heap
+                                            n->data = data; // Setting the data
+                                            n->left = NULL; // Setting the left and right children to NULL
+                                            n->right = NULL; // Setting the left and right children to NULL
+                                            return n; // Finally returning the created node
+                                        }
+                                        
+                                        struct node * search(struct node* root, int key){
+                                            if(root==NULL){
+                                                return NULL;
+                                            }
+                                            if(key==root->data){
+                                                return root;
+                                            }
+                                            else if(key&lt;root->data){
+                                                return search(root->left, key);
+                                            }
+                                            else{
+                                                return search(root->right, key);
+                                            }
+                                        }
+                                        
+                                        int main(){
+                                             
+                                            // Constructing the root node - Using Function (Recommended)
+                                            struct node *p = createNode(5);
+                                            struct node *p1 = createNode(3);
+                                            struct node *p2 = createNode(6);
+                                            struct node *p3 = createNode(1);
+                                            struct node *p4 = createNode(4);
+                                            // Finally The tree looks like this:
+                                            //      5
+                                            //     / \
+                                            //    3   6
+                                            //   / \
+                                            //  1   4  
+                                        
+                                            // Linking the root node with left and right children
+                                            p->left = p1;
+                                            p->right = p2;
+                                            p1->left = p3;
+                                            p1->right = p4;
+                                        
+                                            struct node* n = search(p, 10);
+                                            if(n!=NULL){
+                                            printf("Found: %d", n->data);
+                                            }
+                                            else{
+                                                printf("Element not found");
+                                            }
+                                            return 0;
+                                        }                                        
+                                </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  id="t2" class="wh">
+            <h3>Iterative Search in a Binary Tree</h3>
+            <ul>
+                <li>The <i>search</i> function we studied was a <b>recursive</b> function, calling the function
+                    recursively on the left or right subtree.</li>
+                <li>Now we'll see the concept of searching <i>iteratively</i> in an binary search tree and its program
+                    code.</li>
+                <li>In recursive approach
+                    <ul>
+                        <li>You start with the root and compare your key with root node's data</li>
+                        <li>if it's smaller then the key</li>
+                        <li>you select the whole left subtree and start an interative approach</li>
+                        <li>We have tree intact the whole time.</li>
+                        <li>We just make a pointer run from the root to the place we expect our key to be.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        struct node * searchIter(struct node* root, int key){
+                            while(root!=NULL){
+                                if(key == root->data){
+                                    return root;
+                                }
+                                else if(key&lt;root->data){
+                                    root = root->left;
+                                }
+                                else{
+                                    root = root->right;
+                                }
+                            }
+                            return NULL;
+                        }
+                        
+                    </code>
+                </pre>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">full code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include&lt;stdio.h>
+                                #include&lt;malloc.h>
+                                
+                                struct node{
+                                    int data;
+                                    struct node* left;
+                                    struct node* right;
+                                };
+                                
+                                struct node* createNode(int data){
+                                    struct node *n; // creating a node pointer
+                                    n = (struct node *) malloc(sizeof(struct node)); // Allocating memory in the heap
+                                    n->data = data; // Setting the data
+                                    n->left = NULL; // Setting the left and right children to NULL
+                                    n->right = NULL; // Setting the left and right children to NULL
+                                    return n; // Finally returning the created node
+                                }                               
+                               
+                                struct node * searchIter(struct node* root, int key){
+                                    while(root!=NULL){
+                                        if(key == root->data){
+                                            return root;
+                                        }
+                                        else if(key&lt;root->data){
+                                            root = root->left;
+                                        }
+                                        else{
+                                            root = root->right;
+                                        }
+                                    }
+                                    return NULL;
+                                }
+                                
+                                int main(){
+                                     
+                                    // Constructing the root node - Using Function (Recommended)
+                                    struct node *p = createNode(5);
+                                    struct node *p1 = createNode(3);
+                                    struct node *p2 = createNode(6);
+                                    struct node *p3 = createNode(1);
+                                    struct node *p4 = createNode(4);
+                                    // Finally The tree looks like this:
+                                    //      5
+                                    //     / \
+                                    //    3   6
+                                    //   / \
+                                    //  1   4  
+                                
+                                    // Linking the root node with left and right children
+                                    p->left = p1;
+                                    p->right = p2;
+                                    p1->left = p3;
+                                    p1->right = p4;
+                                
+                                    struct node* n = searchIter(p, 6);
+                                    if(n!=NULL){
+                                    printf("Found: %d", n->data);
+                                    }
+                                    else{
+                                        printf("Element not found");
+                                    }
+                                    return 0;
+                                }                                
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

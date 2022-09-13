@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-45 = Queue using Linked Lists </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Queue using Linked Lists</h1>
+        <div class="inside-content">
+            <p>
+                Recap for linked list
+                <br><img src="../images/quelink.jpg" alt="">
+                <br><br>Since we are implementing this queue using a linked list, the index variables are no longer integers. These become the pointers to the front and the rear nodes. And the queue somewhat starts looking like this.
+                <br><img src="../images/quelink2.jpg" alt="">
+            </p>
+            <div class="in">
+                <h3>Enqueue in a queue linked list:</h3>
+                <ul>
+                    <li>Similar to inserting at the end in a linked list.</li>
+                    <li>Check if space is left in heap</li>
+                    <li>If available, create a new node dynamically and assign value to its data.</li>
+                    <li>Point the next member of this new node <i>n</i> to NULL, and point the next member of the <i>r</i> to <i>n</i>. And make <i>r</i> equal to n.</li>
+                    <li><b>Special case:</b> When we insert the first element, both <i>f</i> and <i>r</i> are pointing to NULL. So, instead of just making <i>r</i> equal to <i>n</i>, we make <i>f</i> equal to n as well</li>
+                    <img src="../images/quelink3.jpg" alt="">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Dequeue in a queue linked list:</h3>
+                <ul>
+                    <li>Deleting the head node</li>
+                    <li>Check if the queue list is already not empty</li>
+                    <li>If not empty create a new <i>ptr</i> and make it equal to the <i>f</i> node. Store the data of <i>f</i> node in some integer variable.</li>
+                    <li>Make the <i>f</i> equal to the next member of f, and free the node <i>ptr</i>. Return the value you stored.</li>
+                    <img src="../images/quelink4.jpg" alt="">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>isEmpty</h3>
+                <ul>
+                    <li><i>f</i> node is NULL, which means there is no beginning, hence no element.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>isFull</h3>
+                <ul>
+                    <li>Queue implemented using linked lists never usually become full until the space in the heap memory is exhausted.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h1>Understanding code</h1>
+            <div class="in">
+                <p>
+                    Create a struct Node with two of its members, one integer variable data to store the data, and another struct Node pointer next to store the address of the next node.
+                </p>
+                <div class="wh">
+                    <p>
+                        struct Node
+                        <br>{
+                        <br> int data;
+                        <br> struct Node *next;
+                        <br>};
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <p>Globally, create two struct Node pointers f and r, which would be used to mark the front and the rear ends. Declaring globally helps us use them in functions.</p>
+                <div class="wh">
+                    <p>
+                        struct Node *f = NULL;
+                        <br>struct Node *r = NULL;
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <p><b>Creating Enqueue:</b></p>
+                <div class="wh">
+                    <p>
+                        void enqueue(int val){
+                        <br> struct Node *n = (struct Node *) malloc(sizeof(struct Node));
+                        <br> if(n==NULL){
+                        <br> printf("Queue is Full");
+                        <br> }
+                        <br> else{
+                        <br> n->data = val;
+                        <br> n->next = NULL;
+                        <br> if(f==NULL){
+                        <br> f=r=n;
+                        <br> }
+                        <br> else{
+                        <br> r->next = n;
+                        <br> r=n;
+                        <br> }
+                        <br> }
+                        <br> }
+                    </p>
+                </div>
+                <p>
+                    <b>Exception case:</b>
+                    <br><img src="../images/quelink5.jpg" alt="">
+                    <br><br>All the other cases:
+                    <br><img src="../images/quelink6.jpg" alt="">
+                </p>
+            </div>
+            <div class="in">
+                <p><b>Creating Dequeue</b></p>
+                <div class="wh">
+                    <p>
+                        int dequeue()
+                        <br>{
+                        <br> int val = -1;
+                        <br> struct Node *ptr = f;
+                        <br> if(f==NULL){
+                        <br> printf("Queue is Empty\n");
+                        <br> }
+                        <br> else{
+                        <br> f = f->next;
+                        <br> val = ptr->data;
+                        <br> free(ptr);
+                        <br> }
+                        <br> return val;
+                        <br>}
+                    </p>
+                </div>
+            </div>
+            <div class="wh">
+                <button class="accordion">full code</button>
+                <div class="panel">
+                    <p>
+                        #include &lt;stdio.h>
+                        <br> #include &lt;stdlib.h>
+                        <br>
+                        <br> struct Node *f = NULL;
+                        <br> struct Node *r = NULL;
+                        <br>
+                        <br> struct Node
+                        <br> {
+                        <br> int data;
+                        <br> struct Node *next;
+                        <br> };
+                        <br>
+                        <br> void linkedListTraversal(struct Node *ptr)
+                        <br> {
+                        <br> printf("Printing the elements of this linked list\n");
+                        <br> while (ptr != NULL)
+                        <br> {
+                        <br> printf("Element: %d\n", ptr->data);
+                        <br> ptr = ptr->next;
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> void enqueue(int val)
+                        <br> {
+                        <br> struct Node *n = (struct Node *) malloc(sizeof(struct Node));
+                        <br> if(n==NULL){
+                        <br> printf("Queue is Full");
+                        <br> }
+                        <br> else{
+                        <br> n->data = val;
+                        <br> n->next = NULL;
+                        <br> if(f==NULL){
+                        <br> f=r=n;
+                        <br> }
+                        <br> else{
+                        <br> r->next = n;
+                        <br> r=n;
+                        <br> }
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> int dequeue()
+                        <br> {
+                        <br> int val = -1;
+                        <br> struct Node *ptr = f;
+                        <br> if(f==NULL){
+                        <br> printf("Queue is Empty\n");
+                        <br> }
+                        <br> else{
+                        <br> f = f->next;
+                        <br> val = ptr->data;
+                        <br> free(ptr);
+                        <br> }
+                        <br> return val;
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> linkedListTraversal(f);
+                        <br> printf("Dequeuing element %d\n", dequeue());
+                        <br> enqueue(34);
+                        <br> enqueue(4);
+                        <br> enqueue(7);
+                        <br> enqueue(17);
+                        <br> printf("Dequeuing element %d\n", dequeue());
+                        <br> printf("Dequeuing element %d\n", dequeue());
+                        <br> printf("Dequeuing element %d\n", dequeue());
+                        <br> printf("Dequeuing element %d\n", dequeue());
+                        <br> linkedListTraversal(f);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

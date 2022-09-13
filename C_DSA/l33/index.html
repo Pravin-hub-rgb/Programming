@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-33 = Parenthesis checking using stack </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Parenthesis checking using stack</h1>
+        <div class="inside-content">
+            <h3>What is paranthesis matching?</h3>
+            <p>
+                In an expression opening bracket '(' should have corresponding closing brackets ')'.
+            </p>
+            <img src="../images/paranthesis.jpg" alt="">
+            <p>
+                <b>We’ll use stacks to match these parentheses. Let’s see how:</b>
+                <br><b>1.</b> Assume the expression given to you as a character array.
+                <br><img src="../images/paranthesis2.jpg" alt="">
+                <br><b>2.</b> Iterate through the character array and ignore everything you find other than the opening and the closing parenthesis. Every time you find an opening parenthesis, push it inside a character stack. And every time you find
+                a closing parenthesis, pop from the stack, in which you pushed the opening bracket.
+                <br><b>3.Conditions for unbalanced parentheses:</b>
+                <ul>
+                    <li>
+                        When you find a closing parenthesis and try achieving the pop operation in the stack, the stack must not become underflow. To match the existing closing parenthesis, at least one opening bracket should be available to pop. If there is no opening bracket
+                        inside the stack to pop, we say the expression has unbalanced parentheses.
+                    </li>
+                    <li>
+                        For example: the expression (2+3)*6)1+5 has no opening bracket corresponding to the last closing bracket. Hence unbalanced.
+                    </li>
+                    <li>
+                        At EOE, that is, when you reach the end of the expression, and there is still one or more opening brackets left in the stack, and it is not empty, we call these parentheses unbalanced.
+                    </li>
+                    <li>
+                        For example: the expression (2+3)*6(1+5 has 1 opening bracket left in the stack even after reaching the EOE. Hence unbalanced.
+                    </li>
+                </ul>
+                <b>4.</b> Note: Counting and matching the opening and closing brackets numbers is not enough to conclude if the parentheses are balanced. For eg: 1+3)*6(6+2.
+                <br><br>
+                <b>We’ll try checking if the above expression has balanced parentheses or not.</b>
+                <br> <b>Step 1:</b> Iterate through the char array, and push the opening brackets at positions 0, 3, 6 inside the stack. <br>
+                <img src="../images/paranthesis3.jpg" alt="">
+                <br><b>Step 2:</b> Try popping an opening bracket from the stack when you encounter a closing bracket in the expression.
+                <br><img src="../images/parenthesis4.jpg" alt="">
+                <br><b>Step 3:</b> Since we reached the EOE and there are still two parentheses left in the stack, we declare this expression of parentheses unbalanced.
+                <br> I have one task for you as well. Try checking if these expressions are balanced or not. And also, tell the number of times you had to push or pop in the stack. Also, comment on the time complexity of this algorithm. Answer the best
+                and the worst runtime complexity for an expression of size n. <br><b>7 - ( 8 ( 3 * 4 ) + 11 + 12 ) ) - 8 )</b>
+            </p>
+            <button class="accordion">code</button>
+            <div class="panel">
+                <p>
+                    #include &lt;stdio.h>
+                    <br> #include &lt;stdlib.h>
+                    <br>
+                    <br> struct stack
+                    <br> {
+                    <br> int size;
+                    <br> int top;
+                    <br> char *arr;
+                    <br> };
+                    <br>
+                    <br> int isEmpty(struct stack *ptr)
+                    <br> {
+                    <br> if (ptr->top == -1)
+                    <br> {
+                    <br> return 1;
+                    <br> }
+                    <br> else
+                    <br> {
+                    <br> return 0;
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> int isFull(struct stack *ptr)
+                    <br> {
+                    <br> if (ptr->top == ptr->size - 1)
+                    <br> {
+                    <br> return 1;
+                    <br> }
+                    <br> else
+                    <br> {
+                    <br> return 0;
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> void push(struct stack* ptr, char val){
+                    <br> if(isFull(ptr)){
+                    <br> printf("Stack Overflow! Cannot push %d to the stack\n", val);
+                    <br> }
+                    <br> else{
+                    <br> ptr->top++;
+                    <br> ptr->arr[ptr->top] = val;
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> char pop(struct stack* ptr){
+                    <br> if(isEmpty(ptr)){
+                    <br> printf("Stack Underflow! Cannot pop from the stack\n");
+                    <br> return -1;
+                    <br> }
+                    <br> else{
+                    <br> char val = ptr->arr[ptr->top];
+                    <br> ptr->top--;
+                    <br> return val;
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> int parenthesisMatch(char * exp){
+                    <br> // Create and initialize the stack
+                    <br> struct stack* sp;
+                    <br> sp->size = 100;
+                    <br> sp->top = -1;
+                    <br> sp->arr = (char *)malloc(sp->size * sizeof(char));
+                    <br>
+                    <br>
+                    <br> for (int i = 0; exp[i]!='\0'; i++)
+                    <br> {
+                    <br> if(exp[i]=='('){
+                    <br> push(sp, '(');
+                    <br> }
+                    <br> else if(exp[i]==')'){
+                    <br> if(isEmpty(sp)){
+                    <br> return 0;
+                    <br> }
+                    <br> pop(sp);
+                    <br> }
+                    <br> }
+                    <br>
+                    <br> if(isEmpty(sp)){
+                    <br> return 1;
+                    <br> }
+                    <br> else{
+                    <br> return 0;
+                    <br> }
+                    <br>
+                    <br> }
+                    <br> int main()
+                    <br> {
+                    <br> char * exp = "((8)(*--$$9))";
+                    <br> // Check if stack is empty
+                    <br> if(parenthesisMatch(exp)){
+                    <br> printf("The parenthesis is matching");
+                    <br> }
+                    <br> else{
+                    <br> printf("The parenthesis is not matching");
+                    <br> }
+                    <br> return 0;
+                    <br> }
+
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h1>Multi-Parenthesis Matching</h1>
+            <p>
+                Here we will deal with three type of parenthesis &rarr; (), [] & {}.
+                <br>We will check if a expression has a balanced parenthesis or not.
+                <br>A balanced parentheses expression has a corresponding closing parenthesis to all of its opening parentheses.
+                <br>When we talk about matching multi parenthesis, our focus is mainly on the three types of an opening parenthesis, [ { ( and their corresponding closing parentheses, ) } ].
+                <br><br> <b>Steps to follow:</b>
+                <br>1. Whenever we encounter an opening parenthesis, we simply push it in the stack, similar to what we did earlier.
+                <br>2. And when we encounter a closing parenthesis, the following conditions should be met to declare its balance:
+                <ul>
+                    <li><b>Before we pop, this size of the stack must not be zero.</b></li>
+                    <li><b>The topmost parenthesis of the stack must match the type of closing parenthesis we encountered.</b></li>
+                </ul>
+                3. If we find a corresponding opening parenthesis with conditions in point 2 met for every closing parenthesis, and the stack size reduces to zero when we reach EOE, we declare these parentheses, matching or balanced. Otherwise not matching or unbalanced.
+                <br>So, basically, we modified the pop operation. And that's all. Let's see what additions to the code we would like to make. But before that follow the illustration below to get a better understanding of the algorithm.
+
+            </p>
+            <img src="../images/multi.jpg" alt="">
+            <div class="wh">
+
+                <p>
+                    <b>Example:</b>
+                    <br><img src="../images/multi2.jpg" alt="">
+                    <br>We’ll try checking if the above expression has balanced multi-parentheses or not.
+                    <br><br> Step 1: Iterate through the char array, and push the opening brackets of all types at positions 0, 1, 4 inside the stack.
+                    <br><img src="../images/multi3.jpg" alt="">
+                    <br>Step 2: When you encounter a closing bracket of any type in the expression, try checking if the kind of closing bracket you have got matches with the topmost bracket in the stack.
+                    <br><img src="../images/multi4.jpg" alt="">
+                    <br>Step 3: Since we couldn’t pop an opening bracket corresponding to a closed bracket, we would just end the program here, declaring the parentheses unbalanced.
+                </p>
+            </div>
+            <div class="wh">
+                <h3>Code</h3>
+                <div class="in">
+                    <p>
+                        Create an integer function, match which will get the characters, popped_ch, and the current character of the expression as two parameters. Inside this function, check if these two characters are the same. If they are the same, return 1, else 0.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int match(char a, char b){
+                            <br> if(a=='{' && b=='}'){
+                            <br> return 1;
+                            <br> }
+                            <br> if(a=='(' && b==')'){
+                            <br> return 1;
+                            <br> }
+                            <br> if(a=='[' && b==']'){
+                            <br> return 1;
+                            <br> }
+                            <br> return 0;
+                            <br> }
+
+                        </p>
+                    </div>
+                    <p>
+                        &rarr; If the match function returns 1, our pop operation is successful, and we can continue checking further characters; else, if it returns 0, end the program here itself and return 0 to the main.
+                        <br><br>&rarr; And if things went well throughout, and in the end, if the stack becomes empty, return 1, else 0.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            <br>// code for multi-parenthesis matching
+                            <br> int parenthesisMatch(char * exp){
+                            <br> // Create and initialize the stack
+                            <br> struct stack* sp;
+                            <br> sp->size = 100;
+                            <br> sp->top = -1;
+                            <br> sp->arr = (char *)malloc(sp->size * sizeof(char));
+                            <br> char popped_ch;
+                            <br>
+                            <br> for (int i = 0; exp[i]!='\0'; i++)
+                            <br> {
+                            <br> if(exp[i]=='(' || exp[i]=='{' || exp[i]=='['){
+                            <br> push(sp, exp[i]);
+                            <br> }
+                            <br> else if(exp[i]==')'|| exp[i]=='}' || exp[i]==']'){
+                            <br> if(isEmpty(sp)){
+                            <br> return 0;
+                            <br> }
+                            <br> popped_ch = pop(sp);
+                            <br> if(!match(popped_ch, exp[i])){
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> if(isEmpty(sp)){
+                            <br> return 1;
+                            <br> }
+                            <br> else{
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                    <div class="wh">
+                        <button class="accordion">whole code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br>
+                                <br> struct stack
+                                <br> {
+                                <br> int size;
+                                <br> int top;
+                                <br> char *arr;
+                                <br> };
+                                <br>
+                                <br> int isEmpty(struct stack *ptr)
+                                <br> {
+                                <br> if (ptr->top == -1)
+                                <br> {
+                                <br> return 1;
+                                <br> }
+                                <br> else
+                                <br> {
+                                <br> return 0;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> int isFull(struct stack *ptr)
+                                <br> {
+                                <br> if (ptr->top == ptr->size - 1)
+                                <br> {
+                                <br> return 1;
+                                <br> }
+                                <br> else
+                                <br> {
+                                <br> return 0;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> void push(struct stack* ptr, char val){
+                                <br> if(isFull(ptr)){
+                                <br> printf("Stack Overflow! Cannot push %d to the stack\n", val);
+                                <br> }
+                                <br> else{
+                                <br> ptr->top++;
+                                <br> ptr->arr[ptr->top] = val;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> char pop(struct stack* ptr){
+                                <br> if(isEmpty(ptr)){
+                                <br> printf("Stack Underflow! Cannot pop from the stack\n");
+                                <br> return -1;
+                                <br> }
+                                <br> else{
+                                <br> char val = ptr->arr[ptr->top];
+                                <br> ptr->top--;
+                                <br> return val;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> char stackTop(struct stack* sp){
+                                <br> return sp->arr[sp->top];
+                                <br> }
+                                <br>
+                                <br> int match(char a, char b){
+                                <br> if(a=='{' && b=='}'){
+                                <br> return 1;
+                                <br> }
+                                <br> if(a=='(' && b==')'){
+                                <br> return 1;
+                                <br> }
+                                <br> if(a=='[' && b==']'){
+                                <br> return 1;
+                                <br> }
+                                <br> return 0;
+                                <br> }
+                                <br>
+                                <br> int parenthesisMatch(char * exp){
+                                <br> // Create and initialize the stack
+                                <br> struct stack* sp;
+                                <br> sp->size = 100;
+                                <br> sp->top = -1;
+                                <br> sp->arr = (char *)malloc(sp->size * sizeof(char));
+                                <br> char popped_ch;
+                                <br>
+                                <br> for (int i = 0; exp[i]!='\0'; i++)
+                                <br> {
+                                <br> if(exp[i]=='(' || exp[i]=='{' || exp[i]=='['){
+                                <br> push(sp, exp[i]);
+                                <br> }
+                                <br> else if(exp[i]==')'|| exp[i]=='}' || exp[i]==']'){
+                                <br> if(isEmpty(sp)){
+                                <br> return 0;
+                                <br> }
+                                <br> popped_ch = pop(sp);
+                                <br> if(!match(popped_ch, exp[i])){
+                                <br> return 0;
+                                <br> }
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> if(isEmpty(sp)){
+                                <br> return 1;
+                                <br> }
+                                <br> else{
+                                <br> return 0;
+                                <br> }
+                                <br>
+                                <br> }
+                                <br>
+                                <br> int main()
+                                <br> {
+                                <br> char * exp = "[4-6]((8){(9-8)})";
+                                <br>
+                                <br> if(parenthesisMatch(exp)){
+                                <br> printf("The parenthesis is balanced");
+                                <br> }
+                                <br> else{
+                                <br> printf("The parenthesis is not balanced");
+                                <br> }
+                                <br> return 0;
+                                <br> }
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

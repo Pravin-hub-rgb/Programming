@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-5 = How to Calculate Time Complexity of an Algorithm </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>How to Calculate Time Complexity of an Algorithm</h1>
+        <div class="inside-content">
+            <h2>Tricks to calculate complexities:</h2>
+            <ul>
+                <li>Drop the constants:
+                    <ul>
+                        <li>Anything you might think is O(kn) (where k is a constant) is O(n) as well. This is considered a better representation of the time complexity since the k term would not affect the complexity much for a higher value of n.</li>
+                    </ul>
+                </li>
+                <li>Drop the non-dominant terms:
+                    <ul>
+                        <li>
+                            Anything you represent as O(n^2+n) can be written as O(n^2). Similar to when non-dominant terms are ignored for a higher value of n.
+                        </li>
+                    </ul>
+                </li>
+                <li>Consider all variables which are provided as input:
+                    <ul>
+                        <li>O(mn) and O(mnq) might exist for some cases.</li>
+                        <li>In most cases, we try to represent the runtime in terms of the inputs which can even be more than one in number. For example, The time taken to paint a park of dimension m*n &rarr; O(kmn) &rarr; O(mn)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="inside-content">
+            <h3>Time complexity - competitive practice sheet:</h3>
+            <div class="in">
+                <h3>Question 1 &rarr; Find the time complexity of the func1 function in the program shown below.</h3>
+                <div class="wh">
+                    <p>
+                        #include&lt;stdio.h>
+                        <br>
+                        <br> void func1(int array[], int length)
+                        <br> {
+                        <br> int sum=0;
+                        <br> int product =1;
+                        <br> for (int i = 0; i &lt;length; i++)
+                        <br> {
+                        <br> sum+=array[i];
+                        <br> }
+                        <br>
+                        <br> for (int i = 0; i &lt; length; i++)
+                        <br> {
+                        <br> product*=array[i];
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> int main()
+                        <br> {
+                        <br> int arr[] = {3,4,66};
+                        <br> func1(arr,3);
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Question 2</h3>
+                <div class="wh">
+                    <p>
+                        void func(int n)
+                        <br>{
+                        <br> int sum=0;
+                        <br> int product =1;
+                        <br> for (int i = 0; i &lt;n; i++)
+                        <br> {
+                        <br> for (int j = 0; j &lt; n; j++)
+                        <br> {
+                        <br> printf("%d , %d\n", i,j);
+                        <br> }
+                        <br> }
+                        <br>}
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Question 3 &rarr; Consider the recursive algorithm below, where the random(int n) spends one unit of time to return a random integer where the probability of each integer coming as random is evenly distributed within the range [0,n]. If
+                    the average processing time is T(n), what is the value of T(6)?</h3>
+                <div class="wh">
+                    <p>
+                        int function(int n)
+                        <br> {
+                        <br> int i = 0;
+                        <br> if (n &lt;= 0)
+                        <br> {
+                        <br> return 0;
+                        <br> }
+                        <br> else
+                        <br> {
+                        <br> i = random(n - 1);
+                        <br> printf("this\n");
+                        <br> return function(i) + function(n - 1 - i);
+                        <br> }
+                        <br> }
+
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Question 4 &rarr; Which of the following are equivalent to O(N) and why?
+
+                    <br>O(N + P), where P &lt; N/9
+                    <br>0(9N-k)
+                    <br>O(N + 8log N)
+                    <br>O(N + M2)
+                    <br>Question 5: The following simple code sums the values of all the nodes in a balanced binary search tree ( don’t worry about what it is, we’ll learn them later ). What is its runtime?
+                </h3>
+                <div class="wh">
+                    <p>
+                        int sum(Node node)
+                        <br> {
+                        <br> if (node == NULL)
+                        <br> {
+                        <br> return 0;
+                        <br> }
+                        <br> return sum(node.left) + node.value + sum(node.right);
+                        <br> }
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>
+                    Question 5 &rarr; Find the complexity of the following code which tests whether a given number is prime or not?
+                </h3>
+                <div class="wh">
+                    <p>
+                        int isPrime(int n)
+                        <br>{
+                        <br> if (n == 1)
+                        <br> {
+                        <br> return 0;
+                        <br> }
+                        <br> for (int i = 2; i * i &lt; n; i++)
+                        <br> {
+                        <br> if (n % i == 0)
+                        <br> {
+                        <br> return 0;
+                        <br> }
+                        <br> }
+                        <br> return 1;
+                        <br>}
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Question 6 &rarr; </h3>
+                <div class="wh">
+                    <p>
+                        int isPrime(int n)
+                        <br>{
+                        <br> for (int i = 2; i * i &lt; 10000; i++)
+                        <br> {
+                        <br> if (n % i == 0)
+                        <br> {
+                        <br> return 0;
+                        <br> }
+                        <br> }
+                        <br>
+                        <br> return 1;
+                        <br>}
+                        <br>isPrime();
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

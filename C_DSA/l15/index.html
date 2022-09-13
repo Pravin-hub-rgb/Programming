@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-15 = Insertion of node in a linked list</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Insertion of node in a linked list</h1>
+        <div class="inside-content">
+            <h2>Inserting in a linked list</h2>
+            <p>
+                Consider the following linked list:
+                <br> <img src="../images/link3.jpg" alt="">
+                <br>Insertion in this list can be divided into the following categories:
+                <ul>
+                    <li>Case 1: Insert at the beginning</li>
+                    <li>Case 2: Insert in between</li>
+                    <li>Case 3: Insert at the end</li>
+                    <li>Case 4: Insert after the node</li>
+                </ul>
+                For insertion follwoing any of the above-mentioned cases, we would first need to create that extra node. And then, we overwrite the current connection and make new conections. And that is how we insert a new node at our desired place.
+                <br><br>Syntax for creating a node:
+                <br><b>struct Node *ptr = (struct Node*) malloc (size of(struct Node));</b>
+                <br>The above syntax will create a node, and the next thing one would need to do is set the data for this node.
+                <br><br><b>ptr -> data = 0;</b>
+                <br>This will set the data.
+            </p>
+            <div class="in">
+                <h3>Case 1: Insert at the beginning</h3>
+                <p>
+                    In order to insert the new node at the beginning, we would need to have the ead pointer pointing to this new node and the new node's pointer to the current head.
+                    <br> <img src="../images/link4.jpg" alt="">
+                </p>
+                <div class="wh">
+                    <p>Inserting at the beginning has the time complexity O(1).</p>
+                </div>
+                <div class="wh">
+                    <h3>Code</h3>
+                    <p>
+                        Create a struct Node* function insertAtFirst which will return the pointer to the new head.
+                        <br>We’ll pass the current head pointer and the data to insert at the beginning, in the function.
+                        <br>Create a new struct Node* pointer ptr, and assign it a new memory location in the heap.
+                        <br>Assign head to the next member of the ptr structure using ptr-> next = head, and the given data to its data member.
+                        <br>Return this pointer ptr.
+                    </p>
+                    <div class="in">
+                        <p>
+                            struct Node * insertAtFirst(struct Node *head, int data){
+                            <br> struct Node * ptr = (struct Node *) malloc(sizeof(struct Node));
+                            <br> ptr->data = data;
+                            <br>
+                            <br> ptr->next = head;
+                            <br> return ptr;
+                            <br> }
+                        </p>
+                    </div>
+                    <div class="in">
+                        <button class="accordion">full code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br>
+                                <br> struct Node
+                                <br> {
+                                <br> int data;
+                                <br> struct Node *next;
+                                <br> };
+                                <br>
+                                <br> void linkedListTraversal(struct Node *ptr)
+                                <br> {
+                                <br> while (ptr != NULL)
+                                <br> {
+                                <br> printf("Element : %d\n", ptr->data);
+                                <br> ptr = ptr->next;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> struct Node *insertATFirst(struct Node *head, int data)
+                                <br> {
+                                <br> struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+                                <br> ptr->data = data;
+                                <br> ptr->next = head;
+                                <br> return ptr;
+                                <br> }
+                                <br>
+                                <br> int main()
+                                <br> {
+                                <br> struct Node *head;
+                                <br> struct Node *second;
+                                <br> struct Node *third;
+                                <br> struct Node *fourth;
+                                <br>
+                                <br> // Allocate memory fornodes in linked list in heap (dynamic memory allocate)
+                                <br> head = (struct Node *)malloc(sizeof(struct Node));
+                                <br> second = (struct Node *)malloc(sizeof(struct Node));
+                                <br> third = (struct Node *)malloc(sizeof(struct Node));
+                                <br> fourth = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> // link first and second nodes
+                                <br> head->data = 7;
+                                <br> head->next = second;
+                                <br>
+                                <br> // link second and third nodes
+                                <br> second->data = 11;
+                                <br> second->next = third;
+                                <br>
+                                <br> // link third and fourth nodes
+                                <br> third->data = 211;
+                                <br> third->next = fourth;
+                                <br>
+                                <br> // terminate the list a the third node
+                                <br> fourth->data = 66;
+                                <br> fourth->next = NULL;
+                                <br>
+                                <br> linkedListTraversal(head);
+                                <br> head = insertATFirst(head, 69);
+                                <br> linkedListTraversal(head);
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Case 2: Insert in between:</h3>
+                <p>
+                    Assuming index starts from 0, we can insert an element at index i>0 as follows:
+                    <br><br>Bring a temporary pointer <b>p</b> pointing to the node before the element you want to insert in the linked list.
+                    <br>Since we want to insert between 8 and 2, we bring pointer <b>p</b> to 8.
+                    <br> <img src="../images/link5.jpg" alt="">
+                </p>
+                <div class="wh">
+                    <p>Inserting at some node in between puts the time comlexity O(n). <br>As we have to traverse to get to the element.</p>
+                </div>
+                <div class="wh">
+                    <h3>Code</h3>
+                    <div class="in">
+                        <p>
+                            Create a struct Node* function insertAtIndex which will return the pointer to the head.
+                            <br>We’ll pass the current head pointer and the data to insert and the index where it will get inserted, in the function.
+                            <br>Create a new struct Node* pointer ptr, and assign it a new memory location in the heap.
+                            <br>Create a new struct Node* pointer pointing to head, and run a loop until this pointer reaches the index, where we are inserting a new node.
+                            <br>Assign p->next to the next member of the ptr structure using ptr-> next = p->next, and the given data to its data member.
+                            <br>Break the connection between p and p->next by assigning p->next the new pointer. That is, p->next = ptr.
+                            <br>Return head.
+                        </p>
+                    </div>
+                    <div class="in">
+                        <button class="accordion">full code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br>
+                                <br> struct Node
+                                <br> {
+                                <br> int data;
+                                <br> struct Node *next;
+                                <br> };
+                                <br>
+                                <br> void linkedListTraversal(struct Node *ptr)
+                                <br> {
+                                <br> while (ptr != NULL)
+                                <br> {
+                                <br> printf("Element : %d\n", ptr->data);
+                                <br> ptr = ptr->next;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> struct Node *insertAtIndex(struct Node *head, int data, int index)
+                                <br> {
+                                <br> struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> struct Node *p = head;
+                                <br> int i = 0;
+                                <br> while (i != index - 1)
+                                <br> {
+                                <br> p=p->next;
+                                <br> i++;
+                                <br> }
+                                <br> ptr->data = data;
+                                <br> ptr->next = p->next;
+                                <br> p->next = ptr;
+                                <br> return head;
+                                <br> }
+                                <br>
+                                <br> int main()
+                                <br> {
+                                <br> struct Node *head;
+                                <br> struct Node *second;
+                                <br> struct Node *third;
+                                <br> struct Node *fourth;
+                                <br>
+                                <br> // Allocate memory fornodes in linked list in heap (dynamic memory allocate)
+                                <br> head = (struct Node *)malloc(sizeof(struct Node));
+                                <br> second = (struct Node *)malloc(sizeof(struct Node));
+                                <br> third = (struct Node *)malloc(sizeof(struct Node));
+                                <br> fourth = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> // link first and second nodes
+                                <br> head->data = 7;
+                                <br> head->next = second;
+                                <br>
+                                <br> // link second and third nodes
+                                <br> second->data = 11;
+                                <br> second->next = third;
+                                <br>
+                                <br> // link third and fourth nodes
+                                <br> third->data = 211;
+                                <br> third->next = fourth;
+                                <br>
+                                <br> // terminate the list a the third node
+                                <br> fourth->data = 66;
+                                <br> fourth->next = NULL;
+                                <br>
+                                <br> linkedListTraversal(head);
+                                <br> insertAtIndex(head,55,2);
+                                <br> linkedListTraversal(head);
+                                <br>
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Case 3: Insert at the end:</h3>
+                <p>
+                    In order to insert an element at the end of the linked list, we bring a temporary pointer to the last element.
+                    <br> <img src="../images/link6.jpg" alt="">
+                </p>
+                <div class="wh">
+                    <p>
+                        Inserting at the end has the time complexity as O(n). <br>As we have to traverse till we get to the end of the linklist.
+                    </p>
+                </div>
+                <div class="wh">
+                    <h3>Code</h3>
+                    <div class="in">
+                        <p>
+                            struct Node * insertAtEnd(struct Node *head, int data){
+                            <br> struct Node * ptr = (struct Node *) malloc(sizeof(struct Node));
+                            <br> ptr->data = data;
+                            <br> struct Node * p = head;
+                            <br>
+                            <br> while(p->next!=NULL){
+                            <br> p = p->next;
+                            <br> }
+                            <br> p->next = ptr;
+                            <br> ptr->next = NULL;
+                            <br> return head;
+                            <br>}
+                        </p>
+                    </div>
+                    <div class="in">
+                        <button class="accordion">full code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br>
+                                <br> struct Node
+                                <br> {
+                                <br> int data;
+                                <br> struct Node *next;
+                                <br> };
+                                <br>
+                                <br> void linkedListTraversal(struct Node *ptr)
+                                <br> {
+                                <br> while (ptr != NULL)
+                                <br> {
+                                <br> printf("Element : %d\n", ptr->data);
+                                <br> ptr = ptr->next;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> struct Node *insertAtEnd(struct Node *head, int data)
+                                <br> {
+                                <br> struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> struct Node *p = head;
+                                <br>
+                                <br> while (p->next!=NULL)
+                                <br> {
+                                <br> p=p->next;
+                                <br>
+                                <br> }
+                                <br> ptr->data = data;
+                                <br> ptr->next = NULL;
+                                <br> p->next = ptr;
+                                <br> return head;
+                                <br> }
+                                <br>
+                                <br> int main()
+                                <br> {
+                                <br> struct Node *head;
+                                <br> struct Node *second;
+                                <br> struct Node *third;
+                                <br> struct Node *fourth;
+                                <br>
+                                <br> // Allocate memory fornodes in linked list in heap (dynamic memory allocate)
+                                <br> head = (struct Node *)malloc(sizeof(struct Node));
+                                <br> second = (struct Node *)malloc(sizeof(struct Node));
+                                <br> third = (struct Node *)malloc(sizeof(struct Node));
+                                <br> fourth = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> // link first and second nodes
+                                <br> head->data = 7;
+                                <br> head->next = second;
+                                <br>
+                                <br> // link second and third nodes
+                                <br> second->data = 11;
+                                <br> second->next = third;
+                                <br>
+                                <br> // link third and fourth nodes
+                                <br> third->data = 211;
+                                <br> third->next = fourth;
+                                <br>
+                                <br> // terminate the list a the third node
+                                <br> fourth->data = 66;
+                                <br> fourth->next = NULL;
+                                <br>
+                                <br> linkedListTraversal(head);
+                                <br> insertAtEnd(head,8888);
+                                <br> linkedListTraversal(head);
+                                <br>
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="in">
+                <h3>Case 4: Insert after a node:</h3>
+                <p>
+                    Similar to other cases, ptr can be inserted after a node as follows:
+                    <br>Ptr-> next = prevNode -> next;
+                    <br>prevNode -> next = ptr;
+                    <br> <img src="../images/link7.jpg" alt="">
+                </p>
+                <div class="wh">
+                    <p>
+                        If we know the pointer to the previous node where we want to insert the new node, it would just take constant time O(1).
+                    </p>
+                </div>
+                <div class="wh">
+                    <h3>Code</h3>
+                    <div class="in">
+                        <p>
+                            Here, we already have a struct Node* pointer to insert the new node just next to it.
+                            <br>Create a struct Node* function insertAfterNode which will return the pointer to the head.
+                            <br>Pass into this function, the head node, the previous node, and the data.
+                            <br>Create a new struct Node* pointer ptr, and assign it a new memory location in the heap.
+                            <br>Since we already have a struct Node* prevNode given as a parameter, use it as p we had in the previous functions.
+                            <br>Assign prevNode->next to the next member of the ptr structure using ptr-> next = prevNode->next, and the given data to its data member.
+                            <br>Break the connection between prevNode and prevNode->next by assigning prevNode->next the new pointer. That is, prevNode->next = ptr.
+                            <br>Return head.
+                        </p>
+                    </div>
+                    <div class="in">
+                        <button class="accordion">full code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br>
+                                <br> struct Node
+                                <br> {
+                                <br> int data;
+                                <br> struct Node *next;
+                                <br> };
+                                <br>
+                                <br> void linkedListTraversal(struct Node *ptr)
+                                <br> {
+                                <br> while (ptr != NULL)
+                                <br> {
+                                <br> printf("Element : %d\n", ptr->data);
+                                <br> ptr = ptr->next;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> struct Node *insertAfterNode(struct Node *head, struct Node * prevNode, int data)
+                                <br> {
+                                <br> struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> ptr->data = data;
+                                <br> ptr->next = prevNode->next;
+                                <br> prevNode->next=ptr;
+                                <br> return head;
+                                <br> }
+                                <br>
+                                <br> int main()
+                                <br> {
+                                <br> struct Node *head;
+                                <br> struct Node *second;
+                                <br> struct Node *third;
+                                <br> struct Node *fourth;
+                                <br>
+                                <br> // Allocate memory fornodes in linked list in heap (dynamic memory allocate)
+                                <br> head = (struct Node *)malloc(sizeof(struct Node));
+                                <br> second = (struct Node *)malloc(sizeof(struct Node));
+                                <br> third = (struct Node *)malloc(sizeof(struct Node));
+                                <br> fourth = (struct Node *)malloc(sizeof(struct Node));
+                                <br>
+                                <br> // link first and second nodes
+                                <br> head->data = 7;
+                                <br> head->next = second;
+                                <br>
+                                <br> // link second and third nodes
+                                <br> second->data = 11;
+                                <br> second->next = third;
+                                <br>
+                                <br> // link third and fourth nodes
+                                <br> third->data = 211;
+                                <br> third->next = fourth;
+                                <br>
+                                <br> // terminate the list a the third node
+                                <br> fourth->data = 66;
+                                <br> fourth->next = NULL;
+                                <br>
+                                <br> linkedListTraversal(head);
+                                <br> insertAfterNode(head,second,8888);
+                                <br> linkedListTraversal(head);
+                                <br>
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

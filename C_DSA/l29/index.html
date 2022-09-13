@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-29 = Implementing stack using linkedlist </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Implementing stack using linkedlist</h1>
+        <div class="inside-content">
+            <h2>Implementing stacks using linkedlists:</h2>
+            <p>
+                We can now consider a singly linked list. Follow the illustration below.
+            </p>
+            <img src="../images/stacklinked.jpg" alt="">
+            <p>
+                Consider this linked list functioning as a stack. And as you know, we have two sides of a linked list, one the head, and the other pointing to NULL. We consider top of stack at the head side.
+            </p>
+            <p>
+                <b>Why the head side?</b> Because that's the head node of the linked list, and insertion and deletion of a node at head happens to function in a constant time complexity, O(1). Whereas inserting or deleting a node at the last position
+                takes a linear time complexity, O(n).
+                <br>So that stack equivalent of the above illustrated linked list look something like this:
+                <br><img src="../images/stacklinked2.jpg" alt="">
+            </p>
+            <div class="wh">
+                <h3>When is our stack empty or full?</h3>
+                <p>
+                    Stacks when implemented with linked lists never get full. We can always add a node to it. There is no limit on the number of nodes a linked list can contain until we have some space in heap memory. Where as stacks become empty when there is no node in
+                    the linked list, hence when the top equals to NULL.
+                    <br><b>Condition of stack full : </b> When heap memory is exhausted .
+                    <br><b>Condition for stack empty:</b> top == NULL
+                    <br><br>We will refer head node as the top node.
+                    <br><br>These interpretations will heap us implement the operations, <i>isEmpty</i> and <i>isFull</i>.
+                </p>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Implementing all the stack operations using Linked lists</h2>
+            <p>
+                Before writing the codes, we must discuss the algorithm we'll put into operations. Let's go through them one by one.
+            </p>
+            <div class="in">
+                <p>
+                    <b>1. isEmpty:</b> It just checks if our top element is NULL.
+                    <br><b>2. isFull:</b> A stack is full, only if no more nodes are being created using malloc. This is the condition where heap memory gets exhausted.
+                    <br><b>3. Push</b> The first thing we need before pushing an element is to create a new node. Check if the stack is not already full. Now, we follow the same concept we learnt while inserting an element at the head or at the index
+                    0 in a linked list. Just set the address of the current top in the next member of the new node, and update the top element with this new node.
+                    <br><img src="../images/stackpush.jpg" alt="">
+                    <br><b>4. Pop:</b> First thing is to check if the stack is not already empty Now, we follow the same concept we learnt while deleting an element at the head or at the index 0 in a linked list. Just update the top pointer with the next
+                    node, skipping the current top.
+                    <br><img src="../images/stackpop.jpg" alt="">
+                </p>
+            </div>
+            <div class="wh">
+                <h3>code</h3>
+                <div class="in">
+                    <p><b>isEmpty()</b></p>
+                    <div class="wh">
+                        <p>
+                            int isEmpty(struct Node* top){
+                            <br> if (top==NULL){
+                            <br> return 1;
+                            <br> }
+                            <br> else{
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>isFull()</b></p>
+                    <p>We don't have to make it seperate function as we can intend this in push function if the new node gets created that means there is space in heap</p>
+                    <div class="wh">
+                        <p>
+                            int isFull(struct Node* top){
+                            <br> struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+                            <br> if(p==NULL){
+                            <br> return 1;
+                            <br> }
+                            <br> else{
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>push()</b></p>
+                    <ul>
+                        <li>Create a struct Node* function push which will return the pointer to the new top node.</li>
+                        <li>We’ll pass the current top pointer and the data to push in the stack, in the function.</li>
+                        <li>Check if the stack is already not full, if full, return the condition stack overflow.</li>
+                        <li>Create a new struct Node* pointer n, and assign it a new memory location in the heap.</li>
+                        <li>Assign top to the next member of the n structure using n-> next = top, and the given data to its data member.</li>
+                        <li>Return this pointer n, since this is our new top node.</li>
+                    </ul>
+                    <div class="wh">
+                        <p>
+                            struct Node* push(struct Node* top, int x){
+                            <br> if(isFull(top)){
+                            <br> printf("Stack Overflow\n");
+                            <br> }
+                            <br> else{
+                            <br> struct Node* n = (struct Node*) malloc(sizeof(struct Node));
+                            <br> n->data = x;
+                            <br> n->next = top;
+                            <br> top = n;
+                            <br> return top;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>pop()</b></p>
+                    <ul>
+                        <li>Create an integer function pop which will return the element we remove from the top.</li>
+                        <li>We’ll pass the reference of the current top pointer in the function. We are passing the reference this time, because we are not returning the updated top from the function.</li>
+                        <li>Check if the stack is already not empty, if empty, return the condition stack underflow.</li>
+                        <li>Create a new struct Node* pointer n, and make it point to the current top. Store the data of this node in an integer variable x.</li>
+                        <li>Assign top to the next member of the list, by top = top->next, because this is going to be our new top.</li>
+                        <li>Free the pointer n. And return x.</li>
+                    </ul>
+                    <p>
+                        Here we are passing the address of top, this can be avoided if we will declare <i>top</i> as base address.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int pop(struct Node** top){
+                            <br> if(isEmpty(*top)){
+                            <br> printf("Stack Underflow\n");
+                            <br> }
+                            <br> else{
+                            <br> struct Node* n = *top;
+                            <br> *top = (*top)->next;
+                            <br> int x = n->data;
+                            <br> free(n);
+                            <br> return x;
+                            <br> }
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>peek()</b></p>
+                    <p>
+                        This operation is meant to return the element at a given position. Do mind that the position of an element is not the same as the index of an element. In fact, there is nothing as an index in a linked list. Refer to the illustration below.
+                    </p>
+                    <img src="../images/peek2.jpg" alt="">
+                    <p>
+                        Peeking in a stack linked list is not as efficient as when we worked with arrays. Peeking in a linked list takes O(n) because it first traverses to the position where we want to peek in. So, we’ll just have to move to that node and return its data.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int peek(struct Node *top, int pos)
+                            <br>{
+                            <br> struct Node *ptr = top;
+                            <br> for (int i = 0; i &lt; pos - 1 && ptr != NULL; i++)
+                            <br> {
+                            <br> ptr = ptr->next;
+                            <br> }
+                            <br> if (ptr != NULL)
+                            <br> {
+                            <br> return ptr->data;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return -1;
+                            <br> }
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>stackTop()</b>
+                        <br> This operation just returns the topmost value in the stack. That is, it just returns the data member of the top pointer.</p>
+                    <div class="wh">
+                        <p>
+                            int stackTop(struct Node *top)
+                            <br>{
+                            <br> return top->data;
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <p><b>stackBottom()</b>
+                        <br> This operation just returns the topbottom value in the stack. That is, it just returns the data member of the bottom element.</p>
+                    <div class="wh">
+                        <p>
+                            int stackBottom(struct Node *top)
+                            <br>{
+                            <br> struct Node *ptr = top;
+                            <br> while (ptr->next != NULL)
+                            <br> {
+                            <br> ptr = ptr->next;
+                            <br> }
+                            <br> return ptr->data;
+                            <br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="in">
+                    <button class="accordion">full source code</button>
+                    <div class="panel">
+                        <p>
+                            #include&lt;stdio.h>
+                            <br> #include&lt;stdlib.h>
+
+                            <br> struct Node
+                            <br> {
+                            <br> int data;
+                            <br> struct Node *next;
+                            <br> };
+                            <br>
+                            <br> void linkedListTraversal(struct Node *top)
+                            <br> {
+                            <br> printf("Top->");
+                            <br> while (top != NULL)
+                            <br> {
+                            <br> printf("%d->", top->data);
+                            <br> top = top->next;
+                            <br> }
+                            <br> printf("\n");
+                            <br> }
+                            <br> int isEmpty(struct Node *top)
+                            <br> {
+                            <br> if (top == NULL)
+                            <br> {
+                            <br> return -1;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return 0;
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> struct Node *push(struct Node *top, int data)
+                            <br> {
+                            <br> struct Node *p = (struct Node *)malloc(sizeof(struct Node));
+                            <br> if (p == NULL)
+                            <br> {
+                            <br> printf("Stack overflow");
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> p->data = data;
+                            <br> p->next = top;
+                            <br> top = p;
+                            <br> return top;
+                            <br> }
+                            <br> }
+                            <br> int pop(struct Node **top)
+                            <br> {
+                            <br> if (isEmpty(*top))
+                            <br> {
+                            <br> printf("Stack underflow");
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> struct Node *n = *top;
+                            <br> int x = n->data;
+                            <br> *top = (*top)->next;
+                            <br> free(n);
+                            <br> return x;
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> int peek(struct Node *top, int pos)
+                            <br> {
+                            <br> struct Node *ptr = top;
+                            <br> for (int i = 0; i &lt; pos - 1 && ptr != NULL; i++)
+                            <br> {
+                            <br> ptr = ptr->next;
+                            <br> }
+                            <br> if (ptr != NULL)
+                            <br> {
+                            <br> return ptr->data;
+                            <br> }
+                            <br> else
+                            <br> {
+                            <br> return -1;
+                            <br> }
+                            <br> }
+                            <br> int stackTop(struct Node *top)
+                            <br> {
+                            <br> return top->data;
+                            <br> }
+                            <br>
+                            <br> int stackBottom(struct Node *top)
+                            <br>{
+                            <br> struct Node *ptr = top;
+                            <br> while (ptr->next != NULL)
+                            <br> {
+                            <br> ptr = ptr->next;
+                            <br> }
+                            <br> return ptr->data;
+                            <br>}
+                            <br> int main()
+                            <br> {
+                            <br> struct Node *top = NULL;
+                            <br>
+                            <br> top = push(top, 34);
+                            <br> top = push(top, 36);
+                            <br> top = push(top, 38);
+                            <br> // push(top, 36);
+                            <br> linkedListTraversal(top);
+                            <br> int element = pop(&top);
+                            <br> linkedListTraversal(top);
+                            <br> printf("The element at position %d is %d\n",0,peek(top,8));
+                            <br> printf("The element at top is %d",stackTop(top));
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

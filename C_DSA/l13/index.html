@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-13 = Intro to Linked List </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to link list</h1>
+        <div class="inside-content">
+            <div class="part2 wh">
+                <div>
+                    <div>
+                        <p><b>Link list</b></p>
+                    </div>
+                    <div>
+                        <p><b>Array</b></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>
+                            linked lists are stored in a non-contiguous memory location. To add a new element, we just have to create a node somewhere in the memory and get it pointed by the previous element. And deleting an element is just as easy as that. We just have to skip
+                            pointing to that particular node. Lengthening a linked list is not a big deal.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Arrays demand a contiguous memory location. Lengthening an array is not possible. We would have to copy the whole array to some bigger memory location to lengthen its size. Similarity inserting or deleting an element causes the elements to shift right
+                            and left.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h2>Structure of a Linked List:</h2>
+                <p>
+                    Every element in a linked list is called a node and consists of two parts, the data part, and the pointer part. The data part stores the value, while the pointer part stores the pointer pointing to the address of the next node.
+                    <br>Both of these structures (arrays and linked lists) are linear data structures.
+                </p>
+            </div>
+            <div class="wh">
+                <h3>Linked lists VS Arrays:</h3>
+                <img src="../images/link.jpg" alt="">
+            </div>
+            <div class="in">
+                <h2>Why linked lists?</h2>
+                <p>
+                    Memory and the capacity of an array remain fixed, while in linked lists, we can keep adding and removing elements without any capacity constraint.
+                </p>
+                <p>
+                    <b>For accessing elements arrays are better and for insertion and deletion linked lists are better.</b>
+                </p>
+            </div>
+            <div class="wh">
+                <h3>Drawbacks of linked lists</h3>
+                <ul>
+                    <li>
+                        Extra memory space for pointers is required (for every node, extra space for a pointer is needed)
+                    </li>
+                    <li>Random access is not allowed as elements are stored in contiguous memory locations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Implementations</h3>
+                <li>
+                    Linked lists are implemented in C language using a structure.
+                </li>
+                <div class="wh">
+                    <p>
+                        struct Node
+                        <br> {
+                        <br> int data;
+                        <br> struct Node *next; // Self referencing structure
+                        <br> };
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

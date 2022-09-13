@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-35 = Infix, Prefix and Postfix Expressions</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Infix, Prefix and Postfix Expressions</h1>
+        <div class="inside-content">
+            <h2>What are these?</h2>
+            <p>
+                These are <b>the notations to write an expression.</b>
+            </p>
+            <div class="in">
+                <p>
+                    <b>Infix:</b> This is the method we have all been studying and applying for all our academic life. Here the operator comes in between two operands. And we say, two is added to three. For eg: 2 + 3, a * b, 6 / 3 etc.
+                    <br>&lt; operand 1 >&lt; <b>operator</b> >&lt; operand 2 >
+                </p>
+            </div>
+            <div class="in">
+                <p>
+                    <b>Prefix:</b> This method might seem new to you, but we have vocally used them a lot as well. Here the operator comes before the two operands. And we say, Add two and three. For e.g.: + 6 8, * x y, - 3 2 etc.
+                    <br> &lt; <b>operator</b> >&lt; operand 1 >&lt; operand 2 >&
+                </p>
+            </div>
+            <div class="in">
+                <p>
+                    <b>Postfix:</b> This is the method that might as well seem new to you, but we have used even this in our communication. Here the operator comes after the two operands. And we say, Two and three are added. For e.g.: 5 7 +, a b *, 12
+                    6 / etc.
+                    <br>&lt; operand 1 >&lt; operand 2 >&lt; <b>operator</b> >
+                </p>
+            </div>
+            <p>
+                To understand the interchangeability of these terms, please refer to the table below.
+            </p>
+            <div class="part3">
+                <div>
+                    <div>
+                        <p>
+                            <b>Infix</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>Prefix</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>Postfix</b>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>
+                            <b>a * b</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>* a b</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>a b *</b>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>
+                            <b>a - b</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>- a b</b>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <b>a b -</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wh">
+                <h1>Why these methods?</h1>
+                <p>
+                    As human we use rule called <b>BODMAS</b> where we have operators’ precedence in this order; brackets, of, division, multiplication, addition, subtraction. But what would you do when you get to evaluate a 1000 character long-expression,
+                    or even longer one? You will try to automate the process. But there is one issue. Computers don’t follow BODMAS; rather, they have their own operator precedence. And this is where we need these postfix and prefix notations. In programming,
+                    we use postfix notations more often, likewise, following the precedence order of machines.
+                    <br> Consider the expression a* ( b + c ) * d; since computers go left to right while evaluating an expression, we’ll convert this infix expression to its postfix form.
+                    <br> Its postfix form is, a b c + * d *.
+                    <br><img src="../images/fix.jpg" alt="">
+                </p>
+                <div class="in">
+                    <p>
+                        We have successfully reached what we wanted the machine to do. Now the kick is in converting infixes to postfixes and prefixes.
+                        <br><b>Converting infix to prefix:</b>
+                        <br>Consider the expression, x - y * z
+                        <br>1. Parentheses the expression. The infix expression must be parenthesized by following the operator precedence and associativity before converting it into a prefix expression. Our expression now becomes ( x - ( y * z ) ).
+                        <br>2. Reach out to the innermost parentheses. And convert them into prefix first, i.e. ( x - ( y * z ) ) changes to ( x - [ * y z ] ).
+                        <br> 3. Similarly, keep converting one by one, from the innermost to the outer parentheses. ( x - [ * y z ] ) → [ - x * y z ].
+                        <br><br><b>Converting infix to postfix:</b>
+                        <br>1. Parentheses the expression as we did previously. Our expression now becomes ( x - ( y * z ) ).
+                        <br> 2. Reach out to the innermost parentheses. And convert them into postfix first, i.e. ( x - ( y * z ) ) changes to ( x - [ y z * ] ).
+                        <br> 3. Similarly, keep converting one by one, from the innermost to the outer parentheses. ( x - [ y z * ] ) → [ x y z * - ].
+                        <br> 4. And we are done.
+                        <br> Similarly the expression p - q - r / a, follows the following conversions to become a prefix expression:
+                        <br> p - q - r / a → ( ( p - q ) - ( r / a ) ) → ( [ - p q ] - [ / r a ] ) → - - p q / r a
+                        <br>Quick Quiz: Convert the above infix expression into its postfix form.
+                        <br> Note: You cannot change the expression given to you. For eg. ( p - q ) * ( m - n ) cannot be changed to something like ( p - ( q * m ) - n ).
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h2>Infix to Postfix Using Stack</h2>
+            <p>
+                <b>step computer follows:</b>
+                <br> 1. We will start traversing from the left.
+                <br><img src="../images/fix2.jpg" alt="">
+                <br>2. First, we got the letter ‘x’. We just pushed it into the postfix string. Then we got the subtraction symbol ‘-’, and we push it into the stack since the stack is empty.
+                <br><img src="../images/fix3.jpg" alt="">
+                <br>3. Similarly, we push the division operator in the stack since the topmost operator has a precedence number 1, and the division has 2.
+                <br><img src="../images/fix4.jpg" alt="">
+                <br>4. The next operator we encounter is again a subtraction. Since the topmost operator in the stack has an operator precedence number 2, we would pop elements out from the stack until we can push the current operator. This leads to removing
+                both the present operators in the stack since they are both greater or equal in precedence. Don’t forget to concatenate the popped operators to the postfix expression.
+                <br><img src="../images/fix5.jpg" alt="">
+                <br>5. Next, we have a multiplication operator whose precedence number is 2 relative to the topmost operator in the stack. Hence we simply push it in the stack.
+                <br><img src="../images/fix6.jpg" alt="">
+                <br>6. And then we get to the EOE and still have two elements inside the stack. So, just pop them one by one, and concatenate them to the postfix. And this is when we succeed in converting the infix to the postfix expression.
+                <br><img src="../images/fix7.jpg" alt="">
+                <br><br>Follow every step meticulously, and you will find it very easy to master this. You can see if the answer we found at the end is correct manually. x - y / z - k * a → (( x - ( y / z )) - ( k * a )) → (( x - [ y z / ]) - [ k a *
+                ] ) → [ x y z / - ] - [ k a * ] → x y z / - k a * - And it is indeed a correct conversion
+            </p>
+            <div class="in">
+                <p>
+                    <b>Understanding the program for infix to postfix conversion:</b>
+                    <br> 1. First of all, create a character pointer function infixToPostfix since the function has to return a character array. And now pass into this function the given expression, which is also a character pointer.
+                    <br> 2. Define a struct stack pointer variable sp. And give it the required memory in the heap. Create the instance. It’s safe to assume that a struct stack element and all its basic operations, push, pop, etc., have already been defined.
+                    You better copy everything from the stack tutorial.
+                    <br> 3. Create a character array/pointer postfix, and assign it sufficient memory to hold all the characters of the infix expression in the heap.
+                    <br> 4. Create two counters, one to traverse through the infix and another to traverse and insert in the postfix. Refer to the illustration below, which describes the initial conditions.
+                    <br><img src="../images/fix8.jpg" alt="">
+                    <br>5. Run a while loop until we reach the EOE of the infix. And inside that loop, check if the current index holds an operator, and if it’s not, add that character into the postfix and increment both the counters by 1. And if it does
+                    hold an operator, call another function that would check if the precedence of the stackTop is less than the precedence of the current operator. If yes, push it inside the stack. Else, pop the stackTop, and add it back into the postfix.
+                    Increment j by 1.
+                </p>
+                <div class="wh">
+                    <button class="accordion">code</button>
+                    <div class="panel">
+                        <p>
+                            char* infixToPostfix(char* infix){
+                            <br> struct stack * sp = (struct stack *) malloc(sizeof(struct stack));
+                            <br> sp->size = 10;
+                            <br> sp->top = -1;
+                            <br> sp->arr = (char *) malloc(sp->size * sizeof(char));
+                            <br> char * postfix = (char *) malloc((strlen(infix)+1) * sizeof(char));
+                            <br> int i=0; // Track infix traversal
+                            <br> int j = 0; // Track postfix addition
+                            <br> while (infix[i]!='\0')
+                            <br> {
+                            <br> if(!isOperator(infix[i])){
+                            <br> postfix[j] = infix[i];
+                            <br> j++;
+                            <br> i++;
+                            <br> }
+                            <br> else{
+                            <br> if(precedence(infix[i])> precedence(stackTop(sp))){
+                            <br> push(sp, infix[i]);
+                            <br> i++;
+                            <br> }
+                            <br> else{
+                            <br> postfix[j] = pop(sp);
+                            <br> j++;
+                            <br> }
+                            <br> }
+                            <br> }
+                            <br> while (!isEmpty(sp))
+                            <br> {
+                            <br> postfix[j] = pop(sp);
+                            <br> j++;
+                            <br> }
+                            <br> postfix[j] = '\0';
+                            <br> return postfix;
+                            <br> }
+                        </p>
+                    </div>
+                    <p>
+                        <b> Code Snippet 1: Creating the function infixToPostfix</b>
+                        <br> 6. It’s now time to create the two functions to make this conversion possible. isOperator & precedence which checks if a character is an operator and compares the precedence of two operators respectively.
+                        <br> 7. Create an integer function isOperator which takes a character as its parameter and returns 2, if it's an operator, and 0 otherwise.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int isOperator(char ch){
+                            <br> if(ch=='+' || ch=='-' ||ch=='*' || ch=='/')
+                            <br> return 1;
+                            <br> else
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                    <p>
+                        <b>Code Snippet 2: Creating the function isOperator</b>
+                        <br> 8. Create another integer function precedence, which takes a character as its parameter, and returns its relative precedence. It returns 3 if it’s a ‘/’ or a ‘*’. And 2 if it's a ‘+’ or a ‘-’.
+                        <br> 9. If we are still left with any element in the stack at the end, pop them all and add them to the postfix.
+                    </p>
+                    <div class="wh">
+                        <p>
+                            int precedence(char ch){
+                            <br> if(ch == '*' || ch=='/')
+                            <br> return 3;
+                            <br> else if(ch == '+' || ch=='-')
+                            <br> return 2;
+                            <br> else
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                    <p>
+                        <b>Code Snippet 3: Creating the function precedence</b>
+                        <br> And we have successfully finished writing the codes.
+                        <br> Here is the whole source code:
+                    </p>
+                    <div class="wh">
+                        <button class="accordion">full code</button>
+                        <div class="panel">
+                            <p>
+                                #include &lt;stdio.h>
+                                <br> #include &lt;stdlib.h>
+                                <br> #include &lt;string.h>
+                                <br>
+                                <br> struct stack
+                                <br> {
+                                <br> int size;
+                                <br> int top;
+                                <br> char *arr;
+                                <br> };
+                                <br>
+                                <br> int stackTop(struct stack* sp){
+                                <br> return sp->arr[sp->top];
+                                <br> }
+                                <br>
+                                <br> int isEmpty(struct stack *ptr)
+                                <br> {
+                                <br> if (ptr->top == -1)
+                                <br> {
+                                <br> return 1;
+                                <br> }
+                                <br> else
+                                <br> {
+                                <br> return 0;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> int isFull(struct stack *ptr)
+                                <br> {
+                                <br> if (ptr->top == ptr->size - 1)
+                                <br> {
+                                <br> return 1;
+                                <br> }
+                                <br> else
+                                <br> {
+                                <br> return 0;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> void push(struct stack* ptr, char val){
+                                <br> if(isFull(ptr)){
+                                <br> printf("Stack Overflow! Cannot push %d to the stack\n", val);
+                                <br> }
+                                <br> else{
+                                <br> ptr->top++;
+                                <br> ptr->arr[ptr->top] = val;
+                                <br> }
+                                <br> }
+                                <br>
+                                <br> char pop(struct stack* ptr){
+                                <br> if(isEmpty(ptr)){
+                                <br> printf("Stack Underflow! Cannot pop from the stack\n");
+                                <br> return -1;
+                                <br> }
+                                <br> else{
+                                <br> char val = ptr->arr[ptr->top];
+                                <br> ptr->top--;
+                                <br> return val;
+                                <br> }
+                                <br> }
+                                <br> int precedence(char ch){
+                                <br> if(ch == '*' || ch=='/')
+                                <br> return 3;
+                                <br> else if(ch == '+' || ch=='-')
+                                <br> return 2;
+                                <br> else
+                                <br> return 0;
+                                <br> }
+                                <br>
+                                <br> int isOperator(char ch){
+                                <br> if(ch=='+' || ch=='-' ||ch=='*' || ch=='/')
+                                <br> return 1;
+                                <br> else
+                                <br> return 0;
+                                <br> }
+                                <br> char* infixToPostfix(char* infix){
+                                <br> struct stack * sp = (struct stack *) malloc(sizeof(struct stack));
+                                <br> sp->size = 10;
+                                <br> sp->top = -1;
+                                <br> sp->arr = (char *) malloc(sp->size * sizeof(char));
+                                <br> char * postfix = (char *) malloc((strlen(infix)+1) * sizeof(char));
+                                <br> int i=0; // Track infix traversal
+                                <br> int j = 0; // Track postfix addition
+                                <br> while (infix[i]!='\0')
+                                <br> {
+                                <br> if(!isOperator(infix[i])){
+                                <br> postfix[j] = infix[i];
+                                <br> j++;
+                                <br> i++;
+                                <br> }
+                                <br> else{
+                                <br> if(precedence(infix[i])> precedence(stackTop(sp))){
+                                <br> push(sp, infix[i]);
+                                <br> i++;
+                                <br> }
+                                <br> else{
+                                <br> postfix[j] = pop(sp);
+                                <br> j++;
+                                <br> }
+                                <br> }
+                                <br> }
+                                <br> while (!isEmpty(sp))
+                                <br> {
+                                <br> postfix[j] = pop(sp);
+                                <br> j++;
+                                <br> }
+                                <br> postfix[j] = '\0';
+                                <br> return postfix;
+                                <br> }
+                                <br> int main()
+                                <br> {
+                                <br> char * infix = "x-y/z-k*d";
+                                <br> printf("postfix is %s", infixToPostfix(infix));
+                                <br> return 0;
+                                <br> }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-48 = Sorting Algorithms</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#t1" class="link">Introduction</a>
+        <a href="#t2" class="link">Criteria for analysis of sorting algorithms</a>
+        <a href="#t3" class="link">Bubble sort<a>
+                <a href="#t4" class="link">Insertion sort<a>
+                        <a href="#t5" class="link">Selection sort<a>
+                                <a href="#t6" class="link">Quick sort<a>
+                                        <a href="#t7" class="link">Merge sort<a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Sorting Algorithms</h1>
+        <div class="wh">
+            <h1 id="t1">Introduction</h1>
+            <h3>What is sorting?</h3>
+            <p>
+                Sorting is a method to arrange a set of elements in either increasing or decreasing order according to
+                some basis/relationship among the elements.
+            </p>
+            <h4>Sorting are of two types</h4>
+            <ul>
+                <li>
+                    Sorting In ascending order
+                    <ul>
+                        <li>Arranging the elements (numbers, alphabets) from smallest to largest.</li>
+                    </ul>
+                </li>
+                <li>
+                    Sorting in descending order
+                    <ul>
+                        <li>Arranging the numbers from the largest to smallest.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Need of sorting?</h4>
+            <ul>
+                <li>
+                    In social media apps, news apps, emails or file managers to arrange things according to dates, size,
+                    latest, top-rated, prices etc. These all features use sorting
+                </li>
+                <li>In dictionary, the words are sorted lexicographically for you to find any word easily.</li>
+                <li>
+                    When an array is not sorted then the time taken to find an element is O(n) but when the array is
+                    sorted then it becomes O(log N)
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h1 id="t2">Criteria for analysis of sorting algorithms</h1>
+            <h2>
+                how to come up with criteria for analyzing different sorting algorithms and why one differs from the
+                other.
+            </h2>
+            <div class="in">
+                <h3>Time Complexity</h3>
+                <ul>
+                    <li>
+                        Time complexity decides which algorithm works efficiently for larger set of data and for smaller
+                        data sets.
+                    </li>
+                    <li>
+                        In general, the algorithmwhose time complexity is O(N log N) is considered a better than the
+                        algorithm whose time complexity is O(N
+                        <sup>2</sup>
+                        ), and most of our algorithms' time complexity
+                        revolves around these two.
+                    </li>
+                    <li>
+                        <b>Note:</b>
+                        Lesser the time complexity, the better is the algorithm.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Space complexity</h3>
+                <ul>
+                    <li>
+                        This criteria helps us compare the space the algorithms uses to sort any data set.
+                        <ul>
+                            <li>Lot of space = poor algorithm</li>
+                            <li>
+                                We might prefer a higher space complexity algorithm if it proposes expectionally low
+                                time complexity, but not in general.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Inplace sorting algorithm :</b>
+                        The algorithm which results in constant space complexity.
+                        <ul>
+                            <li>
+                                Mostly uses swapping and rearranging techniques to sort a data set. Ex - bubble sort.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Stability</h3>
+                <ul>
+                    <li>
+                        The stability of an algorithm is judged by the fact whether the order of the elements having
+                        equal status when sorted on some basis is preserved or not.
+                    </li>
+                    <li>
+                        In set of number 6, 1, 2, 7, 6.
+                        <ul>
+                            <li>after sort &rarr; 1, 2, 6, 6, 7</li>
+                            <li>
+                                Does the 6s follow the same order as that given in the imput or thay have changed. That
+                                is whether the first 6 still comes before the second 6 or not.
+                            </li>
+                            <li>If they do, then the algorithm we followed is called stable, otherwise unstable.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Adaptitvity</h3>
+                <ul>
+                    <li>
+                        Algorithms that adapt to the dact that if the data are already sorted and it must take less time
+                        are called adaptive algorithms otherwise not adaptive.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Recursiveness</h3>
+                <ul>
+                    <li>If the alrotithm uses recursion to sort a data set.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h1 id="t3">Bubble sort</h1>
+            <ul>
+                <li>
+                    bubble sort, we intend to ensure that the largest element of the segment reaches the last position
+                    at each iteration.
+                </li>
+                <li>It intends to sort an array using (n-1) passes where n is the array's length.</li>
+                <li>
+                    In one pass, the largest element of the current unsorted part reaches its final position, and our
+                    unsorted part of the array reduces by 1, and the sorted part increases by 1.
+                </li>
+                <li>
+                    At each pass, we will iterate through the unsorted part of the array and compare every adjacent
+                    part. We move ahead if the adjacent pair is sorted otherwise, we make it sorted by swapping their
+                    positions.
+                </li>
+                <li>
+                    Doing this ar every pass ensures that the largest element of the unsorted part of the array reaches
+                    its final position at the end.
+                </li>
+            </ul>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>1st pass:</b>
+                        At first pass, our whole array comes under the unsorted part. We will start by
+                        comparing each adjacent pair. Since our array is of length 6, we have 5 pairs to compare.
+                        <br>
+                        Let’s start with the first one.
+                        <ul>
+                            <img src="../images/bubble1.jpg" alt="">
+                            <li>Since these two are already sorted, we move ahead without making any changes.</li>
+                            <img src="../images/bubble2.jpg" alt="">
+                            <li>Now since 9 is less than 11, we swap their positions to make them sorted.</li>
+                            <img src="../images/bubble3.jpg" alt="">
+                            <li>Again, we swap the positions of 11 and 2.</li>
+                            <img src="../images/bubble4.jpg" alt="">
+                            <li>We move ahead without changing anything since they are already sorted.</li>
+                            <img src="../images/bubble5.jpg" alt="">
+                            <li>
+                                Here, we make a swap since 17 is greater than 4.
+                                <br>
+                                And this is where our first pass finishes. We should make an overview of what we
+                                received at the end of the first pass.
+                            </li>
+                            <img src="../images/bubble6.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>2nd Pass:</b>
+                        <ul>
+                            <li>
+                                We again start from the beginning, with a reduced unsorted part of length 5. Hence the
+                                number of comparisions would be just 4.
+                            </li>
+                            <img src="../images/bubble7.jpg" alt="">
+                            <li>No changes to make.</li>
+                            <img src="../images/bubble8.jpg" alt="">
+                            <li>Yes, here we make a swap, since 9>2.</li>
+                            <img src="../images/bubble9.jpg" alt="">
+                            <li>Since 9 &lt; 11, we move further.</li>
+                            <img src="../images/bubble10.jpg" alt="">
+                            <li>
+                                And since 11 is greater than 4, we make a swap again. And that would be it for the
+                                second pass. Let’s see how close we have reached to the sorted array.
+                            </li>
+                            <img src="../images/bubble11.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>3rd Pass</b>
+                        <ul>
+                            <li>
+                                We'll again start from the beginning, and this time our unsorted part has a length of 4;
+                                hence no. of camparisons would be 3.
+                            </li>
+                            <img src="../images/bubble12.jpg" alt="">
+                        </ul>
+                    </li>
+                    <li>Since 7 is greater than 2, we make a swap here.</li>
+                    <img src="../images/bubble13.jpg" alt="">
+                    <li>We move ahead without making any change.</li>
+                    <img src="../images/bubble14.jpg" alt="">
+                    <li>
+                        In this final comparison, we make a swap, since 9 > 4.
+                        <br>
+                        And that was our third pass. And the
+                        result at the end was:
+                    </li>
+                    <img src="../images/bubble15.jpg" alt="">
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>Array after 4th and 5th pass</b>
+                        <ul>
+                            <img src="../images/bubble16.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul>
+                <li>
+                    And this is what the Bubble Sort algorithm looks like. We have a few things to conclude and few
+                    calculations regarding the complexity of the algorithm to make.
+                    <ul>
+                        <li>
+                            Time complexity of Bubble Sort:
+                            <ul>
+                                <li>
+                                    Total number of comparison in above example: (5+4+3+2+1) = 15 comparisons intend to
+                                    make 15 possible swaps.
+                                </li>
+                                <li>
+                                    For an array of length n, we would have (n-1) + (n-2) + (n-3) + (n-4) + . . . . . +
+                                    1 comparison and possible swaps.
+                                </li>
+                                <li>
+                                    the sum from 1 to n-1, which is n(n-1)/2, and hence our complexity of runtime
+                                    becomes O(n^2).
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            We obsered that we never made a swap when two elements of a pair becomes equal. hence the
+                            algorithm is a
+                            <b>stable algorithm.</b>
+                        </li>
+                        <li>Not a recursive algorithm</li>
+                        <li>
+                            If the array is already sorted still every pair will be compared. So, by default it is not
+                            adaptive but it can be made adaptive.
+                        </li>
+                        <li>
+                            It is called <b> bubble sort</b> because it bubbles up lighter elements to the left and stores
+                            larger elements towards the right.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include <stdio.h>
+
+                                void printArray(int *A, int n)
+                                {
+                                    for (int i = 0; i < n; i++)
+                                    {
+                                        printf("%d ", A[i]);
+                                    }
+                                    printf("\n");
+                                }
+                                void bubbleSort(int *A, int n)
+                                {
+                                    int temp;
+                                    int isSorted = 0;
+                                    for (int i = 0; i < n - 1; i++) // For number of pass
+                                    {
+                                        printf("Working on pass number %d\n", i + 1);
+                                        for (int j = 0; j < n - 1 - i; j++) // For comparison in each pass
+                                        {
+                                            if (A[j] > A[j + 1])
+                                            {
+                                                temp = A[j];
+                                                A[j] = A[j + 1];
+                                                A[j + 1] = temp;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                void bubbleSortAdaptive(int *A, int n)
+                                {
+                                    int temp;
+                                    int isSorted = 0;
+                                    for (int i = 0; i < n - 1; i++) // For number of pass
+                                    {
+                                        printf("Working on pass number %d\n", i + 1);
+                                        isSorted = 1;
+                                        for (int j = 0; j < n - 1 - i; j++) // For comparison in each pass
+                                        {
+                                            if (A[j] > A[j + 1])
+                                            {
+                                                temp = A[j];
+                                                A[j] = A[j + 1];
+                                                A[j + 1] = temp;
+                                                isSorted = 0;
+                                            }
+                                        }
+                                        if (isSorted)
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                                
+                                int main()
+                                {
+                                    // int A[] = {12, 54, 65, 7, 23, 9};
+                                    int A[] = {1, 2, 5, 6, 12, 54, 625, 7, 23, 9, 987};
+                                    // int A[] = {1, 2, 3, 4, 5, 6};
+                                    int n = 11;
+                                    printArray(A, n); // Printing the array before sorting
+                                    bubbleSort(A, n); // Function to sort the array
+                                    printArray(A, n); // Printing the array before sorting
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h1 id="t4">
+                Insertion Sort
+                <a href="https://youtu.be/nKzEJWbkPbQ?t=47">
+                    short
+                    explanation
+                </a>
+            </h1>
+            <ul>
+                <li>
+                    <b>Insert Sort Algorithm:</b>
+                    <ul>
+                        <img src="../images/insert1.jpg" alt="">
+                        <li>
+                            <b>An array of a single element is always sorted.</b>
+                        </li>
+                        <li>Here we have an array of length 5 with a subarray of length 1 already sorted.</li>
+                        <img src="../images/insert2.jpg" alt="">
+                        <li>
+                            Moving from the left to right, we will pluck the first element from the unsorted part, and
+                            insert it in the sorted subarray. This way at each insertion our sorted subarray length
+                            increases by 1.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>Pass 1</b>
+                        <ul>
+                            <li>to insert 2 in the sorted array of length 1.</li>
+                            <img src="../images/insert3.jpg" alt="">
+                            <li>
+                                We plucked the first element from the unsorted part. Let's insert element 2 at
+                                its correct position, which is before 7.
+                            </li>
+                            <img src="../images/insert4.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>Pass 2</b>
+                        <ul>
+                            <img src="../images/insert5.jpg" alt="">
+                            <li>
+                                The next element we plucked out was 91. And its position in the sorted array is
+                                at the last. So that would cause zero shifting. And our array would look like
+                                this.
+                            </li>
+                            <img src="../images/insert6.jpg" alt="">
+                            <li>
+                                Our sorted subarray now has size 3, and unsorted subarray is now of length 2.
+                                Let’s proceed to the next pass which would be to traverse in this sorted array
+                                of length 3 and insert element 77.
+                            </li>
+                            <img src="../images/insert7.jpg" alt="">
+                            <li>
+                                started checking its best fit, and found the place next to element 7. So this
+                                time it would cause just a single shift of element 91.
+                            </li>
+                            <img src="../images/insert8.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li>
+                        <b>Last pass</b>
+                        <ul>
+                            <img src="../images/insert9.jpg" alt="">
+                            <li>
+                                Since our new element to insert is the element 3, we started checking for its
+                                position from the back. The position is, no doubt, just next to element 2. So,
+                                we shifted elements 7, 77, and 91. Those were the only three shifts. And the
+                                final sorted we received is illustrated below.
+                            </li>
+                            <img src="../images/insert10.jpg" alt="">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h2>Analysis:</h2>
+                <p>
+                    Conclusively, we had to have 4 passes to sort an array of length 5. And in the first pass, we had to
+                    compare the to-be inserted element with just one single element 7. So, only one comparison, and one
+                    possible swap. Similarly, for ith pass, we would have i number of comparisons, and i possible swaps.
+                </p>
+                <ul>
+                    <li>
+                        <b>1. Time complexity</b>
+                        <ul>
+                            <li>
+                                For an array of length 5 there were 4 passes and for ith pass, we made i number of
+                                comparisons. So, the total number of comparisions is 1+2+3+4.
+                            </li>
+                            <li>
+                                Now for an array of length n
+                                <ul>
+                                    <li>
+                                        the total number of comparison/possible swaps = 1+2+3+4+ . . . + (n-1) &rarr;
+                                        n(n-1)/2, which ultimately is O(n
+                                        <sup>2</sup>
+                                        )
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>2. Stable</b>
+                        <ul>
+                            <li>
+                                As we start comparing from the back of the sorted subarray, and never cross an element
+                                equal to the to be inserted element.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>3. adaptive</b>
+                        <ul>
+                            <li>
+                                When our array is already sorted, we just make (n-1) passes, and don’t make any actual
+                                comparison between the elements. Hence, we accomplish the job in O(n).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Note:</b>
+                        <ul>
+                            <li>
+                                At each pass, we get a sorted subarray at the left, but this intermediate state of the
+                                array has no real significance, unlike the bubble sort algorithm where at each pass, we
+                                get the largest element having its position fixed at the end.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;stdio.h>
+
+                                void printArr(int arr[], int n)
+                                {
+                                    printf("array -> ");
+                                    for (int i = 0; i &lt; n; i++)
+                                    {
+                                        printf(" %d ", arr[i]);
+                                    }
+                                    printf("\n");
+                                }
+                                
+                                void insertionSort(int *arr, int n)
+                                {
+                                    int current;
+                                    int j;
+                                    for (int i = 1; i &lt; n; i++)
+                                    {
+                                        current = arr[i];
+                                        j = i - 1;
+                                        while (j >= 0 && arr[j] > current)
+                                        {
+                                            arr[j + 1] = arr[j];
+                                            j--;
+                                        }
+                                        arr[j + 1] = current;
+                                    }
+                                }
+                                
+                                int main()
+                                {
+                                    int A[] = {12, 54, 65, 7, 23, 9};
+                                    int n = 6;
+                                    printArr(A, n);
+                                    insertionSort(A, n);
+                                    printArr(A, n);
+                                    return 0;
+                                &lt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h1>Selection Sort <a
+                    href="https://www.youtube.com/watch?v=9oWd4VJOwr0&ab_channel=Jenny%27slecturesCS%2FITNET%26JRF">Lec</a>
+            </h1>
+            <ul>
+                <li>
+                    At each pass, we make sure that the smallest element of the current unsorted subarray reaches its
+                    final position.
+                </li>
+                <li>Smallest element in the unsorted subarray is swapped with first element of unsorted array.</li>
+                <li>We start by assuming first element of the unsorted subarray is the minimum.</li>
+                <li>
+                    While iterating through the unsorted part of the array, and comparing every element to this element
+                    at min index.
+                </li>
+                <li>
+                    If the iterating element &lt; element at
+                    <i>min</i>
+                    address &rarr; swap
+                </li>
+                <li>If length of the array is n then number of passes = n-1</li>
+            </ul>
+            <div class="in">
+                <h3>Pass 1</h3>
+                <img src="../images/sel1.jpg" alt="">
+                <img src="../images/sel2.jpg" alt="">
+                <img src="../images/sel3.jpg" alt="">
+                <img src="../images/sel4.jpg" alt="">
+                <img src="../images/sel5.jpg" alt="">
+            </div>
+            <div class="in">
+                <p>In each pass till 5 it gets sorted</p>
+                <p>And this is why the Selection Sort algorithm got its name. We <b>select</b> the minimum element at
+                    each pass and give it its final position. Few conclusions before we proceed to the programming
+                    segment:</p>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            void selectionSort(int *A, int n){
+                                int indexOfMin, temp;
+                                printf("Running Selection sort...\n");
+                                for (int i = 0; i &lt; n-1; i++)
+                                {
+                                    indexOfMin = i;
+                                    for (int j = i+1; j &lt; n; j++)
+                                    {
+                                        if(A[j] &lt; A[indexOfMin]){
+                                            indexOfMin = j;
+                                        }
+                                    }
+                                    // Swap A[i] and A[indexOfMin]
+                                    temp = A[i];
+                                    A[i] = A[indexOfMin];
+                                    A[indexOfMin] = temp;
+                                }
+                            }                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <ul>
+                    <li><b>Time Complexity</b>
+                        <ul>
+                            <li>O(n<sup>2</sup>)</li>
+                        </ul>
+                    </li>
+                    <li><b>Stability</b>
+                        <ul>
+                            <li>Not stable</li>
+                            <li>Since the smallest element is replaced with the first element at each pass, it may
+                                jumble up positions of equal elements very easily.</li>
+                            <img src="../images/sel6.jpg" alt="">
+                        </ul>
+                    </li>
+                    <li>Not recursive</li>
+                    <li>Adaptive
+                        <ul>
+                            <li>Not adaptive by default</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="t6" class="wh">
+            <h1>Quick Sort <a href="https://www.youtube.com/watch?v=7h1s2SojIRw&ab_channel=AbdulBari">explaination</a>
+            </h1>
+            <ul>
+                <li>We use the divide and conquer method to sort our array in pieces reducing our effort and space
+                    complexity of the algorithm.</li>
+                <li><b>Divide and conquer</b>&rarr; divides a problem into subproblems and solves them at their levels,
+                    giving the output as a result of all these subproblems. </li>
+                <li><b>Partition</b>&rarr; we choose an element as a pivot and try pushing all the elements smaller than
+                    the pivot element to its left and all the greater elements to its right.</li>
+            </ul>
+            <div class="in">
+                <p>Unsorted array &darr;
+                    <img src="../images/quick1.jpg" alt="">
+                <ul>
+                    <li>In quicksort algorithm, on every unsorted subarray, partition is done on it.</li>
+                    <li>Partition take first element as pivot and at end of complition place it in right position where
+                        left to it is all small element and right to it are all large.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include <stdio.h>
+
+                                void printArray(int *A, int n)
+                                {
+                                    for (int i = 0; i &lt; n; i++)
+                                    {
+                                        printf("%d ", A[i]);
+                                    }
+                                    printf("\n");
+                                }
+                                
+                                int partition(int A[], int low, int high)
+                                {
+                                    int pivot = A[low];
+                                    int i = low + 1;
+                                    int j = high;
+                                    int temp;
+                                
+                                    do
+                                    {
+                                        while (A[i] &lt;= pivot)
+                                        {
+                                            i++;
+                                        }                                
+                                        while (A[j] > pivot)
+                                        {
+                                            j--;
+                                        }                                
+                                        if (i &lt; j)
+                                        {
+                                            temp = A[i];
+                                            A[i] = A[j];
+                                            A[j] = temp;
+                                        }
+                                    } while (i &lt; j);
+                                
+                                    // Swap A[low] and A[j]
+                                    temp = A[low];
+                                    A[low] = A[j];
+                                    A[j] = temp;
+                                    return j;
+                                }
+                                
+                                void quickSort(int A[], int low, int high)
+                                {
+                                    int partitionIndex; // Index of pivot after partition
+                                
+                                    if (low < high)
+                                    {
+                                        partitionIndex = partition(A, low, high);
+                                        quickSort(A, low, partitionIndex - 1);  // sort left subarray
+                                        quickSort(A, partitionIndex + 1, high); // sort right subarray
+                                    }
+                                }
+                                
+                                int main()
+                                {
+                                    // int A[] = {3, 5, 2, 13, 12, 3, 2, 13, 45};
+                                    int A[] = {9, 4, 4, 8, 7, 5, 6};
+                                    // 3, 5, 2, 13, 12, 3, 2, 13, 45
+                                    // 3, 2, 2, 13i, 12, 3j, 5, 13, 45
+                                    // 3, 2, 2, 3j, 12i, 13, 5, 13, 45 --> first call to partition returns 3
+                                    int n = 9;
+                                    n = 7;
+                                    printArray(A, n);
+                                    quickSort(A, 0, n - 1);
+                                    printArray(A, n);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h2>Analysis</h2>
+                <ul>
+                    <li><b>Time Complexity</b>
+                        <ul>
+                            <li>worst case &rarr; when the array is already sorted <ul>
+                                    <li>O(n<sup>2</sup>)</li>
+                                </ul>
+                            </li>
+                            <li>best case &rarr; when the array get divided into tow almost equal subarrays.
+                                <ul>
+                                    <li>O(nlogn)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Stability</b>
+                        <ul>
+                            <li>Not stable</li>
+                            <li>As it does swaps of all kinds</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t7" class="in">
+            <h1>Merge Sort</h1>
+            <ul>
+                <li>We divide the arrays into subarrays and subarrays into more subarrays until the size of each
+                    subarray becomes 1. Since arrays with a single element are always considered sorted, this is where
+                    we merge.</li>
+            </ul>
+            <div class="wh">
+                <h3>Merging procedure on two different sorted arrays.</h3>
+                <img src="../images/merge1.jpg" alt="">
+                <ul>
+                    <li>Beside arrays A and B we need third array = C.</li>
+                    <li>Size of A = 5, size of B = 4. So, size of C = 5 + 4 (9)</li>
+                    <li>Three index variables i, j & k
+                        <ul>
+                            <li>i looks after the elements of A</li>
+                            <li>j looks after the elements of B</li>
+                            <li>k looks after the elements of C</li>
+                            <li>
+                                <img src="../images/merge2.jpg" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Each index variable start from the first index of each arrays</li>
+                    <li>using i and j, array A and B are compared and smaller element is stored in array C</li>
+                    <li>Conditions for incrementing i,j & k
+                        <ul>
+                            <li>if element A[i} &lt; B[j]
+                                <ul>
+                                    <li>here C[k] is storing A[i]</li>
+                                    <li>i++</li>
+                                    <li>k++</li>
+                                </ul>
+                            </li>
+                            <li>if not
+                                <ul>
+                                    <li>here C[k] is storing B[j]</li>
+                                    <li>j++</li>
+                                    <li>k++</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../images/merge3.jpg" alt="">
+                <p>For merging two sorted subarrays of a single array in the array itself we modify the code</p>
+            </div>
+            <div class="wh">
+                <h3>Merging single array with two sorted subarrays</h3>
+                <img src="../images/merge4.jpg" alt="">
+                <ul>
+                    <li>Here length of A is 5. So, length of auxiliary array B = 5</li>
+                    <li>high, low and mid is created
+                        <ul>
+                            <li>high = last index of A (4)</li>
+                            <li>low = first index (0)</li>
+                            <li>mid = (high + low)/2. (2) </li>
+                        </ul>
+                    </li>
+                    <li>The value of i,j and k is modified accordingly such that the they comply with high, low and mid
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include &lt;stdio.h>
+
+                                void printArray(int *A, int n)
+                                {
+                                    for (int i = 0; i &lt; n; i++)
+                                    {
+                                        printf("%d ", A[i]);
+                                    }
+                                    printf("\n");
+                                }
+                                
+                                void merge(int A[], int mid, int low, int high)
+                                {
+                                    int i, j, k, B[100];
+                                    i = low;
+                                    j = mid + 1;
+                                    k = low;
+                                
+                                    while (i &lt;= mid && j <= high)
+                                    {
+                                        if (A[i] &lt; A[j])
+                                        {
+                                            B[k] = A[i];
+                                            i++;
+                                            k++;
+                                        }
+                                        else
+                                        {
+                                            B[k] = A[j];
+                                            j++;
+                                            k++;
+                                        }
+                                    }
+                                    while (i <= mid)
+                                    {
+                                        B[k] = A[i];
+                                        k++;
+                                        i++;
+                                    }
+                                    while (j <= high)
+                                    {
+                                        B[k] = A[j];
+                                        k++;
+                                        j++;
+                                    }
+                                    for (int i = low; i &lt;= high; i++)
+                                    {
+                                        A[i] = B[i];
+                                    }
+                                }
+                                
+                                void mergeSort(int A[], int low, int high)
+                                {
+                                    int mid;
+                                    if (low < high)
+                                    {
+                                        mid = (low + high) / 2;
+                                        mergeSort(A, low, mid);
+                                        mergeSort(A, mid + 1, high);
+                                        merge(A, mid, low, high);
+                                    }
+                                }
+                                
+                                int main()
+                                {
+                                    // int A[] = {9, 14, 4, 8, 7, 5, 6};
+                                    int A[] = {9, 1, 4, 14, 4, 15, 6};
+                                    int n = 7;
+                                    printArray(A, n);
+                                    mergeSort(A, 0, 6);
+                                    printArray(A, n);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="in">
+            <h1>Count Sort</h1>
+            <ul>
+                <li>One of the fastest methods of all.</li>
+            </ul>
+            <div class="wh">
+                <h3>Learning how count sort works</h3>
+                <p>Array we will sort &darr;</p>
+                <img src="../images/count1.jpg" alt="">
+                <ul>
+                    <li>First the algorithm takes the largest element from the unsorted array.</li>
+                    <li>largest element is stored in interger variable <i>max</i></li>
+                    <li>An array (<i>count</i>) is created with size = <i>max</i>+1</li>
+                    <li>Initialize of elements of <i>count</i> array as 0</li>
+                    <li>Travese through the unsorted array <ul>
+                            <li>increment the value of the element in the <i>count</i> array by 1.</li>
+                        </ul>
+                    </li>
+                    <li>As the size of the <i>count</i> array is the maximum element of unsorted array, it is ensured
+                        that each element have its own corresponding index in the <i>count</i> array.</li>
+                    <li>After traversal of unsorted array is completed, we'll have the count of each element in the
+                        array.</li>
+                    <li>Now traversal in <b><i>count</i></b> array
+                        <ul>
+                            <li>when nonzero value is found fill in the resultant array the index of the non-zero
+                                element until it becomes zero by decrementing it by 1 every time the value is filled in
+                                resultant array</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include&lt;stdio.h>
+                                #include&lt;limits.h>
+                                #include&lt;stdlib.h>
+                                
+                                void printArray(int *A, int n)
+                                {
+                                for (int i = 0; i &lt; n; i++)
+                                {
+                                printf("%d ", A[i]);
+                                }
+                                printf("\n");
+                                }
+                                
+                                
+                                int maximum(int A[], int n){
+                                int max = INT_MIN;
+                                for (int i = 0; i &lt; n; i++)
+                                {
+                                if (max &lt; A[i]){
+                                max = A[i];
+                                }
+                                }
+                                return max;
+                                
+                                }
+                                void countSort(int * A, int n){
+                                int i, j;
+                                // Find the maximum element in A
+                                int max = maximum(A, n);
+                                
+                                // Create the count array
+                                int* count = (int *) malloc((max+1)*sizeof(int));
+                                
+                                // Initialize the array elements to 0
+                                for (i = 0; i &lt; max+1; i++)
+                                {
+                                count[i] = 0;
+                                }
+                                
+                                // Increment the corresponding index in the count array
+                                for (i = 0; i &lt; n; i++)
+                                {
+                                count[A[i]] = count[A[i]] + 1;
+                                }
+                                
+                                i =0; // counter for count array
+                                j =0; // counter for given array A
+                                
+                                while(i&lt;= max){
+                                if(count[i]>0){
+                                A[j] = i;
+                                count[i] = count[i] - 1;
+                                j++;
+                                }
+                                else{
+                                i++;
+                                }
+                                }
+                                }
+                                
+                                int main(){
+                                int A[] = {9, 1, 4, 14, 4, 15, 6};
+                                int n = 7;
+                                printArray(A, n);
+                                countSort(A, n);
+                                printArray(A, n);
+                                return 0;
+                                } 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

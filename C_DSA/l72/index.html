@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-72 = Checking if a binary tree is a binary search tree</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Checking if a binary tree is a binary search tree <a
+                href="https://www.youtube.com/watch?v=9btwHI_84DM">Better Explained</a></h1>
+        <div class="wh">
+            <h2>Creating the function isBST:</h2>
+            <ul>
+                <li>
+                    Create an integer function isBST and the pointer to the root node of the tree you want to check as
+                    the only parameter.
+                </li>
+                <li>Inside the function, check if the pointer is not NULL
+                    <ul>
+                        <li>If it is NULL, we would simply return 1 since an empty tree is always are BST</li>
+                    </ul>
+                </li>
+                <li>Create a static struct Node pointer <i>prev</i> initialized with NULL.
+                    <ul>
+                        <li>This maintains the pointer to the parent node</li>
+                        <li>And since the root node doesn't have any parent, we have intialized it with NULL and made it
+                            static.</li>
+                    </ul>
+                </li>
+                <li>Now, see if the left subtree is BST or not, by calling it recursively.
+                    <ul>
+                        <li>If it is not a BST, return 0</li>
+                        <li>Else, see if the <i>prev</i> is not NULL otherwise this is the root node of the whole tree
+                            and we won't check this condition.</li>
+                        <li>IF the <i>prev</i> node is not NULL and the current node, which is the root node of the
+                            current subtree, is smaller than or equal to the <i>prev</i> node, then we would return 0.
+                            Since this violates the increasing orderliness.</li>
+                    </ul>
+                </li>
+                <li>If it still passes all the if conditions we have structured above, we will store the current node in
+                    the <i>prev</i> and move it recursively to the right subtree. And this is nothing but a modified
+                    version of the InOrder traversal.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        int isBST(struct  node* root){
+                            static struct node *prev = NULL;
+                            if(root!=NULL){
+                                if(!isBST(root->left)){
+                                    return 0;
+                                }
+                                if(prev!=NULL && root->data &lt;= prev->data){
+                                    return 0;
+                                }
+                                prev = root;
+                                return isBST(root->right);
+                            }
+                            else{
+                                return 1;
+                            }
+                        }                        
+                    </code>
+                </pre>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="accordion">full code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+
+                            #include<stdio.h>
+                                #include<malloc.h>
+                                
+                                struct node{
+                                    int data;
+                                    struct node* left;
+                                    struct node* right;
+                                };
+                                
+                                struct node* createNode(int data){
+                                    struct node *n; // creating a node pointer
+                                    n = (struct node *) malloc(sizeof(struct node)); // Allocating memory in the heap
+                                    n->data = data; // Setting the data
+                                    n->left = NULL; // Setting the left and right children to NULL
+                                    n->right = NULL; // Setting the left and right children to NULL
+                                    return n; // Finally returning the created node
+                                }
+                                
+                                void preOrder(struct  node* root){
+                                    if(root!=NULL){
+                                        printf("%d ", root->data);
+                                        preOrder(root->left);
+                                        preOrder(root->right);
+                                    }
+                                }
+                                
+                                void postOrder(struct  node* root){
+                                    if(root!=NULL){
+                                        postOrder(root->left);
+                                        postOrder(root->right);
+                                        printf("%d ", root->data);
+                                    }
+                                }
+                                
+                                void inOrder(struct  node* root){
+                                    if(root!=NULL){
+                                        inOrder(root->left);
+                                        printf("%d ", root->data);
+                                        inOrder(root->right);
+                                    }
+                                }
+                                
+                                int isBST(struct  node* root){
+                                    static struct node *prev = NULL;
+                                    if(root!=NULL){
+                                        if(!isBST(root->left)){
+                                            return 0;
+                                        }
+                                        if(prev!=NULL && root->data <= prev->data){
+                                            return 0;
+                                        }
+                                        prev = root;
+                                        return isBST(root->right);
+                                    }
+                                    else{
+                                        return 1;
+                                    }
+                                }
+                                
+                                int main(){
+                                     
+                                    // Constructing the root node - Using Function (Recommended)
+                                    struct node *p = createNode(5);
+                                    struct node *p1 = createNode(3);
+                                    struct node *p2 = createNode(6);
+                                    struct node *p3 = createNode(1);
+                                    struct node *p4 = createNode(4);
+                                    // Finally The tree looks like this:
+                                    //      5
+                                    //     / \
+                                    //    3   6
+                                    //   / \
+                                    //  1   4  
+                                
+                                    // Linking the root node with left and right children
+                                    p->left = p1;
+                                    p->right = p2;
+                                    p1->left = p3;
+                                    p1->right = p4;
+                                
+                                    // preOrder(p);
+                                    // printf("\n");
+                                    // postOrder(p); 
+                                    // printf("\n");
+                                    inOrder(p);
+                                    printf("\n");
+                                    // printf("%d", isBST(p)); 
+                                    if(isBST(p)){
+                                        printf("This is a bst" );
+                                    }
+                                    else{
+                                        printf("This is not a bst");
+                                    }
+                                    return 0;
+                                }                        
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

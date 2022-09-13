@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-61 = Intro to trees </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to trees</h1>
+        <div class="wh">
+            <p>
+                A tree usually represents the hierarchy of elements and depicts the relationships between the elements.
+                <br><br> Trees are considered as one of the largely used facets of data structures.
+                <br>To give you a better idia of how a tree looks like, let me give an example
+                <br><img src="../images/tree.JPG" alt="">
+            <ul>
+                <li>
+                    Every circle represents a node.
+                </li>
+                <li>Every arrow represents the hierarchy.</li>
+            </ul>
+            </p>
+            <div class="in">
+                <img src="../images/tree2.jpg" alt="">
+                <p><b>Terminology used in trees:</b></p>
+                <ul>
+                    <li><b>Root</b>&rarr; The topmost node of tree. <ul>
+                            <li>There is no edge pointing to it</li>
+                            <li>But one or more then one edge oiginating from it.</li>
+                            <li>Here, A is the root node.</li>
+                        </ul>
+                    </li>
+                    <li><b>Parent</b>&rarr; Any node which connects to the child.
+                        <ul>
+                            <li>Node which has an edge pointing to some other node.</li>
+                            <li>Here, C is the parent of H.</li>
+                        </ul>
+                    </li>
+                    <li><b>Child</b>&rarr; Any node which is connected to a parent node. <ul>
+                        <li>Node which has an edge pointing to it, from some other node</li>
+                        <li>Here, H is the child of C </li>
+                    </ul></li>
+                    <li><b>Siblings</b>&rarr; Node belonging to the same parent are called siblings of each other.
+                    <ul>
+                        <li>Nodes B, C and D are siblings of each other, since they have the same parent node A.</li>
+                    </ul></li>
+                    <li><b>Ancestors</b>&rarr; Node accessible by following up the eges from a child node upwards.
+                    <ul>
+                        <li>Ancestors are also the parents of the parent of.. that node</li>
+                        <li>Here, node A, C and H are the ancestors of node I.</li>
+                    </ul></li>
+                    <li><b>Descendants</b>&rarr; Nodes accessible by following up the edges from a parent node downwards.
+                    <ul>
+                        <li>Descendants are also the child of the child of .... that node.</li>
+                        <li>Here, node E, F, G and I are leaf nodes.</li>
+                    </ul></li>
+                    <li><b>Leaf/External node</b>&rarr; Nodes which have no edge originating from it, and have no child attached to it.
+                    <ul>
+                        <li>These nodes cannot be a parent</li>
+                        <li>Here, nodes E, F, G and I are leaf nodes.</li>
+                    </ul></li>
+                    <li><b>Internal node</b>&rarr; Nodes with al least one child. 
+                    <ul>
+                        <li>Here, nodes B, D and C are internal nodes.</li>
+                    </ul></li>
+                    <li><b>Depth</b>&rarr; Deapth of a node is the number of edges from root to that node. <ul>
+                        <li>Here, the depth of nodes A, C, g and I are 0, 1, 2 and 3 respectively. 
+                            <br><img src="../images/tree3.jpg" alt="">
+                        </li>
+                    </ul></li>
+                    <li><b>Height</b>&rarr; Height of a node is the number of edges from that node to the deepest leaf. 
+                    <ul>
+                        <li>Here, the height of node A is 3, since the deepest leaf from this node is node I.</li>
+                        <li>Similarly, height of node C is 2.</li>
+                    </ul></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

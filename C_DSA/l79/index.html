@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-79 = AVL Trees Introduction</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>AVL Trees Introduction</h1>
+        <div class="wh">
+            <p>
+            The operations that we discussed for Binary Search Tree work faster when the tree is highly distributed, or
+            where the height is actually lose to logn and complexity tends to O(logn), but they come close to O(n) when
+            our tree becomes sparse, and looks unnecessarily lengthened. <br>This is where AVL trees come to rescure.</p>
+            <div class="in">
+                <h3>Why AVL Trees?</h3>
+                <ul>
+                    <li>Example &darr;
+                        <ul>
+                            <li>Suppose you are told to create binary search tree out of osme elements given to you.
+                            </li>
+                            <li>Supoose the numbers were (1, 11, 7, 21).</li>
+                            <li>And to avoid any labour, you simply sort the elements and write them as shown in the
+                                figure below
+                                <br><img src="../images/avl.jpg" alt="">
+                            </li>
+                            <li>This is a skew binary search tree.</li>
+                            <li>Any operation here has a complexity O(n).</li>
+                        </ul>
+                    </li>
+                    <li>An AVL tree is needed because
+                        <ol>
+                            <li>Almost all the operations in a binary search tree are of order O(h) where h is the
+                                height of the tree.</li>
+                            <li>If we don't plan our trees properly, this height can get as high as n where n is the
+                                number of nodes in the Binary Search Tree (skewed tree)</li>
+                            <li>So, to guarantee an upper bound of O(logn) for all these operations we use balanced
+                                trees.
+                                <ul>
+                                    <li>This is actually very practical, because when a binary search tree takes the
+                                        form of a list, our operations, say searching starts taking more time.</li>
+                                    <li>Consider the binary search tree below
+                                        <br><img src="../images/avl2.jpg" alt="">
+                                    </li>
+                                    <li>To search 1, in this binary search tree, you would need only 3 operations, while
+                                        to search in a list type binary search tree having the same elements, this would
+                                        take 9 operations.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>What are AVL trees?</h3>
+                <ol>
+                    <li>AVL trees are height balanced binary search trees. Because most of the operations work on O(h),
+                        we would want the value of h to be minimum possible, which is log(n).</li>
+                    <li>Height difference between the left and the right subtrees is less than 1 or equal in an AVL
+                        tree.</li>
+                    <li>For AVL trees, there is a balance factor BF, which is equal to the height of the left subtree
+                        subtracted from the height of the rught subtree. If we consider the below binary serach tree,
+                        you can see the balance factor mentioned beside each node. Carefully observe each of those.
+                        <br><img src="../images/avl3.jpg" alt="">
+                        <br>You can see, none of the nodes above have a balance factor more than 1 or less than -1. So,
+                        for a balance tree to be considered an AVL tree, the value of |BF| should be less than or equal
+                        to 1 for each of the nodes, i.e., |BF| &lte; 1.
+                    </li>
+                    <li>And even if some of the nodes in a binary search tree have a |BF| less than or equal to 1, those
+                        nodes are considered balanced. And if all the nodes are balanced, it becomes an AVL.
+                    </li>
+                </ol>
+                <ul>
+                    <li>An AVL tree gets disturbed sometime when we try inserting a new element in it. For example, in the above AVL tree, if we try inserting an element Z at the end of the leftmost element, the balanced factor gets updated for each of the nodes following above. And the tree is no more an AVL tree. See the updated tree below 
+                        <br><img src="../images/avl4.jpg" alt="">
+                    </li>
+                    <li>To avoid this unbalancing, we have an operation called <b>rotation</b> in AVL trees. This helps maintain the balancing of nodes even after a new element gets inserted</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

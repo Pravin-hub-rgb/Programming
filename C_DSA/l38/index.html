@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-35 = Queue Data Structures </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Queue Data Structures</h1>
+        <div class="inside-content">
+            <p>
+                Queue as an English word must be a well-known thing to you. We stand in a queue while waiting for our turn to come. Indian railway is one of the places where people stand in a long queue, waiting for their chance to buy a ticket. One important thing to
+                observe, which is quite intuitive, is that your chance comes first when you come first in the queue. And the people standing last, who have joined the queue last, get to buy the ticket in the end.
+                <br> Unlike stacks, where we followed LIFO( Last In First Out ) discipline, here in the queue, we have FIFO( First In First Out). Follow the illustration below to get a visual understanding of a queue.
+                <br><img src="../images/q.jpg" alt="">
+                <br><br>In stacks, we had to maintain just one end, head, where both insertion and deletion used to take place, and the other end was closed. But here, in queues, we have to maintain both the ends because we have insertion at one end and
+                deletion from the other end.
+            </p>
+            <div class="wh">
+                <h3>Queue ADT</h3>
+                <div class="in">
+                    <p><b>Data:</b>
+                        <br>In order to create a queue, we need two pointers, one pointing to the insertion end, to gain knowledge about the address where the new element will be inserted to. And the other pointer pointing to the deletion end, which holds
+                        the address of the element which will be deleted first. Along with that, we need the storage to hold the element itself.</p>
+                    <p>
+                        <b>Methods:</b>
+                        <br>Here are some of the basic methods we would want to have in queues:
+                        <br>1. enqueue() : to insert an element in a queue. <br>
+                        <img src="../images/q2.jpg" alt="">
+                        <br>2. dequeue(): to remove an element from the queue
+                        <br><img src="../images/q3.jpg" alt="">
+                        <br>3. firstVal(): to return the value which is at the first position.
+                        <br> 4. lastVal(): to return the value which is at the last position.
+                        <br> 5. peek(position): to return the element at some specific position.
+                        <br> 6. isempty() / isfull(): to determine whether the queue is empty or full, which helps us carry out efficient enqueue and dequeue operations. This was our abstract data type, queue. We have in this what we thought would suffice
+                        our needs for now. The list could be longer, but in my opinion, this is sufficient.
+                    </p>
+                    <p>
+                        <br> A queue can be implemented in a number of ways. We can use both an array and a linked list and even a stack, and not just that, but by any ADT.
+                        <br><br><b>A queue is a collection of elements with certain operations following FIFO (First in First Out) discipline. We insert at one end and delete from the other. And this is what you have to keep in mind for now. </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inside-content">
+            <h1>Implementation of Queue using Array</h1>
+            <p>
+                Assuming that we have 8 people and we want to store their information, we’ll have an array as illustrated below:
+                <br><img src="../images/q4.jpg" alt="">
+                <br>Here, we’ll maintain an index variable, backInd, to store the index of the rearmost element. So, when we insert an element, we just increment the value of the backInd and insert the element at the current backInd value. Follow the
+                array below to know how inserting works:
+                <br><img src="../images/q5.jpg" alt="">
+                <br>Now suppose we want to remove an element from the queue. And since a queue follows the FIFO discipline, we can only remove the element at the zeroth index, as that is the element inserted first in the queue. So, now we will remove
+                the element at the zeroth index and shift all the elements to its adjacent left. Follow the illustrations below:
+                <br><img src="../images/q6.jpg" alt="">
+                <br>But this removal of the zeroth element and shifting of other elements to their immediate left features O(n) time complexity.
+                <br>Summing up this method of enqueue and dequeue, we can say:
+                <br> 1. Insertion( enqueue ):
+                <ul>
+                    <li>
+                        Increment backInd by 1.
+                    </li>
+                    <li>
+                        Insert the element
+                    </li>
+                    <li>
+                        Time complexity: O(1)
+                    </li>
+                </ul>
+                2. Deletion( dequeue ):
+                <ul>
+                    <li>
+                        Remove the element at the zeroth index
+                    </li>
+                    <li>
+                        Shift all other elements to their immediate left.
+                    </li>
+                    <li>
+                        Decrement backInd by 1
+                    </li>
+                </ul>
+                3. Here, our first element is at index 0, and the rearmost element is at index backInd.
+                <br> 4. Condition for queue empty: backInd = -1.
+                <br> 5. Condition for queue full: backInd = size-1.
+                <br><br> Can there be a better way to accomplish these tasks? The answer is yes.
+                <br> We can use another index variable called frontInd, which stores the index of the cell just before the first element. We’ll maintain both these indices to bring about all our operations. Let’s now enlist the changes we’ll see after
+                we introduce this new variable:
+                <br><br> 1. Insertion( enqueue ):
+                <ul>
+                    <li>
+                        Increment backInd by 1.
+                    </li>
+                    <li>
+                        Insert the element
+                    </li>
+                    <li>
+                        Time complexity: O(1)
+                    </li>
+                </ul>
+                2. Deletion( dequeue ):
+                <ul>
+                    <li>
+                        Remove the element at the zeroth index( no need for that in an array )
+                    </li>
+                    <li>
+                        Increment frontInd by 1.
+                    </li>
+                    <li>
+                        Time complexity: O(1)
+                    </li>
+                </ul>
+                3. Our first element is at index frontInd +1, and the rearmost element is at index backInd.
+                <br> 4. Condition for queue empty: frontInd = backInd.
+                <br> 5. Condition for queue full: backInd = size-1.
+                <br> Now, we were able to achieve both operations in constant run time. And the new dequeue operation goes as follow:
+                <br><img src="../images/q7.jpg" alt="">
+                <br> The act of optimizing a solution/program is very important, and you should always strive for a better solution to a problem. And a solution that takes less time is always preferred. So, this is how we implement the queue ADT using
+                an array.
+            </p>
+        </div>
+        <div class="inside-content">
+            <h1>Coding Array Implementation of Queue and its operations</h1>
+            <p>
+                To implement this, we’ll use a structure and have the following members inside it:
+                <br> 1. size: to store the size of the array
+                <br> 2. frontInd: to store the index prior to the first element.
+                <br> 3. backInd: to store the index of the rearmost element.
+                <br> 4. *arr: to store the address of the array dynamically allocated in heap.
+            </p>
+            <div class="in">
+                <p>
+                    struct queue
+                    <br>{
+                    <br> int size;
+                    <br> int frontInd;
+                    <br> int backInd;
+                    <br> int* arr;
+                    <br>};
+                </p>
+            </div>
+            <p>
+                Now to use this struct element as a queue, you just need to initialize its instances as:
+                <br> struct Queue q; (we are not dynamically allocating q here for now, as we did in stacks). <br> Use dot here, and not arrow operator to assign values to struct members, since q is not a pointer. <br> q.size = 10; (this gives size element
+                the value 10) q.frontInd = q.backInd = -1;(this gives both the indices element the value -1) <br> Use malloc to assign memory to the arr element of struct q. And this is how you initialize a queue. We will now devote our attention to two
+                important operations in a queue: enqueue and dequeue.
+                <br><br><b>Enqueue</b>
+                <br>Enqueue: Enqueuing is inserting a new element in a queue. Prior to inserting an element into a queue, we need to take note of a few points.
+                <br> First, check if the queue is already not full. If it is, it is the case of queue overflow, else just increment backInd by 1, insert the new element there. Follow the illustration below. <br>
+                <img src="../images/fix9.jpg" alt="">
+                <br><br><b>Dequeue:</b>
+                <br>Dequeuing is deleting the element in a queue which is the first among all the elements to get inserted. Prior to deleting that element from a queue, we need to follow the below-mentioned points:
+                <br> 3. First, check if the queue is already not empty.
+                <br> 4. If it is, it is the case of queue underflow, else just increment frontInd by 1. In arrays, we don’t delete elements; we just stop referring to the element. Follow the illustration below.
+                <br><img src="../images/fix10.jpg" alt="">
+                <br><br><b>Condition for isEmpty:</b>
+                <br>If our <i>frontInd</i> equals <i>backInd</i>, then there is no element in our queue, and this is the case of an empty queue.
+                <br><br><b>Condition for <i>isFULL:</i></b>
+                <br>If our <i>backInd</i> equals (the size of the array) -1, then there is no space left in our queue, and this is the case of a full queue.
+                <br>So, there are the basic operations of a queue. We have omplemented everythin using arrays.
+            </p>
+            <div class="in">
+                <h3>Understanding the code</h3>
+                <p>
+                    <b>1.</b> First of all, start by creating a struct named queue, and define all of its four members. An inter variable <i>size</i> to store the size of the array, another interger variable <i>f</i> to store the front end index, and
+                    an integer variable <i>r</i> to store the index of the rear end. Then, define an integer pointer <i>arr</i> to store the address of the dynamically allocated array.
+                </p>
+                <div class="in">
+                    <p>
+                        struct queue
+                        <br>{
+                        <br> int size;
+                        <br> int f;
+                        <br> int r;
+                        <br> int* arr;
+                        <br>};
+                    </p>
+                </div>
+                <p>
+                    <b>2.</b> In main
+                </p>
+                <div class="in">
+                    <p>
+                        struct queue q;
+                        <br> q.size = 4;
+                        <br> q.f = q.r = -1;
+                        <br> q.arr = (int*) malloc(q.size*sizeof(int));
+                    </p>
+                </div>
+                <p>
+                    <b>3. Creating Enqueue:</b>
+                </p>
+                <div class="in">
+                    <p>
+                        void enqueue(struct queue *q, int val){
+                        <br> if(isFull(q)){
+                        <br> printf("This Queue is full\n");
+                        <br> }
+                        <br> else{
+                        <br> q->r++;
+                        <br> q->arr[q->r] = val;
+                        <br> printf("Enqued element: %d\n", val);
+                        <br> }
+                        <br> }
+                    </p>
+                </div>
+                <p>
+                    <b>4. Creating isFull:</b>
+                </p>
+                <div class="in">
+                    <p>
+                        int isFull(struct queue *q){
+                        <br> if(q->r==q->size-1){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+                <p><b>5. Creating Dequeue:</b></p>
+                <div class="in">
+                    <p>
+                        int dequeue(struct queue *q){
+                        <br> int a = -1;
+                        <br> if(isEmpty(q)){
+                        <br> printf("This Queue is empty\n");
+                        <br> }
+                        <br> else{
+                        <br> q->f++;
+                        <br> a = q->arr[q->f];
+                        <br> }
+                        <br> return a;
+                        <br> }
+                    </p>
+                </div>
+                <p><b>6. Creating isEmpty:</b></p>
+                <div class="in">
+                    <p>
+                        int isEmpty(struct queue *q){
+                        <br> if(q->r==q->f){
+                        <br> return 1;
+                        <br> }
+                        <br> return 0;
+                        <br> }
+                    </p>
+                </div>
+                <div class="in">
+                    <button class="accordion">full code</button>
+                    <div class="panel">
+                        <p>
+                            #include&lt;stdio.h>
+                            <br> #include&lt;stdlib.h>
+                            <br>
+                            <br> struct queue
+                            <br> {
+                            <br> int size;
+                            <br> int f;
+                            <br> int r;
+                            <br> int* arr;
+                            <br> };
+                            <br>
+                            <br>
+                            <br> int isEmpty(struct queue *q){
+                            <br> if(q->r==q->f){
+                            <br> return 1;
+                            <br> }
+                            <br> return 0;
+                            <br> }
+                            <br>
+                            <br> int isFull(struct queue *q){
+                            <br> if(q->r==q->size-1){
+                            <br> return 1;
+                            <br> }
+                            <br> return 0;
+                            <br> }
+                            <br>
+                            <br> void enqueue(struct queue *q, int val){
+                            <br> if(isFull(q)){
+                            <br> printf("This Queue is full\n");
+                            <br> }
+                            <br> else{
+                            <br> q->r++;
+                            <br> q->arr[q->r] = val;
+                            <br> printf("Enqued element: %d\n", val);
+                            <br> }
+                            <br> }
+                            <br>
+                            <br> int dequeue(struct queue *q){
+                            <br> int a = -1;
+                            <br> if(isEmpty(q)){
+                            <br> printf("This Queue is empty\n");
+                            <br> }
+                            <br> else{
+                            <br> q->f++;
+                            <br> a = q->arr[q->f];
+                            <br> }
+                            <br> return a;
+                            <br> }
+                            <br>
+                            <br> int main(){
+                            <br> struct queue q;
+                            <br> q.size = 4;
+                            <br> q.f = q.r = 0;
+                            <br> q.arr = (int*) malloc(q.size*sizeof(int));
+                            <br>
+                            <br> // Enqueue few elements
+                            <br> enqueue(&q, 12);
+                            <br> enqueue(&q, 15);
+                            <br> enqueue(&q, 1);
+                            <br> printf("Dequeuing element %d\n", dequeue(&q));
+                            <br> printf("Dequeuing element %d\n", dequeue(&q));
+                            <br> printf("Dequeuing element %d\n", dequeue(&q));
+                            <br> enqueue(&q, 45);
+                            <br> enqueue(&q, 45);
+                            <br> enqueue(&q, 45);
+                            <br>
+                            <br> if(isEmpty(&q)){
+                            <br> printf("Queue is empty\n");
+                            <br> }
+                            <br> if(isFull(&q)){
+                            <br> printf("Queue is full\n");
+                            <br> }
+                            <br>
+                            <br> return 0;
+                            <br> }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

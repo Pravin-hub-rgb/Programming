@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-9 = Operations on Arrays in Data Structures - Traversal, Insertion, Deletion and Searching </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Operations on Arrays in Data Structures - Traversal, Insertion, Deletion and Searching</h1>
+        <div class="inside-content">
+            <h2>Some primary operations in arrays</h2>
+            <ul>
+                <li>Traversal</li>
+                <li>Insertion</li>
+                <li>Deletion</li>
+                <li>Searching</li>
+            </ul>
+            <div class="in">
+                <h3>Traversal</h3>
+                <p>
+                    <ul>
+                        <li>Visiting every element of an array once is known as <b>traversing</b> the array. </li>
+                        <li>Why traversal?
+                            <ul>
+                                <li>Storing all elements - Using scanf()</li>
+                                <li>Printing all elements - Using printf()</li>
+                                <li>Updating elements.</li>
+                            </ul>
+                        </li>
+                        <li>An array can easily be traversed using a for loop in C language.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Insertion</h3>
+                <p>
+                    An element can be inserted in an array at a specific position. For this operation to succeed, the array must have enough capacity.
+                    <br><br>Suppose we want to add an element 10 at index 2 in the below-illustrated array, then the element after index 1 must shifted to their adjacent right to make way for a new element.
+                    <img src="../images/array3.jpg" alt=""> When no position is specified, it's best to insert the element at the end to avoid shifting, and this is when we achieve the runtime O(1).
+                    <br>And for worst case we have to insert the element in 0 index then the runtime will be O(n).
+                </p>
+            </div>
+            <div class="in">
+                <h3>Deletion</h3>
+                <p>
+                    An element at a specified position can be deleted, creating a void that needs to be fixed by shifting all the elements to their adjacent left, as illustrated in the figure below.
+                    <br><br>We can also bring the last element of the array to fill the void if the relative ordering is not important. <br>
+                    <img src="../images/array4.jpg" alt="">
+                    <br><br>The best case could be deleting the last element with the runtime of O(1) and the worst case would be deleting the first element with the runtime O(n).
+                </p>
+            </div>
+            <div class="in">
+                <h3>Searching</h3>
+                <p>
+                    Searching can be done by traversing the array until the element to be searched is found. O(n) There is still a better method called binary search. Binary search method only applicable for sorted arrays. Therefore, for sorted arrays, the time taken to
+                    search is much less than an unsorted array. O(logn)
+                    <br><img src="../images/array5.jpg" alt="">
+                </p>
+            </div>
+            <div class="in">
+                <h3>Sorting</h3>
+                <p>
+                    Sorting means arranging an array in an orderly fashion (ascending or descending). We have different algorithms to sort arrays.
+                    <br><img src="../images/array6.jpg" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

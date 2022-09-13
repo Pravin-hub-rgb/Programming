@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-62 = Binary Tree </title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>What is a Binary Tree</h1>
+        <div class="wh">
+            <h2>Quick revision</h2>
+            <ul>
+                <li>A tree is made up of nodes and edges.</li>
+                <li>The topmost node is called the node which points to another node, is the <b>parent</b> of that node
+                    and the node which the parent is pointing at is the <b>child</b> of that parent node. And nodes
+                    having the same parents are called <b>siblings</b> of each other.</li>
+                <li>Nodes having zero children are the <b>leaf nodes/external nodes</b>, and nodes having at least one
+                    child are the <b>internal nodes</b></li>
+                <li><b>Ancestors</b> of a node are the nodes accessible by traversing upwards along the edges. They are
+                    either the parents or the parents of the parents.</li>
+                <li><b>Descendansts</b> of node are the nodes accessible by traversing downwards along the edges. They
+                    are either the children or the children of the children</li>
+                <li><b>Height</b> of a node is the number of edges in between the deepest leaf and that node. And
+                    <b>depth</b> of a node is the number of edges between the root and that node.
+                </li>
+            </ul>
+            <h2>Additional points</h2>
+            <ul>
+                <li>A tree with <b>n</b> nodes have <b>n-1</b>
+                    <ul>
+                        <li>
+                            In a tree, there is one and only edge correspoinding to all the nodes except the root node.
+                            The root node has no parent, hence no edge pointing to it. Therefore, a total of n-1 edges.
+                        </li>
+                        <li>The <b>degree of node</b> in a tree is the number of children of a node.</li>
+                        <li>The <b>degree of tree</b> is the ighest degree of a node among all the nodes present in the
+                            tree.</li>
+                    </ul>
+                </li>
+                <li><img src="../images/tree4.jpg" alt=""></li>
+                <li>In the above tree, the number of nodes is 9, and hence the number of edges are 8.</li>
+                <li>Highest degree of a node is that of the root node, which has 3 children. Hence, the degree of the
+                    tree is also 3.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h1>Binary Tree</h1>
+            <p>A binary tree is a special type of tree where each node has a degree equal to or less than two which means each node should have at most two children 
+                <br><img src="../images/tree5.jpg" alt="">
+                <br>Example 1 has nodes A, B, C, D, E with degrees (2, 0, 1, 1, 0) respectively which satisfies the conditions for a binary tree. Similarly, example 2 has nodes A and B, having degrees 1 each, hence a binary tree.
+            </p>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

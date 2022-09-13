@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-64 = Representation of a binary tree</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Representation of a Binary Tree</h1>
+        <div class="wh">
+            <p>
+                So, the first way to represent a binary tree is by using arrays. We call this 'array representation'.
+                And this method is not very recommended for representing binary trees. We'll know it shortly
+            </p>
+            <div class="in">
+                <h3>Array representation of Binary trees</h3>
+                <ul>
+                    <li>
+                        Arrays are linear data structures and for arrays to function, their size must be specified
+                        before elements are inserted into them.
+                    </li>
+                    <li>Speicifying size is the biggest demerit of representing binary trees using arrays.</li>
+                    <li>Suppose you declare an array of size 100, and after storing 100 nodes in it, you cannot even
+                        insert a single element further, regardless of all the spaces left in the memory.</li>
+                    <li>If we copy the whole array to a new array of bigger size is not considered a good practice.</li>
+                </ul>
+                <p>
+                    Anywars, we will use an array to represent a binary tree. Suppose we have a binary tree with 7
+                    nodes. <br> <img src="../images/bin10.jpg" alt="">
+                    <br>And there are actually a number of ways to represent these nodes via an array. I’ll use the most
+                    convenient one where we traverse each level starting from the root node and from left to right and
+                    mark them with the indices these nodes would belong to. <br><img src="../images/bin11.jpg" alt="">
+                    <br>And now we can simply make an array of length 7 and store these elements at their corresponding
+                    indices.
+                    <br><img src="../images/bin12.jpg" alt="">
+                    <br>And you might be wondering about the cases where the binary is just not perfect. What if the
+                    last level has distributed leaves? Then let me tell you, there is a way out for that as well. Let’s
+                    consider one case here. A binary tree with 9 nodes, and the last two nodes on the extremities of the
+                    last level.
+                    <br><img src="../images/bin13.jpg" alt="">
+                    <br>Here, while traversing we get stuck at the 8th index. We don’t know if declaring the last node
+                    as the 8th index element makes it a general representation of the tree or not. So, we simply make
+                    the tree perfect ourselves. We first assume the remaining vacant places to be NULL.
+                    <br><img src="../images/bin14.jpg" alt="">
+                    <br>And now we can easily mark their indices from 0 to 14.
+                    <br><img src="../images/bin15.jpg" alt="">
+                    <br>And the array representation of the tree looks something like this. It is an array of length 15.
+                    <br><img src="../images/bin16.jpg" alt="">
+                </p>
+                <ul>
+                    <li>This is no an efficient approach
+                        <ul>
+                            <li>Traversing, insertion, deletion in binary using array is troublesome</li>
+                            <li>Each operation becomes quite costly to accomplish.</li>
+                            <li>That size constrain is also the big problem.</li>
+                        </ul>
+                    </li>
+                    <li>So we have another method to represent binary trees called <b>the linked representation.</b>
+                        <ul>
+                            <li>Don't confuse this with 'linked lists' the linear data structures.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Linked Representation of Binary trees</h3>
+                <ul>
+                    <li>This method of representing binary trees using linked nodes is considered the most efficient
+                        method of representation. </li>
+                    <li>Here we use doubly-linked lists</li>
+                    <li>Using links makes the understanding of binary tree very easy. It actually is best for visualize
+                        the tree.</li>
+                </ul>
+                <p>
+                    Suppose we have a binary tree of 3 levels. <br><img src="../images/binlink1.jpg" alt="">
+                <ul>
+                    <li>As doubly linked list help us in traversal in both to the left and the right nodes. </li>
+                </ul>
+                <img src="../images/binlink2.jpg" alt="">
+                <ul>
+                    <li>Above represents a real tree node.</li>
+                    <li>Unlike the array representation where all then nodes succumbed to a 2D struture. And now we can
+                        very easily transform the whole tree into its linked representation which is just how we
+                        imagined it would have looked in real life.</li>
+                </ul>
+                <img src="../images/binlink3.jpg" alt="">
+                <ul>
+                    <li>So, this was the representation of the binary tree we saw above using linked representation</li>
+                    <li>What are these nodes?
+                        <ul>
+                            <li>These are structures having three structrure members, first a data element to store the
+                                data of the node, and then two structure pointers to hold the address of the child
+                                nodes, one for the left and the other for the right.</li>
+                        </ul>
+                        <img src="../images/binlink4.jpg" alt="">
+                    </li>
+                </ul>
+                </p>
+                <div class="wh">
+                    <p>Definition of struct Node in C language</p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                struct node{
+                                    int data;
+                                    struct node* left;
+                                    struct node* right;
+                                };                                
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

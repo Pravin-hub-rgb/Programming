@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-83 = Introduction to Graphs</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to Graphs</h1>
+        <div class="wh">
+            <h2>What is a Graph?</h2>
+            <ul>
+                <li>All the data structures we have learned so far have either
+                    <ul>
+                        <li>Linear data structure &rarr; Array, linked lists and stacks</li>
+                        <li>Non linear hierarchical data structure &rarr; BST & AVL trees</li>
+                    </ul>
+                </li>
+                <li>Graph is an example of Non Linear data structure</li>
+                <li>A graph is a collection of nodes connected through edges.</li>
+                <li>Example of a simple graph
+                    <br><img src="../images/graph.jpg" alt="">
+                </li>
+                <li>Trees are also a type of graph. <br> follow the illustration of a tree below.
+                    <br><img src="../images/graph2.jpg" alt="">
+                </li>
+                <li>A tree is also a collection of nodes and edges, and hence is a graph only.</li>
+            </ul>
+            <div class="in">
+                <h3>Nodes/Vertices and Edges:</h3>
+                <ul>
+                    <li>A vertex or node is one fundamental unit/entity of which graphs are formed.</li>
+                    <li>Nodes are the data containing parts, connected with each other using edges.</li>
+                    <li>An edge is uniquely defined by its 2 endpoints or the two nodes it is connecting.</li>
+                    <li>You can take the analogy of people in a network, or a widespread chain, where people could be
+                        representing the nodes and their connections in the network could be represented using edges.
+                    </li>
+                    <li>It is a structure.
+                        <br><img src="../images/graph3.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Formal Definition of graph:</h3>
+                <ul>
+                    <li>A graph G = (V, E) is technically a collection of vertices and edges connecting these vertices.
+                    </li>
+                    <li>Follow the below illustrated graph for reference
+                        <br><img src="../images/graph4.jpg" alt="">
+                    </li>
+                    <li>Here, V is the set of all the vertices. Therefore V = (0, 1, 2, 3, 4 ,5) and E is the set of all
+                        edges, therefore E = {(0, 1), (1, 2), (0, 4), (4, 3), (3, 5), (2, 5), (2, 3)} </li>
+                    <li>Every edge connects the poir they are represented with.</li>
+                    <li>Edge (0, 1) connects node 0 to 1.</li>
+                    <li>And, hence a graph is always represented using its set of vertices, V and its set of edges, E in
+                        the form G = (V, E).</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Applications of graphs</h3>
+                <ul>
+                    <li>Graphs have a wide range of applications in our world.</li>
+                    <li>Learning also becomes a necessity for anyone pursuing software development due to its
+                        applications</li>
+                    <li>Graphs are used to model social networks such as facebook or linkedin.</li>
+                    <li>Graphs are also used to monitor website backlinks, internal employee networks, etc.</li>
+                    <li>Major use would be Maps application like google maps</li>
+                    <li>Another major application is their use to solve problems like is there a path between two locations on a map and if there is, which one is the shortest.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of Edges:</h3>
+                <ol>
+                    <li>Directed Edge &darr;
+                        <ul>
+                            <li>A directed edge is an edge connecting two nodes but strictly defines the way it is
+                                connected from and to. </li>
+                            <li>The analogy of facebook's follow feature, where if you follow someone, then it's not
+                                that the other person followed you too. It's just one way</li>
+                            <li>Another great example is that of a hyperlink, where one can even link google.com to
+                                their own websites on the internet, but then google.com would not necessarily link your
+                                website to their page.</li>
+                        </ul>
+                    </li>
+                    <li>Undirected Edge &darr;
+                        <ul>
+                            <li>An undirected edge is an edge connecting two nodes without any defined way.</li>
+                            <li>Below example shows node 1 connecting to node 2, and at the same time node 2 connecting
+                                to node 1.</li>
+                            <li>You can take the analogy of facebook's friend feature, where if you make someone a
+                                friend, they you too become their friend, so it's both ways.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <img src="../images/graph5.jpg" alt="">
+            </div>
+            <div class="in">
+                <p>According to the type of edges that a graph has, graphs can be further divided into two types.</p>
+                <h3>Types of graphs</h3>
+                <ol>
+                    <li>Directed graphs &darr;
+                        <ul>
+                            <li>Directed graphs are graphs having each of its edges directed. </li>
+                            <li>One examples of directed graphs is :
+                                <br><img src="../images/graphs6.jpg" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Undirected Graphs &darr;
+                        <ul>
+                            <li>The graphs having each of its edges are undirected.</li>
+                            <li>One of the examples of directed graph is : <br><img src="../images/graph7.jpg" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Indegree and Outdegree of a node</h3>
+                <ul>
+                    <li>Indegree of a node is the number of edges coming to the node</li>
+                    <li>Outdegree of a node is the number of edges originating from that node.</li>
+                    <li>Consider the directed graph below
+                        <br><img src="../images/graph8.jpg" alt="">
+                    </li>
+                    <li>We can write the indegree represented by <i>in</i> and outdegree represented by <i>out</i>, in
+                        the above graphs for each of these nodes.
+                        <br><img src="../images/graph9.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Let's talk about one real-life example of graphs - a graph of users - Facebook!</h3>
+                <ul>
+                    <li>Althoug the users using facebook need not understand the graph theory, once you create your
+                        profile here, facebook uses graphs to model relationships between nodes.</li>
+                    <li>We can apply graphs algorithms to suggest friends to people, calculate the number of mutual
+                        friends, etc.</li>
+                    <li>Other examples of graphs include the result of a web crawl for website or for the entire would
+                        wibe web, city routes as seen on Google Maps, etc. Further more, different search engines have
+                        different web network models</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

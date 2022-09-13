@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-3 = Asymptotic Notations, Big O, Big Omega and Big Theta Explained.</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Asymptotic Notations,Big O, Big Omega and Big Theta Explained.</h1>
+        <div class="inside-content">
+            <h2>Asymptotic Notations:</h2>
+            <p>
+                Asymptotic notation gives us an idea about how good a given algorithm is compared to some other algorithm.
+                <br><br>Primarily there are three types of widely used asymptotic notations.
+                <ul>
+                    <li>Big oh notation (O)</li>
+                    <li>Big omega notation (&ohm;)</li>
+                    <li>Big theta notation (&theta;)</li>
+                </ul>
+            </p>
+            <div class="wh">
+                <h3>Big oh notation (O)</h3>
+                <ul>
+                    <li>Big oh notation is used to describe an asymptotic upper bound.</li>
+                    <li>Mathematically, if f(n) describes the running time of an algorithm; f(n) is O(g(n)) if and only if there exist positive constants c and n<sup>0</sup> such that:
+                        <ul>
+                            <li><b>0 ≤ f(n) ≤ c g(n)        for all n ≥ n°.</b></li>
+                        </ul>
+                    </li>
+                    <li>Here, n is the input size, and g(n) is any complexity function, for , e.g. n, n2, etc. (it is used to give upper bound on a function)</li>
+                    <li>If a function is O(n), it is automatically O(n2) as well! Because it satisfies the equation given above.</li>
+                </ul>
+                <div class="in">
+                    <p>Graphic Example for Big oh (O)</p>
+                    <img src="../images/bigograph.jpg" alt="">
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Big Omega (&ohm;)</h3>
+                <ul>
+                    <li>Just like O notation provides an asymptotic upper bound, &ohm; notation provides an aymptotic lower bound.</li>
+                    <li>Let f(n) define the running time of an algorithm; f(n) is said to be &ohm; (g(n)) if and only if there exist positive constant c and n such that :
+                        <ul>
+                            <li>0 &le; c g(n) &le; f(n) &forall; n &ge; n<sup>0</sup>.</li>
+                        </ul>
+                    </li>
+                    <li>It is used to give the lower bound on a function.</li>
+                    <li>If a function is &ohm; (n2) it is automatically &ohm; (n) as well since it satisfies the abobe equation.</li>
+                </ul>
+                <div class="in">
+                    <p>Graphic example for Big Omega (&ohm;)</p>
+                    <img src="../images/bigomega.jpg" alt="">
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Big Theta (&theta;):</h3>
+                <ul>
+                    <li>Let f(n) define the running time of an algorithm.</li>
+                    <li>F(n) is said to be &theta; (g(n)) if f(n) is O (g(n)) and f(x) is &ohm; (g(n)) both.</li>
+                    <li>Mathematically.
+                        <ul>
+                            <li><img src="../images/bigtheta.jpg" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>Merging botht the equations, we get:
+                        <ul>
+                            <li>0 &le; c2 g(n) &le; f(n) &le; c1 g(n) &forall; n &ge; no.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="in">
+                    <p>Graphic example of Big theta (&theta;)</p>
+                    <img src="../images/bigthetag.jpg" alt="">
+                </div>
+            </div>
+            <div class="in">
+                <h2>Which one of these to use?</h2>
+                <p>
+                    Big theta provides a better pricture of a given algorithm's run time, which is why most interviewers expect you to answer in terms of Big theta when they ask "order of" questions. And what you provide as the answer in Big theta, is already a Big oh and
+                    a Big omega. It is recommended for this reason.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

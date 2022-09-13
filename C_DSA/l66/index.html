@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-66 = Traversal in Binary Tree</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Data Structures and Algorithms</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Traversal in Binary Tree</h1>
+        <div class="wh">
+            <ul>
+                <li>Traversal meant visiting every node in the list at least once.</li>
+                <li>Traversal has several applications
+                    <ul>
+                        <li>To just visit each node and print their value.</li>
+                        <li>To add each of those elements</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <ul>
+                    <li>We have three different ways to traverse in binary tree. 
+                        <ul>
+                            <li>Inorder</li>
+                            <li>PostOrder</li>
+                            <li>PreOrder</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <p>Let's understand each of them
+                    <br><img src="../images/trav1.jpg" alt="">
+                </p>
+                <div class="wh">
+                    <h3>PreOrder Traversal</h3>
+                    <h3><b>ROOT &rarr; LEFT NODE &rarr; RIGHT NODE</b></h3>
+                    <ul>
+                        <li>First node we start with is the root node.</li>
+                        <li>And thereafter you visit the left.</li>
+                        <li>And then the right subtree</li>
+                        <li>First visit section 1, then 2, and then 3.</li>
+                    </ul>
+                    <img src="../images/trav2.jpg" alt="">
+                    <ul>
+                        <li>As seen in above example
+                            <ul>
+                                <li>Fist visit the the root node element 7</li>
+                                <li>And then move to the left subtree.</li>
+                                <li>The left subtree in itself is a tree with root node 11</li>
+                                <li>So, you visit that and move further to the left subtree of this subtree</li>
+                                <li>There you see single element 7, you visit that</li>
+                                <li>and then move to the right subtree which is a NULL</li>
+                                <li>So, you're finished with the left subtree of the main tree.</li>
+                                <li>Now you move to the right subtree which has element 2 as its node.</li>
+                                <li>And then a NULL to its left and elements 9 to its right.</li>
+                                <li>So basically, you recursively visit each subtree in the same order.</li>
+                                <li>And you final traversal order is: <br> <img src="../images/trav3.jpg" alt=""></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>PostOrder Travesal</h3>
+                    <h3><b>LEFT NODE &rarr; RIGHT NODE &rarr; ROOT NODE</b></h3>
+                    <ul>
+                        <li>In this traversal technique, things are quite opposite to the PreOrder traversal 
+                            <ul>
+                                <li>Here, you first visit the left subtreeli</li>
+                                <li>and then the right subtree.</li>
+                                <li>So, the last node you'll visit is the root node</li>
+                            </ul>
+                        </li>
+                        <li>First visit section 1, then 2 and then 3.</li>
+                    </ul>
+                    <img src="../images/trav4.jpg" alt="">
+                    <ul>
+                        <li>
+                            General Idea
+                            <ul>
+                                <li>Each time you get a tree, you first visit its left subtree</li>
+                                <li>and then its right subtree</li>
+                                <li>and then move to its root node</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Final traversal order should be. <br> <img src="../images/trav5.jpg" alt=""></p>
+                </div>
+                <div class="wh">
+                    <h3>InOrder Traversal</h3>
+                    <h3><b>LEFT NODE &rarr; ROOT NODE &rarr; RIGHT NODE</b></h3>
+                    <ul>
+                        <li>Start with the left subtree</li>
+                        <li>Then go to the root node</li>
+                        <li>And then visit the right subtree.</li>
+                        <li>First visit section 1, then 2, and then 3.</li>
+                    </ul>
+                    <img src="../images/trav6.jpg" alt="">
+                    <p>Traversal on above example looks like this &darr; <br><img src="../images/trav7.jpg" alt=""></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>
