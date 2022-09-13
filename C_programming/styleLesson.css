@@ -121,6 +121,14 @@ body {
     margin: 55px 10px 20px 10px;
 }
 
+.inside-content {
+    background-color: #7fcce6;
+    padding: 10px 5px 1px;
+    border-radius: 10px;
+    margin: 10px 5px;
+    color: black;
+    box-shadow: 0 0 20px rgb(2 14 82);
+}
 .wh {
     background-color: #7fcce6;
     padding: 10px 5px 1px;
@@ -216,6 +224,7 @@ button {
 }
 pre{
     overflow: auto;
+    font-size: 1rem;
 }
 
 /* **** PART2 ****** */

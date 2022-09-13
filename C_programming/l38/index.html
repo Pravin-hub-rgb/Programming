@@ -43,51 +43,68 @@
         </p>
         <div class="in">
             <h3>structure of typedef</h3>
-            <div class="in">
-                <p>
-                    typedef [previous_name] [alias_name];
-                </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        typedef [previous_name] [alias_name]; 
+                    </code>
+                </pre>
             </div>
         </div>
         <div class="in">
             <h3>Syntax of typedef</h3>
-            <div class="in">
-                <p>
-                    typedef unsigned long ul;
-                    <br> //now where ever we will use 'ul' that represents 'unsigned long'
-                    <br>ul l1,l2,l3;
-                    <br>//used to give nickname for long name of data types or viceversa
-                    <br>typedef int integer;
-                    <br>integer a = 4;
-                </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                        typedef unsigned long ul;
+                        //now where ever we will use 'ul' that represents 'unsigned long'
+                        ul l1,l2,l3;
+                        //used to give nickname for long name of data types or viceversa
+                        typedef int integer;
+                        integer a = 4; 
+                    </code>
+                </pre>
             </div>
         </div>
         <div class="in">
             <h3>Where typedef is important</h3>
-            <div class="in">
-                <p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
                     #include &lt;stdio.h&gt;
-                    <br> #include &lt;string.h&gt;
-                    <br> typedef struct Student
-                    <br> {
-                    <br> int id;
-                    <br> int marks;
-                    <br> char fav_char;
-                    <br> char name[34];
-                    <br> } std; // typedef [previous name] [alias name];
-                    <br> int main()
-                    <br> {
-                    <br> // struct Student s1,s2; //This old name also works
-                    <br> std s1, s2; // this also works
-                    <br> }
-                </p>
+                    #include &lt;string.h&gt;
+                    typedef struct Student
+                    {
+                        int id;
+                        int marks;
+                        char fav_char;
+                        char name[34];
+                    } std; // typedef [previous name] [alias name];
+
+                    int main()
+                    {
+                        // struct Student s1,s2; //This old name also works
+                        std s1, s2; // this also works
+                    }
+                </code>
+                </pre>
             </div>
-            <div class="in">
-                <p>
-                    <br> int* a,b; //this doesn't make both variable pointer type only 'a' is a pointer
-                    <br> typedef int* intptr;
-                    <br> intptr c,d; //this makes both the variable pointer type and we can store address in it.
-                </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                    int* a,b; //this doesn't make both variable pointer type only 'a' is a pointer
+                    typedef int* intptr;
+                    intptr c,d; //this makes both the variable pointer type and we can store address in it.
+                </code>
+                </pre>
             </div>
         </div>
     </div>

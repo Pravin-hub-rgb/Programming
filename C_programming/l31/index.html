@@ -41,7 +41,7 @@
             <ul>
                 <li>When a function is called, the values (expression) that are passed in the call are called the arguments or actual parameters</li>
                 <li>Formal parameters are local variables which are assigned values from the arguments when the function is called.</li>
-                <div class="in">
+                <div class="wh">
                     <p>
                         <b>Global variables &rarr;</b> which are defined outside and can be accessed by any blocks
                         <br><b>Local variables &rarr;</b> which are defined inside a function or a block and can only be accessed inside the function or block.
@@ -73,23 +73,27 @@
                     In this method, the 'call by value' of each of the actual arguments in the calling function is copied into corresponding formal arguments of the called function. In this function call, the changes made to the formal arguments in the called function have
                     no effect on the values of actual arguments in the calling function. Actual and formal arguments will be created in a different memory location. The following program is the example of 'Call by Value'.
                 </p>
-                <div class="in">
-                    <p>
-                        void swap(int x, int y)
-                        <br> {
-                        <br> int temp;
-                        <br> temp=x;
-                        <br> x=y;
-                        <br> y=temp;
-                        <br> }
-                        <br> void main()
-                        <br> {
-                        <br> int r=10, v=20;
-                        <br> swap(r, v); // passing value to function
-                        <br> printf("\nValue of r: %d",r);
-                        <br> printf("\nValue of v: %d",v);
-                        <br> }
-                    </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            void swap(int x, int y)
+                            {
+                                int temp;
+                                temp = x;
+                                x = y;
+                                y = temp;
+                            }
+                            void main()
+                            {
+                                int r = 10, v = 20;
+                                swap(r, v); // passing value to function
+                                printf("\nValue of r: %d", r);
+                                printf("\nValue of v: %d", v);
+                            }
+                        </code>
+                    </pre>
                 </div>
             </div>
             <div class="in">
@@ -99,40 +103,50 @@
                     The changes that are made to the parameter affect the argument. This is because the address is used to access the actual argument. Formal and actual arguments will be created in the same memory location. The following program is the
                     example of 'Call by Reference'.
                 </p>
-                <div class="in">
-                    <p>
-                        void swap(int* x, int* y)
-                        <br> {
-                        <br> int temp;
-                        <br> temp=*x;
-                        <br> *x=*y;
-                        <br> *y=temp;
-                        <br> }
-                        <br> void main()
-                        <br> {
-                        <br> int r=10, v=20;
-                        <br> swap(&r, &v); // passing value to function
-                        <br> printf("\nValue of r: %d",r);
-                        <br> printf("\nValue of v: %d",v);
-                        <br> }
-                    </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            void swap(int *x, int *y)
+                            {
+                                int temp;
+                                temp = *x;
+                                *x = *y;
+                                *y = temp;
+                            }
+                            void main()
+                            {
+                                int r = 10, v = 20;
+                                swap(&r, &v); // passing value to function
+                                printf("\nValue of r: %d", r);
+                                printf("\nValue of v: %d", v);
+                            }
+                        </code>
+                    </pre>
                 </div>
-                <div class="in">
-                    <p>
-                        void changeValue(int* address)
-                        <br> {
-                        <br> *address = 37565;
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int a = 34, b =56;
-                        <br> printf("The value of a now is %d\n", a);
-                        <br> changeValue(&a);
-                        <br> printf("The value of a now is %d\n", a);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                <div class="wh">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                void changeValue(int* address)
+                                {
+                                *address = 37565;
+                                }
+                                
+                                int main()
+                                {
+                                int a = 34, b =56;
+                                printf("The value of a now is %d\n", a);
+                                changeValue(&a);
+                                printf("The value of a now is %d\n", a);
+                                return 0;
+                                } 
+                            </code>
+                        </pre>
+                    </div>
                     <div class="in">
                         <p>
                             //output
@@ -153,27 +167,31 @@
                 <br>a = 7
                 <br>b = 1
             </p>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">My code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> void ads(int *vala, int *valb)
-                        <br> {
-                        <br> int temp;
-                        <br> temp = *vala + *valb;
-                        <br> *vala = temp;
-                        <br> temp = *vala -*valb - *valb;
-                        <br> *valb=temp;
-                        <br> }
-                        <br> int main()
-                        <br> {
-                        <br> int a = 4, b = 3;
-                        <br> ads(&a, &b);
-                        <br> printf("The value of a is : %d and the value of b is : %d", a,b);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                void ads(int *vala, int *valb)
+                                {
+                                    int temp;
+                                    temp = *vala + *valb;
+                                    *vala = temp;
+                                    temp = *vala - *valb - *valb;
+                                    *valb = temp;
+                                }
+                                int main()
+                                {
+                                    int a = 4, b = 3;
+                                    ads(&a, &b);
+                                    printf("The value of a is : %d and the value of b is : %d", a, b);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

@@ -84,27 +84,30 @@
                         <li>NULL pointer vs Void Pointer &rarr; Null pointer is a value where as void pointer is a type</li>
                     </ul>
                 </div>
-                <div class="wh">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">code</button>
                     <div class="panel">
-                        <p>
-                            #include &lt;stdio.h&gt;
-                            <br> int main()
-                            <br> {
-                            <br> int a = 34;
-                            <br> int *ptr = NULL; // when we dereference this value the program crashes so to stay safe we do
-                            <br> if (ptr != NULL) //for error handling
-                            <br> {
-                            <br> printf("The value at ptr is %d", *ptr); // dereferencing to print the value
-                            <br> }
-                            <br> else
-                            <br> {
-                            <br> printf("The pointer is a null pointer and cannot be dereferenced.");
-                            <br> }
-                            <br> printf("The address of a is %d", ptr);
-                            <br> return 0;
-                            <br> }
-                        </p>
+                        <pre>
+                            <code>
+                             #include &lt;stdio.h&gt;
+                             int main()
+                             {
+                                int a = 34;
+                                int *ptr = NULL; // when we dereference this value the program crashes so to stay safe we do
+                                if (ptr != NULL) //for error handling
+                                {
+                                    printf("The value at ptr is %d", *ptr); // dereferencing to print the value
+                                }
+                                else
+                                {
+                                    printf("The pointer is a null pointer and cannot be dereferenced.");
+                                }
+                                printf("The address of a is %d", ptr);
+                                return 0;
+                             }
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

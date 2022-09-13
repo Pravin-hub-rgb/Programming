@@ -63,108 +63,137 @@
             </div>
             <div class="in">
                 <h3>Defining a structure</h3>
-                <p>
-                    struct [structure_name]
-                    <br>{
-                    <br>//data_type var 1
-                    <br>//data_type var 2
-                    <br>//data_type var 3 ..
-                    <br>}
-                    <br>[structure_variables];
-                </p>
-                <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            struct [structure_name]
+                            {
+                                //data_type var 1
+                                //data_type var 2
+                                //data_type var 3 ..
+                            }
+                            [structure_variables]; 
+                        </code>
+                    </pre>
+                </div>
+                <div class="wh">
                     <p>Defining a structure to store students ID, marks and favourite character</p>
-                    <div class="in">
-                        <p>
-                            struct Student
-                            <br>{
-                            <br>int id;
-                            <br>int marks;
-                            <br>char fav_char;
-                            <br> } s1,s2,s3;
-                            <br>// new datatype whose name is student and this is achieved by structure;
-                        </p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                struct Student
+                                {
+                                    int id;
+                                    int marks;
+                                    char fav_char;
+                                } s1,s2,s3;
+                                // new datatype whose name is student and this is achieved by structure; 
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
             <div class="in">
                 <h3>Declaring a structure;</h3>
                 <p>We can either declare a structure along with structure definition or separately.</p>
-                <div class="in">
-                    <p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
                         //Declaring a structure along with structure definition
-                        <br>#include &lt;stdio.h&gt;
-                        <br>struct Employee
-                        <br>{
-                        <br>int id;
-                        <br>char name[53];
-                        <br>float marks;
-                        <br> };
-                        <br>struct Employee e1,e2;
-                        <br> int main()
-                        <br>{
-                        <br>return 0;
-                        <br> }
-                    </p>
+                        #include &lt;stdio.h&gt;
+                        struct Employee
+                        {
+                            int id;
+                            char name[53];
+                            float marks;
+                         };
+
+                        struct Employee e1,e2;
+
+                         int main()
+                        {
+                            return 0;
+                        }
+                    </code>
+                    </pre>
                 </div>
-                <div class="in">
-                    <p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
                         //Declaring a structure separate from structure definition
-                        <br>#include &lt;stdio.h&gt;
-                        <br>struct Employee
-                        <br>{
-                        <br>int id;
-                        <br>char name[53];
-                        <br>float marks;
-                        <br> } e1,e2;
-                        <br>
-                        <br> int main()
-                        <br>{
-                        <br>struct Employee tt;
-                        <br>//this creates one more variables
-                        <br>return 0;
-                        <br> }
-                    </p>
+                        #include &lt;stdio.h&gt;
+                        struct Employee
+                        {
+                            int id;
+                            char name[53];
+                            float marks;
+                        } e1,e2;
+                        
+                         int main()
+                        {
+                            struct Employee tt;
+                            //this creates one more variables
+                            return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
             <div class="in">
                 <h3>Initializing a structure;</h3>
                 <p>We can either initialize a structure along with structure definition or separately.</p>
-                <div class="in">
-                    <p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
                         //Initializing a structure along with structure definition
-                        <br>#include &lt;stdio.h&gt;
-                        <br>struct Employee
-                        <br>{
-                        <br>int id;
-                        <br>float marks;
-                        <br> };
-                        <br>struct Employee e1,e2;
-                        <br> int main()
-                        <br>{
-                        <br>struct Employee e1;
-                        <br>e1.id = 12;
-                        <br>e1.marks = 34.12;
-                        <br>return 0;
-                        <br> }
-                    </p>
+                        #include &lt;stdio.h&gt;
+                        struct Employee
+                        {
+                            int id;
+                            float marks;
+                         };
+
+                        struct Employee e1,e2;
+
+                        int main()
+                        {
+                            struct Employee e1;
+                            e1.id = 12;
+                            e1.marks = 34.12;
+                            return 0;
+                         }
+                        </code>
+                        </pre>
                 </div>
-                <div class="in">
-                    <p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
                         //Initializing a structure separate from structure definition
-                        <br>#include &lt;stdio.h&gt;
-                        <br>struct Employee
-                        <br>{
-                        <br>int id;
-                        <br>float marks;
-                        <br> };
-                        <br>
-                        <br> int main()
-                        <br>{
-                        <br>struct Employee e1 = {12, 34.12};
-                        <br>return 0;
-                        <br> }
-                    </p>
+                        #include &lt;stdio.h&gt;
+                        struct Employee
+                        {
+                            int id;
+                            float marks;
+                         };
+                        
+                         int main()
+                        {
+                            struct Employee e1 = {12, 34.12};
+                            return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
             <div class="in">
@@ -177,40 +206,48 @@
                 </ul>
             </div>
             <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
+                
                 <button class="accordion">Full code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;string.h&gt;
-                        <br> struct Student
-                        <br> {
-                        <br> int id;
-                        <br> int marks;
-                        <br> char fav_char;
-                        <br> char name[34];
-                        <br> };
-                        <br> int main()
-                        <br> {
-                        <br> struct Student harry, ravi;
-                        <br> harry.id=1;
-                        <br> harry.marks=466;
-                        <br> strcpy(harry.name,"Harry Coder");
-                        <br> harry.fav_char='p';
-                        <br> ravi.id=2;
-                        <br> ravi.marks=466;
-                        <br> ravi.fav_char='p';
-                        <br> strcpy(ravi.name,"Ravi Kumar");
-                        <br> struct Student subham ={3,466,'p',"Subham Kumar"};
-                        <br> // printf("Harry got %d marks", harry.marks);
-                        <br> //quick quiz
-                        <br> // print all information of a given student
-                        <br> printf("Harry's full name is %s, ID is %d, marks = %d and favourite character = %c \n",harry.<br>name,harry.id,harry.marks,harry.fav_char);
-                        <br> printf("Ravi's full name is %s, ID is %d, marks = %d and favourite character = %c\n",ravi.name,<br>ravi.id,ravi.marks,ravi.fav_char);
-                        <br> printf("Subham's full name is %s, ID is %d, marks = %d and favourite character = %c\n",subham.<br>name,subham.id,subham.marks,subham.fav_char);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;string.h>
+                                struct Student
+                                {
+                                    int id;
+                                    int marks;
+                                    char fav_char;
+                                    char name[34];
+                                };
+                                int main()
+                                {
+                                    struct Student harry, ravi;
+                                    harry.id = 1;
+                                    harry.marks = 466;
+                                    strcpy(harry.name, "Harry Coder");
+                                    harry.fav_char = 'p';
+                                    ravi.id = 2;
+                                    ravi.marks = 466;
+                                    ravi.fav_char = 'p';
+                                    strcpy(ravi.name, "Ravi Kumar");
+                                    struct Student subham = {3, 466, 'p', "Subham Kumar"};
+                                    // printf("Harry got %d marks", harry.marks);
+                                    // quick quiz
+                                    // print all information of a given student
+                                    printf("Harry's full name is %s, ID is %d, marks = %d and favourite character = %c \n", harry.name, harry.id, harry.marks, harry.fav_char);
+                                    printf("Ravi's full name is %s, ID is %d, marks = %d and favourite character = %c\n", ravi.name,
+                                           ravi.id, ravi.marks, ravi.fav_char);
+                                    printf("Subham's full name is %s, ID is %d, marks = %d and favourite character = %c\n", subham.name, subham.id, subham.marks, subham.fav_char);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
+            </div>
             </div>
         </div>
 

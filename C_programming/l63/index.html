@@ -43,94 +43,102 @@
                 <br>So you have take input a number from user and check if it is a palindrome or not
                 <br>Your task is to implement a function which returns 1 if a number is a palindrome and return 0 if not
             </p>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">my code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;string.h&gt;
-                        <br>
-                        <br> int isPalindrome(char num[])
-                        <br> {
-                        <br> int len = strlen(num);
-                        <br> int res;
-                        <br> for (int i = 0; i &lt; (len / 2); i++)
-                        <br> {
-                        <br> if (num[i] == num[len - 1])
-                        <br> {
-                        <br> res = 1;
-                        <br> len--;
-                        <br> }
-                        <br> else
-                        <br> {
-                        <br> res = 0;
-                        <br> }
-                        <br> }
-                        <br> return res;
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> char num[10] = "";
-                        <br> printf("Enter a number to check whether it is a palindrome or not :");
-                        <br> scanf("%s", &num);
-                        <br>
-                        <br> if (isPalindrome(num))
-                        <br> {
-                        <br> printf("This number is a palindrome\n");
-                        <br> }
-                        <br> else
-                        <br> {
-                        <br> printf("This number is not a palindrome");
-                        <br> }
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;string.h>
+                                
+                                int isPalindrome(char num[])
+                                {
+                                    int len = strlen(num);
+                                    int res;
+                                    for (int i = 0; i &lt; (len / 2); i++)
+                                    {
+                                        if (num[i] == num[len - 1])
+                                        {
+                                            res = 1;
+                                            len--;
+                                        }
+                                        else
+                                        {
+                                            res = 0;
+                                        }
+                                    }
+                                    return res;
+                                }
+                                
+                                int main()
+                                {
+                                    char num[10] = "";
+                                    printf("Enter a number to check whether it is a palindrome or not :");
+                                    scanf("%s", &num);
+                                
+                                    if (isPalindrome(num))
+                                    {
+                                        printf("This number is a palindrome\n");
+                                    }
+                                    else
+                                    {
+                                        printf("This number is not a palindrome");
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br>
-                        <br> int isPalindrome(int num)
-                        <br> {
-                        <br> // reversing a number logic - dividing % it by 10
-                        <br> int reversed = 0;
-                        <br> int orignialNumber = num;
-                        <br> while (num != 0)
-                        <br> {
-                        <br> reversed = reversed * 10 + num % 10;
-                        <br> num = num / 10;
-                        <br> }
-                        <br> if (orignialNumber == reversed)
-                        <br> {
-                        <br> return 1;
-                        <br> }
-                        <br> else
-                        <br> {
-                        <br> return 0;
-                        <br> }
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int number;
-                        <br> printf("Enter a number to check whether it is a palindrome or not\n");
-                        <br> scanf("%d", &number);
-                        <br>
-                        <br> if (isPalindrome(number))
-                        <br> {
-                        <br> printf("This number is a palindrome\n");
-                        <br> }
-                        <br> else
-                        <br> {
-                        <br> printf("This number is not a palinddrome\n");
-                        <br> }
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                               #include &lt;stdio.h>
+
+                                int isPalindrome(int num)
+                                {
+                                    // reversing a number logic - dividing % it by 10
+                                    int reversed = 0;
+                                    int orignialNumber = num;
+                                    while (num != 0)
+                                    {
+                                        reversed = reversed * 10 + num % 10;
+                                        num = num / 10;
+                                    }
+                                    if (orignialNumber == reversed)
+                                    {
+                                        return 1;
+                                    }
+                                    else
+                                    {
+                                        return 0;
+                                    }
+                                }
+                                
+                                int main()
+                                {
+                                    int number;
+                                    printf("Enter a number to check whether it is a palindrome or not\n");
+                                    scanf("%d", &number);
+                                
+                                    if (isPalindrome(number))
+                                    {
+                                        printf("This number is a palindrome\n");
+                                    }
+                                    else
+                                    {
+                                        printf("This number is not a palinddrome\n");
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

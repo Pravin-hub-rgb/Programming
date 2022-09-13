@@ -34,8 +34,6 @@
         </div>
     </div>
 
-
-
     <div class="content-box">
         <h1>Dynamic Memory allocation: Malloc Calloc Realloc & Free()</h1>
         <p>
@@ -137,147 +135,162 @@
         </div>
         <div class="inside-content">
             <h2>Code Examples</h2>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">malloc()</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;stdlib.h&gt; //calloc malloc realloc and free are defined inside this header file
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> // use of malloc
-                        <br> int *ptr;
-                        <br> int n;
-                        <br> printf("Enter the size of teh array you want to create :");
-                        <br> scanf("%d",&n);
-                        <br> ptr = (int *)malloc(n * sizeof(int)); // create dynamic array of 10 size
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("Enter the value no %d of this :", i);
-                        <br> scanf("%d", &ptr[i]);
-                        <br> }
-                        <br>
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("The value %d of this array is %d\n", i, ptr[i]);
-                        <br> }
-                        <br>
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+                            
+                         #include &lt;stdio.h&gt;
+                         #include &lt;stdlib.h&gt; //calloc malloc realloc and free are defined inside this header file
+                        
+                         int main()
+                         {
+                            // use of malloc
+                            int *ptr;
+                            int n;
+                            printf("Enter the size of teh array you want to create :");
+                            scanf("%d",&n);
+                            ptr = (int *)malloc(n * sizeof(int)); // create dynamic array of 10 size
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("Enter the value no %d of this :", i);
+                                scanf("%d", &ptr[i]);
+                            }
+                            
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("The value %d of this array is %d\n", i, ptr[i]);
+                            }
+                            
+                            return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">calloc()</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;stdlib.h&gt;
-                        <br> int main()
-                        <br> {
-                        <br> int *ptr;
-                        <br> int n;
-                        <br> ptr = (int *)calloc(n, sizeof(int));
-                        <br> printf("Enter the size of teh array you want to create :");
-                        <br> scanf("%d", &n);
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("Enter the value no %d of this :", i);
-                        <br> scanf("%d", &ptr[i]);
-                        <br> //in calloc if we don't initailize it with any value it assigns 0
-                        <br> //so initializing is a extra task here that's why malloc is prefered
-                        <br> }
-                        <br>
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("The value %d of this array is %d\n", i, ptr[i]);
-                        <br> }
-                        <br>
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                         #include &lt;stdio.h&gt;
+                         #include &lt;stdlib.h&gt;
+                         int main()
+                         {
+                            int *ptr;
+                            int n;
+                            ptr = (int *)calloc(n, sizeof(int));
+                            printf("Enter the size of teh array you want to create :");
+                            scanf("%d", &n);
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("Enter the value no %d of this :", i);
+                                scanf("%d", &ptr[i]);
+                                //in calloc if we don't initailize it with any value it assigns 0
+                                //so initializing is a extra task here that's why malloc is prefered
+                            }
+                            
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("The value %d of this array is %d\n", i, ptr[i]);
+                            }
+                            
+                            return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">realloc()</button>
                 <div class="panel">
-                    <p>
+                    <pre>
+                        <code>
+
                         #include &lt;stdio.h&gt;
-                        <br> #include &lt;stdlib.h&gt;
-                        <br> int main()
-                        <br> {
-                        <br> // this all was allocated using calloc
-                        <br> int *ptr;
-                        <br> int n;
-                        <br> ptr = (int *)calloc(n, sizeof(int));
-                        <br> printf("Enter the size of teh array you want to create :");
-                        <br> scanf("%d", &n);
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("Enter the value no %d of this :", i);
-                        <br> scanf("%d", &ptr[i]);
-                        <br> // in calloc if we don't initailize it with any value it assigns 0
-                        <br> // so initializing is a extra task here that's why malloc is <br>prefered
-                        <br> }
-                        <br>
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("The value %d of this array is %d\n", i, ptr[i]);
-                        <br> }
-                        <br>
-                        <br> // from here we will allocate memory using realloc
-                        <br>
-                        <br> ptr = (int *)realloc(ptr,n*sizeof(int));
-                        <br> printf("Enter the size of the new array you want to create :");
-                        <br> scanf("%d", &n);
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("Enter the new value no %d of this :", i);
-                        <br> scanf("%d", &ptr[i]);
-                        <br>
-                        <br> }
-                        <br>
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("The new value %d of this array is %d\n", i, ptr[i]);
-                        <br> }
-                        <br>
-                        <br> return 0;
-                        <br> }
-                    </p>
+                         #include &lt;stdlib.h&gt;
+                         int main()
+                         {
+                             // this all was allocated using calloc
+                             int *ptr;
+                             int n;
+                             ptr = (int *)calloc(n, sizeof(int));
+                             printf("Enter the size of teh array you want to create :");
+                             scanf("%d", &n);
+                             for (int i = 0; i &lt; n; i++)
+                             {
+                                printf("Enter the value no %d of this :", i);
+                                scanf("%d", &ptr[i]);
+                                // in calloc if we don't initailize it with any value it assigns 0
+                                // so initializing is a extra task here that's why malloc is <br>prefered
+                             }
+                         
+                             for (int i = 0; i &lt; n; i++)
+                             {
+                                printf("The value %d of this array is %d\n", i, ptr[i]);
+                             }
+                         
+                             // from here we will allocate memory using realloc
+                         
+                             ptr = (int *)realloc(ptr,n*sizeof(int));
+                             printf("Enter the size of the new array you want to create :");
+                             scanf("%d", &n);
+                             for (int i = 0; i &lt; n; i++)
+                             {
+                                printf("Enter the new value no %d of this :", i);
+                                scanf("%d", &ptr[i]);
+                            
+                             }
+                         
+                             for (int i = 0; i &lt; n; i++)
+                             {
+                                printf("The new value %d of this array is %d\n", i, ptr[i]);
+                             }
+                         
+                             return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">free()</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br>
-                        <br> #include &lt;stdlib.h&gt; //calloc malloc realloc and free are defined inside this header file
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> // use of malloc
-                        <br> int *ptr;
-                        <br> int n;
-                        <br> ptr = (int *)malloc(n * sizeof(int)); // create dynamic array of 10 size
-                        <br> printf("Enter the size of teh array you want to create :");
-                        <br> scanf("%d",&n);
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("Enter the value no %d of this :", i);
-                        <br> scanf("%d", &ptr[i]);
-                        <br> }
-                        <br>
-                        <br> for (int i = 0; i &lt; n; i++)
-                        <br> {
-                        <br> printf("The value %d of this array is %d\n", i, ptr[i]);
-                        <br> }
-                        <br> free(ptr);
-                        <br>return 0;
-                        <br>}
-                    </p>
+                    <pre>
+                        <code>
+
+                        #include &lt;stdio.h&gt;                        
+                         #include &lt;stdlib.h&gt; //calloc malloc realloc and free are defined inside this header file
+                        
+                         int main()
+                         {
+                            // use of malloc
+                            int *ptr;
+                            int n;
+                            ptr = (int *)malloc(n * sizeof(int)); // create dynamic array of 10 size
+                            printf("Enter the size of teh array you want to create :");
+                            scanf("%d",&n);
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("Enter the value no %d of this :", i);
+                                scanf("%d", &ptr[i]);
+                            }
+                            
+                            for (int i = 0; i &lt; n; i++)
+                            {
+                                printf("The value %d of this array is %d\n", i, ptr[i]);
+                            }
+                            free(ptr);
+                            return 0;
+                        }
+                    </code>
+                    </pre>
                 </div>
             </div>
         </div>

@@ -43,39 +43,43 @@
                 <br>command.c add 45 4
                 <br>output: 49
             </p>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">solution</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;stdlib.h&gt;
-                        <br> #include &lt;string.h&gt;
-                        <br> int main(int argc, char *argv[])
-                        <br> {
-                        <br> char *operation;
-                        <br> int num1, num2;
-                        <br> operation = argv[1];
-                        <br> num1 = atoi(argv[2]); // as inside argv[] the value will be all string but we want int type
-                        <br> num2 = atoi(argv[3]); // so we use atoi() function which is available in stdlib.h library
-                        <br> if (strcmp(operation, "add") == 0)
-                        <br> {
-                        <br> printf("%d\n", num1 + num2);
-                        <br> }
-                        <br> else if (strcmp(operation, "subtract") == 0)
-                        <br> {
-                        <br> printf("%d\n", num1 - num2);
-                        <br> }
-                        <br> else if (strcmp(operation, "multiply") == 0)
-                        <br> {
-                        <br> printf("%d\n", num1 * num2);
-                        <br> }
-                        <br> else if (strcmp(operation, "divide") == 0)
-                        <br> {
-                        <br> printf("%d\n", num1 / num2);
-                        <br> }
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;stdlib.h>
+                                #include &lt;string.h>
+                                int main(int argc, char *argv[])
+                                {
+                                    char *operation;
+                                    int num1, num2;
+                                    operation = argv[1];
+                                    num1 = atoi(argv[2]); // as inside argv[] the value will be all string but we want int type
+                                    num2 = atoi(argv[3]); // so we use atoi() function which is available in stdlib.h library
+                                    if (strcmp(operation, "add") == 0)
+                                    {
+                                        printf("%d\n", num1 + num2);
+                                    }
+                                    else if (strcmp(operation, "subtract") == 0)
+                                    {
+                                        printf("%d\n", num1 - num2);
+                                    }
+                                    else if (strcmp(operation, "multiply") == 0)
+                                    {
+                                        printf("%d\n", num1 * num2);
+                                    }
+                                    else if (strcmp(operation, "divide") == 0)
+                                    {
+                                        printf("%d\n", num1 / num2);
+                                    }
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

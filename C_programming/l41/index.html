@@ -36,66 +36,73 @@
 
     <div class="content-box">
         <h1>HTML parser exercise</h1>
-        <p>
-            we have to extract the data inside a html tag.
-            <br> &lt;h1&gt; this is a heading &lt;/h1&gt;
-            <br>and remove the space form staring and from end
-            <br>finally print it
-        </p>
-        <button class="accordion">code</button>
-        <div class="panel">
-            <p>
-                #include &lt;stdio.h&gt;
-                <br> #include &lt;string.h&gt;
-                <br>
-                <br> void parser(char *string)
-                <br> {
-                <br> int in = 0; // variable to track whether we are inside the tag
-                <br> int index = 0;
-                <br> for (int i = 0; i &lt; strlen(string); i++)
-                <br> {
-                <br> if (string[i] == '&lt;')
-                <br> {
-                <br> in = 1; // won't collect
-                <br> continue;
-                <br> }
-                <br> else if (string[i] == '&gt;')
-                <br> {
-                <br> in = 0;
-                <br> continue;
-                <br> }
-                <br> if(in==0)
-                <br> {
-                <br> //we are inside the string between tags
-                <br> string[index]=string[i]; //modifying the same string.
-                <br> index ++;
-                <br> }
-                <br> }
-                <br> string[index]='\0';
-                <br> //now we have to remove the trailing spaces from the begining
-                <br> while(string[0]==' ')
-                <br> {
-                <br> //shift the string to the left
-                <br> for(int j=0;j&lt;strlen(string);j++)
-                <br> {
-                <br> string[j]=string[j+1];
-                <br> }
-                <br> }
-                <br> //now we have to remove the trailing spaces from the end
-                <br> while(string[strlen(string)-1]==' ')
-                <br> {
-                <br> string[strlen(string)-1] ='\0';
-                <br> }
-                <br> }
-                <br>
-                <br> int main()
-                <br> {
-                <br> char string[] = "&lt;h1&gt; this is a heading &lt;/h1&gt;";
-                <br> parser(string);
-                <br> printf("The parsed string is ~~%s~~", string);
-                <br> return 0;
-                <br> }
-            </p>
+        <ul>
+            <li>we have to extract the data inside a html tag.</li>
+            <li> &lt;h1&gt; this is a heading &lt;/h1&gt;</li>
+            <li>and remove the space form staring and from end</li>
+            <li>finally print it</li>
+        </ul>
+        <div class="code">
+            <div class="dotc"></div>
+
+            <button class="accordion">code</button>
+            <div class="panel">
+                <pre>
+                <code>
+
+                        #include &lt;stdio.h>
+                        #include &lt;string.h>
+                        
+                        void parser(char *string)
+                        {
+                            int in = 0; // variable to track whether we are inside the tag
+                            int index = 0;
+                            for (int i = 0; i &lt; strlen(string); i++)
+                            {
+                                if (string[i] == '&lt;')
+                                {
+                                    in = 1; // won't collect
+                                    continue;
+                                }
+                                else if (string[i] == '>')
+                                {
+                                    in = 0;
+                                    continue;
+                                }
+                                if(in==0)
+                                {
+                                    //we are inside the string between tags
+                                    string[index]=string[i]; //modifying the same string.
+                                    index ++;
+                                }
+                            }
+                            string[index]='\0';
+                            //now we have to remove the trailing spaces  from the begining
+                            while(string[0]==' ')
+                            {
+                                //shift the string to the left
+                                for(int j=0;j&lt;strlen(string);j++)
+                                {
+                                    string[j]=string[j+1];
+                                }
+                            }
+                             //now we have to remove the trailing spaces  from the end
+                             while(string[strlen(string)-1]==' ')
+                             {
+                                string[strlen(string)-1] ='\0';
+                             }
+                        }
+                        
+                        int main()
+                        {
+                            char string[] = "&lt;h1>     this is a heading     &lt;/h1>";
+                            parser(string);
+                            printf("The parsed string is ~~%s~~", string);
+                            return 0;
+                        }
+                </code>
+            </pre>
+            </div>
         </div>
     </div>
     <script src="../main.js"></script>

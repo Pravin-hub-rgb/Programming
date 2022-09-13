@@ -59,44 +59,61 @@
             <div class="in">
                 <ul>
                     <li>
-                        We can't add, multiply or divide two addresses. (Subtraction is possible)
-                        <br>
-                        <p class="in">
-                            E.g:
+                        We can't add, multiply or divide two addresses. (Subtraction is possible)                        
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
 
-                            <br> int a, b, *p, *q;
-                            <br>
-                            <br> &a*&amp;b; // Not Possible
-                            <br>
-                            <br> &a+&amp;b; // Not Possible
-                            <br>
-                            <br> p*q; // Not Possible
-                        </p>
+                                    // E.g:
+                                    int a, b, *p, *q;
+                                    
+                                    &a*&amp;b; // Not Possible
+                                    
+                                    &a+&amp;b; // Not Possible
+                                    
+                                    p*q; // Not Possible
+                                </code>
+                            </pre>
+                        </div>
                     </li>
                     <li>We can’t multiply & divide an address with integer value.
-                        <p class="in">
-                            E.g :
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
 
-                            <br> &a*5; // Not Possible
-                            <br>
-                            <br> p/5; // Not Possible
-                        </p>
+                                    // E.g :
+
+                                    &a*5; // Not Possible
+                                   
+                                    p/5; // Not Possible
+                                </code>
+                            </pre>
+                            
+                        </div>
                     </li>
                     <li>
                         We can add or subtract integer to/from an address.
-                        <p class="in">
-                            E.g :
-                            <br>
-                            <br> int a,b; // Let's Suppose &a is 1000
-                            <br>
-                            <br> int *p, *q;
-                            <br>
-                            <br> p=&amp;a;
-                            <br>
-                            <br> q=&amp;b;
-                            <br>
-                            <br> p+1; // It is possible [1000+1 = 1004]
-                        </p>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
+                                
+                              // E.g :
+                             
+                              int a,b; // Let's Suppose &a is 1000
+                             
+                              int *p, *q;
+                             
+                              p=&amp;a;
+                             
+                              q=&amp;b;
+                             
+                              p+1; // It is possible [1000+1 = 1004]
+                            </code>
+                        </pre>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -113,18 +130,24 @@
             </div>
             <div class="in">
                 <h3>Doing Arithmetic</h3>
-                <p>
-                    #include &lt;stdio.h&gt;
-                    <br> int main()
-                    <br> {
-                    <br> int a = 34;
-                    <br> int *ptra = &amp;a;
-                    <br> printf("%d", ptra); // lets say this is x
-                    <br> printf("\n%d", ptra+1); // so this prints x+4, cuse that's the size of int
-                    <br> return 0;
-                    <br> } //we can use other operator too.
-                </p>
-                <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                int main()
+                                {
+                                int a = 34;
+                                int *ptra = &amp;a;
+                                printf("%d", ptra); // lets say this is x
+                                printf("\n%d", ptra+1); // so this prints x+4, cuse that's the size of int
+                                return 0;
+                                } //we can use other operator too. 
+                        </code>
+                    </pre>
+                </div>
+                <div class="wh">
                     <p>Output</p>
                     <p>
                         3456780

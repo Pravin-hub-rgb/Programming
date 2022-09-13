@@ -47,97 +47,118 @@
             <div class="in">
                 <h3>Command Line Example</h3>
                 <ul>
-                    <li>FFmpeg is a free and open-source project consisting of a vast software suite of libraries and programs for handling video, audio, and other multimedia files and streams.</li>
+                    <li>FFmpeg is a free and open-source project consisting of a vast software suite of libraries and
+                        programs for handling video, audio, and other multimedia files and streams.</li>
                     <li>Ffmpeg.exe is a command line utility written in C language.</li>
                     <li>Other examples include git, brew, apt-get etc.</li>
                 </ul>
             </div>
             <div class="in">
                 <h3>Sample program</h3>
-                <div class="wh">
-                    <p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
                         #include &lt;stdio.h>
-                        <br><br>int main(int argc, char* argv[]) //&star;&star;&star;
-                        <br>{
-                        <br>printf("argc is %d\n", argc);
-                        <br>if(argc >= 2) // if nothing is passed then the value of argc becomes 1.
-                        <br>{
-                        <br>printf("The arguments supplied are : ");
-                        <br>for(int i=0; i&lt;argc; i++)
-                        <br>{
-                        <br>printf("%s\t", argv[]);
-                        <br>}
-                        <br>}
-                        <br> return 0;
-                        <br>}
-                    </p>
+                        int main(int argc, char* argv[]) //&star;&star;&star;
+                        {
+                            printf("argc is %d\n", argc);
+                            if(argc >= 2) // if nothing is passed then the value of argc becomes 1.
+                            {
+                                printf("The arguments supplied are : ");
+                                for(int i=0; i&lt;argc; i++)
+                                {
+                                    printf("%s\t", argv[]);
+                                }
+                            }
+                            return 0;
+                        }
+                    </code>
+                    </pre>
                 </div>
                 <div class="wh">
                     <p>when prog.exe file will be created then we pass the arguments like
                         <br><b>prog.exe harry code</b> in teminal
-                        <br>Now the value in argc is 3, how? &rarr; we have wrote 3 words 'filename.exe'(with index 0) , 'harry'(with index 1) and 'code'(with index 2) that's why the value in argc becomes 3.
+                        <br>Now the value in argc is 3, how? &rarr; we have wrote 3 words 'filename.exe'(with index 0) ,
+                        'harry'(with index 1) and 'code'(with index 2) that's why the value in argc becomes 3.
                     </p>
                 </div>
             </div>
             <div class="in">
                 <h3>More Example</h3>
-                <div class="wh">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">Simple one</button>
                     <div class="panel">
-                        <p>
+                        <pre>
+                            <code>
                             #include &lt;stdio.h>
-                            <br>
-                            <br> int main(int argc, char const *argv[])
-                            <br> {
-                            <br> printf("The value of argc is %d\n",argc);
-                            <br> return 0;
-                            <br> }
-
-                        </p>
-                    </div>
-                    <div class="in">
-                        <p>
-                            <b>inside terminal I wrote</b>
-                            <br>.\code.exe hi hellow how do you do
-                            <br><b>output was &rarr;</b> The value of argc is 7
-                        </p>
-                    </div>
+                            
+                             int main(int argc, char const *argv[])
+                             {
+                                printf("The value of argc is %d\n",argc);
+                                return 0;
+                             }
+                            </code>
+                        </pre>
+                    </div>                    
                 </div>
                 <div class="wh">
+                    <p>
+                        <b>inside terminal I wrote</b>
+                        <br>.\code.exe hi hellow how do you do
+                        <br><b>output was &rarr;</b> The value of argc is 7
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">using for loop to print</button>
                     <div class="panel">
-                        <p>
+                        <pre>
+                            <code>
                             #include &lt;stdio.h>
-                            <br>
-                            <br> int main(int argc, char const *argv[])
-                            <br> {
-                            <br> printf("The value of argc is %d\n",argc);
-                            <br> for (int i = 0; i &lt; argc; i++)
-                            <br> {
-                            <br> printf("This argument at index number %d has value of %s \n", i, <br>argv[i]);
-                            <br> }
-                            <br>
-                            <br> return 0;
-                            <br> }
-                        </p>
-                        <p class="in">
-                            <b>Terminal command &rarr;</b> .\code.exe hi hellow how do you do
-                            <br><b>output:</b>
-                            <br> This argument at index number 0 has value of C:\Users\Atul <br>Main\BCA\C_programming\l68\program\code.exe
-                            <br> This argument at index number 1 has value of hi
-                            <br> This argument at index number 2 has value of hellow
-                            <br> This argument at index number 3 has value of how
-                            <br> This argument at index number 4 has value of do
-                            <br> This argument at index number 5 has value of you
-                            <br> This argument at index number 6 has value of do
-                        </p>
+                            
+                             int main(int argc, char const *argv[])
+                             {
+                                printf("The value of argc is %d\n",argc);
+                                for (int i = 0; i &lt; argc; i++)
+                                {
+                                    printf("This argument at index number %d has value of %s \n", i, <br>argv[i]);
+                                }
+                                
+                                return 0;
+                             }
+                            </code>
+                        </pre>
                     </div>
                 </div>
-                <p class="wh">
-                    <b>Usage &rarr;</b> this could be used with File I/O functions and we can take and store value of arguments that are given in terminal and store that inside a file.
-                </p>
+                <div class="code">
+                    <pre>
+                        <code>
+                                
+                            <b>Terminal command &rarr;</b> .\code.exe hi hellow how do you do
+                            <b>output:</b>
+                             This argument at index number 0 has value of C:\Users\A--e3\Main\BCA\C_programming\l68\program\code.exe
+                             This argument at index number 1 has value of hi
+                             This argument at index number 2 has value of hellow
+                             This argument at index number 3 has value of how
+                             This argument at index number 4 has value of do
+                             This argument at index number 5 has value of you
+                             This argument at index number 6 has value of do
+                        </code>
+                    </pre>
+                </div>
+
             </div>
+            <p class="wh">
+                <b>Usage &rarr;</b> this could be used with File I/O functions and we can take and store value of
+                arguments that are given in terminal and store that inside a file.
+            </p>
         </div>
+    </div>
     </div>
     <script src="../main.js"></script>
 </body>

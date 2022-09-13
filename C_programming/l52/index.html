@@ -77,25 +77,29 @@
                     <li>Hence it is not recommended to use pointer arithmetic with void pointer.</li>
                 </ul>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">code</button>
                 <div class="panel">
-                    <p>
+                    <pre>
+                        <code>
                         #include &lt;stdio.h&gt;
-                        <br> int main()
-                        <br> {
-                        <br> int a=345;
-                        <br> float b=8.3;
-                        <br> void *ptr;
-                        <br> ptr = &amp;a;
-                        <br> // printf("The value of a is %d",*ptr); //this is not allowed
-                        <br> printf("The value of a is %d",*((int*)ptr)); //compiler is saying that it was a void pointer before
-                        <br> //but now it is a interger pointer, so now by dereferencing it we want the value which it is pointing now
-                        <br> // we can change its value also by doing typecasting
-                        <br> ptr = &amp;b;
-                        <br> printf("\nThe value of b is %f",*((float*)ptr));
-                        <br> return 0; }
-                    </p>
+                         int main()
+                         {
+                            int a=345;
+                            float b=8.3;
+                            void *ptr;
+                            ptr = &amp;a;
+                            // printf("The value of a is %d",*ptr); //this is not allowed
+                            printf("The value of a is %d",*((int*)ptr)); //compiler is saying that it was a void pointer before
+                            //but now it is a interger pointer, so now by dereferencing it we want the value which it is pointing now
+                            // we can change its value also by doing typecasting
+                            ptr = &amp;b;
+                            printf("\nThe value of b is %f",*((float*)ptr));
+                            return 0; 
+                        }
+                    </code>
+                    </pre>
                 </div>
             </div>
         </div>

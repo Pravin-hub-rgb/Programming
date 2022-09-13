@@ -40,8 +40,11 @@
         <div class="inside-content">
             <h2>What is a Dangling Pointing</h2>
             <ul>
-                <li>A pointer pointing to a freed memory location or the location whose content has be deleted is called a <i>dangling pointer</i></li>
-                <li>Dangling pointers arise during object destruction when an object that has an incoming reference is deleted or deallocated, without modifiying the value of the pointer, so that the pointer still points to the memory location of the deallocated
+                <li>A pointer pointing to a freed memory location or the location whose content has be deleted is called
+                    a <i>dangling pointer</i></li>
+                <li>Dangling pointers arise during object destruction when an object that has an incoming reference is
+                    deleted or deallocated, without modifiying the value of the pointer, so that the pointer still
+                    points to the memory location of the deallocated
                     memory.
                 </li>
                 <li>Dangling means something which is hanging.</li>
@@ -58,92 +61,112 @@
                     <ul>
                         <li>When memory is deallocated, the pointer keeps pointing to the freed space.</li>
                     </ul>
-                    <div class="in">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
                             //Example
-                            <br>char *str = "Hi Harry!";
-                            <br>int a;
-                            <br>int *ptr = (int *) malloc(sizeof(int));
-                            <br>free(ptr); // ptr now becomes a dangling pointer
-                            <br> ptr = NULL; // ptr no longer dangling
-                        </p>
+                            char *str = "Hi Harry!";
+                            int a;
+                            int *ptr = (int *) malloc(sizeof(int));
+                            free(ptr); // ptr now becomes a dangling pointer
+                            ptr = NULL; // ptr no longer dangling
+                        </code>
+                        </pre>
                     </div>
                 </div>
                 <div class="wh">
                     <h3>Returning local variables in function calls</h3>
-                    <div class="in">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
                             #include &lt;stdio.h&gt;
-                            <br>int *myFunc() {
-                            <br>// a is local variable and goes out of scope on function return over.
-                            <br>int a = 34;
-                            <br>return &amp;a;
-                            <br>}
-                            <br><br>
-                            <br>int main() {
-                            <br>int *ptr = myFunc(); // ptr points to invalid location
-                            <br>printf("%d", *ptr);
-                            <br>return 0;
-                            <br>}
-                        </p>
+                            int *myFunc() {
+                                // a is local variable and goes out of scope on function return over.
+                                int a = 34;
+                                return &amp;a;
+                            }
+                            
+                            int main() {
+                                int *ptr = myFunc(); // ptr points to invalid location
+                                printf("%d", *ptr);
+                                return 0;
+                            }
+                        </code>
+                        </pre>
                     </div>
-                    <div class="in">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+                                
                             #include &lt;stdio.h&gt;
-                            <br> #include &lt;stdlib.h&gt;
-                            <br>
-                            <br> int *functionDangling() // int* as we are going to return an address
-                            <br> {
-                            <br> int a, b, sum;
-                            <br> a = 34;
-                            <br> b = 364;
-                            <br> sum = a + b;
-                            <br> <br> // the scope of the variable 'sum' is local so it get destroyed <br>outside the function
-                            <br> return &sum;
-                            <br> }
-                            <br> int main()
-                            <br>{
-                            <br> // case 2: Function returning local variable address
-                            <br> int *dangPtr = functionDangling(); //dangPtr is now a dangling pointer
-                            <br> return 0;
-                            <br>}
-                        </p>
+                             #include &lt;stdlib.h&gt;
+                            
+                             int *functionDangling() // int* as we are going to return an address
+                             {
+                                int a, b, sum;
+                                a = 34;
+                                b = 364;
+                                sum = a + b;
+                                // the scope of the variable 'sum' is local so it get destroyed <br>outside the function
+                                return &sum;
+                             }
+                             int main()
+                            {
+                                // case 2: Function returning local variable address
+                                int *dangPtr = functionDangling(); //dangPtr is now a dangling pointer
+                                return 0;
+                            }
+                        </code>
+                        </pre>
                     </div>
                 </div>
                 <div class="wh">
                     <h3>Vaiable going out of scope</h3>
-                    <div class="in">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
                             #include &lt;stdio.h&gt;
-                            <br>
-                            <br>int main() {
-                            <br>int *ptr;
-                            <br>{ //scope start
-                            <br>int i = 0;
-                            <br>ptr = &amp;i; // ptr points to invalid location
-                            <br>} // scope ends. After this scope all the variable inside gets destroyed
-                            <br>// ptr is now a dangling pointer
-                            <br>printf("%d", *ptr);
-                            <br>return 0;
-                            <br>}
-                        </p>
+                            
+                            int main() {
+                                int *ptr;
+                                { //scope start
+                                    int i = 0;
+                                    ptr = &amp;i; // ptr points to invalid location
+                                } // scope ends. After this scope all the variable inside gets destroyed
+                                // ptr is now a dangling pointer
+                                printf("%d", *ptr);
+                                return 0;
+                            }
+                        </code>
+                        </pre>
                     </div>
-                    <div class="in">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
                             #include &lt;stdio.h&gt;
-                            <br> int main()
-                            <br>{
-                            <br> //case 3: If a variable goes out of scope
-                            <br> int *danglingPtr3;
-                            <br> {
-                            <br> int a = 12;
-                            <br> danglingPtr3 = &amp;a; // as 'a' is only available inside this scope so outside the scope it goes out of scope
-                            <br> }
-                            <br> //here variable 'a' goes out of scope which means danglingPtr3 is pointing to a location which is
-                            <br>// free and hencedanglingPtr3 is now a dangling pointer
-                            <br> return 0;
-                            <br> }
-                        </p>
+                             int main()
+                            {
+                                //case 3: If a variable goes out of scope
+                                int *danglingPtr3;
+                                {
+                                    int a = 12;
+                                    danglingPtr3 = &amp;a; // as 'a' is only available inside this scope so outside the scope it goes out of scope
+                                }
+                                //here variable 'a' goes out of scope which means danglingPtr3 is pointing to a location which is
+                                // free and hencedanglingPtr3 is now a dangling pointer
+                                return 0;
+                             }
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

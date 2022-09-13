@@ -42,83 +42,91 @@
             </p>
         </div>
         <div class="inside-content">
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">my code</button>
                 <div class="panel">
-                    <p>
-                        <br> #include &lt;stdio.h>
-                        <br> #include &lt;math.h>
-                        <br>
-                        <br> #define PI 3.14159265
-                        <br>
-                        <br> float euclidDis(int x1, int y1, int x2, int y2, float (*ptr)(float))
-                        <br> {
-                        <br> float result;
-                        <br> result = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
-                        <br> printf("The distance between two given points are : %f\n", result);
-                        <br> printf("The area of the circle with radius %f is %f",result, ptr(result));
-                        <br> }
-                        <br> float circleArea(float radius)
-                        <br> {
-                        <br> return (PI * pow(radius, 2));
-                        <br> }
-                        <br> int main()
-                        <br> {
-                        <br> float (*rad)(float);
-                        <br> rad = circleArea;
-                        <br> int x1, y1, x2, y2;
-                        <br> printf("Enter the coordinates of first point : \n");
-                        <br> scanf("%d", &x1);
-                        <br> scanf("%d", &y1);
-                        <br> printf("\nEnter the coordinates of second point : ");
-                        <br> scanf("%d", &x2);
-                        <br> scanf("%d", &y2);
-                        <br> euclidDis(x1, y1, x2, y2, rad);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;math.h>
+                                
+                                #define PI 3.14159265
+                                
+                                float euclidDis(int x1, int y1, int x2, int y2, float (*ptr)(float))
+                                {
+                                    float result;
+                                    result = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+                                    printf("The distance between two given points are : %f\n", result);
+                                    printf("The area of the circle with radius %f is %f",result, ptr(result));   
+                                }
+                                float circleArea(float radius)
+                                {    
+                                    return (PI * pow(radius, 2));
+                                }
+                                int main()
+                                {
+                                    float (*rad)(float);
+                                    rad = circleArea;
+                                    int x1, y1, x2, y2;
+                                    printf("Enter the coordinates of first point : \n");
+                                    scanf("%d", &x1);
+                                    scanf("%d", &y1);
+                                    printf("\nEnter the coordinates of second point : ");
+                                    scanf("%d", &x2);
+                                    scanf("%d", &y2);
+                                    euclidDis(x1, y1, x2, y2, rad);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">harry code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h>
-                        <br> #include &lt;stdlib.h>
-                        <br> #include &lt;math.h>
-                        <br>
-                        <br> float Edistance(int x1, int y1, int x2, int y2)
-                        <br> {
-                        <br> int a = (y2-y1)*(y2-y1)+(x2-x1)*(x2-x1);
-                        <br> return sqrt(a);
-                        <br> }
-                        <br>
-                        <br> float areaOfCircle(int x1, int y1, int x2, int y2, float (*distance)(int x1, int y1, int x2, int y2))
-                        <br> {
-                        <br> return distance(x1, y1, x2, y2);
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int x1, y1, x2, y2;
-                        <br> float dst;
-                        <br> // Take x1, y1 and x2, y2 from the user using scanf
-                        <br> printf("Enter the value of x1\n");
-                        <br> scanf("%d", &x1);
-                        <br>
-                        <br> printf("Enter the value of x1\n");
-                        <br> scanf("%d", &y1);
-                        <br>
-                        <br> printf("Enter the value of x1\n");
-                        <br> scanf("%d", &x2);
-                        <br>
-                        <br> printf("Enter the value of x1\n");
-                        <br> scanf("%d", &y2);
-                        <br> dst = areaOfCircle(x1, y1, x2, y2, Edistance);
-                        <br> printf("The distance between these points is %.2f\n", dst);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;stdlib.h>
+                                #include &lt;math.h>
+                                
+                                float Edistance(int x1, int y1, int x2, int y2)
+                                {
+                                    int a = (y2-y1)*(y2-y1)+(x2-x1)*(x2-x1);
+                                    return sqrt(a);
+                                }
+                                
+                                float areaOfCircle(int x1, int y1, int x2, int y2, float (*distance)(int x1, int y1, int x2, int y2))
+                                {
+                                    return distance(x1, y1, x2, y2);
+                                }
+                                
+                                int main()
+                                {
+                                    int x1, y1, x2, y2;
+                                    float dst;
+                                    // Take x1, y1 and x2, y2 from the user using scanf
+                                    printf("Enter the value of x1\n");
+                                    scanf("%d", &x1);
+                                
+                                    printf("Enter the value of x1\n");
+                                    scanf("%d", &y1);
+                                
+                                    printf("Enter the value of x1\n");
+                                    scanf("%d", &x2);
+                                
+                                    printf("Enter the value of x1\n");
+                                    scanf("%d", &y2);
+                                    dst = areaOfCircle(x1, y1, x2, y2, Edistance);
+                                    printf("The distance between these points is %.2f\n", dst);
+                                    return 0;
+                                }                                
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

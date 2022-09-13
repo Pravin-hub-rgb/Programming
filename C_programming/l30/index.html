@@ -53,69 +53,75 @@
                 <br>**
                 <br>* &rarr; Reversed triangular star pattern */
             </p>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">Harry Code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> void starPattern(int rows)
-                        <br> {
-                        <br> for (int i = 0; i &lt;rows; i++)
-                        <br> {
-                        <br> for (int j = 0; j &lt;= i; j++)
-                        <br> {
-                        <br> printf("*");
-                        <br> }
-                        <br>
-                        <br> printf("\n");
-                        <br> }
-                        <br> }
-                        <br> void revStarPattern(int rows)
-                        <br> {
-                        <br> for (int i = 0; i &lt; rows; i++)
-                        <br> {
-                        <br> for (int j = 0; j &lt;= rows - i - 1; j++)
-                        <br> {
-                        <br> printf("*");
-                        <br> }
-                        <br>
-                        <br> printf("\n");
-                        <br> }
-                        <br> }
-                        <br> int main()
-                        <br> {
-                        <br> int rows, type;
-                        <br> printf("type 0 - star pattern \n type 1 - reverse star pattern :");
-                        <br> scanf("%d",&type);
-                        <br> printf("\nHow many rows do you want ? :");
-                        <br> scanf("%d\n", &rows);
-                        <br> if (type == 0)
-                        <br> {
-                        <br> starPattern(rows);
-                        <br> }
-                        <br> else if (type == 1)
-                        <br> {
-                        <br> revStarPattern(rows);
-                        <br> }
-                        <br> else {
-                        <br> printf("You have entered an invalid choice");
-                        <br> }
-                        <br>
-                        <br> return 0;
-                        <br> } //Writing the reverse star code like this also works
-                        <br>// void revStarPattern(int rows)
-                        <br>//{
-                        <br>// for (int i = rows-1; i >= 0; i--)
-                        <br>// {
-                        <br>// for (int j = 0; j &lt;= i; j++)
-                        <br>// {
-                        <br>// printf("*");
-                        <br>// }
-                        <br>//
-                        <br>// printf("\n");
-                        <br>// }
-                        <br>//}
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                void starPattern(int rows)
+                                {
+                                    for (int i = 0; i &lt; rows; i++)
+                                    {
+                                        for (int j = 0; j &lt;= i; j++)
+                                        {
+                                            printf("*");
+                                        }
+                                
+                                        printf("\n");
+                                    }
+                                }
+                                void revStarPattern(int rows)
+                                {
+                                    for (int i = 0; i &lt; rows; i++)
+                                    {
+                                        for (int j = 0; j &lt;= rows - i - 1; j++)
+                                        {
+                                            printf("*");
+                                        }
+                                
+                                        printf("\n");
+                                    }
+                                }
+                                int main()
+                                {
+                                    int rows, type;
+                                    printf("type 0 - star pattern \n type 1 - reverse star pattern :");
+                                    scanf("%d", &type);
+                                    printf("\nHow many rows do you want ? :");
+                                    scanf("%d\n", &rows);
+                                    if (type == 0)
+                                    {
+                                        starPattern(rows);
+                                    }
+                                    else if (type == 1)
+                                    {
+                                        revStarPattern(rows);
+                                    }
+                                    else
+                                    {
+                                        printf("You have entered an invalid choice");
+                                    }
+                                
+                                    return 0;
+                                } // Writing the reverse star code like this also works
+                                // void revStarPattern(int rows)
+                                //{
+                                // for (int i = rows-1; i >= 0; i--)
+                                // {
+                                // for (int j = 0; j &lt;= i; j++)
+                                // {
+                                // printf("*");
+                                // }
+                                //
+                                // printf("\n");
+                                // }
+                                //}
+                                
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

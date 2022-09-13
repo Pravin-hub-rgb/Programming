@@ -34,8 +34,6 @@
         </div>
     </div>
 
-
-
     <div class="content-box">
         <h1>Employee manager exercise</h1>
 
@@ -55,31 +53,35 @@
             <br>thake input from user
             <br>do same for other 2 employee
         </div>
-        <div class="in">
+        <div class="code">
+            <div class="dotc"></div>
             <button class="accordion">code</button>
             <div class="panel">
-                <p>
+                <pre>
+                    <code>
+                        
                     #include &lt;stdio.h&gt;
-                    <br> #include &lt;stdlib.h&gt;
-                    <br> int main()
-                    <br> {
-                    <br> int chars, i = 0;
-                    <br> char *ptr;
-                    <br> while (i &lt; 3)
-                    <br> {
-                    <br> printf("Employee %d: Enter the no. of characters in your Employee ID:",i+1);
-                    <br> scanf("%d",&chars);
-                    <br> getchar(); //often the scanf skips to take the value from user so we use getchar() so that we <br>can consume value.
-                    <br> ptr = (char*) malloc((chars+1)*sizeof(char)); // so as string have null character at end so we <br>need to add extra space for that
-                    <br> printf("Enter you employee ID :");
-                    <br> scanf("%s",ptr); // no & as this is a pointer which is used to store address.
-                    <br> printf("Your Employee ID is %s",ptr);
-                    <br> free(ptr);
-                    <br> i++;
-                    <br> }
-                    <br> return 0;
-                    <br> }
-                </p>
+                     #include &lt;stdlib.h&gt;
+                     int main()
+                     {
+                        int chars, i = 0;
+                        char *ptr;
+                        while (i &lt; 3)
+                        {
+                            printf("Employee %d: Enter the no. of characters in your Employee ID:",i+1);
+                            scanf("%d",&chars);
+                            getchar(); //often the scanf skips to take the value from user so we use getchar() so that we <br>can consume value.
+                            ptr = (char*) malloc((chars+1)*sizeof(char)); // so as string have null character at end so we <br>need to add extra space for that
+                            printf("Enter you employee ID :");
+                            scanf("%s",ptr); // no & as this is a pointer which is used to store address.
+                            printf("Your Employee ID is %s",ptr);
+                            free(ptr);
+                            i++;
+                        }
+                        return 0;
+                     }
+                    </code>
+                </pre>
             </div>
         </div>
     </div>

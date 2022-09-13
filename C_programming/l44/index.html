@@ -50,59 +50,63 @@
                 <br>Your program should print details of the drivers in a beautiful fashion.
                 <br>Use structures.
             </p>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">Code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> #include &lt;string.h&gt;
-                        <br>
-                        <br> typedef struct Driver
-                        <br> {
-                        <br> char name[34];
-                        <br> char dlNo[45];
-                        <br> char route[47];
-                        <br> int kms;
-                        <br> } df;
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> df d1, d2, d3;
-                        <br> printf("Enter the details of the drivers\n");
-                        <br> printf("Enter the details of the 1st drivers\n");
-                        <br> printf("Enter the name of the 1st driver :");
-                        <br> scanf("%s", &d1.name);
-                        <br> printf("\nEnter your driving license no.: ");
-                        <br> scanf("%s", &d1.dlNo);
-                        <br> printf("\nEnter your route: ");
-                        <br> scanf("%s", &d1.route);
-                        <br> printf("\nEnter your kms: ");
-                        <br> scanf("%d", &d1.kms);
-                        <br> printf("Enter the details of the 2nd drivers\n");
-                        <br> printf("Enter the name of the 2nd driver :");
-                        <br> scanf("%s", &d2.name);
-                        <br> printf("\nEnter your driving license no.: ");
-                        <br> scanf("%s", &d2.dlNo);
-                        <br> printf("\nEnter your route: ");
-                        <br> scanf("%s", &d2.route);
-                        <br> printf("\nEnter your kms: ");
-                        <br> scanf("%d", &d2.kms);
-                        <br> printf("Enter the details of the 3rd drivers\n");
-                        <br> printf("Enter the name of the 3rd driver :");
-                        <br> scanf("%s", &d3.name);
-                        <br> printf("\nEnter your driving license no.: ");
-                        <br> scanf("%s", &d3.dlNo);
-                        <br> printf("\nEnter your route: ");
-                        <br> scanf("%s", &d3.route);
-                        <br> printf("\nEnter your kms: ");
-                        <br> scanf("%d", &d3.kms);
-                        <br> printf("*** Printing information of these drivers ***\n");
-                        <br> printf("For Driver No 1: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n",d1.name,d1.<br>dlNo,d1.route,d1.kms);
-                        <br> printf("For Driver No 2: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n",d2.name,d2.<br>dlNo,d2.route,d2.kms);
-                        <br> printf("For Driver No 3: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n",d3.name,d3.<br>dlNo,d3.route,d3.kms);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                   <pre>
+                    <code>
+
+                        #include &lt;stdio.h>
+                            #include &lt;string.h>
+                            
+                            typedef struct Driver
+                            {
+                                char name[34];
+                                char dlNo[45];
+                                char route[47];
+                                int kms;
+                            } df;
+                            
+                            int main()
+                            {
+                                df d1, d2, d3;
+                                printf("Enter the details of the drivers\n");
+                                printf("Enter the details of the 1st drivers\n");
+                                printf("Enter the name of the 1st driver :");
+                                scanf("%s", &d1.name);
+                                printf("\nEnter your driving license no.: ");
+                                scanf("%s", &d1.dlNo);
+                                printf("\nEnter your route: ");
+                                scanf("%s", &d1.route);
+                                printf("\nEnter your kms: ");
+                                scanf("%d", &d1.kms);
+                                printf("Enter the details of the 2nd drivers\n");
+                                printf("Enter the name of the 2nd driver :");
+                                scanf("%s", &d2.name);
+                                printf("\nEnter your driving license no.: ");
+                                scanf("%s", &d2.dlNo);
+                                printf("\nEnter your route: ");
+                                scanf("%s", &d2.route);
+                                printf("\nEnter your kms: ");
+                                scanf("%d", &d2.kms);
+                                printf("Enter the details of the 3rd drivers\n");
+                                printf("Enter the name of the 3rd driver :");
+                                scanf("%s", &d3.name);
+                                printf("\nEnter your driving license no.: ");
+                                scanf("%s", &d3.dlNo);
+                                printf("\nEnter your route: ");
+                                scanf("%s", &d3.route);
+                                printf("\nEnter your kms: ");
+                                scanf("%d", &d3.kms);
+                                printf("*** Printing information of these drivers ***\n");
+                                printf("For Driver No 1: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n", d1.name, d1.dlNo, d1.route, d1.kms);
+                                printf("For Driver No 2: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n", d2.name, d2.dlNo, d2.route, d2.kms);
+                                printf("For Driver No 3: Name is %s, Dl no. is %s, route is %s and kilometer is %d\n", d3.name, d3.dlNo, d3.route, d3.kms);
+                                return 0;
+                            }
+                    </code>
+                   </pre>
                 </div>
             </div>
         </div>

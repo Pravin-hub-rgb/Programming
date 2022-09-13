@@ -93,29 +93,31 @@
                 </p>
             </div>
         </div>
-        <div class="in">
+        <div class="code">
+            <div class="dotc"></div>
             <button class="accordion">code</button>
             <div class="panel">
                 <p>
-                    #include &lt;stdio.h&gt;
-                    <br>
-                    <br> int func1(int b)
-                    <br> {
-                    <br> static int myvar = 0;
-                    <br> printf("The value of myvar is %d\n", myvar);
-                    <br> myvar++;
-                    <br> return b + myvar;
-                    <br> }
-                    <br>
-                    <br> int main()
-                    <br> {
-                    <br> int b = 100;
-                    <br> int val = func1(b); //here myvar is 0 as this runs first time
-                    <br> func1(b); //when function is called 2nd time the value of myvar become 1 even <br>though insisde the function
-                    <br> // it is initialized as 0 which mean that it forget the initalization
-                    <br> // printf("The value of func1 if %d",func1(b));
-                    <br>
-                    <br> return 0; }
+                     #include &lt;stdio.h&gt;
+                    
+                     int func1(int b)
+                     {
+                        static int myvar = 0;
+                        printf("The value of myvar is %d\n", myvar);
+                        myvar++;
+                        return b + myvar;
+                     }
+                    
+                     int main()
+                     {
+                        int b = 100;
+                        int val = func1(b); //here myvar is 0 as this runs first time
+                        func1(b); //when function is called 2nd time the value of myvar become 1 even <br>though insisde the function
+                        // it is initialized as 0 which mean that it forget the initalization
+                        // printf("The value of func1 if %d",func1(b));
+                        
+                        return 0;
+                 }
                 </p>
             </div>
         </div>

@@ -55,16 +55,18 @@
             <ul>
                 <li>Previously
                     <ul>
-                        <li>In previous lectures, we saw that Dynamic memory allocation is a way in which the size of a data structure can be changed during the runtime.</li>
-                        <li>Memory assigned to a program in a typical architecture can be broken down into four segments:
+                        <li>In previous lectures, we saw that Dynamic memory allocation is a way in which the size of a
+                            data structure can be changed during the runtime.</li>
+                        <li>Memory assigned to a program in a typical architecture can be broken down into four
+                            segments:
                     </ul>
-                    </li>
-                    <ul>
-                        <li>Code</li>
-                        <li>Static/global variables</li>
-                        <li>Stack</li>
-                        <li>Heap</li>
-                    </ul>
+                </li>
+                <ul>
+                    <li>Code</li>
+                    <li>Static/global variables</li>
+                    <li>Stack</li>
+                    <li>Heap</li>
+                </ul>
                 </li>
             </ul>
             <div class="in">
@@ -74,7 +76,8 @@
                         <li>A storage class defines following attributes about a variable in C.
                             <ul>
                                 <li>Scope &rarr;where will this variable be available</li>
-                                <li>Default initial value &rarr; If we don't initialize the variable explicitly then what will be the default value.</li>
+                                <li>Default initial value &rarr; If we don't initialize the variable explicitly then
+                                    what will be the default value.</li>
                                 <li>Lifetime &rarr; life of that variable available</li>
                             </ul>
                         </li>
@@ -102,7 +105,8 @@
                         <li>Scope&rarr; Local to the function body they are defined in</li>
                         <li>Default Value &rarr; Garbage value (a random value)</li>
                         <li>Lifetime&rarr; Till the end of the function block they are defined in</li>
-                        <li>A variable defined without any storage class specification is by default an automatic variable</li>
+                        <li>A variable defined without any storage class specification is by default an automatic
+                            variable</li>
                         <li><i>int harry</i> and <i>auto int harry</i> are same</li>
                     </ul>
                 </div>
@@ -112,67 +116,77 @@
                         <li>They are same as global variables</li>
                         <li>Scope&rarr; Global to the program they are defined in</li>
                         <li>Default initial value&rarr; 0</li>
-                        <li>Lifetime&rarr; These variables are declared outside any function. They are available throughout the lifetime of the program.</li>
+                        <li>Lifetime&rarr; These variables are declared outside any function. They are available
+                            throughout the lifetime of the program.</li>
                         <li>A global variable can be changed by any function in the program</li>
-                        <li><i>int harry</i> written outside any function will tell compiler that harry is a global variable</li>
+                        <li><i>int harry</i> written outside any function will tell compiler that harry is a global
+                            variable</li>
                         <li>It is recommended to minimize the use of unnecessary global bariables in a program.</li>
                     </ul>
                 </div>
                 <div class="wh">
                     <h3>External variables: Extern keyword</h3>
                     <ul>
-                        <li>extern keyword is used to inform our C compiler that a given variable is declared somewhere else.</li>
+                        <li>extern keyword is used to inform our C compiler that a given variable is declared somewhere
+                            else.</li>
                         <li>Using extern will not allocate space for the variable</li>
                     </ul>
                     <div class="in">
                         <h4>Example</h4>
-                        <div class="part">
+                        <div class="part2">
                             <div>
-                                <p>
-                                    //saved as harry.c
-                                    <br> int main()
-                                    <br>{
-                                    <br>int harry = 90;
-                                    <br>printf("%d",harry);
-                                    <br> }
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    //saved as main.c
-                                    <br> #include "harry.c"
-                                    <br>extern int harry;
-                                    <br>int main()
-                                    <br>{
-                                    <br>harry=56;
-                                    <br>printf("%d",harry);
-                                    <br> }
-                                </p>
+                                <div>
+                                    <p>
+                                        //saved as harry.c
+                                        <br> int main()
+                                        <br>{
+                                        <br>int harry = 90;
+                                        <br>printf("%d",harry);
+                                        <br> }
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        //saved as main.c
+                                        <br> #include "harry.c"
+                                        <br>extern int harry;
+                                        <br>int main()
+                                        <br>{
+                                        <br>harry=56;
+                                        <br>printf("%d",harry);
+                                        <br> }
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="in">
                         <h4>We can also use extern as</h4>
-                        <button class="accordion">Code</button>
-                        <div class="panel">
-                            <p>
-                                #include &lt;stdio.h&gt;
-                                <br>
-                                <br> int myfunc(int a, int b)
-                                <br> {
-                                <br> // int sum=10; //this makes a local variable and it is used
-                                <br> extern int sum; // if we do this the compiler will know that
-                                <br>//this is a global variable either define
-                                <br> //globally or imported from other c file
-                                <br> return sum;
-                                <br> }
-                                <br> int sum = 343;
-                                <br> int main()
-                                <br> {
-                                <br> int sum=myfunc(3,5);
-                                <br> return 0;
-                                <br> }
-                            </p>
+                        <div class="code">
+                            <div class="dotc"></div>
+
+                            <button class="accordion">Code</button>
+                            <div class="panel">
+                                <pre>
+                                <code>
+                                 #include &lt;stdio.h&gt;
+                                
+                                 int myfunc(int a, int b)
+                                 {
+                                    // int sum=10; //this makes a local variable and it is used
+                                    extern int sum; // if we do this the compiler will know that
+                                    //this is a global variable either define globally or imported from other c file
+                                    return sum;
+                                 }
+                                 int sum = 343;
+                                 int main()
+                                 {
+                                    int sum=myfunc(3,5);
+                                    return 0;
+                                 }
+                                </code>
+                            </pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,32 +196,36 @@
                         <li>Scope&rarr; local to the block they are defined in</li>
                         <li>Defined initial value&rarr; 0</li>
                         <li>lifetime&rarr; They are available throughout the lifetime of the program</li>
-                        <li>A static variable remains under existence for use within the function for entire program run.</li>
-                        <li><i>static int harry</i> written inside any function will tell compiler that harry is a static variable.</li>
+                        <li>A static variable remains under existence for use within the function for entire program
+                            run.</li>
+                        <li><i>static int harry</i> written inside any function will tell compiler that harry is a
+                            static variable.</li>
                         <li>It is recommended to minimize the use of unnecessary static variables in a program</li>
                     </ul>
                     <div class="in">
-                        <div class="wh">
-                            <p>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
                                 #include &lt;stdio.h&gt;
-                                <br>
-                                <br> int myfunc()
-                                <br> {
-                                <br> static int myVar;
-                                <br> myVar++; //incrementing each time the function is called
-                                <br> printf("myVar is %d\n",myVar);
-                                <br>
-                                <br> }
-                                <br> int sum = 343;
-                                <br> int main()
-                                <br> {
-                                <br> myfunc(); //calling 1st time
-                                <br> myfunc(); //calling 2nd time
-                                <br> myfunc(); //calling 3rd time
-                                <br> myfunc(); //calling 4th time
-                                <br> return 0;
-                                <br> }
-                            </p>
+                                
+                                 int myfunc()
+                                 {
+                                    static int myVar;
+                                    myVar++; //incrementing each time the function is called
+                                    printf("myVar is %d\n",myVar);                                
+                                 }
+                                 int sum = 343;
+                                 int main()
+                                 {
+                                    myfunc(); //calling 1st time
+                                    myfunc(); //calling 2nd time
+                                    myfunc(); //calling 3rd time
+                                    myfunc(); //calling 4th time
+                                    return 0;
+                                 }
+                                </code>
+                            </pre>
                         </div>
                         <div class="wh">
                             <p>
@@ -217,7 +235,8 @@
                                 <br>myVar is 2
                                 <br>myVar is 3
                                 <br>myVar is 4
-                                <br>&rarr; as the variable is declared as static which freeze the variable and previous value is stored in it.
+                                <br>&rarr; as the variable is declared as static which freeze the variable and previous
+                                value is stored in it.
                             </p>
                         </div>
                     </div>
@@ -227,8 +246,10 @@
                     <ul>
                         <li>Scope&rarr; Local to the function they are declared in</li>
                         <li>Default initial value&rarr; Garbage value</li>
-                        <li>Lifetime&rarr; They are availbale till the end of the function block, in which the variable is defined.</li>
-                        <li>Register variables requests the compiler to store the variable in the CPU register instead of storing in the memory to have faster access.</li>
+                        <li>Lifetime&rarr; They are availbale till the end of the function block, in which the variable
+                            is defined.</li>
+                        <li>Register variables requests the compiler to store the variable in the CPU register instead
+                            of storing in the memory to have faster access.</li>
                         <li>Generally this is done for the variables which are being used frequently.</li>
                     </ul>
                 </div>

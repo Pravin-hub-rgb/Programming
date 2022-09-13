@@ -62,15 +62,18 @@
                     <li>'->' is the arrow operator which is used to get value from structure which is declared as a pointer.</li>
                 </ul>
                 <img src="../images/house.png" alt="">
-                <div class="in">
-                    <h3>Code</h3>
-                    <p>
-                        int a = 76;
-                        <br> int *ptra = &amp;a;
-                        <br>printf("The address of a is %p", ptra);
-                        <br>//%p &rarr; no. in hexadecimal, so as address are in hexadecimal value.
-                        <br>printf("The value of a is %d",*ptra);
-                    </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            int a = 76;
+                            int *ptra = &a;
+                            printf("The address of a is %p", ptra);
+                            //%p → no. in hexadecimal, so as address are in hexadecimal value.
+                            printf("The value of a is %d",*ptra);
+                        </code>
+                    </pre>
                 </div>
             </div>
             <div class="in">
@@ -81,13 +84,17 @@
                     <li>We can use it to initialize a pointer variable when that pointer variable isn't assigned any valid memeory address yet.</li>
                     <li>int *ptr = NULL;</li>
                 </ul>
-                <div class="in">
-                    <p>
-                        int ptr2;
-                        <br>printf("%p",ptr2); //62374678 garbage value
-                        <br> int *ptr2 = NULL:
-                        <br>printf("%p",ptr2); //0000000
-                    </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            int ptr2;
+                            printf("%p",ptr2); //62374678 garbage value
+                            int *ptr2 = NULL:
+                            printf("%p",ptr2); //0000000 
+                        </code>
+                    </pre>
                 </div>
             </div>
             <div class="in">
@@ -96,7 +103,7 @@
                 <p>
                     Want to use these three but we can't use array instead we can make link list and using node we can point address of each other then we can do traversing and searching.
                 </p>
-                <div class="in">
+                <div class="wh">
                     <ul>
                         <li>Dynamic memory allocation &rarr; Freeing or relocating memory in run time.</li>
                         <li>Arrays, functions and structures</li>

@@ -50,7 +50,8 @@
                 <h2>Dynamic memory allocation : Recap</h2>
                 <ul>
                     <li>An statically allocated variable or array has fixed size in memory.</li>
-                    <li><b>Dynamic Memory Allocation</b> is a way in which the size of a data structure can be changed during the runtime.</li>
+                    <li><b>Dynamic Memory Allocation</b> is a way in which the size of a data structure can be changed
+                        during the runtime.</li>
                     <li>Memroy assigned to a program in a typical architecture can be broken down into four segments:
                         <ul>
                             <li>Code</li>
@@ -71,37 +72,47 @@
             </ul>
             <div class="wh">
                 <h3>syntax:</h3>
-                <p>
-                    int (*p) (int, int); // p is a function pointer which have two parameter of type int.
-                    <br>p = &amp;func1;
-                </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                    <code>
+                        int (*p) (int, int); // p is a function pointer which have two parameter of type int.
+                        p = &amp;func1;
+                    </code>
+                    </pre>
+                </div>
             </div>
             <div class="wh">
                 <p>
-                    We are making a variable which is storing the address of instructions and using this address we can get to those instruction and we can execute that function.
+                    We are making a variable which is storing the address of instructions and using this address we can
+                    get to those instruction and we can execute that function.
                 </p>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">Code</button>
                 <div class="panel">
-                    <p>
+                    <pre>
+                        <code>
+
                         #include &lt;stdio.h>
-                        <br> #include &lt;stdlib.h>
-                        <br>
-                        <br> int sum(int a, int b)
-                        <br> {
-                        <br> return a+b;
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int (*fPtr) (int, int); // fPtr is going to point a function which returns int and takes two int.
-                        <br> fPtr = &sum;
-                        <br> int d = (*fPtr)(4,6);
-                        <br> printf("The value of d is : %d",d);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                         #include &lt;stdlib.h>
+                        
+                         int sum(int a, int b)
+                         {
+                            return a+b;
+                         }
+                        
+                         int main()
+                         {
+                            int (*fPtr) (int, int); // fPtr is going to point a function which returns int and takes two int.
+                            fPtr = &sum;
+                            int d = (*fPtr)(4,6);
+                            printf("The value of d is : %d",d);
+                            return 0;
+                         }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
@@ -126,71 +137,79 @@
             </ul>
         </div>
         <div class="inside-content">
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h>
-                        <br> #include &lt;stdlib.h>
-                        <br>
-                        <br> int sum(int a, int b)
-                        <br> {
-                        <br> return a + b;
-                        <br> }
-                        <br> void greetHelloAndExecute(int (*fptr)(int, int))
-                        <br> {
-                        <br> printf("Hello user\n");
-                        <br> printf("The sum of 5 and 7 is %d\n", fptr(5, 7));
-                        <br> }
-                        <br>
-                        <br> void greeGmAndExecute(int (*fptr)(int, int))
-                        <br> {
-                        <br> printf("Good moring user\n");
-                        <br> printf("The sum of 5 and 7 is %d\n", fptr(5, 7));
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int (*ptr)(int, int);
-                        <br> ptr = sum;
-                        <br> greeGmAndExecute(ptr);
-                        <br> greetHelloAndExecute(ptr);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;stdlib.h>
+                                
+                                int sum(int a, int b)
+                                {
+                                    return a + b;
+                                }
+                                void greetHelloAndExecute(int (*fptr)(int, int))
+                                {
+                                    printf("Hello user\n");
+                                    printf("The sum of 5 and 7 is %d\n", fptr(5, 7));
+                                }
+                                
+                                void greeGmAndExecute(int (*fptr)(int, int))
+                                {
+                                    printf("Good moring user\n");
+                                    printf("The sum of 5 and 7 is %d\n", fptr(5, 7));
+                                }
+                                
+                                int main()
+                                {
+                                    int (*ptr)(int, int);
+                                    ptr = sum;
+                                    greeGmAndExecute(ptr);
+                                    greetHelloAndExecute(ptr);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">task code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h>
-                        <br> #include &lt;stdlib.h>
-                        <br>
-                        <br> int calAvg(int a, int b)
-                        <br> {
-                        <br> return ((a+b)/2);
-                        <br> }
-                        <br> void greetGaAndExecute(int (*fptr)(int, int))
-                        <br> {
-                        <br> printf("Good Afternoon\n");
-                        <br> printf("The average of 10 and 4 is = %d\n", fptr(10, 4));
-                        <br> }
-                        <br> void greetGeAndExecute(int (*fptr)(int, int))
-                        <br> {
-                        <br> printf("Good Evening\n");
-                        <br> printf("The average of 10 and 4 is = %d\n", fptr(10, 4));
-                        <br> }
-                        <br>
-                        <br> int main()
-                        <br> {
-                        <br> int (*avg)(int, int);
-                        <br> avg = calAvg;
-                        <br> greetGaAndExecute(avg);
-                        <br> greetGeAndExecute(avg);
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                #include &lt;stdlib.h>
+                                
+                                int calAvg(int a, int b)
+                                {
+                                    return ((a + b) / 2);
+                                }
+                                void greetGaAndExecute(int (*fptr)(int, int))
+                                {
+                                    printf("Good Afternoon\n");
+                                    printf("The average of 10 and 4 is = %d\n", fptr(10, 4));
+                                }
+                                void greetGeAndExecute(int (*fptr)(int, int))
+                                {
+                                    printf("Good Evening\n");
+                                    printf("The average of 10 and 4 is = %d\n", fptr(10, 4));
+                                }
+                                
+                                int main()
+                                {
+                                    int (*avg)(int, int);
+                                    avg = calAvg;
+                                    greetGaAndExecute(avg);
+                                    greetGeAndExecute(avg);
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>

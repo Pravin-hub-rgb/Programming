@@ -15,7 +15,6 @@
         <a href="../index.html" class="home">Home</a>
         <a href="#" class="link"></a>
         <div class="botbut">
-            <a href="">Next Lec &rarr;</a>
             <a href="../l74/index.html">&larr; Previous Lec</a>
         </div>
     </div>
@@ -38,7 +37,8 @@
         <div class="inside-content">
             <h2>What is memory leak in C?</h2>
             <ul>
-                <li><b>Dynamic Memory Allocation</b> is a way in which the size of a data structure can be changed during the runtime.</li>
+                <li><b>Dynamic Memory Allocation</b> is a way in which the size of a data structure can be changed
+                    during the runtime.</li>
                 <li>Memory assigned to a program in a typical architecture can be broken down into four segments:
                     <ul>
                         <li>Code </li>
@@ -54,37 +54,47 @@
             <ul>
                 <li>With great power comes great reponsibility.</li>
                 <li>Memory leak is caused when we don't use dynmic memory properly.</li>
-                <li>When we keep on allocating memory in the heap with freeing, the overall memory usage keeps on increasing.</li>
-                <li>This situation is the cause on memory leak i.e. the creates a memory block in the memory and forgets to delete it.</li>
-                <li>To avoid these memory leak situations, memory allocated on heap should always be free when not needed.</li>
+                <li>When we keep on allocating memory in the heap with freeing, the overall memory usage keeps on
+                    increasing.</li>
+                <li>This situation is the cause on memory leak i.e. the creates a memory block in the memory and forgets
+                    to delete it.</li>
+                <li>To avoid these memory leak situations, memory allocated on heap should always be free when not
+                    needed.</li>
             </ul>
         </div>
-        <div class="inside-code">
+        <div class="wh">
             <p>In task manager on windows we can see the amout of memory that program is taking. </p>
-            <button class="accordion">code</button>
-            <div class="panel">
-                <p>
-                    #include &lt;stdio.h>
-                    <br> #include &lt;stdlib.h>
-                    <br> int main()
-                    <br> {
-                    <br> int a, i = 0;
-                    <br> int *i2;
-                    <br> while (i &lt; 455)
-                    <br> {
-                    <br> printf("Welcome to code with harry");
-                    <br> i2 = malloc(3444 * sizeof(int));
-                    <br> if (i % 100 == 0)
-                    <br> {
-                    <br> getchar();
-                    <br> }
-                    <br> i++;
-                    <br> free(i2); // without this we will encounter a situation of memory leak
-                    <br> }
-                    <br>
-                    <br> return 0;
-                    <br> }
-                </p>
+            <div class="code">
+                <div class="dotc"></div>
+
+                <button class="accordion">code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+
+                     #include &lt;stdio.h>
+                     #include &lt;stdlib.h>
+                     int main()
+                     {
+                        int a, i = 0;
+                        int *i2;
+                        while (i &lt; 455)
+                        {
+                            printf("Welcome to code with harry");
+                            i2 = malloc(3444 * sizeof(int));
+                            if (i % 100 == 0)
+                            {
+                                getchar();
+                            }
+                            i++;
+                            free(i2); // without this we will encounter a situation of memory leak
+                        }
+                        
+                        return 0;
+                     }
+                    </code>
+                </pre>
+                </div>
             </div>
         </div>
     </div>

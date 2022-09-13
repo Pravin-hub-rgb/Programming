@@ -41,30 +41,38 @@
                 <li>Files are used to store data and information
                     <ul>
                         <li>Data &rarr; bits of storage</li>
-                        <li>information&rarr; it is made when data is processed and something meaningfull is created</li>
+                        <li>information&rarr; it is made when data is processed and something meaningfull is created
+                        </li>
                     </ul>
                 </li>
                 <li>Files are used to read & access data anytime from the hard disk.</li>
-                <li>Files make it easy for a programmer to access and store content without losing it on program termination</li>
+                <li>Files make it easy for a programmer to access and store content without losing it on program
+                    termination</li>
             </ul>
             <div class="in">
                 <h2>Volatile VS Non-volatile memory</h2>
                 <div class="part2">
                     <div>
-                        <h3>Volatile Memory</h3>
-                        <ul>
-                            <li>Volatile memory is computer storage that only maintains its data while the device is powered.</li>
-                            <li>The RAM will hold data, programs, and information as long as it has a constant power supply but immediately the power is interrupted all that content is cleared.</li>
-                            <li>The Volatile memory will only hold data temporarily.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Non Volatile Memory</h3>
-                        <ul>
-                            <li>Non-volatile memory is computer memory that can retain the stored information even when not powered.</li>
-                            <li>This type of memory is also referred to as permanent memory since data stored within it can be retrieved even when there is no constant power supply.</li>
-                            <li>It is used for the long-term storage of data.</li>
-                        </ul>
+                        <div>
+                            <h3>Volatile Memory</h3>
+                            <ul>
+                                <li>Volatile memory is computer storage that only maintains its data while the device is
+                                    powered.</li>
+                                <li>The RAM will hold data, programs, and information as long as it has a constant power
+                                    supply but immediately the power is interrupted all that content is cleared.</li>
+                                <li>The Volatile memory will only hold data temporarily.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Non Volatile Memory</h3>
+                            <ul>
+                                <li>Non-volatile memory is computer memory that can retain the stored information even
+                                    when not powered.</li>
+                                <li>This type of memory is also referred to as permanent memory since data stored within
+                                    it can be retrieved even when there is no constant power supply.</li>
+                                <li>It is used for the long-term storage of data.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,15 +81,18 @@
                 <ul>
                     <li>When a C program is terminated, the data stored in ram is lost.</li>
                     <li>Storing in a file will preserve our data even after the program terminates.</li>
-                    <li>RAM is not able to handle quite large amount of data due to its small size relative to the hard disk.</li>
+                    <li>RAM is not able to handle quite large amount of data due to its small size relative to the hard
+                        disk.</li>
                     <li>It is easy to transfer data as files.</li>
                 </ul>
             </div>
             <div class="in">
                 <h3>Types of files</h3>
                 <ul>
-                    <li>Text files&rarr; stores data in plain text and these files can be opened by text editors. These are human readable</li>
-                    <li>Binary files&rarr; Here the data is stored as 0,1 stream that's why these files are secure and only computer can read these files.</li>
+                    <li>Text files&rarr; stores data in plain text and these files can be opened by text editors. These
+                        are human readable</li>
+                    <li>Binary files&rarr; Here the data is stored as 0,1 stream that's why these files are secure and
+                        only computer can read these files.</li>
                 </ul>
             </div>
             <div class="in">
@@ -133,26 +144,35 @@
                     <li>"rb" &rarr; read binary</li>
                 </ul>
                 <div class="wh">
-                    <button class="accordion">code</button>
-                    <div class="panel">
-                        <p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="accordion">code</button>
+                        <div class="panel">
+                            <pre>
+                            <code>
                             #include &lt;stdio.h&gt;
-                            <br> int main()
-                            <br> {
-                            <br> FILE *ptr=NULL; //this is a good practise
-                            <br> char string[34];
-                            <br> ptr = fopen("myfile.txt","r");
-                            <br> fscanf(ptr,"%s",string); //what this do is takes content till space or new line from file and store it to string variable
-                            <br> printf("Content of this file has :%s\n",string);
-                            <br>
-                            <br> return 0;
-                            <br> }
-                        </p>
-                        <div class="in">
-                            <p>
-                                Content of this file has :this
-                            </p>
+                             int main()
+                             {
+                                FILE *ptr=NULL; //this is a good practise
+                                char string[34];
+                                ptr = fopen("myfile.txt","r");
+                                fscanf(ptr,"%s",string); //what this do is takes content till space or new line from
+                                and store it to string variable
+                                printf("Content of this file has :%s\n",string);
+                                
+                                return 0;
+                             }
+                            </code>
+                        </pre>
                         </div>
+
+                    </div>
+                    <div class="in">
+                        <p>
+                            <b>Output &darr; </b>
+                            <br>
+                            Content of this file has :this
+                        </p>
                     </div>
                 </div>
             </div>
@@ -183,23 +203,26 @@
                     <li>We will have to open the file in write mode in order to use this function.</li>
                 </ul>
                 </ul>
-                <div class="wh">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">code</button>
                     <div class="panel">
-                        <p>
+                        <pre>
+                            <code>
                             #include &lt;stdio.h&gt;
-                            <br> int main()
-                            <br> {
-                            <br> FILE *ptr=NULL;
-                            <br> char string2 [100]="This content was produced by Tutorial64.c";
-                            <br> ptr = fopen("myfile.txt","w");
-                            <br> fprintf(ptr,"%s",string2); //inside the file this string will we inserted
-                            <br> //all the older text got removed and the text stored in string2 was inserted
-                            <br> // ptr = fopen("myfile.txt","a"); // in this mode the text inside string2 will be added in the end to the file
-                            <br>
-                            <br> return 0;
-                            <br> }
-                        </p>
+                             int main()
+                             {
+                                FILE *ptr=NULL;
+                                char string2 [100]="This content was produced by Tutorial64.c";
+                                ptr = fopen("myfile.txt","w");
+                                fprintf(ptr,"%s",string2); //inside the file this string will we inserted
+                                //all the older text got removed and the text stored in string2 was inserted
+                                // ptr = fopen("myfile.txt","a"); // in this mode the text inside string2 will be added he end to the file
+                                
+                                return 0;
+                             }
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -253,7 +276,8 @@
                             <p>w</p>
                         </div>
                         <div>
-                            <p>Opens a file for writing. If it doesn't exist, then a new file is created. Writing starts from the beginning of the file.</p>
+                            <p>Opens a file for writing. If it doesn't exist, then a new file is created. Writing starts
+                                from the beginning of the file.</p>
                         </div>
                     </div>
                     <div>
@@ -261,7 +285,8 @@
                             <p>a</p>
                         </div>
                         <div>
-                            <p>Opens a text file for writing in appending mode. If it does not exist, then a new file is created. The program will start appending content to the existing file content.</p>
+                            <p>Opens a text file for writing in appending mode. If it does not exist, then a new file is
+                                created. The program will start appending content to the existing file content.</p>
                         </div>
                     </div>
                     <div>
@@ -277,7 +302,8 @@
                             <p>w+</p>
                         </div>
                         <div>
-                            <p>Opens a text file for both reading and writing. It first truncates the file to zero length if it exists, otherwise creates a file if it does not exist</p>
+                            <p>Opens a text file for both reading and writing. It first truncates the file to zero
+                                length if it exists, otherwise creates a file if it does not exist</p>
                         </div>
                     </div>
                     <div>
@@ -285,7 +311,8 @@
                             <p>a+</p>
                         </div>
                         <div>
-                            <p>Opens a text file for both reading and writing. It creates the file if it does not exist. The reading will start from the beginning but writing can only append to file.</p>
+                            <p>Opens a text file for both reading and writing. It creates the file if it does not exist.
+                                The reading will start from the beginning but writing can only append to file.</p>
                         </div>
                     </div>
                 </div>
@@ -299,7 +326,8 @@
                         </ul>
                     </li>
                     <li>
-                        There are various functions provided by C standard library to read and write a file, character by character, or in the form of a fixed length string
+                        There are various functions provided by C standard library to read and write a file, character
+                        by character, or in the form of a fixed length string
                     </li>
                     <li>Some of them are:
                         <ul>
@@ -327,20 +355,24 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
                         <button class="accordion">code</button>
                         <div class="panel">
-                            <p>
+                            <pre>
+                                <code>
+
                                 #include &lt;stdio.h>
-                                <br> int main()
-                                <br> {
-                                <br> FILE *ptr = NULL;
-                                <br> ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
-                                <br> fputc('o',ptr);
-                                <br><br>fclose(ptr);
-                                <br> return 0;
-                                <br> }
-                            </p>
+                                 int main()
+                                 {
+                                    FILE *ptr = NULL;
+                                    ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
+                                    fputc('o',ptr);
+                                    fclose(ptr);
+                                    return 0;
+                                 }
+                                 </code>
+                            </pre>
                         </div>
                     </div>
                 </div>
@@ -353,20 +385,23 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
                         <button class="accordion">code</button>
                         <div class="panel">
-                            <p>
+                            <pre>
+                                <code>
                                 #include &lt;stdio.h>
-                                <br> int main()
-                                <br> {
-                                <br> FILE *ptr = NULL;
-                                <br> ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
-                                <br> fputs("Harry is great",ptr);
-                                <br><br>fclose(ptr);
-                                <br> return 0;
-                                <br> }
-                            </p>
+                                 int main()
+                                 {
+                                    FILE *ptr = NULL;
+                                    ptr = fopen("myfile2.txt","w"); // we have to open this in 'write' mode
+                                    fputs("Harry is great",ptr);
+                                    fclose(ptr);
+                                    return 0;
+                                 }
+                                </code>
+                            </pre>
                         </div>
                     </div>
                 </div>
@@ -383,21 +418,24 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
                         <button class="accordion">code</button>
                         <div class="panel">
-                            <p>
+                            <pre>
+                                <code>
                                 #include &lt;stdio.h>
-                                <br> int main()
-                                <br> {
-                                <br> FILE *ptr = NULL;
-                                <br> ptr = fopen("myfile2.txt","r");
-                                <br> char c = fgetc(ptr);
-                                <br> printf("The character I got was : %c\n",c);
-                                <br><br>fclose(ptr);
-                                <br> return 0;
-                                <br> }
-                            </p>
+                                 int main()
+                                 {
+                                    FILE *ptr = NULL;
+                                    ptr = fopen("myfile2.txt","r");
+                                    char c = fgetc(ptr);
+                                    printf("The character I got was : %c\n",c);
+                                    fclose(ptr);
+                                    return 0;
+                                 }
+                                </code>
+                            </pre>
                         </div>
                     </div>
                 </div>
@@ -414,22 +452,25 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
                         <button class="accordion">code</button>
                         <div class="panel">
-                            <p>
+                            <pre>
+                                <code>
                                 #include &lt;stdio.h>
-                                <br> int main()
-                                <br> {
-                                <br> FILE *ptr = NULL;
-                                <br> ptr = fopen("myfile2.txt","r");
-                                <br> char str[34];
-                                <br> fgets(str, 5, ptr);
-                                <br> printf("The string is : %s\n", str);
-                                <br><br>fclose(ptr);
-                                <br> return 0;
-                                <br> }
-                            </p>
+                                 int main()
+                                 {
+                                    FILE *ptr = NULL;
+                                    ptr = fopen("myfile2.txt","r");
+                                    char str[34];
+                                    fgets(str, 5, ptr);
+                                    printf("The string is : %s\n", str);
+                                    fclose(ptr);
+                                    return 0;
+                                 }
+                                </code>
+                            </pre>
                         </div>
                     </div>
                 </div>

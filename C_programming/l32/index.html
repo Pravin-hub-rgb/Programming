@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L-32 = Passing arrays as function arguments</title>
     <link rel="stylesheet" href="../styleLesson.css">
-</head>
+</head> 
 
 <body>
     <div id="mySidepanel" class="sidepanel">
@@ -61,30 +61,33 @@
                     function. When we pass an entire array to a function, then the function can access all the elemnts of the array. Single array elements can also be passed as arguments, it could be a sized or unsized array. This can be done in the same
                     way as we pass variables to a function. Following are the syntax of passing array as an argument.
                 </p>
-                <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">Code</button>
                     <div class="panel">
-                        <p>
-                            int func(int arr[])
-                            <br>{
-                            <br>int sum;
-                            <br> for(int i=0; i&lt;3;i++)
-                            <br> {
-                            <br> sum = sum + arr[i];
-                            <br> }
-                            <br> return sum/3;
-                            <br>}
-                            <br>//Inside func, if you change the value of element in the array, it gets reflected in the main function too.
-                            <br>//because array doesn't gets copied, the parameter becomes pointers.
-                            <br>
-                            <br> // int main
-                            <br> int main()
-                            <br>{
-                            <br>int arr[] = {1,2,3};
-                            <br>int a = func(arr);
-                            <br>return 0;
-                            <br>}
-                        </p>
+                        <pre>
+                            <code>
+
+                                int func(int arr[])
+                                {
+                                    int sum;
+                                    for (int i = 0; i &lt; 3; i++)
+                                    {
+                                        sum = sum + arr[i];
+                                    }
+                                    return sum / 3;
+                                }
+                                // Inside func, if you change the value of element in the array, it gets reflected in the main function too.
+                                // because array doesn't gets copied, the parameter becomes pointers.
+                                
+                                int main()
+                                {
+                                    int arr[] = {1, 2, 3};
+                                    int a = func(arr);
+                                    return 0;
+                                }
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -93,20 +96,27 @@
                 <p>
                     When we pass the address of an array while calling a function then we are using call by reference function call. When we pass an address as an argument in the function, the pointer in the function receives the address of the array.
                 </p>
-                <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">Code</button>
                     <div class="panel">
-                        <p>
-                            void display(int *ptr) {
-                            <br> printf("%d", *ptr);
-                            <br> }
-                            <br> int main() {
-                            <br> int arr[] = {1, 2, 3, 4};
-                            <br> for (int i=0; i&lt;4; i++) {
-                            <br> display(&arr[i]);
-                            <br> }
-                            <br> return 0;
-                        </p>
+                        <pre>
+                            <code>
+
+                                void display(int *ptr)
+                                {
+                                    printf("%d", *ptr);
+                                }
+                                int main()
+                                {
+                                    int arr[] = {1, 2, 3, 4};
+                                    for (int i = 0; i &lt; 4; i++)
+                                    {
+                                        display(&arr[i]);
+                                    }
+                                    return 0;
+                            </code>
+                        </pre>
                     </div>
                 </div>
                 <div class="in">
@@ -119,55 +129,60 @@
                         <br>and so on
                     </p>
                 </div>
-                <div class="in">
+                <div class="code">
+                    <div class="dotc"></div>
                     <button class="accordion">Last code of passing arrays (2d also)</button>
                     <div class="panel">
-                        <p>
-                            #include &lt;stdio.h&gt;
-                            <br> int func1(int array[])
-                            <br> {
-                            <br> for (int i = 0; i &lt; 4; i++)
-                            <br> {
-                            <br> printf("The value at index %d is %d\n", i, array[i]);
-                            <br> }
-                            <br> array[0] = 33;
-                            <br> return 0;
-                            <br> }
-                            <br>
-                            <br> void func2(int *ptr)
-                            <br> {
-                            <br> for (int i = 0; i &lt; 4; i++)
-                            <br> {
-                            <br> // printf("The value at %d is %d\n",i,ptr[i]); we can also use the code below to access elements
-                            <br> printf("The value at %d is %d\n", i, *(ptr + i));
-                            <br> }
-                            <br> *(ptr + 2) = 653;
-                            <br> }
-                            <br>
-                            <br> void func3(int arr[2][2])
-                            <br> {
-                            <br> for (int i = 0; i &lt; 2; i++)
-                            <br> {
-                            <br> for (int j = 0; j &lt; 2; j++)
-                            <br> {
-                            <br> printf("Value at d2arr[%d][%d]is : %d\n", i, j, arr[i][j]);
-                            <br> }
-                            <br> }
-                            <br> }
-                            <br>
-                            <br> int main()
-                            <br> {
-                            <br> int arr[] = {23, 13, 3, 4};
-                            <br> int d2arr[2][2] = {{1, 2}, {3, 4}};
-                            <br> // printf("The value at index 0 is %d\n", arr[0]);
-                            <br> // func1(arr); //here we are going to change the value of arr[i] inside the func. and it will get reflected to the main array also.
-                            <br> // printf("The value at index 0 is %d\n", arr[0]);
-                            <br> // func2(arr); // first time it prints all the element then after the loop it updates the element and then
-                            <br> // func2(arr); // here the new modified value gets printed
-                            <br> func3(d2arr);
-                            <br> return 0;
-                            <br> }
-                        </p>
+                        <pre>
+                            <code>
+
+                                #include &lt;stdio.h>
+                                    int func1(int array[])
+                                    {
+                                    for (int i = 0; i &lt; 4; i++)
+                                    {
+                                    printf("The value at index %d is %d\n", i, array[i]);
+                                    }
+                                    array[0] = 33;
+                                    return 0;
+                                    }
+                                    
+                                    void func2(int *ptr)
+                                    {
+                                    for (int i = 0; i &lt; 4; i++)
+                                    {
+                                    // printf("The value at %d is %d\n",i,ptr[i]); we can also use the code below to access elements
+                                    printf("The value at %d is %d\n", i, *(ptr + i));
+                                    }
+                                    *(ptr + 2) = 653;
+                                    }
+                                    
+                                    void func3(int arr[2][2])
+                                    {
+                                    for (int i = 0; i &lt; 2; i++)
+                                    {
+                                    for (int j = 0; j &lt; 2; j++)
+                                    {
+                                    printf("Value at d2arr[%d][%d]is : %d\n", i, j, arr[i][j]);
+                                    }
+                                    }
+                                    }
+                                    
+                                    int main()
+                                    {
+                                    int arr[] = {23, 13, 3, 4};
+                                    int d2arr[2][2] = {{1, 2}, {3, 4}};
+                                    // printf("The value at index 0 is %d\n", arr[0]);
+                                    // func1(arr); //here we are going to change the value of arr[i] inside the func. and it will get reflected to the main array also.
+                                    // printf("The value at index 0 is %d\n", arr[0]);
+                                    // func2(arr); // first time it prints all the element then after the loop it updates the element and then
+                                    // func2(arr); // here the new modified value gets printed
+                                    func3(d2arr);
+                                    return 0;
+                                    }
+                                    
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

@@ -74,44 +74,52 @@
             </div>
             <div class="in">
                 <h3>Taking string input from the user</h3>
-                <div class="in">
-                    <p>
-                        char str[52];
-                        <br> gets(str); //There is a function in stdio.h library called 'gets' which help us to take input from user.
-                        <br>printf("%s", str); //Either we can use printf or the code below to print the string
-                        <br>puts(str); //aliter
-                    </p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                        <code>
+
+                            char str[52];
+                            gets(str); //There is a function in stdio.h library called 'gets' which help us to take input from user.
+                            printf("%s", str); //Either we can use printf or the code below to print the string
+                            puts(str); //aliter 
+                        </code>
+                    </pre>
                 </div>
             </div>
-            <div class="in">
+            <div class="code">
+                <div class="dotc"></div>
                 <button class="accordion">big code</button>
                 <div class="panel">
-                    <p>
-                        #include &lt;stdio.h&gt;
-                        <br> void printStr(char str[])
-                        <br> {
-                        <br> int i=0;
-                        <br> while(str[i]!='\0')
-                        <br> {
-                        <br> printf("%c",str[i]);
-                        <br> i++;
-                        <br> }
-                        <br> printf("\n%s\n",str);//to print whole string we use %s format specifier
-                        <br> }
-                        <br> int main()
-                        <br> {
-                        <br> // char str[] = {'h','a','r','r','y'}; //although the program doesn't show any error but this is not valid
-                        <br> char str[] = {'h','a','r','r','y','\0'}; // this is valid
-                        <br> printStr(str);
-                        <br> //taking input form user
-                        <br> char str2[20]; //gives error when we don't specify the length
-                        <br> gets(str2);
-                        <br> //printing using puts
-                        <br> puts(str2);
-                        <br>
-                        <br> return 0;
-                        <br> }
-                    </p>
+                    <pre>
+                        <code>
+
+                                #include &lt;stdio.h>
+                                void printStr(char str[])
+                                {
+                                    int i = 0;
+                                    while (str[i] != '\0')
+                                    {
+                                        printf("%c", str[i]);
+                                        i++;
+                                    }
+                                    printf("\n%s\n", str); // to print whole string we use %s format specifier
+                                }
+                                int main()
+                                {
+                                    // char str[] = {'h','a','r','r','y'}; //although the program doesn't show any error but this is not valid
+                                    char str[] = {'h', 'a', 'r', 'r', 'y', '\0'}; // this is valid
+                                    printStr(str);
+                                    // taking input form user
+                                    char str2[20]; // gives error when we don't specify the length
+                                    gets(str2);
+                                    // printing using puts
+                                    puts(str2);
+                                
+                                    return 0;
+                                }
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
