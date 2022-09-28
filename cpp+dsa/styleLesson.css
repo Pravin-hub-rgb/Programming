@@ -146,6 +146,10 @@ body {
     box-shadow: 0 0 20px rgb(2 14 82);
 }
 
+.wb {
+    background-color: rgba(255, 255, 255, 0.341);
+}
+
 .in {
     /* background-color: rgba(0, 0, 0, 0.76); */
     background-color: #0c528b;
@@ -261,10 +265,20 @@ button {
     text-align: center;
     background-color: rgba(248, 248, 248, 0.37);
 }
+/* ****** part 4****** */
 
-img {
-    width: 50%;
+.part4>div {
+    display: grid;
+    border: 2px solid black;
+    margin: 5px 0;
+    border-radius: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+
+/* img {
+    width: 50%;
+} */
 
 @media only screen and (max-width: 580px) {
 
@@ -289,9 +303,11 @@ img {
     margin: 5px 0;
 
 }
-pre{
+
+pre {
     overflow: auto;
 }
+
 .dots {
     display: flex;
     margin: 5px;
@@ -316,4 +332,3 @@ pre{
 .t {
     background-color: green;
 }
-

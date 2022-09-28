@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l-39 = Protected Access Modifier</title>
+    <link rel="stylesheet" href="../../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C++</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Protected Access Modifier</h1>
+        <div class="wh">
+            <h2>Protected Access Modifiers</h2>
+            <ul>
+                <li>Protected access modifiers are similar to the private access modifiers but protected access
+                    modifiers can be accessed in the drived class whereas private access modifiers cannot be accessed in
+                    the derived class.</li>
+                <li>A table is shown below which shows the behavior of access modifiers when they are derived "public",
+                    "private", and "protected".</li>
+            </ul>
+            <div class="part4">
+                <div>
+                    <div></div>
+                    <div>
+                        <p><b>Public Derivation</b></p>
+                    </div>
+                    <div>
+                        <p><b>Private Derivation</b></p>
+                    </div>
+                    <div>
+                        <p><b>Protected Derivation</b></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p><b>Private members</b></p>
+                    </div>
+                    <div>
+                        <p>Not inherited</p>
+                    </div>
+                    <div>
+                        <p>Not inherited</p>
+                    </div>
+                    <div>
+                        <p>Not inherited</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p><b>Protected members</b></p>
+                    </div>
+                    <div>
+                        <p>Protected</p>
+                    </div>
+                    <div>
+                        <p>Private</p>
+                    </div>
+                    <div>
+                        <p>Proctected</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p><b>Public members</b></p>
+                    </div>
+                    <div>
+                        <p>Public</p>
+                    </div>
+                    <div>
+                        <p>Private</p>
+                    </div>
+                    <div>
+                        <p>Protected</p>
+                    </div>
+                </div>
+            </div>
+            <p>As shown in table</p>
+
+            <ol>
+                <li>If the classs is inherited in public mode then its private members cannot be inherited in child
+                    class.</li>
+                <li>If the class in inherited in public mode then its protected members are protected and can be
+                    accessed in child class.</li>
+                <li>If the class is inherited in public mode then its public members are public and can be accessed
+                    inside child class and outside the class.</li>
+                <li>If the class is inherited in private mode then its private members cannot be inherited in child
+                    class.
+                </li>
+                <li>If the class is inherited in private mode then its protected members are private and cannot be
+                    accessed in child class.</li>
+                <li>If the class is inherited in private mode then its public members are private and cannot be accessed
+                    in child class.</li>
+                    <li>If the class is inherited in protected mode then its private members cannot be inherited in child class.</li>
+                    <li>If the class is inherited in protected mode then its protected members are protected and can be accessed in child class.</li>
+                    <li>If the class is inherited in protected mode then its public members are protected and can be accessed in child class.</li>
+            </ol>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+
+                            #include &lt;iostream>
+                            using namespace std;
+                            
+                            class Base
+                            {
+                            protected: // This is same as private but the data under this can be inherited
+                                int a;
+                            
+                            private:
+                                int b;
+                            };
+                            class Derived : protected Base
+                            {
+                            };
+                            
+                            int main()
+                            {
+                                Base b;
+                                Derived d;
+                                // cout &lt;&lt; d.a; // cannot do it
+                                return 0;
+                            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="../../main.js"></script>
+</body>
+
+</html>
