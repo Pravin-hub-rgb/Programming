@@ -134,10 +134,10 @@
                 <br> // code
                 <br> }
             </p>
-            <div class="in">
-                <p>Print fibonacci numbers</p>
-                <div class="code">
-                    <div class="dotc"></div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Print fibonnaci numbers</button>
+                <div class="panel">
                     <pre>
                             <code>
 
@@ -162,6 +162,74 @@
                         </pre>
                 </div>
             </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">Sum of n numbers</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                        
+                                #include &lt;iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int n, sum = 0;
+                                    cin >> n;
+                                    for (int i = 1; i <= n; i++)
+                                    {
+                                        sum += i;
+                                    }
+                                    cout<<"sum is : "<< sum;
+                                    return 0;
+                                }
+                                
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">Prime number</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                        
+                            #include <iostream>
+                                using namespace std;
+                                int main()
+                                {
+                                    int n;
+                                    bool isPrime = 1;
+                                    cout << "Enter the value of n : ";
+                                    cin >> n;
+                                    for (int i = 2; i <= n/2; i++)
+                                    {
+                                        if (n % i == 0)
+                                        {
+                                            isPrime = 0;
+                                            break;
+                                        }
+                                    }
+                                    if (isPrime == 0)
+                                    {
+                                        cout << "Not a prime number" << endl;
+                                    }
+                                    else
+                                    {
+                                        cout << "is a prime number" << endl;
+                                    }
+                                    return 0;
+                                }
+                                
+                                
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <ul>
+                <li>Using break keyword we can exit out of loop.</li>
+                <li>Continue is used to skip a particular iteration.</li>
+            </ul>
         </div>
         <div class="wh">
             <h2>Scope</h2>
@@ -194,7 +262,7 @@
                 <p>a is accessible throughout the main() function, after it is declared.</p>
             </div>
             <div class="in">
-                <p>Example 1</p>
+                <p>Example 2</p>
                 <div class="code">
                     <div class="dotc"></div>
                     <pre>
@@ -220,7 +288,6 @@
                 </code>
             </pre>
                 </div>
-                <p>a is accessible throughout the main() function, after it is declared.</p>
             </div>
         </div>
         <div class="wh">

@@ -2,16 +2,25 @@
 using namespace std;
 int main()
 {
-    int a = 0;
-    int b = 1;
-    cout << a << " " << b << " ";
-    for (int i = 2; i <= 10; i++)
+    int n;
+    bool isPrime = 1;
+    cout << "Enter the value of n : ";
+    cin >> n;
+    for (int i = 2; i <= n/2; i++)
     {
-        int nextNum = a + b;
-        cout << nextNum << " ";
-        a = b;
-        b = nextNum;
+        if (n % i == 0)
+        {
+            isPrime = 0;
+            break;
+        }
     }
-
+    if (isPrime == 0)
+    {
+        cout << "Not a prime number" << endl;
+    }
+    else
+    {
+        cout << "is a prime number" << endl;
+    }
     return 0;
 }

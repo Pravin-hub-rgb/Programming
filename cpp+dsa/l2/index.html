@@ -33,46 +33,42 @@
         <h1>First Program</h1>
         <div class="wh">
             <ul>
-                <li><b>Compiler</b>
-                    <ul>
-                        <li>Translation or conversion</li>
-                        <li>Catching Errors</li>
-                    </ul>
-                </li>
+                <li><b>Compiler</b></li>
             </ul>
+            <img src="../images/comp.svg" alt="" class="wb">
         </div>
-        <div class="in">
+        <div class="wh">
             <h3>IDE &rarr; Integrated Development Environment</h3>
             <ul>
-                <li>An environment that helps you wirte, run and even debug(in some cases) code in programming language
+                <li>An environment that helps you write, run and even debug (in some cases) code in programming language.
                 </li>
                 <li>Eg: VS Code, Code Studio, Eclipse, NetBeans, etc.</li>
             </ul>
         </div>
-        <div class="in">
+        <div class="wh">
             <h3>First Program in C++</h3>
-            <div class="wh">
+            <div class="in">
                 <p><b>#include</b></p>
                 <ul>
-                    <li>Is a preprocessor directives that tells the compiler to insert another file (iostream) into your
+                    <li>Is a preprocessor directive that tells the compiler to insert another file (iostream) into your
                         source file.</li>
-                    <li>It includes header files</li>
+                    <li>It includes header files.</li>
                     <li>#include is replaced by the content of the files.</li>
                     <li>Directive is an instructions to the compiler.</li>
                 </ul>
             </div>
-            <div class="wh">
+            <div class="in">
                 <p><b>Header file</b></p>
                 <p><a href="https://stackoverflow.com/questions/2976477/difference-between-iostream-and-iostream-h">iostream or iostream.h</a></p>
                 <ul>
-                    <li>They usually have the extension .h but new c++ standard header file donot have a file extension.
+                    <li>They usually have the extension .h but new c++ standard header file do not have a file extension.
                     </li>
                     <li>Iostream contains declaration that are needed by cout identifier and &lt;&lt; (insertion
                         operation)</li>
                     <li>It is concerned with input output operations</li>
                 </ul>
             </div>
-            <div class="wh">
+            <div class="in">
                 <p><b>using namespace std;</b></p>
                 <ul>
                     <li>Namespaces &rarr; <a href="https://www.youtube.com/watch?v=ZZWTh142s4w">Explaination</a>
@@ -81,18 +77,33 @@
                                 <ul>
                                     <li>
                                         You are going to use std Namespace where feature of c++ strandard library such as
-                                        string or vector are declared
+                                        string or vector are declared.
                                     </li>
                                     <li>Namespace is a part of program which contains in which certain names are recognised
-                                        and outside Namespace theya re unknown</li>
+                                        and outside Namespace they are unknown.</li>
                                     <li>It says sall the program statement that follow are within std Namespace. It defines
-                                        the scope</li>
+                                        the scope.</li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                    <code>
+                    
+                     #include &lt;iostream>
+                     using namesapce std;
+                     int main()
+                     {
+                         cout<<"Namaste Duniya"<&lt;endl;
+                         return 0;
+                     }
+                    </code>
+                </pre>
+             </div>
             <ol>
                 <li>Our program will find <b>int main(){}</b> and start executing from there</li>
                 <li>int main(){ //code }
@@ -148,21 +159,21 @@
                 <li>; &rarr; It is used to terminate statements</li>
             </ol>
         </div>
-        <div class="in">
+        <div class="wh">
             <h2>Data Types &darr;</h2>
             <p>Different types of data to be stored in memory. <br>Eg - integer, float, character, double, etc</p>
-            <div class="wh">
+            <div class="in">
                 <ul>
                     <li>Examples
                         <ul>
-                            <li>int &rarr; stores integers like -5, 0 , 8, etc</li>
-                            <li>char &rarr; single character like 'a', '+', '$', '7', etc</li>
+                            <li>int &rarr; stores integers like -5, 0 , 8, etc.</li>
+                            <li>char &rarr; single character like 'a', '+', '$', '7', etc.</li>
                             <li>float &rarr; floating point values like -2.014, 1.0000, 6.7800</li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="wh">
+            <div class="in">
                 <ul>
                     <li>Different data types use different amounts of memory.</li>
                     <li>Amount of memory used also depends on the architecture of your CPU.</li>
@@ -258,7 +269,7 @@
                     </div>
                 </div>
             </div>
-            <div class="wh">
+            <div class="in">
                 <ul>
                     <li><b>Character &darr;</b>
                         <ul>
@@ -292,7 +303,7 @@
                     </p>
                 </div>
             </div>
-            <div class="wh">
+            <div class="in">
                 <h3>Variable Naming / Nomenclature</h3>
                 <ol>
                     <li>Can contain alphabets, numbers and underscores.</li>
@@ -309,7 +320,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="wh">
+            <div class="in">
                 <h3>How is data stored in memory?</h3>
                 <p>
                     Eg &rarr; int a = 8; // int takes 4 bytes = 32 bits
@@ -317,8 +328,8 @@
                     <br>&therefore; int a &rarr; 00000000 00000000 00000000 00001000 &rarr; 32 bits
                 </p>
             </div>
-            <div class="wh">
-                <h3>Conversion of one data type to another (if it is valid is called <b>Type Casting</b></h3>
+            <div class="in">
+                <h3>Conversion of one data type to another (if it is valid is called <b>Type Casting</b>)   </h3>
                 <p>
                     Example &darr;
                     <br> int a = 'a';
@@ -329,18 +340,18 @@
                     <br>98 will automatically get typecasted to it corresponding character.
                     <br>This aoutomatic typecasting is called <b>implicit typecasting</b>
                 </p>
-                <div class="in">
+                <div class="wh">
                     <p>What if we type cast from <b>int</b> to <b>char</b> but the value is too large to be stored in
                         <i>char?</i>
-                        <br><b>Soln &rarr; </b> A warning is thrown and the last bte from the original value is given to
+                        <br><b>Soln &rarr; </b> A warning is thrown and the last byte from the original value is given to
                         the character.
                     </p>
                 </div>
             </div>
-            <div class="wh">
+            <div class="in">
                 <h3>How are negative numbers stored?</h3>
                 <ul>
-                    <li>The first bit tells us wheter the number is positive or negative.
+                    <li>The first bit tells us whether the number is positive or negative.
                         <ul>
                             <li>First Bit &rarr; 0 means Positive</li>
                             <li>1 means Negative.</li>
@@ -364,7 +375,6 @@
                                     <li>2's complement &rarr; 11....1011</li>
                                 </ul>
                             </li>
-                            <li></li>
                         </ol>
                     </li>
                     <li>Displaying Negaitve Number &darr;
@@ -382,7 +392,7 @@
                                         <ul>
                                             <li>If we stored numbers as it is without using 2's complement, then
                                                 representing 0 &rarr; 00.....0000 and -0 &rarr; 10....000 will be equal
-                                                and thus waster of space.</li>
+                                                and thus waste of space.</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -391,14 +401,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="wh">
+            <div class="in">
                 <h3>Store only Positive Integers</h3>
                 <p>
                     The default signed representation allows us to store both positive and negative values.
                     <br>To store only positive integers, we use <b>unsigned</b>.
                     <br>Eg &rarr; unsigned int a = 10;
                 </p>
-                <div class="in">
+                <div class="wh">
                     <p><b>What if we store a negative value in an unsigned number?</b>
                         <br>Example &rarr; unsigned int a = -112;
                         <br>cout &lt;&lt; a &lt;&lt; endl;
@@ -418,9 +428,9 @@
             </div>
         </div>
         <div class="wh">
-            <h2>Baisc Arithmetic Operators</h2>
-            <p><b>+, -, *, /, %</b></p>
+            <h2>Operators</h2>
             <div class="in">
+                <h3>Baisc Arithmetic Operators (+, -, *, /, %)</h3>
                 <ol>
                     <li>int / int = int (floor value of answer)
                         <ul>
@@ -445,6 +455,7 @@
                 <ol>
                     <li>Is a = b ?
                         <ul>
+                            <li>a == b</li>
                             <li>if yes &rarr; 1</li>
                             <li>if no &rarr; 0</li>
                         </ul>
@@ -464,32 +475,52 @@
                     <li>Logical AND &darr;
                         <ul>
                             <li>All conditions must be true for the output to be true</li>
-                            <li>Example &rarr; int a = 5, b = 10, c = 15;
-                                <br>cout &lt;&lt; ((a > 0) && (b != 0) && (c &lt;= 15));
-                                <br>output &rarr; 1
+                            <li>Example &darr;
                             </li>
                         </ul>
+                        <div class='code'>
+                           <pre>
+                               <code>
+                               
+                                int a = 5, b = 10, c = 15;
+                                cout << ((a > 0) && (b != 0) && (c <= 15)); output &lt; 1 
+                               </code>
+                           </pre>
+                        </div>
                     </li>
                     <li>Logical OR &darr;
                         <ul>
                             <li>At least 1 condition must be true for the output to be true.</li>
-                            <li>Example &rarr; int a = 5, b = 10, c = 15;
-                                <br>cout &lt;&lt; ((a>5) || (b&lt;10) || (c >= 15));
-                                <br>output &rarr; 1
+                            <li>Example &darr;
                             </li>
                         </ul>
+                        <div class='code'>
+                           <pre>
+                               <code>
+                               
+                                int a = 5, b = 10, c = 15;
+                                cout << ((a>5) || (b<10) || (c >= 15)); output &rarr; 1
+                               </code>
+                           </pre>
+                        </div>
                     </li>
                     <li>Logical NOT &darr;
                         <ul>
                             <li>Inverts the logic. true &DoubleLongLeftRightArrow; False, non-zero
                                 &DoubleLongLeftRightArrow; zero</li>
-                            <li>Example &rarr; int a = 5, b = 10, c = 15;
-                                <br>cout &lt;&lt;(!a)&lt;&lt;endl;
-                                <br>cout &lt;&lt;(!b)&lt;&lt;endl;
-                                <br>output &rarr; 0
-                                <br>1
+                            <li>Example &darr;
                             </li>
                         </ul>
+                        <div class='code'>
+                           <pre>
+                               <code>
+                               
+                                int a = 5, b = 10, c = 15;
+                                cout <<(!a)<&lt;endl; output &rarr; 0
+                                cout <<(!b)<&lt;endl; output &rarr; 1
+                               </code>
+                           </pre>
+                        </div>
                     </li>
                 </ol>
             </div>
