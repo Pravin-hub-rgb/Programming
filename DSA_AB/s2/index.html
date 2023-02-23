@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential C and C++ Concepts</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Essential C and C++ Concepts</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Essential C and C++ Concepts</h1>
+        <p>Things we will study &darr;</p>
+        <ol>
+            <li>Arrays</li>
+            <li>Structure</li>
+            <li>Pointers</li>
+            <li>Reference</li>
+            <li>Parameter Passing</li>
+            <li>Classes</li>
+            <li>Constructor</li>
+            <li>Templates</li>
+        </ol>
+        <div class="wh">
+            <h2>Arrays</h2>
+            <ul>
+                <li>Arrays are defined as collection of similar data elements.</li>
+            </ul>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    int main()
+                    {
+                        int A[5]; // declaration
+                        int B[5] = {2, 4, 6, 8, 10}; // declaration + initialization
+                    }
+
+                    // accessing array elements
+                    for(i = 0; i < 5; i++)
+                    {
+                        printf("%d", B[i]);
+                    }
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Practise: Arrays basics</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                int A[10] = {2, 4, 6, 8, 10};
+                            
+                                cout << sizeof(A) << endl; // 20
+                                cout << A[1] << endl;      // 4
+                                cout << A[9] << endl;      // 0 will be stored if there is no value initialized
+                            
+                                // displaying elements of array
+                                for (int i = 0; i < 10; i++)
+                                {
+                                    cout << A[i] << endl;
+                                }
+                            
+                                // we can also use for each loop to access all the element of an array
+                                for (int x : A)
+                                {
+                                    cout << x << endl;
+                                }
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                int n;
+                                cout << "Enter Size : ";
+                                cin >> n;
+                                // int A[n]={1,2,3,4,5}; we can use 'n' but cannot initialize value like this
+                                int A[n];
+                                A[0] = 2; // we can do like this or using loop and taking input by the keyboard.
+                                for (int x : A)
+                                {
+                                    cout << x << endl;
+                                }
+                                // remember 'variable size' array cannot be initialized.
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Structures</h2>
+            <ul>
+                <li>Structures can be defined as collection of data members that are related data members under one
+                    name. Those data member can be of similar or disimilar type.</li>
+                <li>Structure is used for defining user defined data types.</li>
+            </ul>
+            <p>Declaration example &darr;</p>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    struct Rectangle {
+                        int length; // this will take 2 bytes
+                        int breadth; // this will also take 2 bytes
+                    };
+                    // total 4 bytes will be taken when a variable is created
+                   </code>
+               </pre>
+            </div>
+            <p>Declaring variable of Reactangle structure &darr;</p>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    int main()
+                    {
+                        struct Rectangle r; // r will occupy 4 byte memory.
+                    }
+                   </code>
+               </pre>
+            </div>
+            <p>Declaration + initialization &darr;</p>
+            <div class='code'>
+                <pre>
+                    <code>
+                    
+                     int main()
+                     {
+                         struct Rectangle r = {10, 5};
+                     }
+                    </code>
+                </pre>
+            </div>
+            <p>Accessing the members of the structure &darr;</p>
+            <div class='code'>
+                <pre>
+                    <code>
+                    
+                     int main()
+                     {
+                        struct Rectangle r = {10, 5};
+                        r.length = 15;
+                        r.breadth = 10;
+                     }
+                     // dot (.) operator is used for accessing the member
+                     printf("Area of Reactangle is %d", r.length*r.breadth);
+                    </code>
+                </pre>
+            </div>
+            <p>Examples of structure &darr;</p>
+            <ol>
+                <li>Complex Number: a + ib</li>
+            </ol>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    struct Complex
+                    {
+                        int real;
+                        int img;
+                    };
+                   </code>
+               </pre>
+            </div>
+            <ol>
+                <li>Student</li>
+            </ol>
+            <div class='code'>
+               <div class='dotc'></div>
+               <pre>
+                   <code>
+                   
+                    struct Student
+                    {
+                        int roll; // 2 bytes
+                        char name[35]; // 25 bytes
+                        char dept[10]; // 10 bytes
+                        char address[50]; // 50 bytes 
+                    };
+                    // total 87 bytes
+                    
+                    struct Student s;
+                    s.roll = 10;
+                    s.name = "John";
+                   </code>
+               </pre>
+            </div>
+            <ol>
+                <li>Playing card
+                    <ul>
+                        <li>face: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13</li>
+                        <li>Shape: 0 &rarr; &clubsuit;, 1 &rarr; &spadesuit;, 3 &rarr; &diamondsuit;, 4 &rarr; &heartsuit;</li>
+                        <li>color: 0 &rarr; black, 1 &rarr; red</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    struct Card
+                    {
+                        int face;
+                        int shape;
+                        int color;                        
+                    };
+
+                    int main()
+                    {
+                        struct Card c;
+                        c.face = 1;
+                        c.shape = 0;
+                        c.color = 0;
+                        // directly initializing value 
+                        // struct Card c = {1, 0, 0};
+                    }
+                   </code>
+               </pre>
+            </div>
+            <p>Now to create 52 cards we can use array.</p>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    int main()
+                    {
+                        struct Card deck[52]; // this will create array of structure.
+                        // each card we can access it with the help of index.
+
+                        // initializing array of structure 
+                        // struct Card deck[52] = {{1, 0, 0}, {2, 0, 0},...}
+                        
+                        // accessing 
+                        printf("%d", deck[0].face);
+                        printf("%d", deck[0].shape);
+                    }
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Structure practise</h3>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        #include &lt;iostream>
+                        using namespace std;
+
+                        struct Rectangle
+                        {
+                            int length;
+                            int breadth;
+                            char x;
+                        } r5; // we can declare it like this also.
+
+                        int main()
+                        {
+                            struct Rectangle r1 = {10, 5};
+                            cout<&lt;sizeof(r1); // 12
+
+                            // accessing member
+                            cout<&lt;r1.length<&lt;endl;
+                            cout<&lt;r1.breadth<&lt;endl;
+
+                            // changing value 
+                            r1.length = 15;
+                            r1.breadth = 7;
+
+                            return 0;
+                        }
+                        // in structure padding of memory is done
+                        // means some variable will take extra memory 
+                        // here char is taking 4 byte same as int.
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Pointers</h2>
+            <ul>
+                <li>Pointers is a address variable that is meant for storing address of not data itself.</li>
+                <li>They are used for indirect access of data.</li>
+                <li>For a program to use heap memory, pointers is used.</li>
+                <li>To access heap memory and resources outside the main memory like internet, keyboard, monitor etc pointers is used.</li>
+                <li>Pointers are also used for parameter passing.</li>
+            </ul>
+            <p>Example &darr;</p>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    int main()
+                    {
+                        int a = 10; // data variable
+                        int *p; // pointer declaration
+                        P = &amp;a;  // pointer assignment / initialization
+                        printf("%d", a); // 10
+                        printf("%d", *p); // 10 - dereferencing 
+                    }
+                   </code>
+               </pre>
+            </div>
+            <p>Accessing Heap memory through pointer</p>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    #include&lt;stdio.h> 
+                    int main()
+                    {
+                        int *p;
+                        p = new int[5]; // C++ programming language
+                        // p = (int *) malloc(5 * sizeof(int)) - C programming language
+                    }
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <p>Practise</p>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                int a = 10;
+                                int *p;
+                                p = &amp;a;
+                                cout << "Using pointer " << *p; // 10
+                                cout << "address of a " << p; // 0x7ff7ba4d4548
+                                cout << "address of a " << &amp;a; // 0x7ff7ba4d4548
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <p>Pointer to an array</p>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            int main()
+                            {
+                                int A[5] = {2, 4, 6, 8, 10};
+                                int *p;
+                                p = A;
+                                // here there is not & because A itself is a starting address of array
+                                // p = &A[0]; we can do this also
+                            
+                                // accessing all the array elements using pointer
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    cout << p[i] << endl;
+                                }
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <p>Creating an array in heap</p>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            #include &lt;stdlib.h> // for using malloc
+                            using namespace std;
+                            int main()
+                            {
+                                int *p;
+                                // p = (int *)malloc(5 * sizeof(int));
+                                p = new int[5]; // c++ syntax
+                                p[0] = 10; p[1] = 15; p[2] = 14; p[3] = 21; p[4] = 31;
+                            
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    cout << p[i] << endl;
+                                }
+                                // after using the dynamic memory we should release it
+                                delete [] p; // as this is an array that's why we are using this syntax 
+                                // delete x;
+                                // free(p); this syntax is for C 
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>
