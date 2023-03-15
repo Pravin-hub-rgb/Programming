@@ -13,7 +13,15 @@
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="../index.html" class="home">Home</a>
-        <a href="#" class="link"></a>
+        <a href="#t1" class="link">Arrays</a>
+        <a href="#t2" class="link">Structures</a>
+        <a href="#t3" class="link">Pointers</a>
+        <a href="#t4" class="link">Reference</a>
+        <a href="#t5" class="link">Pointer to structure</a>
+        <a href="#t6" class="link">Functions</a>
+        <a href="#t7" class="link">Parameter passing methods</a>
+        <a href="#t8" class="link">Arrays as parameters</a>
+        <a href="#t9" class="link">Structure as parameters</a>
     </div>
     <div id="navbar" class="grad">
         <div>
@@ -42,7 +50,7 @@
             <li>Constructor</li>
             <li>Templates</li>
         </ol>
-        <div class="wh">
+        <div id="t1" class="wh">
             <h2>Arrays</h2>
             <ul>
                 <li>Arrays are defined as collection of similar data elements.</li>
@@ -125,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="wh">
+        <div id="t2" class="wh">
             <h2>Structures</h2>
             <ul>
                 <li>Structures can be defined as collection of data members that are related data members under one
@@ -190,7 +198,7 @@
                 <li>Complex Number: a + ib</li>
             </ol>
             <div class='code'>
-               <pre>
+                <pre>
                    <code>
                    
                     struct Complex
@@ -205,8 +213,8 @@
                 <li>Student</li>
             </ol>
             <div class='code'>
-               <div class='dotc'></div>
-               <pre>
+                <div class='dotc'></div>
+                <pre>
                    <code>
                    
                     struct Student
@@ -228,13 +236,14 @@
                 <li>Playing card
                     <ul>
                         <li>face: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13</li>
-                        <li>Shape: 0 &rarr; &clubsuit;, 1 &rarr; &spadesuit;, 3 &rarr; &diamondsuit;, 4 &rarr; &heartsuit;</li>
+                        <li>Shape: 0 &rarr; &clubsuit;, 1 &rarr; &spadesuit;, 3 &rarr; &diamondsuit;, 4 &rarr;
+                            &heartsuit;</li>
                         <li>color: 0 &rarr; black, 1 &rarr; red</li>
                     </ul>
                 </li>
             </ol>
             <div class='code'>
-               <pre>
+                <pre>
                    <code>
                    
                     struct Card
@@ -258,7 +267,7 @@
             </div>
             <p>Now to create 52 cards we can use array.</p>
             <div class='code'>
-               <pre>
+                <pre>
                    <code>
                    
                     int main()
@@ -277,10 +286,10 @@
                </pre>
             </div>
             <div class="in">
-                <h3>Structure practise</h3>
+                <h3>Structure practice</h3>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <pre>
+                    <div class='dotc'></div>
+                    <pre>
                        <code>
                        
                         #include &lt;iostream>
@@ -316,18 +325,19 @@
                 </div>
             </div>
         </div>
-        <div class="wh">
+        <div id="t3" class="wh">
             <h2>Pointers</h2>
             <ul>
                 <li>Pointers is a address variable that is meant for storing address of not data itself.</li>
                 <li>They are used for indirect access of data.</li>
                 <li>For a program to use heap memory, pointers is used.</li>
-                <li>To access heap memory and resources outside the main memory like internet, keyboard, monitor etc pointers is used.</li>
+                <li>To access heap memory and resources outside the main memory like internet, keyboard, monitor etc
+                    pointers is used.</li>
                 <li>Pointers are also used for parameter passing.</li>
             </ul>
             <p>Example &darr;</p>
             <div class='code'>
-               <pre>
+                <pre>
                    <code>
                    
                     int main()
@@ -343,7 +353,7 @@
             </div>
             <p>Accessing Heap memory through pointer</p>
             <div class='code'>
-               <pre>
+                <pre>
                    <code>
                    
                     #include&lt;stdio.h> 
@@ -359,8 +369,8 @@
             <div class="in">
                 <p>Practise</p>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <pre>
+                    <div class='dotc'></div>
+                    <pre>
                        <code>
                        
                             #include &lt;iostream>
@@ -380,8 +390,8 @@
                 </div>
                 <p>Pointer to an array</p>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <pre>
+                    <div class='dotc'></div>
+                    <pre>
                        <code>
                        
                             #include &lt;iostream>
@@ -406,8 +416,8 @@
                 </div>
                 <p>Creating an array in heap</p>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <pre>
+                    <div class='dotc'></div>
+                    <pre>
                        <code>
                        
                             #include &lt;iostream>
@@ -433,7 +443,964 @@
                        </code>
                    </pre>
                 </div>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            struct Rectangle
+                            {
+                                int length;
+                                int breadth;
+                            };
+                            
+                            int main()
+                            {
+                                int *p1;
+                                char *p2;
+                                float *p3;
+                                double *p4;
+                                struct Reactange *p5;
+                                cout << sizeof(p1)<< endl; // 8
+                                cout << sizeof(p2)<< endl; // 8
+                                cout << sizeof(p3)<< endl; // 8
+                                cout << sizeof(p4)<< endl; // 8
+                                cout << sizeof(p5)<< endl; // 8
+                                // every pointer takes same amount of memory
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
             </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Reference</h2>
+            <ul>
+                <li>This feature is only available in C++.</li>
+                <li>A reference is a just another name for the same variable.</li>
+            </ul>
+            <p>Example:</p>
+            <div class='code'>
+                <pre>
+                       <code>
+                       
+                        int main()
+                        {
+                            int a = 10;
+                            int &r = a; // syntax reference 
+                            cout<< a;
+                            r++;
+                            cout<< r; // 11 
+                            cout<< a; // 11
+                        }
+                       </code>
+                   </pre>
+            </div>
+            <ul>
+                <li>This is used for parameter passing</li>
+                <li>For writing small functions we use reference.</li>
+            </ul>
+            <div class="in">
+                <h3>Practise</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                           <code>
+                           
+                            #include &lt;iostream> 
+                            using namespace std;
+
+                            int main()
+                            {
+                                int a = 10;
+                                int &r =  a;
+                                // at the time of declaring the reference variable we have to initialize it also.
+                                // later we cannot assign new value to reference we can only change the value.
+
+                                // updating value of a 
+                                a = 15;
+                                cout<< a << r; // 15 15 
+                                // updating value of r 
+                                r = 25; 
+                                cout<< a<< r; // 25 25
+                                // conceptually reference doesn't consume memory it uses same memory of stored variable 
+
+                                int b = 30;
+                                r = b;
+                                cout << a<< r; // 30 30 
+                            }
+                           </code>
+                       </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Pointer to structure</h2>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    struct Rectangle 
+                    {
+                        int length; // size 2 bytes
+                        int breadth; // size 2 bytes
+                    };
+
+                    int main ()
+                    {
+                        struct Rectangle r = {10, 5};
+                        struct Rectangle *P = &amp;r;
+                        // Pointer always take 2 bytes no matter what is stored in it.
+
+                        // accessing data 
+                        // *P.length = 20; this is wrong as the higher precedence is for (.) operator
+                        // (*P).length = 20; this syntax is complex
+                        // use this &darr; 
+                        P->length = 20; // this is simple syntax to access the members
+                    }
+                   </code>
+               </pre>
+            </div>
+            <p>Creating structure variable dynamically using pointer.</p>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    struct Rectangle
+                    {
+                        int length;
+                        int breadth;
+                    };
+
+                    int main()
+                    {
+                        struct Rectangle *P;
+                        P = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+                        P->length = 10;
+                        P->breadth = 5;
+                    }
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Practise</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">use of arrow and dot operator in C.</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+                        
+                             #include &lt;stdio.h>
+                             struct Rectangle
+                             {
+                                 int length;
+                                 int breadth;
+                             };
+                             int main()
+                             {
+                                 // Rectangle r = {10, 5}; // we are not using 'struct' keyword and it still works
+                                 // this only works with C++ compiler
+                                 struct Rectangle r = {10, 5};
+                                 Rectangle *p = &r;
+                                 // now to access member using pointer variable we cannot use dot (.) operator.
+                                 cout << p->length << endl;
+                                 cout << p->breadth << endl;
+                                 // for normal variable use dot operator and for pointer variable use arrow operator.
+                                 return 0;
+                             }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">Structure in heap using C.</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+                        
+                             #include &lt;stdio.h>
+                             struct Rectangle
+                             {
+                                 int length;
+                                 int breadth;
+                             };
+                             int main()
+                             {
+                                 // now we will see how to create object of Rectangle in heap.
+                                 struct Rectangle *p; // this will be created in stack.
+                                 p = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+                                 // now using above code a pointer will be created in heap and 'p' will be pointing to it.
+                                 p->length = 15;
+                                 p->breadth = 7;
+                                 cout << p->length << endl;
+                                 cout << p->breadth << endl;
+                                 return 0;
+                             }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">C++ code for structure in heap.</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+                            
+                                 #include &lt;iostream>
+                                 using namespace std;
+                                 struct Rectangle
+                                 {
+                                     int length;
+                                     int breadth;
+                                 };
+                                 int main()
+                                 {
+                                     Rectangle *p;
+                                     p = new Rectangle;
+                                     p->length = 15;
+                                     p->breadth = 7;
+                                     cout << p->length << endl;
+                                     cout << p->breadth << endl;
+                                     return 0;
+                                 }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Functions</h2>
+            <ul>
+                <li>Function is a piece of code which performs a specific task.</li>
+                <li>Grouping instructions is called function.</li>
+                <li>They are called as modules or procedures.</li>
+                <li>The main task can be divided into several small task in the form of functions this type of
+                    programming is also called as modular or procedural programming.</li>
+                <li>It is easy for development.</li>
+                <li>A group of programmers can work on a single project using functioning.</li>
+                <li>Functions provide reusability of code.</li>
+                <li>It can be used in other software projects as well.</li>
+                <li>You can group function into library.</li>
+            </ul>
+            <img src="../images/mono.svg" alt="" class="wb">
+            <p>Some terminology &darr;</p>
+            <img src="../images/func1.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Practise: function</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        #include &lt;iostream>
+                        using namespace std;
+                        int add(int a, int b)
+                        {
+                            int c; 
+                            c = a + b;
+
+                            return c;
+                        }
+                        int main()
+                        {
+                            int num1 = 10, num2 = 15, sum;
+                            sum = add(num1, num2);
+                            cout << "Sum is " << sum;
+                            return 0;
+                        }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Parameter passing methods</h2>
+            <ul>
+                <li>There are three parameter passing methods:
+                    <ul>
+                        <li>Pass by value</li>
+                        <li>Pass by address</li>
+                        <li>Pass by reference</li>
+                    </ul>
+                </li>
+                <li>We will understands all of these using swap function.</li>
+            </ul>
+            <div class="in">
+                <h3>Pass by value</h3>
+                <ul>
+                    <li>In pass by value actula parameters will not be modified if any changes are done to the formal
+                        parameters.</li>
+                    <li>Example &darr;</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                       <code>
+                       
+                        void swap(int x, int y)
+                        {
+                            int temp;
+                            temp = x;
+                            x = y;
+                            y = temp;
+                        }
+
+                        int main()
+                        {
+                            int a, b;
+                            a = 10;
+                            b = 20;
+                            swap(a, b);
+                            printf("%d %d", a, b);
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Here when the swap function ends the value of a & b are not swapped.</li>
+                    <li>We use pass by value when we don't have to modify the actual parameters or we can use it when a
+                        function is returning some results.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by address</h3>
+                <ul>
+                    <li>Here the address of actual parameters are passed to formal parameter parameters must be
+                        pointers.</li>
+                    <li>Any changes done inside function will modify the actual parameters.</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                        <code>
+                        
+                         void swap(int *x, int *y)
+                         {
+                             int temp;
+                             temp = *x;
+                             *x = *y;
+                             *y = temp;
+                         }
+ 
+                         int main()
+                         {
+                             int a, b;
+                             a = 10;
+                             b = 20;
+                             swap(&a, &b);
+                             printf("%d %d", a, b);
+                         }
+                        </code>
+                    </pre>
+                </div>
+                <ul>
+                    <li>One function cannot access variable of another function directly but it can indirectly using
+                        pointers.</li>
+                    <li>Thus call by address is a suitable mechanism for modifying actual parameters.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by reference</h3>
+                <ul>
+                    <li>References are part of C++ programming, its one of the useful and powerful mechanism of this
+                        language.</li>
+                    <li>To make a function call as call by reference we just need to add & in the parameters, these are
+                        the references.</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                        <code>
+                        
+                         void swap(int &x, int &y)
+                         {
+                             int temp;
+                             temp = x;
+                             x = y;
+                             y = temp;
+                         }
+ 
+                         int main()
+                         {
+                             int a, b;
+                             a = 10;
+                             b = 20;
+                             swap(a, b);
+                             printf("%d %d", a, b);
+                         }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <h3>Practise: Parameter passing</h3>
+            <div class="in">
+                <h3>Call by value</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        #include &lt;iostream>
+                        using namespace std;
+                        int increment(int a)
+                        {
+                            a++;
+                            cout << a; // 2
+                        }
+
+                        int main()
+                        {
+                            int num1 = 1;
+                            increment(num1);
+                            cout << num1; // 1
+                        }
+
+                        // This above code proves that there is no change occurs on actual parameters when we use call by value mechanism.
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>When to use call by value?
+                        <ul>
+                            <li>It should be used when a function has to do computation, get some results and return
+                                those results.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by address</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        #include &lt;iostream>
+                        using namespace std;
+
+                        void swap(int *x, int *y)
+                        {
+                            int temp;
+                            temp = *x;
+                            *x = *y;
+                            *y = temp;
+                        }
+                        /* we doesn't have to return anything because the result of this
+                        function is directly reflecting to the actual parameter */
+
+                        int main()
+                        {
+                            int num1 = 10, num2 = 15;
+
+                            swap(&num1, &num2);
+
+                            cout << "First Number" << num1 << endl; // 15
+                            cout << "Second Number" << num2 << endl; // 10
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>When you want a function to directly work upon the actual parameters then use call by address.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by reference</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        #include &lt;iostream>
+                        using namespace std;
+
+                        void swap(int &x, int &y)
+                        {
+                            int temp;
+                            temp = *x;
+                            *x = *y;
+                            *y = temp;
+                        }
+                        /* 
+                            There are two possibilities that compilier can convert above function
+                            to inline function or it can make the parameters as pointers also.
+                        */
+
+                        int main()
+                        {
+                            int num1 = 10, num2 = 15;
+
+                            swap(num1, num2);
+
+                            cout << "First Number" << num1 << endl; // 15
+                            cout << "Second Number" << num2 << endl; // 10
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>If only one parameter is a call by reference then it is not possible for compiler to make swap
+                        function as inline function.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t8" class="wh">
+            <h2>Arrays as Parameters</h2>
+            <ul>
+                <li>The following function is taking parameter as an array, <b>int A[]</b>, the declared array must be
+                    empty and its size must be provides as follows <b>int n.</b></li>
+                <li>The reason for array in parameter being empty is because it acts as a pointer.</li>
+                <li>Arrays cannot be passed as values, arrays can only be passed by address.</li>
+                <li>As its call by address its possible to change the values of the arrays.</li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    void func(int A[], int n)
+                    {
+                        int i;
+                        for(i = 0; i < n; i++)
+                        {
+                            printf("%d", A[i]);
+                        }
+                    }
+                    int main()
+                    {      
+                        int A[5] = {2, 4, 6, 8, 10};
+                        fun(A, 5);
+                    }
+                   </code>
+               </pre>
+            </div>
+            <h3>Returning array as parameter</h3>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    int * fun(int n)
+                    {
+                        itn *P;
+                        P = (int *)malloc(n * sizeof(int));
+                        return (P);
+                    }
+                    int main()
+                    {
+                        int *A;
+                        A = fun(5);
+                        ...
+                        ...
+                    }
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Practice : Array as Parameter</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            // remember array cannot be passed as value they are always passed by address
+                            void fun(int A[])
+                            {
+                                cout << sizeof(A) / sizeof(int) << endl;
+                                // this gives 2 as output because A here is a pointer to array and its size is 8, 8/4 = 2
+                            }
+                            int main()
+                            {
+                                int A[] = {2, 4, 6, 8, 10};
+                                int n = 5;
+                                fun(A);
+                                cout << sizeof(A) / sizeof(int) << endl; // while this gives 5 as output.
+                                for (int x : A)
+                                    cout << x << " ";
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Workig of <b>for each</b> loop</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            void fun(int A[], int n)
+                            {
+                                // for(int x : A)
+                                // cout << x << " ";
+                                // We cannot use for each loop in a function because A is a pointer not an Array
+                                // Another reason would be that for each loop only work for the array which is declared in the same scope.
+                                // but we can use for loop
+                                for (int i = 0; i < n; i++)
+                                {
+                                    cout << A[i] << " ";
+                                }
+                            }
+                            int main()
+                            {
+                                int A[] = {2, 4, 6, 8, 10};
+                                int n = 5;
+                                fun(A, n);
+                                for (int x : A)
+                                    cout << x << " ";
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>We can also use pointer syntax</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            void fun(int *A, int n) // ***
+                            {
+                                for (int i = 0; i < n; i++)
+                                {
+                                    cout << A[i] << " ";
+                                }
+                            }
+                            int main()
+                            {
+                                int A[] = {2, 4, 6, 8, 10};
+                                int n = 5;
+                                fun(A, n);
+                                for (int x : A)
+                                    cout << x << " ";
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Remember if we will modify the passed array in function then it will also modify the actual
+                        array.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            void fun(int *A, int n)
+                            {
+                                A[0] = 15;
+                            }
+                            int main()
+                            {
+                                int A[] = {2, 4, 6, 8, 10};
+                                int n = 5;
+                                fun(A, n);
+                                for (int x : A)
+                                    cout << x << " ";
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Now we will create an array inside a function and return its address. (Function returning an
+                        array)</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            using namespace std;
+                            int * fun(int size)
+                            {
+                                int *p;
+                                p = new int[size];
+                                for (int i = 0; i < size; i++)
+                                {
+                                    p[i] = i + 1;
+                                }
+                                return p;
+                            }
+                            int main()
+                            {
+                                int *ptr, sz = 5;
+                                ptr = fun(sz);
+                                for (int i = 0; i < sz; i++)
+                                {
+                                    cout << ptr[i] << " ";
+                                }
+                                /*
+                                    array is created in heap inside "fun" function and even "main" function can access it.
+                                */
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Structure as parameter</h2>
+            <ul>
+                <li>If we are sending structure as a parameter to a function it may be call by value or call by address
+                    (or call by reference in C++).
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Call by value</h3>
+                <div class='code'>
+                    <pre>
+                       <code>
+                       
+                        struct rectangle
+                        {
+                            int length, breadth;
+                        };
+
+                        int area(struct rectangle r1)
+                        {
+                            return (r1.length * r1.breadth);
+                        }
+
+                        int main()
+                        {
+                            struct rectangle r = { 10, 5};
+                            printf("%d", area(r));
+                            // we could send length and breadth separately but instead we are passing the structure.
+                            // Benefit of structure is that we can pass multiple parameter inside a structure.
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>A separate object will be created in call by value method and everything will be copied in the
+                        corresponding members this is one of the benefit of structure as parameter.</li>
+                    <li>If you are making changes to formal parameter it will not effect the actual parameter.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by reference</h3>
+                <ul>
+                    <li>Example &darr;</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                       <code>
+                       
+                        int area(struct rectangle &r1)
+                        {
+                            return (r1.length * r1.breadth);
+                        }
+
+                        int main()
+                        {
+                            struct rectangle r = { 10, 5};
+                            printf("%d", area(r));
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>The only change we need to do for call by reference is adding <b>&</b> in the parameter of
+                        <b>area</b> function.</li>
+                    <li>Here the new object is not created but the <b>same object is called r1</b> also.</li>
+                    <li>Thus new changes in the values will effect the actual parameters.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Call by address</h3>
+                <ul>
+                    <li>Example &darr;</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                       <code>
+                       
+                        void changeLength(struct rectangle *p, int l)
+                        {
+                            p -> length = l;
+                        }
+
+                        int main()
+                        {
+                            struct rectangle r = { 10, 5};
+                            changeLength(&r, 20);
+                        }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>If you want some function to change the actual parameter then it must be done by call by address
+                        or call by reference.</li>
+                </ul>
+            </div>
+            <ul>
+                <li>Array as a member of structure</li>
+            </ul>
+            <div class='code'>
+                <pre>
+                   <code>
+                   
+                    struct text
+                    {
+                        int A[5];
+                        int n;
+                    };
+
+                    void fun(struct test t1)
+                    {
+                        // for this function every thing will be copied even array.
+                        t1.A[0] = 10;
+                        t1.A[1] = 9;
+                        // this won't change the actual array in main function as the structure is passed as call by value
+                    }
+
+                    int main()
+                    {
+                        struct test t = {{2,4,6,8,10}, 5};
+                        fun(t);
+                    }
+                   </code>
+               </pre>
+            </div>
+            <ul>
+                <li>It is possible to send array as a parameter in pass by value <b>only</b> if its inside the
+                    <b>structure</b>, it its just array passing then its not possible by pass by value.</li>
+            </ul>
+            <div class="in">
+                <h3>Practice : Structure as Parameter</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">Call by value C++ code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+                        
+                         #inlcude &lt;iostream>
+                         using namespace std;
+                         struct Rectangle
+                         {
+                            int length, breadth;
+                         };
+
+                         void fun(struct Rectangle r)
+                         {
+                            r.length = 20; // this won't affect the actual parameter.
+                            cout << "Length " << r.length << endl << "Breadth " << r.breadth << endl;
+                        }
+                        
+                        int main()
+                        {
+                            struct Rectangle r = {10, 5};
+                            fun(r);
+                             
+                            cout << "Length " << r.length << endl << "Breadth " << r.breadth << endl;
+                            
+                            return 0;
+                         }
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <button class="ac">Call by address C++ code</button>
+                   <div class="panel">
+                    <pre>
+                        <code>
+                        
+                            #inlcude &lt;iostream>
+                            using namespace std;
+                            struct Rectangle
+                            {
+                               int length, breadth;
+                            }; 
+   
+                            void fun(struct Rectangle *p)
+                            {
+                               p->length = 20; // this will affect the actual parameter.
+                               cout << "Length " << p->length << endl << "Breadth " << p->breadth << endl;
+                           }
+                           
+                           int main()
+                           {
+                               struct Rectangle r = {10, 5};
+                               fun(&r);
+                                
+                               cout << "Length " << r.length << endl << "Breadth " << r.breadth << endl;
+                               
+                               return 0;
+                            }
+                        </code>
+                    </pre>
+                   </div>
+                </div>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <button class="ac">Creating a structure variable in heap and returning its address.</button>
+                   <div class="panel">
+                    <pre>
+                        <code>
+                        
+                         #include &lt;iostream>
+                         using namespace std;
+ 
+                         struct Rectangle
+                         {
+                             int length, breadth;
+                         };
+                         struct Rectangle *fun()
+                         {
+                             struct Rectangle *p;
+                             p = new Rectangle;
+ 
+                             p->length = 15;
+                             p->breadth = 7;
+ 
+                             return p;
+                         }
+ 
+                         int main()
+                         {
+                             struct Rectangle *ptr = fun();
+                             cout << "Length " << ptr->length << endl << "Breadth " << ptr->breadth << endl;
+                             return 0;
+                         }
+                        </code>
+                    </pre>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Structures and Functions</h2>
+            <img src="../images/structfunc.svg" alt="" class="wb">
+            <ul>
+                <li>Conclusion:
+                    <ul>
+                        <li>This style of programming leads to Object Orientation.</li>
+                        <li>This is the highest level of programming that you can do in C language, by writing structures and fuctions.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="../main.js"></script>

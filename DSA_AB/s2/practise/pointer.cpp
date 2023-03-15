@@ -1,22 +1,25 @@
 #include <iostream>
 using namespace std;
-struct Rectangle
+int * fun(int size)
 {
-    int length;
-    int breadth;
-};
-
+    int *p;
+    p = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        p[i] = i + 1;
+    }
+    return p;
+}
 int main()
 {
-    int *p1;
-    char *p2;
-    float *p3;
-    double *p4;
-    struct Reactange *p5;
-    cout<<sizeof(p1)<<endl;
-    cout<<sizeof(p2)<<endl;
-    cout<<sizeof(p3)<<endl;
-    cout<<sizeof(p4)<<endl;
-    cout<<sizeof(p5)<<endl;
+    int *ptr, sz = 5;
+    ptr = fun(sz);
+    for (int i = 0; i < sz; i++)
+    {
+        cout << ptr[i] << " ";
+    }
+    /*
+        array is created in heap inside "fun" function and even "main" function can access it.
+    */
     return 0;
 }
