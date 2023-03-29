@@ -703,7 +703,7 @@
                         using namespace std;
                         int add(int a, int b)
                         {
-                            int c; 
+                            int c = 0; 
                             c = a + b;
 
                             return c;
@@ -735,7 +735,7 @@
             <div class="in">
                 <h3>Pass by value</h3>
                 <ul>
-                    <li>In pass by value actula parameters will not be modified if any changes are done to the formal
+                    <li>In pass by value actual parameters will not be modified if any changes are done to the formal
                         parameters.</li>
                     <li>Example &darr;</li>
                 </ul>
@@ -1220,7 +1220,8 @@
                 </div>
                 <ul>
                     <li>The only change we need to do for call by reference is adding <b>&</b> in the parameter of
-                        <b>area</b> function.</li>
+                        <b>area</b> function.
+                    </li>
                     <li>Here the new object is not created but the <b>same object is called r1</b> also.</li>
                     <li>Thus new changes in the values will effect the actual parameters.</li>
                 </ul>
@@ -1283,7 +1284,8 @@
             </div>
             <ul>
                 <li>It is possible to send array as a parameter in pass by value <b>only</b> if its inside the
-                    <b>structure</b>, it its just array passing then its not possible by pass by value.</li>
+                    <b>structure</b>, it its just array passing then its not possible by pass by value.
+                </li>
             </ul>
             <div class="in">
                 <h3>Practice : Structure as Parameter</h3>
@@ -1321,10 +1323,10 @@
                     </div>
                 </div>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <button class="ac">Call by address C++ code</button>
-                   <div class="panel">
-                    <pre>
+                    <div class='dotc'></div>
+                    <button class="ac">Call by address C++ code</button>
+                    <div class="panel">
+                        <pre>
                         <code>
                         
                             #inlcude &lt;iostream>
@@ -1351,13 +1353,13 @@
                             }
                         </code>
                     </pre>
-                   </div>
+                    </div>
                 </div>
                 <div class='code'>
-                   <div class='dotc'></div>
-                   <button class="ac">Creating a structure variable in heap and returning its address.</button>
-                   <div class="panel">
-                    <pre>
+                    <div class='dotc'></div>
+                    <button class="ac">Creating a structure variable in heap and returning its address.</button>
+                    <div class="panel">
+                        <pre>
                         <code>
                         
                          #include &lt;iostream>
@@ -1386,7 +1388,7 @@
                          }
                         </code>
                     </pre>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1397,10 +1399,418 @@
                 <li>Conclusion:
                     <ul>
                         <li>This style of programming leads to Object Orientation.</li>
-                        <li>This is the highest level of programming that you can do in C language, by writing structures and fuctions.</li>
+                        <li>This is the highest level of programming that you can do in C language, by writing
+                            structures and fuctions.</li>
                     </ul>
                 </li>
             </ul>
+        </div>
+        <div class="wh">
+            <h2>Converting a C program to a C++ class.</h2>
+            <img src="../images/class1.svg" alt="" class="wb">
+            <p>Now we will use constructor in C++ program. &darr;</p>
+            <img src="../images/class2.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Programming methods</h2>
+            <div class="in">
+                <h3>Monolithic program</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                         <code>
+                         
+                                 #include &lt;stdio.h>
+                                 int main()
+                                 {
+                                     int length = 0, breadth = 0; // its a good practise to initialize a variable when we are declaring it.
+                                 
+                                     printf("Enter length and breadth : ");
+                                     scanf("%d%d", &length, &breadth);
+                                 
+                                     int area = length * breadth;
+                                     int peri = 2 * (length + breadth);
+                                 
+                                     printf("Area = %d \n Perimeter = %d\n", area, peri);
+                                     return 0;
+                                 }
+                         </code>
+                     </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Modular program</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                         <code>
+                         
+                                 #include &lt;stdio.h>
+                                 int area(int length, int breadth)
+                                 {
+                                     return length * breadth;
+                                 }
+                                 
+                                 int peri(int length, int breadth)
+                                 {
+                                     return 2 * (length + breadth);
+                                 }
+                                 
+                                 int main()
+                                 {
+                                     int length = 0, breadth = 0;
+                                 
+                                     printf("Enter length and breadth : ");
+                                     scanf("%d%d", &length, &breadth);
+                                 
+                                     int a = area(length, breadth);
+                                     int p = peri(length, breadth);
+                                 
+                                     printf("Area = %d \n Perimeter = %d\n", a, p);
+                                     return 0;
+                                 }
+                         </code>
+                     </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Program with structures and functions</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;stdio.h>
+                            struct Rectangle
+                            {
+                                int length, breadth;
+                            };
+                            
+                            void initialize(struct Rectangle *r, int l, int b)
+                            {
+                                r->length = l;
+                                r->breadth = b;
+                            }
+                            
+                            int area(struct Rectangle r)
+                            {
+                                return r.length * r.breadth;
+                            }
+                            
+                            int peri(struct Rectangle r)
+                            {
+                                return 2 * (r.length + r.breadth);
+                            }
+                            
+                            int main()
+                            {
+                                struct Rectangle r = {0, 0};
+                            
+                                int l, b;
+                            
+                                printf("Enter length and breadth : ");
+                                scanf("%d%d", &l, &b);
+                            
+                                initialize(&r, l, b);
+                            
+                                int a = area(r);
+                                int p = peri(r);
+                            
+                                printf("Area = %d \n Perimeter = %d\n", a, p);
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Converting previous program to object orientated.</h3>
+                <ul>
+                    <li>Functions like initialize, area and permi are working for structure but are declared outside the
+                        structure.</li>
+                    <li>So we will put all the related function inside the structure which is possible in C++.</li>
+                    <li>Object orientation is writing data members and all the member functions together at a single
+                        place, we can do this using either class or structure.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            struct Rectangle
+                            {
+                                int length, breadth;
+                            
+                                void initialize(int l, int b)
+                                {
+                                    length = l;
+                                    breadth = b;
+                                }
+                            
+                                int area()
+                                {
+                                    return length * breadth;
+                                }
+                            
+                                int peri()
+                                {
+                                    return 2 * (length + breadth);
+                                }
+                            };
+                            int main()
+                            {
+                                struct Rectangle r = {0, 0};
+                            
+                                int l, b;
+                            
+                                printf("Enter length and breadth : ");
+                                scanf("%d%d", &l, &b);
+                            
+                                r.initialize(l, b);
+                            
+                                int a = r.area();
+                                int p = r.peri();
+                            
+                                printf("Area = %d \n Perimeter = %d\n", a, p);
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Structure and class are same but the only difference is that in structure everything is public
+                        but in class everything is by default private.</li>
+                    <li>Changing above structure based program to class based</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                            #include &lt;iostream>
+                            class Rectangle
+                            {
+                            public: // making it public because it is private by default.
+                                int length, breadth;
+                            
+                                void initialize(int l, int b)
+                                {
+                                    length = l;
+                                    breadth = b;
+                                }
+                            
+                                int area()
+                                {
+                                    return length * breadth;
+                                }
+                            
+                                int peri()
+                                {
+                                    return 2 * (length + breadth);
+                                }
+                            };
+                            int main()
+                            {
+                                struct Rectangle r; // direct initialization we can't do with class.
+                            
+                                int l, b;
+                            
+                                printf("Enter length and breadth : ");
+                                scanf("%d%d", &l, &b);
+                            
+                                r.initialize(l, b);
+                            
+                                int a = r.area();
+                                int p = r.peri();
+                            
+                                printf("Area = %d \n Perimeter = %d\n", a, p);
+                                return 0;
+                            }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Class and Constructor</h2>
+            <ul>
+                <li>Here we will create "Rectangle" using class from scratch.</li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+                        
+                             #include &lt;iostream>
+                             using namespace std;
+                             class Rectangle
+                             {
+                             private:
+                                 int length, breadth;
+                             
+                             public:
+                                 Rectangle() // default constructor
+                                 {
+                                     length = breadth = 1;
+                                 }
+                                 Rectangle(int l, int b); // parameterized constructor
+                             
+                                 int area();
+                             
+                                 int peri();
+                                 int getLength()
+                                 {
+                                     return length;
+                                 }
+                                 void setLength(int l)
+                                 {
+                                     length = l;
+                                 }
+                                 ~Rectangle(); // destructor
+                             };
+                             Rectangle ::Rectangle(int l, int b)
+                             {
+                                 length = l;
+                                 breadth = b;
+                             }
+                             int Rectangle ::area()
+                             {
+                                 return length * breadth;
+                             }
+                             int Rectangle ::peri()
+                             {
+                                 return 2 * (length + breadth);
+                             }
+                             Rectangle ::~Rectangle() // destructor is called when the object is going out of the scope
+                             {
+                                cout << "Destructor";
+                             }
+                             int main()
+                             {
+                                 Rectangle r(10, 5);
+                                 cout << r.area() << endl;
+                                 cout << r.peri() << endl;
+                                 r.setLength(20);
+                                 cout << r.getLength() << endl;
+                                 int l, b;
+                                 return 0;
+                             }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Template Classes</h2>
+            <ul>
+                <li>C++ supports generic functions and generic classes.</li>
+                <li>Generic functions are template functions and generic classes are template classes.</li>
+            </ul>
+            <p>Why generic classes? Let's understand using a example class &darr;</p>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    class Arithmetic
+                    {
+                        private:
+                            int a;
+                            int b;
+                        public:
+                            Arithmetic(int a, int b);
+                            int add();
+                            int sub();
+                    };
+
+                    Arithmetic ::Arithmetic(int a, int b)
+                    {
+                        // as the member name and function arguments name are same 
+                        // "this" is pointer to current object.
+                        this->a = a;
+                        this->b = b;
+                    }
+
+                    int Arithmetic :: add()
+                    {
+                        int c;
+                        c = a + b;
+                        return c;
+                    }
+
+                    int Arithmetic :: sub()
+                    {
+                        int c;
+                        c = a - b;
+                        return c;
+                    }
+                   </code>
+               </pre>
+            </div>
+            <ul>
+                <li>Above "Arithmetic" class is performing additon and subtraction on integer type data.</li>
+                <li>Now if want to use different data type (float, long int, etc) so for them this class won't work. We
+                    have to write separate class for it.</li>
+                <li>Now instead of writing separate class for different data type we use generic class called template
+                    class.</li>
+                <li>Now we will convert the above class to generic.</li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                    <code>
+                    
+                     template &lt;class T>
+                     class Arithmetic
+                     {
+                         private:
+                             T a;
+                             T b;
+                         public:
+                             Arithmetic(T a, T b);
+                             T add();
+                             T sub();
+                     }; // effect of template ends here.
+ 
+                     // again we have to use template for function 
+                     // because this constructor belongs to a class which is a template
+
+                     template &lt;class T>
+                     Arithmetic&lt;T> ::Arithmetic(T a, T b)
+                     {
+                         // as the member name and function arguments name are same 
+                         // "this" is pointer to current object.
+                         this->a = a;
+                         this->b = b;
+                     }
+ 
+                     template&lt;class T> 
+                     T Arithmetic&lt;T> :: add()
+                     {
+                         T c;
+                         c = a + b;
+                         return c;
+                     }
+ 
+                     template&lt;class T>
+                     T Arithmetic&lt;T> :: sub()
+                     {
+                         T c;
+                         c = a - b;
+                         return c;
+                     }
+
+                     int main()
+                     {
+                        Arithmetic&lt;int> arr(10, 5);
+                        // now everywhere there is a "T" it will be replaced by "int" and this class becomes pure integer class.
+                     }
+                    </code>
+                </pre>
+            </div>
         </div>
     </div>
     <script src="../main.js"></script>
