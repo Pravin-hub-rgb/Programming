@@ -22,6 +22,11 @@
         <a href="#t7" class="link">Parameter passing methods</a>
         <a href="#t8" class="link">Arrays as parameters</a>
         <a href="#t9" class="link">Structure as parameters</a>
+        <a href="#t10" class="link">Structures and functions</a>
+        <a href="#t11" class="link">Converting C program to C++ class</a>
+        <a href="#t12" class="link">Programming methods</a>
+        <a href="#t13" class="link">Class and constructor</a>
+        <a href="#t14" class="link">Template classes</a>
     </div>
     <div id="navbar" class="grad">
         <div>
@@ -1392,7 +1397,7 @@
                 </div>
             </div>
         </div>
-        <div class="wh">
+        <div id="t10" class="wh">
             <h2>Structures and Functions</h2>
             <img src="../images/structfunc.svg" alt="" class="wb">
             <ul>
@@ -1405,13 +1410,13 @@
                 </li>
             </ul>
         </div>
-        <div class="wh">
+        <div id="t11" class="wh">
             <h2>Converting a C program to a C++ class.</h2>
             <img src="../images/class1.svg" alt="" class="wb">
             <p>Now we will use constructor in C++ program. &darr;</p>
             <img src="../images/class2.svg" alt="" class="wb">
         </div>
-        <div class="wh">
+        <div id="t12" class="wh">
             <h2>Programming methods</h2>
             <div class="in">
                 <h3>Monolithic program</h3>
@@ -1632,7 +1637,7 @@
                 </div>
             </div>
         </div>
-        <div class="wh">
+        <div id="t13" class="wh">
             <h2>Class and Constructor</h2>
             <ul>
                 <li>Here we will create "Rectangle" using class from scratch.</li>
@@ -1703,7 +1708,7 @@
                 </div>
             </div>
         </div>
-        <div class="wh">
+        <div id="t14" class="wh">
             <h2>Template Classes</h2>
             <ul>
                 <li>C++ supports generic functions and generic classes.</li>
@@ -1730,7 +1735,7 @@
                     {
                         // as the member name and function arguments name are same 
                         // "this" is pointer to current object.
-                        this->a = a;
+                        this->a = a; // this->a is member "a"
                         this->b = b;
                     }
 
@@ -1780,9 +1785,7 @@
 
                      template &lt;class T>
                      Arithmetic&lt;T> ::Arithmetic(T a, T b)
-                     {
-                         // as the member name and function arguments name are same 
-                         // "this" is pointer to current object.
+                     {  
                          this->a = a;
                          this->b = b;
                      }
@@ -1805,8 +1808,12 @@
 
                      int main()
                      {
-                        Arithmetic&lt;int> arr(10, 5);
+                        Arithmetic&lt;int> ar(10, 5);
                         // now everywhere there is a "T" it will be replaced by "int" and this class becomes pure integer class.
+                        cout << ar.add();
+
+                        Arithmetic&lt;float> ar1(1.5, 1.2);
+                        cout << ar1.add();
                      }
                     </code>
                 </pre>
