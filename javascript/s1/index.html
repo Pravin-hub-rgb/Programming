@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>JavaScript</h1>
+        <div class="wh">
+            <h2>Comments</h2>
+            <ul>
+                <li>Code that JS will intentally ignore.</li>
+                <li>These are used to create notes for ourself about what the code does.</li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                  <code>
+                  
+                   var number = 5; // in-line comment
+                   /*
+                       Multi-line comment 1
+                       Multi-line comment 2
+                       Multi-line comment 3
+                   */
+                  </code>
+              </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Data Types and Variables</h2>
+            <ul>
+                <li>Data is anything that is meaning full to the computer.</li>
+                <li>JavaScript provides 7 different data types.
+                    <ol>
+                        <li>undefined: Something that hasn't being defined. Variable that hasn't been set to anything
+                            yet.</li>
+                        <li>null: It means nothing, we have to set it.</li>
+                        <li>boolean: True or false.</li>
+                        <li>string</li>
+                        <li>symbol: It is immutable privitive value that is unique.</li>
+                        <li>number</li>
+                        <li>object: It can store alot of key value pairs of different data type.</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Variable</h3>
+                <ul>
+                    <li>A variable allows computer to store and manipulate data in a dynamic fashion.</li>
+                    <li>It is basically a label to point to a data.</li>
+                    <li>There are three ways to declare a variable in JS.
+                        <ol>
+                            <li>var myName = "abc"</li>
+                            <li>let ourname = "xyz"</li>
+                            <li>const pi = 3.14</li>
+                        </ol>
+                    </li>
+                    <li>"var" can be used throughout in our whole program.</li>
+                    <li>"let" will only be used with in the scope of where you declared that.</li>
+                    <li>"const" is variable that can never change.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Storing values with assignment operator</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    // try to use semi-colon
+                    var a; // here we are declaring a variable 
+                    var b = 2; // here we are declaring and assinging in one line
+                     // equal (=) sign is an assinging operator
+                   </code>
+               </pre>
+            </div>
+            <ul>
+                <li>console.log() allows you to see output in console.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Initializing variable with assignment operator</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    // Initialize these three variables 
+                    var a = 5;
+                    var b = 10;
+                    var c = "I am a";
+
+                    // updating above variables 
+                    a = a + 1; // 6
+                    b = b + 5; // 15
+                    c = c + " String!"; // "I am a String!"
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Case Senstivity in Variables</h2>
+            <ul>
+                <li>Variable name and function names in JS are case sensitive. That means that capitalization matters.
+                </li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    // Declarations
+                    var StUdLyCapVaR;
+                    var properCamelCase;
+                    var TitleCaseOver;
+
+                    // Assignments
+                    STUDLYCAPVAR = 10;
+                    PRoperCAmelCAse = "A String";
+                    tITLEcASEoVER = 9000;
+
+                    // this will give error
+                   </code>
+               </pre>
+            </div>
+            <p>In above code the declared variable are not same as variable used during assignment. </p>
+            <ul>
+                <li>Use camel case.</li>
+            </ul>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                    <code>
+                    
+                     // Declarations with camel case
+                     var studlyCapVar;
+                     var properCamelCase;
+                     var TitleCaseOver;
+ 
+                     // Assignments
+                     studlyCapVar = 10;
+                     properCamelCase = "A String";
+                     TitleCaseOver = 9000;
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Basic Maths</h2>
+            <div class="in">
+                <h3>Adding Numbers</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var sum = 10 + 0; // 10
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Subtracting Numbers</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var difference = 45 - 3 // 42
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Multiplying Numbers</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var product = 8 * 10; // 80
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Dividing Numbers </h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var quotient = 66 / 33; // 2
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Incrementing Numbers</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var myVar = 87;
+
+                        myVar = myVar + 1;
+                        myVar++; // shortcut
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Decrementing Numbers</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var myVar = 11;
+
+                        myVar = myVar - 1;
+                        myVar--;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Decimal Numbers</h3>
+                <ul>
+                    <li>A.K.A floating point numbers</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var ourDecimal = 5.7;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Multiply Decimals</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var product = 2.0 * 2.5;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Divide Decimals</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var quotient = 4.4 / 2.0;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Finding a remainder</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var remainder = 11 % 3; 
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Compound Assigment with Augmented Addition</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var a = 3;
+                        var b = 17;
+                        var c = 12;
+
+                        a += 12; // same as a = a + 12
+                        b += 9;
+                        c += 7;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Compound Assigment with Augmented Subtraction</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var a = 11;
+                        var b = 9;
+                        var c = 3;
+
+                        a -= 6;
+                        b -= 15;
+                        c -= 1;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Compound Assigment with Augmented Multiplication</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var a = 5;
+                        var b = 12;
+                        var c = 4.6;
+
+                        a *= 5;
+                        b *= 3;
+                        c *= 10;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Compound Assigment with Augmented Division</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var a = 48;
+                        var b = 108;
+                        var c = 33;
+
+                        a /= 12;
+                        b /= 4;
+                        c /= 11;
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class="h2">Strings</div>
+            <div class="in">
+                <h3>Declare String Variables</h3>
+                <ul>
+                    <li>Anything value surrounded by double, single quotation mark or back tick is a string.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                    <code>
+                    
+                     var firstName = "Alan";
+                     var lastName = 'Turing';
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Escaping Literal Quotes in String</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    // var myStr = "I am a "double quoted" string inside "double quotes"";
+
+                    // by using "\" we can escape quotes 
+
+                    var myStr = "I am a \"double quoted\" string inside \"double quotes\"";
+                </code>
+               </pre>
+                </div>
+                <h3>Quoting Strings with Single Quotes</h3>
+                <ul>
+                    <li>We can accomplish things without escaping quotes using single quote.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    // var myStr = "&lt;a href=\"http://www.example.com\" target =\"_blank\">Link&lt;a/>";
+                    // use single quote in beginning and in ending.
+                    var myStr = '&lt;a href="http://www.example.com" target ="_blank">Link&lt;a/>';
+                   </code>
+               </pre>
+                </div>
+                <h3>Using back ticks to use single and double quote inside a string.</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var myStr = `'&lt;a href="http://www.example.com" target ="_blank">Link&lt;a/>'`;
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Escape Sequences in Strings</h3>
+                <ul>
+                    <li>There are other things that we can escape out from.</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                   <code>
+                   
+                    CODE    OUTPUT 
+                    \'      single quote 
+                    \"      double quote 
+                    \\      backslash
+                    \n      newline
+                    \r      carriage return
+                    \t      tab 
+                    \b      backspace 
+                    \f      form feed 
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Concatenating Strings with Plus Operator</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var ourStr = "I come first. " + "I come second.";
+                   </code>
+               </pre>
+                </div>
+                <h2>Concatenating Strings with Plus Equals Operator</h2>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var ourStr = "I come first. ";
+                    ourStr += "I come second."
+                    console.log(ourStr); // "I come first. I come second."
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Constructing Strings with Variables</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var ourName = "freeCodeCamp";
+                    var ourStr = "Hello, our name is " + ourName + ", how are you?";
+                    console.log(ourStr); // "Hello, our name is freeCodeCamp , how are you?"
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Appending Variables to Strings</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var anAdjective = "awesome!";
+                    var ourStr = "freeCodeCamp is ";
+                    ourStr += anAdjective; 
+                    console.log(ourStr); // "freeCodeCamp is awesome!"
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Find Length of String</h3>
+                <ul>
+                    <li>We use <b>.length</b> property to find the length of string.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                    <code>
+                    
+                     var firstNameLength = 0;
+                     var firstName = "Ada";
+
+                     firstNameLength = firstName.length;
+                     console.log(firstNameLength); // 3
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Bracket Notation to Find First Character in String</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var firstLetterOfFirstName = "";
+                    var firstName = "Ada";
+
+                    firstLetterOfFirstName = firstName[0]; // 0 base index
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>String Immutability</h3>
+                <ul>
+                    <li>Strings are immutable, meaing that it cannot be altered once created. This doesn't mean that
+                        they cannot be changed, just that the individual characters of string literal cannot be changed.
+                    </li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var myStr = "Jello World";
+
+                    // myStr[0] = "H"; this throws an error because of the immutability of strings.
+                    // we can change the whole content of the string variable.
+                    myStr = "Hello World";
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Bracket Notation to Find Nth Character in String</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    // not only first character we can access character at 2<sub>nd</sub> and 3<sub>rd</sub> position.
+                    var firstName = "Ada";
+                    var secondLetterOfFirstName = firstName[1];
+                    var thirdLetterOfFirstName = firstName[2];
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Bracket Notation to Find Last Character in String</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    var name = "Harry";
+                    var lastCharacter = name[name.length-1];
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Bracket Notation to Find Nth-to-Last Character in String</h3>
+                <ul>
+                    <li>We just have to subtract the number from ".length".</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                    <code>
+                    
+                     var name = "Ada";
+                     var thirdToLastLetterOfName = name[name.length-3];
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Word Blanks</h3>
+                <ul>
+                    <li>Using our knowledge of strings we have to build a word game.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                   <code>
+                   
+                    function wordBlanks(myNoun, myAdjective, myVerb, myAdverd){
+                        // your code below this line 
+                        var result = "";
+                        result += "The " + myAdjective + " " + myNoun + " " + myVerb + " to the store " + myAdverb;
+                        // your code above this line 
+                        
+                        return result;
+                    }
+
+                    console.log(wordBlanks("dog", "big", "ran", "quickly"));
+                   </code>
+               </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Store Multiple Values with Arrays</h2>
+            <ul>
+                <li>Arrays allows to store several pieces of data in one place.</li>
+            </ul>
+            <p>example &darr;</p>
+            <div class='code'>
+                <div class='dotc'></div>
+                <pre>
+                   <code>
+                   
+                    var ourArray = ["John", 23];
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Nested Arrays</h3>
+                <ul>
+                    <li>When one of the element in an array is another array that's called the nested array.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                       <code>
+                       
+                        var ourArray = [["the universe", 42], ["everything", 101010]];
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Access Array Data with Indexes</h3>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray = [50, 60, 70];
+                        var ourData = ourArray[0] // equals 50
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Modify Array Data with Indexes</h3>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray = [18, 64, 99];
+                        ourArray[1] = 45; // ourArray now equals [18, 45, 99].
+                       </code>
+                   </pre>
+                </div>
+                <ul>
+                    <li>Earlier we were not able to modify string using bracket notations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Access Multi-dimensional Array with Indexs</h3>
+                <ul>
+                    <li>We use double bracket to select element in multi-dimensional array.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var myArray = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [[10, 11, 12], [13, 14]]];
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Manipulate Arrays with push()</h3>
+                <ul>
+                    <li>We can append data to the end of an array with the push function.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray = ["Stimpson", "J", "cat"];
+                        ourArray.push(["happy", "joy"]);
+                        // ourArray now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Manipulate Arrays with pop()</h3>
+                <ul>
+                    <li>We can remove final element from an array with pop function.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray = [1, 2, 3];
+                        var removedFromOurArray = ourArray.pop();
+                        // removedFromOurArray now equals 3, and ourArray now equals [1, 2]
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Manipulate Arrays with shift()</h3>
+                <ul>
+                    <li>shift function removes the first element from an array.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray - ["Stimpson", "J", ["cat"]];
+                        var removedFromOurArray = ourArray.shift();
+                        // removedFromOurArray now equals "Stimpson", and ourArray now equals ["J", ["cat"]]
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Manipulate Arrays with unshift()</h3>
+                <ul>
+                    <li>Adds element to the beginning of the array.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var ourArray - ["Stimpson", "J", ["cat"]];
+                        ourArray.unshift("Happy");
+                        // ourArray now equals ["Happy", "J", ["cat"]]
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Shopping List</h3>
+                <ul>
+                    <li>Another example of shopping list</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var myList = [["cereal", 3], ["milk", 2], ["bananas", 3], ["juice", 2], ["eggs", 12]];     
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Write Reusable Code with Functions</h2>
+            <ul>
+                <li>Functions allow us to create reusable code.</li>
+            </ul>
+            <div class='code'>
+               <div class='dotc'></div>
+               <pre>
+                   <code>
+                   
+                    // Funtion setup
+                    function ourReusableFunction() {
+                        console.log("Heyya, World");
+                    }
+
+                    ourReusableFunction(); // function call
+                    ourReusableFunction(); 
+                   </code>
+               </pre>
+            </div>
+            <div class="in">
+                <h3>Passing Values to Functions with Arguments</h3>
+                <ul>
+                    <li>Parameters are variables that acts as placeholders for the values that are to be input to a function when it is called.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        // Example 
+                        function ourFunctionWithArgs(a, b){
+                            console.log(a - b);
+                        }
+                        ourFunctionWithArgs(10, 5); // output 5
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Global Scope and Functions</h3>
+                <ul>
+                    <li>Scope refers to visibility of variables.</li>
+                    <li>Variables which are defined outside the of a function block have global scope. Global scope means it can be seen everywhere in your JS code.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        // Declare global variable here 
+                        var myGlobal = 10;
+
+                        function fun1()
+                        {
+                            oopsGlobal = 5; // we can also declare variable without using "var" keyword
+                            // if we do use "var" keyword it will be scoped to this function but we can't be used outside this function.
+                            // but if we remove "var" keyword then the variable will automatically become global and can be accessed anywhere.
+                        }
+
+                        function func2()
+                        {
+                            var output = "";
+                            if(typeof myGlobal != "undefined") {
+                                output += "myGlobal: " + myGlobal;
+                            }
+                            if(typeof oopsGlobal != "undefined") {
+                                output += " oopsGlobal: " + oopsGlobal;
+                            }
+                            console.log(output);
+                        }
+                        func1();
+                        func2();
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Local Scope and Functions</h3>
+                <ul>
+                    <li>Variable which are declared within a function and function parameter have local scope, that means they are only visible with in the function.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        function myLocalScope() {
+                            var myVar = 5;
+                            console.log(myVar);
+                        }
+                        myLocalScope();
+
+                        console.log(myVar); // this gives error
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Global vs. Local Scope in Functions</h3>
+                 <ul>
+                    <li>It is possible to have local and global variable with the same name.</li>
+                    <li>When you do this local varaible takes precedence over the global variable.</li>
+                 </ul>
+                 <div class='code'>
+                    <div class='dotc'></div>
+                    <pre>
+                        <code>
+                        
+                         var outerWear = "T-shirt"; // global variable
+
+                         function myOutfit() {
+                            var outWear = "sweater"; // local variable
+                            retrun outerWear;
+                         }
+
+                         console.log(myOutfit()); // output: "sweater "
+                         console.log(outerWear); // output: "T-shirt "
+                        </code>
+                    </pre>
+                 </div>
+            </div>
+            <div class="in">
+                <h3>Return a value from a Function with Return</h3>
+                <ul>
+                    <li>You can return a value from a function with this return statement.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        function minusSeven(num) {
+                            return num - 7;
+                        }
+
+                        console.log(minusSeven(10)); // output: 3
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Understanding Undefined Value Returned from a Function</h3>
+                <ul>
+                    <li>If we don't specify a return value then it is "undefined".</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        // Example
+                        var sum = 0;
+                        function addThree() {
+                            sum = sum + 3;
+                        }
+
+                        function addFive() {
+                            sum += 5; 
+                        }
+                        console.log(addFive()); // undefined
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Assignment with a Returned Value</h3>
+                <ul>
+                    <li>We can assign return value from a function to a variable.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        var changed = 0;
+
+                        function change(num) {
+                            return (num + 5) / 3;
+                        }
+
+                        changed = change(50);
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>QUEUE - Stand in Line </h2>
+            <ul>
+                <li>In computer science a queue is abstract data structure where items are kept in order.</li>
+                <li>In queue new items are kept in the back and old item are taken off from the front.</li>
+                <li>We are going to implement queue.</li>
+            </ul>
+            <div class='code'>
+               <div class='dotc'></div>
+               <pre>
+                   <code>
+                   
+                    function nextInLine(arr, item) {
+                        arr.push(item);
+                        return arr.shift();
+                    }
+
+                    var testArr = [1, 2, 3, 4, 5]; 
+
+                    console.log("Before: " + JSON.stringify(testArr));
+                    console.log(nextInLine(testArr, 6));
+                    console.log("After: " + JSON.stringify(testArr));
+                   </code>
+               </pre>
+            </div>
+            <div class="wh">
+                <h2>Boolean Values</h2>
+                <ul>
+                    <li>Booleans are another data types in JS. There are only two values true or false.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        function welcomeToBooleans() {
+                            return true; 
+                        }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Use Conditional Logic with If Statements</h2>
+                <ul>
+                    <li>If statements is used to make decisions in code. The keyword "if" tells JS to execute the code in curly braces under certain conditions defined in the parenthesis.</li>
+                </ul>
+                <div class='code'>
+                   <div class='dotc'></div>
+                   <pre>
+                       <code>
+                       
+                        function ourTrueOrFalse(isItTrue) {
+                            if(isItTrue) {
+                                return "Yes, it's true";
+                            }
+                            return "No, it's false";
+                        }
+                       </code>
+                   </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Comparision with the Equality Operator</h2>
+                <ul>
+                    <li>Gives true or false if the comparision is correct or incorrect respectively.</li>
+                    <li><b>==</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

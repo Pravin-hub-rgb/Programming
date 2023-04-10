@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .grad {
     background: #000046;
     /* fallback for old browsers */
@@ -73,15 +75,21 @@
 .sidepanel a {
     padding: 3px 3px 3px 12px;
     text-decoration: none;
-    font-size: 18px;
     color: #eeeeee;
     display: block;
     transition: 0.3s;
 }
 
 .sidepanel .sm {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: rgb(197, 196, 196);
+}
+
+.link {
+    border: 1px solid gray;
+    margin: 2px 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
 }
 
 .sidepanel .home {
@@ -103,8 +111,6 @@
     position: absolute;
     bottom: 90px;
     width: 98%;
-    /* height: 60px; */
-    /* border: 2px solid red; */
     text-align: center;
     color: white;
 }
@@ -125,48 +131,46 @@
 
 /* ******** Local Stuff *************** */
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0f0c29;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+
 .content-box {
-    background-color: rgb(26 164 210);
+    background-color: #1cb5e02e;
     border-radius: 20px;
     padding: 10px 3px;
     margin: 55px 3px 20px 3px;
 }
 
-
 .wh {
-    background-color: #7fcce6;
-    padding: 10px 3px;
+    background-color: rgba(255, 255, 255, 0.099);
     border-radius: 10px;
-    margin: 10px 5px;
-    color: black;
-    box-shadow: 0 0 20px rgb(2 14 82);
+    padding: 3px 5px;
+    margin: 7px 4px;
+}
+
+.wb {
+    background-color: rgba(255, 255, 255, 0.394);
 }
 
 .in {
-    /* background-color: rgba(0, 0, 0, 0.76); */
-    background-color: #0c528b;
-    padding: 10px 5px;
-    border-radius: 5px;
-    margin: 20px 5px;
-    box-shadow: 0 0 10px 5px #014074;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.235);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 7px 4px;
 }
 
-
-
-body {
-    background: #000428;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #004e92, #000428);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #004e92, #000428);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #000000;
-    margin: 0;
-    padding: 0;
-    /* font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Courgette', cursive; */
-    font-family: 'Open Sans', sans-serif;
+.in a {
+    color: #7fcce6;
 }
 
 h1 {
@@ -176,21 +180,33 @@ h1 {
 
 p {
     font-size: 1.1rem;
+    margin: 5px 1px;
     line-height: 23px;
 }
-
+ul,ol{
+    margin: 3px 2px;
+}
 li {
     font-size: 1.1rem;
+    margin: 3px 2px;
 }
 
 button {
     font-size: 1rem;
 }
 
+/* ************** responsive image ************* */
+@media only screen and (max-width: 1080px) {
+    img {
+        height: auto;
+        width: 95%;
+        margin: 5px;
+    }
+}
 
 /* **** Accordion **** */
 
-.accordion {
+.ac {
     background-color: #0c528b;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -207,10 +223,9 @@ button {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 
 .active,
-.accordion:hover {
+.ac:hover {
     background-color: #1b6bad;
 }
-
 
 
 /* Style the accordion panel. Note: hidden by default */
@@ -221,14 +236,12 @@ button {
     display: none;
     overflow: hidden;
     font-family: "Lato", sans-serif;
-
 }
-.font{
-    font-family: "Lato", sans-serif;
-}
-.panel>p {
-    color: white;
 
+pre {
+    overflow: auto;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 /* **** PART2 ****** */
@@ -249,44 +262,27 @@ button {
 /* ****** part 3****** */
 
 .part3>div {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     border: 2px solid black;
     margin: 5px 0;
     border-radius: 5px;
-    justify-content: space-evenly;
 }
 
 .part3>div div {
-    width: 32%;
     text-align: center;
+    margin: 5px;
+    padding: 10px;
     background-color: rgba(248, 248, 248, 0.37);
 }
 
-img {
-    width: 50%;
-}
-
-@media only screen and (max-width: 580px) {
-
-    .code {
-        font-size: 0.2rem;
-    }
-}
-
-@media only screen and (max-width: 680px) {
-    img {
-        width: 98%;
-    }
-}
 
 /* ***************code********** */
 .code {
-    /* font-size: 1rem; */
     color: white;
-    /* font-family: Arial, Helvetica, sans-serif; */
     background-color: #000000;
     border-radius: 10px;
-    padding: 10px;
+    padding: 4px 10px 8px;
     margin: 5px 0;
 
 }
@@ -314,4 +310,16 @@ img {
 
 .t {
     background-color: green;
+}
+
+@media only screen and (max-width: 600px) {
+    ul,ol {
+        padding: 2px;
+        margin-left: 4px;
+    }
+
+    li {
+        padding: 2px;
+        margin-left: 10px;
+    }
 }
