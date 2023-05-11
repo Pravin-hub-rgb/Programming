@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        input {
+            margin-top: 30px;
+            height: 25px;
+
+        }
+
+        .main-p {
+            padding-top: 30px;
+            font-size: 19px;
+            text-align: center;
+            color: rgb(242, 173, 83);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="main-p">A function is triggered when the user is pressing a key in the input field.
+            <br>
+            <br>
+            onkeyPress event &darr;
+            <br>
+            <input type="text" onkeypress="keyPress()" name="" id="">
+            <br>
+            <p id="keys1"></p>
+            <br>
+            <p>onkeyup and onkeydown event &darr;</p>
+            <input type="text" onkeydown="keyDown()" onkeyup="keyUp()" name="" id="">
+            <br>
+            <p id="keys2"></p>
+        </div>
+    </div>
+    <script>
+        const keyPress = () => {
+            document.getElementById('keys1').innerHTML = `you press ${event.key} and it's code is ${event.code}`
+        }
+
+        // better to use 2nd and 3ed once
+
+        const keyDown = () => {
+            document.getElementById('keys2').innerHTML = 'key is Down';
+            // when we click backslah (delete) to delete then it will run
+        }
+
+        const keyUp = () => {
+            document.getElementById('keys2').innerHTML = 'key is up';
+            // when we click backslash to delete then it will run
+        }
+    </script>
+</body>
+
+</html>

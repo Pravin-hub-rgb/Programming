@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav( )">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav( )">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Strings</h1>
+        <p>What we will learn &darr;</p>
+        <ul>
+            <li>Escape Character</li>
+            <li>Finding a String in a String</li>
+            <li>Searching for a String in a String</li>
+            <li>Extracting String Parts</li>
+            <li>Replacing String Characters</li>
+            <li>Extracting String Characters</li>
+            <li>Other userful methods</li>
+        </ul>
+        <ul>
+            <li>A JavaScript string is zero or more characters written inside quotes.</li>
+            <li>JavaScript strings used for storing and manipulating text. You can use single or double quotes.</li>
+            <li>Strings can be created as primitives, from string literals, or as objects, using String( ) constructor.
+            </li>
+        </ul>
+        <pre>
+            <code>
+let myName = "vinod Thapa";
+let myChannelName = 'Vinode Thapa';
+
+//let ytName = new String("Thapa Techinical");
+let ytName = 'Thapa Technical';
+console.log(myName);
+console.log(ytName);
+            </code>
+        </pre>
+        <div class="wh">
+            <h2>String.prototype.length</h2>
+            <p>How to find the length of a string.</p>
+            <pre>
+                <code>
+let myName = "Vinod Thapa";
+console.log(myName = length); // 11
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Escape Character</h2>
+            <ul>
+                <li>The backslash (\) escape character turns special characters into string characters.
+                    <pre>
+                        <code>
+Code       Result       Description
+ \'          '             Single quote
+ \"          "             Double quote
+ \\          \             Backslash
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+            <pre>
+                <code>
+let anySentence = "We are the so-called \"Vikings\" from the north.";
+console.log(anySentence);
+                </code>
+            </pre>
+            <ul>
+                <li>If you don't want to mess, simply use the alternate quotes</li>
+            </ul>
+            <pre>
+                <code>
+let anySentence = "We are the so-called 'Vikings' from the north.";
+console.log(anySentence);
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Finding a String in a String</h2>
+            <p><b>String.prototype.indexOf(searchValue[, fromIndex])</b></p>
+            <ul>
+                <li>The indexOf( ) method returns the index of (the position of) the first occurence of a specified text in a string.</li>
+            </ul>
+            <pre>
+                <code>
+const myBioData = 'I am the Thapa Technical';
+console.log(myBioData.indexOf("t", 6));
+                </code>
+            </pre>
+            <ul>
+                <li>JavaScript counts position from zero.</li>
+                <li>0 is the first position in a string, 1 is the second, 2 is the third ...</li>
+            </ul>
+            <div class="in">
+                <h3>String.prototype.lastIndexOf(searchValue [, fromIndex])</h3>
+                <ul>
+                    <li>Returns the index within the calling string object of the last occurence of searchValue, or -1 if not found.</li>
+                </ul>
+                <pre>
+                    <code>
+const myBioData = 'I am the Thapa Technical';
+console.log(myBioData.lastIndexOf("t", 6)); // starts searching from 6th index
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Searching for a String in a String</h2>
+            <p><b>String.prototype.search(regexp)</b></p>
+            <ul>
+                <li>The search( ) method searches a string for a specified value and returns the position of the match.</li>
+            </ul>
+            <pre>
+                <code>
+const myBioData = 'I am the Thapa Technical';
+let sData = myBioData.search("Technical");
+console.log(sData); // 15
+                </code>
+            </pre>
+            <ul>
+                <li>The search( ) method cannot take second start position argument.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Extracting String Parts</h2>
+            <ul>
+                <li>There are 3 methods for extracting a part of a string:
+                    <ol>
+                        <li>slice(start, end)</li>
+                        <li>substring(start, end)</li>
+                        <li>substr(start, length)</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>The slice( ) method</h3>
+                <ul>
+                    <li>slice( ) extracts a parrt of a string and returns the extracted part in a new string.</li>
+                    <li>The method takes 2 parameters: the start position, and the end position (end not included).</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "Apple, Banana, Kiwi, mango";
+// let res = str.slice(0, 4); // "Appl"
+let res = str.slice(7); // "Banana, Kiwi, mango"
+// starts from 7th index to last.
+                    </code>
+                </pre>
+                <ul>
+                    <li>The slice( ) method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.</li>
+                    <li>Note: The original array will not be changed.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Challenge Time &smile;</h3>
+                <p>Display only 280 characters of a string like the one used in Twitter.</p>
+                <pre>
+                    <code>
+let myTweets = "Lorem Impsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? ";
+let myActualTweet = myTweets.slice(0, 280); // Lorem Impsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five cen
+console.log(myActualTweet);
+console.log(myActualTweet.length); // 280
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>The substring( ) method</h3>
+                <ul>
+                    <li>substring( ) is similar to slice( ).</li>
+                    <li>The difference is that substring( ) cannot accept negative indexes.</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "Apple, Banana, Kiwi";
+let res = str.substring(8, -2); 
+console.log(res); // Apple, B
+                    </code>
+                </pre>
+                <ul>
+                    <li>If we give negative value then the characters are counted from the 0th position.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>The substr( ) method</h3>
+                <ul>
+                    <li>It is similar to slice( ).</li>
+                    <li>The difference is that the second parameter specifies the length of the extracted part.</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "Apple, Banana, Kiwi";
+// let res = str.substr(0, 4); // "Appl"
+// let res = str.substr(7, -2); // ""
+let res = str.substr(-4); // "Kiwi" // extracting data from back
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Replacing String Content</h2>
+            <p><b>String.prototype.replace(searchFor, replaceWith)</b></p>
+            <ul>
+                <li>The replace() method replaces a specified value with another value in a string.</li>
+            </ul>
+            <pre>
+                <code>
+let myBioData = 'I am Vinod Bahadur Thapa vinod';
+let replacedString = myBioData.replace('vinod', 'Vinod');
+console.log(replacedString); // I am Vinod Bahadur Thapa Vinod
+console.log(myBioData); // I am Vinod Bahadur Thapa vinod
+                </code>
+            </pre>
+            <p>Points to remember &darr;</p>
+            <ol>
+                <li>The replace() method does not change the string it is called on, it returns a new string.</li>
+                <li>By default, the replace() method replaces only the first match.</li>
+                <li>By default, the replace() method is case sensitive. Writing "VINOD" (with upper case) will not work.</li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h2>Extracting String Characters</h2>
+            <ul>
+                <li>There are 3 methods for extracting string characters:
+                    <ol>
+                        <li>charAt(position)</li>
+                        <li>charCodeAt(position)</li>
+                        <li>Property access [ ]</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>The charAt( ) method</h3>
+                <ul>
+                    <li>This method returns the character at a specified index (position) in a string</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "HELLO WORLD";
+console.log(str.charAt(9)); // L
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>The charCodeAt( ) Method</h3>
+                <ul>
+                    <li>The charCodeAt() method returns the unicode of the character at a specified index in a string.</li>
+                    <li>This method returns a UTF-16 code (an interger between 0 and 65535).</li>
+                    <li>The Unicode Standard provides a unique number for every character, no matter the platform, device, application, or language. UTF-8 is a popular Unicode encoding which has 88-bit bode units.</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "HELLO WORLD";
+console.log(str.charCodeAt(0));
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Challenge Time &smile;</h3>
+                <p>Return the Unicode of the last character in a string.</p>
+                <pre>
+                    <code>
+let str = "HELLO WORLD";
+console.log(str.charCodeAt(str.length - 1));
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Property Access</h3>
+                <ul>
+                    <li>ECMAScript 5 (2009) allows property access [ ] of strings.</li>
+                </ul>
+                <pre>
+                    <code>
+let str = "HELLO WORLD";
+console.log(str[1]); // E
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Other useful methos</h2>
+            <pre>
+                <code>
+let myName = "vinod thapa";
+console.log(myName.toUpperCase());
+myName = "VINOD THAPA";
+console.log(myName.toLowerCase());
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>The concat() method</h2>
+            <ul>
+                <li>concat() joins two or more strings</li>
+            </ul>
+            <pre>
+                <code>
+let fName = "Vinod";
+let lName = "Thapa";
+console.log(fName + lName);
+console.log(`${fName} ${lName}`);
+console.log(fName.concat(lName));
+console.log(fName.concat(" ", lName));
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>String.trim()</h2>
+            <ul>
+                <li>The trim() method removes whitespaces from both sides of a string.</li>
+            </ul>
+            <pre>
+                <code>
+                    let str = "         Hello       WORLD       ";
+                    console.log(str.trim()); // "Hello      World"
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Converting a String to an Array</h2>
+            <ul>
+                <li>A string can be converted to an array with the split() method.</li>
+            </ul>
+            <pre>
+                <code>
+let txt = "a, b,c d,e"; // string
+console.log(txt.split(",")); // Split on commas // [ "a", " b", "c d", "e" ]
+console.log(txt.split(" ")); // Split on spaces // [ "a,", "b,c", "d,e" ]
+console.log(txt.split("|")); // Split on pipe // [ "a, b,c d,e" ]
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -27,31 +27,18 @@ function closeNav() {
     document.getElementById("mySidepanel").style.width = "0";
 }
 
+ // ********* adding dots *********
+ let codes = document.querySelectorAll('.dotc');
+ codes.forEach(box => {
+   box.innerHTML+='<div class="dots"><div class="f"></div><div class="s"></div><div class="t"></div></div>'
+ });
 
-// ****************** space on code tag &********************
+// ********** HIGHLIGHT JS ***********
+hljs.highlightAll();
 
-document.querySelectorAll("pre code").forEach(function(element,n) {
-    if (element.classList.contains("nuke-html")) {
-      var text = element.innerHTML;
-    } else {
-      var text = element.innerText;
-    }
-    text = text.replace(/^\n/,'').trimEnd();// goodbye starting whitespace
-    var to_kill = Infinity;
-    var lines = text.split("\n");
-    for (var i=0;i<lines.length;i++) {
-      if (!lines[i].trim()) { continue; }
-      to_kill = Math.min(lines[i].search(/\S/),to_kill);
-    }
-    out = [];
-    for (var i=0;i<lines.length;i++) {
-      out.push(lines[i].replace(new RegExp("^ {"+to_kill+"}","g"),""));
-    }
-    element.innerText = out.join("\n");
-  });
-
-  // ********* adding dots *********
-  let codes = document.querySelectorAll('.dotc');
-  codes.forEach(box => {
-    box.innerHTML+='<div class="dots"><div class="f"></div><div class="s"></div><div class="t"></div></div>'
-  });
+// ************ Removing space in preTag *************
+const allPre = document.querySelectorAll('pre');
+allPre.forEach((tag)=>{
+    tag.firstChild.textContent = "";
+    tag.lastChild.textContent = "";
+})

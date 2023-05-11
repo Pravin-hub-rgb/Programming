@@ -3,5 +3,6 @@
         "*.ejs": "html",
         "iostream": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "liveServer.settings.port": 5501
 }

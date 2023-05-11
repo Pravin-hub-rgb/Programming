@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Array</h1>
+        <ul>
+            <li>When we use 'var' we can only store one value at a time.</li>
+            <li>If we want to store multiple values in one variable then we use array.</li>
+        </ul>
+           <pre>
+               <code class="language-javascript">               
+let myFriends = ['Ramesh', 22, 'male', 'Arjun', 20, 'male', 'Vishal', true, 52];
+               </code>
+           </pre>
+        <ul>
+            <li>First element in an array is known as lower index / lower boundary.</li>
+            <li>Last element in an array is known as upper index / upper boundary.</li>
+            <li>Array elements are indexed, starting from 0.</li>
+        </ul>
+        <p>In JavaScript, we have an Array class, and arrays are the prototype of this class. Example &darr;</p>
+           <pre>
+               <code class="language-javascript">
+let myFriends = new Array; // optional
+myFriends = ['Ramesh', 22, 'male', 'Arjun', 20, 'male', 'Vishal', true, 52];
+               </code>
+           </pre>
+        <ul>
+            <li>What we will do 
+                <ul>
+                    <li>Traversal of an array.</li>
+                    <li>Searching and Filter in an array.</li>
+                    <li>How to Insert, Add, Replace and Delete Elements in Array (CRUD).</li>
+                    <li>Map, Reduce, Filter().</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="wh">
+            <h2>Traversal in arrays</h2>
+            <ul>
+                <li>Navigate through an array.</li>
+                <li>If we want to get the single data at a time and also if we want to change the data.</li>
+                <li>How to get length of an array?
+                    <ul>
+                        <li>using 'length' method</li>
+                    </ul>
+                       <pre>
+                           <code class="language-javascript">                           
+let myFriends = ['Vinod','Ramesh','Arjun','Vishal'];
+console.log(myFriends.length);
+                           </code>
+                       </pre>
+                </li>
+            </ul>
+            <p>We use 'for' loop to navigate.</p>
+               <pre>
+                   <code class="language-javascript">
+let myFriends = ['Vinod','Ramesh','Arjun','Vishal'];
+for(let i = 0; i < myFriends.length; i++) {
+    console.log(myFriends[i]);
+}
+                   </code>
+               </pre>
+            <p>Output &darr;</p>
+               <pre>
+                   <code class="language-javascript">
+Vinod 
+Ramesh
+Arjun
+Vishal
+                   </code>
+               </pre>
+            <p>After ES6 we have for..in and for..of loop too</p>
+               <pre>
+                   <code class="language-javascript">          
+let myFriends = ['Vinod','Ramesh','Arjun','Vishal'];
+for(let ele in myFriends) {
+console.log(myFriends[ele]);
+}
+for(let ele of myFriends) {
+console.log(ele);
+}
+                   </code>
+               </pre>
+            <div class="in">
+                <h3>Array.prototype.forEach()</h3>
+                <ul>
+                    <li>Calls a function for each element in the array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">                  
+let myFriends = ['Vinod','Ramesh','Arjun','Vishal'];
+myFriends.forEach(function(element, index, array) {
+    console.log(element + " index : " + index + " " + array);
+});
+                       </code>
+                   </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Searching and Filter in an Array</h2>
+            <div class="in">
+                <h3>Array.prototype.indexOf()</h3>
+                <ul>
+                    <li>It returns the first index at which a specified element can be found in the array, or -1 if it is not present.</li>
+                    <li>In JavaScript, the prototype property is a feature that allows you to add properties and methods to all instances of a particular object type.</li>
+                    <li>In the case of Array.prototype.indexOf(), it is a built-in method that is available on all instances of the Array object type. It returns the first index at which a specified element can be found in the array, or -1 if it is not present.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">
+let myFriendNames = ["vinod","bahadur","thapa","thapatechnical","thapa"];
+console.log(myFriendNames.indexOf("Thapa", 3)); 
+// second argument is the index number from which it will start searching.
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.lastIndexOf()</h3>
+                <ul>
+                    <li>Returns the last index of an element within the array equal to an element, or -1 if none, is found. It search the element last to first.</li>
+                </ul>
+                    <pre>
+                        <code class="language-javascript">
+let myFriendNames = ["vinod","bahadur","thapa","thapatechnical","thapa"];
+console.log(myFriendNames.lastIndexOf("Thapa", 3));
+                        </code>
+                    </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.includes()</h3>
+                <ul>
+                    <li>Determines whether the array contains a value, returning true or false as appropriate.</li>
+                </ul>
+                    <pre>
+                        <code class="language-javascript">
+let myFriendNames = ["vinod","bahadur","thapa","thapatechnical","thapa"];
+console.log(myFriendNames.includes("Thapa"));
+                        </code>
+                    </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.find()</h3>
+                <ul>
+                    <li>Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found.</li>
+                    <li>Only problem is that it return only one element.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">           
+const prices = [200, 300, 350, 450, 500, 600];
+const findElem = prices.find((currVal) => currVal < 400);
+console.log(findElem); // 200
+
+console.log(prices.find((currVal) => currVal > 1400)); // undefined
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.findIndex()</h3>
+                <ul>
+                    <li>Returns the found index in the array, if an element in the array satisfies the testing function, or -1 if not found.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">             
+const prices = [200, 300, 350, 450, 500, 600];
+console.log(prices.findIndex((currVal) => currVal > 1400)); // -1
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.filter()</h3>
+                <ul>
+                    <li>Returns a new array containing all elements of the calling array for which the provided filtering function returns true.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">            
+const prices = [200, 300, 350, 450, 500, 600];
+const newPriceTag = prices.filter((elem, index) => {
+    return elem > 300;
+});
+console.log(newPriceTag); // [ 350, 450, 500, 600 ]
+                       </code>
+                   </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>How to sort an array</h2>
+            <ul>
+                <li>The sort() method sorts the elements of an array in plcae and returns the sorted array. The default sort order is ascending, build upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.</li>
+            </ul>
+               <pre>
+                   <code class="language-javascript">       
+const months = ['March', 'Jan', 'Feb', 'April' , 'Dec', 'Nov'];
+console.log(months.sort());
+
+const array1 = [1, 30, 4, 21, 100000, 99];
+console.log(array1.sort()); // sorted according to the first digit.
+
+// In JS numbers are sorted as strings,
+// "25" is bigger than "100", because "2" is bigger than "1".
+// Because of this, the sort() method will produce an incorrect result when sorting numbers.
+                   </code>
+               </pre>
+            <div class="in">
+                <h3>Challenge Time</h3>
+                <p>1- How to sort the numbers in the array in ascending (up) and descending (down) order?</p>
+                   <pre>
+                       <code class="language-javascript">           
+// Ascending
+// we have to create an additional function
+compareFunction = (a, b) => {
+    // 1. < 0 ... a comes first
+    // 2. 0 ... nothing will be changed
+    // 3. > 0 ... b comes first
+
+    return a - b;
+}
+
+const numbers = [1, 30, 4, 21, 100000, 99];
+console.log(numbers.sort(compareFunction));
+                       </code>
+                   </pre>
+                   <pre>
+                       <code class="language-javascript">
+// Descending 
+compareFunction = (a, b) => {
+    return b - a; // changes
+}
+
+const numbers = [1, 30, 4, 21, 100000, 99];
+console.log(numbers.sort(compareFunction));
+                       </code>
+                   </pre>
+                <p>2- Sort the array ["Banana", "Orange", "Apple", "Mango"] in descending order</p>
+                   <pre>
+                       <code class="language-javascript">          
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.sort();
+
+// Now we are going to use Array.prototype.reverse()
+// The reverse() method reverses an array in place.
+// The first array element becomes the last, and the last array element becomes the first.
+
+console.log(fruits);
+fruits.reverse();
+                       </code>
+                   </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Perform CRUD</h2>
+            <div class="in">
+                <h3>Array.prototype.push()</h3>
+                <ul>
+                    <li>The push() method adds one or more elements to the end of an array and returns the new length of the array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">
+const animals = ['pigs', 'goats', 'sheep'];
+const count = animal.push('chicken');
+console.log(count); // 4
+
+animals.push('cats', 'cow', 'tiger');
+</code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.unshift()</h3>
+                <ul>
+                    <li>The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">
+const animals = ['pigs', 'goats', 'sheep'];
+
+const count = animals.unshift('chicken');
+console.log(count);
+console.log(animals);
+
+animals.unshift('chicken', 'cats','cow');
+console.log(animals);
+
+// one more example
+const myNumbers = [1,2,3,5];
+
+myNumbers.unshift(4,6);
+console.log(myNumbers);
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.pop()</h3>
+                <ul>
+                    <li>The pop() method removes the last element from an array and returns that element. This method changes the length of the array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">      
+const plants = ['broccoli', 'cauliflower',  'kale', 'tomato', 'cabbage'];
+
+console.log(plants);
+console.log(plants.pop());
+console.log(plants);
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Array.prototype.shift()</h3>
+                <ul>
+                    <li>The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">        
+const plants = ['broccoli', 'cauliflower',  'kale', 'tomato', 'cabbage'];
+console.log(plants);
+console.log(plants.shift());
+console.log(plants);
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Challenge time</h3>
+                <p>Using only one method perform CRUD operation on an array.</p>
+                <ul>
+                    <li>Given array = ['Jan', 'march', 'April', 'June', 'July']</li>
+                    <li>Add 'Dec' at the end of an array.</li>
+                    <li>What is the return value of splice method.</li>
+                    <li>Update march to March (update).</li>
+                    <li>Delete June from given array.</li>
+                </ul>
+                <p>We are going to use Array.prototype.splice() which adds and removes elements from an array.</p>
+                <ul>
+                    <li>Splice returns an array of all the deleted elements if there are not deleted elements then it returns empty array.</li>
+                    <li>If we want to just delete elements from an array then only two arguments are needed: 1- index of element and 2- how many elements from there.</li>
+                    <li>If we want to add element after a index then three arguments are passed: 1- index, 2- 0 (as we don't want to delete any element) and 3- element.</li>
+                    <li>If we want to replace or update an element then also three arguments are passed 1- index of element you want to update, 2- 0 and 3- updated element</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">
+const months = ['Jan', 'march', 'April', 'June', 'July'];
+// sol 1
+const newMonths = months.splice(months.length, 0, "Dec");
+
+// sol 2
+console.log(newMonths); // empty array as not elements are deleted
+
+// sol 3 
+if(months.indexOf("march") == -1) {
+    console.log("Data not found");
+} else {
+    months.splice(months.indexOf("march"), 1, "March");
+}
+
+// sol 4
+if(months.indexOf("June") == -1){
+    console.log("Data not found");
+} else {
+    months.splice(months.indexOf("June"), 1);
+}
+                       </code>
+                   </pre>
+        </div>
+        </div>
+        <div class="wh">
+            <h2>Map and Reduce method</h2>
+            <div class="in">
+                <h3>Array.prototype.map()</h3>
+                <ul>
+                    <li>Returns a new array containing the results (true or false) of calling a function on every element in an array.</li>
+                    <li>It returns a new array without mutating the original array.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">         
+const array = [1, 4, 8, 16, 25];
+// if we want an array which have elements greater than 9 
+let newArr = array.map((curEle, index, arr) => {
+    return curEle > 9;
+});
+console.log(newArr); // [false, false, false, true, true]
+
+let newArr2 = array.map((curEle, index, arr) => {
+    return `Index no = ${index} and the value is ${curEle} belong to ${arr}`;
+})
+                       </code>
+                   </pre>
+                <ul>
+                    <li><a href="https://www.freecodecamp.org/news/4-main-differences-between-foreach-and-map/" target="_blank">Difference between forEach and map method &neArr;</a></li>
+                </ul>
+                <div class="wh">
+                    <h3>Challenge Time &smile;</h3>
+                    <ol>
+                        <li>Find the square root of each element in an array. <br>let arr = [ 25, 36, 49, 64, 81 ];</li>
+                        <li>Multiply each element by 2 and <i>return</i> only those elements which are greater than 10. 
+                        <br>let arr = [ 2, 3, 4, 6, 8 ];</li>
+                    </ol>
+                       <pre>
+                           <code class="language-javascript">                   
+// sol 1
+let arr = [ 25, 36, 49, 64, 81 ];
+let arrSqr = arr.map((curEle) => Math.sqrt(curEle));
+console.log(arrSqr); // [ 5, 6, 7, 8, 9 ]
+                           </code>
+                       </pre>
+                       <pre>
+                           <code class="language-javascript">                   
+// sol 2
+// here we are going to use chaining method
+let arr = [ 2, 3, 4, 6, 8 ];
+let arr2 = arr.map((curEle) => {
+    return curEle * 2;
+}).filter((curEle) => {
+    return curEle > 10;
+}); 
+console.log(arr2); // [ 16, 36, 64 ]
+                           </code>
+                       </pre>
+                </div>
+                </div>
+            <div class="in">
+                <h3>Reduce method</h3>
+                <ul>
+                    <li>Flatten an array, means to convert the 3d or 2d array into a single dimensional array.</li>
+                    <li>The reduce() method executes a reduces function (that you provide) on each element of the array, resulting in single output value.</li>
+                    <li>The reducer function takes four arguments:
+                        <ol>
+                            <li>Accumulator</li>
+                            <li>Current value</li>
+                            <li>Current index</li>
+                            <li>Source array</li>
+                        </ol>
+                    </li>
+                    <li>Second argument in reduce() method is initial value of the accumulator.</li>
+                </ul>
+                   <pre>
+                       <code class="language-javascript">  
+const subMarks = [ 44, 55, 44, 66, 55 ];
+const totalMarks = subMarks.reduce((accumulator, curEle, curIn, arr) => {
+    return accumulator += curEle;
+}, 25);
+console.log(totalMarks);
+                       </code>
+                   </pre>
+                   <p>How to flatten an array <br>Converting 2d and 3d array into one dimensinal array.</p>
+                   <pre>
+                    <code class="language-javascript">
+const arr = [ 
+        ['zone_1', 'zone_2'],
+        ['zone_3', 'zone_4'],
+        ['zone_5', 'zone_6'],
+        ['zone_7', 'zone_8'],
+    ]
+let flatArr = arr.reduce((accum, currVal) => {
+    return accum.concat(currVal)
+})
+console.log(flatArr);
+                    </code>
+                   </pre>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

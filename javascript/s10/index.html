@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>DOM</h1>
+        <p>What we will do</p>
+        <ul>
+            <li>Window vs Document</li>
+            <li>DOM vs BOM</li>
+            <li>DOM Navigation</li>
+            <li>Searching and getting Elements Reference</li>
+        </ul>
+        <div class="wh">
+           <img src="../images/window.svg" alt="" class="wb"> 
+           <ul>
+            <li>Some example of window object properties are : 
+                <ol>
+                    <li>innerHeight</li>
+                    <li>innerWidth and there are many more.</li>
+                </ol>
+            </li>
+           </ul>
+           <img src="../images/win2.svg" alt="" class="wb">
+           <br><img src="../images/bom.svg" alt="" class="wb"> <br>
+           <div class="in">
+            <h3>Usage of BOM</h3>
+            <a href="./practiseBom.html">BOM practice &neArr;</a>
+            <p>HTML, CSS and JS Code &darr;</p>
+            <pre>
+                <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;BOM practise&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            background-color: rgb(30, 30, 120);
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            width: 130px;
+            height: 40px;
+            margin-top: 100px;
+            font-size: 1.3rem;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button onclick=&quot;goBack()&quot;&gt;GO Back!&lt;/button&gt;
+    &lt;script&gt;
+        function goBack() {
+            window.history.back();
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                </code>
+            </pre>
+           </div>
+           <div class="in">
+            <h3>Let's see more practical on History object</h3>
+            <ul>
+                <li>Funtions like alert/confirm/prompt are also a part of BOM: they are directly not related to the document, but represent pure browser methods of communicating with the user.</li>
+            </ul>
+            <pre>
+                <code>
+alert(location.href); // shows current URL
+if (confirm("Want to Visit ThapaTechinical?")) {
+    location.href = "https://www.youtube.com/thapatechnical"; // redirect the browser to another URL
+}
+                </code>
+            </pre>
+           </div>
+        </div>
+        <div class="wh">
+            <h2>Navigate through the DOM</h2>
+            <ul>
+                <li>&lt;html> is the root element of DOM. Then further this can be divided into:
+                    <ul>
+                        <li>&lt;body>
+                            <ul>
+                                <li>&lt;a></li>
+                                <li>&lt;p></li>
+                            </ul>
+                        </li>
+                        <li>&lt;head></li>
+                    </ul>
+                    Using <b>document.documentElement</b> we can get root element.
+                </li>
+                <li>document.head</li>
+                <li>document.body</li>
+                <li>document.body.childNodes (include tab, enter and whiteSpace)</li>
+                <li>document.children (without text nodes, only regular elements)</li>
+                <li>document.childNodes.length</li>
+            </ul>
+            <div class="in">
+                <h3>Practice time &smile;</h3>
+                <p>How to check whether an element has child nodes or not?</p>
+                <ul>
+                    <li>We will use hasChildNodes().</li>
+                    <pre>
+                        <code>
+document.body.hasChildNodes(); // true
+                        </code>
+                    </pre>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Practice time &smile;</h3>
+                <p>How to find the child in DOM tree</p>
+                <pre>
+                    <code>
+const data = document.body.firstElementChild;
+data.firstElementChild.firstElementChild.style.color = "red";
+// another syntax &darr; (simpler)
+const childTwo = document.querySelector('.child-two');
+childTwo.style.color = "green";
+
+                    </code>
+                </pre>
+                <div class="wh">
+                    <iframe src="./domNavigation.html" frameborder="0"></iframe>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Source code</button>
+                        <div class="panel">
+                            <pre>
+                                <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&quot;https://fonts.googleapis.com/css?family=Inconsolata:400,700&quot;);
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inconsolata', 'san-serif';
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        .main-div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: azure;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;main-div&quot;&gt;
+        &lt;div class=&quot;child-one&quot;&gt;
+            &lt;p&gt;I am child one&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;child-two&quot;&gt;
+            &lt;p&gt;I am child two&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;child-three&quot;&gt;
+            &lt;p&gt;I am child three&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const data = document.body.firstElementChild;
+        data.firstElementChild.firstElementChild.style.color = &quot;red&quot;;
+        const childTwo = document.querySelector('.child-two');
+        childTwo.style.color = &quot;green&quot;;
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>How to find the Parent Nodes</h3>
+                <pre>
+                    <code>
+document.body.parentNode
+document.body.parentElement
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>How to find or access the siblings</h3>
+                <pre>
+                    <code>
+document.body.nextSibling // null - as there is not element next to body
+document.body.nextElementSibling
+document.body.previousSibling
+document.body.previousElementSibling
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>How to search the Elements and the references</h2>
+            <iframe src="./search.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">source code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&quot;https://fonts.googleapis.com/css?family=Inconsolata:400,700&quot;);
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inconsolata', 'san-serif';
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #F8B627;
+            color: #000000;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 10px 22px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0);
+            color: white;
+            margin: 20px;
+        }
+
+        h1 {
+            color: aquamarine;
+        }
+        form{
+            color: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p class=&quot;para&quot;&gt;Plz like the video&lt;/p&gt;
+    &lt;p class=&quot;para&quot;&gt;Plz Share this video&lt;/p&gt;
+    &lt;p&gt;Don't forget to subscribe my channel&lt;/p&gt;
+    &lt;h1 id=&quot;heading&quot;&gt;Changed the content of the h1&lt;/h1&gt;
+    &lt;form action=&quot;&quot;&gt;
+        &lt;label for=&quot;&quot;&gt;male&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;
+        &lt;label for=&quot;&quot;&gt;female&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;
+    &lt;/form&gt;
+    &lt;button onclick=&quot;changeContent()&quot;&gt;Click me&lt;/button&gt;
+    &lt;button onclick=&quot;changeContent2()&quot;&gt;Undo&lt;/button&gt;
+    &lt;script&gt;
+        const changeContent = () =&gt; {
+            // without reference 
+            // document.getElementById('heading').innerHTML = &quot;Welcome to Thapa Technical&quot;;
+
+            // with reference
+            const changeHeading = document.getElementById('heading');
+            changeHeading.innerHTML = &quot;Welcome to Thapa Technical&quot;;
+
+            // Selecting multiple element with same class name
+            console.log(document.getElementsByClassName('para'));
+
+            console.log(document.getElementsByName('gender'))
+        }
+        const changeContent2 = ()=&gt;{
+            document.getElementById('heading').innerHTML = &quot;Changed the content of the h1&quot;;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <ul>
+                <li>Now the same we have is the query selectors, querySelector returns the first matching value whereas querySelectorAll() will return all the elements</li>
+            </ul>
+            <pre>
+                <code>
+document.querySelector('#heading').innnerHTML = "I changed again"; // selects the first element only
+
+document.querySelectorAll('.para');
+                </code>
+            </pre>
+            <div class="in">
+                <h3>Interview quesiton &smile;</h3>
+                <p>What is the difference between <b>getElementById</b> and <b>querySelector</b>?</p>
+                <ul>
+                    <li>What is getElementById()?
+                        <br>Syntax &darr;
+                        <pre>
+                            <code>
+element = document.getElementById(id);
+                            </code>
+                        </pre>
+                        Returns a reference to the element by its ID.
+                        <br>If the element with the specified ID is not in the document, it will return null.
+                    </li>
+                    <li>What is querySelector()?
+                        <br>Syntax &darr;
+                        <pre>
+                            <code>
+element = document.querySelector(selectors);
+                            </code>
+                        </pre>
+                        Returns the first element withint the document that matches the specified group of selectors, or null if no matches are found.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+            display: inline-block;
+            background: #F8B627;
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 10px 22px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            padding: 10px;
+            font-size: 28px;
+        }
+
+        h1 {
+            color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+<p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and set the color of the text to green.</p>
+<script>
+    function mouseDown() {
+        document.getElementById("myP").style.color = "#F8B627";
+    }
+    function mouseUp() {
+        document.getElementById("myP").style.color = "#fff";
+    }
+</script>
+</body>
+
+</html>

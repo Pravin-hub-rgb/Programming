@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Date & Time</h1>
+        <ul>
+            <li>In JavaScript Date object represent a single moment in time in a platform-independent format. Date
+                object contain a number that represents milliseconds since 1 January 1970 UTC.</li>
+        </ul>
+        <div class="wh">
+            <h2>Creating Date Object</h2>
+            <ul>
+                <li>There are 4 ways to create a new date object</li>
+            </ul>
+            <pre>
+            <code>
+new Date()
+
+new Date(year, month, day, hour, minute, seconds, milliseconds)
+// it takes 7 arguments
+
+new Date(milliseconds)
+// we cannot avoid month section 
+
+new Date(date string)
+            </code>
+           </pre>
+        </div>
+        <div class="wh">
+            <h2>new Date()</h2>
+            <ul>
+                <li>Date objects are created with the new Date() constructor.</li>
+            </ul>
+            <pre>
+                <code>
+let currDate = new Date();
+console.log(currDate); // Date Sun Apr 30 2023 23:28:35 GMT+0530 (India Standard Time)
+console.log(currDate.toLocaleString()); // 30/04/2023, 23:28:35
+console.log(currDate.toString()); // "Sun Apr 30 2023 23:28:35 GMT+0530 (India Standard Time)" 
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Date.now()</h2>
+            <ul>
+                <li>Returns the numeric value corresponding to the current time-the number of milliseconds elapsed since
+                    january 1, 170 00:00:00 UTC.</li>
+            </ul>
+            <pre>
+                <code>
+console.log(Date.now()); // 1682878116057
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>new Date(year, month, ...)</h2>
+            <ul>
+                <li>7 arguments specify year, month, day, hour, minute, second, and millisecond (in that order).</li>
+                <li>Note: JavaScript counts months from 0 to 11. January is 0 and December is 11.</li>
+            </ul>
+            <pre>
+                <code>
+var d = new Date(2023, 4, 30, 10, 33, 0);
+console.log(d.toLocaleString()); // 30/05/2023, 10:33:00
+// minimum there should be two arguments as 2nd arguemnt (months) is compulary to get correct result.
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>new Date(dateString)</h2>
+            <ul>
+                <li>new Date(dateString) creates a new date object from a date string. </li>
+            </ul>
+            <pre>
+                <code>
+var d = new Date("October 13, 2014 11:13:00");
+console.log(d); // Date Mon Oct 13 2014 11:13:00 GMT+0530 (India Standard Time)
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>new Date(milliseconds)</h2>
+            <ul>
+                <li>new Date(milliseconds) creates a new date object as zero time plus milliseconds.</li>
+            </ul>
+            <pre>
+                <code>
+console.log(new Date(0)); Date Thu Jan 01 1970 05:30:00 GMT+0530 (India Standard Time)
+console.log(new Date(1682879036895)); // Date Sun Apr 30 2023 23:53:56 GMT+0530 (India Standard Time)
+console.log(new Date(86400000 * 2).toLocaleString()); // 03/01/1970, 05:30:00
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Dates Method</h2>
+            <pre>
+                <code>
+const curDate = new Date();
+
+// how to get individual date
+console.log(curDate.toLocaleString()); // 01/05/2023, 09:51:16
+console.log(curDate.getFullYear()); // 2023
+console.log(curDate.getMonth()); // 4
+console.log(curDate.getDate()); // 1
+console.log(curDate.getDay()); // 1
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>How to set the individual date</h2>
+            <pre>
+                <code>
+console.log(curDate.setFullYear(2024));
+// The setFullYear() method can optionally set month and day
+console.log(curDate.setFullYear(2022, 10, 5));
+let setMonth = curDate.setMonth(10);
+console.log(setMonth);
+console.log(curDate.setDate(5)); // output in milliseconds
+console.log(curDate.toLocaleString());
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>Time Methods</h2>
+            <pre>
+                <code>
+const curTime = new Date();
+// how to get individual time
+console.log(curTime.getTime()); // 1682916211507
+// The getTime() method returns the number of milliseconds since January 1, 1970
+console.log(curTime.getHours()); // 10
+// The getHours() method returns the hours of a date as a number (0 - 23)
+console.log(curTime.getMinutes());
+console.log(curTime.getSeconds());
+console.log(curTime.getMilliseconds());
+                </code>
+            </pre>
+        </div>
+        <div class="wh">
+            <h2>How to set the individual time</h2>
+            <pre>
+                <code>
+let curTime = new Date();
+console.log(curTime.setTime());
+console.log(curTime.setHours(5));
+console.log(curTime.setMinutes(5));
+console.log(curTime.setSeconds(5));
+console.log(curTime.setMilliseconds(5));
+                </code>
+            </pre>
+            <div class="in">
+                <p>Click the button to display a date after changing the hours.</p>
+                <button onClick="myFunction()">Try it</button>
+                <p id="demo"></p>
+                <div class="wh">
+                    <p>Source code &darr;</p>
+                    <pre>
+                        <code class="language-html">
+&lt;!-- HTML CODE -->
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;p>Click the button to display a date after changing the hours.&lt;/p>
+    &lt;button onClick="myFunction()">Try it&lt;/button>
+    &lt;p id="demo">&lt;/p>
+&lt;/body>
+&lt;/html>
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+// JavaScript 
+function myFunction() {
+    let t = new Date();
+    t.setHours(6);
+    document.getElementById("demo").innerHTML = t;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Updating time every second</h3>
+                <p class="wh" id="demo2"></p>
+                <div class="wh">
+                    <p>Source code</p>
+                    <pre>
+                        <code>
+&lt;!-- HTML CODE -->
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;p class="wh" id="demo2">&lt;/p>
+&lt;/body>
+&lt;/html>
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+// JavaScript
+(function(){
+    setInterval(()=> {
+      document.getElementById("demo2").innerHTML = new Date().toLocaleString();
+    }, 1000)
+})();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        function myFunction() {
+            let t = new Date();
+            t.setHours(6);
+            document.getElementById("demo").innerHTML = t;
+        }
+        (function(){
+          setInterval(()=> {
+            document.getElementById("demo2").innerHTML = new Date().toLocaleString();
+          }, 1000)
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inconsolata', 'san-serif';
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        .main-div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="child-one">
+            <p>I am child one</p>
+        </div>
+        <div class="child-two">
+            <p>I am child two</p>
+        </div>
+        <div class="child-three">
+            <p>I am child three</p>
+        </div>
+    </div>
+    <script>
+        const data = document.body.firstElementChild;
+        data.firstElementChild.firstElementChild.style.color = "red";
+        const childTwo = document.querySelector('.child-two');
+        childTwo.style.color = "green";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Events in JavaScript</h1>
+        <p>What we will do
+        <ul>
+            <li>4 ways of writing events in JavaScript.</li>
+            <li>What is Event Object?</li>
+            <li>MouseEvent in JavaScript</li>
+            <li>KeyboardEvent in JavaScript</li>
+            <li>InputEvents in JavaScript</li>
+        </ul>
+        </p>
+        <p>HTML events are "things" that happen to HTML elements. <br>When JavaScript is used in HTML pages, JavaScript
+            can "react" on these events. <br>An HTML event can be something the browser does, or something a user does.
+            <br>Here are some examples of HTML events:
+        <ul>
+            <li>An HTML web page has finished loading.</li>
+            <li>An HTML input field was changed.</li>
+            <li>An HTML button was clicked.</li>
+        </ul>
+        Often, when events happen, you may want to do something.
+        <br>HTML allows event handler attributes, with JavaScript code, to the added to HTML elements.</p>
+        <div class="wh">
+            <h2>4 ways of writing events in JavaScript</h2>
+            <ol>
+                <li>Using inline events alert();</li>
+                <li>By Calling a function (We already seen and most common way of writing).</li>
+                <li>Using Inline events (HTML onclick="" property and element.onclick)</li>
+                <li>Using Event Listeners (addEventListener and IE's attachEvent)</li>
+            </ol>
+            <p><a href="https://www.w3schools.com/js/js_events.asp">Common JavaScript Events &neArr;</a></p>
+            <iframe src="./eventTypes.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        @import url(&quot;https://fonts.googleapis.com/css?family=Iconsolata:400, 700&quot;);
+
+        body {
+            font-family: 'Inconsolata', san-serif;
+            background: #2a364f;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .credit {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .content {
+            padding-top: 45px;
+            padding-bottom: 20px;
+        }
+
+        .button_container {
+            width: 176px;
+            margin: 0 auto;
+            margin-top: 30px;
+            padding-top: 40px;
+        }
+
+        .button_su {
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+        }
+
+        .su_button_circle {
+            background-color: red;
+            border-radius: 1000px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0px;
+            height: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            pointer-events: none;
+        }
+
+        .button_su_inner {
+            display: inline-block;
+            background: #F8B627;
+            color: #000000;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 22px;
+            z-index: 100000;
+        }
+
+        .button_text_container {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .explode-circle {
+            animation: explode 0.5s forwards;
+        }
+
+        .displode-circle {
+            animation: displode 0.5s forwards;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;h1&gt;Different Events Types in JavaScript&lt;/h1&gt;
+        &lt;div class=&quot;button_container&quot;&gt;
+            &lt;div class=&quot;button_su&quot;&gt;
+                &lt;span class=&quot;su_button_circle&quot;&gt;&lt;/span&gt;
+                &lt;a href=&quot;&quot; class=&quot;button_su_inner&quot; onclick=&quot;alert('I am awesome, But No one use mer')&quot;&gt;
+                &lt;span class=&quot;button_text_container&quot;&gt;simple Inline alert()&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button_su&quot;&gt;
+                &lt;span class=&quot;su_button_circle&quot;&gt;&lt;/span&gt;
+                &lt;a href=&quot;&quot; class=&quot;button_su_inner&quot; onclick=&quot;callingFunction()&quot;&gt;
+                    &lt;span class=&quot;button_text_container&quot;&gt;By Calling a Function&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button_su&quot;&gt;
+                &lt;span class=&quot;su_button_circle&quot;&gt;&lt;/span&gt;
+                &lt;a href=&quot;&quot; class=&quot;button_su_inner&quot; id=&quot;thirdWay&quot;&gt;
+                    &lt;span class=&quot;button_text_container&quot;&gt;Inline event&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button_su&quot;&gt;
+                &lt;span class=&quot;su_button_circle&quot;&gt;&lt;/span&gt;
+                &lt;a href=&quot;&quot; class=&quot;button_su_inner&quot; id=&quot;fourtWay&quot;&gt;
+                    &lt;span class=&quot;button_text_container&quot;&gt;Event Listeners&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const callingFunction = () =&gt; {
+            alert('Most common way of writing functions');
+        }
+
+        // Third way of event call
+        const thirdWay = document.getElementById('thirdWay');
+        thirdWay.onclick = function () {
+            alert('Most common way of writing functions again');
+        }
+        thirdWay.onclick = function () {
+            console.log('Most common way of writing functions again'); // only this will occur
+        }
+        // If more event are added separately then only last one will occur, other will be overwritten.
+
+        // Fourth way of event call
+        const fourtWay = document.querySelector('#fourtWay');
+        fourtWay.addEventListener('click', () =&gt; {
+            alert('I love this way of way of writing functions');
+        })
+        fourtWay.addEventListener('click', () =&gt; {
+            console.log('I love this way of way of writing functions'); // both will occur
+        })
+        &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>What is Event Object?</h2>
+            <ul>
+                <li>Event object is the parent object of the event object.</li>
+                <li>For example: <br>MouseEvent, focusEvent, KeyboardEvent etc.</li>
+            </ul>
+            <iframe src="./eventObject.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code html</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Inconsolata', san-serif;
+            background: #2a364f;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .credit {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .content {
+            padding-top: 45px;
+            padding-bottom: 20px;
+        }
+
+        .button_container {
+            width: 176px;
+            margin: 0 auto;
+            margin-top: 30px;
+            padding-top: 40px;
+        }
+
+        .button_su {
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+        }
+
+        .su_button_circle {
+            background-color: red;
+            border-radius: 1000px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0px;
+            height: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            pointer-events: none;
+        }
+
+        .button_su_inner {
+            display: inline-block;
+            background: #F8B627;
+            color: #000000;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 22px;
+            z-index: 100000;
+        }
+
+        .button_text_container {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .explode-circle {
+            animation: explode 0.5s forwards;
+        }
+
+        .displode-circle {
+            animation: displode 0.5s forwards;
+        }
+
+        pre code {
+            color: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;h1&gt;Let's See what is Event Object &amp;smile;&lt;/h1&gt;
+        &lt;div class=&quot;button_container&quot;&gt;
+            &lt;div class=&quot;button_su&quot;&gt;
+                &lt;span class=&quot;su_button_circle&quot;&gt;&lt;/span&gt;
+                &lt;a href=&quot;&quot; class=&quot;button_su_inner&quot; id=&quot;fourtWay&quot;&gt;
+                    &lt;span class=&quot;button_text_container&quot;&gt;Event Listeners&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;pre&gt;
+            &lt;code&gt;
+conole.log(event);
+conole.log(event.target);
+conole.log(event.type);
+            &lt;/code&gt;
+        &lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const fourtWay = document.getElementById('fourtWay');
+
+        const checkEvent = () =&gt; {
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+        }
+
+        fourtWay.addEventListener('click', checkEvent);
+
+        // to get all the information about the event we use Event Object
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>MouseEvent in JavaScript</h2>
+            <ul>
+                <li>The MouseEvent Object Events that occur when the mouse interacts with the HTML document belogs to
+                    the MouseEvent Object.</li>
+            </ul>
+            <iframe src="./mouseEvent.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code of above html file</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Mouse Event&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+            display: inline-block;
+            background: #F8B627;
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 10px 22px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            padding: 10px;
+            font-size: 28px;
+        }
+
+        h1 {
+            color: aquamarine;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p id=&quot;myP&quot; onmousedown=&quot;mouseDown()&quot; onmouseup=&quot;mouseUp()&quot;&gt;Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and set the color of the text to green.&lt;/p&gt;
+&lt;script&gt;
+    function mouseDown() {
+        document.getElementById(&quot;myP&quot;).style.color = &quot;#F8B627&quot;;
+    }
+    function mouseUp() {
+        document.getElementById(&quot;myP&quot;).style.color = &quot;#fff&quot;;
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <iframe src="./mouseEnterEvent.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code of above html file</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Mouse Enter Event&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Inconsolata', san-serif;
+            background: #2a364f;
+            color: #fff;
+        }
+
+        .main-div {
+            width: 500px;
+            height: 500px;
+            display: grid;
+            margin: auto;
+            place-items: center;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;main-div&quot;&gt;
+        &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;mouseenter event&lt;/li&gt;
+        &lt;li&gt;mouseleave event&lt;/li&gt;
+        &lt;li&gt;See console for logs&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;script&gt;
+        const mEnter = document.getElementById('box');
+
+        mEnter.addEventListener('mouseenter', () =&gt; {
+            mEnter.style.backgroundColor = 'red';
+            console.log('Mouse Enter Bro');
+        });
+
+        mEnter.addEventListener('mouseleave', () =&gt; {
+            console.log('Mouse Leave Bro');
+            mEnter.style.backgroundColor = 'skyblue';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>KeyboardEvent in JavaScript</h2>
+            <ul>
+                <li>Events that occur when user presses a key on the keyboard, belongs to the KeyboardEvent Object.</li>
+                <li><a href="https://www.w3schools.com/jsref/obj_keyboardevent.asp">Reference &neArr;</a></li>
+            </ul>
+            <iframe src="./keypress.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code of above html file</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        input {
+            margin-top: 30px;
+            height: 25px;
+
+        }
+
+        .main-p {
+            padding-top: 30px;
+            font-size: 19px;
+            text-align: center;
+            color: rgb(242, 173, 83);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;main-div&quot;&gt;
+        &lt;div class=&quot;main-p&quot;&gt;A function is triggered when the user is pressing a key in the input field.
+            &lt;br&gt;
+            &lt;br&gt;
+            onkeyPress event &amp;darr;
+            &lt;br&gt;
+            &lt;input type=&quot;text&quot; onkeypress=&quot;keyPress()&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+            &lt;br&gt;
+            &lt;p id=&quot;keys1&quot;&gt;&lt;/p&gt;
+            &lt;br&gt;
+            &lt;p&gt;onkeyup and onkeydown event &amp;darr;&lt;/p&gt;
+            &lt;input type=&quot;text&quot; onkeydown=&quot;keyDown()&quot; onkeyup=&quot;keyUp()&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+            &lt;br&gt;
+            &lt;p id=&quot;keys2&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const keyPress = () =&gt; {
+            document.getElementById('keys1').innerHTML = `you press ${event.key} and it's code is ${event.code}`
+        }
+
+        // better to use 2nd and 3ed once
+
+        const keyDown = () =&gt; {
+            document.getElementById('keys2').innerHTML = 'key is Down';
+            // when we click backslah (delete) to delete then it will run
+        }
+
+        const keyUp = () =&gt; {
+            document.getElementById('keys2').innerHTML = 'key is up';
+            // when we click backslash to delete then it will run
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>InputEvents in JavaScript</h2>
+            <ul>
+                <li>The onchange event occurs when the value of an element has been changed.</li>
+                <li>For radio buttons and checkboxes, the onchange event occurs when the checked state has been changed.
+                </li>
+            </ul>
+            <iframe src="./onchange.html" frameborder="0"></iframe>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Source code of above html file</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;onchange input event&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+            color: rgb(246, 204, 204);
+            font-size: 17px;
+            padding-top: 100px;
+        }
+        label{
+            padding: 10px;
+            display: inline-block;
+        }
+        input{
+            font-size: 17px;
+        }
+        select{
+            font-size: 16px;
+        }
+        #result{
+            font-size: 20px;
+            color: beige;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div class=&quot;main-div&quot;&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;&quot;&gt;Your Name &amp;rarr;
+            &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;ice&quot;&gt;&lt;/label&gt;
+            &lt;br&gt;&lt;label for=&quot;&quot;&gt;Choose an ice cream flavor &amp;rarr;
+                &lt;select name=&quot;iceCreams&quot; id=&quot;iceCreams&quot; onchange=&quot;selectElement()&quot; &gt;
+                &lt;option value=&quot;&quot;&gt;Select One ...&lt;/option&gt;
+                &lt;option value=&quot;chocolate&quot;&gt;Chocolate&lt;/option&gt;
+                &lt;option value=&quot;sardine&quot;&gt;Sardine&lt;/option&gt;
+                &lt;option value=&quot;vanilla&quot;&gt;Vanilla&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;script&gt;
+        // const selectElement = () =&gt; {
+        //     const inputChange = document.getElementById('ice').value;
+        //     const iceCreams = document.getElementById('iceCreams').value;
+        //     const result = document.getElementById('result');
+        //     result.innerHTML = `Mr ${inputChange} select ${iceCreams} ice-cream flavour`;
+        // }
+        // we can also do it using addEventListeners
+        const iceCreams = document.getElementById('iceCreams');
+        iceCreams.addEventListener('change', () =&gt; {
+            const inputChange = document.getElementById('ice').value;
+            const result = document.getElementById('result');
+            result.innerHTML = `Mr ${inputChange} select ${iceCreams.value} ice-cream flavour`;
+        });
+     &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Interview Question</h2>
+            <p>Difference between onclick and addEventListener?</p>
+            <pre>
+                <code>
+// lets say we have a div 
+const someDiv = document.getElementById('someDive');
+someDiv.onclick = function () {
+    alert('Most common way of writing functions again');
+}
+someDiv.onclick = function () {
+    console.log('Most common way of writing functions again'); // only this will occur
+}
+                </code>
+            </pre>
+            <ul>
+                <li>In above situation only one function will run and that is the last one.</li>
+            </ul>
+            <pre>
+                <code>
+// Now same situation with addEventListener
+const someDiv = document.getElementById('someDive');
+someDiv.addEventListener('click', () => {
+    alert('This will happen');
+});
+someDiv.addEventListener('click', () => {
+    console.log('Then this will happen');
+});
+                </code>
+            </pre>
+            <ul>
+                <li>When we use addEventListener both function gets executed even though they are separated. </li>
+            </ul>
+            <p>
+                <b>Conclusion</b>
+            <ul>
+                <li>This is because addEventListener does not overwrite existing event handlers, whereas onclick
+                    overrides any existing onclick = function event handlers.</li>
+                <li>The other significant difference, of course, is that onclick will always work, whereas
+                    addEventListener does not work in Internet Explorer before version 9.</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

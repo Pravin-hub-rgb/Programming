@@ -12,8 +12,14 @@
 <body>
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="../index.html" class="home">Home</a>
-        <a href="#" class="link"></a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Introduction</a>
+        <a href="#t2" class="link">Static vs Dynamic memory allocation</a>
+        <a href="#t3" class="link">Physical vs Logical DS</a>
+        <a href="#t4" class="link">Abstract Datatype</a>
+        <a href="#t5" class="link">Time complexity</a>
+        <a href="#t6" class="link">Space complexity</a>
+        <a href="#t7" class="link">Finding time complexity from program code.</a>
     </div>
     <div id="navbar" class="grad">
         <div>
@@ -31,7 +37,7 @@
     </div>
     <div class="content-box">
         <h1>Introduction</h1>
-        <div class="wh">
+        <div id="t1" class="wh">
             <h2>Introduction to Data Structure</h2>
             <ul>
                 <li>Data is a integral part of our application or programs.
@@ -95,7 +101,8 @@
             <div class="in">
                 <h3>Big data</h3>
                 <ul>
-                    <li>The data avialable in internet like data about things, people and places, by analyzing this data
+                    <li>The data avialable in internet like data about things, people and places, by analyzing this
+                        data,
                         decisions are taken that is for management, governance, businesses analysis.</li>
                     <li>Study related to storing and utilizing that large size data is <b>big data.</b></li>
                 </ul>
@@ -111,14 +118,14 @@
                 </li>
             </ul>
         </div>
-        <div class="wh">
+        <div id="t2" class="wh">
             <h2>Static vs Dynamic Memory Allocation</h2>
             <p>Here we will discuss the following:
             <ol>
                 <li>About main memory</li>
                 <li>How a program use memory</li>
                 <li>Static allocation</li>
-                <li>Dynmaic allocation</li>
+                <li>Dynamaic allocation</li>
             </ol>
             </p>
             <div class="in">
@@ -148,14 +155,15 @@
                     <li>Heap term can be used for both organized things and not organized things.</li>
                     <li>In main memory, heap is an unorganized memory.</li>
                     <li>Stack memory is organized.</li>
-                    <li>Heap memory should be treated as a resource, means when required should be utilized and when we
-                        don't require we should release the memory.</li>
+                    <li>Heap memory should be treated as a resource, means when required it should be utilized and when
+                        we
+                        don't require it we should release the memory.</li>
                     <li>Program cannot directly access heap memory so they use pointer to access heap memory.</li>
                 </ul>
                 <img src="../images/memory5.svg" alt="" class="wb">
             </div>
         </div>
-        <div class="wh">
+        <div id="t3" class="wh">
             <h2>Physical vs Logical Data Structures</h2>
             <ul>
                 <li>Introduction to various data structures.</li>
@@ -212,7 +220,7 @@
                 </ul>
             </div>
         </div>
-        <div class="wh">
+        <div id="t4" class="wh">
             <h2>Abstract Datatype</h2>
             <ul>
                 <li>First we will know about data type:
@@ -231,7 +239,7 @@
                 </li>
                 <li>Abstract means hiding internal details.
                     <ul>
-                        <li>For performing operations on int datatype do we to know, how they are performed in the
+                        <li>For performing operations on int datatype do we need to know, how they are performed in the
                             binary form inside the main memory.</li>
                         <li>We are concerning about declaring a variable and peforming various operations without
                             knowing the internal details.</li>
@@ -240,31 +248,215 @@
                     </ul>
                 </li>
                 <li>Abstract datatype is related to object oriented programming language.</li>
-                <li>Using classes in object oriented programming we can define our own data types that are abstract.</li>
+                <li>Using classes in object oriented programming we can define our own data types that are abstract.
+                </li>
             </ul>
             <p>Let us take an example of list that is collection of elements.</p>
             <img src="../images/abstractdata.svg" alt="" class="wb">
             <ul>
                 <li>Operations on a list:
                     <ol>
-                        <li>add(element) &rarr; adding an element to the end of the list. It is also called append(element).</li>
-                        <li>add(index, ele) &rarr; adding an element at a given index. Here we have to shift element to insert the element. A.K.A 0 Insert(index, ele).</li>
+                        <li>add(element) &rarr; adding an element to the end of the list. It is also called
+                            append(element).</li>
+                        <li>add(index, ele) &rarr; adding an element at a given index. Here we have to shift element to
+                            insert the element. A.K.A 0 Insert(index, ele).</li>
                         <li>remove(index) &rarr; removing element by shifting element in its space.</li>
-                        <li>set(index, ele) &rarr; changing an element at a given index. It is also called as  replace(index, ele).</li>
+                        <li>set(index, ele) &rarr; changing an element at a given index. It is also called as
+                            replace(index, ele).</li>
                         <li>get(index) &rarr; getting the element at a given index.</li>
-                        <li>search(key) &rarr; searching an element in a list. The result of search is that it returns an index. It is also known as contains(key).</li>
+                        <li>search(key) &rarr; searching an element in a list. The result of search is that it returns
+                            an index. It is also known as contains(key).</li>
                         <li>sort() &rarr; arraning list element in some order.</li>
                     </ol>
                 </li>
             </ul>
         </div>
-        <div class="wh">
-            <h2>Time and Space complexity</h2>
+        <div id="t5" class="wh">
+            <h2>Time complexity</h2>
+            <ul>
+                <li>Time complexity basically depends upon the procedure that you are adopting.</li>
+                <li>Now using example we will see what procedure will take what amount of time.</li>
+            </ul>
             <div class="in">
-                <h3>Time complexity</h3>
+                <h3>Working with array and list.</h3>
                 <ul>
-                    <li>Time complexity basically depends upon the procedure that you are adopting</li>
+                    <li>In a list if we have 'n' elements and we are going through it just once then the time is 'n'.
+                        This 'n' is represented as a degree, O(n). [order of n]</li>
                 </ul>
+                <p>Either from procedure or program code we can find time complexity.</p>
+                <div class='code'>
+                    <pre>
+                           <code>
+                           
+                            for(i = 0; i < n; i++)
+                            {
+                                // searching 
+                                // adding
+                            }
+                            // here 'i' goes from 0 to 'n' so it is O(n).
+                           </code>
+                       </pre>
+                </div>
+                <p>For each element in a list if there is again a comparision that means there are two for loop, one
+                    inside another with O(n<sup>2</sup>) time complexity.</p>
+                <div class='code'>
+                    <pre>
+                            <code>
+                            
+                             for(i = 0; i < n; i++)
+                             {
+                                for(j = 0; j < n; j++)
+                                {
+                                    // processing
+                                }
+                             }
+                            </code>
+                        </pre>
+                </div>
+                <div class='code'>
+                    <pre>
+                            <code>
+                            
+                             for(i = 0; i < n; i++)
+                             {
+                                for(j = i+1; j < n; j++)
+                                {
+                                    // processing
+                                }
+                             }
+                             // O(n^2)
+                            </code>
+                        </pre>
+                </div>
+                <p>When a list is successively divide in two half until it reaches 1 that is represented as
+                    log<sub>2</sub> n</p>
+                <div class='code'>
+                    <pre>
+                            <code>
+                            
+                             for(i = n; i > 1; i = 1/2)
+                             {
+                                 // processing
+                             }
+                             // O(log n)
+                            </code>
+                        </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Matrix</h3>
+                <ul>
+                    <li>When we are processing upon a matrix of dimension nxn then it will require n<sup>2</sup> amount
+                        of time (if you are processing all the elements).</li>
+                    <li>If you are processing single row or column then it take O(n) time complexity.</li>
+                </ul>
+                <div class='code'>
+                    <pre>
+                           <code>
+                           
+                            // matrix processing code
+
+                            for(i = 0; i < n; i++)
+                            {
+                                for(j = 0; j < n; j++)
+                                {
+                                    // processing
+                                }
+                            }
+                           </code>
+                       </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Space complexity</h2>
+            <ul>
+                <li>If we want to know how much space is consumed in main memory during the execution of the program.</li>
+                <li>For array with 'n' elements its O(n). Space is depended upon 'n'.</li>
+                <li>For matrix O(n<sup>2</sup>).</li>
+            </ul>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Finding time complexity from program code.</h2>
+            <ul>
+                <li>We assume that every simple statement in a program takes one unit of time.</li>
+            </ul>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    void swap(x, y)
+                    {
+                        int t;
+                        t = x; // 1
+                        x = y; // 1
+                        y = t;// 1, each statement take 1 unit of time as it is simple assignment. 
+                    }
+                    time f(n) = 1 + 1 + 1
+                              = 3 (constant)
+                              = O(1)
+                   </code>
+               </pre>
+            </div> 
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                    int sum(int A[], int n)
+                    {
+                        int s, i;
+                        s = 0; // 1 unit
+                        for( i = 0; i < n; i++) // condition will be checked for n + 1 time and increment will be n time so total = n + 1 + n + 1 = 2(n + 1)
+                        { // i = 0 assignment = 1 time
+                            s = s + A[i]; // n 
+                        }
+                        return s; // 1
+                    }
+                    /* total = 1 + 2(n+1) + n + 1 
+                             = 1 + 2n + 1 + n + 1
+                             = 3n + 3
+                             = O(n) as the degree of n is 1 */
+                   </code>
+               </pre>
+            </div>
+            <div class='code'>
+               <pre>
+                   <code>
+                   
+                   void Add(int n)
+                   <P>int i, j;
+                    for(i = 0; i < n; i++)
+                    {
+                        for(j = 0; j < n; j++)
+                        {
+                            C[i][j] = A[i][j] + B[i][j];
+                        }
+                    }
+                    // O(n^2)
+                   </P>
+                   </code>
+               </pre>
+            </div>
+            <div class='code'>
+               <div class='dotc'></div>
+               <pre>
+                   <code>
+                   
+                    fun1()
+                    {
+                        fun2();
+                    }
+
+                    fun2()
+                    {
+                        for(i = 0; i < n; i++)
+                        {
+                            // processing
+                        }
+                    }
+                    // O(n)
+                   </code>
+               </pre>
             </div>
         </div>
     </div>

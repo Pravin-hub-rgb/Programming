@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange input event</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+            color: rgb(246, 204, 204);
+            font-size: 17px;
+            padding-top: 100px;
+        }
+        label{
+            padding: 10px;
+            display: inline-block;
+        }
+        input{
+            font-size: 17px;
+        }
+        select{
+            font-size: 16px;
+        }
+        #result{
+            font-size: 20px;
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+     <div class="main-div">
+        <div>
+            <label for="">Your Name &rarr;
+            <input type="text" name="" id="ice"></label>
+            <br><label for="">Choose an ice cream flavor &rarr;
+                <select name="iceCreams" id="iceCreams" onchange="selectElement()" >
+                <option value="">Select One ...</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="sardine">Sardine</option>
+                <option value="vanilla">Vanilla</option>
+            </select>
+            </label>
+            <br>
+            <div id="result"></div>
+        </div>
+     </div>
+     <script>
+        // const selectElement = () => {
+        //     const inputChange = document.getElementById('ice').value;
+        //     const iceCreams = document.getElementById('iceCreams').value;
+        //     const result = document.getElementById('result');
+        //     result.innerHTML = `Mr ${inputChange} select ${iceCreams} ice-cream flavour`;
+        // }
+        // we can also do it using addEventListeners
+        const iceCreams = document.getElementById('iceCreams');
+        iceCreams.addEventListener('change', () => {
+            const inputChange = document.getElementById('ice').value;
+            const result = document.getElementById('result');
+            result.innerHTML = `Mr ${inputChange} select ${iceCreams.value} ice-cream flavour`;
+        });
+     </script>
+</body>
+</html>

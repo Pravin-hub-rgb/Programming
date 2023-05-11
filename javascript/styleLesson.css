@@ -169,9 +169,11 @@ body {
     margin: 7px 4px;
 }
 
-.in a {
+.in a,
+.wh a {
     color: #7fcce6;
 }
+
 
 h1 {
     font-size: 2rem;
@@ -179,15 +181,17 @@ h1 {
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 5px 1px;
-    line-height: 23px;
 }
-ul,ol{
+
+ul,
+ol {
     margin: 3px 2px;
 }
+
 li {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 3px 2px;
 }
 
@@ -242,6 +246,14 @@ pre {
     overflow: auto;
     font-size: 0.9rem;
     margin: 0;
+}
+
+code {
+    border-radius: 14px;
+}
+
+pre code.hljs {
+    padding: 0 1em !important;
 }
 
 /* **** PART2 ****** */
@@ -313,7 +325,9 @@ pre {
 }
 
 @media only screen and (max-width: 600px) {
-    ul,ol {
+
+    ul,
+    ol {
         padding: 2px;
         margin-left: 4px;
     }
@@ -322,4 +336,10 @@ pre {
         padding: 2px;
         margin-left: 10px;
     }
+}
+
+/* *************** iframe **************** */
+iframe {
+    width: 90vw;
+    height: 90vh;
 }

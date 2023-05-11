@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inconsolata', 'san-serif';
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #F8B627;
+            color: #000000;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 10px 22px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0);
+            color: white;
+            margin: 20px;
+        }
+
+        h1 {
+            color: aquamarine;
+        }
+        form{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="para">Plz like the video</p>
+    <p class="para">Plz Share this video</p>
+    <p>Don't forget to subscribe my channel</p>
+    <h1 id="heading">Changed the content of the h1</h1>
+    <form action="">
+        <label for="">male</label>
+        <input type="radio" name="gender">
+        <label for="">female</label>
+        <input type="radio" name="gender">
+    </form>
+    <button onclick="changeContent()">Click me</button>
+    <button onclick="changeContent2()">Undo</button>
+    <script>
+        const changeContent = () => {
+            // without reference 
+            // document.getElementById('heading').innerHTML = "Welcome to Thapa Technical";
+
+            // with reference
+            const changeHeading = document.getElementById('heading');
+            changeHeading.innerHTML = "Welcome to Thapa Technical";
+
+            // Selecting multiple element with same class name
+            console.log(document.getElementsByClassName('para'));
+
+            console.log(document.getElementsByName('gender'))
+        }
+        const changeContent2 = ()=>{
+            document.getElementById('heading').innerHTML = "Changed the content of the h1";
+        }
+    </script>
+</body>
+
+</html>

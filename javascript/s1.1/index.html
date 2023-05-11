@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of JS</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Basics of JS</h1>
+        <ul>
+            <li>Why JavaScript?
+                <ul>
+                    <li>JavaScript imporves the user experience of the web page by converting it from a static page into
+                        an interactive one.</li>
+                    <li>javascript adds behavior to web pages.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="wh">
+            <h2>How website's Front-End works (Client-Side)?</h2>
+            <p>There are three pilars of Front-End that we must know and that are:
+            <ol>
+                <li>HTML/HTML 5
+                    <ul>
+                        <li><b>HTML</b> stands for Hyper Text Markup Language.</li>
+                        <li>HTML is the standard markup language for creating Webpages.</li>
+                        <li>HTML describes the structure of a Web page.</li>
+                    </ul>
+                </li>
+                <li>CSS/CSS 3
+                    <ul>
+                        <li><b>CSS</b> stands for Cascading Style Sheets.</li>
+                        <li>CSS describes how HTML elements are to be <i>displayed</i> on screen, paper, or in other
+                            media.</li>
+                        <li>With CSS, you can control the color, font, the size of Basics of JS etc.</li>
+                    </ul>
+                </li>
+                <li>JavaScript
+                    <ul>
+                        <li><b>JavaScript</b> is Basics of JS-based programming language used both on the client-side
+                            and server-side that allows you to make <i>web pages interactive.</i></li>
+                        <li>JavaScript improves the user experience of the web page by converting it from a static page
+                            into an <i>interactive</i> one.</li>
+                    </ul>
+                </li>
+            </ol>
+            </p>
+        </div>
+        <div class="wh">
+            <h2>Values and variables in JavaScript</h2>
+            <ul>
+                <li>Console.log() method is used to display anything on console.</li>
+            </ul>
+               <pre>
+                   <code>
+      Name     Value
+       &uarr;         &uarr;
+       |         |
+       |         |
+var myName = "Vinod";
+      |
+      |
+      &darr;
+   Variable (key)
+                   </code>
+               </pre>
+               <pre>
+                   <code>
+var myName = "Vinod";
+var myAge = 26;
+console.log(myName);
+console.log(myAge);
+                   </code>
+               </pre>
+            <div class="in">
+                <h3>Naming Varaibles: Rules and Best practices</h3>
+                <ul>
+                    <li>The first character must be a letter or an underscore (_) or an dollar ($). You can't use a number as the first character.</li>
+                    <li>The rest of the variable name can include any letter, any number, or the underscore. Can't use any otehr characters, including spaces.</li>
+                    <li>Variable names are case sensitive.</li>
+                    <li>No limit to the length of the varible name.</li>
+                    <li>You can't use one of the JavaScripts's reserved words as a variable name.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Data Types in JavaScript</h2>
+            <p>Six Data types that are primitives:
+                <ul>
+                    <li>undefined: typeof instance === "undefined"</li>
+                    <li>Boolean: typeof instance === "boolean"</li>
+                    <li>Number: typeof instance === "number"</li>
+                    <li>String: typeof instance === "string"</li>
+                    <li>BigInt: typeof instance === "bigint"</li>
+                    <li>Symbol: typeof instance === "symbol"</li>
+                </ul>
+            </p>
+            <p><b>typeof</b> operator is used to know the data type of value or variable passed.</p>
+               <pre>
+                   <code>     
+var myName = "Vinod";
+var myAge = 26;
+var iAmThapa = true;
+// typeof operator
+console.log(typeof(myName));
+console.log(typeof(myAge));
+console.log(typeof(iAmThapa));
+                   </code>
+               </pre>
+            <p>Output &darr;</p>
+               <pre>
+                   <code>
+string
+number
+boolean
+                   </code>
+               </pre>
+            <div class="in">
+                <h3>Challenge</h3>
+                <p>Guess the Output</p>
+                <ul>
+                    <li>10 + "20"</li>
+                    <li>9 - "5"</li>
+                    <li>"Java" + "Script"</li>
+                    <li>" " + " "</li>
+                    <li>" " + 0</li>
+                    <li>"Vinod" - "Thapa"</li>
+                    <li>true + true</li>
+                    <li>true + false</li>
+                    <li>false + true</li>
+                    <li>false - true</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>1. Interview question</h3>
+                <p>Difference between null and undefined?</p>
+                <ul>
+                    <li>null is assigned by the user to a variable.</li>
+                    <li>when any value is not assigned to a variable it becomes undefined. </li>
+                    <li>undefined is a data type while null is not.</li>
+                    <li>typeof null is object (bug) while typeof undefined variable is 'undefined'.</li>
+                </ul>
+                <p>What is NaN?</p>
+                <ul>
+                    <li>When one string is subtracted from another string the output is NaN.</li>
+                    <li>NaN is a property of the global object.</li>
+                    <li>In other words, it is a variable in global scope.</li>
+                    <li>The initial value of NaN is Not-A-Number.</li>
+                    <li>isNaN is method using which we can check if a variable or a value is number or not.</li>
+                </ul>
+                   <pre>
+                       <code>
+var myPhoneNumber = 9876543210;
+var myName = "thapa technical";
+
+console.log(isNaN(myPhoneNumber));
+// this method can be used for checking if user is entering numeric value or not.
+console.log(isNaN(myName));
+if(isNaN(myPhoneNumber))
+{
+    console.log("Please enter a valid phone number");
+}
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Challenge</h3>
+                <ul>
+                    <li>NaN === NaN</li>
+                    <li>Number.NaN === NaN</li>
+                    <li>isNaN(NaN)</li>
+                    <li>isNaN(Number.NaN)</li>
+                    <li>Number.isNaN(NaN)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Expressions and operators</h2>
+               <pre>
+                   <code>
+         Operand
+            &uarr;
+            |
+console.log(5 + 20);
+              |
+              &darr;
+            operator
+// 20 is also Operand
+                   </code>
+               </pre>
+            <ul>
+                <li>Expression is the combination of operator and operand.</li>
+            </ul>
+            <div class="in">
+                <h3>Types of operator is JS</h3>
+                <ol>
+                    <li>Assignment operators</li>
+                    <li>Arithmetic operators</li>
+                    <li>Comparison operators</li>
+                    <li>Logical operators</li>
+                    <li>String operators</li>
+                    <li>Conditional (ternary) operator</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Assignment operator</h3>
+                <ul>
+                    <li>An assignment opertor assigns a value to its left operand based on the value of its right operand.</li>
+                    <li>The simple assignment operator is equal (=).</li>
+                </ul>
+                   <pre>
+                       <code>              
+var x = 5;
+var y = 5;
+
+// console.log("is both the x and y are equal or not : " + x == y); // give wrong output (false)
+
+// using new method of ES6
+console.log(`is both the x and y are equal : %{x == y}`);
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Arithmetic operators</h3>
+                <ul>
+                    <li>An arithmetic operator takes numerical values (either literals or variables) as their operands and return a single numerical value.</li>
+                </ul>
+                   <pre>
+                       <code>
+console.log(3 + 3);
+console.log(10 - 5);
+console.log(20 / 5);
+console.log(5 + 6);
+console.log("Remainder operator : " + 81 % 8);
+                       </code>
+                   </pre>
+                <p>Increment and decrement operator</p>
+                <ul>
+                    <li>Operator: x++ and ++x or x-- or --x.</li>
+                    <li>If used postfix, with operator after operand (for example, x++), the increment operator increments and returns the value before incrementing.</li>
+                    <li>If used prefix, with operator before operand (for example, ++x), the increment operator increments and returns the value after incrementing.</li>
+                </ul>
+                   <pre>
+                       <code>              
+var num = 15;
+var newNum = num++;
+console.log(num); // 16
+console.log(newNum); // 15
+                       </code>
+                   </pre>
+                <ul>
+                    <li>Postfix increment operator means the expression is evaluated first using the original value of the variable and then the variale is incremented(increased).</li>
+                </ul>
+                   <pre>
+                       <code>               
+var num = 15;
+var newNum = ++num;
+console.log(num); // 16
+console.log(newNum); // 16
+                       </code>
+                   </pre>
+                <ul>
+                    <li>Prefix increment operator means the variable is incremented first and then the expression is evaluated using the new value of the variable.</li>
+                    <li>Same with decrement operator.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Comparison operator</h3>
+                <ul>
+                    <li>A comparision operator compares its operands and returns a logical value based on whether the comparision is true or false.</li>
+                </ul>
+                   <pre>
+                       <code>
+var a = 30; 
+var b = 10;
+
+// Equal (==)
+console.log(a == b); // false 
+
+// Not equal (!=)
+console.log(a != b); // true
+
+// Greater than (>)
+console.log(a > b); // true 
+
+// Greater than or equal (>=)
+console.log(a < b);
+
+// less than (<)
+console.log(a < b); // false 
+
+// less than or equal 
+console.log(a <= b); // false
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Logical operators</h3>
+                <ul>
+                    <li>Logical operatos are typically used with boolean (logical) values.</li>
+                    <li>When they are used they return a Boolean value.</li>
+                    <li>Logical AND (&&)
+                        <ul>
+                            <li>The logical AND (&&) operator (logical conjunction) for a set of operands is true if and only if all the operands are true.</li>
+                        </ul>
+                    </li>
+                    <li>Logical OR (||)
+                        <ul>
+                            <li>The logical OR (||) (logical disjunction) for a set of operands is true if and only is one or more of its operands is true.</li>
+                        </ul>
+                    </li>
+                    <li>Logical NOT (!)
+                        <ul>
+                            <li>The logical NOT (!) operator (logical complement, negation) takes truth to falsity and vice versa.</li>
+                        </ul>
+                    </li>
+                </ul>
+                   <pre>
+                       <code>                   
+var a = 30;
+var b = -20;
+
+// Logical AND (&&)
+console.log(a > b &&  b > 0); // false
+
+// logical OR (||)
+console.log(a > b || b > 0); // true
+
+// logical NOT (!)
+console.log(!(a > b || b > 0)); // false
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>String Concatenation (operator)</h3>
+                <ul>
+                    <li>The concatenation operato (+) concatenates two string values together, returning another string that is the union of the two operand strings.</li>
+                </ul>
+                   <pre>
+                       <code>    
+console.log("Hello World"); // Hello World
+console.log("Hello" + " World"); // Hello World
+var myName = "Vinod";
+console.log(myName + " Thapa"); // Vinod Thapa
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Challenge 3</h3>
+                <p>1- What will be the output of 3**3?</p>
+                <ul>
+                    <li>This basically means 3<sup>3</sup></li>
+                    <li>Known as exponentiation operator (**)</li>
+                </ul>
+                   <pre>
+                       <code>
+console.log(3**3); // 9
+                       </code>
+                   </pre>
+                <p>2- What will be the output, when we add a number and a string?</p>
+                   <pre>
+                       <code>
+console.log(5 + "thapa"); // 5thapa
+                       </code>
+                   </pre>
+                <p>3- Write a program to swap two numbers?</p>
+                   <pre>
+                       <code>
+                        var a = 5;
+                        var b = 10;
+
+                        var temp = a;
+                        a = b;
+                        b = temp;
+                         
+                        console.log("The value of a is : " + a);
+                        console.log("The value of b is : " + b);
+                       </code>
+                   </pre>
+                <p>4- Write a program to swap two numbers without using third variable?</p>
+                   <pre>
+                       <code>                 
+var a = 5;
+var b = 10;
+
+a = a + b;
+b = a - b;
+a = a - b;
+console.log("The value of a is : " + a);
+console.log("The value of b is : " + b);
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Interview questions</h3>
+                <p>What is the difference between == and ===?</p>
+                   <pre>
+                       <code>
+var num1 = 5; // number 
+var num2 = '5'; // string 
+console.log(num1 == num2); // true
+console.log(num1 === num2); // false 
+                       </code>
+                   </pre>
+                <ul>
+                    <li>== checks only the value while === checks operand's data type also.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

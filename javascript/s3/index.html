@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>javascript</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Functions</h1>
+        <ul>
+            <li>A JavaSciprt function is a block of code designed to perform a particular task.</li>
+        </ul>
+        <div class="wh">
+            <h2>Function definition</h2>
+            <ul>
+                <li>Before we a function, we need to define it.</li>
+                <li>A function definition (also called a function declarartion, or function statement) consists of the function keyword, followed by : 
+                    <ul>
+                        <li>The name of the function.</li>
+                        <li>A list of parameters to the function, enclosed in parenthesis and separated by commas.</li>
+                        <li>The JavaSciprt statements that define the function, enclcosed in curly brackets, {....}.</li>
+                    </ul>
+                </li>
+            </ul>
+               <pre>
+                   <code>
+// normally
+var a = 10;
+var b = 20; 
+var sum = a + b;
+console.log(sum);
+
+// using function 
+function sum(){
+var a = 10, b = 40;
+var total = a + b;
+console.log(total);
+}
+                   </code>
+               </pre>
+        </div>
+        <div class="wh">
+            <h2>Calling a function</h2>
+            <ul>
+                <li>Defining a function does not execute it.</li>
+                <li>A JavaSciprt function is executed when "something" invokes it (calls it).</li>
+            </ul>
+               <pre>
+                   <code>         
+function sum(){
+    var a = 10, b = 40;
+    var total = a + b;
+    console.log(total);
+}
+sum(); // function call
+                   </code>
+               </pre>
+        </div>
+        <div class="wh">
+            <h2>Function Parameter vs Function Arguments</h2>
+            <ul>
+                <li>Function parameters are the names listed in the function's definition.</li>
+                <li>Function arguments are the real values passed to the function.</li>
+            </ul>
+               <pre>
+                   <code>
+function sum(a, b){
+var total = a + b;
+console.log(total);
+}
+sum(40, 60);
+sum(20, 30);
+                   </code>
+               </pre>
+            <div class="in">
+                <h3>Interview Question</h3>
+                <ul>
+                    <li>Why function?
+                        <ul>
+                            <li>You can reuse code: Define the code once, and use it many times.</li>
+                            <li>You can use the same code many times with different arguments, to produce different results.</li>
+                            <li>A function is a group of reusable code which can be called anywhiere in your program. This eliminates the need of writing the same code again and again.</li>
+                        </ul>
+                    </li>
+                    <li>DRY &rarr; Do not repeat yourself.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Function expressions</h2>
+            <ul>
+                <li>"Function expressions simply means create a function and put it into the variable."</li>
+            </ul>
+               <pre>
+                   <code>     
+function sum(a, b){
+    var total = a + b;
+    console.log(total);
+}
+var funExp = sum(5, 15);
+                   </code>
+               </pre>
+        </div>
+        <div class="wh">
+            <h2>Return Keyword</h2>
+            <ul>
+                <li>When JavaSciprt reaches a return statement, the function will stop executing. </li>
+                <li>Function often compute a return value.</li>
+                <li>The return value is "returned" vack to the "caller".</li>
+            </ul>
+               <pre>
+                   <code>    
+function sum(a, b){
+return a + b;
+}
+var funExp = sum(5, 25);
+                   </code>
+               </pre>
+        </div>
+        <div class="wh">
+            <h2>Anonymous Function</h2>
+            <ul>
+                <li>A function expression is similear to and has the same syntax as a function declaration, one can define "named" function expressions (where the name of the expression might be used in that stack) or "anonymous" function expressions.</li>
+            </ul>
+               <pre>
+                   <code>
+var funExp = function(a, b){
+return a + b;
+}
+var sum = funExp(15, 15);
+var sum1 = funExp(20, 15);
+console.log(sum > sum1);
+                   </code>
+               </pre>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>
