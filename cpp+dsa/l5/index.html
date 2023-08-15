@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>l-5 = Bitwise Operations, For loops, Operator Precedence and variable scoping</title>
     <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
 </head>
 
 <body>
@@ -110,12 +112,11 @@
                         <div class="dotc"></div>
                         <pre>
                         <code>
-
-                            int i = 3, a = 2;
-                            int sum = a + (i++);
-                            //sum = 2 + 3;
-                            sum = 5;
-                            // now i is 4.
+int i = 3, a = 2;
+int sum = a + (i++);
+//sum = 2 + 3;
+sum = 5;
+// now i is 4.
                         </code>
                     </pre>
                     </div>
@@ -140,24 +141,23 @@
                 <div class="panel">
                     <pre>
                             <code>
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int a = 0;
+    int b = 1;
+    cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; " ";
+    for (int i = 2; i <= 10; i++)
+    {
+        int nextNum = a + b;
+        cout &lt;&lt; nextNum &lt;&lt; " ";
+        a = b;
+        b = nextNum;
+    }
 
-                                #include &lt;iostream>
-                                    using namespace std;
-                                    int main()
-                                    {
-                                        int a = 0;
-                                        int b = 1;
-                                        cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; " ";
-                                        for (int i = 2; i <= 10; i++)
-                                        {
-                                            int nextNum = a + b;
-                                            cout &lt;&lt; nextNum &lt;&lt; " ";
-                                            a = b;
-                                            b = nextNum;
-                                        }
-                                    
-                                        return 0;
-                                    }                
+    return 0;
+}                
                             </code>
                         </pre>
                 </div>
@@ -167,22 +167,20 @@
                 <button class="ac">Sum of n numbers</button>
                 <div class="panel">
                     <pre>
-                        <code>
-                        
-                                #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int n, sum = 0;
-                                    cin >> n;
-                                    for (int i = 1; i <= n; i++)
-                                    {
-                                        sum += i;
-                                    }
-                                    cout<<"sum is : "<< sum;
-                                    return 0;
-                                }
-                                
+                        <code>                       
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n, sum = 0;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        sum += i;
+    }
+    cout<<"sum is : "<< sum;
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -192,36 +190,33 @@
                 <button class="ac">Prime number</button>
                 <div class="panel">
                     <pre>
-                        <code>
-                        
-                            #include <iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int n;
-                                    bool isPrime = 1;
-                                    cout << "Enter the value of n : ";
-                                    cin >> n;
-                                    for (int i = 2; i <= n/2; i++)
-                                    {
-                                        if (n % i == 0)
-                                        {
-                                            isPrime = 0;
-                                            break;
-                                        }
-                                    }
-                                    if (isPrime == 0)
-                                    {
-                                        cout << "Not a prime number" << endl;
-                                    }
-                                    else
-                                    {
-                                        cout << "is a prime number" << endl;
-                                    }
-                                    return 0;
-                                }
-                                
-                                
+                        <code> 
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n;
+    bool isPrime = 1;
+    cout << "Enter the value of n : ";
+    cin >> n;
+    for (int i = 2; i <= n/2; i++)
+    {
+        if (n % i == 0)
+        {
+            isPrime = 0;
+            break;
+        }
+    }
+    if (isPrime == 0)
+    {
+        cout << "Not a prime number" << endl;
+    }
+    else
+    {
+        cout << "is a prime number" << endl;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -234,8 +229,7 @@
         <div class="wh">
             <h2>Scope</h2>
             <ul>
-                <li>The life-time of a variable where does the variable exist and after what line of code will it get
-                    destroyed </li>
+                <li>The scope of a variable refers to the duration during which the variable exists and the point in the code where it will be destroyed.</li>
                 <li>In short, its accessibility</li>
             </ul>
             <div class="in">
@@ -244,18 +238,17 @@
                     <div class="dotc"></div>
                     <pre>
                 <code>
+#include &lt;iostream>
+using namespace std;
 
-                    #include &lt;iostream>
-                    using namespace std;
+int main(){
+    int a = 3;
+    cout&lt;&lt; a &lt;&lt; endl;
 
-                    int main(){
-                        int a = 3;
-                        cout&lt;&lt; a &lt;&lt; endl;
-
-                        if(true){
-                            cout&lt;&lt; a &lt;&lt; endl;
-                        }
-                    }
+    if(true){
+        cout&lt;&lt; a &lt;&lt; endl;
+    }
+}
                 </code>
             </pre>
                 </div>
@@ -267,24 +260,23 @@
                     <div class="dotc"></div>
                     <pre>
                 <code>
+#include &lt;iostream>
+using namespace std;
 
-                    #include &lt;iostream>
-                    using namespace std;
+int main(){
+    int a = 3;
+    cout&lt;&lt; a &lt;&lt; endl;
+    // this will print 3
+    // as this is 'local' to int main()
 
-                    int main(){
-                        int a = 3;
-                        cout&lt;&lt; a &lt;&lt; endl;
-                        // this will print 3
-                        // as this is 'local' to int main()
-
-                        if(true){
-                            int a = 5;
-                            cout&lt;&lt; a &lt;&lt; endl;
-                            // it will print 5
-                            // this is 'local' to if block,
-                            // and is only accessible within the if block
-                        }
-                    }
+    if(true){
+        int a = 5;
+        cout&lt;&lt; a &lt;&lt; endl;
+        // it will print 5
+        // this is 'local' to if block,
+        // and is only accessible within the if block
+    }
+}
                 </code>
             </pre>
                 </div>
@@ -295,9 +287,10 @@
             <p>Just like BODMAS prioritizes brackets, we can also prioritize calculations using brackets.</p>
         </div>
         <div id="t10" class="wh">
-            <h2><a href="../assingments/index.html#l5">Assingments</a></h2>
+            <h2><a href="../assingments/index.html#l5" class="ba">Assingment &neArr;</a></h2>
         </div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="../main.js"></script>
 </body>
 

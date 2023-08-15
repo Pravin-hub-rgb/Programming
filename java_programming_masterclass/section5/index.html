@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions, Statements & More</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Expressions, Statements & More</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Expressions, Statements & More</h1>
+        <div class="wh">
+            <h2>Keywords and Expressions</h2>
+            <ul>
+                <li>Keywords play a vital role in programming languages like Java.</li>
+                <li>Java has a total of 51 reserved keywords that are designated for specific purposes within
+                    applications.</li>
+                <li>These keywords are crucial for writing code that adheres to the rules and logic of the Java
+                    language.</li>
+                <li>Examples of Java keywords include Boolean, double, and float.</li>
+                <li>It's not necessary to memorize all these keywords, as they will be thoroughly covered throughout the
+                    course.</li>
+            </ul>
+            <div class="in">
+                <h3>Java Language Specification</h3>
+                <ul>
+                    <li>Java Language Specification provides detailed documentation about how Java works.</li>
+                    <li>Keywords are fundamental components of the Java language.</li>
+                    <li>The specification includes a list of the 51 reserved keywords that have predefined meanings.
+                    </li>
+                    <li>These keywords are part of the core syntax and structure of Java programming.</li>
+                    <li>Starting from Java 9, the underscore by itself is also considered a keyword. Java 9 introduced
+                        this change to enhance the language's capabilities.</li>
+                    <li>Additionally, Java 17 introduced 16 contextual keywords, which serve specific purposes only in
+                        certain situations.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Contextual Keywords</h3>
+                <ul>
+                    <li>Contextual keywords are a recent addition to the Java language, introduced with JDK 17.</li>
+                    <li>These keywords have specific meanings only in particular contexts or situations.</li>
+                    <li>They allow for more nuanced and precise programming constructs.</li>
+                    <li>Contextual keywords are an example of Java's ongoing evolution to cater to diverse programming
+                        needs.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Expression Overview</h3>
+                <ul>
+                    <li>Expressions compute to single values.</li>
+                    <li>Expressions built using values, variables, and operators.</li>
+                    <li>Java highlights keywords in blue for identification.</li>
+                    <li>Expressions consist of variables, values, and operators.</li>
+                    <li>Expressions are integral components of statements.</li>
+                    <li>Java requires valid data types and syntax for expressions.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Examples of Expressions</h3>
+                <pre>
+                    <code>
+double kilometers = (100 * 1.609344);
+                    </code>
+                </pre>
+                <ul>
+                    <li>Expressions combine variables, values, and operators.</li>
+                    <li>Java expressions calculate conversions, perform operations, and more.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Using Expressions in Statements</h3>
+                <pre>
+                    <code>
+int highScore = 50;
+if (highScore > 25) {
+    highScore = 1000 + highScore; // add bonus points
+}
+    </code>
+</pre>
+                <ul>
+                    <li>Expressions are crucial in <b>if</b> statement conditions.</li>
+                    <li>Expressions influence control flow and decision-making in code.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Statements, Whitespace and Indentation (Code Organization)</h2>
+            <ul>
+                <li>Statements define actions in Java code.</li>
+                <li>Statements can contain expressions and assignments.</li>
+                <li>A statement is a complete line of code ending with a semicolon.</li>
+                <li>Examples of statements: variable declaration, increment/decrement.</li>
+                <li>Using <b>System.out.println</b> also creates a statement.</li>
+                <li>Statements can be on a single line or span multiple lines.</li>
+            </ul>
+            <pre>
+                <code>
+int myVariable = 50;
+myVariable++;
+myVariable--;
+
+System.out.println("This is a test");
+</code>
+</pre>
+            <div class="in">
+                <h3>Whitespace and Readability</h3>
+                <ul>
+                    <li>Whitespace includes horizontal and vertical spacing for readability.</li>
+                    <li>Java ignores whitespace, so extra spaces are for human convenience.</li>
+                    <li>Proper indentation and spacing enhance code readability.</li>
+                    <li>Consistent formatting helps developers understand code flow.</li>
+                    <li>Whitespace rules are defined in style guides like Google's Java Conventions.</li>
+                    <li>IntelliJ offers automatic code reformatting for adherence to best practices.</li>
+                </ul>
+                <pre>
+                <code>
+int anotherVariable = 50;
+myVariable--;
+System.out.println("myVariable = " + myVariable);
+</code>
+</pre>
+            </div>
+
+            <div class="in">
+                <h3>Indentation for Clarity</h3>
+                <ul>
+                    <li>Indentation improves visual structure and logic in code.</li>
+                    <li>Indentation helps denote code blocks and their relationships.</li>
+                    <li>Using tabs or spaces consistently ensures proper indentation.</li>
+                    <li>Automatic indentation tools like IntelliJ assist in maintaining clarity.</li>
+                    <li>Code indentation follows conventions set by style guides for consistency.</li>
+                </ul>
+                <pre>
+                <code>
+if (myVariable == 0) {
+        System.out.println("It's now zero");
+}
+</code>
+</pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Code blocks And The If Then Else Control Statement</h2>
+            <div class="in">
+                <h3>Using the If-Then Statement</h3>
+                <p>The if statement checks a condition and executes code if the condition is true.</p>
+                <p>The code within the code block associated with the if statement is executed only if the condition
+                    evaluates to true.</p>
+                <p>It's important to include a code block even for single statements to enhance code readability.</p>
+            </div>
+
+            <div class="in">
+                <h3>Basic If Statement Example</h3>
+                <pre>
+                    <code>
+boolean gameOver = true;
+int score = 5000;
+
+if (score == 5000) {
+    System.out.println("Your score was 5000");
+}
+    </code>
+    </pre>
+                <p>In this example, the if statement checks if the score is equal to 5000.</p>
+                <p>If the condition is true, the associated code block is executed.</p>
+            </div>
+
+            <div class="in">
+                <h3>Using the Else-If and Else Blocks</h3>
+                <p>An if statement can be extended with 'else-if' and 'else' blocks.</p>
+                <p>'Else-if' blocks provide additional conditions to check if the initial condition is false.</p>
+                <p>The 'else' block is executed if none of the previous conditions are true.</p>
+                <p>Conditions are evaluated in order, and the first true condition's code block is executed.</p>
+            </div>
+
+            <div class="in">
+                <h3>If-Else Example</h3>
+                <pre>
+                    <code>
+if (score < 5000) {
+    System.out.println("Your score was less than 5000");
+} else {
+    System.out.println("Got here");
+}
+    </code>
+    </pre>
+                <p>In this example, the else block is executed when the if condition is false.</p>
+            </div>
+
+            <div class="in">
+                <h3>If-Else-If Example</h3>
+                <pre>
+                    <code>  
+if (score < 5000 && score > 1000) {
+    System.out.println("Your score was less than 5000 but greater than 1000");
+} else if (score < 1000) {
+    System.out.println("Your score was less than 1000");
+} else {
+    System.out.println("Got here");
+}
+    </code>
+    </pre>
+                <p>This example demonstrates the use of 'else-if' and 'else' blocks.</p>
+                <p>The code within the first true condition's block is executed.</p>
+                <p>If no conditions are true, the 'else' block is executed.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Methods in Java</h2>
+            <div class="in">
+                <h3>Definition of a Method</h3>
+                <p>Java's description of a method is that it declares executable code that can be invoked, passing a
+                    fixed number of values as arguments.</p>
+                <p>Methods are executed by calling or invoking them, and they have a name, parameters, and a method
+                    body.</p>
+            </div>
+
+            <div class="in">
+                <h3>Benefits of Methods</h3>
+                <p>Methods help reduce code duplication by allowing code to be written once and reused multiple times.
+                </p>
+                <p>They enable passing data to the method as arguments, allowing the same method code to work with
+                    different inputs.</p>
+            </div>
+
+            <div class="in">
+                <h3>Code Duplication Example</h3>
+                <pre>
+                    <code>
+// Code duplication example
+// Problem: Changing code in one place may lead to errors in other similar code blocks
+// Solution: Methods can help eliminate code duplication
+
+public class MainChallenge {
+    public static void main(String[] args) {
+        // ...
+        int finalScore = score + (levelCompleted * bonus);
+        // ...
+    }
+}
+    </code>
+</pre>
+                <p>This code duplication example highlights the challenge of maintaining similar code blocks and the
+                    potential for errors.</p>
+            </div>
+
+            <div class="in">
+                <h3>Creating a Simple Method</h3>
+                <pre>
+                    <code>
+// Basic method structure
+public static void methodName() {
+    // Method body or code block
+    // Code to be executed when the method is called
+}
+    </code>
+</pre>
+                <p>Methods are defined with a name, a parameter list (if any), and a code block.</p>
+                <p>The <code>public static void</code> keywords indicate accessibility and return type.</p>
+            </div>
+
+            <div class="in">
+                <h3>Creating a Method: calculateScore</h3>
+                <pre>
+                    <code>
+public static void calculateScore() {
+    // Method body
+    // Code to calculate the score
+}
+    </code>
+</pre>
+                <p>Creating a new method named <code>calculateScore</code> to encapsulate score calculation logic.</p>
+                <p>Method names follow lower camel case naming convention.</p>
+            </div>
+
+            <div class="in">
+                <h3>Calling a Method</h3>
+                <pre>
+                    <code>
+public static void main(String[] args) {
+    // ...
+    calculateScore(); // Calling the method
+    // ...
+}
+    </code>
+</pre>
+                <p>Methods are called or invoked using their names followed by parentheses.</p>
+                <p>The method code block is executed when the method is called.</p>
+            </div>
+
+            <div class="in">
+                <h3>Passing Arguments to a Method</h3>
+                <pre>
+                    <code>
+// Method declaration with parameters
+public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+    // Method body using parameters
+    // Code that uses the provided arguments
+}
+    </code>
+</pre>
+                <p>Methods can accept arguments (parameters) to work with specific data passed from the calling code.
+                </p>
+                <p>Arguments are defined in the method declaration, specifying data type and variable name.</p>
+            </div>
+
+            <div class="in">
+                <h3>Invoking a Method with Arguments</h3>
+                <pre>
+                    <code>
+public static void main(String[] args) {
+    // ...
+    calculateScore(true, 800, levelCompleted, bonus); // Calling method with arguments
+    // ...
+}
+    </code>
+    </pre>
+                <p>When calling a method with arguments, provide values or expressions that match the parameter types.
+                </p>
+                <p>Arguments must be provided in the exact order and type defined in the method declaration.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>More on Methods</h2>
+            <div class="in">
+                <h3>Return Types and Return Statements</h3>
+                <p>Methods can be declared to have return types, similar to how variables have types.</p>
+                <p>Return types indicate the type of value the method will return when it completes execution.</p>
+                <p>The <b>return</b> statement is used to send a value back from the method to the calling code.
+                </p>
+            </div>
+
+            <div class="in">
+                <h3>Method Declaration with Return Type</h3>
+                <pre>
+                    <code>
+public static int methodName() {
+    // Method body
+    // Code to calculate and return an int value
+    return result;
+}
+    </code>
+    </pre>
+                <p>Methods with return types specify the type of data they will return in the declaration.</p>
+                <p>The <b>return</b> statement is used to provide the value to be returned.</p>
+            </div>
+
+            <div class="in">
+                <h3>Returning a Value from a Method</h3>
+                <pre>
+                    <code>
+public static int calculateScore() {
+    // Method body
+    int finalScore = score + (levelCompleted * bonus);
+    return finalScore; // Returning the calculated value
+}
+    </code>
+    </pre>
+                <p>Methods can return a value by using the <b>return</b> statement followed by the value.</p>
+                <p>The value being returned must match the declared return type of the method.</p>
+            </div>
+
+            <div class="in">
+                <h3>Using the Returned Value</h3>
+                <pre>
+                    <code>
+public static void main(String[] args) {
+    // ...
+    int highScore = calculateScore();
+    System.out.println("The highScore is " + highScore);
+    // ...
+}
+    </code>
+    </pre>
+                <p>The returned value from a method can be assigned to a variable and used in the calling code.</p>
+                <p>Calling a method with a return type in an expression allows for data exchange between the method and
+                    the calling code.</p>
+            </div>
+
+            <div class="in">
+                <h3>Ignoring the Returned Value</h3>
+                <pre>
+                    <code>
+public static void main(String[] args) {
+    // ...
+    calculateScore(); // Return value ignored
+    // ...
+}
+    </code>
+    </pre>
+                <p>If the returned value from a method is not used or assigned, it is ignored by the calling code.</p>
+                <p>The compiler and IDE do not raise an error for ignoring the returned value.</p>
+            </div>
+
+            <div class="in">
+                <h3>Using Method Calls in Expressions</h3>
+                <pre>
+                    <code>
+public static void main(String[] args) {
+    // ...
+    System.out.println("The next highScore is " + calculateScore());
+    // ...
+}
+    </code>
+    </pre>
+                <p>Method calls that return a value can be used directly within expressions.</p>
+                <p>The returned value is treated as a part of the expression, like any other variable.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Methods Recap</h2>
+            <div class="in">
+                <h3>Method Basics</h3>
+                <ul>
+                    <li>Java's documentation defines a method as executable code that takes arguments.</li>
+                    <li>Method can be a statement or expression.</li>
+                    <li>Method returns a value can be an expression.</li>
+                    <li>Method that doesn't return a value can be a procedure.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Method Declaration</h3>
+                <ul>
+                    <li>Declare modifiers like public, static.</li>
+                    <li>Declare the return type (void, primitive data type, or class).</li>
+                    <li>Code block must have at least one return statement if return type defined.</li>
+                    <li>Declare method name in lower camel case.</li>
+                    <li>Declare method parameters in parentheses.</li>
+                    <li>Method block with opening and closing curly braces.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Parameters and Arguments</h3>
+                <ul>
+                    <li>Parameters defined as a list of comma-separated specifiers.</li>
+                    <li>Parameter order matters when calling the method.</li>
+                    <li>Arguments must match the parameters in type and number.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Return Statements</h3>
+                <ul>
+                    <li>Void is a valid return type meaning no data is returned.</li>
+                    <li>Other return types require a return statement in the code block.</li>
+                    <li>If return type defined, return statement required at all exit points.</li>
+                    <li>All code segments in nested blocks must return a value.</li>
+                    <li>Option to return with no value from a void method.</li>
+                    <li>No need for a return statement at the end of a void method.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Method Signature and Overloading</h3>
+                <ul>
+                    <li>Method uniquely defined by name and parameters (method signature).</li>
+                    <li>Multiple methods with the same name but different parameters can exist.</li>
+                    <li>Overloaded methods have the same name but different parameters.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Main Method</h3>
+                <ul>
+                    <li>Main method is special in Java and serves as entry point.</li>
+                    <li>Main method has specific modifiers (public, static).</li>
+                    <li>Main method has void return type.</li>
+                    <li>Main method accepts args parameter as an array of Strings.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Method Overloading</h2>
+            <div class="in">
+                <h3>Method Overloading</h3>
+                <ul>
+                    <li>Method overloading involves multiple methods with the same name but different parameters</li>
+                    <li>Java resolves which method to execute based on arguments passed during invocation</li>
+                    <li>Allows creating methods with the same name but varying types and numbers of arguments</li>
+                    <li>Method signature includes method name and parameter uniqueness</li>
+                    <li>Parameter names and return types aren't part of the signature</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Overloaded Methods Example</h3>
+                <pre>
+                    <code>
+public static int calculateScore(String playerName, int score) { ... }
+public static int calculateScore(int score) { ... }
+public static int calculateScore() { ... }
+                </code>
+            </pre>
+                <ul>
+                    <li>Example of method overloading with the same method name</li>
+                    <li>Different parameter lists based on parameter count and types</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Invalid Overloaded Methods Example</h3>
+                <pre>
+                    <code>
+public static void printInfo(String name, int age) { ... }
+public static void printInfo(int age, String name) { ... } // Invalid (same parameter types but different order)
+public static void printInfo(String name, int id) { ... } // Invalid (different parameter types)
+public static int printInfo(String name, int age) { ... } // Invalid (different return type)
+                </code>
+            </pre>
+                <ul>
+                    <li>Examples of invalid overloaded methods</li>
+                    <li>Method signatures must differ by parameter types, order, or count</li>
+                    <li>Return types are not considered for overloading</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Using Overloaded Methods</h3>
+                <pre>
+                    <code>
+public static int calculateScore(String playerName, int score) { ... }
+public static int calculateScore(int score) { ... }
+public static int calculateScore() { ... }
+                </code>
+            </pre>
+                <ul>
+                    <li>Overloading allows creating methods with default values</li>
+                    <li>Default values not directly supported in Java</li>
+                    <li>Using method overloads to achieve similar functionality</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+    </body>
+
+</html>

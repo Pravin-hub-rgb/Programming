@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDE</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>IDE</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>IDE</h1>
+        <div class="wh">
+            <h2>From JShell to IDE</h2>
+            <div class="in">
+                <h3>IDE Transition</h3>
+                <ul>
+                    <li>Switching from JShell to IDE.</li>
+                    <li>IDE: Easiest, least error-prone for Java.</li>
+                    <li>Benefits: productivity, code completion, debugging, version control, teamwork.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Introduction to IntelliJ IDEA</h3>
+                <ul>
+                    <li>IntelliJ IDEA: Java IDE developed by JetBrains.</li>
+                    <li>Available in free and open-source community edition.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Choosing the IDE</h3>
+                <ul>
+                    <li>For newcomers, recommended to use IntelliJ for course consistency.</li>
+                    <li>If comfortable, use preferred IDE.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Transferable Skills</h3>
+                <ul>
+                    <li>Skills from IntelliJ applicable to other IDEs.</li>
+                    <li>Similar configuration, code execution processes.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Installing IntelliJ</h3>
+                <ul>
+                    <li>Separate installation videos for Windows, Mac, Linux.</li>
+                    <li>Watch the video relevant to your OS.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Configuring IntelliJ</h3>
+                <ul>
+                    <li>Configuration video covers all three operating systems.</li>
+                    <li>Watch this video post IntelliJ installation.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Hello World</h2>
+            <pre>
+                <code>
+public class HelloWorld
+{
+    public static void main(Strings args[])
+    {
+        System.out.print("Hello World");
+    }
+}
+                </code>
+            </pre>
+            <div class="in">
+                <h3>Java Keywords Highlighting</h3>
+                <ul>
+                    <li>Java keywords like 'public' and 'class' appear in bold.</li>
+                    <li>'public' serves as an access modifier for code elements.</li>
+                    <li>'class' keyword is fundamental for defining classes.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Understanding 'public' Access Modifier</h3>
+                <ul>
+                    <li>'public' access modifier controls accessibility of code.</li>
+                    <li>Defines where and how code can be accessed.</li>
+                    <li>'public' is often used for class declarations.</li>
+                    <li>Deeper dive into access modifiers later in the course.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Defining a Class with 'class' Keyword</h3>
+                <ul>
+                    <li>'class' keyword marks the beginning of a class definition.</li>
+                    <li>Class name follows the 'class' keyword (e.g., 'FirstClass').</li>
+                    <li>Curly braces delimit the class's code block.</li>
+                    <li>Optional access modifier can precede the 'class' keyword.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Main Method and Java Basics</h3>
+                <ul>
+                    <li>The 'public static void main' line marks the main method, which serves as the entry point for a
+                        Java program.</li>
+                    <li>Main method contains the initial code to execute when the program runs.</li>
+                    <li>Methods are a collection of one or more statements performing a specific operation.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Method Introduction</h3>
+                <ul>
+                    <li>A method is a fundamental concept in Java, representing a block of code with a specific purpose.
+                    </li>
+                    <li>The 'main' method is a special method Java searches for to start program execution.</li>
+                    <li>Understanding methods is key to structuring and organizing code for various tasks.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Method Keywords</h3>
+                <ul>
+                    <li>'public': Access modifier allowing code outside the method to use it.</li>
+                    <li>'static': Specifies that a method belongs to a class, not an instance of the class.</li>
+                    <li>'void': Indicates that a method does not return any value upon completion.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Learning Progression</h3>
+                <ul>
+                    <li>Java concepts introduced progressively to establish a strong foundation.</li>
+                    <li>Building on mastered basics allows for easier understanding of advanced concepts.</li>
+                    <li>Minor issues like capitalization can lead to errors, emphasizing attention to detail.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Method Declaration</h3>
+                <ul>
+                    <li>Method declaration consists of method name, parameters, and a code block.</li>
+                    <li>The 'main' method must be typed accurately for Java to recognize it as the entry point.</li>
+                    <li>Parameters are optional and allow information to be passed into a method.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Understanding Method Body</h3>
+                <ul>
+                    <li>Curly braces define code blocks, grouping related statements together.</li>
+                    <li>The method body is where the statements within the method are located.</li>
+                    <li>Code blocks help manage code organization and logical flow.</li>
+                </ul>
+                <pre>
+                    <code>
+public class Example {
+    public static void main(String[] args) {
+        // Statements within the method body
+        System.out.println("Hello, "); // This will be printed in one line
+        System.out.print("Tim");
+    }
+}
+                        </code>
+                    </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>if-then statement</h2>
+            <div class="in">
+                <h3>If-Then Statement and Conditional Logic</h3>
+                <p>Conditional logic in Java involves making decisions based on certain conditions. The if-then
+                    statement is the most basic control flow statement, allowing execution of a code block only if a
+                    specific condition evaluates to true.</p>
+
+                <ul>
+                    <li><strong>If-Then Statement:</strong> It consists of an 'if' keyword followed by a condition in
+                        parentheses.</li>
+                    <li><strong>Conditional Logic:</strong> Conditional logic involves using specific Java statements to
+                        check conditions and execute code blocks based on whether the condition is true or false.</li>
+                </ul>
+
+                <pre>
+                    <code>
+if (isAlien == false) {
+    System.out.println("It is not an alien!");
+}
+                    </code>
+            </pre>
+                <p><strong>Explanation:</strong></p>
+                <ul>
+                    <li>The if statement checks whether the variable 'isAlien' is equal to false.</li>
+                    <li>If the condition evaluates to true, the code block within the curly braces is executed.</li>
+                    <li>The code block contains a print statement that displays "It is not an alien!".</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Using Conditional Operators</h3>
+                <p>Conditional operators are used to compare values and determine whether conditions are met.</p>
+
+                <ul>
+                    <li><strong>Equality Operator (==):</strong> Compares two values to check if they are equal.</li>
+                    <li><strong>Assignment Operator (=):</strong> Assigns a value to a variable.</li>
+                </ul>
+
+                <pre>
+                    <code>
+isAlien = false;       // Assigning the value 'false' to the variable 'isAlien'
+if (isAlien == false)  // Checking if 'isAlien' is equal to 'false'
+    System.out.println("It is not an alien!");
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Applying the If-Then Statement</h3>
+                <p>The placement of semicolons and the use of code blocks impact the behavior of the if-then statement.
+                </p>
+
+                <ul>
+                    <li><strong>Semicolon and If Statement:</strong> Adding a semicolon after the if statement can break
+                        the intended conditional logic and lead to unexpected behavior.</li>
+                    <li><strong>Code Blocks:</strong> Enclosing statements within code blocks (curly braces) ensures
+                        that all the enclosed statements are executed based on the condition's evaluation.</li>
+                </ul>
+                <pre>
+                    <code>
+if (isAlien == false);  // Incorrect use of semicolon
+    System.out.println("It is not an alien!");
+                </code>
+            </pre>
+                <p><strong>Explanation:</strong></p>
+                <ul>
+                    <li>Adding a semicolon after the if statement terminates the condition prematurely.</li>
+                    <li>The subsequent print statement is not subject to the if condition and always executes.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Utilizing Code Blocks</h3>
+                <p>Code blocks enhance the clarity and functionality of conditional statements.</p>
+
+                <ul>
+                    <li><strong>Code Blocks:</strong> Curly braces define a code block, a group of statements executed
+                        together.</li>
+                    <li><strong>Readability:</strong> Code blocks make it clear which statements are associated with the
+                        if condition.</li>
+                    <li><strong>Best Practice:</strong> Always use code blocks, even for a single statement, for better
+                        code maintenance and readability.</li>
+                </ul>
+
+                <pre><code>
+            if (isAlien == false) {
+                System.out.println("It is not an alien!");
+                System.out.println("Welcome, Earthling!");
+            }
+                </code></pre>
+                <p><strong>Explanation:</strong></p>
+                <ul>
+                    <li>The code block contains two print statements.</li>
+                    <li>Both statements are executed if the 'isAlien' condition evaluates to true.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Application in Java Programs</h3>
+                <p>The if-then statement is a fundamental building block in Java programming for making decisions based
+                    on conditions.</p>
+
+                <pre>
+                    <code>
+if (isAlien == false) {
+    System.out.println("It is not an alien!");
+    System.out.println("Welcome, Earthling!");
+} else {
+    System.out.println("It is an alien!");
+    System.out.println("Greetings, Extraterrestrial!");
+}
+                </code>
+            </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Logical AND operator</h2>
+            <div class="in">
+                <h3>Logical AND Operator</h3>
+                <ul>
+                    <li>Introduced the logical AND operator (&&)</li>
+                    <li>Requires both operands to be true for the entire expression to be true</li>
+                </ul>
+                <pre>
+                    <code>
+int topScore = 80;
+int secondTopScore = 81;
+if (topScore > secondTopScore && topScore < 100) {
+    System.out.println("Greater then second top score and less than 100")
+}
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Logical Operators</h3>
+                <ul>
+                    <li>Used the "not equal to" operator (!=) to compare values</li>
+                    <li>Used the "greater than" operator (&gt;) to check if a value is greater</li>
+                    <li>Used the "greater than or equal to" operator (&gt;=)</li>
+                    <li>Used the "less than" operator (&lt;) to check if a value is smaller</li>
+                    <li>Used the "less than or equal to" operator (&lt;=)</li>
+                </ul>
+                <pre>
+                    <code>
+if (topScore != 100) {
+    // Code block executed
+}
+
+if (topScore > 100) {
+    // Code block executed
+}
+
+if (topScore >= 100) {
+    // Code block executed
+}
+
+if (topScore < 100) {
+    // Code block executed
+}
+
+if (topScore <= 100) {
+    // Code block executed
+}
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>Operator Precedence</h3>
+                <p>Operator precedence determines the order in which operators are evaluated within an expression.</p>
+                <p>Operators with higher precedence are evaluated before those with lower precedence.</p>
+                <p>Examples of common operator precedence:</p>
+                <ul>
+                    <li>Parentheses <b>()</b> have the highest precedence and can be used to enforce specific
+                        evaluation orders.</li>
+                    <li>Exponentiation <b>**</b></li>
+                    <li>Multiplication <b>*</b>, Division <code>/</code>, Modulus <b>%</b></li>
+                    <li>Addition <b>+</b>, Subtraction <code>-</code></li>
+                    <li>Comparison operators: <b>&lt;</b>, <b>&gt;</b>, <b>&lt;=</b>,
+                        <b>&gt;=</b>, <b>==</b>, <b>!=</b>
+                    </li>
+                    <li>Logical AND <b>&amp;&amp;</b></li>
+                    <li>Logical OR <b>||</b></li>
+                    <li>Assignment operators: <b>=</b>, <b>+=</b>, <b>-=</b>, etc. have the lowest
+                        precedence.</li>
+                </ul>
+                <p>Using parentheses can modify precedence and ensure desired evaluation order.</p>
+                <p>Understanding operator precedence is essential for writing accurate expressions.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Logical OR Operator</h2>
+            <p>In the previous video, we introduced the logical AND operator (<b>&amp;&amp;</b>), requiring
+                both conditions to be true.</p>
+            <p>Now, let's delve into the logical OR operator (<b>||</b>), which works similarly, but requires
+                at least one condition to be true.</p>
+            <ul>
+                <li>Logical OR combines two conditions.</li>
+                <li>Only one of the conditions on the left or right side needs to be true.</li>
+            </ul>
+            <p>Example:</p>
+            <pre>
+                    <code>
+if (condition1 || condition2) {
+    // Code block executed if either condition is true
+}
+                </code>
+            </pre>
+            <p>Bitwise operators <b>&amp;</b> and <code>|</code> exist, but they are used less frequently.</p>
+            <p>Let's put the logical OR operator into action with a new code example.</p>
+
+            <div class="in">
+                <h3>Logical OR Operator Example</h3>
+                <p>Here's an example demonstrating the logical OR operator.</p>
+                <p>Given <b>topScore</b> is 80, and <b>secondTopScore</b> is 81:</p>
+                <pre>
+                    <code>
+if (topScore > 90 || secondTopScore <= 90) {
+    // Code block executed if either condition is true
+}
+                </code>
+            </pre>
+                <p>The left condition (<b>topScore > 90</b>) is false.</p>
+                <p>The right condition (<b>secondTopScore <= 90</b>) is true.</p>
+                <p>Since at least one condition is true, the code block will be executed.</p>
+                <p>Let's conclude this topic and preview what's coming next.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Assignment Operator VS Equals to Operator</h2>
+            <div class="in">
+                <h3>Topic: Comparing to a Boolean</h3>
+                <p>Consider comparing a variable to a boolean value.</p>
+                <pre>
+                    <code>
+boolean isCar = false;
+if (isCar = true) { // Incorrect use of assignment operator
+    System.out.println("This is not supposed to happen");
+}
+// although we are using assignment operator but still the value is printed that's because after successfully assigning of the value it returns 'true'.
+                </code>
+            </pre>
+                <p>Explanation:</p>
+                <ul>
+                    <li>The use of <b>=</b> assigns <b>true</b> to <b>isCar</b> and then returns the
+                        assigned value (true).</li>
+                    <li>The code block is executed because the condition evaluates to <b>true</b>.</li>
+                </ul>
+                <p>Fixing the issue:</p>
+                <pre>
+                    <code>
+boolean isCar = false;
+if (isCar == true) { // Use '==' for comparison
+    System.out.println("This is not supposed to happen");
+}
+                </code>
+            </pre>
+                <p>Shortcuts:</p>
+                <ul>
+                    <li>You can directly use <b>if (isCar)</b> to check if <b>isCar</b> is
+                        <b>true</b>.
+                    </li>
+                    <li>Use <b>if (!isCar)</b> to check if <b>isCar</b> is <b>false</b>.</li>
+                    <li>The <b>!</b> (NOT) operator returns the opposite value of a boolean.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Topic: Conclusion</h3>
+                <p>Understanding the difference between the assignment and equality operators is crucial.</p>
+                <p>Always use <b>==</b> when comparing values, and <b>=</b> only for assignments.</p>
+                <p>Shortcut usage is recommended for more concise and readable code.</p>
+                <p>Next, we'll explore the ternary operator in the upcoming video.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Ternary Operator</h2>
+            <p>Conditional operator with three operands.</p>
+            <p>Structure: <code>operand1 ? operand2 : operand3</code></p>
+            <p>Test if operand1 is true, return operand2; otherwise, return operand3.</p>
+            <h3>Ternary Operator Example</h3>
+            <pre>
+                    <code>
+String makeOfCar = "Volkswagen";
+boolean isDomestic = (makeOfCar.equals("Volkswagen")) ? false : true;
+System.out.println("Is the car domestic? " + isDomestic);
+                </code>
+            </pre>
+
+            <div class="in">
+                <h3>Ternary Operator for Assigning Text</h3>
+                <pre>
+                    <code>
+int ageOfClient = 20;
+String ageText = (ageOfClient >= 18) ? "Over 18" : "Still a kid";
+System.out.println("Age: " + ageText);
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>Ternary Operator Summary</h3>
+                <p>Replaces <b>if-else</b> for concise conditional assignments.</p>
+                <p>Structure: <b>operand1 ? operand2 : operand3</b></p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Operator precedence</h2>
+            <p>Operator precedence determines the order in which operators are evaluated within an expression.</p>
+            <p>Operators with higher precedence are evaluated before those with lower precedence.</p>
+            <p>Examples of common operator precedence:</p>
+            <ul>
+                <li>Parentheses <b>()</b> have the highest precedence and can be used to enforce specific
+                    evaluation orders.</li>
+                <li>Exponentiation <b>**</b></li>
+                <li>Multiplication <b>*</b>, Division <code>/</code>, Modulus <b>%</b></li>
+                <li>Addition <b>+</b>, Subtraction <code>-</code></li>
+                <li>Comparison operators: <b>&lt;</b>, <b>&gt;</b>, <b>&lt;=</b>,
+                    <b>&gt;=</b>, <b>==</b>, <b>!=</b>
+                </li>
+                <li>Logical AND <b>&amp;&amp;</b></li>
+                <li>Logical OR <b>||</b></li>
+                <li>Assignment operators: <b>=</b>, <b>+=</b>, <b>-=</b>, etc. have the lowest
+                    precedence.</li>
+            </ul>
+            <p>Using parentheses can modify precedence and ensure desired evaluation order.</p>
+            <p>Understanding operator precedence is essential for writing accurate expressions.</p>
+            <h3>Operator Precedence Table</h3>
+            <p>Showcases priority of evaluating expressions</p>
+            <pre>
+                <code>
+    Precedence | Operation
+    ----------------------
+    15         | Parentheses
+    14         | Unary operators (positive, negative, increment, decrement, logical NOT, bitwise NOT)
+    13         | Multiplicative operators (*, /, %)
+    12         | Additive operators (+, -)
+    11         | Shift operators (<<, >>, >>>)
+    10         | Relational operators (<, >, <=, >=, instanceof)
+     9         | Equality operators (==, !=)
+     8         | Bitwise AND (&)
+     7         | Bitwise XOR (^)
+     6         | Bitwise OR (|)
+     5         | Logical AND (&&)
+     4         | Logical OR (||)
+     3         | Ternary operator (condition ? expr1 : expr2)
+     2         | Assignment operators (=, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=)
+     1         | Comma operator (,)
+    </code>
+</pre>
+        </div>
+
+        This table provides a comprehensive view of the operator precedence in Java, listing various operators and their
+        precedence levels. The higher the precedence value, the higher the priority of the operation.
+
+    </div>
+
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

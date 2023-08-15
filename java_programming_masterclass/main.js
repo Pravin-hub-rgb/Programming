@@ -21,11 +21,20 @@ for (i = 0; i < acc.length; i++) {
 
 function openNav() {
   document.getElementById("mySidepanel").style.width = "250px";
+  allLi = document.querySelectorAll('.link')
+  allLi.forEach(li => {
+    li.style.display = "block";
+  })
 }
 
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
+  allLi = document.querySelectorAll('.link')
+  allLi.forEach(li => {
+    li.style.display = "none";
+  })
 }
+
 
 // ********* adding dots *********
 let codes = document.querySelectorAll('.dotc');
@@ -39,7 +48,6 @@ hljs.highlightAll();
 // ************ Removing space in preTag *************
 const allPre = document.querySelectorAll('pre');
 allPre.forEach((tag) => {
-  console.log("we are working")
   tag.firstChild.textContent = "";
   tag.lastChild.textContent = "";
 })

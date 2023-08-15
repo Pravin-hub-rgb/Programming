@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Steps</title>
+    <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Home</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>First Steps</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>First Steps</h1>
+        <div class="wh">
+            <h2>Hello world</h2>
+            <ul>
+                <li>Type the following in the JShell &darr;</li>
+            </ul>
+            <pre>
+                <code>
+System.out.print("Hello World");
+                </code>
+            </pre>
+            <ul>
+                <li>The above line is an statement:
+                    <ul>
+                        <li>A statement is a complete command to be executed</li>
+                        <li>Can include one or more expressions</li>
+                        <li>Statements are executed by JShell</li>
+                        <li>Printing information using syntax</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Common Errors in JShell</h3>
+                <ul>
+                    <li>Forgetting closing parentheses
+                        <ul>
+                            <li>Error: Incomplete code</li>
+                        </ul>
+                    </li>
+                    <li>Forgetting closing double quote
+                        <ul>
+                            <li>Error: Unclosed string literal</li>
+                        </ul>
+                    </li>
+                    <li>Using single quotes for string (invalid)
+                        <ul>
+                            <li>Error: Character literal</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Variables</h2>
+            <div class="in">
+                <h3>Variables and Keywords</h3>
+                <ul>
+                    <li>Keywords are reserved words with predefined meanings in Java</li>
+                    <li>Java syntax is case-sensitive, including keywords</li>
+                    <li>Keywords like 'int' and 'Int' are distinct</li>
+                    <li>Keywords are integral to Java's functionality</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Primitive Data Types and Keywords</h3>
+                <ul>
+                    <li><b>int</b> keyword represents integer</li>
+                    <li>Primitive data types: basic building blocks</li>
+                    <li>Exploration of various data types and keywords</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Variables: Storing Information</h3>
+                <ul>
+                    <li>Variables store information in the computer</li>
+                    <li>Variables accessed by names, stored in memory</li>
+                    <li>Variables are changeable, contents are variable</li>
+                    <li>Specify data type and name for a variable</li>
+                    <li>Various data types available for variables</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Defining Variables: Data Types</h3>
+                <ul>
+                    <li>Data types determine type of information stored</li>
+                    <li>Keywords and data types relationship</li>
+                    <li>Object-Oriented Java's flexibility with data types</li>
+                    <li>Focus on primitive data types in upcoming videos</li>
+                    <li>Defining an <b>int</b> variable: an abbreviation for integer</li>
+                    <li>Example:
+                        <pre>
+                        <code>
+int myFirstNumber = 5;
+                        </code>
+                        </pre>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Defining Variables: Initialization</h3>
+                <ul>
+                    <li>Variable definition: data type, name, optional value</li>
+                    <li>Assignment operator: <b>=</b> for initialization</li>
+                    <li>Semicolon ends the line as a complete statement</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Assignment and Initialization</h3>
+                <ul>
+                    <li>Initialization optional but necessary before use</li>
+                    <li>Value assigned to variable using expression</li>
+                    <li>Expression: coding construct evaluating to a value</li>
+                    <li>Java reads and executes statements in JShell</li>
+                    <li>Memory allocation for variables and accessing values</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Accessing Variable Content</h3>
+                <ul>
+                    <li>Access variable content using its name</li>
+                    <li>Java manages memory and variable access</li>
+                    <li>Variable content accessed by referring to name</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Declaring a variable and then printing it &darr;</h3>
+                <pre>
+                    <code>
+jshell> int myFirstNumber = 5;
+myFirstNumber ==> 5
+
+jshell> System.out.print(myFirstNumber);
+5
+                    </code>
+                </pre>
+                <p>Updating the variable value and printing it &darr;</p>
+                <pre>
+                    <code>
+jshell> myFirstNumber = 1000;
+myFirstNumber ==> 1000
+
+jshell> System.out.print(myFirstNumber);
+1000
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>using JShell command which will list all the statements we've executed and assigned</h3>
+                <pre>
+                    <code>
+jshell> /list
+
+   1 : {
+       }
+   2 : System.out.print("Hello World");
+   3 : System.out.print("Hello Tim");
+   4 : int myFirstNumber = 5;
+   5 : System.out.print(myFirstNumber);
+   6 : myFirstNumber = 1000;
+   7 : System.out.print(myFirstNumber);
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Expressions and Operators</h2>
+            <ul>
+                <li>In previous examples, expressions on the right side of the equals sign have been simple literals:
+                    strings or numeric literals.</li>
+                <li>The expression to the right of the equals sign can be more complex.</li>
+                <li>Let's explore adding expressions that involve mathematical operations:</li>
+            </ul>
+            <pre>
+                <code>
+int result = 10 + 5;
+                </code>
+            </pre>
+            <ul>
+                <li>This sets the value of the variable 'result' to the sum of 10 and 5.</li>
+                <li>Java recognizes the mathematical expression and calculates the result.</li>
+                <li>We can use various operators like + and *.</li>
+            </ul>
+            <pre>
+                <code>
+int complexResult = 10 + 5 + 2 * 10;
+                </code>
+            </pre>
+            <ul>
+                <li>This computes a more complex expression: 10 + 5 = 15, then 15 + 2 * 10 = 35.</li>
+                <li>Operators like +, -, *, / are familiar. There are more operators available.</li>
+                <li>If interested, check the 'Bonus Lecture and Information' section for a downloadable list of all
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Starting out with Expressions</h2>
+            <ul>
+                <li>An expression is the code on the right side of the equals sign in an assignment or declaration
+                    statement.</li>
+                <li>Expressions can be simple literals or complex mathematical equations.</li>
+            </ul>
+            <p>Now we will learn how to replace literal values with variables in expressions:</p>
+            <ul>
+                <li>Variables provide flexibility by allowing dynamic values.</li>
+                <li>We've used literals and operators in expressions before.</li>
+                <li>Example expression:
+                    <pre>
+                    <code>
+int result = 10 + 5;
+                </code>
+                </pre>
+                </li>
+            </ul>
+            <p>Challenge: Create two new variables, mySecondNumber (value: 12) and myThirdNumber (value: 6).</p>
+            <p>Command: <code>/var</code> lists created variables in JShell.</p>
+            <p>Replacing literals with variables:</p>
+            <ul>
+                <li>Use variable names directly in expressions.</li>
+                <li>Example:
+                    <pre>
+                    <code>
+int total = myFirstNumber + mySecondNumber + myThirdNumber;
+                    </code>
+                </pre>
+                </li>
+            </ul>
+            <p>Variables offer flexibility in constructing complex expressions.</p>
+            <p>Challenge: Create a variable myLastOne (value: 1000 - myTotal) and print its value.</p>
+            <p>Note: Variables are case-sensitive, and spelling matters in Java code.</p>
+        </div>
+        <div class="wh">
+            <h2>Primitive Types</h2>
+            <div class="in">
+                <h3>Java's Primitive Data Types</h3>
+                <ul>
+                    <li>Primitive types are basic data types.</li>
+                    <li>Eight primitive types in Java: byte, short, int, long, float, double, char, boolean.</li>
+                    <li>Building blocks for data manipulation.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Exploring Primitive Data Types</h3>
+                <ul>
+                    <li>Four types to store whole numbers: byte, short, int, long.</li>
+                    <li>Two types to store real numbers: float, double.</li>
+                    <li>Char and boolean are in their own categories.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Primitive Data Types in Memory</h3>
+                <ul>
+                    <li>Primitive data types are placeholders in memory.</li>
+                    <li>Values are assigned to these placeholders.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Getting Range of int Data Type</h3>
+                <ul>
+                    <li>Int is a whole number without decimals.</li>
+                    <li>Range of values is not infinite.</li>
+                    <li>Minimum and maximum values for int data type.</li>
+                </ul>
+                <pre>
+                    <code>
+int myMinIntValue = Integer.MIN_VALUE;
+int myMaxIntValue = Integer.MAX_VALUE;
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Displaying Range of int Data Type</h3>
+                <ul>
+                    <li>Printing range as a statement to console.</li>
+                    <li>Combining text and numeric output.</li>
+                </ul>
+                <pre>
+                    <code>
+System.out.print("Minimum int value = " + myMinIntValue);
+System.out.print("Maximum int value = " + myMaxIntValue);
+                </code>
+            </pre>
+                <p>Output &darr;</p>
+                <pre>
+                <code>
+Minimum int value = -2147483648
+Maximum int value = 2147483647
+                </code>
+            </pre>
+            </div>
+            <ul>
+                <li><b>Let's talk about why we're using 'Integer' in the expression, to get the min, and max value.</b>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Using 'Integer' for Min and Max Value</h3>
+                <ul>
+                    <li>When dealing with primitive data types like 'int', there are limitations in terms of operations
+                        and functionalities.</li>
+                    <li>To overcome these limitations and access additional functionalities, Java provides wrapper
+                        classes.</li>
+                    <li>Wrapper classes are objects that encapsulate primitive data types, allowing us to perform
+                        operations and access methods on them.</li>
+                    <li>In this context, we're using 'Integer' as a wrapper class for the 'int' primitive data type.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Wrapper Classes and Classes Overview</h3>
+                <ul>
+                    <li>A class is a fundamental concept in object-oriented programming.</li>
+                    <li>It defines a blueprint for creating objects that share properties and behaviors.</li>
+                    <li>A wrapper class, like 'Integer', is a class that encapsulates a primitive data type ('int')
+                        within an object.</li>
+                    <li>Wrapper classes provide a way to work with primitive types as objects, allowing for additional
+                        functionality.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Java's Wrapper Classes</h3>
+                <ul>
+                    <li>Java offers wrapper classes for all eight primitive data types.</li>
+                    <li>These wrapper classes are used to convert primitive data types into objects, enabling operations
+                        that primitives can't perform directly.</li>
+                    <li>The wrapper class name is derived from the primitive's name with an initial uppercase letter.
+                    </li>
+                    <li>For example, the wrapper class for 'int' is 'Integer'.</li>
+                    <li>There are exceptions: 'char' uses 'Character', and 'int' uses 'Integer' as their wrapper
+                        classes.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Working with int and Integer</h3>
+                <ul>
+                    <li>'int' is a primitive data type that can store whole numbers.</li>
+                    <li>However, 'int' lacks certain operations and features available to objects.</li>
+                    <li>'Integer' is the wrapper class for 'int', which brings object-oriented capabilities to 'int'
+                        values.</li>
+                    <li>By using 'Integer', we can perform operations on 'int' values and access additional methods.
+                    </li>
+                    <li>For example, 'MIN_VALUE' and 'MAX_VALUE' are attributes of the 'Integer' wrapper class that
+                        provide insights into the range of 'int' values.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Primitive types and their respective wrapper class:</h3>
+                <ul>
+                    <li>byte - Byte</li>
+                    <li>short - Short</li>
+                    <li>char - Character</li>
+                    <li>int - Integer</li>
+                    <li>long - Long</li>
+                    <li>float - Float</li>
+                    <li>double - Double</li>
+                    <li>boolean - Boolean</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Overflow and Underflow Examples</h3>
+                <ul>
+                    <li>Overflow and underflow are concepts related to exceeding or going below data type limits.</li>
+                    <li>Overflow occurs when a value surpasses the maximum value a data type can hold.</li>
+                    <li>Underflow happens when a value goes below the minimum value a data type can hold.</li>
+                    <li>In Java, overflow and underflow lead to unexpected wraparound behavior.</li>
+                    <li>Overflow results in the value wrapping from maximum to minimum, while underflow wraps from
+                        minimum to maximum.</li>
+                </ul>
+                <pre>
+                    <code>
+int maxIntValue = Integer.MAX_VALUE; // 2147483647
+int minIntValue = Integer.MIN_VALUE; // -2147483648
+
+// Overflow example
+int overflowExample = maxIntValue + 1; // Overflow: Wraps around to the minimum value
+System.out.println("Overflow Example: " + overflowExample); // Outputs: Overflow Example: -2147483648
+
+// Underflow example
+int underflowExample = minIntValue - 1; // Underflow: Wraps around to the maximum value
+System.out.println("Underflow Example: " + underflowExample); // Outputs: Underflow Example: 2147483647
+                </code>
+            </pre>
+                <ul>
+                    <li>Overflow and underflow are situations that occur when a value exceeds the maximum or goes below
+                        the minimum limit of a data type, respectively.</li>
+                    <li>In Java, these situations lead to wraparound behavior, where values wrap around from one extreme
+                        to the other.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Numeric Literal Assignments</h3>
+                <ul>
+                    <li>Java treats numeric literals as 'int' by default.</li>
+                    <li>Assigning values outside the valid range for a data type leads to compilation errors.</li>
+                    <li>Underscores in numeric literals improve readability without affecting the value.</li>
+                    <li>Underscores can be placed anywhere in a number to enhance human comprehension.</li>
+                    <li>Java disregards underscores when interpreting numeric literals.</li>
+                </ul>
+                <pre>
+                    <code>
+int maxIntValue = 2147483647; // Maximum value for 'int'
+int minIntValue = -2147483648; // Minimum value for 'int'
+
+// Using underscores for improved readability
+int bigNumber = 1_000_000_000; // One billion
+int creditCardNumber = 1234_5678_9012_3456; // Example credit card number
+                      </code>
+                    </pre>
+            </div>
+            <div class="in">
+                <h3>Next: More Primitive Types</h3>
+                <p>In the upcoming video, we'll delve into byte, short, and long primitive data types.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>byte, short, long and width</h2>
+            <ul>
+                <li>Java has four primitive data types used to store whole numbers &darr;</li>
+            </ul>
+            <img src="../images/table1.svg" alt="" class="wb">
+            <ul>
+                <li>Size or width, is the amount of space that determines (or limits) the range of values we've been
+                    discussing.</li>
+            </ul>
+            <img src="../images/table2.svg" alt="" class="wb">
+            <ul>
+                <li>A byte, can store 256 numbers and occupies eight bits, and has a width of 8.</li>
+            </ul>
+            <div class="in">
+                <h3>The byte data type</h3>
+                <ul>
+                    <li>The minimum value of byte is <b>- 128</b>.</li>
+                    <li>The maximum value of byte is <b>127</b>.</li>
+                    <li>Given its small range, you probably won't be using the byte data type a lot.</li>
+                    <li>The byte wrapper class is the <b>Byte</b> with a capital B.</li>
+                    <li>Smaller data type take small space and they are easy to access.It can be useful when we are
+                        using smaller range of values in our code.</li>
+                </ul>
+                <pre>
+                    <code>
+jshell> System.out.print(Byte.MIN_VALUE);
+-128
+jshell> System.out.print(Byte.MAX_VALUE);
+127
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>short datatype</h3>
+                <pre>
+                    <code>
+jshell> System.out.print(Short.MIN_VALUE);
+-32768
+jshell> System.out.print(Short.MAX_VALUE);
+32767
+                    </code>
+                </pre>
+                <ul>
+                    <li>Both byte and short, have the same overflow and underflow issue as the int data type has, but
+                        oviously with their own range of numbers.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>long data</h3>
+                <ul>
+                    <li>Java allows certain numeric literals to have a suffix appended to the value, to force it to be a
+                        different data type from the default type.</li>
+                    <li>The long is one of this type and it's suffix is an 'L'.</li>
+                    <li>This is one of the few instances Java is not case sensitive, a lowercase 'l' or an uppercase 'L'
+                        at the end of a whole number mean the same thing - the number is a long.</li>
+                </ul>
+                <pre>
+                    <code>
+jshell> long myLongValue = 100L;
+myLongValue ==> 100
+                    </code>
+                </pre>
+                <ul>
+                    <li>Range of long data type is very large.</li>
+                </ul>
+                <pre>
+                    <code>
+jshell>  System.out.print(Long.MAX_VALUE);
+9223372036854775807
+jshell> System.out.print(Long.MIN_VALUE);
+-9223372036854775808
+                    </code>
+                </pre>
+                <ul>
+                    <li>We can easily store a number without using 'L' suffix when it is within the range of integer but
+                        when the number goes out of the integer range we get an error.</li>
+                </ul>
+                <pre>
+                    <code>
+jshell> long bigLongLiteralValue = 2147483647;
+bigLongLiteralValue ==> 2147483647
+
+jshell> long bigLongLiteralValue = 2147483647235;
+|  Error:
+|  integer number too large
+|  long bigLongLiteralValue = 2147483647235;
+                    </code>
+                </pre>
+                <p>When is L is required?</p>
+                <ul>
+                    <li>A numberic literal that exceeds Integer.MAX_VALUE must use the 'L' suffix.</li>
+                    <li>We cannot create a numeric literal in Java, that exceeds Integer.MAX_VALUE, without using the
+                        'L' suffix, we'll always get the error 'integer number too large'.</li>
+                </ul>
+                <pre>
+                    <code>
+jshell> long bigLongLiteralValue = 2147483647235L;
+bigLongLiteralValue ==> 2147483647235
+                    </code>
+                </pre>
+                <ul>
+                    <li>Now the number will be accepted.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Java Data Type Conversion</h3>
+                <p>Java can automatically convert numbers from int to smaller types like short.</p>
+                <pre><code>
+        int intValue = 32768; // This value fits into an int
+        short shortValue = 32768; // Error: incompatible types</code></pre>
+                <p>Java checks if the value fits into the target type.</p>
+                <pre><code>
+        short shortValue = 32767; // No error, fits into a short</code></pre>
+                <p>If the value fits, Java allows the assignment.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Casting in Java</h2>
+            <p>Declaring multiple variable in single statement &darr;</p>
+            <pre>
+                <code>
+jshell>  short myMinShortValue = Short.MIN_VALUE; int myMinIntValue = Integer.MIN_VALUE;  // using ';' to separate two distinct datatype.
+myMinShortValue ==> -32768
+myMinIntValue ==> -2147483648
+
+jshell> byte myMinByteValue = Byte.MIN_VALUE, myMaxByteValue = Byte.MAX_VALUE; // can use ',' if both datatype are same.
+myMinByteValue ==> -128
+myMaxByteValue ==> 127
+
+jshell> short firstShort = 1; int firstInteger = 2;
+firstShort ==> 1
+firstInteger ==> 2
+
+jshell> byte firstByte = 1, secondByte = 2;
+firstByte ==> 1
+secondByte ==> 2
+                </code>
+            </pre>
+            <p>Performing some arithmetic operations on the above declared variables.</p>
+            <p>Starting with <b>int.</b></p>
+            <pre>
+                <code>
+jshell> int myTotal = myMinIntValue / 2;
+myTotal ==> -1073741824
+                </code>
+            </pre>
+            <ul>
+                <li>It gives no error.</li>
+            </ul>
+            <p>Now doing arithmetic with <b>byte.</b></p>
+            <pre>
+                <code>
+jshell>  byte myNewByteValue = (myMinByteValue / 2);
+|  Error:
+|  incompatible types: possible lossy conversion from int to byte
+|   byte myNewByteValue = (myMinByteValue / 2);
+                </code>
+            </pre>
+            <ul>
+                <li>This throws an error.</li>
+                <li>Althrough the result can fit into the variable but it gives error and in case of constant literals
+                    there is not error because constant literals
+                    are treated differently because their values are known at compile time, enabling Java to perform
+                    accurate type promotion without the risk of data loss. This is in contrast to variables or
+                    expressions involving variables, where Java's cautious approach to potential data loss requires
+                    explicit casting to indicate the programmer's intention.
+                    <ul>
+                        <li>Implicit Casting: When you perform arithmetic operations involving different data types,
+                            Java automatically performs implicit casting (also known as widening conversion) to ensure
+                            that the result is not lost or truncated. This is done to ensure accuracy and prevent
+                            unintended behavior. <br>For example, if you're dividing two byte values, the result might
+                            not fit within the range of a byte. Therefore, Java promotes the result to an int to avoid
+                            data loss. However, if you're assigning that result to a byte variable without explicit
+                            casting, Java sees a potential data loss and raises an error, as it wants to ensure that
+                            you're aware of this potential issue.</li>
+                        <li>Type Promotion:
+                            Type promotion, also known as type coercion or automatic type conversion, is the implicit
+                            conversion of values from a smaller data type to a larger data type. This happens when
+                            performing operations between values of different data types. Java automatically promotes
+                            values to a larger data type to prevent loss of information and ensure accurate results.
+                            <br>For example, when you perform arithmetic operations between different data types, Java
+                            will promote the operands to the data type with higher precision before performing the
+                            operation. For instance, if you add an int and a double, the int will be promoted to a
+                            double before the addition.
+                        </li>
+                        <li>Explicit Casting:
+                            Explicit casting, also known as type casting, involves manually converting a value from one
+                            data type to another by using casting operators. This is necessary when you want to convert
+                            a value to a smaller or less precise data type, where data loss might occur. Explicit
+                            casting allows the programmer to override Java's default type promotion behavior and make
+                            the intention clear.</li>
+                    </ul>
+                </li>
+                <li>So to overcome this error we have to use <b>casting.</b></li>
+            </ul>
+            <div class="in">
+                <h3>Casting</h3>
+                <ul>
+                    <li>Casting means to treat or convert a number, from one type to another. We put the type we want to
+                        number to be, in parenthesis like this &darr;</li>
+                </ul>
+                <pre>
+                    <code>
+(byte) (myMinByteValue / 2);
+                    </code>
+                </pre>
+                <br>
+                <pre>
+                    <code>
+jshell> byte myNewByteValue = (byte) (myMinByteValue / 2);
+myNewByteValue ==> -64
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <p><b>What does it mean when Java defaults the data type to an int?</b></p>
+                <ul>
+                    <li>We have seen that if there is int variable in expression and we assign it to int variable after
+                        performing some arithmetic oepration, it work because both are int.</li>
+                    <li>Now (someShortVariable / 2) which results in 'int' can't be assigned to short variable because
+                        an int can't be assigned to a short, because the compiler won't guess the right. But the result
+                        of (-128 / 2) is 'int', and this statement works the compiler can determine the result
+                        immediately, and knows the value fits into a short.</li>
+                    <li>byte myNewByteValue = (byte) (myMinByteValue / 2); this statement works because we are telling
+                        compiler to cast it.</li>
+                    <li>Java uses int by default that's why we have to cast it before assigning it.</li>
+                    <li>Advice : use integer data type more unless you have good reason to use other data type.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Primitive types challenge</h2>
+            <ul>
+                <li>Your challenge is to create four new variables:
+                    <ol>
+                        <li>A byte variable, set it to any valid byte number.</li>
+                        <li>A short variable, set it to any valid short number.</li>
+                        <li>A int variable, set it to any valid integer number.</li>
+                        <li>Lastly, create a variable of type long, make it equal to 50,000 plus 10 times the sum of the
+                            values of the first 3 variables (your byte, short and int).</li>
+                    </ol>
+                </li>
+            </ul>
+            <pre>
+                <code>
+jshell> byte firstByteNum = 10;
+firstByteNum ==> 10
+
+jshell> short firstShortNum = 10;
+firstShortNum ==> 10
+
+jshell> int firstIntNum = 10;
+firstIntNum ==> 10
+
+jshell> long totalSumNum = 50000L + ( 10 * (firstByteNum + firstShortNum + firstIntNum)); 
+totalSumNum ==> 50300
+                </code>
+            </pre>
+            <ul>
+                <li>Without using type casting this still work because 50000L is long to all other variable get
+                    converted.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Float and Double primitives</h2>
+            <div class="in">
+                <h3>Floating Point Numbers</h3>
+                <p>Floating-point numbers are used to represent values with decimal fractions.</p>
+                <p>They have both a whole number part and a fractional part separated by a decimal point.</p>
+                <p>Examples: 2.5, -0.75, 123.456</p>
+            </div>
+
+            <div class="in">
+                <h3>Types of Floating Point Numbers</h3>
+                <p>There are two primitive data types for floating point numbers in Java:</p>
+                <ul>
+                    <li><b>float</b>: Single-precision 32-bit floating point</li>
+                    <li><b>double</b>: Double-precision 64-bit floating point (default for decimals)</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Precision and Width</h3>
+                <ul>
+                    <li>Precision refers to the level of detail a data type can represent.</li>
+                    <li>Width refers to the number of bits used to store the data.</li>
+                    <li><b>float</b> has less precision than <b>double</b> due to fewer bits (32 vs 64).</li>
+                    <li><b>float</b> range: ±1.4 x 10^-45 to ±3.4 x 10^38</li>
+                    <li><b>double</b> range: ±4.9 x 10^-324 to ±1.8 x 10^308</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Use Case</h3>
+                <ul>
+                    <li>Use <b>float</b> when memory is a concern and precision is acceptable.</l>
+                    <li>Use <b>double</b> when higher precision is required, e.g., scientific calculations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Default Data Type</h3>
+                <ul>
+                    <li><b>double</b> is Java's default for decimals.</li>
+                    <li>Decimals are treated as doubles by default.</li>
+                    <li>Use <b>f</b> or <b>F</b> suffix for <b>float</b>.</li>
+                    <li><code>d</code> or <b>D</b> suffix for <b>double</b> (optional).</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Casting and Suffix</h3>
+                <ul>
+                    <li>Cast to <b>float</b> to assign double to float.</li>
+                    <li>Use suffix or cast to clarify data type.</li>
+                    <li>Recommended to use suffix for clarity.</li>
+                </ul>
+                <pre>
+                    <code>
+float num1 = 5.25f;
+double num2 = 5.25;
+    </code>
+    </pre>
+            </div>
+            <div class="in">
+                <h3>Exam Code Segments</h3>
+                <p>Java often uses code without <b>f</b> suffix in exams.</p>
+                <p>Unsuffixed decimal literals are considered <b>double</b> by default.</p>
+                <p>Be cautious about assigning them to <b>float</b> variables.</p>
+            </div>
+
+            <div class="in">
+                <h3>Decimal Literal Assignment</h3>
+                <p>Assigning a <b>double</b> to a <b>float</b> variable without a suffix will raise an
+                    error.</p>
+                <p>Example: <b>float num = 5.25;</b> will cause an error.</p>
+                <p>Use <b>f</b> suffix or explicit casting to avoid errors.</p>
+            </div>
+
+            <div class="in">
+                <h3>Understanding Precision</h3>
+                <p><b>double</b> is more precise than <b>float</b>.</p>
+                <p>Use casting or suffix to match variable types and avoid precision issues.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Floating point precision and a challenge</h2>
+            <div class="in">
+                <h3>Why is the double a better choice in most circumstances?</h3>
+                <ul>
+                    <li>Faster processing on modern computers.</li>
+                    <li>Compatibility with Java libraries and math functions.</li>
+                    <li>Precision and range considerations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Floating Point Precision Tips</h3>
+                <ul>
+                    <li>Float and double are suitable for general floating point operations.</li>
+                    <li>Not recommended for precise calculations due to storage limitations.</li>
+                    <li>Java's BigDecimal class overcomes precision issues.</li>
+                    <li>BigDecimal provides accurate decimal representation.</li>
+                    <li>For precision, use BigDecimal instead of float or double.</li>
+                    <li>Java's library includes helpful classes like BigDecimal.</li>
+                    <li>Use float and double for general calculations.</li>
+                    <li>Consider float and double limitations for critical applications.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>The char and boolean Primitive Data Types</h2>
+            <div class="in">
+                <h3>char Data Type</h3>
+                <ul>
+                    <li>Used to store a single character.</li>
+                    <li>Declare using single quotes, like 'D'.</li>
+                    <li>Can represent letters, digits, symbols, etc.</li>
+                    <li>Not the same as a String, which uses double quotes for text.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>char vs. String</h3>
+                <ul>
+                    <li>char stores a single character, String stores multiple characters.</li>
+                    <li>char literals in single quotes, String literals in double quotes.</li>
+                    <li>String variables to be covered in upcoming videos.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Limitation of char</h3>
+                <p>Only allows storing one character; multiple characters cause errors.</p>
+                <pre><code>
+char firstChar = 'D';
+// Correct usage
+
+char secondChar = 'DD';
+// Error: unclosed character literal
+        </code></pre>
+            </div>
+            <div class="in">
+                <h3>Use Cases for char</h3>
+                <ul>
+                    <li>Char variables are designed for storing single characters.</li>
+                    <li>Example: Storing the last key pressed by a user in a game.</li>
+                    <li>Example: Programmatically iterating through alphabet letters.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Relevance of char</h3>
+                <p>Char had more significance in Java's early days due to memory constraints.</p>
+                <p>In modern computers with abundant memory, memory concerns are less prominent.</p>
+            </div>
+
+            <div class="in">
+                <h3>Char Storage and Width</h3>
+                <p>The char data type occupies two bytes (16 bits) in memory.</p>
+                <p>Stored as a 2-byte number, mapped to a specific character by Java.</p>
+                <p>Unlike numeric types, chars are tailored to represent characters, not numbers.</p>
+            </div>
+
+            <div class="in">
+                <h3>Understanding Unicode</h3>
+                <ul>
+                    <li>Unicode is an international encoding standard.</li>
+                    <li>It assigns a unique numeric value to each letter, digit, or symbol across languages and scripts.
+                    </li>
+                    <li>Allows representation of characters beyond English, including special symbols and non-Latin
+                        alphabets.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Utilizing Unicode in Java</h3>
+                <ul>
+                    <li>In Java, you can set special characters using Unicode values.</li>
+                    <li>Unicode values are represented as hexadecimal escape sequences (e.g., '\u0024' for '$').</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Unicode's Power</h3>
+                <p>Unicode optimally uses the two-byte storage capacity of a char.</p>
+                <p>By leveraging these two bytes, a char can represent a vast range of 65,535 different characters.</p>
+            </div>
+            <div class="in">
+                <h3>Using Unicode Values</h3>
+                <ul>
+                    <li>Unicode values represent characters.</li>
+                    <li>Use column and row headers to derive the value.</li>
+                    <li>Java syntax: '\u' followed by four digits.</li>
+                    <li>Example: Unicode for 'D' is '\u0044'.</li>
+                </ul>
+                <pre><code>// Using Unicode for character 'D'
+            char myChar = '\u0044';</code></pre>
+            </div>
+
+            <div class="in">
+                <h3>Decimal Representations</h3>
+                <ul>
+                    <li>Decimal number 68 represents character 'D'.</li>
+                    <li>You can assign numeric literals to char variables.</li>
+                </ul>
+                <pre>
+                    <code>
+// Assigning decimal value to char
+char myDecimalCode = 68;
+        </code>
+    </pre>
+            </div>
+
+            <div class="in">
+                <h3>Three Ways to Assign char Values</h3>
+                <ul>
+                    <li>Literal character in single quotes.</li>
+                    <li>Unicode representation using '\u' notation.</li>
+                    <li>Assigning integer value representing character.</li>
+                </ul>
+                <pre>
+                    <code>
+// Assigning character values in three ways
+char myChar = 'D';
+char myUnicodeChar = '\u0044';
+char myDecimalChar = 68;
+        </code>
+    </pre>
+            </div>
+
+            <div class="in">
+                <h3>Challenge: Question-Mark Symbol</h3>
+                <ul>
+                    <li><a class="ba" href="https://old.unicode-table.com/en/">unicode-table &neArr;</a></li>
+                </ul>
+                <p>Create char variables for '?' using different methods.</p>
+                <pre>
+                    <code>
+char mySimpleChar = '?';
+char myUnicodeChar = '\u003F';
+char myDecimalChar = 63;
+        </code>
+        </pre>
+            </div>
+
+            <div class="in">
+                <h3>Introduction to boolean</h3>
+                <ul>
+                    <li>Boolean values allow two opposite choices: true or false.</li>
+                    <li>In Java, boolean is a primitive data type.</li>
+                    <li>Boolean can be set only to true or false.</li>
+                    <li>Wrapper class is Boolean with a capital B.</li>
+                    <li>Booleans are frequently used in programming.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Creating Boolean Variables</h3>
+                <p>A boolean can have two values: true or false.</p>
+                <pre>
+                    <code>
+// Creating boolean variables
+boolean isCustomerOver21 = true;
+boolean hasDiscount = false;
+        </code>
+    </pre>
+            </div>
+
+            <div class="in">
+                <h3>Practical Use of Booleans</h3>
+                <ul>
+                    <li>Example: Check if a customer is over the age of 21.</li>
+                    <li>Naming convention often uses "is" as a prefix.</li>
+                    <li>Intuitive reading: isCustomerOver21 = true;</li>
+                    <li>Other prefixes can be used based on context.</li>
+                    <li>Examples: isMarried, hasChildren.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Primitive type recap and the String data type</h2>
+            <div class="in">
+                <h3>Primitive Data Types in Java</h3>
+                <ul>
+                    <li>byte, short, int, long, float, double, char, boolean</li>
+                    <li>Each type has a specific size and purpose</li>
+                    <li>byte: -128 to 127</li>
+                    <li>int: commonly used for integers</li>
+                    <li>double: commonly used for floating-point numbers</li>
+                    <li>boolean: represents true or false values</li>
+                    <li>long, char: less frequently used</li>
+                    <li>short, float, byte: rarely used</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Choosing the Right Data Type</h3>
+                <ul>
+                    <li>Selecting the appropriate type for memory efficiency</li>
+                    <li>Experience helps determine the best fit</li>
+                    <li>Integral types (e.g., int) for whole numbers</li>
+                    <li>Floating-point types (e.g., double) for decimal numbers</li>
+                    <li>boolean for logical decisions</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Introduction to Classes and Wrapper Classes</h3>
+                <ul>
+                    <li>Java's primitive types and built-in classes</li>
+                    <li>Wrapper classes provide object-oriented features for primitives</li>
+                    <li>Wrapper classes include Integer, Double, Boolean, etc.</li>
+                    <li>Extra functionality: methods, conversions, comparisons</li>
+                    <li>Useful when primitives need to be treated as objects</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>The String Class</h3>
+                <ul>
+                    <li>String is a class in Java, not a primitive type</li>
+                    <li>Special treatment for ease of use</li>
+                    <li>Used for representing sequences of characters</li>
+                    <li>Immutable: Cannot be changed once created</li>
+                    <li>Common operations: concatenation, substring, length</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>String in Java</h3>
+                <ul>
+                    <li><code>String</code> is a class representing sequences of characters</li>
+                    <li>Unlike the <code>char</code> primitive, it can hold multiple characters</li>
+                    <li>Limited by memory space, theoretically up to <code>MAX_VALUE</code> of an <code>int</code></li>
+                    <li>For example, on typical systems, it can hold around 2.14 billion characters</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Using String Variables</h3>
+                <ul>
+                    <li>Strings can be assigned directly, similar to primitive variables</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+String myString = "Hello, World!";
+                </code>
+                </pre>
+                <ul>
+                    <li>Concatenation operator (+) for combining strings</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+String result = "Hello, " + "John";
+                </code>
+                </pre>
+            </div>
+
+            <div class="in">
+                <h3>Concatenation and Unicode</h3>
+                <ul>
+                    <li>Concatenation operator (+) also used for output</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+System.out.println("Result: " + result);
+                    </code>
+                </pre>
+                <ul>
+                    <li>Unicode characters can be used in strings</li>
+                    <li>Unicode value represented with <b>\u</b> followed by hexadecimal value</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+String dollarString = "I wish I had \u00241,000,000";
+                    </code>
+                </pre>
+                <ul>
+                    <li>Unicode values retrieved from sources like unicode-table.com</li>
+                    <li>Useful for including symbols not available on the keyboard</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Executing Multiple Lines in JShell</h3>
+                <ul>
+                    <li>JShell allows running multiple statements at once</li>
+                    <li>Use opening and closing curly braces to define a block of statements</li>
+                    <li>No semicolon needed after the closing curly brace</li>
+                    <li>Statements within a block executed in order</li>
+                    <li>Output doesn't display variable values, only explicit print statements</li>
+                    <li>Alternative to typing multiple statements on a single line</li>
+                </ul>
+                <pre>
+                    <code>
+{
+int a = 10;
+int b = 20;
+System.out.println(a + b);
+}
+  </code>
+</pre>
+            </div>
+
+            <div class="in">
+                <h3>Concatenating Variables and Data Types</h3>
+                <ul>
+                    <li>Using the plus operator (+) for concatenation</li>
+                    <li>When mixing numeric data types with strings, conversion occurs</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+int num1 = 250;
+double num2 = 49.45;
+String result = num1 + " " + num2;
+System.out.println(result);  // Output: 250 49.45
+  </code>
+</pre>
+                <ul>
+                    <li>Concatenation operator is context-sensitive</li>
+                    <li>With strings, + means concatenation</li>
+                    <li>Java converts numeric values to strings for concatenation</li>
+                    <li>Actual math operations are not performed</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>String Immutability and Efficiency</h3>
+                <ul>
+                    <li>String's sequence of characters are immutable</li>
+                    <li>Immutable means a String cannot be changed after creation</li>
+                    <li>Operations on strings create new strings</li>
+                    <li>Example: <b>String result = lastString + " " + 120.47;</b></li>
+                    <li>Java creates a new string with concatenated value</li>
+                    <li>Old string discarded, inefficient for multiple operations</li>
+                    <li>Java provides <b>StringBuilder</b> for more efficient string operations</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>String vs. StringBuilder</h3>
+                <ul>
+                    <li><b>String</b>: Immutable, sequence of characters cannot be changed</li>
+                    <li><b>StringBuilder</b>: Mutable, sequence of characters can be modified</li>
+                    <li>Use <b>String</b> when the value won't change (e.g., constants)</li>
+                    <li>Use <b>StringBuilder</b> when value will change frequently</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>String Examples</h3>
+                <ul>
+                    <li>Immutable nature of <b>String</b></li>
+                    <li>Creating new strings for every operation</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+String str = "Hello";
+str = str + ", World!";
+System.out.println(str);
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>StringBuilder Examples</h3>
+                <ul>
+                    <li>Mutable nature of <b>StringBuilder</b></li>
+                    <li>Efficient for frequent modifications</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+StringBuilder builder = new StringBuilder("Hello");
+builder.append(", World!");
+System.out.println(builder.toString());
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Using String Concatenation Operator</h3>
+                <ul>
+                    <li>The String is so intrinsic to the Java language, it can be used like a 9th primitive type. But
+                        it's not a primitive type at all, it's a class; From your point of view, you can treat the
+                        String like a 9th primitive type, by directly assigning a String literal to it and using the
+                        plus operators with it.</li>
+                    <li>Concatenation with <b>+</b> operator common for string operations</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+String name = "John";
+String message = "Hello, " + name;
+System.out.println(message);
+              </code>
+            </pre>
+                <ul>
+                    <li>Operators like <b>+</b>, <b>-</b>, <b>*</b>, <b>/</b> in Java</li>
+                    <li>Operators perform specific actions on operands</li>
+                    <li>Will explore operators in more detail in the next video</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Operators, Operands and Expressions</h2>
+
+            <div class="in">
+                <h3>Operators and Operands</h3>
+                <ul>
+                    <li>Operators: Special symbols for specific operations</li>
+                    <li>Operands: Objects manipulated by operators</li>
+                    <li>Example:</li>
+                </ul>
+                <pre><code>
+  int sum = 15 + 12; // Sum is the result of adding 15 and 12
+  </code></pre>
+            </div>
+
+            <div class="in">
+                <h3>Expressions</h3>
+                <ul>
+                    <li>Expressions combine variables, literals, method returns, and operators</li>
+                    <li>Forming and combining values to produce results</li>
+                    <li>Example:</li>
+                </ul>
+                <pre><code>
+  int result = 15 + 12; // result is the expression evaluating to 27
+  </code></pre>
+            </div>
+
+            <div class="in">
+                <h3>Major Operators</h3>
+                <ul>
+                    <li>Operators perform operations on operands and return results</li>
+                    <li>Assignment Operator: <code>=</code></li>
+                    <li>Addition Operator: <code>+</code></li>
+                    <li>Subtraction Operator: <code>-</code></li>
+                    <li>Multiplication Operator: <code>*</code></li>
+                    <li>Division Operator: <code>/</code></li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Using Operators in Code</h3>
+                <ul>
+                    <li>Operators in expressions and assignments</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+int result = 1 + 2; // result is assigned the sum of 1 and 2
+  </code>
+</pre>
+                <ul>
+                    <li>Operators often used on two operands</li>
+                    <li>Expression can contain multiple expressions and operands</li>
+                    <li>Comments ignored by computer, for human understanding</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Assignment Operator and Independence of Variables</h3>
+                <ul>
+                    <li>Assignment Operator (<b>=</b>) assigns value to variable</li>
+                    <li>Variables are independent after assignment</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+int result = 3;
+int previousResult = result; // previousResult assigned value of result
+result = result - 1; // result becomes 2
+// previousResult remains 3
+System.out.print(previousResult); // Output: 3
+  </code>
+</pre>
+            </div>
+            <div class="in">
+                <h3>Character and String Concatenation</h3>
+                <ul>
+                    <li>Char holds single character, String holds multiple characters</li>
+                    <li>Char + operator adds char values as numbers</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+char firstChar = 'A';
+char secondChar = 'B';
+System.out.println(firstChar + secondChar); // Output: 131
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Char and String Concatenation (Cont.)</h3>
+                <ul>
+                    <li>Chars stored as 2-byte numbers</li>
+                    <li>Plus operator adds char values as numbers</li>
+                    <li>Decimal values of 'A' and 'B' are 65 and 66</li>
+                    <li>Example with String concatenation:</li>
+                </ul>
+                <pre>
+                    <code>
+char firstChar = 'A';
+char secondChar = 'B';
+String concatenated = "" + firstChar + secondChar;
+System.out.println(concatenated); // Output: AB
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Mathematical Operators</h3>
+                <ul>
+                    <li>Multiplication Operator: <b>*</b></li>
+                    <li>Division Operator: <b>/</b></li>
+                    <li>Remainder Operator: <b>%</b> (Modulus)</li>
+                </ul>
+                <pre>
+                    <code>
+              int result = 2;
+result = result * 10; // Result: 20 (2 * 10)
+result = result / 4; // Result: 5 (20 / 4)
+result = result % 3; // Result: 2 (5 % 3)
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Remainder Operator (Modulus)</h3>
+                <ul>
+                    <li>Remainder Operator (<b>%</b>) returns remaining value after division</li>
+                    <li>Result is 0 if no remainder</li>
+                    <li>Examples:</li>
+                </ul>
+                <pre>
+                    <code>
+10 % 5 = 0
+10 % 2 = 0
+10 % 3 = 1
+10 % 1 = 0
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Using Remainder Operator</h3>
+                <ul>
+                    <li>Remainder operator useful for various scenarios</li>
+                    <li>Example:</li>
+                </ul>
+                <pre>
+                    <code>
+int result = 5;
+result = result % 3; // Result: 2 (5 % 3)
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Summary of Operators</h3>
+                <ul>
+                    <li>Mathematical operators: <b>+</b>, <b>-</b>, <b>*</b>, <b>/</b>,
+                        <b>%</b>
+                    </li>
+                    <li><b>+</b> used for String concatenation</li>
+                    <li>No operators applicable to boolean</li>
+                    <li>All operators applicable to char</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Abbreviating Operators</h2>
+            <div class="in">
+                <h3>Using Curly Braces and Grouping</h3>
+                <p>In Java, curly braces are used to group multiple statements together for execution as a single unit.
+                </p>
+                <p>Benefits of using curly braces:</p>
+                <ul>
+                    <li>Groups statements for organized code</li>
+                    <li>Allows multiple statements on separate lines</li>
+                    <li>Enhances readability</li>
+                </ul>
+                <p>Important considerations:</p>
+                <ul>
+                    <li>Semi-colons are required to end each statement</li>
+                    <li>Closely resembles the structure of Java code</li>
+                    <li>Curly braces ensure clear scope and execution order</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Increment and Decrement Operators</h3>
+                <p>Increment and decrement operators are used to modify the value of a variable by a fixed amount.</p>
+                <p>Increment:</p>
+                <ul>
+                    <li><b>result++</b> (post-fix)</li>
+                    <li><b>result += 1</b> (compound assignment)</li>
+                </ul>
+                <p>Decrement:</p>
+                <ul>
+                    <li><b>result--</b> (post-fix)</li>
+                    <li><b>result -= 1</b> (compound assignment)</li>
+                </ul>
+                <p>Example:</p>
+                <pre>
+                    <code>
+int result = 1;
+result++;    // Increment by 1, Result: 2
+result--;    // Decrement by 1, Result: 1
+result += 5; // Increment by 5, Result: 6
+result -= 1; // Decrement by 1, Result: 5
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Compound Assignment Operator</h3>
+                <p>The compound assignment operator is a shorthand way of performing an operation and assigning the
+                    result.</p>
+                <p>Example:</p>
+                <pre>
+                    <code>
+int result = 1;
+result += 5; // Equivalent to result = result + 5, Result: 6
+              </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Compound Assignment Operators</h3>
+                <p>Compound assignment operators provide shorthand notation for performing operations and assignments.
+                </p>
+                <p>Examples of compound operators:</p>
+                <ul>
+                    <li><b>x += y</b> (addition)</li>
+                    <li><b>x -= y</b> (subtraction)</li>
+                    <li><b>x *= y</b> (multiplication)</li>
+                    <li><b>x /= y</b> (division)</li>
+                </ul>
+                <p>Implicit casting and data type compatibility considerations:</p>
+                <ul>
+                    <li>Implicit casts may occur with compound operators</li>
+                    <li>Data type compatibility is crucial to prevent unexpected behavior</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Using Compound Minus Operator</h3>
+                <p>Challenges with compound minus operator:</p>
+                <ul>
+                    <li>The compound minus operator hides potential data type conversion errors</li>
+                    <li>Lossy conversion error occurs when incompatible data types are used</li>
+                </ul>
+                <p>Solution to preserve expected behavior:</p>
+                <ul>
+                    <li>Ensure variable data type matches the value being subtracted</li>
+                    <li>Explicit casting may be needed to handle data type differences</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Completion of Compound Operators</h3>
+                <p>Exploration of other compound assignment operators:</p>
+                <ul>
+                    <li><b>x *= y</b> (multiplication)</li>
+                    <li><b>x /= y</b> (division)</li>
+                </ul>
+                <p>Data type compatibility is vital for compound operators to work as expected.</p>
+                <p>Usage of shorthand operators:</p>
+                <ul>
+                    <li>Enhance code readability and efficiency</li>
+                    <li>Facilitate frequent operations like increment and decrement</li>
+                    <li>Common in loop constructs</li>
+                </ul>
+                <p>Further exploration of looping and additional shorthand operators in later sections.</p>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

@@ -165,11 +165,11 @@ body {
 .in {
     background-color: rgba(0, 0, 0, 0.235);
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     margin: 7px 4px;
 }
 
-.in a {
+.in a, .ba {
     color: #7fcce6;
 }
 
@@ -183,9 +183,12 @@ p {
     margin: 5px 1px;
     line-height: 23px;
 }
-ul,ol{
+
+ul,
+ol {
     margin: 3px 2px;
 }
+
 li {
     font-size: 1.1rem;
     margin: 3px 2px;
@@ -242,6 +245,11 @@ pre {
     overflow: auto;
     font-size: 0.9rem;
     margin: 0;
+}
+
+code {
+    border-radius: 10px;
+    padding: 0 10px !important;
 }
 
 /* **** PART2 ****** */
@@ -313,7 +321,9 @@ pre {
 }
 
 @media only screen and (max-width: 600px) {
-    ul,ol {
+
+    ul,
+    ol {
         padding: 2px;
         margin-left: 4px;
     }

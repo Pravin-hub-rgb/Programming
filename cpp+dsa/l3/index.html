@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>l-3 = Conditionals and Loops </title>
     <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
 </head>
 
 <body>
@@ -36,48 +38,40 @@
         </ul>
         <div class="wh">
             <h2>If statements</h2>
-            <div class="code">
+            <p>Syntax &darr;</p>
                 <pre>
                 <code>
-
-                    if(condition){
-                        //code
-                    }
+if(condition){
+    //code
+}
                 </code>
             </pre>
-            </div>
             <p>If the condition within () is true, then execute the entire code block within {}.</p>
-            <div class="code">
                 <pre>
-                <code>
-                    
-                    if(a>b){
-                        cout&lt;&lt; a &lt;&lt; endl;
-                    }
-                    if(a&lt;b){
-                        cout&lt;&lt; b &lt;&lt; endl;
-                    }
+                <code>                
+if(a>b){
+    cout&lt;&lt; a &lt;&lt; endl;
+}
+if(a&lt;b){
+    cout&lt;&lt; b &lt;&lt; endl;
+}
                 </code>
             </pre>
-            </div>
             <p>
-                In the above example, instead of checking again for b>a in the second if block, we know that if if the
-                first if condition does not get fulfilled then the second block must be executed no matter what. This
+                In the above example, instead of checking again for b>a in the second if block, we know that if the
+                first condition does not get fulfilled then the second block must be executed no matter what. This
                 can be achieved using on if-else block.
             </p>
-            <div class="code">
                 <pre>
-                <code>
-                    
-                    if(a>b){
-                        cout&lt;&lt; a &lt;&lt; endl;
-                    }
-                    else{
-                        cout&lt;&lt; b &lt;&lt; endl;
-                    }
+                <code>                 
+if(a>b){
+    cout&lt;&lt; a &lt;&lt; endl;
+}
+else{
+    cout&lt;&lt; b &lt;&lt; endl;
+}
                 </code>
             </pre>
-            </div>
             <div class="in">
                 <p>New concept
                     <br> cin >> n &rarr; Waits for user to give input and assign it to n at its address.
@@ -101,26 +95,25 @@
                     <div class='code'>
                         <div class='dotc'></div>
                         <pre>
-                           <code>
-                           
-                            #include &lt;iostream>
-                            using namespace std;
-                            int main()
-                            {
-                                int a,b;
-                                cout<<"Enter the value of a: ";
-                                cin>>a;
-                                cout<<"Enter the value of a: ";
-                                cin>>b;
+                           <code>                       
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter the value of a: ";
+    cin>>a;
+    cout<<"Enter the value of a: ";
+    cin>>b;
 
-                                if(a>b){
-                                    cout<<"a is greater then b"<&lt;endl;
-                                } 
-                                if(b>a) {
-                                    cout<<"b is greater then a"<&lt;endl;
-                                }
-                                return 0;
-                            }
+    if(a>b){
+        cout<<"a is greater then b"<&lt;endl;
+    } 
+    if(b>a) {
+        cout<<"b is greater then a"<&lt;endl;
+    }
+    return 0;
+}
                            </code>
                        </pre>
                     </div>
@@ -134,14 +127,13 @@
                     <div class="code">
                         <pre>
                                 <code>
-
-                                    if(a==1){
-                                        cout&lt;&lt; true;
-                                    } else if(a==0){
-                                        cout&lt;&lt; false;
-                                    } else {
-                                        cout&lt;&lt; "wrong input";
-                                    }
+if(a==1){
+    cout&lt;&lt; true;
+} else if(a==0){
+    cout&lt;&lt; false;
+} else {
+    cout&lt;&lt; "wrong input";
+}
                                 </code>
                             </pre>
                     </div>
@@ -152,25 +144,24 @@
                     <div class='code'>
                         <div class='dotc'></div>
                         <pre>
-                           <code>
-                           
-                            #include &lt;iostream> 
-                            using namespace std;
-                            int main()
-                            {
-                                int a;
-                                cout<<"Enter a number: ";
-                                cin>>a;
-                                if(a>0){
-                                    cout<<"Number is positive"<&lt;endl;
-                                }
-                                else if(a<0){
-                                    cout<<"Number is negative"<&lt;endl;
-                                } else {
-                                    cout<<"Number is zero"<&lt;endl;
-                                }
-                                return 0;
-                            }
+                           <code>                       
+#include &lt;iostream> 
+using namespace std;
+int main()
+{
+    int a;
+    cout << "Enter a number: ";
+    cin >> a;
+    if(a > 0){
+        cout << "Number is positive" <&lt;endl;
+    }
+    else if(a < 0){
+        cout << "Number is negative" <&lt;endl;
+    } else {
+        cout << "Number is zero" <&lt;endl;
+    }
+    return 0;
+}
                            </code>
                        </pre>
                     </div>
@@ -180,33 +171,32 @@
                     <div class='code'>
                         <div class='dotc'></div>
                         <pre>
-                           <code>
-                           
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    char ch;
-                                    cout << "Enter a character : ";
-                                    cin >> ch;
-                                    if (ch <= 'z' && ch >= 'a')
-                                    {
-                                        cout << "lowercase\n";
-                                    }
-                                    else if (ch <= 'Z' && ch >= 'A')
-                                    {
-                                        cout << "uppercase\n";
-                                    }
-                                    else if (ch <= '9' && ch >= '0')
-                                    {
-                                        cout << "number\n";
-                                    }
-                                    else
-                                    {
-                                        cout << "doesn't know";
-                                    }
-                                    return 0;
-                                }
+                           <code>                 
+#include &lt;iostream>
+    using namespace std;
+    int main()
+    {
+        char ch;
+        cout << "Enter a character : ";
+        cin >> ch;
+        if (ch <= 'z' && ch >= 'a')
+        {
+            cout << "lowercase\n";
+        }
+        else if (ch <= 'Z' && ch >= 'A')
+        {
+            cout << "uppercase\n";
+        }
+        else if (ch <= '9' && ch >= '0')
+        {
+            cout << "number\n";
+        }
+        else
+        {
+            cout << "doesn't know";
+        }
+        return 0;
+    }
                            </code>
                        </pre>
                     </div>
@@ -220,16 +210,13 @@
             </ul>
             <div class="in">
                 <h3>While loop</h3>
-                <div class='code'>
                     <pre>
-                       <code>
-                       
-                        while(...){
-                            ...
-                        }
+                       <code>                   
+while(...){
+    ...
+}
                        </code>
                    </pre>
-                </div>
                 <ul>
                     <li>While the condition is true, keep on executing the block.</li>
                 </ul>
@@ -238,22 +225,21 @@
                     <button class="ac">Finding sum of n numbers.</button>
                     <div class="panel">
                         <pre>
-                            <code>
-                            
-                                    #include &lt;iostream>
-                                    using namespace std;
-                                    int main()
-                                    {
-                                        int n, i = 1, sum = 0;
-                                        cin >> n;
-                                        while (i <= n)
-                                        {
-                                            sum += i;
-                                            i++;
-                                        }
-                                        cout << "The sum is : " << sum;
-                                        return 0;
-                                    }
+                            <code>                       
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n, i = 1, sum = 0;
+    cin >> n;
+    while (i <= n)
+    {
+        sum += i;
+        i++;
+    }
+    cout << "The sum is : " << sum;
+    return 0;
+}
                             </code>
                         </pre>
                     </div>
@@ -263,23 +249,22 @@
                     <button class="ac">Finding sum of all even number till n.</button>
                     <div class="panel">
                         <pre>
-                            <code>
-                            
-                                        #include &lt;iostream>
-                                        using namespace std;
-                                        int main()
-                                        {
-                                            int n, i = 1, sum = 0;
-                                            cin >> n;
-                                            while (i <= n)
-                                            {
-                                                if (i % 2 == 0)
-                                                    sum += i;
-                                                i++;
-                                            }
-                                            cout << "The sum is : " << sum;
-                                            return 0;
-                                        }
+                            <code>                        
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n, i = 1, sum = 0;
+    cin >> n;
+    while (i <= n)
+    {
+        if (i % 2 == 0)
+            sum += i;
+        i++;
+    }
+    cout << "The sum is : " << sum;
+    return 0;
+}
                             </code>
                         </pre>
                     </div>
@@ -289,33 +274,32 @@
                     <button class="ac">Finding sum of all even number till n.</button>
                     <div class="panel">
                         <pre>
-                            <code>
-                            
-                                    #include &lt;iostream>
-                                    using namespace std;
-                                    int main()
-                                    {
-                                        int num, i = 2, isPrime = 1;
-                                        cin >> num;
-                                        while (i <= num / 2)
-                                        {
-                                            if (num % i == 0)
-                                            {
-                                                isPrime = 0;
-                                                break;
-                                            }
-                                            i++;
-                                        }
-                                        if (isPrime)
-                                        {
-                                            cout << "prime";
-                                        }
-                                        else
-                                        {
-                                            cout << "Not prime";
-                                        }
-                                        return 0;
-                                    }
+                            <code>                           
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int num, i = 2, isPrime = 1;
+    cin >> num;
+    while (i <= num / 2)
+    {
+        if (num % i == 0)
+        {
+            isPrime = 0;
+            break;
+        }
+        i++;
+    }
+    if (isPrime)
+    {
+        cout << "prime";
+    }
+    else
+    {
+        cout << "Not prime";
+    }
+    return 0;
+}
                             </code>
                         </pre>
                     </div>
@@ -325,23 +309,22 @@
                     <button class="ac">Finding number is prime or not.</button>
                     <div class="panel">
                         <pre>
-                            <code>
-                            
-                                        #include &lt;iostream>
-                                        using namespace std;
-                                        int main()
-                                        {
-                                            int n, i = 1, sum = 0;
-                                            cin >> n;
-                                            while (i <= n)
-                                            {
-                                                if (i % 2 == 0)
-                                                    sum += i;
-                                                i++;
-                                            }
-                                            cout << "The sum is : " << sum;
-                                            return 0;
-                                        }
+                            <code>                      
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n, i = 1, sum = 0;
+    cin >> n;
+    while (i <= n)
+    {
+        if (i % 2 == 0)
+            sum += i;
+        i++;
+    }
+    cout << "The sum is : " << sum;
+    return 0;
+}
                             </code>
                         </pre>
                     </div>
@@ -349,6 +332,7 @@
             </div>
         </div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="../main.js"></script>
 </body>
 

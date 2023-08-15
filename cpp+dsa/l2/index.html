@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>l-2 = First Program</title>
     <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
 </head>
 
 <body>
@@ -40,7 +42,8 @@
         <div class="wh">
             <h3>IDE &rarr; Integrated Development Environment</h3>
             <ul>
-                <li>An environment that helps you write, run and even debug (in some cases) code in programming language.
+                <li>An environment that helps you write, run and even debug (in some cases) code in programming
+                    language.
                 </li>
                 <li>Eg: VS Code, Code Studio, Eclipse, NetBeans, etc.</li>
             </ul>
@@ -59,9 +62,11 @@
             </div>
             <div class="in">
                 <p><b>Header file</b></p>
-                <p><a href="https://stackoverflow.com/questions/2976477/difference-between-iostream-and-iostream-h">iostream or iostream.h</a></p>
+                <p><a href="https://stackoverflow.com/questions/2976477/difference-between-iostream-and-iostream-h">iostream
+                        or iostream.h</a></p>
                 <ul>
-                    <li>They usually have the extension .h but new c++ standard header file do not have a file extension.
+                    <li>They usually have the extension .h but new C++ standard header file do not have a file
+                        extension.
                     </li>
                     <li>Iostream contains declaration that are needed by cout identifier and &lt;&lt; (insertion
                         operation)</li>
@@ -76,13 +81,12 @@
                             <li>Using namespaces std;
                                 <ul>
                                     <li>
-                                        You are going to use std Namespace where feature of c++ strandard library such as
+                                        You are going to use std Namespace where feature of C++ strandard library such
+                                        as
                                         string or vector are declared.
                                     </li>
-                                    <li>Namespace is a part of program which contains in which certain names are recognised
-                                        and outside Namespace they are unknown.</li>
-                                    <li>It says sall the program statement that follow are within std Namespace. It defines
-                                        the scope.</li>
+                                    <li>A namespace is a section of a program where specific names are recognized, while
+                                        outside the namespace, those names are unknown.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -92,18 +96,17 @@
             <div class='code'>
                 <div class='dotc'></div>
                 <pre>
-                    <code>
-                    
-                     #include &lt;iostream>
-                     using namesapce std;
-                     int main()
-                     {
-                         cout<<"Namaste Duniya"<&lt;endl;
-                         return 0;
-                     }
+                    <code>            
+#include &lt;iostream>
+using namesapce std;
+int main()
+{
+    cout<<"Namaste Duniya"<&lt;endl;
+    return 0;
+}
                     </code>
                 </pre>
-             </div>
+            </div>
             <ol>
                 <li>Our program will find <b>int main(){}</b> and start executing from there</li>
                 <li>int main(){ //code }
@@ -126,25 +129,21 @@
                         </li>
                     </ul>
                 </li>
-                <li>Namespaces &rarr; <a href="https://www.youtube.com/watch?v=ZZWTh142s4w">Explaination</a>
+                <li>Namespaces &rarr; <a href="https://www.youtube.com/watch?v=ZZWTh142s4w" class="ba">Explaination</a>
                     <ul>
                         <li>Using namespaces std;
                             <ul>
                                 <li>
-                                    You are going to use std Namespace where feature of c++ strandard library such as
+                                    You are going to use std Namespace where feature of C++ strandard library such as
                                     string or vector are declared
                                 </li>
-                                <li>Namespace is a part of program which contains in which certain names are recognised
-                                    and outside Namespace theya re unknown</li>
-                                <li>It says sall the program statement that follow are within std Namespace. It defines
-                                    the scope</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>Using cout&rarr;
                     <ul>
-                        <li>we use '&lt;&lt;' after 'cout' to display something to stand output (your screen) within std
+                        <li>we use '&lt;&lt;' after 'cout' to display something to standard output (your screen) within std
                             namespace.</li>
                     </ul>
                 </li>
@@ -329,7 +328,7 @@
                 </p>
             </div>
             <div class="in">
-                <h3>Conversion of one data type to another (if it is valid is called <b>Type Casting</b>)   </h3>
+                <h3>Conversion of one data type to another (if it is valid is called <b>Type Casting</b>) </h3>
                 <p>
                     Example &darr;
                     <br> int a = 'a';
@@ -338,12 +337,13 @@
                     Example &darr;
                     <br>char ch = 98;
                     <br>98 will automatically get typecasted to it corresponding character.
-                    <br>This aoutomatic typecasting is called <b>implicit typecasting</b>
+                    <br>This automatic typecasting is called <b>implicit typecasting</b>
                 </p>
                 <div class="wh">
                     <p>What if we type cast from <b>int</b> to <b>char</b> but the value is too large to be stored in
                         <i>char?</i>
-                        <br><b>Soln &rarr; </b> A warning is thrown and the last byte from the original value is given to
+                        <br><b>Soln &rarr; </b> A warning is thrown and the last byte from the original value is given
+                        to
                         the character.
                     </p>
                 </div>
@@ -478,15 +478,12 @@
                             <li>Example &darr;
                             </li>
                         </ul>
-                        <div class='code'>
-                           <pre>
-                               <code>
-                               
-                                int a = 5, b = 10, c = 15;
-                                cout << ((a > 0) && (b != 0) && (c <= 15)); output &lt; 1 
+                            <pre>
+                               <code>        
+int a = 5, b = 10, c = 15;
+cout << ((a > 0) && (b != 0) && (c <= 15)); output &lt; 1 
                                </code>
                            </pre>
-                        </div>
                     </li>
                     <li>Logical OR &darr;
                         <ul>
@@ -494,15 +491,12 @@
                             <li>Example &darr;
                             </li>
                         </ul>
-                        <div class='code'>
-                           <pre>
+                            <pre>
                                <code>
-                               
-                                int a = 5, b = 10, c = 15;
-                                cout << ((a>5) || (b<10) || (c >= 15)); output &rarr; 1
+int a = 5, b = 10, c = 15;
+cout << ((a>5) || (b<10) || (c >= 15)); output &rarr; 1
                                </code>
                            </pre>
-                        </div>
                     </li>
                     <li>Logical NOT &darr;
                         <ul>
@@ -511,21 +505,19 @@
                             <li>Example &darr;
                             </li>
                         </ul>
-                        <div class='code'>
-                           <pre>
+                            <pre>
                                <code>
-                               
-                                int a = 5, b = 10, c = 15;
-                                cout <<(!a)<&lt;endl; output &rarr; 0
-                                cout <<(!b)<&lt;endl; output &rarr; 1
+int a = 5, b = 10, c = 15;
+cout <<(!a)<&lt;endl; output &rarr; 0
+cout <<(!b)<&lt;endl; output &rarr; 1
                                </code>
                            </pre>
-                        </div>
                     </li>
                 </ol>
             </div>
         </div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="../main.js"></script>
 </body>
 

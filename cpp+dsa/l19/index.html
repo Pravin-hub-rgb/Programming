@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>l-19 = Insertion Sort</title>
+    <title>l-20 = STL</title>
     <link rel="stylesheet" href="../styleLesson.css">
 </head>
 
@@ -30,53 +30,522 @@
         </div>
     </div>
     <div class="content-box">
-        <h1>Insertion sort</h1>
-        <ul>
-            <li>Here left part is to be sorted by shifting the elements</li>
-        </ul>
+        <h1>STL</h1>
         <div class="wh">
+            <ul>
+                <li>Standard temporary library</li>
+                <li>The Standard Template Library (STL) is a set of C++ template classes to provide common programming
+                    data structures and functions such as vector, lists, stacks, etc.</li>
+                <li>Knowledge of STL is very essential because
+                    <ul>
+                        <li>We don't have to write code from scratch</li>
+                        <li>Example &rarr; Instead of writing whole code of binary search we can use STL which will do
+                            it in a single line.</li>
+                        <li>So instead of making our own custom data structure we can use it.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h2>Containers</h2>
+                <div class="wh">
+                    <h3>Sequence Containers</h3>
+                    <div class="in">
+                        <p><b>Array</b> <a href="https://www.geeksforgeeks.org/array-class-c/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
 
-           <div class="code">
-            <div class="dotc"></div>
-            <button class="accordion">code</button>
-            <div class="panel">
-                <pre>
-                    <code>
+                                // declaration
+                                int basix[3] = {1,2,3};
 
-                        #include &lt;iostream>
-                            using namespace std;
-                            void insertionSort(int arr[], int size)
-                            {
-                                for (int i = 1; i &lt; size; i++)
-                                {
-                                    int temp = arr[i];
-                                    int j = i - 1;
-                                    while (j >= 0)
-                                    {
-                                        // shift
-                                        if (arr[j] > temp)
-                                            arr[j + 1] = arr[j];
-                                        else
-                                            break;
-                                        j--;
-                                    }
-                                    arr[j + 1] = temp;
+                                // before using stl array we need to includes its library
+                                #include&lt;array>
+                                
+                                array&lt;int, 4> a = {1,2,3,4};
+
+                                // finding size
+                                int size = a.size();
+
+                                // access 
+                                // a[i];
+
+                                // .at operation
+                                // a.at(2); also used for accessing the element
+
+                                // checking if the array is completely empty or not 
+                                // a.empty(2)
+
+                                // a.front(); // return first element of an array
+                                // a.back(); // return last element of an array
+
+                                // all of the above operations have time complexity of O(n)
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Vector</b> <a href="https://www.geeksforgeeks.org/vector-in-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>It is a dynamic array</li>
+                            <li>If it gets filled, its size get doubled
+                                <ul>
+                                    <li>Creates a new vector which is doubled its size and copies all elements</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                // first include its library which is 
+                                #include&lt;vector> 
+
+                                // creating a vector 
+                                vector&lt;int> v;
+                                
+                                // currently it have 0 capacity (size for elements) 
+                                // v.capacity();
+
+                                // more ways to initialize vector 
+                                // vector&lt;int> a(5,1);
+                                // Make a vector with variable name 'a' with size of 5 and initialize all elements with 1.
+
+                                // putting some element 
+                                // v.push_back(1);
+                                // v.push_back(2);
+
+                                // getting first and last element
+                                // v.front();  v.back();
+
+                                // removing last element 
+                                // v.pop_back();
+
+                                // clearing the vector - the size becomes zero but not the capacity
+                                // v.clear();
+
+                                // copying one vector to another
+                                vector&lt;int> a(5,1);
+                                vector&lt;int> b(a);
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Deque</b> <a href="https://www.geeksforgeeks.org/deque-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>Here we can perform push, pop, deletion and insertion operation in both front and end
+                            </li>
+                            <li>Its dynamic &rarr; size can be increased</li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                // include its library 
+                                #include&lt;deque> 
+
+                                int main() {
+
+                                    // declaration 
+                                    deque&lt;int> d; 
+
+                                    // insertion 
+                                    d.push_back(1);
+                                    d.push_front(2);
+
+                                    // finding size 
+                                    d.size();
+
+                                    // deletion from back 
+                                    d.pop_back();
+                                    // deletion from front 
+                                    d.pop.front(); 
+
+                                    // accessing first index element 
+                                    d.at(1);
+
+                                    // getting first and last element 
+                                    d.front(); d.back();
+
+                                    // checking if it is empty 
+                                    d.empty();
+
+                                    // deleting first 2 element 
+                                    d.erase(d.begin(), d.begin()+2);
+
                                 }
-                            }
-                            int main()
-                            {
-                                int arr[] = {5, 4, 3, 2, 1};
-                                insertionSort(arr, sizeof(arr) / sizeof(int));
-                                for (int i = 0; i < 5; i++)
-                                {
-                                    cout &lt;&lt; arr[i] &lt;&lt; " ";
-                                }                            
-                                return 0;
-                            }
-                    </code>
-                </pre>
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>List</b> <a href="https://www.geeksforgeeks.org/list-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>It is made using doubly linked list</li>
+                            <li>Direct access is not possible here
+                                <ul>
+                                    <li>We have to traverse</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                #include&lt;list> 
+
+                                int main(){
+
+                                    // declaration 
+                                    list&lt;int> l;
+
+                                    // insertion in front and back 
+                                    l.push_front();
+                                    l.push_back();
+
+                                    // begin, end, empty, back and erase operation is also avail here
+
+                                    // deleting particular iterator
+                                    l.erase(l.begin());
+
+                                    // pop_front and pop_back are also same 
+
+                                    // finding size 
+                                    l.size();
+                                    
+                                    list&lt;int> n(5, 100); // initializing 'n' with 5 element all of them are 100
+
+                                }
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Container Adaptors</h3>
+                    <div class="in">
+                        <p><b>Stack</b> <a href="https://www.geeksforgeeks.org/stack-in-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>Last in first out concept</li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                #include&lt;stack> 
+
+                                int main(){
+
+                                    // declaration 
+                                    stack&lt;string> s;
+
+                                    // insertion element 
+                                    s.push("hey");
+                                    s.push("hey hey");
+
+                                    // removing element 
+                                    s.pop();
+
+                                    // accessing the top element 
+                                    s.top();
+
+                                    // size of stack 
+                                    s.size();
+
+                                    // checking if it is empty 
+                                    s.empty();
+
+
+                                }
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Queue</b> <a href="https://www.geeksforgeeks.org/queue-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>first in first out concept (line of people in buffet)</li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                #include&lt;queue> 
+
+                                int main() {
+
+                                    // declaration
+                                    queue&lt;strin> q;
+
+                                    // pushing elements 
+                                    q.push("Love");  // this will be at top as it was pushed first
+                                    q.push("Babbar");
+                                    q.push("Kumar")
+
+                                    // removing element 
+                                    q.pop(); // "love" will get popped as it was in top of line
+
+                                    // size 
+                                    q.size();
+
+                                    // empty is same 
+                                }
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Priority queue</b> <a href="https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>It is a type of queue in which the first element is always greatest </li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                            <code>
+
+                                #include&lt;queue> 
+
+                                int main() {
+
+                                    // max heap
+                                    priority_queue&lt;int> maxi;
+
+                                    // min heap 
+                                    priority_queue&lt;int, vector&lt;int>, greater&lt;int> > mini;
+
+                                    // inserting elements 
+                                    maxi.push(1);
+                                    maxi.push(5);
+                                    maxi.push(4);
+
+                                    // extracting elements 
+                                    int n = maxi.size();
+                                    for(int i = 0; i &lt; n; i++){
+                                        cout&lt;&lt;maxi.top()&lt;&lt;" ";
+                                        maxi.pop();
+                                    }
+                                    // above will print largest element then it will pop it so it can print the next largest element 
+
+                                    // same with min priority queue 
+
+                                    // checking if it is empty 
+                                    mini.empty();
+                                }
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>Associative container</h3>
+                    <div class="in">
+                        <p><b>Set</b> <a href="https://www.geeksforgeeks.org/set-in-cpp-stl/"
+                                target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>Only unique element are stored
+                                <ul>
+                                    <li>If we try to store '5' five times then it will be stored only one time</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                        <code>
+
+                                            #include&lt;set> 
+
+                                            int main(){
+
+                                                set&lt;int> s;
+
+                                                // insertion of elements
+                                                s.insert(5);
+                                                s.insert(5);
+                                                s.insert(2);
+                                                s.insert(4);
+                                                s.insert(6); 
+                                                // elements in set are in order &rarr; 2, 4, 5, 6 
+                                                // insertion have complexity of O(log n)
+
+                                                // removing particluar element 
+                                                s.erase(s.begin());
+
+                                                // count 
+                                                s.count(5); // checks if the element is present or not
+                                                
+                                            }
+                                        </code>
+                                    </pre>
+                        </div>                        
+                    </div>
+                    <div class="in">
+                        <p><b>Map</b> <a href="https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/" target="_blank">geeksforgeeks reference</a></p>
+                        <ul>
+                            <li>It is a data structure in which data is stored in key-value pair</li>
+                            <li>same key can't point to multiple value</li>
+                            <li>but multiple key can point to same value</li>
+                        </ul>
+                        <div class="code">
+                            <div class="dotc"></div>
+                            <pre>
+                                <code>
+
+                                    #include&lt;map> 
+
+                                    int main() {
+
+                                        map&lt;int, string> m;
+
+                                        m[1] = "babbar";
+                                        m[13] = "Kumar";
+                                        m[2] = "love";
+
+                                        // "babbar", "love", "kumar" it will be in sorted order as its map not unordered map 
+
+                                        // we can also insert it like this 
+                                        m.insert({5, "bheem"});
+
+                                        // if 13 present 
+                                        m.count(13);
+
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </div>
+            <div class="in">
+                <h2>Algorithms</h2>
+                <p>The header algorithm defines a collection of functions specially designed to be used on a range of elements. They act on containers and provide means for various operations for the contents of the containers.</p>
+                <div class="wh">
+                    <h3>Binary Search || upper/lower bound</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                #include&lt;algorithm> 
+                                #include&lt;vector> 
+
+                                int main(){
+
+                                    vector&lt;int> v;
+                                    
+                                    v.push_back(1);
+                                    v.push_back(3);
+                                    v.push_back(6);
+                                    v.push_back(7);
+                                    // binary search works in sorted array 
+
+                                    binary_search(v.begin(), v.end(), 6); // finding 6  
+
+                                    // finding lower bound
+                                    .lower_bound(v.begin(), v.end(), 6);
+                                    // finding upper bound 
+                                    .upper_bound(v.begin(), v.end(), 6);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>min/max</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                #include&lt;algorithm> 
+
+                                int main(){
+                                    int a = 3;
+                                    int b = 5;
+                                    max(a,b);
+                                    min(a,b);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>swap</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                #include&lt;algorithm> 
+
+                                int main(){
+                                    int a = 3;
+                                    int b = 5;
+                                    swap(a,b);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>reversing a string</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                #include&lt;algorithm> 
+
+                                int main(){
+                                    string abcd = "abcd";
+                                    reverse(abcd.begin(), abcd.end());
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="wh">
+                    <h3>rotating a vector || sort</h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code>
+
+                                #include&lt;algorithm> 
+                                #include&lt;vector>
+
+                                int main(){
+                                    vector&lt;int> v;
+
+                                    v.push_back(1);
+                                    v.push_back(3);
+                                    v.push_back(6);
+                                    v.push_back(7);
+
+                                    rotate(v.begin(), v.begin()+1, v.end());
+
+                                    // sorting vector 
+                                    sort(v.begin(), v.end());
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="../main.js"></script>

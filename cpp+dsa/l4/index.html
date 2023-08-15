@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>l-4 = Pattern Question</title>
     <link rel="stylesheet" href="../styleLesson.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
 </head>
 
 <body>
@@ -39,25 +41,24 @@
                 <div class="panel">
                     <pre>
                     <code>
-
-                        #include &lt;iostream>
-                            using namespace std;
-                            int main()
-                            {           
-                                int row = 4;                   
-                                int i = 1;
-                                while (i &lt;= row)
-                                {
-                                    int j = 1;
-                                    while (j &lt;= row)
-                                    {
-                                        cout &lt;&lt; "*";
-                                        j++;
-                                    }
-                                    cout &lt;&lt; endl;
-                                    i++;
-                                }
-                            }
+#include &lt;iostream>
+using namespace std;
+int main()
+{           
+    int row = 4;                   
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; "*";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+}
                     </code>
                 </pre>
                 </div>
@@ -65,16 +66,15 @@
         </div>
         <div class="wh">
             <p>Q2 &rarr; Print
-                <pre>
-                    <code>
-                        
-                        1 2 3 4
-                        1 2 3 4
-                        1 2 3 4
-                        1 2 3 4 
+            <pre>
+                    <code>                      
+1 2 3 4
+1 2 3 4
+1 2 3 4
+1 2 3 4 
                     </code>
                 </pre>
-                for n =4
+            for n =4
             </p>
 
             <div class="code">
@@ -83,40 +83,38 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt;&lt; j &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }                                
-                        </code>
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}                                
+</code>
                     </pre>
                 </div>
             </div>
         </div>
         <div class="wh">
             <p>Q2.2 &rarr; Print
-                <pre>
+            <pre>
                     <code>
-
-                        4 3 2 1
-                        4 3 2 1
-                        4 3 2 1
-                        4 3 2 1
+4 3 2 1
+4 3 2 1
+4 3 2 1
+4 3 2 1
                     </code>
                 </pre>
             </p>
@@ -126,26 +124,25 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= 4)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt;&lt; row - j + 1 &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= 4)
+    {
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; row - j + 1 &lt;&lt; " ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -153,10 +150,10 @@
         </div>
         <div class="wh">
             <p>Q3 &rarr; Print
-                <br>1 2 3
-                <br>4 5 6
-                <br>7 8 9
-                <br>for n = 3;
+<br>1 2 3
+<br>4 5 6
+<br>7 8 9
+<br>for n = 3;
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -165,27 +162,27 @@
                     <pre>
                         <code>
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 3;
-                                    int i = 1;
-                                    int count = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= 3)
-                                        {
-                                            cout &lt;&lt; count &lt;&lt; " ";
-                                            count++;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 3;
+    int i = 1;
+    int count = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= 3)
+        {
+            cout &lt;&lt; count &lt;&lt; " ";
+            count++;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -193,11 +190,11 @@
         </div>
         <div class="wh">
             <p>Q4 &rarr; Print
-                <br>*
-                <br>* *
-                <br>* * *
-                <br>* * * *
-                <br>for n = 4
+<br>*
+<br>* *
+<br>* * *
+<br>* * * *
+<br>for n = 4
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -205,28 +202,27 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int n;
-                                    cout &lt;&lt; "Enter number of rows : ";
-                                    cin >> n;
-                                    int i = 1;
-                                    while (i &lt;= n)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; "* ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout &lt;&lt; "Enter number of rows : ";
+    cin >> n;
+    int i = 1;
+    while (i &lt;= n)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; "* ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -234,11 +230,11 @@
         </div>
         <div class="wh">
             <p>Q5 &rarr; Print
-                <br>1
-                <br>2 2
-                <br>3 3 3
-                <br>4 4 4 4
-                <br> for n = 4;
+<br>1
+<br>2 2
+<br>3 3 3
+<br>4 4 4 4
+<br> for n = 4;
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -246,26 +242,25 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; j &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -273,10 +268,10 @@
         </div>
         <div class="wh">
             <p>Q6 &rarr; Print
-                <br>1
-                <br> 2 3
-                <br> 4 5 6
-                <br> 7 8 9 10
+<br>1
+<br> 2 3
+<br> 4 5 6
+<br> 7 8 9 10
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -284,28 +279,27 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    int count = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt; count &lt; " ";
-                                            j++;
-                                            count++;
-                                        }
-                                        cout &lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }                                
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    int count = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt; count &lt; " ";
+            j++;
+            count++;
+        }
+        cout &lt; endl;
+        i++;
+    }
+    return 0;
+}                                
                         </code>
                     </pre>
                 </div>
@@ -313,10 +307,10 @@
         </div>
         <div class="wh">
             <p>Q7 &rarr; Print
-                <br>1
-                <br>2 3
-                <br>3 4 5
-                <br>4 5 6 7
+<br>1
+<br>2 3
+<br>3 4 5
+<br>4 5 6 7
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -324,28 +318,27 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        int count = i;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; count &lt;&lt; " ";
-                                            j++;
-                                            count++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        int count = i;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; count &lt;&lt; " ";
+            j++;
+            count++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -353,10 +346,10 @@
         </div>
         <div class="wh">
             <p>Q8 &rarr; Print
-                <br>1
-                <br>2 1
-                <br>3 2 1
-                <br>4 3 2 1
+<br>1
+<br>2 1
+<br>3 2 1
+<br>4 3 2 1
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -364,28 +357,27 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        int count = i;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; count &lt;&lt; " ";
-                                            j++;
-                                            count--;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        int count = i;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; count &lt;&lt; " ";
+            j++;
+            count--;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -393,9 +385,9 @@
         </div>
         <div class="wh">
             <p>Q8 &rarr; Print
-                <br>A A A
-                <br>B B B
-                <br>C C C
+<br>A A A
+<br>B B B
+<br>C C C
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -403,28 +395,27 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 3;
-                                    int i = 1;
-                                    char a = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 3;
+    int i = 1;
+    char a = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -432,9 +423,9 @@
         </div>
         <div class="wh">
             <p>Q9 &rarr; Print
-                <br>A B C
-                <br>A B C
-                <br>A B C
+<br>A B C
+<br>A B C
+<br>A B C
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -442,27 +433,26 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row =  3;
-                                    int i = 1;
-                                    char a = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;    
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt; (char) (a + j - 1) &lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row =  3;
+    int i = 1;
+    char a = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;    
+        while (j &lt;= row)
+        {
+            cout &lt; (char) (a + j - 1) &lt; " ";
+            j++;
+        }
+        cout &lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -470,9 +460,9 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>A B C
-                <br>D E F
-                <br>G H I
+<br>A B C
+<br>D E F
+<br>G H I
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -480,29 +470,28 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 3;
-                                    int i = 1;
-                                    char a = 'A';
-                                    int alpha = 0;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
-                                            j++;
-                                            alpha++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 3;
+    int i = 1;
+    char a = 'A';
+    int alpha = 0;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
+            j++;
+            alpha++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -510,9 +499,9 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>A B C
-                <br>B C D
-                <br>C D E
+<br>A B C
+<br>B C D
+<br>C D E
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -520,29 +509,28 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 3;
-                                    int i = 1;
-                                    char a = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int alpha = i;
-                                        int j = 1;
-                                        while (j &lt;= row)
-                                        {
-                                            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
-                                            alpha++;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 3;
+    int i = 1;
+    char a = 'A';
+    while (i &lt;= row)
+    {
+        int alpha = i;
+        int j = 1;
+        while (j &lt;= row)
+        {
+            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
+            alpha++;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -550,9 +538,9 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>A
-                <br>B B
-                <br>C C C
+<br>A
+<br>B B
+<br>C C C
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -560,28 +548,27 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 3;
-                                    int i = 1;
-                                    char a = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 3;
+    int i = 1;
+    char a = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; (char)(a + i - 1) &lt;&lt; " ";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -589,13 +576,12 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <pre>
+            <pre>
                     <code>
-
-                        A
-                        B C
-                        D E F
-                        G H I J 
+A
+B C
+D E F
+G H I J 
                     </code>
                 </pre>
             </p>
@@ -605,30 +591,29 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char a = 'A';
-                                    int alpha = 0;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
-                                            alpha++;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char a = 'A';
+    int alpha = 0;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; (char)(a + alpha) &lt;&lt; " ";
+            alpha++;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -636,10 +621,10 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>A
-                <br>B C
-                <br>C D E
-                <br>D E F G
+<br>A
+<br>B C
+<br>C D E
+<br>D E F G
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -647,30 +632,29 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char a = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                    int  alpha = i;
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
-                                            alpha++;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }                                    
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char a = 'A';
+    while (i &lt;= row)
+    {
+    int  alpha = i;
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; (char)(a + alpha - 1) &lt;&lt; " ";
+            alpha++;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}                                    
                         </code>
                     </pre>
                 </div>
@@ -678,10 +662,10 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>D
-                <br>C D
-                <br>B C D
-                <br>A B C D
+<br>D
+<br>C D
+<br>B C D
+<br>A B C D
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -689,29 +673,28 @@
                 <div class="panel">
                     <pre>
                         <code>
-
-                            #include &lt;iostream>
-                                using namespace std;
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char ch = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int k = i;
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; (char) (ch + row - k) &lt;&lt; " ";
-                                            k--;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+#include &lt;iostream>
+using namespace std;
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char ch = 'A';
+    while (i &lt;= row)
+    {
+        int k = i;
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; (char) (ch + row - k) &lt;&lt; " ";
+            k--;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -720,42 +703,39 @@
         <div class="wh">
             <p>Q &rarr; Print</p>
             <img width="80px" height="80px" src="../images/pattern1.svg" alt="">
-
-
             <div class="code">
                 <div class="dotc"></div>
                 <button class="ac">my code</button>
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char ch = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row - i)
-                                        {
-                                            cout &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        j = 1;
-                                        while (j <= i)
-                                        {
-                                            cout &lt;&lt; "*";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char ch = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row - i)
+        {
+            cout &lt;&lt; " ";
+            j++;
+        }
+        j = 1;
+        while (j <= i)
+        {
+            cout &lt;&lt; "*";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -763,10 +743,10 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <br>&nbsp;&nbsp;* * * *
-                <br>&nbsp;&nbsp;* * *
-                <br>&nbsp;&nbsp;* *
-                <br>&nbsp;&nbsp;*
+<br>&nbsp;&nbsp;* * * *
+<br>&nbsp;&nbsp;* * *
+<br>&nbsp;&nbsp;* *
+<br>&nbsp;&nbsp;*
             </p>
             <div class="code">
                 <div class="dotc"></div>
@@ -774,28 +754,27 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char ch = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row - i + 1)
-                                        {
-                                            cout &lt;&lt; "*";
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char ch = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row - i + 1)
+        {
+            cout &lt;&lt; "*";
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -811,35 +790,34 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char ch = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        j = 1;
-                                        while (j <= row - i + 1)
-                                        {
-                                            cout &lt;&lt; "*";
-                                            j++;
-                                        }
-                                        
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char ch = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; " ";
+            j++;
+        }
+        j = 1;
+        while (j <= row - i + 1)
+        {
+            cout &lt;&lt; "*";
+            j++;
+        }
+        
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -847,13 +825,12 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <pre>
+            <pre>
                     <code>
-
-                        1 1 1 1
-                          2 2 2
-                            3 3
-                              4
+1 1 1 1
+  2 2 2
+    3 3
+      4
                     </code>
                 </pre>
             </p>
@@ -863,35 +840,34 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    char ch = 'A';
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= i)
-                                        {
-                                            cout &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        j = 1;
-                                        while (j <= row - i + 1)
-                                        {
-                                            cout &lt;&lt; i;
-                                            j++;
-                                        }
-                                        
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    char ch = 'A';
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= i)
+        {
+            cout &lt;&lt; " ";
+            j++;
+        }
+        j = 1;
+        while (j <= row - i + 1)
+        {
+            cout &lt;&lt; i;
+            j++;
+        }
+        
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -899,13 +875,12 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <pre>
+            <pre>
                     <code>
-
-                              1
-                            2 2
-                          3 3 3
-                        4 4 4 4 
+      1
+    2 2
+  3 3 3
+4 4 4 4 
                     </code>
                 </pre>
             </p>
@@ -915,33 +890,32 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row - i + 1)
-                                        {
-                                            cout &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        j = 1;
-                                        while (j <= i)
-                                        {
-                                            cout &lt;&lt; i;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row - i + 1)
+        {
+            cout &lt;&lt; " ";
+            j++;
+        }
+        j = 1;
+        while (j <= i)
+        {
+            cout &lt;&lt; i;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -949,13 +923,12 @@
         </div>
         <div class="wh">
             <p>Q &rarr; print
-                <pre>
+            <pre>
                     <code>
-
-                              1
-                            2 3
-                          4 5 6  
-                        7 8 9 10
+      1
+    2 3
+  4 5 6  
+7 8 9 10
                     </code>
                 </pre>
             </p>
@@ -965,35 +938,34 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                    int count = 1;
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row - i + 1)
-                                        {
-                                            cout &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        j = 1;
-                                        while (j <= i)
-                                        {
-                                            cout &lt;&lt; count;
-                                            count++;
-                                            j++;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                    return 0;
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+    int count = 1;
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row - i + 1)
+        {
+            cout &lt;&lt; " ";
+            j++;
+        }
+        j = 1;
+        while (j <= i)
+        {
+            cout &lt;&lt; count;
+            count++;
+            j++;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+    return 0;
+}
                         </code>
                     </pre>
                 </div>
@@ -1001,13 +973,12 @@
         </div>
         <div class="wh">
             <p>Q &rarr; Print
-                <pre>
+            <pre>
                     <code>
-
-                              1
-                            1 2 1
-                          1 2 3 2 1
-                        1 2 3 4 3 2 1
+      1
+    1 2 1
+  1 2 3 2 1
+1 2 3 4 3 2 1
                     </code>
                 </pre>
             </p>
@@ -1017,39 +988,38 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
+int main(){
+        // Number Pyramid Pattern
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "You are going to see a number pyramid pattern:- " &lt;&lt; endl;
 
-                                int main(){
-                                     // Number Pyramid Pattern
-                                    cout &lt;&lt; endl;
-                                    cout &lt;&lt; "You are going to see a number pyramid pattern:- " &lt;&lt; endl;
-                                
-                                    int height, i, j, k, l;
-                                    cout &lt;&lt; endl;
-                                    cout &lt;&lt; "Enter height of the pyramid:- ";
-                                    cout &lt;&lt; endl;
-                                    cin >> height;
-                                    cout &lt;&lt; endl;
-                                
-                                    for (i = 1; i &lt;= height; i++)
-                                    {
-                                        for (k = 1; k &lt;= (height - i); k++)
-                                        {
-                                            cout &lt;&lt; "  ";
-                                        }
-                                        for (j = 1; j <= i; j++)
-                                        {
-                                            cout &lt;&lt; j &lt;&lt; " ";
-                                        }
-                                        for (l = i - 1; l >= 1; l--)
-                                        {
-                                            cout &lt;&lt; l &lt;&lt; " ";
-                                        }
-                                        cout &lt;&lt; endl;
-                                    }
-                                }
+    int height, i, j, k, l;
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Enter height of the pyramid:- ";
+    cout &lt;&lt; endl;
+    cin >> height;
+    cout &lt;&lt; endl;
+
+    for (i = 1; i &lt;= height; i++)
+    {
+        for (k = 1; k &lt;= (height - i); k++)
+        {
+            cout &lt;&lt; "  ";
+        }
+        for (j = 1; j <= i; j++)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+        }
+        for (l = i - 1; l >= 1; l--)
+        {
+            cout &lt;&lt; l &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+}
                         </code>
                     </pre>
                 </div>
@@ -1057,14 +1027,13 @@
         </div>
         <div class="wh">
             <p>Q &rarr; print
-                <pre>
+            <pre>
                     <code>
-
-                        1 2 3 4 5 5 4 3 2 1
-                        1 2 3 4 * * 4 3 2 1
-                        1 2 3 * * * * 3 2 1
-                        1 2 * * * * * * 2 1
-                        1 * * * * * * * * 1
+1 2 3 4 5 5 4 3 2 1
+1 2 3 4 * * 4 3 2 1
+1 2 3 * * * * 3 2 1
+1 2 * * * * * * 2 1
+1 * * * * * * * * 1
                     </code>
                 </pre>
             </p>
@@ -1074,47 +1043,47 @@
                 <div class="panel">
                     <pre>
                         <code>
+#include &lt;iostream>
+using namespace std;
 
-                            #include &lt;iostream>
-                                using namespace std;
-                                
-                                int main()
-                                {
-                                    int row = 4;
-                                    int i = 1;
-                                
-                                    while (i &lt;= row)
-                                    {
-                                        int j = 1;
-                                        while (j &lt;= row - i + 1)
-                                        {
-                                            cout &lt;&lt; j &lt;&lt; " ";
-                                            j++;
-                                        }
-                                        // part 2 : Stars
-                                        j = 1;
-                                        while (j &lt;= (i - 1) * 2)
-                                        {
-                                            cout &lt;&lt; "* ";
-                                            j++;
-                                        }
-                                        // part 3: numbers
-                                        j = row - i + 1;
-                                        while (j >= 1)
-                                        {
-                                            cout &lt;&lt; j &lt;&lt; " ";
-                                            j--;
-                                        }
-                                        cout &lt;&lt; endl;
-                                        i++;
-                                    }
-                                }
+int main()
+{
+    int row = 4;
+    int i = 1;
+
+    while (i &lt;= row)
+    {
+        int j = 1;
+        while (j &lt;= row - i + 1)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+            j++;
+        }
+        // part 2 : Stars
+        j = 1;
+        while (j &lt;= (i - 1) * 2)
+        {
+            cout &lt;&lt; "* ";
+            j++;
+        }
+        // part 3: numbers
+        j = row - i + 1;
+        while (j >= 1)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+            j--;
+        }
+        cout &lt;&lt; endl;
+        i++;
+    }
+}
                         </code>
                     </pre>
                 </div>
             </div>
         </div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="../main.js"></script>
 </body>
 
