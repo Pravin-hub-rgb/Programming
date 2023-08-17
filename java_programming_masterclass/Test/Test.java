@@ -1,23 +1,16 @@
-import java.util.Scanner;
-
 public class Test {
-    static Scanner input = new Scanner(System.in);
-
     public static void main(String[] args) {
-        printYearsAndDays(1787879);
-    }
-
-    public static void printYearsAndDays(long minutes) {
-        if (minutes < 0) {
-            System.out.println("Invalid Value");
-            return;
+        int sum = 0;
+        int count = 1;
+        for (int i = 1; i <= 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println(i);
+                sum += i;
+                if (count == 5)
+                    break;
+                count++;
+            }
         }
-        long days = minutes > 1440 ? minutes / 1440 : 0;
-        System.out.println(days);
-        long years = days > 365 ? days / 365 : 0;
-        System.out.println(years);
-        days %= 365;
-        minutes %= 1440;
-        System.out.println(minutes + "min " + years + "y " + days + "d");
+        System.out.print("The sum of first 5 number which are divisible by 3 and also 5 is = " + sum);
     }
 }
